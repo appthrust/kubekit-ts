@@ -1,5 +1,5 @@
 {
-  "name": "@rtk-query/codegen-openapi",
+  "name": "kahirokunn/kubernetes-typescript-client-codegen-openapi",
   "version": "1.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -14,7 +14,7 @@
   },
   "homepage": "https://redux-toolkit.js.org",
   "bin": {
-    "rtk-query-codegen-openapi": "lib/bin/cli.js"
+    "kubernetes-typescript-client-codegen-openapi": "lib/bin/cli.js"
   },
   "scripts": {
     "build": "tsc",

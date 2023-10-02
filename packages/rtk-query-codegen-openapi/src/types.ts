@@ -2,7 +2,7 @@ import type { OpenAPIV3 } from 'openapi-types';
 
 export type OperationDefinition = {
   path: string;
-  verb: typeof operationKeys[number];
+  verb: (typeof operationKeys)[number];
   pathItem: OpenAPIV3.PathItemObject;
   operation: OpenAPIV3.OperationObject;
 };
@@ -47,11 +47,6 @@ export interface CommonOptions {
    */
   responseSuffix?: string;
   /**
-   * defaults to `false`
-   * `true` will generate hooks for queries and mutations, but no lazyQueries
-   */
-  hooks?: boolean | { queries: boolean; lazyQueries: boolean; mutations: boolean };
-  /**
    * defaults to false
    * `true` will generate a union type for `undefined` properties like: `{ id?: string | undefined }` instead of `{ id?: string }`
    */
@@ -78,12 +73,6 @@ export type EndpointMatcher = TextMatcher | EndpointMatcherFunction;
 export interface OutputFileOptions extends Partial<CommonOptions> {
   outputFile: string;
   filterEndpoints?: EndpointMatcher;
-  endpointOverrides?: EndpointOverrides[];
-}
-
-export interface EndpointOverrides {
-  pattern: EndpointMatcher;
-  type: 'mutation' | 'query';
 }
 
 export type ConfigFile =

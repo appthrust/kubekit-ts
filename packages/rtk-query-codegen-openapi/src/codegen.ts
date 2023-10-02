@@ -33,11 +33,9 @@ export function generateImportNode(pkg: string, namedImports: Record<string, str
 export function generateCreateApiCall({
   endpointBuilder = defaultEndpointBuilder,
   endpointDefinitions,
-  tag,
 }: {
   endpointBuilder?: ts.Identifier;
   endpointDefinitions: ts.ObjectLiteralExpression;
-  tag: boolean;
 }) {
   const injectEndpointsObjectLiteralExpression = factory.createObjectLiteralExpression(
     generateObjectProperties({
@@ -63,103 +61,65 @@ export function generateCreateApiCall({
     }),
     true
   );
-  if (tag) {
-    const enhanceEndpointsObjectLiteralExpression = factory.createObjectLiteralExpression(
-      [factory.createShorthandPropertyAssignment(factory.createIdentifier('addTagTypes'), undefined)],
-      true
-    )
-    return factory.createVariableStatement(
-      undefined,
-      factory.createVariableDeclarationList(
-        [factory.createVariableDeclaration(
-          factory.createIdentifier("injectedRtkApi"),
-          undefined,
-          undefined,
-          factory.createCallExpression(
-            factory.createPropertyAccessExpression(
-              factory.createCallExpression(
-                factory.createPropertyAccessExpression(
-                  factory.createIdentifier("api"),
-                  factory.createIdentifier("enhanceEndpoints")
-                ),
-                undefined,
-                [enhanceEndpointsObjectLiteralExpression]
-              ),
-              factory.createIdentifier("injectEndpoints")
-            ),
-            undefined,
-            [injectEndpointsObjectLiteralExpression]
-          )
-        )],
-        ts.NodeFlags.Const
-      )
-    );
-  }
 
-  return factory.createVariableStatement(
+  return factory.createCallExpression(
+    factory.createPropertyAccessExpression(
+      factory.createIdentifier('api'),
+      factory.createIdentifier('injectEndpoints')
+    ),
     undefined,
-    factory.createVariableDeclarationList(
-      [
-        factory.createVariableDeclaration(
-          factory.createIdentifier('injectedRtkApi'),
-          undefined,
-          undefined,
-          factory.createCallExpression(
-            factory.createPropertyAccessExpression(
-              factory.createIdentifier('api'),
-              factory.createIdentifier('injectEndpoints')
-            ),
-            undefined,
-            [injectEndpointsObjectLiteralExpression]
-          )
-        ),
-      ],
-      ts.NodeFlags.Const
-    )
+    [injectEndpointsObjectLiteralExpression]
   );
 }
 
 export function generateEndpointDefinition({
   operationName,
-  type,
   Response,
   QueryArg,
   queryFn,
-  endpointBuilder = defaultEndpointBuilder,
-  extraEndpointsProps,
-  tags,
 }: {
   operationName: string;
-  type: 'query' | 'mutation';
   Response: ts.TypeReferenceNode;
   QueryArg: ts.TypeReferenceNode;
-  queryFn: ts.Expression;
-  endpointBuilder?: ts.Identifier;
-  extraEndpointsProps: ObjectPropertyDefinitions;
-  tags: string[];
+  queryFn: ts.ObjectLiteralExpression;
 }) {
-  const objectProperties = generateObjectProperties({ query: queryFn, ...extraEndpointsProps });
-  if (tags.length > 0) {
-    objectProperties.push(
-      factory.createPropertyAssignment(
-        factory.createIdentifier(type === 'query' ? 'providesTags' : 'invalidatesTags'),
-        factory.createArrayLiteralExpression(tags.map((tag) => factory.createStringLiteral(tag), false))
-      )
-    )
-  }
-  return factory.createPropertyAssignment(
-    factory.createIdentifier(operationName),
-
-    factory.createCallExpression(
-      factory.createPropertyAccessExpression(endpointBuilder, factory.createIdentifier(type)),
-      [Response, QueryArg],
+  return factory.createVariableStatement(
+    [factory.createToken(ts.SyntaxKind.ExportKeyword)],
+    factory.createVariableDeclarationList(
       [
-        factory.createObjectLiteralExpression(
-          objectProperties,
-          true
+        factory.createVariableDeclaration(
+          factory.createIdentifier(operationName),
+          undefined,
+          undefined,
+          factory.createArrowFunction(
+            undefined,
+            undefined,
+            [
+              factory.createParameterDeclaration(
+                undefined,
+                undefined,
+                undefined,
+                factory.createIdentifier('args'),
+                undefined,
+                QueryArg,
+                undefined
+              ),
+            ],
+            factory.createTypeReferenceNode(factory.createIdentifier('Promise'), [Response]),
+            factory.createToken(ts.SyntaxKind.EqualsGreaterThanToken),
+            factory.createBlock(
+              [
+                factory.createReturnStatement(
+                  factory.createCallExpression(factory.createIdentifier('apiClient'), undefined, [queryFn])
+                ),
+              ],
+              true
+            )
+          )
         ),
-      ]
-    ),
+      ],
+      ts.NodeFlags.Const
+    )
   );
 }
 

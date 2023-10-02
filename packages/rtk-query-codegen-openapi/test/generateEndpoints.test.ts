@@ -55,24 +55,6 @@ test('negated endpoint filtering', async () => {
   expect(api).not.toMatch(/loginUser:/);
 });
 
-test('endpoint overrides', async () => {
-  const api = await generateEndpoints({
-    unionUndefined: true,
-    apiFile: './fixtures/emptyApi.ts',
-    schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
-    filterEndpoints: 'loginUser',
-    endpointOverrides: [
-      {
-        pattern: 'loginUser',
-        type: 'mutation',
-      },
-    ],
-  });
-  expect(api).not.toMatch(/loginUser: build.query/);
-  expect(api).toMatch(/loginUser: build.mutation/);
-  expect(api).toMatchSnapshot('loginUser should be a mutation');
-});
-
 describe('option flattenArg', () => {
   const config = {
     apiFile: './fixtures/emptyApi.ts',
