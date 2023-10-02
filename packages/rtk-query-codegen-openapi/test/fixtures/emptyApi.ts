@@ -58,7 +58,7 @@ const httpsRequest = <T>(body: unknown, options: https.RequestOptions): Promise<
   });
 };
 
-export async function request<Response, QueryArgs extends QueryArgsSpec>(args: QueryArgs): Promise<Response> {
+export async function apiClient<Response, QueryArgs extends QueryArgsSpec>(args: QueryArgs): Promise<Response> {
   const { path, method, params, body } = { ...args };
 
   let opts: https.RequestOptions = {};
