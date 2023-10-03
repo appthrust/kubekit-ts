@@ -71,7 +71,6 @@ export async function generateApi(
     isDataResponse = defaultIsDataResponse,
     filterEndpoints,
     unionUndefined = true,
-    flattenArg = false,
   }: GenerationOptions
 ) {
   const v3Doc = await getV3Doc(spec);
@@ -234,8 +233,6 @@ export async function generateApi(
 
     const queryArgValues = Object.values(queryArg);
 
-    const isFlatArg = flattenArg && queryArgValues.length === 1;
-
     const QueryArg = factory.createTypeReferenceNode(
       registerInterface(
         factory.createTypeAliasDeclaration(
@@ -267,18 +264,16 @@ export async function generateApi(
       operationName,
       Response: ResponseTypeName,
       QueryArg,
-      queryFn: generateQueryFn({ operationDefinition, queryArg, isFlatArg }),
+      queryFn: generateQueryFn({ operationDefinition, queryArg }),
     });
   }
 
   function generateQueryFn({
     operationDefinition,
     queryArg,
-    isFlatArg,
   }: {
     operationDefinition: OperationDefinition;
     queryArg: QueryArgDefinitions;
-    isFlatArg: boolean;
   }) {
     const { path, verb } = operationDefinition;
 
@@ -300,7 +295,7 @@ export async function generateApi(
                 (param) =>
                   createPropertyAssignment(
                     param.originalName,
-                    isFlatArg ? rootObject : accessProperty(rootObject, param.name)
+                    accessProperty(rootObject, param.name)
                   ),
                 true
               )
@@ -312,7 +307,7 @@ export async function generateApi(
       [
         factory.createPropertyAssignment(
           factory.createIdentifier('path'),
-          generatePathExpression(path, pickParams('path'), rootObject, isFlatArg)
+          generatePathExpression(path, pickParams('path'), rootObject)
         ),
         verb.toUpperCase() === 'GET'
           ? undefined
@@ -324,9 +319,7 @@ export async function generateApi(
           ? undefined
           : factory.createPropertyAssignment(
               factory.createIdentifier('body'),
-              isFlatArg
-                ? rootObject
-                : factory.createPropertyAccessExpression(rootObject, factory.createIdentifier(bodyParameter.name))
+              factory.createPropertyAccessExpression(rootObject, factory.createIdentifier(bodyParameter.name))
             ),
         createObjectLiteralProperty(pickParams('cookie'), 'cookies'),
         createObjectLiteralProperty(pickParams('header'), 'headers'),
@@ -346,8 +339,7 @@ function accessProperty(rootObject: ts.Identifier, propertyName: string) {
 function generatePathExpression(
   path: string,
   pathParameters: QueryArgDefinition[],
-  rootObject: ts.Identifier,
-  isFlatArg: boolean
+  rootObject: ts.Identifier
 ) {
   const expressions: Array<[string, string]> = [];
 
@@ -365,7 +357,7 @@ function generatePathExpression(
         factory.createTemplateHead(head),
         expressions.map(([prop, literal], index) =>
           factory.createTemplateSpan(
-            isFlatArg ? rootObject : accessProperty(rootObject, prop),
+            accessProperty(rootObject, prop),
             index === expressions.length - 1
               ? factory.createTemplateTail(literal)
               : factory.createTemplateMiddle(literal)

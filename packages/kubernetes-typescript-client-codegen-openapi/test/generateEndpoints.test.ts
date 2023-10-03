@@ -40,9 +40,9 @@ test('endpoint filtering by function', async () => {
     schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
     filterEndpoints: (name, endpoint) => name.match(/order/i) !== null && endpoint.verb === 'get',
   });
-  expect(api).toMatch(/getOrderById:/);
-  expect(api).not.toMatch(/placeOrder:/);
-  expect(api).not.toMatch(/loginUser:/);
+  expect(api).toMatch(/getOrderById =/);
+  expect(api).not.toMatch(/placeOrder =/);
+  expect(api).not.toMatch(/loginUser =/);
 });
 
 test('negated endpoint filtering', async () => {
@@ -53,49 +53,6 @@ test('negated endpoint filtering', async () => {
     filterEndpoints: (name) => !/user/i.test(name),
   });
   expect(api).not.toMatch(/loginUser:/);
-});
-
-describe('option flattenArg', () => {
-  const config = {
-    apiFile: './fixtures/emptyApi.ts',
-    schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
-    flattenArg: true,
-  };
-
-  it('should apply a args directly in the path', async () => {
-    const api = await generateEndpoints({
-      ...config,
-      filterEndpoints: ['getOrderById'],
-    });
-    // eslint-disable-next-line no-template-curly-in-string
-    expect(api).toContain('`/store/order/${args}`');
-    expect(api).toMatch(/export type GetOrderByIdApiArg =[\s/*]+ID of order that needs to be fetched[\s/*]+number;/);
-  });
-
-  it('should apply a args directly in the params', async () => {
-    const api = await generateEndpoints({
-      ...config,
-      filterEndpoints: ['findPetsByStatus'],
-    });
-    expect(api).toContain('params: { status: args }');
-    expect(api).not.toContain('export type FindPetsByStatusApiArg = {');
-  });
-
-  it('should use the args as the entire body', async () => {
-    const api = await generateEndpoints({
-      ...config,
-      filterEndpoints: ['addPet'],
-    });
-    expect(api).toMatch(/body: args[^.]/);
-  });
-
-  it('should not change anything if there are 2+ arguments.', async () => {
-    const api = await generateEndpoints({
-      ...config,
-      filterEndpoints: ['uploadFile'],
-    });
-    expect(api).toContain('args.body');
-  });
 });
 
 test('should use brackets in a querystring urls arg, when the arg contains full stops', async () => {
@@ -129,7 +86,6 @@ describe('import paths', () => {
       outputFile: './tmp/out.ts',
       schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
       filterEndpoints: [],
-      tag: true,
     });
     expect(await fs.promises.readFile('./tmp/out.ts', 'utf8')).toContain(
       "import { apiClient } from '../fixtures/emptyApi'"
@@ -147,7 +103,6 @@ describe('import paths', () => {
       outputFile: './tmp/out.ts',
       schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
       filterEndpoints: [],
-      tag: true,
     });
     expect(await fs.promises.readFile('./tmp/out.ts', 'utf8')).toContain("import { apiClient } from './emptyApi'");
   });
@@ -159,7 +114,6 @@ describe('yaml parsing', () => {
       unionUndefined: true,
       apiFile: './tmp/emptyApi.ts',
       schemaFile: `https://petstore3.swagger.io/api/v3/openapi.yaml`,
-      tag: true,
     });
     expect(result).toMatchSnapshot();
   });
@@ -169,7 +123,6 @@ describe('yaml parsing', () => {
       unionUndefined: true,
       apiFile: './tmp/emptyApi.ts',
       schemaFile: `./fixtures/petstore.yaml`,
-      tag: true,
     });
     expect(result).toMatchSnapshot();
   });
@@ -179,7 +132,6 @@ describe('yaml parsing', () => {
       unionUndefined: true,
       apiFile: './tmp/emptyApi.ts',
       schemaFile: `./fixtures/fhir.yaml`,
-      tag: true,
     });
 
     expect(output).toMatchSnapshot();
@@ -197,7 +149,6 @@ describe('yaml parsing', () => {
       unionUndefined: true,
       apiFile: './tmp/emptyApi.ts',
       schemaFile: `./fixtures/fhir.yaml`,
-      tag: true,
     });
 
     expect(output).toContain('"-bar-bar": args["-bar-bar"],');

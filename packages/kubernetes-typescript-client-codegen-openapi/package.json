@@ -1,20 +1,19 @@
 {
+  "name": "kubernetes-typescript-client-codegen-openapi",
   "version": "1.0.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "author": "Lenz Weber",
+  "author": "kahirokunn",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/reduxjs/redux-toolkit.git"
+    "url": "git+https://github.com/kahirokunn/kubernetes-typescript-client-codegen-openapi.git"
   },
   "bugs": {
-    "url": "https://github.com/reduxjs/redux-toolkit/issues"
+    "url": "https://github.com/kahirokunn/kubernetes-typescript-client-codegen-openapi/issues"
   },
-  "homepage": "https://redux-toolkit.js.org",
-  "bin": {
-    "kubernetes-typescript-client-codegen-openapi": "lib/bin/cli.js"
-  },
+  "homepage": "https://github.com/kahirokunn/kubernetes-typescript-client-codegen-openapi",
+  "bin": "lib/bin/cli.js",
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build && chmod +x ./lib/bin/cli.js",
