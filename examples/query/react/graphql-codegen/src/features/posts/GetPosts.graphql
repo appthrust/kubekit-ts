@@ -1,7 +1,0 @@
-query GetPosts($skip: Int = 0, $take: Int = 10) {
-  posts(skip: $skip, take: $take) {
-    id
-    title
-    status
-  }
-}

@@ -16,11 +16,7 @@
     "example": "example"
   },
   "workspaces": [
-    "packages/*",
-    "docs",
-    "website",
-    "examples/query/react/*",
-    "examples/action-listener/*"
+    "packages/*"
   ],
   "devDependencies": {
     "eslint": "^7.25.0",
@@ -44,8 +40,8 @@
     "@babel/helper-compilation-targets": "7.19.3",
     "@babel/traverse": "7.19.3",
     "@babel/types": "7.19.3",
-    "console-testing-library": "patch:console-testing-library@npm:0.3.1#.yarn/patches/console-testing-library__npm_0.3.1.patch",
-    "msw": "patch:msw@npm:0.40.2#.yarn/patches/msw-npm-0.40.2-2107d48752",
+    "console-testing-library": "0.3.1",
+    "msw": "0.40.2",
     "jscodeshift": "0.13.1",
     "react-redux": "npm:8.0.2",
     "react": "npm:18.1.0",
@@ -55,10 +51,6 @@
     "@types/react": "npm:18.0.12",
     "@types/react-dom": "npm:18.0.5",
     "@types/inquirer": "npm:8.2.1",
-    "website/react": "npm:17.0.2",
-    "website/react-dom": "npm:17.0.2",
-    "website/@types/react-dom": "npm:17.0.11",
-    "website/@types/react": "npm:17.0.11",
     "docs/react": "npm:17.0.2",
     "docs/react-dom": "npm:17.0.2",
     "docs/@types/react-dom": "npm:17.0.11",
@@ -68,10 +60,7 @@
   "scripts": {
     "build": "yarn build:packages",
     "test": "yarn test:packages",
-    "build:examples": "yarn workspaces foreach --include '@reduxjs/*' --include '@examples-query-react/*' --include '@examples-action-listener/*' -vtp run build",
-    "build:docs": "yarn workspace website run build",
     "build:packages": "yarn workspaces foreach --include '@reduxjs/*' --include '@rtk-query/*' --topological-dev run build",
-    "test:packages": "yarn workspaces foreach --include '@reduxjs/*' --include '@rtk-query/*'  --include '@rtk-incubator/*' run test",
-    "dev:docs": "yarn workspace website run start"
+    "test:packages": "yarn workspaces foreach --include '@reduxjs/*' --include '@rtk-query/*'  --include '@rtk-incubator/*' run test"
   }
 }

@@ -1,9 +1,0 @@
-{
-  "hooks": {
-    "after:bump": "yarn && git add -u"
-  },
-  "git": {
-    "commitMessage": "Release @reduxjs/rtk-codemods ${version}",
-    "tagName": "@reduxjs/rtk-codemods@${version}"
-  }
-}
