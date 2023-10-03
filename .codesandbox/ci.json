@@ -12,11 +12,11 @@
   "packages": [
     "packages/toolkit",
     "packages/rtk-query-graphql-request-base-query",
-    "packages/rtk-query-codegen-openapi"
+    "packages/kubernetes-typescript-client-codegen-openapi"
   ],
   "publishDirectory": {
     "@reduxjs/toolkit": "packages/toolkit",
     "@rtk-query/graphql-request-base-query": "packages/rtk-query-graphql-request-base-query",
-    "@rtk-query/codegen-openapi": "packages/rtk-query-codegen-openapi"
+    "kahirokunn/kubernetes-typescript-client-codegen-openapi": "packages/kubernetes-typescript-client-codegen-openapi"
   }
 }

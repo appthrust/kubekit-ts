@@ -1,4 +1,4 @@
-import type { ConfigFile } from '@rtk-query/codegen-openapi';
+import type { ConfigFile } from 'kahirokunn/kubernetes-typescript-client-codegen-openapi';
 
 const config: ConfigFile = {
   schemaFile: './fixtures/petstore.yaml',

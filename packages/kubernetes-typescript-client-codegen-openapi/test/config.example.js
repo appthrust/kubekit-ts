@@ -1,5 +1,5 @@
 /**
- * @type {import("@rtk-query/codegen-openapi").ConfigFile}
+ * @type {import("kahirokunn/kubernetes-typescript-client-codegen-openapi").ConfigFile}
  */
 module.exports = {
   schemaFile: '/Users/kahiro/Documents/appthrust/openapi/api/openapi-spec/v3/apis/appthrust.dev/v1/swagger.json',

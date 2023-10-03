@@ -22,7 +22,7 @@ For a full example on how to use it, you can see [this example project](https://
 
 ## OpenAPI
 
-We provide a package for RTK Query code generation from OpenAPI schemas. It is published as `@rtk-query/codegen-openapi` and you can find the source code at [`packages/rtk-query-codegen-openapi`](https://github.com/reduxjs/redux-toolkit/tree/master/packages/rtk-query-codegen-openapi).
+We provide a package for RTK Query code generation from OpenAPI schemas. It is published as `kahirokunn/kubernetes-typescript-client-codegen-openapi` and you can find the source code at [`packages/rtk-query-codegen-openapi`](https://github.com/reduxjs/redux-toolkit/tree/master/packages/rtk-query-codegen-openapi).
 
 ### Usage
 
@@ -42,7 +42,7 @@ export const emptySplitApi = createApi({
 Generate a config file (json, js or ts) with contents like
 
 ```ts no-transpile title="openapi-config.ts"
-import type { ConfigFile } from '@rtk-query/codegen-openapi'
+import type { ConfigFile } from 'kahirokunn/kubernetes-typescript-client-codegen-openapi'
 
 const config: ConfigFile = {
   schemaFile: 'https://petstore3.swagger.io/api/v3/openapi.json',
@@ -59,12 +59,12 @@ export default config
 and then call the code generator:
 
 ```bash
-npx @rtk-query/codegen-openapi openapi-config.ts
+npx kahirokunn/kubernetes-typescript-client-codegen-openapi openapi-config.ts
 ```
 
 #### Generating tags
 
-If your OpenAPI specification uses [tags](https://swagger.io/docs/specification/grouping-operations-with-tags/), you can specify the `tag` option to the codegen.  
+If your OpenAPI specification uses [tags](https://swagger.io/docs/specification/grouping-operations-with-tags/), you can specify the `tag` option to the codegen.
 That will result in all generated endpoints having `providesTags`/`invalidatesTags` declarations for the `tags` of their respective operation definition.
 
 Note that this will only result in string tags with no ids, so it might lead to scenarios where too much is invalidated and unneccessary requests are made on mutation.
@@ -74,7 +74,7 @@ In that case it is still recommended to manually specify tags by using [`enhance
 ### Programmatic usage
 
 ```ts no-transpile title="src/store/petApi.ts"
-import { generateEndpoints } from '@rtk-query/codegen-openapi'
+import { generateEndpoints } from 'kahirokunn/kubernetes-typescript-client-codegen-openapi'
 
 const api = await generateEndpoints({
   apiFile: './fixtures/emptyApi.ts',

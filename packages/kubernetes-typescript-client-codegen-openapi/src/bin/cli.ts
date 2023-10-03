@@ -2,13 +2,13 @@
 
 import program from 'commander';
 import { dirname, resolve } from 'path';
-import { generateEndpoints, parseConfig } from '../';
+import { generateEndpoints, parseConfig } from '..';
 import semver from 'semver';
 import { version as tsVersion } from 'typescript';
 
 if (!semver.satisfies(tsVersion, '>=4.1 <=4.5')) {
   console.warn(
-    'Please note that `@rtk-query/codegen-openapi` only has been tested with TS versions 4.1 to 4.5 - other versions might cause problems.'
+    'Please note that `kahirokunn/kubernetes-typescript-client-codegen-openapi` only has been tested with TS versions 4.1 to 4.5 - other versions might cause problems.'
   );
 }
 
