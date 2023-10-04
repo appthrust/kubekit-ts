@@ -105,12 +105,12 @@ export function generateEndpointDefinition({
                 undefined
               ),
             ],
-            factory.createTypeReferenceNode(factory.createIdentifier('Promise'), [Response]),
+            undefined,
             factory.createToken(ts.SyntaxKind.EqualsGreaterThanToken),
             factory.createBlock(
               [
                 factory.createReturnStatement(
-                  factory.createCallExpression(factory.createIdentifier('apiClient'), undefined, [queryFn])
+                  factory.createCallExpression(factory.createIdentifier('apiClient'), [Response], [queryFn])
                 ),
               ],
               true

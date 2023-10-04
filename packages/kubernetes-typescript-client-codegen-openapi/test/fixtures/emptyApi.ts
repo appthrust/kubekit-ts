@@ -1,9 +1,13 @@
+import fetch, { type Response } from 'node-fetch';
 import * as https from 'https';
-import * as querystring from 'querystring';
 import * as k8s from '@kubernetes/client-node';
-import { removeNullableProperties } from '../remove-undefined-properties';
 
 const isPlainObject = (value: any) => value?.constructor === Object;
+
+function removeNullableProperties<T extends Record<string, unknown>>(obj: T): T {
+  Object.keys(obj).forEach((key) => (obj[key] === undefined || obj[key] === null) && delete obj[key]);
+  return obj;
+}
 
 type QueryArgsSpec = {
   path: string;
@@ -20,7 +24,7 @@ type InterceptorArgs = {
 };
 type Interceptor = (args: InterceptorArgs) => MaybePromise<https.RequestOptions>;
 
-export const interceptors: Interceptor[] = [
+const interceptors: Interceptor[] = [
   async function injectKubernetesParameters({ opts }) {
     const kc = new k8s.KubeConfig();
     kc.loadFromDefault();
@@ -36,30 +40,8 @@ export const interceptors: Interceptor[] = [
   },
 ];
 
-const resolvePath = (path: string, params: querystring.ParsedUrlQueryInput) => {
-  if (params && Object.keys(params).length > 0) {
-    const queryString = querystring.stringify(params);
-    path += (path.includes('?') ? '&' : '?') + queryString;
-  }
-  return path;
-};
-
-const httpsRequest = <T>(body: unknown, options: https.RequestOptions): Promise<T> => {
-  return new Promise<T>((resolve, reject) => {
-    const req = https.request(options, (res) => {
-      const data: any = [];
-      res.on('data', (d) => data.push(d));
-      res.on('end', () => resolve(data.join('')));
-    });
-    if (body) {
-      req.write(isPlainObject(body) ? JSON.stringify(body) : body);
-    }
-    req.on('error', reject).end();
-  });
-};
-
-export async function apiClient<Response, QueryArgs extends QueryArgsSpec>(args: QueryArgs): Promise<Response> {
-  const { path, method, params, body } = { ...args };
+export async function apiClient<Response>(args: QueryArgsSpec): Promise<HTTPResponse<Response>> {
+  let { path, method, params, body } = { ...args };
 
   let opts: https.RequestOptions = {};
   if (method) {
@@ -73,7 +55,98 @@ export async function apiClient<Response, QueryArgs extends QueryArgsSpec>(args:
     });
   }
 
+  if (!opts.agent && opts.ca) {
+    opts.agent = new https.Agent({
+      ca: opts.ca,
+    });
+  }
+
   opts.path = resolvePath(path, removeNullableProperties(params));
-  const res = await httpsRequest<Response>(body, opts);
-  return res;
+  if (!opts.protocol) {
+    opts.protocol = 'http:';
+  }
+  const host = opts.host || opts.hostname;
+  const baseUrl = `${opts.protocol}//${host}`;
+  const url = new URL(baseUrl);
+  if (opts.port) {
+    url.port = opts.port.toString();
+  }
+  if (opts.path) {
+    url.pathname = opts.path;
+  }
+  let isJson = false;
+  if (isPlainObject(body)) {
+    isJson = true;
+    body = JSON.stringify(body);
+  }
+  const headers: Record<string, string> = {
+    ...(opts.headers as any),
+  };
+  if (!opts.headers?.['Content-Type'] && isJson) {
+    headers['Content-Type'] = 'application/json';
+  }
+  const res = await fetch(url, {
+    headers,
+    protocol: opts.protocol || undefined,
+    method,
+    agent: opts.agent,
+    body,
+  });
+  return {
+    res,
+    isSuccess: res.status >= 200 && res.status < 300,
+    getJson: () => res.json() as any,
+  } as const;
 }
+
+const resolvePath = (path: string, params: Record<string, string>) => {
+  if (params && Object.keys(params).length > 0) {
+    const queryString = new URLSearchParams(params);
+    path += (path.includes('?') ? '&' : '?') + queryString;
+  }
+  return path;
+};
+
+type HTTPResponse<T> = {
+  res: Response;
+} & (
+  | {
+      isSuccess: true;
+      getJson: () => Promise<T>;
+    }
+  | {
+      isSuccess: false;
+      getJson: () => Promise<ErrorResponse>;
+    }
+);
+
+// eg.
+// {
+//   kind: 'Status',
+//   apiVersion: 'v1',
+//   metadata: {},
+//   status: 'Failure',
+//   message: 'albgatewayparameterses.appthrust.dev "kahiro-test" already exists',
+//   reason: 'AlreadyExists',
+//   details: {
+//     name: 'kahiro-test',
+//     group: 'appthrust.dev',
+//     kind: 'albgatewayparameterses'
+//   },
+//   code: 409
+// }
+
+type ErrorResponse = {
+  kind: string;
+  apiVersion: string;
+  metadata: {};
+  status: 'Failure';
+  message: string;
+  reason: string;
+  details: {
+    name: string;
+    group: string;
+    kind: string;
+  };
+  code: number;
+};
