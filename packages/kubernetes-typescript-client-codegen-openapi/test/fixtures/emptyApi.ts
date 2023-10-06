@@ -31,7 +31,7 @@ const isPlainObject = (value: any) => value?.constructor === Object;
 
 type QueryArgsSpec = {
   path: string;
-  method?: 'GET' | 'DELETE' | 'PATCH' | 'POST' | 'PUT';
+  method?: 'GET' | 'DELETE' | 'PATCH' | 'POST' | 'PUT' | 'OPTIONS';
   body?: any;
   params?: any;
 };
