@@ -1254,8 +1254,8 @@ export const connectCoreV1GetNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1GetNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
-      params: { path: args.path },
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
+      params: { path: args.queryPath },
     },
     options
   );
@@ -1266,9 +1266,9 @@ export const connectCoreV1PutNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PutNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'PUT',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -1279,9 +1279,9 @@ export const connectCoreV1PostNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PostNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'POST',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -1292,9 +1292,9 @@ export const connectCoreV1DeleteNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1DeleteNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'DELETE',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -1305,9 +1305,9 @@ export const connectCoreV1OptionsNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1OptionsNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'OPTIONS',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -1318,9 +1318,9 @@ export const connectCoreV1HeadNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1HeadNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'HEAD',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -1331,9 +1331,9 @@ export const connectCoreV1PatchNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PatchNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'PATCH',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -2422,8 +2422,8 @@ export const connectCoreV1GetNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1GetNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
-      params: { path: args.path },
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
+      params: { path: args.queryPath },
     },
     options
   );
@@ -2434,9 +2434,9 @@ export const connectCoreV1PutNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PutNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'PUT',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -2447,9 +2447,9 @@ export const connectCoreV1PostNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PostNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'POST',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -2460,9 +2460,9 @@ export const connectCoreV1DeleteNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1DeleteNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'DELETE',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -2473,9 +2473,9 @@ export const connectCoreV1OptionsNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1OptionsNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'OPTIONS',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -2486,9 +2486,9 @@ export const connectCoreV1HeadNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1HeadNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'HEAD',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -2499,9 +2499,9 @@ export const connectCoreV1PatchNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PatchNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'PATCH',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -2824,13 +2824,13 @@ export const connectCoreV1PatchNodeProxy = (args: ConnectCoreV1PatchNodeProxyApi
 };
 export const connectCoreV1GetNodeProxyWithPath = (args: ConnectCoreV1GetNodeProxyWithPathApiArg, options?: Options) => {
   return apiClient<ConnectCoreV1GetNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, params: { path: args.queryPath } },
     options
   );
 };
 export const connectCoreV1PutNodeProxyWithPath = (args: ConnectCoreV1PutNodeProxyWithPathApiArg, options?: Options) => {
   return apiClient<ConnectCoreV1PutNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'PUT', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'PUT', params: { path: args.queryPath } },
     options
   );
 };
@@ -2839,7 +2839,7 @@ export const connectCoreV1PostNodeProxyWithPath = (
   options?: Options
 ) => {
   return apiClient<ConnectCoreV1PostNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'POST', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'POST', params: { path: args.queryPath } },
     options
   );
 };
@@ -2848,7 +2848,7 @@ export const connectCoreV1DeleteNodeProxyWithPath = (
   options?: Options
 ) => {
   return apiClient<ConnectCoreV1DeleteNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'DELETE', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'DELETE', params: { path: args.queryPath } },
     options
   );
 };
@@ -2857,7 +2857,7 @@ export const connectCoreV1OptionsNodeProxyWithPath = (
   options?: Options
 ) => {
   return apiClient<ConnectCoreV1OptionsNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'OPTIONS', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'OPTIONS', params: { path: args.queryPath } },
     options
   );
 };
@@ -2866,7 +2866,7 @@ export const connectCoreV1HeadNodeProxyWithPath = (
   options?: Options
 ) => {
   return apiClient<ConnectCoreV1HeadNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'HEAD', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'HEAD', params: { path: args.queryPath } },
     options
   );
 };
@@ -2875,7 +2875,7 @@ export const connectCoreV1PatchNodeProxyWithPath = (
   options?: Options
 ) => {
   return apiClient<ConnectCoreV1PatchNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'PATCH', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'PATCH', params: { path: args.queryPath } },
     options
   );
 };
@@ -5952,9 +5952,9 @@ export type ConnectCoreV1GetNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PutNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PutNamespacedPodProxyWithPathApiArg = {
@@ -5963,9 +5963,9 @@ export type ConnectCoreV1PutNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PostNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PostNamespacedPodProxyWithPathApiArg = {
@@ -5974,9 +5974,9 @@ export type ConnectCoreV1PostNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1DeleteNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1DeleteNamespacedPodProxyWithPathApiArg = {
@@ -5985,9 +5985,9 @@ export type ConnectCoreV1DeleteNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1OptionsNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1OptionsNamespacedPodProxyWithPathApiArg = {
@@ -5996,9 +5996,9 @@ export type ConnectCoreV1OptionsNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1HeadNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1HeadNamespacedPodProxyWithPathApiArg = {
@@ -6007,9 +6007,9 @@ export type ConnectCoreV1HeadNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PatchNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PatchNamespacedPodProxyWithPathApiArg = {
@@ -6018,9 +6018,9 @@ export type ConnectCoreV1PatchNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ReadCoreV1NamespacedPodStatusApiResponse = /** status 200 OK */ IoK8SApiCoreV1Pod;
 export type ReadCoreV1NamespacedPodStatusApiArg = {
@@ -7406,9 +7406,9 @@ export type ConnectCoreV1GetNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PutNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PutNamespacedServiceProxyWithPathApiArg = {
@@ -7417,9 +7417,9 @@ export type ConnectCoreV1PutNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PostNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PostNamespacedServiceProxyWithPathApiArg = {
@@ -7428,9 +7428,9 @@ export type ConnectCoreV1PostNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1DeleteNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1DeleteNamespacedServiceProxyWithPathApiArg = {
@@ -7439,9 +7439,9 @@ export type ConnectCoreV1DeleteNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1OptionsNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1OptionsNamespacedServiceProxyWithPathApiArg = {
@@ -7450,9 +7450,9 @@ export type ConnectCoreV1OptionsNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1HeadNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1HeadNamespacedServiceProxyWithPathApiArg = {
@@ -7461,9 +7461,9 @@ export type ConnectCoreV1HeadNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PatchNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PatchNamespacedServiceProxyWithPathApiArg = {
@@ -7472,9 +7472,9 @@ export type ConnectCoreV1PatchNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ReadCoreV1NamespacedServiceStatusApiResponse = /** status 200 OK */ IoK8SApiCoreV1Service;
 export type ReadCoreV1NamespacedServiceStatusApiArg = {
@@ -7862,63 +7862,63 @@ export type ConnectCoreV1GetNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PutNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PutNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PostNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PostNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1DeleteNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1DeleteNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1OptionsNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1OptionsNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1HeadNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1HeadNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PatchNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PatchNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ReadCoreV1NodeStatusApiResponse = /** status 200 OK */ IoK8SApiCoreV1Node;
 export type ReadCoreV1NodeStatusApiArg = {
@@ -13388,8 +13388,8 @@ export const connectCoreV1GetNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1GetNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
-      params: { path: args.path },
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
+      params: { path: args.queryPath },
     },
     options
   );
@@ -13400,9 +13400,9 @@ export const connectCoreV1PutNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PutNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'PUT',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -13413,9 +13413,9 @@ export const connectCoreV1PostNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PostNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'POST',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -13426,9 +13426,9 @@ export const connectCoreV1DeleteNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1DeleteNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'DELETE',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -13439,9 +13439,9 @@ export const connectCoreV1OptionsNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1OptionsNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'OPTIONS',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -13452,9 +13452,9 @@ export const connectCoreV1HeadNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1HeadNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'HEAD',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -13465,9 +13465,9 @@ export const connectCoreV1PatchNamespacedPodProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PatchNamespacedPodProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/pods/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'PATCH',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -14556,8 +14556,8 @@ export const connectCoreV1GetNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1GetNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
-      params: { path: args.path },
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
+      params: { path: args.queryPath },
     },
     options
   );
@@ -14568,9 +14568,9 @@ export const connectCoreV1PutNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PutNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'PUT',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -14581,9 +14581,9 @@ export const connectCoreV1PostNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PostNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'POST',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -14594,9 +14594,9 @@ export const connectCoreV1DeleteNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1DeleteNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'DELETE',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -14607,9 +14607,9 @@ export const connectCoreV1OptionsNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1OptionsNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'OPTIONS',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -14620,9 +14620,9 @@ export const connectCoreV1HeadNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1HeadNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'HEAD',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -14633,9 +14633,9 @@ export const connectCoreV1PatchNamespacedServiceProxyWithPath = (
 ) => {
   return apiClient<ConnectCoreV1PatchNamespacedServiceProxyWithPathApiResponse>(
     {
-      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.path}\`,
+      path: \`/api/v1/namespaces/\${args['namespace']}/services/\${args.name}/proxy/\${args.pathPath}\`,
       method: 'PATCH',
-      params: { path: args.path },
+      params: { path: args.queryPath },
     },
     options
   );
@@ -14958,13 +14958,13 @@ export const connectCoreV1PatchNodeProxy = (args: ConnectCoreV1PatchNodeProxyApi
 };
 export const connectCoreV1GetNodeProxyWithPath = (args: ConnectCoreV1GetNodeProxyWithPathApiArg, options?: Options) => {
   return apiClient<ConnectCoreV1GetNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, params: { path: args.queryPath } },
     options
   );
 };
 export const connectCoreV1PutNodeProxyWithPath = (args: ConnectCoreV1PutNodeProxyWithPathApiArg, options?: Options) => {
   return apiClient<ConnectCoreV1PutNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'PUT', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'PUT', params: { path: args.queryPath } },
     options
   );
 };
@@ -14973,7 +14973,7 @@ export const connectCoreV1PostNodeProxyWithPath = (
   options?: Options
 ) => {
   return apiClient<ConnectCoreV1PostNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'POST', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'POST', params: { path: args.queryPath } },
     options
   );
 };
@@ -14982,7 +14982,7 @@ export const connectCoreV1DeleteNodeProxyWithPath = (
   options?: Options
 ) => {
   return apiClient<ConnectCoreV1DeleteNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'DELETE', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'DELETE', params: { path: args.queryPath } },
     options
   );
 };
@@ -14991,7 +14991,7 @@ export const connectCoreV1OptionsNodeProxyWithPath = (
   options?: Options
 ) => {
   return apiClient<ConnectCoreV1OptionsNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'OPTIONS', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'OPTIONS', params: { path: args.queryPath } },
     options
   );
 };
@@ -15000,7 +15000,7 @@ export const connectCoreV1HeadNodeProxyWithPath = (
   options?: Options
 ) => {
   return apiClient<ConnectCoreV1HeadNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'HEAD', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'HEAD', params: { path: args.queryPath } },
     options
   );
 };
@@ -15009,7 +15009,7 @@ export const connectCoreV1PatchNodeProxyWithPath = (
   options?: Options
 ) => {
   return apiClient<ConnectCoreV1PatchNodeProxyWithPathApiResponse>(
-    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.path}\`, method: 'PATCH', params: { path: args.path } },
+    { path: \`/api/v1/nodes/\${args.name}/proxy/\${args.pathPath}\`, method: 'PATCH', params: { path: args.queryPath } },
     options
   );
 };
@@ -18086,9 +18086,9 @@ export type ConnectCoreV1GetNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PutNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PutNamespacedPodProxyWithPathApiArg = {
@@ -18097,9 +18097,9 @@ export type ConnectCoreV1PutNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PostNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PostNamespacedPodProxyWithPathApiArg = {
@@ -18108,9 +18108,9 @@ export type ConnectCoreV1PostNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1DeleteNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1DeleteNamespacedPodProxyWithPathApiArg = {
@@ -18119,9 +18119,9 @@ export type ConnectCoreV1DeleteNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1OptionsNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1OptionsNamespacedPodProxyWithPathApiArg = {
@@ -18130,9 +18130,9 @@ export type ConnectCoreV1OptionsNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1HeadNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1HeadNamespacedPodProxyWithPathApiArg = {
@@ -18141,9 +18141,9 @@ export type ConnectCoreV1HeadNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PatchNamespacedPodProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PatchNamespacedPodProxyWithPathApiArg = {
@@ -18152,9 +18152,9 @@ export type ConnectCoreV1PatchNamespacedPodProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to pod. */
-  path?: string;
+  queryPath?: string;
 };
 export type ReadCoreV1NamespacedPodStatusApiResponse = /** status 200 OK */ IoK8SApiCoreV1Pod;
 export type ReadCoreV1NamespacedPodStatusApiArg = {
@@ -19540,9 +19540,9 @@ export type ConnectCoreV1GetNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PutNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PutNamespacedServiceProxyWithPathApiArg = {
@@ -19551,9 +19551,9 @@ export type ConnectCoreV1PutNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PostNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PostNamespacedServiceProxyWithPathApiArg = {
@@ -19562,9 +19562,9 @@ export type ConnectCoreV1PostNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1DeleteNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1DeleteNamespacedServiceProxyWithPathApiArg = {
@@ -19573,9 +19573,9 @@ export type ConnectCoreV1DeleteNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1OptionsNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1OptionsNamespacedServiceProxyWithPathApiArg = {
@@ -19584,9 +19584,9 @@ export type ConnectCoreV1OptionsNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1HeadNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1HeadNamespacedServiceProxyWithPathApiArg = {
@@ -19595,9 +19595,9 @@ export type ConnectCoreV1HeadNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PatchNamespacedServiceProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PatchNamespacedServiceProxyWithPathApiArg = {
@@ -19606,9 +19606,9 @@ export type ConnectCoreV1PatchNamespacedServiceProxyWithPathApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the part of URLs that include service endpoints, suffixes, and parameters to use for the current proxy request to service. For example, the whole request URL is http://localhost/api/v1/namespaces/kube-system/services/elasticsearch-logging/_search?q=user:kimchy. Path is _search?q=user:kimchy. */
-  path?: string;
+  queryPath?: string;
 };
 export type ReadCoreV1NamespacedServiceStatusApiResponse = /** status 200 OK */ IoK8SApiCoreV1Service;
 export type ReadCoreV1NamespacedServiceStatusApiArg = {
@@ -19996,63 +19996,63 @@ export type ConnectCoreV1GetNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PutNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PutNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PostNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PostNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1DeleteNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1DeleteNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1OptionsNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1OptionsNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1HeadNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1HeadNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ConnectCoreV1PatchNodeProxyWithPathApiResponse = /** status 200 OK */ string;
 export type ConnectCoreV1PatchNodeProxyWithPathApiArg = {
   /** name of the NodeProxyOptions */
   name: string;
   /** path to the resource */
-  path: string;
+  pathPath: string;
   /** Path is the URL path to use for the current proxy request to node. */
-  path?: string;
+  queryPath?: string;
 };
 export type ReadCoreV1NodeStatusApiResponse = /** status 200 OK */ IoK8SApiCoreV1Node;
 export type ReadCoreV1NodeStatusApiArg = {
