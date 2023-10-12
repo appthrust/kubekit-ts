@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CLI options testing generation with \`config.example.js\` 1`] = `
-import { apiClient, type Options } from '../fixtures/emptyApi';
+import { apiClient, type Options } from '../fixtures/k8sApiClient';
 export const getCoreV1ApiResources = (args: GetCoreV1ApiResourcesApiArg, options?: Options) => {
   return apiClient<GetCoreV1ApiResourcesApiResponse>({ path: \`/api/v1/\` }, options);
 };
@@ -12135,7 +12135,7 @@ export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
 `;
 
 exports[`CLI options testing paths are relative to configfile, not to cwd 1`] = `
-import { apiClient, type Options } from '../fixtures/emptyApi';
+import { apiClient, type Options } from '../fixtures/k8sApiClient';
 export const getCoreV1ApiResources = (args: GetCoreV1ApiResourcesApiArg, options?: Options) => {
   return apiClient<GetCoreV1ApiResourcesApiResponse>({ path: \`/api/v1/\` }, options);
 };

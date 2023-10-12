@@ -31,7 +31,7 @@ const isPlainObject = (value: any) => value?.constructor === Object;
 
 type QueryArgsSpec = {
   path: string;
-  method?: 'GET' | 'DELETE' | 'PATCH' | 'POST' | 'PUT' | 'OPTIONS';
+  method?: 'GET' | 'DELETE' | 'PATCH' | 'POST' | 'PUT' | 'OPTIONS' | 'HEAD';
   body?: any;
   params?: any;
 };
@@ -49,7 +49,10 @@ const interceptors: Interceptor[] = [
     const kc = new k8s.KubeConfig();
     kc.loadFromDefault();
     const nextOpts: https.RequestOptions = { ...opts };
-    await kc.applyToHTTPSOptions(nextOpts);
+    // @kubernetes/client-node@0.18用
+    await kc.applytoHTTPSOptions(nextOpts);
+    // @kubernetes/client-node@0.19用
+    // await kc.applyToHTTPSOptions(nextOpts)
     const cluster = kc.getCurrentCluster();
     if (cluster?.server) {
       const url = new URL(cluster.server);

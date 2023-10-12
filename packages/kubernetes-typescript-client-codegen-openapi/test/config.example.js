@@ -3,6 +3,6 @@
  */
 module.exports = {
   schemaFile: '/Users/kahiro/Documents/appthrust/appthrust/dashboard/tmp/api/openapi-spec/v3/api/v1/swagger.json',
-  apiFile: './fixtures/emptyApi.ts',
+  apiFile: './fixtures/k8sApiClient.ts',
   outputFile: './tmp/example.ts',
 };

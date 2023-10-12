@@ -17,7 +17,7 @@ afterEach(() => {
 test('calling without `outputFile` returns the generated api', async () => {
   const api = await generateEndpoints({
     unionUndefined: true,
-    apiFile: './fixtures/emptyApi.ts',
+    apiFile: './fixtures/k8sApiClient.ts',
     schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
   });
   expect(api).toMatchSnapshot();
@@ -26,7 +26,7 @@ test('calling without `outputFile` returns the generated api', async () => {
 test('endpoint filtering', async () => {
   const api = await generateEndpoints({
     unionUndefined: true,
-    apiFile: './fixtures/emptyApi.ts',
+    apiFile: './fixtures/k8sApiClient.ts',
     schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
     filterEndpoints: ['loginUser', /Order/],
   });
@@ -36,7 +36,7 @@ test('endpoint filtering', async () => {
 test('endpoint filtering by function', async () => {
   const api = await generateEndpoints({
     unionUndefined: true,
-    apiFile: './fixtures/emptyApi.ts',
+    apiFile: './fixtures/k8sApiClient.ts',
     schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
     filterEndpoints: (name, endpoint) => name.match(/order/i) !== null && endpoint.verb === 'get',
   });
@@ -48,7 +48,7 @@ test('endpoint filtering by function', async () => {
 test('negated endpoint filtering', async () => {
   const api = await generateEndpoints({
     unionUndefined: true,
-    apiFile: './fixtures/emptyApi.ts',
+    apiFile: './fixtures/k8sApiClient.ts',
     schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
     filterEndpoints: (name) => !/user/i.test(name),
   });
@@ -58,7 +58,7 @@ test('negated endpoint filtering', async () => {
 test('should use brackets in a querystring urls arg, when the arg contains full stops', async () => {
   const api = await generateEndpoints({
     unionUndefined: true,
-    apiFile: './fixtures/emptyApi.ts',
+    apiFile: './fixtures/k8sApiClient.ts',
     schemaFile: resolve(__dirname, 'fixtures/params.json'),
   });
   // eslint-disable-next-line no-template-curly-in-string
@@ -69,7 +69,7 @@ test('should use brackets in a querystring urls arg, when the arg contains full 
 test('duplicate parameter names must be prefixed with a path or query prefix', async () => {
   const api = await generateEndpoints({
     unionUndefined: true,
-    apiFile: './fixtures/emptyApi.ts',
+    apiFile: './fixtures/k8sApiClient.ts',
     schemaFile: resolve(__dirname, 'fixtures/params.json'),
   });
   // eslint-disable-next-line no-template-curly-in-string
@@ -81,7 +81,7 @@ test('duplicate parameter names must be prefixed with a path or query prefix', a
 test('apiImport builds correct `import` statement', async () => {
   const api = await generateEndpoints({
     unionUndefined: true,
-    apiFile: './fixtures/emptyApi.ts',
+    apiFile: './fixtures/k8sApiClient.ts',
     schemaFile: resolve(__dirname, 'fixtures/params.json'),
     filterEndpoints: [],
     apiImport: 'myApi',
@@ -94,30 +94,30 @@ describe('import paths', () => {
     process.chdir(__dirname);
     await generateEndpoints({
       unionUndefined: true,
-      apiFile: './fixtures/emptyApi.ts',
+      apiFile: './fixtures/k8sApiClient.ts',
       outputFile: './tmp/out.ts',
       schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
       filterEndpoints: [],
     });
     expect(await fs.promises.readFile('./tmp/out.ts', 'utf8')).toContain(
-      "import { apiClient, type Options } from '../fixtures/emptyApi'"
+      "import { apiClient, type Options } from '../fixtures/k8sApiClient'"
     );
   });
 
   test('should create paths relative to `outFile` when `apiFile` is relative (same folder)', async () => {
     process.chdir(__dirname);
 
-    await fs.promises.writeFile('./tmp/emptyApi.ts', await fs.promises.readFile('./fixtures/emptyApi.ts'));
+    await fs.promises.writeFile('./tmp/k8sApiClient.ts', await fs.promises.readFile('./fixtures/k8sApiClient.ts'));
 
     await generateEndpoints({
       unionUndefined: true,
-      apiFile: './tmp/emptyApi.ts',
+      apiFile: './tmp/k8sApiClient.ts',
       outputFile: './tmp/out.ts',
       schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
       filterEndpoints: [],
     });
     expect(await fs.promises.readFile('./tmp/out.ts', 'utf8')).toContain(
-      "import { apiClient, type Options } from './emptyApi'"
+      "import { apiClient, type Options } from './k8sApiClient'"
     );
   });
 });
@@ -126,7 +126,7 @@ describe('yaml parsing', () => {
   it('should parse a yaml schema from a URL', async () => {
     const result = await generateEndpoints({
       unionUndefined: true,
-      apiFile: './tmp/emptyApi.ts',
+      apiFile: './tmp/k8sApiClient.ts',
       schemaFile: `https://petstore3.swagger.io/api/v3/openapi.yaml`,
     });
     expect(result).toMatchSnapshot();
@@ -135,7 +135,7 @@ describe('yaml parsing', () => {
   it('should be able to use read a yaml file', async () => {
     const result = await generateEndpoints({
       unionUndefined: true,
-      apiFile: './tmp/emptyApi.ts',
+      apiFile: './tmp/k8sApiClient.ts',
       schemaFile: `./fixtures/petstore.yaml`,
     });
     expect(result).toMatchSnapshot();
@@ -144,7 +144,7 @@ describe('yaml parsing', () => {
   it("should generate params with non quoted keys if they don't contain special characters", async () => {
     const output = await generateEndpoints({
       unionUndefined: true,
-      apiFile: './tmp/emptyApi.ts',
+      apiFile: './tmp/k8sApiClient.ts',
       schemaFile: `./fixtures/fhir.yaml`,
     });
 
@@ -161,7 +161,7 @@ describe('yaml parsing', () => {
   it('should generate params with quoted keys if they contain special characters', async () => {
     const output = await generateEndpoints({
       unionUndefined: true,
-      apiFile: './tmp/emptyApi.ts',
+      apiFile: './tmp/k8sApiClient.ts',
       schemaFile: `./fixtures/fhir.yaml`,
     });
 
@@ -173,7 +173,7 @@ describe('yaml parsing', () => {
 describe('tests from issues', () => {
   it('issue #2002: should be able to generate proper intersection types', async () => {
     const result = await generateEndpoints({
-      apiFile: './tmp/emptyApi.ts',
+      apiFile: './tmp/k8sApiClient.ts',
       schemaFile: `./fixtures/issue-2002.json`,
     });
     expect(result).toMatchSnapshot();
