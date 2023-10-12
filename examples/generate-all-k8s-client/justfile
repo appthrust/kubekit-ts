@@ -1,0 +1,57 @@
+install-eks-blueprints-add-ons-depends-crds:
+  #!/bin/sh
+
+  git clone https://github.com/aws-samples/eks-blueprints-add-ons.git
+  set -e
+
+  for DIR in ./eks-blueprints-add-ons/add-ons/*; do
+    if [ -d "$DIR" ]; then
+      helm dependencies build "$DIR" &
+    fi
+  done
+  wait
+
+  for TGZ_FILE in ./eks-blueprints-add-ons/add-ons/*/charts/*.tgz; do
+    tar -xzf "$TGZ_FILE" -C ./tmp/ &
+  done
+  wait
+
+  find ./tmp/ -type d -name crds | while read CRD_DIR; do
+    kubectl apply --server-side -f "$CRD_DIR" &
+  done
+  wait
+
+generate-code:
+  #!/bin/sh
+  kind create cluster --name openapi
+
+  CURRENT_CONTEXT=$(kubectl config current-context)
+
+  if [ "$CURRENT_CONTEXT" != "kind-openapi" ]; then
+    echo "Error: Current context is not 'kind-openapi'. Exiting."
+    exit 1
+  fi
+
+  set -e
+  kubectl config use-context kind-openapi
+
+  just install-eks-blueprints-add-ons-depends-crds
+  echo Waiting for CRDs to be ready
+  sleep 20
+
+  deno run --allow-write --allow-read --allow-env --allow-run --allow-net=deno.land  ./codegen.ts
+  npx prettier -w ./tmp/api/openapi-spec/
+
+delete-cluster:
+  kind delete cluster --name openapi
+
+codegen: check-bin clean generate-code
+  npm run format
+
+clean:
+  rm -rf ./k8s-client/generated/*
+  rm -rf ./tmp
+  mkdir tmp
+
+check-bin:
+  deno -V

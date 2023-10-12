@@ -30,3 +30,7 @@ typesversions
 !.yarn/versions
 .pnp.*
 *.tgz
+
+generated
+tmp
+eks-blueprints-add-ons
