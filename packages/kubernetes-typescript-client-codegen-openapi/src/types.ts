@@ -31,9 +31,13 @@ export interface CommonOptions {
    */
   schemaFile: string;
   /**
-   * defaults to "api"
+   * defaults to "apiClient"
    */
   apiImport?: string;
+  /**
+   * defaults to "Options"
+   */
+  optionsImport?: string;
   /**
    * defaults to "enhancedApi"
    */

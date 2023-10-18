@@ -1,13 +1,33 @@
-import fetch, { type Response } from 'node-fetch';
-import * as https from 'https';
+import fetch, { FetchError } from 'node-fetch';
+import * as https from 'node:https';
 import * as k8s from '@kubernetes/client-node';
-
-const isPlainObject = (value: any) => value?.constructor === Object;
 
 function removeNullableProperties<T extends Record<string, unknown>>(obj: T): T {
   Object.keys(obj).forEach((key) => (obj[key] === undefined || obj[key] === null) && delete obj[key]);
   return obj;
 }
+
+/**
+ * Exponential backoff based on the attempt number.
+ *
+ * @remarks
+ * 1. 600ms * random(0.4, 1.4)
+ * 2. 1200ms * random(0.4, 1.4)
+ * 3. 2400ms * random(0.4, 1.4)
+ * 4. 4800ms * random(0.4, 1.4)
+ * 5. 9600ms * random(0.4, 1.4)
+ *
+ * @param attempt - Current attempt
+ * @param maxRetries - Maximum number of retries
+ */
+async function defaultBackoff(attempt: number, maxRetries: number) {
+  const attempts = Math.min(attempt, maxRetries);
+
+  const timeout = ~~((Math.random() + 0.4) * (300 << attempts));
+  await new Promise((resolve) => setTimeout((res: any) => resolve(res), timeout));
+}
+
+const isPlainObject = (value: any) => value?.constructor === Object;
 
 type QueryArgsSpec = {
   path: string;
@@ -22,7 +42,7 @@ type InterceptorArgs = {
   args: QueryArgsSpec;
   opts: https.RequestOptions;
 };
-type Interceptor = (args: InterceptorArgs) => MaybePromise<https.RequestOptions>;
+type Interceptor = (args: InterceptorArgs, options: Options) => MaybePromise<https.RequestOptions>;
 
 const interceptors: Interceptor[] = [
   async function injectKubernetesParameters({ opts }) {
@@ -40,39 +60,86 @@ const interceptors: Interceptor[] = [
   },
 ];
 
-export async function apiClient<Response>(args: QueryArgsSpec): Promise<HTTPResponse<Response>> {
+type RetryConditionFunction = (extraArgs: {
+  res?: Response;
+  error: unknown;
+  args: QueryArgsSpec;
+  attempt: number;
+  options: RetryOptions;
+}) => boolean | Promise<boolean>;
+
+type RetryOptions = {
+  retryCondition?: RetryConditionFunction | undefined;
+  maxRetries?: number | undefined;
+};
+
+export type Options = RetryOptions;
+
+export async function apiClient<Response>(args: QueryArgsSpec, extraOptions?: Options): Promise<Response> {
+  const maxRetries = extraOptions?.maxRetries ?? 3;
+
+  const defaultRetryCondition: RetryConditionFunction = ({ ...obj }) => {
+    const { res, attempt, error } = obj;
+    if (attempt > maxRetries) {
+      return false;
+    }
+
+    if (error instanceof FetchError) {
+      return true;
+    }
+    if (res && res.status >= 500) {
+      return true;
+    }
+    return false;
+  };
+
+  const options = {
+    maxRetries,
+    backoff: defaultBackoff,
+    retryCondition: defaultRetryCondition,
+    ...extraOptions,
+  };
+
   let { path, method, params, body } = { ...args };
 
-  let opts: https.RequestOptions = {};
+  let httpsOptions: https.RequestOptions = {
+    path,
+  };
   if (method) {
-    opts.method = method;
+    httpsOptions.method = method;
   }
 
-  for (let interceptor of interceptors) {
-    opts = await interceptor({
-      args,
-      opts,
+  for (const interceptor of interceptors) {
+    httpsOptions = await interceptor(
+      {
+        args,
+        opts: httpsOptions,
+      },
+      options
+    );
+  }
+
+  if (!httpsOptions.agent && httpsOptions.ca) {
+    httpsOptions.agent = new https.Agent({
+      ca: httpsOptions.ca,
     });
   }
 
-  if (!opts.agent && opts.ca) {
-    opts.agent = new https.Agent({
-      ca: opts.ca,
-    });
+  if (!httpsOptions.protocol) {
+    httpsOptions.protocol = 'http:';
   }
-
-  opts.path = resolvePath(path, removeNullableProperties(params));
-  if (!opts.protocol) {
-    opts.protocol = 'http:';
+  const host = httpsOptions.host || httpsOptions.hostname;
+  let baseUrl = `${httpsOptions.protocol}//${host}`;
+  const searchParams = toSearchParams(params);
+  if (searchParams.size) {
+    baseUrl += (baseUrl.includes('?') ? '&' : '?') + toSearchParams(params);
   }
-  const host = opts.host || opts.hostname;
-  const baseUrl = `${opts.protocol}//${host}`;
   const url = new URL(baseUrl);
-  if (opts.port) {
-    url.port = opts.port.toString();
+  if (httpsOptions.port) {
+    url.port = httpsOptions.port.toString();
   }
-  if (opts.path) {
-    url.pathname = opts.path;
+  if (httpsOptions.path) {
+    url.pathname = httpsOptions.path;
   }
   let isJson = false;
   if (isPlainObject(body)) {
@@ -80,73 +147,57 @@ export async function apiClient<Response>(args: QueryArgsSpec): Promise<HTTPResp
     body = JSON.stringify(body);
   }
   const headers: Record<string, string> = {
-    ...(opts.headers as any),
+    ...(httpsOptions.headers as any),
   };
-  if (!opts.headers?.['Content-Type'] && isJson) {
+  if (!httpsOptions.headers?.['Content-Type'] && isJson) {
     headers['Content-Type'] = 'application/json';
   }
-  const res = await fetch(url, {
-    headers,
-    protocol: opts.protocol || undefined,
-    method,
-    agent: opts.agent,
-    body,
-  });
-  return {
-    res,
-    isSuccess: res.status >= 200 && res.status < 300,
-    getJson: () => res.json() as any,
-  } as const;
+
+  let retry = 0;
+  while (true) {
+    try {
+      const res = await fetch(url, {
+        headers,
+        protocol: httpsOptions.protocol || undefined,
+        method,
+        agent: httpsOptions.agent,
+        body,
+      });
+
+      const isSuccess = res.status >= 200 && res.status < 300;
+      const contentType = res.headers.get('content-type');
+      const isJsonResponse = contentType?.includes('application/json') ?? false;
+
+      if (isSuccess && isJsonResponse) {
+        return (await res.json()) as Response;
+      }
+
+      // helpful message for debugging
+      const text = await res.text();
+      if (res.status === 404 && text.includes('404 page not found')) {
+        console.info(`Did you forget to install your Custom Resources Definitions? path: ${httpsOptions.path}`);
+      }
+      throw new Error(text);
+    } catch (e: any) {
+      retry++;
+
+      if (
+        !(await options.retryCondition({
+          res: e?.value?.res,
+          error: e,
+          args,
+          attempt: retry,
+          options: options,
+        }))
+      ) {
+        throw e;
+      }
+
+      await options.backoff(retry, options.maxRetries);
+    }
+  }
 }
 
-const resolvePath = (path: string, params: Record<string, string>) => {
-  if (params && Object.keys(params).length > 0) {
-    const queryString = new URLSearchParams(params);
-    path += (path.includes('?') ? '&' : '?') + queryString;
-  }
-  return path;
-};
-
-type HTTPResponse<T> = {
-  res: Response;
-} & (
-  | {
-      isSuccess: true;
-      getJson: () => Promise<T>;
-    }
-  | {
-      isSuccess: false;
-      getJson: () => Promise<ErrorResponse>;
-    }
-);
-
-// eg.
-// {
-//   kind: 'Status',
-//   apiVersion: 'v1',
-//   metadata: {},
-//   status: 'Failure',
-//   message: 'albgatewayparameterses.appthrust.dev "kahiro-test" already exists',
-//   reason: 'AlreadyExists',
-//   details: {
-//     name: 'kahiro-test',
-//     group: 'appthrust.dev',
-//     kind: 'albgatewayparameterses'
-//   },
-//   code: 409
-// }
-
-type ErrorResponse = {
-  kind: string;
-  apiVersion: string;
-  metadata: {};
-  status: 'Failure';
-  message: string;
-  reason: string;
-  details: {
-    name: string;
-    group: string;
-    kind: string;
-  };
-  code: number;
+const toSearchParams = (params: Record<string, string>) => {
+  return new URLSearchParams(removeNullableProperties(params));
 };

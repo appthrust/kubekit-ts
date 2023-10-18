@@ -10,7 +10,17 @@ export function generateObjectProperties(obj: ObjectPropertyDefinitions) {
     .map(([k, v]) => factory.createPropertyAssignment(factory.createIdentifier(k), v as ts.Expression));
 }
 
-export function generateImportNode(pkg: string, namedImports: Record<string, string>, defaultImportName?: string) {
+export function generateImportNode(
+  pkg: string,
+  namedImports: Record<
+    string,
+    {
+      name: string;
+      isTypeOnly: boolean;
+    }
+  >,
+  defaultImportName?: string
+) {
   return factory.createImportDeclaration(
     undefined,
     undefined,
@@ -18,8 +28,9 @@ export function generateImportNode(pkg: string, namedImports: Record<string, str
       false,
       defaultImportName !== undefined ? factory.createIdentifier(defaultImportName) : undefined,
       factory.createNamedImports(
-        Object.entries(namedImports).map(([propertyName, name]) =>
+        Object.entries(namedImports).map(([propertyName, { name, isTypeOnly }]) =>
           factory.createImportSpecifier(
+            isTypeOnly,
             name === propertyName ? undefined : factory.createIdentifier(propertyName),
             factory.createIdentifier(name)
           )
@@ -104,13 +115,26 @@ export function generateEndpointDefinition({
                 QueryArg,
                 undefined
               ),
+              factory.createParameterDeclaration(
+                undefined,
+                undefined,
+                undefined,
+                factory.createIdentifier('options'),
+                factory.createToken(ts.SyntaxKind.QuestionToken),
+                factory.createTypeReferenceNode(factory.createIdentifier('Options'), undefined),
+                undefined
+              ),
             ],
             undefined,
             factory.createToken(ts.SyntaxKind.EqualsGreaterThanToken),
             factory.createBlock(
               [
                 factory.createReturnStatement(
-                  factory.createCallExpression(factory.createIdentifier('apiClient'), [Response], [queryFn])
+                  factory.createCallExpression(
+                    factory.createIdentifier('apiClient'),
+                    [Response],
+                    [queryFn, factory.createIdentifier('options')]
+                  )
                 ),
               ],
               true

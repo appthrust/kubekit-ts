@@ -65,6 +65,7 @@ export async function generateApi(
   {
     apiFile,
     apiImport = 'apiClient',
+    optionsImport = 'Options',
     argSuffix = 'ApiArg',
     responseSuffix = 'ApiResponse',
     outputFile,
@@ -114,7 +115,10 @@ export async function generateApi(
     ts.EmitHint.Unspecified,
     factory.createSourceFile(
       [
-        generateImportNode(apiFile, { [apiImport]: 'apiClient' }),
+        generateImportNode(apiFile, {
+          [apiImport]: { isTypeOnly: false, name: 'apiClient' },
+          [optionsImport]: { isTypeOnly: true, name: 'Options' },
+        }),
         ...operationDefinitions.map((operationDefinition) =>
           generateRequester({
             operationDefinition,
@@ -292,11 +296,7 @@ export async function generateApi(
             factory.createIdentifier(propertyName),
             factory.createObjectLiteralExpression(
               parameters.map(
-                (param) =>
-                  createPropertyAssignment(
-                    param.originalName,
-                    accessProperty(rootObject, param.name)
-                  ),
+                (param) => createPropertyAssignment(param.originalName, accessProperty(rootObject, param.name)),
                 true
               )
             )

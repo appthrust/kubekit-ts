@@ -88,7 +88,7 @@ describe('import paths', () => {
       filterEndpoints: [],
     });
     expect(await fs.promises.readFile('./tmp/out.ts', 'utf8')).toContain(
-      "import { apiClient } from '../fixtures/emptyApi'"
+      "import { apiClient, type Options } from '../fixtures/emptyApi'"
     );
   });
 
@@ -104,7 +104,9 @@ describe('import paths', () => {
       schemaFile: resolve(__dirname, 'fixtures/petstore.json'),
       filterEndpoints: [],
     });
-    expect(await fs.promises.readFile('./tmp/out.ts', 'utf8')).toContain("import { apiClient } from './emptyApi'");
+    expect(await fs.promises.readFile('./tmp/out.ts', 'utf8')).toContain(
+      "import { apiClient, type Options } from './emptyApi'"
+    );
   });
 });
 

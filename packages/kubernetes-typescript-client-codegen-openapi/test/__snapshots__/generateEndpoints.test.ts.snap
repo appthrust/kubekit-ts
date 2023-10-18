@@ -1,124 +1,154 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`calling without \`outputFile\` returns the generated api 1`] = `
-import { apiClient } from "./fixtures/emptyApi";
-export const getHealthcheck = (args: GetHealthcheckApiArg) => {
-  return apiClient<GetHealthcheckApiResponse>({ path: \`/healthcheck\` });
+import { apiClient, type Options } from "./fixtures/emptyApi";
+export const getHealthcheck = (
+  args: GetHealthcheckApiArg,
+  options?: Options
+) => {
+  return apiClient<GetHealthcheckApiResponse>(
+    { path: \`/healthcheck\` },
+    options
+  );
 };
-export const updatePet = (args: UpdatePetApiArg) => {
-  return apiClient<UpdatePetApiResponse>({
-    path: \`/pet\`,
-    method: "PUT",
-    body: args.pet,
-  });
+export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
+  return apiClient<UpdatePetApiResponse>(
+    { path: \`/pet\`, method: "PUT", body: args.pet },
+    options
+  );
 };
-export const addPet = (args: AddPetApiArg) => {
-  return apiClient<AddPetApiResponse>({
-    path: \`/pet\`,
-    method: "POST",
-    body: args.pet,
-  });
+export const addPet = (args: AddPetApiArg, options?: Options) => {
+  return apiClient<AddPetApiResponse>(
+    { path: \`/pet\`, method: "POST", body: args.pet },
+    options
+  );
 };
-export const findPetsByStatus = (args: FindPetsByStatusApiArg) => {
-  return apiClient<FindPetsByStatusApiResponse>({
-    path: \`/pet/findByStatus\`,
-    params: { status: args.status },
-  });
+export const findPetsByStatus = (
+  args: FindPetsByStatusApiArg,
+  options?: Options
+) => {
+  return apiClient<FindPetsByStatusApiResponse>(
+    { path: \`/pet/findByStatus\`, params: { status: args.status } },
+    options
+  );
 };
-export const findPetsByTags = (args: FindPetsByTagsApiArg) => {
-  return apiClient<FindPetsByTagsApiResponse>({
-    path: \`/pet/findByTags\`,
-    params: { tags: args.tags },
-  });
+export const findPetsByTags = (
+  args: FindPetsByTagsApiArg,
+  options?: Options
+) => {
+  return apiClient<FindPetsByTagsApiResponse>(
+    { path: \`/pet/findByTags\`, params: { tags: args.tags } },
+    options
+  );
 };
-export const getPetById = (args: GetPetByIdApiArg) => {
-  return apiClient<GetPetByIdApiResponse>({ path: \`/pet/\${args.petId}\` });
+export const getPetById = (args: GetPetByIdApiArg, options?: Options) => {
+  return apiClient<GetPetByIdApiResponse>(
+    { path: \`/pet/\${args.petId}\` },
+    options
+  );
 };
-export const updatePetWithForm = (args: UpdatePetWithFormApiArg) => {
-  return apiClient<UpdatePetWithFormApiResponse>({
-    path: \`/pet/\${args.petId}\`,
-    method: "POST",
-    params: { name: args.name, status: args.status },
-  });
+export const updatePetWithForm = (
+  args: UpdatePetWithFormApiArg,
+  options?: Options
+) => {
+  return apiClient<UpdatePetWithFormApiResponse>(
+    {
+      path: \`/pet/\${args.petId}\`,
+      method: "POST",
+      params: { name: args.name, status: args.status },
+    },
+    options
+  );
 };
-export const deletePet = (args: DeletePetApiArg) => {
-  return apiClient<DeletePetApiResponse>({
-    path: \`/pet/\${args.petId}\`,
-    method: "DELETE",
-    headers: { api_key: args.apiKey },
-  });
+export const deletePet = (args: DeletePetApiArg, options?: Options) => {
+  return apiClient<DeletePetApiResponse>(
+    {
+      path: \`/pet/\${args.petId}\`,
+      method: "DELETE",
+      headers: { api_key: args.apiKey },
+    },
+    options
+  );
 };
-export const uploadFile = (args: UploadFileApiArg) => {
-  return apiClient<UploadFileApiResponse>({
-    path: \`/pet/\${args.petId}/uploadImage\`,
-    method: "POST",
-    body: args.body,
-    params: { additionalMetadata: args.additionalMetadata },
-  });
+export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
+  return apiClient<UploadFileApiResponse>(
+    {
+      path: \`/pet/\${args.petId}/uploadImage\`,
+      method: "POST",
+      body: args.body,
+      params: { additionalMetadata: args.additionalMetadata },
+    },
+    options
+  );
 };
-export const getInventory = (args: GetInventoryApiArg) => {
-  return apiClient<GetInventoryApiResponse>({ path: \`/store/inventory\` });
+export const getInventory = (args: GetInventoryApiArg, options?: Options) => {
+  return apiClient<GetInventoryApiResponse>(
+    { path: \`/store/inventory\` },
+    options
+  );
 };
-export const placeOrder = (args: PlaceOrderApiArg) => {
-  return apiClient<PlaceOrderApiResponse>({
-    path: \`/store/order\`,
-    method: "POST",
-    body: args.order,
-  });
+export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
+  return apiClient<PlaceOrderApiResponse>(
+    { path: \`/store/order\`, method: "POST", body: args.order },
+    options
+  );
 };
-export const getOrderById = (args: GetOrderByIdApiArg) => {
-  return apiClient<GetOrderByIdApiResponse>({
-    path: \`/store/order/\${args.orderId}\`,
-  });
+export const getOrderById = (args: GetOrderByIdApiArg, options?: Options) => {
+  return apiClient<GetOrderByIdApiResponse>(
+    { path: \`/store/order/\${args.orderId}\` },
+    options
+  );
 };
-export const deleteOrder = (args: DeleteOrderApiArg) => {
-  return apiClient<DeleteOrderApiResponse>({
-    path: \`/store/order/\${args.orderId}\`,
-    method: "DELETE",
-  });
+export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
+  return apiClient<DeleteOrderApiResponse>(
+    { path: \`/store/order/\${args.orderId}\`, method: "DELETE" },
+    options
+  );
 };
-export const createUser = (args: CreateUserApiArg) => {
-  return apiClient<CreateUserApiResponse>({
-    path: \`/user\`,
-    method: "POST",
-    body: args.user,
-  });
+export const createUser = (args: CreateUserApiArg, options?: Options) => {
+  return apiClient<CreateUserApiResponse>(
+    { path: \`/user\`, method: "POST", body: args.user },
+    options
+  );
 };
 export const createUsersWithListInput = (
-  args: CreateUsersWithListInputApiArg
+  args: CreateUsersWithListInputApiArg,
+  options?: Options
 ) => {
-  return apiClient<CreateUsersWithListInputApiResponse>({
-    path: \`/user/createWithList\`,
-    method: "POST",
-    body: args.body,
-  });
+  return apiClient<CreateUsersWithListInputApiResponse>(
+    { path: \`/user/createWithList\`, method: "POST", body: args.body },
+    options
+  );
 };
-export const loginUser = (args: LoginUserApiArg) => {
-  return apiClient<LoginUserApiResponse>({
-    path: \`/user/login\`,
-    params: { username: args.username, password: args.password },
-  });
+export const loginUser = (args: LoginUserApiArg, options?: Options) => {
+  return apiClient<LoginUserApiResponse>(
+    {
+      path: \`/user/login\`,
+      params: { username: args.username, password: args.password },
+    },
+    options
+  );
 };
-export const logoutUser = (args: LogoutUserApiArg) => {
-  return apiClient<LogoutUserApiResponse>({ path: \`/user/logout\` });
+export const logoutUser = (args: LogoutUserApiArg, options?: Options) => {
+  return apiClient<LogoutUserApiResponse>({ path: \`/user/logout\` }, options);
 };
-export const getUserByName = (args: GetUserByNameApiArg) => {
-  return apiClient<GetUserByNameApiResponse>({
-    path: \`/user/\${args.username}\`,
-  });
+export const getUserByName = (args: GetUserByNameApiArg, options?: Options) => {
+  return apiClient<GetUserByNameApiResponse>(
+    { path: \`/user/\${args.username}\` },
+    options
+  );
 };
-export const updateUser = (args: UpdateUserApiArg) => {
-  return apiClient<UpdateUserApiResponse>({
-    path: \`/user/\${args.username}\`,
-    method: "PUT",
-    body: args.user,
-  });
+export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
+  return apiClient<UpdateUserApiResponse>(
+    { path: \`/user/\${args.username}\`, method: "PUT", body: args.user },
+    options
+  );
 };
-export const deleteUser = (args: DeleteUserApiArg) => {
-  return apiClient<DeleteUserApiResponse>({
-    path: \`/user/\${args.username}\`,
-    method: "DELETE",
-  });
+export const deleteUser = (args: DeleteUserApiArg, options?: Options) => {
+  return apiClient<DeleteUserApiResponse>(
+    { path: \`/user/\${args.username}\`, method: "DELETE" },
+    options
+  );
 };
 export type GetHealthcheckApiResponse = /** status 200 OK */ {
   message: string;
@@ -276,30 +306,33 @@ export type User = {
 `;
 
 exports[`endpoint filtering: should only have endpoints loginUser, placeOrder, getOrderById, deleteOrder 1`] = `
-import { apiClient } from "./fixtures/emptyApi";
-export const placeOrder = (args: PlaceOrderApiArg) => {
-  return apiClient<PlaceOrderApiResponse>({
-    path: \`/store/order\`,
-    method: "POST",
-    body: args.order,
-  });
+import { apiClient, type Options } from "./fixtures/emptyApi";
+export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
+  return apiClient<PlaceOrderApiResponse>(
+    { path: \`/store/order\`, method: "POST", body: args.order },
+    options
+  );
 };
-export const getOrderById = (args: GetOrderByIdApiArg) => {
-  return apiClient<GetOrderByIdApiResponse>({
-    path: \`/store/order/\${args.orderId}\`,
-  });
+export const getOrderById = (args: GetOrderByIdApiArg, options?: Options) => {
+  return apiClient<GetOrderByIdApiResponse>(
+    { path: \`/store/order/\${args.orderId}\` },
+    options
+  );
 };
-export const deleteOrder = (args: DeleteOrderApiArg) => {
-  return apiClient<DeleteOrderApiResponse>({
-    path: \`/store/order/\${args.orderId}\`,
-    method: "DELETE",
-  });
+export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
+  return apiClient<DeleteOrderApiResponse>(
+    { path: \`/store/order/\${args.orderId}\`, method: "DELETE" },
+    options
+  );
 };
-export const loginUser = (args: LoginUserApiArg) => {
-  return apiClient<LoginUserApiResponse>({
-    path: \`/user/login\`,
-    params: { username: args.username, password: args.password },
-  });
+export const loginUser = (args: LoginUserApiArg, options?: Options) => {
+  return apiClient<LoginUserApiResponse>(
+    {
+      path: \`/user/login\`,
+      params: { username: args.username, password: args.password },
+    },
+    options
+  );
 };
 export type PlaceOrderApiResponse =
   /** status 200 successful operation */ Order;
@@ -337,12 +370,15 @@ export type Order = {
 `;
 
 exports[`should use brackets in a querystring urls arg, when the arg contains full stops 1`] = `
-import { apiClient } from "./fixtures/emptyApi";
-export const patchApiV1ListByItemId = (args: PatchApiV1ListByItemIdApiArg) => {
-  return apiClient<PatchApiV1ListByItemIdApiResponse>({
-    path: \`/api/v1/list/\${args["item.id"]}\`,
-    method: "PATCH",
-  });
+import { apiClient, type Options } from "./fixtures/emptyApi";
+export const patchApiV1ListByItemId = (
+  args: PatchApiV1ListByItemIdApiArg,
+  options?: Options
+) => {
+  return apiClient<PatchApiV1ListByItemIdApiResponse>(
+    { path: \`/api/v1/list/\${args["item.id"]}\`, method: "PATCH" },
+    options
+  );
 };
 export type PatchApiV1ListByItemIdApiResponse =
   /** status 200 A successful response. */ string;
@@ -353,12 +389,15 @@ export type PatchApiV1ListByItemIdApiArg = {
 `;
 
 exports[`tests from issues issue #2002: should be able to generate proper intersection types 1`] = `
-import { apiClient } from "./tmp/emptyApi";
-export const getApiV1Animals = (args: GetApiV1AnimalsApiArg) => {
-  return apiClient<GetApiV1AnimalsApiResponse>({
-    path: \`/api/v1/animals\`,
-    params: { type: args["type"] },
-  });
+import { apiClient, type Options } from "./tmp/emptyApi";
+export const getApiV1Animals = (
+  args: GetApiV1AnimalsApiArg,
+  options?: Options
+) => {
+  return apiClient<GetApiV1AnimalsApiResponse>(
+    { path: \`/api/v1/animals\`, params: { type: args["type"] } },
+    options
+  );
 };
 export type GetApiV1AnimalsApiResponse = /** status 200 Success */ (
   | Dog
@@ -383,121 +422,145 @@ export type Cat = Animal & {
 `;
 
 exports[`yaml parsing should be able to use read a yaml file 1`] = `
-import { apiClient } from "./tmp/emptyApi";
-export const updatePet = (args: UpdatePetApiArg) => {
-  return apiClient<UpdatePetApiResponse>({
-    path: \`/pet\`,
-    method: "PUT",
-    body: args.pet,
-  });
+import { apiClient, type Options } from "./tmp/emptyApi";
+export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
+  return apiClient<UpdatePetApiResponse>(
+    { path: \`/pet\`, method: "PUT", body: args.pet },
+    options
+  );
 };
-export const addPet = (args: AddPetApiArg) => {
-  return apiClient<AddPetApiResponse>({
-    path: \`/pet\`,
-    method: "POST",
-    body: args.pet,
-  });
+export const addPet = (args: AddPetApiArg, options?: Options) => {
+  return apiClient<AddPetApiResponse>(
+    { path: \`/pet\`, method: "POST", body: args.pet },
+    options
+  );
 };
-export const findPetsByStatus = (args: FindPetsByStatusApiArg) => {
-  return apiClient<FindPetsByStatusApiResponse>({
-    path: \`/pet/findByStatus\`,
-    params: { status: args.status },
-  });
+export const findPetsByStatus = (
+  args: FindPetsByStatusApiArg,
+  options?: Options
+) => {
+  return apiClient<FindPetsByStatusApiResponse>(
+    { path: \`/pet/findByStatus\`, params: { status: args.status } },
+    options
+  );
 };
-export const findPetsByTags = (args: FindPetsByTagsApiArg) => {
-  return apiClient<FindPetsByTagsApiResponse>({
-    path: \`/pet/findByTags\`,
-    params: { tags: args.tags },
-  });
+export const findPetsByTags = (
+  args: FindPetsByTagsApiArg,
+  options?: Options
+) => {
+  return apiClient<FindPetsByTagsApiResponse>(
+    { path: \`/pet/findByTags\`, params: { tags: args.tags } },
+    options
+  );
 };
-export const getPetById = (args: GetPetByIdApiArg) => {
-  return apiClient<GetPetByIdApiResponse>({ path: \`/pet/\${args.petId}\` });
+export const getPetById = (args: GetPetByIdApiArg, options?: Options) => {
+  return apiClient<GetPetByIdApiResponse>(
+    { path: \`/pet/\${args.petId}\` },
+    options
+  );
 };
-export const updatePetWithForm = (args: UpdatePetWithFormApiArg) => {
-  return apiClient<UpdatePetWithFormApiResponse>({
-    path: \`/pet/\${args.petId}\`,
-    method: "POST",
-    params: { name: args.name, status: args.status },
-  });
+export const updatePetWithForm = (
+  args: UpdatePetWithFormApiArg,
+  options?: Options
+) => {
+  return apiClient<UpdatePetWithFormApiResponse>(
+    {
+      path: \`/pet/\${args.petId}\`,
+      method: "POST",
+      params: { name: args.name, status: args.status },
+    },
+    options
+  );
 };
-export const deletePet = (args: DeletePetApiArg) => {
-  return apiClient<DeletePetApiResponse>({
-    path: \`/pet/\${args.petId}\`,
-    method: "DELETE",
-    headers: { api_key: args.apiKey },
-  });
+export const deletePet = (args: DeletePetApiArg, options?: Options) => {
+  return apiClient<DeletePetApiResponse>(
+    {
+      path: \`/pet/\${args.petId}\`,
+      method: "DELETE",
+      headers: { api_key: args.apiKey },
+    },
+    options
+  );
 };
-export const uploadFile = (args: UploadFileApiArg) => {
-  return apiClient<UploadFileApiResponse>({
-    path: \`/pet/\${args.petId}/uploadImage\`,
-    method: "POST",
-    body: args.body,
-    params: { additionalMetadata: args.additionalMetadata },
-  });
+export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
+  return apiClient<UploadFileApiResponse>(
+    {
+      path: \`/pet/\${args.petId}/uploadImage\`,
+      method: "POST",
+      body: args.body,
+      params: { additionalMetadata: args.additionalMetadata },
+    },
+    options
+  );
 };
-export const getInventory = (args: GetInventoryApiArg) => {
-  return apiClient<GetInventoryApiResponse>({ path: \`/store/inventory\` });
+export const getInventory = (args: GetInventoryApiArg, options?: Options) => {
+  return apiClient<GetInventoryApiResponse>(
+    { path: \`/store/inventory\` },
+    options
+  );
 };
-export const placeOrder = (args: PlaceOrderApiArg) => {
-  return apiClient<PlaceOrderApiResponse>({
-    path: \`/store/order\`,
-    method: "POST",
-    body: args.order,
-  });
+export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
+  return apiClient<PlaceOrderApiResponse>(
+    { path: \`/store/order\`, method: "POST", body: args.order },
+    options
+  );
 };
-export const getOrderById = (args: GetOrderByIdApiArg) => {
-  return apiClient<GetOrderByIdApiResponse>({
-    path: \`/store/order/\${args.orderId}\`,
-  });
+export const getOrderById = (args: GetOrderByIdApiArg, options?: Options) => {
+  return apiClient<GetOrderByIdApiResponse>(
+    { path: \`/store/order/\${args.orderId}\` },
+    options
+  );
 };
-export const deleteOrder = (args: DeleteOrderApiArg) => {
-  return apiClient<DeleteOrderApiResponse>({
-    path: \`/store/order/\${args.orderId}\`,
-    method: "DELETE",
-  });
+export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
+  return apiClient<DeleteOrderApiResponse>(
+    { path: \`/store/order/\${args.orderId}\`, method: "DELETE" },
+    options
+  );
 };
-export const createUser = (args: CreateUserApiArg) => {
-  return apiClient<CreateUserApiResponse>({
-    path: \`/user\`,
-    method: "POST",
-    body: args.user,
-  });
+export const createUser = (args: CreateUserApiArg, options?: Options) => {
+  return apiClient<CreateUserApiResponse>(
+    { path: \`/user\`, method: "POST", body: args.user },
+    options
+  );
 };
 export const createUsersWithListInput = (
-  args: CreateUsersWithListInputApiArg
+  args: CreateUsersWithListInputApiArg,
+  options?: Options
 ) => {
-  return apiClient<CreateUsersWithListInputApiResponse>({
-    path: \`/user/createWithList\`,
-    method: "POST",
-    body: args.body,
-  });
+  return apiClient<CreateUsersWithListInputApiResponse>(
+    { path: \`/user/createWithList\`, method: "POST", body: args.body },
+    options
+  );
 };
-export const loginUser = (args: LoginUserApiArg) => {
-  return apiClient<LoginUserApiResponse>({
-    path: \`/user/login\`,
-    params: { username: args.username, password: args.password },
-  });
+export const loginUser = (args: LoginUserApiArg, options?: Options) => {
+  return apiClient<LoginUserApiResponse>(
+    {
+      path: \`/user/login\`,
+      params: { username: args.username, password: args.password },
+    },
+    options
+  );
 };
-export const logoutUser = (args: LogoutUserApiArg) => {
-  return apiClient<LogoutUserApiResponse>({ path: \`/user/logout\` });
+export const logoutUser = (args: LogoutUserApiArg, options?: Options) => {
+  return apiClient<LogoutUserApiResponse>({ path: \`/user/logout\` }, options);
 };
-export const getUserByName = (args: GetUserByNameApiArg) => {
-  return apiClient<GetUserByNameApiResponse>({
-    path: \`/user/\${args.username}\`,
-  });
+export const getUserByName = (args: GetUserByNameApiArg, options?: Options) => {
+  return apiClient<GetUserByNameApiResponse>(
+    { path: \`/user/\${args.username}\` },
+    options
+  );
 };
-export const updateUser = (args: UpdateUserApiArg) => {
-  return apiClient<UpdateUserApiResponse>({
-    path: \`/user/\${args.username}\`,
-    method: "PUT",
-    body: args.user,
-  });
+export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
+  return apiClient<UpdateUserApiResponse>(
+    { path: \`/user/\${args.username}\`, method: "PUT", body: args.user },
+    options
+  );
 };
-export const deleteUser = (args: DeleteUserApiArg) => {
-  return apiClient<DeleteUserApiResponse>({
-    path: \`/user/\${args.username}\`,
-    method: "DELETE",
-  });
+export const deleteUser = (args: DeleteUserApiArg, options?: Options) => {
+  return apiClient<DeleteUserApiResponse>(
+    { path: \`/user/\${args.username}\`, method: "DELETE" },
+    options
+  );
 };
 export type UpdatePetApiResponse = /** status 200 Successful operation */ Pet;
 export type UpdatePetApiArg = {
@@ -651,21 +714,27 @@ export type User = {
 `;
 
 exports[`yaml parsing should generate params with non quoted keys if they don't contain special characters 1`] = `
-import { apiClient } from "./tmp/emptyApi";
-export const getStructureDefinition = (args: GetStructureDefinitionApiArg) => {
-  return apiClient<GetStructureDefinitionApiResponse>({
-    path: \`/StructureDefinition\`,
-    params: {
-      foo: args.foo,
-      _foo: args._foo,
-      "-bar-bar": args["-bar-bar"],
-      _bar_bar: args._bar_bar,
-      "foo:bar-foo.bar/foo": args["foo:bar-foo.bar/foo"],
-      foo_bar: args.fooBar,
-      namingConflict: args.namingConflict,
-      naming_conflict: args.naming_conflict,
+import { apiClient, type Options } from "./tmp/emptyApi";
+export const getStructureDefinition = (
+  args: GetStructureDefinitionApiArg,
+  options?: Options
+) => {
+  return apiClient<GetStructureDefinitionApiResponse>(
+    {
+      path: \`/StructureDefinition\`,
+      params: {
+        foo: args.foo,
+        _foo: args._foo,
+        "-bar-bar": args["-bar-bar"],
+        _bar_bar: args._bar_bar,
+        "foo:bar-foo.bar/foo": args["foo:bar-foo.bar/foo"],
+        foo_bar: args.fooBar,
+        namingConflict: args.namingConflict,
+        naming_conflict: args.naming_conflict,
+      },
     },
-  });
+    options
+  );
 };
 export type GetStructureDefinitionApiResponse = unknown;
 export type GetStructureDefinitionApiArg = {
@@ -690,121 +759,145 @@ export type GetStructureDefinitionApiArg = {
 `;
 
 exports[`yaml parsing should parse a yaml schema from a URL 1`] = `
-import { apiClient } from "./tmp/emptyApi";
-export const updatePet = (args: UpdatePetApiArg) => {
-  return apiClient<UpdatePetApiResponse>({
-    path: \`/pet\`,
-    method: "PUT",
-    body: args.pet,
-  });
+import { apiClient, type Options } from "./tmp/emptyApi";
+export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
+  return apiClient<UpdatePetApiResponse>(
+    { path: \`/pet\`, method: "PUT", body: args.pet },
+    options
+  );
 };
-export const addPet = (args: AddPetApiArg) => {
-  return apiClient<AddPetApiResponse>({
-    path: \`/pet\`,
-    method: "POST",
-    body: args.pet,
-  });
+export const addPet = (args: AddPetApiArg, options?: Options) => {
+  return apiClient<AddPetApiResponse>(
+    { path: \`/pet\`, method: "POST", body: args.pet },
+    options
+  );
 };
-export const findPetsByStatus = (args: FindPetsByStatusApiArg) => {
-  return apiClient<FindPetsByStatusApiResponse>({
-    path: \`/pet/findByStatus\`,
-    params: { status: args.status },
-  });
+export const findPetsByStatus = (
+  args: FindPetsByStatusApiArg,
+  options?: Options
+) => {
+  return apiClient<FindPetsByStatusApiResponse>(
+    { path: \`/pet/findByStatus\`, params: { status: args.status } },
+    options
+  );
 };
-export const findPetsByTags = (args: FindPetsByTagsApiArg) => {
-  return apiClient<FindPetsByTagsApiResponse>({
-    path: \`/pet/findByTags\`,
-    params: { tags: args.tags },
-  });
+export const findPetsByTags = (
+  args: FindPetsByTagsApiArg,
+  options?: Options
+) => {
+  return apiClient<FindPetsByTagsApiResponse>(
+    { path: \`/pet/findByTags\`, params: { tags: args.tags } },
+    options
+  );
 };
-export const getPetById = (args: GetPetByIdApiArg) => {
-  return apiClient<GetPetByIdApiResponse>({ path: \`/pet/\${args.petId}\` });
+export const getPetById = (args: GetPetByIdApiArg, options?: Options) => {
+  return apiClient<GetPetByIdApiResponse>(
+    { path: \`/pet/\${args.petId}\` },
+    options
+  );
 };
-export const updatePetWithForm = (args: UpdatePetWithFormApiArg) => {
-  return apiClient<UpdatePetWithFormApiResponse>({
-    path: \`/pet/\${args.petId}\`,
-    method: "POST",
-    params: { name: args.name, status: args.status },
-  });
+export const updatePetWithForm = (
+  args: UpdatePetWithFormApiArg,
+  options?: Options
+) => {
+  return apiClient<UpdatePetWithFormApiResponse>(
+    {
+      path: \`/pet/\${args.petId}\`,
+      method: "POST",
+      params: { name: args.name, status: args.status },
+    },
+    options
+  );
 };
-export const deletePet = (args: DeletePetApiArg) => {
-  return apiClient<DeletePetApiResponse>({
-    path: \`/pet/\${args.petId}\`,
-    method: "DELETE",
-    headers: { api_key: args.apiKey },
-  });
+export const deletePet = (args: DeletePetApiArg, options?: Options) => {
+  return apiClient<DeletePetApiResponse>(
+    {
+      path: \`/pet/\${args.petId}\`,
+      method: "DELETE",
+      headers: { api_key: args.apiKey },
+    },
+    options
+  );
 };
-export const uploadFile = (args: UploadFileApiArg) => {
-  return apiClient<UploadFileApiResponse>({
-    path: \`/pet/\${args.petId}/uploadImage\`,
-    method: "POST",
-    body: args.body,
-    params: { additionalMetadata: args.additionalMetadata },
-  });
+export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
+  return apiClient<UploadFileApiResponse>(
+    {
+      path: \`/pet/\${args.petId}/uploadImage\`,
+      method: "POST",
+      body: args.body,
+      params: { additionalMetadata: args.additionalMetadata },
+    },
+    options
+  );
 };
-export const getInventory = (args: GetInventoryApiArg) => {
-  return apiClient<GetInventoryApiResponse>({ path: \`/store/inventory\` });
+export const getInventory = (args: GetInventoryApiArg, options?: Options) => {
+  return apiClient<GetInventoryApiResponse>(
+    { path: \`/store/inventory\` },
+    options
+  );
 };
-export const placeOrder = (args: PlaceOrderApiArg) => {
-  return apiClient<PlaceOrderApiResponse>({
-    path: \`/store/order\`,
-    method: "POST",
-    body: args.order,
-  });
+export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
+  return apiClient<PlaceOrderApiResponse>(
+    { path: \`/store/order\`, method: "POST", body: args.order },
+    options
+  );
 };
-export const getOrderById = (args: GetOrderByIdApiArg) => {
-  return apiClient<GetOrderByIdApiResponse>({
-    path: \`/store/order/\${args.orderId}\`,
-  });
+export const getOrderById = (args: GetOrderByIdApiArg, options?: Options) => {
+  return apiClient<GetOrderByIdApiResponse>(
+    { path: \`/store/order/\${args.orderId}\` },
+    options
+  );
 };
-export const deleteOrder = (args: DeleteOrderApiArg) => {
-  return apiClient<DeleteOrderApiResponse>({
-    path: \`/store/order/\${args.orderId}\`,
-    method: "DELETE",
-  });
+export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
+  return apiClient<DeleteOrderApiResponse>(
+    { path: \`/store/order/\${args.orderId}\`, method: "DELETE" },
+    options
+  );
 };
-export const createUser = (args: CreateUserApiArg) => {
-  return apiClient<CreateUserApiResponse>({
-    path: \`/user\`,
-    method: "POST",
-    body: args.user,
-  });
+export const createUser = (args: CreateUserApiArg, options?: Options) => {
+  return apiClient<CreateUserApiResponse>(
+    { path: \`/user\`, method: "POST", body: args.user },
+    options
+  );
 };
 export const createUsersWithListInput = (
-  args: CreateUsersWithListInputApiArg
+  args: CreateUsersWithListInputApiArg,
+  options?: Options
 ) => {
-  return apiClient<CreateUsersWithListInputApiResponse>({
-    path: \`/user/createWithList\`,
-    method: "POST",
-    body: args.body,
-  });
+  return apiClient<CreateUsersWithListInputApiResponse>(
+    { path: \`/user/createWithList\`, method: "POST", body: args.body },
+    options
+  );
 };
-export const loginUser = (args: LoginUserApiArg) => {
-  return apiClient<LoginUserApiResponse>({
-    path: \`/user/login\`,
-    params: { username: args.username, password: args.password },
-  });
+export const loginUser = (args: LoginUserApiArg, options?: Options) => {
+  return apiClient<LoginUserApiResponse>(
+    {
+      path: \`/user/login\`,
+      params: { username: args.username, password: args.password },
+    },
+    options
+  );
 };
-export const logoutUser = (args: LogoutUserApiArg) => {
-  return apiClient<LogoutUserApiResponse>({ path: \`/user/logout\` });
+export const logoutUser = (args: LogoutUserApiArg, options?: Options) => {
+  return apiClient<LogoutUserApiResponse>({ path: \`/user/logout\` }, options);
 };
-export const getUserByName = (args: GetUserByNameApiArg) => {
-  return apiClient<GetUserByNameApiResponse>({
-    path: \`/user/\${args.username}\`,
-  });
+export const getUserByName = (args: GetUserByNameApiArg, options?: Options) => {
+  return apiClient<GetUserByNameApiResponse>(
+    { path: \`/user/\${args.username}\` },
+    options
+  );
 };
-export const updateUser = (args: UpdateUserApiArg) => {
-  return apiClient<UpdateUserApiResponse>({
-    path: \`/user/\${args.username}\`,
-    method: "PUT",
-    body: args.user,
-  });
+export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
+  return apiClient<UpdateUserApiResponse>(
+    { path: \`/user/\${args.username}\`, method: "PUT", body: args.user },
+    options
+  );
 };
-export const deleteUser = (args: DeleteUserApiArg) => {
-  return apiClient<DeleteUserApiResponse>({
-    path: \`/user/\${args.username}\`,
-    method: "DELETE",
-  });
+export const deleteUser = (args: DeleteUserApiArg, options?: Options) => {
+  return apiClient<DeleteUserApiResponse>(
+    { path: \`/user/\${args.username}\`, method: "DELETE" },
+    options
+  );
 };
 export type UpdatePetApiResponse = /** status 200 Successful operation */ Pet;
 export type UpdatePetApiArg = {
