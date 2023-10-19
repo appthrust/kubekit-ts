@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-typescript-client-codegen-openapi",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "kahirokunn",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
-    "@babel/preset-typescript": "^7.12.7",
+    "@babel/preset-typescript": "^7.23.2",
     "@kubernetes/client-node": "^0.19.0",
     "@reduxjs/toolkit": "^1.6.0",
     "@types/commander": "^2.12.2",
@@ -52,19 +52,16 @@
     "pretty-quick": "^3.1.0",
     "ts-jest": "^27",
     "ts-node": "^10.4.0",
+    "typescript": "^5.2.2",
     "yalc": "^1.0.0-pre.47"
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.0.2",
-    "@rtk-query/oazapfts-patched": "^3.6.0-2",
     "commander": "^6.2.0",
+    "oazapfts": "^4.10.0",
     "prettier": "^2.8.8",
     "semver": "^7.3.5",
-    "swagger2openapi": "^7.0.4",
-    "typescript": ">=4.1 <=4.5"
-  },
-  "resolutions": {
-    "typescript": "~4.6"
+    "swagger2openapi": "^7.0.4"
   },
   "husky": {
     "hooks": {

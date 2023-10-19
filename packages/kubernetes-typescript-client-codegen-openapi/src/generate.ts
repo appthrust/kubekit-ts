@@ -6,13 +6,13 @@ import ApiGenerator, {
   getReferenceName,
   isReference,
   supportDeepObjects,
-} from '@rtk-query/oazapfts-patched/lib/codegen/generate';
+} from 'oazapfts/lib/codegen/generate';
 import {
   createQuestionToken,
   keywordType,
   createPropertyAssignment,
   isValidIdentifier,
-} from '@rtk-query/oazapfts-patched/lib/codegen/tscodegen';
+} from 'oazapfts/lib/codegen/tscodegen';
 import type { OpenAPIV3 } from 'openapi-types';
 import type { EndpointMatcher, GenerationOptions, OperationDefinition, TextMatcher } from './types';
 import { capitalize, getOperationDefinitions, getV3Doc, removeUndefined } from './utils';
@@ -175,7 +175,6 @@ export async function generateApi(
     const ResponseTypeName = factory.createTypeReferenceNode(
       registerInterface(
         factory.createTypeAliasDeclaration(
-          undefined,
           [factory.createModifier(ts.SyntaxKind.ExportKeyword)],
           capitalize(operationName + responseSuffix),
           undefined,
@@ -257,7 +256,6 @@ export async function generateApi(
     const QueryArg = factory.createTypeReferenceNode(
       registerInterface(
         factory.createTypeAliasDeclaration(
-          undefined,
           [factory.createModifier(ts.SyntaxKind.ExportKeyword)],
           capitalize(operationName + argSuffix),
           undefined,
