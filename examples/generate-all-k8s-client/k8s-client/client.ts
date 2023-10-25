@@ -59,14 +59,16 @@ const interceptors: Interceptor[] = [
     kc.loadFromDefault()
     const nextOpts: https.RequestOptions = { ...opts }
     // @kubernetes/client-node@0.18用
-    await kc.applytoHTTPSOptions(nextOpts)
+    // await kc.applytoHTTPSOptions(nextOpts)
     // @kubernetes/client-node@0.19用
-    // await kc.applyToHTTPSOptions(nextOpts)
+    await kc.applyToHTTPSOptions(nextOpts)
+
     const cluster = kc.getCurrentCluster()
     if (cluster?.server) {
       const url = new URL(cluster.server)
       nextOpts.host = url.hostname
       nextOpts.protocol = url.protocol
+      nextOpts.port = url.port
     }
     return nextOpts
   },
@@ -85,7 +87,11 @@ type RetryOptions = {
   maxRetries?: number | undefined
 }
 
-export type Options = RetryOptions
+type HttpHeaderOptions = {
+  headers?: Record<string, string> | undefined
+}
+
+export type Options = RetryOptions & HttpHeaderOptions
 
 export async function apiClient<Response>(
   args: QueryArgsSpec,
@@ -119,6 +125,9 @@ export async function apiClient<Response>(
 
   let httpsOptions: https.RequestOptions = {
     path,
+    headers: {
+      ...options.headers,
+    },
   }
   if (method) {
     httpsOptions.method = method
@@ -134,10 +143,17 @@ export async function apiClient<Response>(
     )
   }
 
-  if (!httpsOptions.agent && httpsOptions.ca) {
-    httpsOptions.agent = new https.Agent({
+  if (
+    !httpsOptions.agent &&
+    (httpsOptions.ca || httpsOptions.cert || httpsOptions.key)
+  ) {
+    const agent = new https.Agent({
       ca: httpsOptions.ca,
+      cert: httpsOptions.cert,
+      key: httpsOptions.key,
+      port: httpsOptions.port ? Number(httpsOptions.port) : undefined,
     })
+    httpsOptions.agent = agent
   }
 
   if (!httpsOptions.protocol) {
