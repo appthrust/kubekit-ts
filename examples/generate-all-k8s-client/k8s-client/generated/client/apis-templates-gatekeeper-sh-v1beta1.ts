@@ -126,7 +126,7 @@ export const patchTemplatesGatekeeperShV1Beta1ConstraintTemplate = (
     {
       path: `/apis/templates.gatekeeper.sh/v1beta1/constrainttemplates/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +177,7 @@ export const patchTemplatesGatekeeperShV1Beta1ConstraintTemplateStatus = (
     {
       path: `/apis/templates.gatekeeper.sh/v1beta1/constrainttemplates/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -361,7 +361,7 @@ export type PatchTemplatesGatekeeperShV1Beta1ConstraintTemplateApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadTemplatesGatekeeperShV1Beta1ConstraintTemplateStatusApiResponse =
   /** status 200 OK */ ShGatekeeperTemplatesV1Beta1ConstraintTemplate
@@ -408,7 +408,7 @@ export type PatchTemplatesGatekeeperShV1Beta1ConstraintTemplateStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
@@ -556,3 +556,4 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object

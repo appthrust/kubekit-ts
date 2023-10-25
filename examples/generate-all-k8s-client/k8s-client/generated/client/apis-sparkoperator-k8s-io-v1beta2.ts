@@ -127,7 +127,7 @@ export const patchSparkoperatorV1Beta2NamespacedScheduledSparkApplication = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -181,7 +181,7 @@ export const patchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatus 
       {
         path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications/${args.name}/status`,
         method: 'PATCH',
-        body: args.body,
+        body: args.ioK8SApimachineryPkgApisMetaV1Patch,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -320,7 +320,7 @@ export const patchSparkoperatorV1Beta2NamespacedSparkApplication = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/sparkapplications/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -371,7 +371,7 @@ export const patchSparkoperatorV1Beta2NamespacedSparkApplicationStatus = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/sparkapplications/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -624,7 +624,7 @@ export type PatchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ReadSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
@@ -679,7 +679,7 @@ export type PatchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusAp
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2SparkApplicationList
@@ -867,7 +867,7 @@ export type PatchSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2SparkApplication
@@ -920,7 +920,7 @@ export type PatchSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplicationList
@@ -3622,6 +3622,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SSparkoperatorV1Beta2SparkApplication = {
   apiVersion?: string | undefined
   kind?: string | undefined

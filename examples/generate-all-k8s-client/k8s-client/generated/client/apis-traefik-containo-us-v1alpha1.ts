@@ -246,7 +246,7 @@ export const patchTraefikContainoUsV1Alpha1NamespacedIngressRoute = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutes/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -386,7 +386,7 @@ export const patchTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutetcps/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -526,7 +526,7 @@ export const patchTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressrouteudps/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -665,7 +665,7 @@ export const patchTraefikContainoUsV1Alpha1NamespacedMiddleware = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewares/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -805,7 +805,7 @@ export const patchTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewaretcps/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -945,7 +945,7 @@ export const patchTraefikContainoUsV1Alpha1NamespacedServersTransport = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/serverstransports/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1084,7 +1084,7 @@ export const patchTraefikContainoUsV1Alpha1NamespacedTlsOption = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsoptions/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1223,7 +1223,7 @@ export const patchTraefikContainoUsV1Alpha1NamespacedTlsStore = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsstores/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1363,7 +1363,7 @@ export const patchTraefikContainoUsV1Alpha1NamespacedTraefikService = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/traefikservices/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1889,7 +1889,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1IngressRouteTcpList
@@ -2077,7 +2077,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1IngressRouteUdpList
@@ -2265,7 +2265,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1MiddlewareList
@@ -2453,7 +2453,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1MiddlewareTcpList
@@ -2641,7 +2641,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1ServersTransportList
@@ -2829,7 +2829,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1TlsOptionList
@@ -3017,7 +3017,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1TlsStoreList
@@ -3205,7 +3205,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1TraefikServiceList
@@ -3393,7 +3393,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListTraefikContainoUsV1Alpha1ServersTransportForAllNamespacesApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1ServersTransportList
@@ -4155,6 +4155,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type UsContainoTraefikV1Alpha1ServersTransport = {
   apiVersion?: string | undefined
   kind?: string | undefined

@@ -138,7 +138,7 @@ export const patchStorageV1CsiDriver = (
     {
       path: `/apis/storage.k8s.io/v1/csidrivers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -280,7 +280,7 @@ export const patchStorageV1CsiNode = (
     {
       path: `/apis/storage.k8s.io/v1/csinodes/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -446,7 +446,7 @@ export const patchStorageV1NamespacedCsiStorageCapacity = (
     {
       path: `/apis/storage.k8s.io/v1/namespaces/${args['namespace']}/csistoragecapacities/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -588,7 +588,7 @@ export const patchStorageV1StorageClass = (
     {
       path: `/apis/storage.k8s.io/v1/storageclasses/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -730,7 +730,7 @@ export const patchStorageV1VolumeAttachment = (
     {
       path: `/apis/storage.k8s.io/v1/volumeattachments/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -781,7 +781,7 @@ export const patchStorageV1VolumeAttachmentStatus = (
     {
       path: `/apis/storage.k8s.io/v1/volumeattachments/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1230,7 +1230,7 @@ export type PatchStorageV1CsiDriverApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListStorageV1CsiNodeApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1CsiNodeList
@@ -1402,7 +1402,7 @@ export type PatchStorageV1CsiNodeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListStorageV1CsiStorageCapacityForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1CsiStorageCapacityList
@@ -1638,7 +1638,7 @@ export type PatchStorageV1NamespacedCsiStorageCapacityApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListStorageV1StorageClassApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1StorageClassList
@@ -1810,7 +1810,7 @@ export type PatchStorageV1StorageClassApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListStorageV1VolumeAttachmentApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1VolumeAttachmentList
@@ -1982,7 +1982,7 @@ export type PatchStorageV1VolumeAttachmentApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadStorageV1VolumeAttachmentStatusApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1VolumeAttachment
@@ -2026,7 +2026,7 @@ export type PatchStorageV1VolumeAttachmentStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type WatchStorageV1CsiDriverListApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1WatchEvent
@@ -2678,6 +2678,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApiStorageV1VolumeNodeResources = {
   count?: number | undefined
 }

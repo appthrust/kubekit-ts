@@ -138,7 +138,7 @@ export const patchFlowcontrolApiserverV1Beta2FlowSchema = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta2/flowschemas/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -189,7 +189,7 @@ export const patchFlowcontrolApiserverV1Beta2FlowSchemaStatus = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta2/flowschemas/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -332,7 +332,7 @@ export const patchFlowcontrolApiserverV1Beta2PriorityLevelConfiguration = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta2/prioritylevelconfigurations/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -385,7 +385,7 @@ export const patchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatus =
       {
         path: `/apis/flowcontrol.apiserver.k8s.io/v1beta2/prioritylevelconfigurations/${args.name}/status`,
         method: 'PATCH',
-        body: args.body,
+        body: args.ioK8SApimachineryPkgApisMetaV1Patch,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -670,7 +670,7 @@ export type PatchFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadFlowcontrolApiserverV1Beta2FlowSchemaStatusApiResponse =
   /** status 200 OK */ IoK8SApiFlowcontrolV1Beta2FlowSchema
@@ -714,7 +714,7 @@ export type PatchFlowcontrolApiserverV1Beta2FlowSchemaStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiResponse =
   /** status 200 OK */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfigurationList
@@ -894,7 +894,7 @@ export type PatchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusApiResponse =
   /** status 200 OK */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
@@ -941,7 +941,7 @@ export type PatchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusApiA
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type WatchFlowcontrolApiserverV1Beta2FlowSchemaListApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1WatchEvent
@@ -1307,6 +1307,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApiFlowcontrolV1Beta2QueuingConfiguration = {
   handSize?: number | undefined
   queueLengthLimit?: number | undefined

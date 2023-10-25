@@ -139,7 +139,7 @@ export const patchAdmissionregistrationV1MutatingWebhookConfiguration = (
     {
       path: `/apis/admissionregistration.k8s.io/v1/mutatingwebhookconfigurations/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -282,7 +282,7 @@ export const patchAdmissionregistrationV1ValidatingWebhookConfiguration = (
     {
       path: `/apis/admissionregistration.k8s.io/v1/validatingwebhookconfigurations/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -568,7 +568,7 @@ export type PatchAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse =
   /** status 200 OK */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfigurationList
@@ -748,7 +748,7 @@ export type PatchAdmissionregistrationV1ValidatingWebhookConfigurationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type WatchAdmissionregistrationV1MutatingWebhookConfigurationListApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1WatchEvent
@@ -1107,6 +1107,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApiAdmissionregistrationV1ValidatingWebhook = {
   admissionReviewVersions: string[]
   clientConfig: IoK8SApiAdmissionregistrationV1WebhookClientConfig

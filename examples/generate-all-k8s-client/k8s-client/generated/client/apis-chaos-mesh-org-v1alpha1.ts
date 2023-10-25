@@ -342,7 +342,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedAwsChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/awschaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -481,7 +481,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedAzureChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/azurechaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -620,7 +620,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedBlockChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/blockchaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -759,7 +759,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedDnsChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/dnschaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -898,7 +898,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedGcpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/gcpchaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1037,7 +1037,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedHttpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/httpchaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1176,7 +1176,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedIoChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/iochaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1315,7 +1315,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedJvmChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/jvmchaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1454,7 +1454,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedKernelChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/kernelchaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1593,7 +1593,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedNetworkChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/networkchaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1733,7 +1733,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachinechaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1872,7 +1872,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPhysicalMachine = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachines/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2011,7 +2011,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podchaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2150,7 +2150,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodHttpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podhttpchaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2201,7 +2201,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podhttpchaos/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2340,7 +2340,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodIoChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podiochaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2391,7 +2391,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podiochaos/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2530,7 +2530,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podnetworkchaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2581,7 +2581,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podnetworkchaos/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2720,7 +2720,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedSchedule = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/schedules/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2859,7 +2859,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedStatusCheck = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/statuschecks/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2910,7 +2910,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedStatusCheckStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/statuschecks/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3049,7 +3049,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedStressChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/stresschaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3188,7 +3188,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedTimeChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/timechaos/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3327,7 +3327,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedWorkflowNode = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflownodes/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3378,7 +3378,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflownodes/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3517,7 +3517,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedWorkflow = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflows/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3568,7 +3568,7 @@ export const patchChaosMeshOrgV1Alpha1NamespacedWorkflowStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflows/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -4491,7 +4491,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1AzureChaosList
@@ -4678,7 +4678,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1BlockChaosList
@@ -4865,7 +4865,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1DnsChaosList
@@ -5052,7 +5052,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1GcpChaosList
@@ -5239,7 +5239,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1HttpChaosList
@@ -5426,7 +5426,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1IoChaosList
@@ -5613,7 +5613,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1JvmChaosList
@@ -5800,7 +5800,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1KernelChaosList
@@ -5987,7 +5987,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1NetworkChaosList
@@ -6174,7 +6174,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PhysicalMachineChaosList
@@ -6362,7 +6362,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PhysicalMachineList
@@ -6550,7 +6550,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodChaosList
@@ -6737,7 +6737,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodHttpChaosList
@@ -6924,7 +6924,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodHttpChaos
@@ -6976,7 +6976,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodIoChaosList
@@ -7163,7 +7163,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodIoChaos
@@ -7215,7 +7215,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodNetworkChaosList
@@ -7403,7 +7403,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodNetworkChaos
@@ -7455,7 +7455,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1ScheduleList
@@ -7642,7 +7642,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1StatusCheckList
@@ -7829,7 +7829,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1StatusCheck
@@ -7881,7 +7881,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1StressChaosList
@@ -8068,7 +8068,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1TimeChaosList
@@ -8255,7 +8255,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1WorkflowNodeList
@@ -8442,7 +8442,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1WorkflowNode
@@ -8494,7 +8494,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1WorkflowList
@@ -8681,7 +8681,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1Workflow
@@ -8733,7 +8733,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListChaosMeshOrgV1Alpha1NetworkChaosForAllNamespacesApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1NetworkChaosList
@@ -10244,6 +10244,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type OrgChaosMeshV1Alpha1NetworkChaos = {
   apiVersion?: string | undefined
   kind?: string | undefined

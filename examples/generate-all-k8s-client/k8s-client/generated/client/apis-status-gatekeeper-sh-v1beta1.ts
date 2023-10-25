@@ -201,7 +201,7 @@ export const patchStatusGatekeeperShV1Beta1NamespacedConstraintPodStatus = (
     {
       path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/constraintpodstatuses/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -347,7 +347,7 @@ export const patchStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatus
       {
         path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/constrainttemplatepodstatuses/${args.name}`,
         method: 'PATCH',
-        body: args.body,
+        body: args.ioK8SApimachineryPkgApisMetaV1Patch,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -487,7 +487,7 @@ export const patchStatusGatekeeperShV1Beta1NamespacedMutatorPodStatus = (
     {
       path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/mutatorpodstatuses/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -830,7 +830,7 @@ export type PatchStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg =
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiResponse =
   /** status 200 OK */ ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatusList
@@ -1024,7 +1024,7 @@ export type PatchStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusA
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiResponse =
   /** status 200 OK */ ShGatekeeperStatusV1Beta1MutatorPodStatusList
@@ -1212,7 +1212,7 @@ export type PatchStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
@@ -1379,3 +1379,4 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object

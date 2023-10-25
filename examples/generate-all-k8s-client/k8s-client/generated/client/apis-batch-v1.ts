@@ -186,7 +186,7 @@ export const patchBatchV1NamespacedCronJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/cronjobs/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -237,7 +237,7 @@ export const patchBatchV1NamespacedCronJobStatus = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/cronjobs/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -379,7 +379,7 @@ export const patchBatchV1NamespacedJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/jobs/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -430,7 +430,7 @@ export const patchBatchV1NamespacedJobStatus = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/jobs/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -865,7 +865,7 @@ export type PatchBatchV1NamespacedCronJobApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadBatchV1NamespacedCronJobStatusApiResponse =
   /** status 200 OK */ IoK8SApiBatchV1CronJob
@@ -915,7 +915,7 @@ export type PatchBatchV1NamespacedCronJobStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListBatchV1NamespacedJobApiResponse =
   /** status 200 OK */ IoK8SApiBatchV1JobList
@@ -1101,7 +1101,7 @@ export type PatchBatchV1NamespacedJobApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadBatchV1NamespacedJobStatusApiResponse =
   /** status 200 OK */ IoK8SApiBatchV1Job
@@ -1149,7 +1149,7 @@ export type PatchBatchV1NamespacedJobStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type WatchBatchV1CronJobListForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1WatchEvent
@@ -2352,6 +2352,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApimachineryPkgRuntimeRawExtension = object
 export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
   object: IoK8SApimachineryPkgRuntimeRawExtension

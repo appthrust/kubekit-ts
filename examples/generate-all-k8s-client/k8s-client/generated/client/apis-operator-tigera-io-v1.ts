@@ -126,7 +126,7 @@ export const patchOperatorTigeraIoV1ApiServer = (
     {
       path: `/apis/operator.tigera.io/v1/apiservers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +177,7 @@ export const patchOperatorTigeraIoV1ApiServerStatus = (
     {
       path: `/apis/operator.tigera.io/v1/apiservers/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -316,7 +316,7 @@ export const patchOperatorTigeraIoV1ImageSet = (
     {
       path: `/apis/operator.tigera.io/v1/imagesets/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -367,7 +367,7 @@ export const patchOperatorTigeraIoV1ImageSetStatus = (
     {
       path: `/apis/operator.tigera.io/v1/imagesets/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -506,7 +506,7 @@ export const patchOperatorTigeraIoV1Installation = (
     {
       path: `/apis/operator.tigera.io/v1/installations/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -557,7 +557,7 @@ export const patchOperatorTigeraIoV1InstallationStatus = (
     {
       path: `/apis/operator.tigera.io/v1/installations/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -696,7 +696,7 @@ export const patchOperatorTigeraIoV1TigeraStatus = (
     {
       path: `/apis/operator.tigera.io/v1/tigerastatuses/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -747,7 +747,7 @@ export const patchOperatorTigeraIoV1TigeraStatusStatus = (
     {
       path: `/apis/operator.tigera.io/v1/tigerastatuses/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -928,7 +928,7 @@ export type PatchOperatorTigeraIoV1ApiServerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadOperatorTigeraIoV1ApiServerStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ApiServer
@@ -974,7 +974,7 @@ export type PatchOperatorTigeraIoV1ApiServerStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListOperatorTigeraIoV1ImageSetApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ImageSetList
@@ -1144,7 +1144,7 @@ export type PatchOperatorTigeraIoV1ImageSetApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadOperatorTigeraIoV1ImageSetStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ImageSet
@@ -1190,7 +1190,7 @@ export type PatchOperatorTigeraIoV1ImageSetStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListOperatorTigeraIoV1InstallationApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1InstallationList
@@ -1363,7 +1363,7 @@ export type PatchOperatorTigeraIoV1InstallationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadOperatorTigeraIoV1InstallationStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1Installation
@@ -1409,7 +1409,7 @@ export type PatchOperatorTigeraIoV1InstallationStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListOperatorTigeraIoV1TigeraStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1TigeraStatusList
@@ -1582,7 +1582,7 @@ export type PatchOperatorTigeraIoV1TigeraStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadOperatorTigeraIoV1TigeraStatusStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1TigeraStatus
@@ -1628,7 +1628,7 @@ export type PatchOperatorTigeraIoV1TigeraStatusStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
@@ -2098,6 +2098,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoTigeraOperatorV1ImageSet = {
   apiVersion?: string | undefined
   kind?: string | undefined

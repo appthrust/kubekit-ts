@@ -222,7 +222,7 @@ export const patchVeleroIoV1NamespacedBackup = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backups/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -361,7 +361,7 @@ export const patchVeleroIoV1NamespacedBackupStorageLocation = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backupstoragelocations/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -500,7 +500,7 @@ export const patchVeleroIoV1NamespacedDeleteBackupRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/deletebackuprequests/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -639,7 +639,7 @@ export const patchVeleroIoV1NamespacedDownloadRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/downloadrequests/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -778,7 +778,7 @@ export const patchVeleroIoV1NamespacedPodVolumeBackup = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumebackups/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -917,7 +917,7 @@ export const patchVeleroIoV1NamespacedPodVolumeRestore = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumerestores/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1056,7 +1056,7 @@ export const patchVeleroIoV1NamespacedResticRepository = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/resticrepositories/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1195,7 +1195,7 @@ export const patchVeleroIoV1NamespacedRestore = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/restores/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1334,7 +1334,7 @@ export const patchVeleroIoV1NamespacedSchedule = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/schedules/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1473,7 +1473,7 @@ export const patchVeleroIoV1NamespacedServerStatusRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/serverstatusrequests/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1612,7 +1612,7 @@ export const patchVeleroIoV1NamespacedVolumeSnapshotLocation = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/volumesnapshotlocations/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2158,7 +2158,7 @@ export type PatchVeleroIoV1NamespacedBackupApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1NamespacedBackupStorageLocationApiResponse =
   /** status 200 OK */ IoVeleroV1BackupStorageLocationList
@@ -2345,7 +2345,7 @@ export type PatchVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1NamespacedDeleteBackupRequestApiResponse =
   /** status 200 OK */ IoVeleroV1DeleteBackupRequestList
@@ -2532,7 +2532,7 @@ export type PatchVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1NamespacedDownloadRequestApiResponse =
   /** status 200 OK */ IoVeleroV1DownloadRequestList
@@ -2719,7 +2719,7 @@ export type PatchVeleroIoV1NamespacedDownloadRequestApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1NamespacedPodVolumeBackupApiResponse =
   /** status 200 OK */ IoVeleroV1PodVolumeBackupList
@@ -2906,7 +2906,7 @@ export type PatchVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1NamespacedPodVolumeRestoreApiResponse =
   /** status 200 OK */ IoVeleroV1PodVolumeRestoreList
@@ -3093,7 +3093,7 @@ export type PatchVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1NamespacedResticRepositoryApiResponse =
   /** status 200 OK */ IoVeleroV1ResticRepositoryList
@@ -3280,7 +3280,7 @@ export type PatchVeleroIoV1NamespacedResticRepositoryApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1NamespacedRestoreApiResponse =
   /** status 200 OK */ IoVeleroV1RestoreList
@@ -3465,7 +3465,7 @@ export type PatchVeleroIoV1NamespacedRestoreApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1NamespacedScheduleApiResponse =
   /** status 200 OK */ IoVeleroV1ScheduleList
@@ -3652,7 +3652,7 @@ export type PatchVeleroIoV1NamespacedScheduleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1NamespacedServerStatusRequestApiResponse =
   /** status 200 OK */ IoVeleroV1ServerStatusRequestList
@@ -3839,7 +3839,7 @@ export type PatchVeleroIoV1NamespacedServerStatusRequestApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse =
   /** status 200 OK */ IoVeleroV1VolumeSnapshotLocationList
@@ -4026,7 +4026,7 @@ export type PatchVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListVeleroIoV1PodVolumeBackupForAllNamespacesApiResponse =
   /** status 200 OK */ IoVeleroV1PodVolumeBackupList
@@ -4701,6 +4701,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoVeleroV1PodVolumeBackup = {
   apiVersion?: string | undefined
   kind?: string | undefined

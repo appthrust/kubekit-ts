@@ -150,7 +150,7 @@ export const patchMonitoringCoreosComV1NamespacedAlertmanager = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/alertmanagers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -289,7 +289,7 @@ export const patchMonitoringCoreosComV1NamespacedPodMonitor = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/podmonitors/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -428,7 +428,7 @@ export const patchMonitoringCoreosComV1NamespacedProbe = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/probes/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -567,7 +567,7 @@ export const patchMonitoringCoreosComV1NamespacedPrometheus = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheuses/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -618,7 +618,7 @@ export const patchMonitoringCoreosComV1NamespacedPrometheusStatus = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheuses/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -757,7 +757,7 @@ export const patchMonitoringCoreosComV1NamespacedPrometheusRule = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheusrules/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -896,7 +896,7 @@ export const patchMonitoringCoreosComV1NamespacedServiceMonitor = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/servicemonitors/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1035,7 +1035,7 @@ export const patchMonitoringCoreosComV1NamespacedThanosRuler = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/thanosrulers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1423,7 +1423,7 @@ export type PatchMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListMonitoringCoreosComV1NamespacedPodMonitorApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1PodMonitorList
@@ -1610,7 +1610,7 @@ export type PatchMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListMonitoringCoreosComV1NamespacedProbeApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1ProbeList
@@ -1797,7 +1797,7 @@ export type PatchMonitoringCoreosComV1NamespacedProbeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListMonitoringCoreosComV1NamespacedPrometheusApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1PrometheusList
@@ -1984,7 +1984,7 @@ export type PatchMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadMonitoringCoreosComV1NamespacedPrometheusStatusApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1Prometheus
@@ -2036,7 +2036,7 @@ export type PatchMonitoringCoreosComV1NamespacedPrometheusStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1PrometheusRuleList
@@ -2224,7 +2224,7 @@ export type PatchMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListMonitoringCoreosComV1NamespacedServiceMonitorApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1ServiceMonitorList
@@ -2412,7 +2412,7 @@ export type PatchMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListMonitoringCoreosComV1NamespacedThanosRulerApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1ThanosRulerList
@@ -2599,7 +2599,7 @@ export type PatchMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListMonitoringCoreosComV1PodMonitorForAllNamespacesApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1PodMonitorList
@@ -4699,6 +4699,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type ComCoreosMonitoringV1PodMonitor = {
   apiVersion?: string | undefined
   kind?: string | undefined

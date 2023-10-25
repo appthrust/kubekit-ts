@@ -126,7 +126,7 @@ export const patchStorageosComV1NamespacedStorageOsCluster = (
     {
       path: `/apis/storageos.com/v1/namespaces/${args['namespace']}/storageosclusters/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +177,7 @@ export const patchStorageosComV1NamespacedStorageOsClusterStatus = (
     {
       path: `/apis/storageos.com/v1/namespaces/${args['namespace']}/storageosclusters/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -398,7 +398,7 @@ export type PatchStorageosComV1NamespacedStorageOsClusterApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadStorageosComV1NamespacedStorageOsClusterStatusApiResponse =
   /** status 200 OK */ ComStorageosV1StorageOsCluster
@@ -450,7 +450,7 @@ export type PatchStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListStorageosComV1StorageOsClusterForAllNamespacesApiResponse =
   /** status 200 OK */ ComStorageosV1StorageOsClusterList
@@ -783,3 +783,4 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object

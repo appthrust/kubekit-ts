@@ -162,7 +162,7 @@ export const patchAutoscalingV2NamespacedHorizontalPodAutoscaler = (
     {
       path: `/apis/autoscaling/v2/namespaces/${args['namespace']}/horizontalpodautoscalers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -213,7 +213,7 @@ export const patchAutoscalingV2NamespacedHorizontalPodAutoscalerStatus = (
     {
       path: `/apis/autoscaling/v2/namespaces/${args['namespace']}/horizontalpodautoscalers/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -535,7 +535,7 @@ export type PatchAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadAutoscalingV2NamespacedHorizontalPodAutoscalerStatusApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV2HorizontalPodAutoscaler
@@ -586,7 +586,7 @@ export type PatchAutoscalingV2NamespacedHorizontalPodAutoscalerStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type WatchAutoscalingV2HorizontalPodAutoscalerListForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1WatchEvent
@@ -988,6 +988,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApimachineryPkgRuntimeRawExtension = object
 export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
   object: IoK8SApimachineryPkgRuntimeRawExtension

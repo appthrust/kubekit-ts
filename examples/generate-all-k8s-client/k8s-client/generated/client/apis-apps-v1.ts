@@ -210,7 +210,7 @@ export const patchAppsV1NamespacedControllerRevision = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/controllerrevisions/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -352,7 +352,7 @@ export const patchAppsV1NamespacedDaemonSet = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/daemonsets/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -403,7 +403,7 @@ export const patchAppsV1NamespacedDaemonSetStatus = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/daemonsets/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -545,7 +545,7 @@ export const patchAppsV1NamespacedDeployment = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/deployments/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -596,7 +596,7 @@ export const patchAppsV1NamespacedDeploymentScale = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/deployments/${args.name}/scale`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -647,7 +647,7 @@ export const patchAppsV1NamespacedDeploymentStatus = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/deployments/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -789,7 +789,7 @@ export const patchAppsV1NamespacedReplicaSet = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/replicasets/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -840,7 +840,7 @@ export const patchAppsV1NamespacedReplicaSetScale = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/replicasets/${args.name}/scale`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -891,7 +891,7 @@ export const patchAppsV1NamespacedReplicaSetStatus = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/replicasets/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1033,7 +1033,7 @@ export const patchAppsV1NamespacedStatefulSet = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/statefulsets/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1084,7 +1084,7 @@ export const patchAppsV1NamespacedStatefulSetScale = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/statefulsets/${args.name}/scale`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1135,7 +1135,7 @@ export const patchAppsV1NamespacedStatefulSetStatus = (
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/statefulsets/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1884,7 +1884,7 @@ export type PatchAppsV1NamespacedControllerRevisionApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListAppsV1NamespacedDaemonSetApiResponse =
   /** status 200 OK */ IoK8SApiAppsV1DaemonSetList
@@ -2070,7 +2070,7 @@ export type PatchAppsV1NamespacedDaemonSetApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadAppsV1NamespacedDaemonSetStatusApiResponse =
   /** status 200 OK */ IoK8SApiAppsV1DaemonSet
@@ -2120,7 +2120,7 @@ export type PatchAppsV1NamespacedDaemonSetStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListAppsV1NamespacedDeploymentApiResponse =
   /** status 200 OK */ IoK8SApiAppsV1DeploymentList
@@ -2306,7 +2306,7 @@ export type PatchAppsV1NamespacedDeploymentApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadAppsV1NamespacedDeploymentScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
@@ -2356,7 +2356,7 @@ export type PatchAppsV1NamespacedDeploymentScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadAppsV1NamespacedDeploymentStatusApiResponse =
   /** status 200 OK */ IoK8SApiAppsV1Deployment
@@ -2406,7 +2406,7 @@ export type PatchAppsV1NamespacedDeploymentStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListAppsV1NamespacedReplicaSetApiResponse =
   /** status 200 OK */ IoK8SApiAppsV1ReplicaSetList
@@ -2592,7 +2592,7 @@ export type PatchAppsV1NamespacedReplicaSetApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadAppsV1NamespacedReplicaSetScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
@@ -2642,7 +2642,7 @@ export type PatchAppsV1NamespacedReplicaSetScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadAppsV1NamespacedReplicaSetStatusApiResponse =
   /** status 200 OK */ IoK8SApiAppsV1ReplicaSet
@@ -2692,7 +2692,7 @@ export type PatchAppsV1NamespacedReplicaSetStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListAppsV1NamespacedStatefulSetApiResponse =
   /** status 200 OK */ IoK8SApiAppsV1StatefulSetList
@@ -2879,7 +2879,7 @@ export type PatchAppsV1NamespacedStatefulSetApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadAppsV1NamespacedStatefulSetScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
@@ -2929,7 +2929,7 @@ export type PatchAppsV1NamespacedStatefulSetScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadAppsV1NamespacedStatefulSetStatusApiResponse =
   /** status 200 OK */ IoK8SApiAppsV1StatefulSet
@@ -2979,7 +2979,7 @@ export type PatchAppsV1NamespacedStatefulSetStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListAppsV1ReplicaSetForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiAppsV1ReplicaSetList
@@ -4707,6 +4707,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApiAutoscalingV1ScaleSpec = {
   replicas?: number | undefined
 }

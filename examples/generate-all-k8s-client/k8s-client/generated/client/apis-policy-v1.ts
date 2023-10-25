@@ -138,7 +138,7 @@ export const patchPolicyV1NamespacedPodDisruptionBudget = (
     {
       path: `/apis/policy/v1/namespaces/${args['namespace']}/poddisruptionbudgets/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -189,7 +189,7 @@ export const patchPolicyV1NamespacedPodDisruptionBudgetStatus = (
     {
       path: `/apis/policy/v1/namespaces/${args['namespace']}/poddisruptionbudgets/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -488,7 +488,7 @@ export type PatchPolicyV1NamespacedPodDisruptionBudgetApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadPolicyV1NamespacedPodDisruptionBudgetStatusApiResponse =
   /** status 200 OK */ IoK8SApiPolicyV1PodDisruptionBudget
@@ -538,7 +538,7 @@ export type PatchPolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListPolicyV1PodDisruptionBudgetForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiPolicyV1PodDisruptionBudgetList
@@ -890,6 +890,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApimachineryPkgRuntimeRawExtension = object
 export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
   object: IoK8SApimachineryPkgRuntimeRawExtension

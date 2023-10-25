@@ -162,7 +162,7 @@ export const patchEventsV1NamespacedEvent = (
     {
       path: `/apis/events.k8s.io/v1/namespaces/${args['namespace']}/events/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -479,7 +479,7 @@ export type PatchEventsV1NamespacedEventApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type WatchEventsV1EventListForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1WatchEvent
@@ -772,6 +772,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApimachineryPkgRuntimeRawExtension = object
 export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
   object: IoK8SApimachineryPkgRuntimeRawExtension

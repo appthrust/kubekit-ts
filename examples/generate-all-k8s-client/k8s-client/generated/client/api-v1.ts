@@ -332,7 +332,7 @@ export const patchCoreV1NamespacedConfigMap = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/configmaps/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -474,7 +474,7 @@ export const patchCoreV1NamespacedEndpoints = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/endpoints/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -616,7 +616,7 @@ export const patchCoreV1NamespacedEvent = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/events/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -758,7 +758,7 @@ export const patchCoreV1NamespacedLimitRange = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/limitranges/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -900,7 +900,7 @@ export const patchCoreV1NamespacedPersistentVolumeClaim = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -951,7 +951,7 @@ export const patchCoreV1NamespacedPersistentVolumeClaimStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1093,7 +1093,7 @@ export const patchCoreV1NamespacedPod = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1200,7 +1200,7 @@ export const patchCoreV1NamespacedPodEphemeralcontainers = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/ephemeralcontainers`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1536,7 +1536,7 @@ export const patchCoreV1NamespacedPodStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1678,7 +1678,7 @@ export const patchCoreV1NamespacedPodTemplate = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/podtemplates/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1820,7 +1820,7 @@ export const patchCoreV1NamespacedReplicationController = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1871,7 +1871,7 @@ export const patchCoreV1NamespacedReplicationControllerScale = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}/scale`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1922,7 +1922,7 @@ export const patchCoreV1NamespacedReplicationControllerStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2064,7 +2064,7 @@ export const patchCoreV1NamespacedResourceQuota = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2115,7 +2115,7 @@ export const patchCoreV1NamespacedResourceQuotaStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2257,7 +2257,7 @@ export const patchCoreV1NamespacedSecret = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/secrets/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2399,7 +2399,7 @@ export const patchCoreV1NamespacedServiceAccount = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/serviceaccounts/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2560,7 +2560,7 @@ export const patchCoreV1NamespacedService = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2791,7 +2791,7 @@ export const patchCoreV1NamespacedServiceStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2862,7 +2862,7 @@ export const patchCoreV1Namespace = (
     {
       path: `/api/v1/namespaces/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2932,7 +2932,7 @@ export const patchCoreV1NamespaceStatus = (
     {
       path: `/api/v1/namespaces/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3071,7 +3071,7 @@ export const patchCoreV1Node = (
     {
       path: `/api/v1/nodes/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3299,7 +3299,7 @@ export const patchCoreV1NodeStatus = (
     {
       path: `/api/v1/nodes/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3465,7 +3465,7 @@ export const patchCoreV1PersistentVolume = (
     {
       path: `/api/v1/persistentvolumes/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3516,7 +3516,7 @@ export const patchCoreV1PersistentVolumeStatus = (
     {
       path: `/api/v1/persistentvolumes/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -5207,7 +5207,7 @@ export type PatchCoreV1NamespacedConfigMapApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NamespacedEndpointsApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1EndpointsList
@@ -5393,7 +5393,7 @@ export type PatchCoreV1NamespacedEndpointsApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NamespacedEventApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1EventList
@@ -5579,7 +5579,7 @@ export type PatchCoreV1NamespacedEventApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NamespacedLimitRangeApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1LimitRangeList
@@ -5765,7 +5765,7 @@ export type PatchCoreV1NamespacedLimitRangeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NamespacedPersistentVolumeClaimApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolumeClaimList
@@ -5955,7 +5955,7 @@ export type PatchCoreV1NamespacedPersistentVolumeClaimApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadCoreV1NamespacedPersistentVolumeClaimStatusApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolumeClaim
@@ -6005,7 +6005,7 @@ export type PatchCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NamespacedPodApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PodList
@@ -6191,7 +6191,7 @@ export type PatchCoreV1NamespacedPodApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ConnectCoreV1GetNamespacedPodAttachApiResponse =
   /** status 200 OK */ string
@@ -6296,7 +6296,7 @@ export type PatchCoreV1NamespacedPodEphemeralcontainersApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type CreateCoreV1NamespacedPodEvictionApiResponse = /** status 200 OK */
   | IoK8SApiPolicyV1Eviction
@@ -6602,7 +6602,7 @@ export type PatchCoreV1NamespacedPodStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NamespacedPodTemplateApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PodTemplateList
@@ -6789,7 +6789,7 @@ export type PatchCoreV1NamespacedPodTemplateApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NamespacedReplicationControllerApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ReplicationControllerList
@@ -6979,7 +6979,7 @@ export type PatchCoreV1NamespacedReplicationControllerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadCoreV1NamespacedReplicationControllerScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
@@ -7029,7 +7029,7 @@ export type PatchCoreV1NamespacedReplicationControllerScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadCoreV1NamespacedReplicationControllerStatusApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ReplicationController
@@ -7079,7 +7079,7 @@ export type PatchCoreV1NamespacedReplicationControllerStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NamespacedResourceQuotaApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ResourceQuotaList
@@ -7269,7 +7269,7 @@ export type PatchCoreV1NamespacedResourceQuotaApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadCoreV1NamespacedResourceQuotaStatusApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ResourceQuota
@@ -7319,7 +7319,7 @@ export type PatchCoreV1NamespacedResourceQuotaStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NamespacedSecretApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1SecretList
@@ -7505,7 +7505,7 @@ export type PatchCoreV1NamespacedSecretApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NamespacedServiceAccountApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ServiceAccountList
@@ -7695,7 +7695,7 @@ export type PatchCoreV1NamespacedServiceAccountApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type CreateCoreV1NamespacedServiceAccountTokenApiResponse =
   /** status 200 OK */
@@ -7901,7 +7901,7 @@ export type PatchCoreV1NamespacedServiceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ConnectCoreV1GetNamespacedServiceProxyApiResponse =
   /** status 200 OK */ string
@@ -8105,7 +8105,7 @@ export type PatchCoreV1NamespacedServiceStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadCoreV1NamespaceApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1Namespace
@@ -8165,7 +8165,7 @@ export type PatchCoreV1NamespaceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReplaceCoreV1NamespaceFinalizeApiResponse = /** status 200 OK */
   | IoK8SApiCoreV1Namespace
@@ -8223,7 +8223,7 @@ export type PatchCoreV1NamespaceStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1NodeApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1NodeList
@@ -8394,7 +8394,7 @@ export type PatchCoreV1NodeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ConnectCoreV1GetNodeProxyApiResponse = /** status 200 OK */ string
 export type ConnectCoreV1GetNodeProxyApiArg = {
@@ -8557,7 +8557,7 @@ export type PatchCoreV1NodeStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolumeClaimList
@@ -8775,7 +8775,7 @@ export type PatchCoreV1PersistentVolumeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadCoreV1PersistentVolumeStatusApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolume
@@ -8818,7 +8818,7 @@ export type PatchCoreV1PersistentVolumeStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreV1PodForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PodList
@@ -11445,6 +11445,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApiCoreV1TypedLocalObjectReference = {
   apiGroup?: string | undefined
   kind: string

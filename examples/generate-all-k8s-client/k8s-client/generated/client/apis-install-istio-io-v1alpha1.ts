@@ -150,7 +150,7 @@ export const patchInstallIstioIoV1Alpha1NamespacedIstioOperator = (
     {
       path: `/apis/install.istio.io/v1alpha1/namespaces/${args['namespace']}/istiooperators/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -201,7 +201,7 @@ export const patchInstallIstioIoV1Alpha1NamespacedIstioOperatorStatus = (
     {
       path: `/apis/install.istio.io/v1alpha1/namespaces/${args['namespace']}/istiooperators/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -445,7 +445,7 @@ export type PatchInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadInstallIstioIoV1Alpha1NamespacedIstioOperatorStatusApiResponse =
   /** status 200 OK */ IoIstioInstallV1Alpha1IstioOperator
@@ -497,7 +497,7 @@ export type PatchInstallIstioIoV1Alpha1NamespacedIstioOperatorStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
@@ -596,3 +596,4 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object

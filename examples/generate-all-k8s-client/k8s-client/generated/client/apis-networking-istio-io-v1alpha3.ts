@@ -199,7 +199,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedDestinationRule = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/destinationrules/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -250,7 +250,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedDestinationRuleStatus = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/destinationrules/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -389,7 +389,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedEnvoyFilter = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/envoyfilters/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -440,7 +440,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterStatus = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/envoyfilters/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -579,7 +579,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedGateway = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/gateways/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -630,7 +630,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedGatewayStatus = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/gateways/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -769,7 +769,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedServiceEntry = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/serviceentries/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -820,7 +820,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedServiceEntryStatus = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/serviceentries/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -959,7 +959,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedSidecar = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/sidecars/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1010,7 +1010,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedSidecarStatus = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/sidecars/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1150,7 +1150,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedVirtualService = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/virtualservices/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1201,7 +1201,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedVirtualServiceStatus = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/virtualservices/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1341,7 +1341,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedWorkloadEntry = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/workloadentries/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1392,7 +1392,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryStatus = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/workloadentries/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1532,7 +1532,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedWorkloadGroup = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/workloadgroups/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1583,7 +1583,7 @@ export const patchNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupStatus = (
     {
       path: `/apis/networking.istio.io/v1alpha3/namespaces/${args['namespace']}/workloadgroups/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2040,7 +2040,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadNetworkingIstioIoV1Alpha3NamespacedDestinationRuleStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3DestinationRule
@@ -2095,7 +2095,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedDestinationRuleStatusApiArg 
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3EnvoyFilterList
@@ -2283,7 +2283,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3EnvoyFilter
@@ -2336,7 +2336,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListNetworkingIstioIoV1Alpha3NamespacedGatewayApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3GatewayList
@@ -2523,7 +2523,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedGatewayApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadNetworkingIstioIoV1Alpha3NamespacedGatewayStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3Gateway
@@ -2575,7 +2575,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedGatewayStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3ServiceEntryList
@@ -2763,7 +2763,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadNetworkingIstioIoV1Alpha3NamespacedServiceEntryStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3ServiceEntry
@@ -2816,7 +2816,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedServiceEntryStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListNetworkingIstioIoV1Alpha3NamespacedSidecarApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3SidecarList
@@ -3003,7 +3003,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedSidecarApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadNetworkingIstioIoV1Alpha3NamespacedSidecarStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3Sidecar
@@ -3055,7 +3055,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedSidecarStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3VirtualServiceList
@@ -3243,7 +3243,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadNetworkingIstioIoV1Alpha3NamespacedVirtualServiceStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3VirtualService
@@ -3298,7 +3298,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedVirtualServiceStatusApiArg =
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3WorkloadEntryList
@@ -3486,7 +3486,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3WorkloadEntry
@@ -3540,7 +3540,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryStatusApiArg =
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3WorkloadGroupList
@@ -3728,7 +3728,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3WorkloadGroup
@@ -3782,7 +3782,7 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupStatusApiArg =
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListNetworkingIstioIoV1Alpha3ServiceEntryForAllNamespacesApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Alpha3ServiceEntryList
@@ -4109,10 +4109,192 @@ export type IoIstioNetworkingV1Alpha3DestinationRule = {
                       | undefined
                     loadBalancer?:
                       | (
-                          | any
-                          | any
                           | {
-                              consistentHash: any | any | any | any | any
+                              consistentHash?:
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                                | undefined
+                              localityLbSetting?:
+                                | {
+                                    distribute?:
+                                      | {
+                                          from?: string | undefined
+                                          to?:
+                                            | {
+                                                [key: string]: number
+                                              }
+                                            | undefined
+                                        }[]
+                                      | undefined
+                                    enabled?: (boolean | null) | undefined
+                                    failover?:
+                                      | {
+                                          from?: string | undefined
+                                          to?: string | undefined
+                                        }[]
+                                      | undefined
+                                    failoverPriority?: string[] | undefined
+                                  }
+                                | undefined
+                              simple?:
+                                | (
+                                    | 'ROUND_ROBIN'
+                                    | 'LEAST_CONN'
+                                    | 'RANDOM'
+                                    | 'PASSTHROUGH'
+                                  )
+                                | undefined
+                            }
+                          | {
+                              consistentHash?:
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                                | undefined
+                              localityLbSetting?:
+                                | {
+                                    distribute?:
+                                      | {
+                                          from?: string | undefined
+                                          to?:
+                                            | {
+                                                [key: string]: number
+                                              }
+                                            | undefined
+                                        }[]
+                                      | undefined
+                                    enabled?: (boolean | null) | undefined
+                                    failover?:
+                                      | {
+                                          from?: string | undefined
+                                          to?: string | undefined
+                                        }[]
+                                      | undefined
+                                    failoverPriority?: string[] | undefined
+                                  }
+                                | undefined
+                              simple:
+                                | 'ROUND_ROBIN'
+                                | 'LEAST_CONN'
+                                | 'RANDOM'
+                                | 'PASSTHROUGH'
+                            }
+                          | {
+                              consistentHash:
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName: string
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                                | {
+                                    httpCookie: {
+                                      name?: string | undefined
+                                      path?: string | undefined
+                                      ttl?: string | undefined
+                                    }
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp: boolean
+                                  }
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName: string
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                              localityLbSetting?:
+                                | {
+                                    distribute?:
+                                      | {
+                                          from?: string | undefined
+                                          to?:
+                                            | {
+                                                [key: string]: number
+                                              }
+                                            | undefined
+                                        }[]
+                                      | undefined
+                                    enabled?: (boolean | null) | undefined
+                                    failover?:
+                                      | {
+                                          from?: string | undefined
+                                          to?: string | undefined
+                                        }[]
+                                      | undefined
+                                    failoverPriority?: string[] | undefined
+                                  }
+                                | undefined
+                              simple?:
+                                | (
+                                    | 'ROUND_ROBIN'
+                                    | 'LEAST_CONN'
+                                    | 'RANDOM'
+                                    | 'PASSTHROUGH'
+                                  )
+                                | undefined
                             }
                         )
                       | undefined
@@ -4173,10 +4355,210 @@ export type IoIstioNetworkingV1Alpha3DestinationRule = {
                             | undefined
                           loadBalancer?:
                             | (
-                                | any
-                                | any
                                 | {
-                                    consistentHash: any | any | any | any | any
+                                    consistentHash?:
+                                      | {
+                                          httpCookie?:
+                                            | {
+                                                name?: string | undefined
+                                                path?: string | undefined
+                                                ttl?: string | undefined
+                                              }
+                                            | undefined
+                                          httpHeaderName?: string | undefined
+                                          httpQueryParameterName?:
+                                            | string
+                                            | undefined
+                                          minimumRingSize?: number | undefined
+                                          useSourceIp?: boolean | undefined
+                                        }
+                                      | undefined
+                                    localityLbSetting?:
+                                      | {
+                                          distribute?:
+                                            | {
+                                                from?: string | undefined
+                                                to?:
+                                                  | {
+                                                      [key: string]: number
+                                                    }
+                                                  | undefined
+                                              }[]
+                                            | undefined
+                                          enabled?: (boolean | null) | undefined
+                                          failover?:
+                                            | {
+                                                from?: string | undefined
+                                                to?: string | undefined
+                                              }[]
+                                            | undefined
+                                          failoverPriority?:
+                                            | string[]
+                                            | undefined
+                                        }
+                                      | undefined
+                                    simple?:
+                                      | (
+                                          | 'ROUND_ROBIN'
+                                          | 'LEAST_CONN'
+                                          | 'RANDOM'
+                                          | 'PASSTHROUGH'
+                                        )
+                                      | undefined
+                                  }
+                                | {
+                                    consistentHash?:
+                                      | {
+                                          httpCookie?:
+                                            | {
+                                                name?: string | undefined
+                                                path?: string | undefined
+                                                ttl?: string | undefined
+                                              }
+                                            | undefined
+                                          httpHeaderName?: string | undefined
+                                          httpQueryParameterName?:
+                                            | string
+                                            | undefined
+                                          minimumRingSize?: number | undefined
+                                          useSourceIp?: boolean | undefined
+                                        }
+                                      | undefined
+                                    localityLbSetting?:
+                                      | {
+                                          distribute?:
+                                            | {
+                                                from?: string | undefined
+                                                to?:
+                                                  | {
+                                                      [key: string]: number
+                                                    }
+                                                  | undefined
+                                              }[]
+                                            | undefined
+                                          enabled?: (boolean | null) | undefined
+                                          failover?:
+                                            | {
+                                                from?: string | undefined
+                                                to?: string | undefined
+                                              }[]
+                                            | undefined
+                                          failoverPriority?:
+                                            | string[]
+                                            | undefined
+                                        }
+                                      | undefined
+                                    simple:
+                                      | 'ROUND_ROBIN'
+                                      | 'LEAST_CONN'
+                                      | 'RANDOM'
+                                      | 'PASSTHROUGH'
+                                  }
+                                | {
+                                    consistentHash:
+                                      | {
+                                          httpCookie?:
+                                            | {
+                                                name?: string | undefined
+                                                path?: string | undefined
+                                                ttl?: string | undefined
+                                              }
+                                            | undefined
+                                          httpHeaderName?: string | undefined
+                                          httpQueryParameterName?:
+                                            | string
+                                            | undefined
+                                          minimumRingSize?: number | undefined
+                                          useSourceIp?: boolean | undefined
+                                        }
+                                      | {
+                                          httpCookie?:
+                                            | {
+                                                name?: string | undefined
+                                                path?: string | undefined
+                                                ttl?: string | undefined
+                                              }
+                                            | undefined
+                                          httpHeaderName: string
+                                          httpQueryParameterName?:
+                                            | string
+                                            | undefined
+                                          minimumRingSize?: number | undefined
+                                          useSourceIp?: boolean | undefined
+                                        }
+                                      | {
+                                          httpCookie: {
+                                            name?: string | undefined
+                                            path?: string | undefined
+                                            ttl?: string | undefined
+                                          }
+                                          httpHeaderName?: string | undefined
+                                          httpQueryParameterName?:
+                                            | string
+                                            | undefined
+                                          minimumRingSize?: number | undefined
+                                          useSourceIp?: boolean | undefined
+                                        }
+                                      | {
+                                          httpCookie?:
+                                            | {
+                                                name?: string | undefined
+                                                path?: string | undefined
+                                                ttl?: string | undefined
+                                              }
+                                            | undefined
+                                          httpHeaderName?: string | undefined
+                                          httpQueryParameterName?:
+                                            | string
+                                            | undefined
+                                          minimumRingSize?: number | undefined
+                                          useSourceIp: boolean
+                                        }
+                                      | {
+                                          httpCookie?:
+                                            | {
+                                                name?: string | undefined
+                                                path?: string | undefined
+                                                ttl?: string | undefined
+                                              }
+                                            | undefined
+                                          httpHeaderName?: string | undefined
+                                          httpQueryParameterName: string
+                                          minimumRingSize?: number | undefined
+                                          useSourceIp?: boolean | undefined
+                                        }
+                                    localityLbSetting?:
+                                      | {
+                                          distribute?:
+                                            | {
+                                                from?: string | undefined
+                                                to?:
+                                                  | {
+                                                      [key: string]: number
+                                                    }
+                                                  | undefined
+                                              }[]
+                                            | undefined
+                                          enabled?: (boolean | null) | undefined
+                                          failover?:
+                                            | {
+                                                from?: string | undefined
+                                                to?: string | undefined
+                                              }[]
+                                            | undefined
+                                          failoverPriority?:
+                                            | string[]
+                                            | undefined
+                                        }
+                                      | undefined
+                                    simple?:
+                                      | (
+                                          | 'ROUND_ROBIN'
+                                          | 'LEAST_CONN'
+                                          | 'RANDOM'
+                                          | 'PASSTHROUGH'
+                                        )
+                                      | undefined
                                   }
                               )
                             | undefined
@@ -4281,10 +4663,192 @@ export type IoIstioNetworkingV1Alpha3DestinationRule = {
                 | undefined
               loadBalancer?:
                 | (
-                    | any
-                    | any
                     | {
-                        consistentHash: any | any | any | any | any
+                        consistentHash?:
+                          | {
+                              httpCookie?:
+                                | {
+                                    name?: string | undefined
+                                    path?: string | undefined
+                                    ttl?: string | undefined
+                                  }
+                                | undefined
+                              httpHeaderName?: string | undefined
+                              httpQueryParameterName?: string | undefined
+                              minimumRingSize?: number | undefined
+                              useSourceIp?: boolean | undefined
+                            }
+                          | undefined
+                        localityLbSetting?:
+                          | {
+                              distribute?:
+                                | {
+                                    from?: string | undefined
+                                    to?:
+                                      | {
+                                          [key: string]: number
+                                        }
+                                      | undefined
+                                  }[]
+                                | undefined
+                              enabled?: (boolean | null) | undefined
+                              failover?:
+                                | {
+                                    from?: string | undefined
+                                    to?: string | undefined
+                                  }[]
+                                | undefined
+                              failoverPriority?: string[] | undefined
+                            }
+                          | undefined
+                        simple?:
+                          | (
+                              | 'ROUND_ROBIN'
+                              | 'LEAST_CONN'
+                              | 'RANDOM'
+                              | 'PASSTHROUGH'
+                            )
+                          | undefined
+                      }
+                    | {
+                        consistentHash?:
+                          | {
+                              httpCookie?:
+                                | {
+                                    name?: string | undefined
+                                    path?: string | undefined
+                                    ttl?: string | undefined
+                                  }
+                                | undefined
+                              httpHeaderName?: string | undefined
+                              httpQueryParameterName?: string | undefined
+                              minimumRingSize?: number | undefined
+                              useSourceIp?: boolean | undefined
+                            }
+                          | undefined
+                        localityLbSetting?:
+                          | {
+                              distribute?:
+                                | {
+                                    from?: string | undefined
+                                    to?:
+                                      | {
+                                          [key: string]: number
+                                        }
+                                      | undefined
+                                  }[]
+                                | undefined
+                              enabled?: (boolean | null) | undefined
+                              failover?:
+                                | {
+                                    from?: string | undefined
+                                    to?: string | undefined
+                                  }[]
+                                | undefined
+                              failoverPriority?: string[] | undefined
+                            }
+                          | undefined
+                        simple:
+                          | 'ROUND_ROBIN'
+                          | 'LEAST_CONN'
+                          | 'RANDOM'
+                          | 'PASSTHROUGH'
+                      }
+                    | {
+                        consistentHash:
+                          | {
+                              httpCookie?:
+                                | {
+                                    name?: string | undefined
+                                    path?: string | undefined
+                                    ttl?: string | undefined
+                                  }
+                                | undefined
+                              httpHeaderName?: string | undefined
+                              httpQueryParameterName?: string | undefined
+                              minimumRingSize?: number | undefined
+                              useSourceIp?: boolean | undefined
+                            }
+                          | {
+                              httpCookie?:
+                                | {
+                                    name?: string | undefined
+                                    path?: string | undefined
+                                    ttl?: string | undefined
+                                  }
+                                | undefined
+                              httpHeaderName: string
+                              httpQueryParameterName?: string | undefined
+                              minimumRingSize?: number | undefined
+                              useSourceIp?: boolean | undefined
+                            }
+                          | {
+                              httpCookie: {
+                                name?: string | undefined
+                                path?: string | undefined
+                                ttl?: string | undefined
+                              }
+                              httpHeaderName?: string | undefined
+                              httpQueryParameterName?: string | undefined
+                              minimumRingSize?: number | undefined
+                              useSourceIp?: boolean | undefined
+                            }
+                          | {
+                              httpCookie?:
+                                | {
+                                    name?: string | undefined
+                                    path?: string | undefined
+                                    ttl?: string | undefined
+                                  }
+                                | undefined
+                              httpHeaderName?: string | undefined
+                              httpQueryParameterName?: string | undefined
+                              minimumRingSize?: number | undefined
+                              useSourceIp: boolean
+                            }
+                          | {
+                              httpCookie?:
+                                | {
+                                    name?: string | undefined
+                                    path?: string | undefined
+                                    ttl?: string | undefined
+                                  }
+                                | undefined
+                              httpHeaderName?: string | undefined
+                              httpQueryParameterName: string
+                              minimumRingSize?: number | undefined
+                              useSourceIp?: boolean | undefined
+                            }
+                        localityLbSetting?:
+                          | {
+                              distribute?:
+                                | {
+                                    from?: string | undefined
+                                    to?:
+                                      | {
+                                          [key: string]: number
+                                        }
+                                      | undefined
+                                  }[]
+                                | undefined
+                              enabled?: (boolean | null) | undefined
+                              failover?:
+                                | {
+                                    from?: string | undefined
+                                    to?: string | undefined
+                                  }[]
+                                | undefined
+                              failoverPriority?: string[] | undefined
+                            }
+                          | undefined
+                        simple?:
+                          | (
+                              | 'ROUND_ROBIN'
+                              | 'LEAST_CONN'
+                              | 'RANDOM'
+                              | 'PASSTHROUGH'
+                            )
+                          | undefined
                       }
                   )
                 | undefined
@@ -4335,10 +4899,192 @@ export type IoIstioNetworkingV1Alpha3DestinationRule = {
                       | undefined
                     loadBalancer?:
                       | (
-                          | any
-                          | any
                           | {
-                              consistentHash: any | any | any | any | any
+                              consistentHash?:
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                                | undefined
+                              localityLbSetting?:
+                                | {
+                                    distribute?:
+                                      | {
+                                          from?: string | undefined
+                                          to?:
+                                            | {
+                                                [key: string]: number
+                                              }
+                                            | undefined
+                                        }[]
+                                      | undefined
+                                    enabled?: (boolean | null) | undefined
+                                    failover?:
+                                      | {
+                                          from?: string | undefined
+                                          to?: string | undefined
+                                        }[]
+                                      | undefined
+                                    failoverPriority?: string[] | undefined
+                                  }
+                                | undefined
+                              simple?:
+                                | (
+                                    | 'ROUND_ROBIN'
+                                    | 'LEAST_CONN'
+                                    | 'RANDOM'
+                                    | 'PASSTHROUGH'
+                                  )
+                                | undefined
+                            }
+                          | {
+                              consistentHash?:
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                                | undefined
+                              localityLbSetting?:
+                                | {
+                                    distribute?:
+                                      | {
+                                          from?: string | undefined
+                                          to?:
+                                            | {
+                                                [key: string]: number
+                                              }
+                                            | undefined
+                                        }[]
+                                      | undefined
+                                    enabled?: (boolean | null) | undefined
+                                    failover?:
+                                      | {
+                                          from?: string | undefined
+                                          to?: string | undefined
+                                        }[]
+                                      | undefined
+                                    failoverPriority?: string[] | undefined
+                                  }
+                                | undefined
+                              simple:
+                                | 'ROUND_ROBIN'
+                                | 'LEAST_CONN'
+                                | 'RANDOM'
+                                | 'PASSTHROUGH'
+                            }
+                          | {
+                              consistentHash:
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName: string
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                                | {
+                                    httpCookie: {
+                                      name?: string | undefined
+                                      path?: string | undefined
+                                      ttl?: string | undefined
+                                    }
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName?: string | undefined
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp: boolean
+                                  }
+                                | {
+                                    httpCookie?:
+                                      | {
+                                          name?: string | undefined
+                                          path?: string | undefined
+                                          ttl?: string | undefined
+                                        }
+                                      | undefined
+                                    httpHeaderName?: string | undefined
+                                    httpQueryParameterName: string
+                                    minimumRingSize?: number | undefined
+                                    useSourceIp?: boolean | undefined
+                                  }
+                              localityLbSetting?:
+                                | {
+                                    distribute?:
+                                      | {
+                                          from?: string | undefined
+                                          to?:
+                                            | {
+                                                [key: string]: number
+                                              }
+                                            | undefined
+                                        }[]
+                                      | undefined
+                                    enabled?: (boolean | null) | undefined
+                                    failover?:
+                                      | {
+                                          from?: string | undefined
+                                          to?: string | undefined
+                                        }[]
+                                      | undefined
+                                    failoverPriority?: string[] | undefined
+                                  }
+                                | undefined
+                              simple?:
+                                | (
+                                    | 'ROUND_ROBIN'
+                                    | 'LEAST_CONN'
+                                    | 'RANDOM'
+                                    | 'PASSTHROUGH'
+                                  )
+                                | undefined
                             }
                         )
                       | undefined
@@ -4433,7 +5179,324 @@ export type IoIstioNetworkingV1Alpha3EnvoyFilter = {
                     | 'BOOTSTRAP'
                   )
                 | undefined
-              match?: (any | any | any | any) | undefined
+              match?:
+                | (
+                    | {
+                        cluster?:
+                          | {
+                              name?: string | undefined
+                              portNumber?: number | undefined
+                              service?: string | undefined
+                              subset?: string | undefined
+                            }
+                          | undefined
+                        context?:
+                          | (
+                              | 'ANY'
+                              | 'SIDECAR_INBOUND'
+                              | 'SIDECAR_OUTBOUND'
+                              | 'GATEWAY'
+                            )
+                          | undefined
+                        listener?:
+                          | {
+                              filterChain?:
+                                | {
+                                    applicationProtocols?: string | undefined
+                                    destinationPort?: number | undefined
+                                    filter?:
+                                      | {
+                                          name?: string | undefined
+                                          subFilter?:
+                                            | {
+                                                name?: string | undefined
+                                              }
+                                            | undefined
+                                        }
+                                      | undefined
+                                    name?: string | undefined
+                                    sni?: string | undefined
+                                    transportProtocol?: string | undefined
+                                  }
+                                | undefined
+                              name?: string | undefined
+                              portName?: string | undefined
+                              portNumber?: number | undefined
+                            }
+                          | undefined
+                        proxy?:
+                          | {
+                              metadata?:
+                                | {
+                                    [key: string]: string
+                                  }
+                                | undefined
+                              proxyVersion?: string | undefined
+                            }
+                          | undefined
+                        routeConfiguration?:
+                          | {
+                              gateway?: string | undefined
+                              name?: string | undefined
+                              portName?: string | undefined
+                              portNumber?: number | undefined
+                              vhost?:
+                                | {
+                                    name?: string | undefined
+                                    route?:
+                                      | {
+                                          action?:
+                                            | (
+                                                | 'ANY'
+                                                | 'ROUTE'
+                                                | 'REDIRECT'
+                                                | 'DIRECT_RESPONSE'
+                                              )
+                                            | undefined
+                                          name?: string | undefined
+                                        }
+                                      | undefined
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                      }
+                    | {
+                        cluster?:
+                          | {
+                              name?: string | undefined
+                              portNumber?: number | undefined
+                              service?: string | undefined
+                              subset?: string | undefined
+                            }
+                          | undefined
+                        context?:
+                          | (
+                              | 'ANY'
+                              | 'SIDECAR_INBOUND'
+                              | 'SIDECAR_OUTBOUND'
+                              | 'GATEWAY'
+                            )
+                          | undefined
+                        listener: {
+                          filterChain?:
+                            | {
+                                applicationProtocols?: string | undefined
+                                destinationPort?: number | undefined
+                                filter?:
+                                  | {
+                                      name?: string | undefined
+                                      subFilter?:
+                                        | {
+                                            name?: string | undefined
+                                          }
+                                        | undefined
+                                    }
+                                  | undefined
+                                name?: string | undefined
+                                sni?: string | undefined
+                                transportProtocol?: string | undefined
+                              }
+                            | undefined
+                          name?: string | undefined
+                          portName?: string | undefined
+                          portNumber?: number | undefined
+                        }
+                        proxy?:
+                          | {
+                              metadata?:
+                                | {
+                                    [key: string]: string
+                                  }
+                                | undefined
+                              proxyVersion?: string | undefined
+                            }
+                          | undefined
+                        routeConfiguration?:
+                          | {
+                              gateway?: string | undefined
+                              name?: string | undefined
+                              portName?: string | undefined
+                              portNumber?: number | undefined
+                              vhost?:
+                                | {
+                                    name?: string | undefined
+                                    route?:
+                                      | {
+                                          action?:
+                                            | (
+                                                | 'ANY'
+                                                | 'ROUTE'
+                                                | 'REDIRECT'
+                                                | 'DIRECT_RESPONSE'
+                                              )
+                                            | undefined
+                                          name?: string | undefined
+                                        }
+                                      | undefined
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                      }
+                    | {
+                        cluster?:
+                          | {
+                              name?: string | undefined
+                              portNumber?: number | undefined
+                              service?: string | undefined
+                              subset?: string | undefined
+                            }
+                          | undefined
+                        context?:
+                          | (
+                              | 'ANY'
+                              | 'SIDECAR_INBOUND'
+                              | 'SIDECAR_OUTBOUND'
+                              | 'GATEWAY'
+                            )
+                          | undefined
+                        listener?:
+                          | {
+                              filterChain?:
+                                | {
+                                    applicationProtocols?: string | undefined
+                                    destinationPort?: number | undefined
+                                    filter?:
+                                      | {
+                                          name?: string | undefined
+                                          subFilter?:
+                                            | {
+                                                name?: string | undefined
+                                              }
+                                            | undefined
+                                        }
+                                      | undefined
+                                    name?: string | undefined
+                                    sni?: string | undefined
+                                    transportProtocol?: string | undefined
+                                  }
+                                | undefined
+                              name?: string | undefined
+                              portName?: string | undefined
+                              portNumber?: number | undefined
+                            }
+                          | undefined
+                        proxy?:
+                          | {
+                              metadata?:
+                                | {
+                                    [key: string]: string
+                                  }
+                                | undefined
+                              proxyVersion?: string | undefined
+                            }
+                          | undefined
+                        routeConfiguration: {
+                          gateway?: string | undefined
+                          name?: string | undefined
+                          portName?: string | undefined
+                          portNumber?: number | undefined
+                          vhost?:
+                            | {
+                                name?: string | undefined
+                                route?:
+                                  | {
+                                      action?:
+                                        | (
+                                            | 'ANY'
+                                            | 'ROUTE'
+                                            | 'REDIRECT'
+                                            | 'DIRECT_RESPONSE'
+                                          )
+                                        | undefined
+                                      name?: string | undefined
+                                    }
+                                  | undefined
+                              }
+                            | undefined
+                        }
+                      }
+                    | {
+                        cluster: {
+                          name?: string | undefined
+                          portNumber?: number | undefined
+                          service?: string | undefined
+                          subset?: string | undefined
+                        }
+                        context?:
+                          | (
+                              | 'ANY'
+                              | 'SIDECAR_INBOUND'
+                              | 'SIDECAR_OUTBOUND'
+                              | 'GATEWAY'
+                            )
+                          | undefined
+                        listener?:
+                          | {
+                              filterChain?:
+                                | {
+                                    applicationProtocols?: string | undefined
+                                    destinationPort?: number | undefined
+                                    filter?:
+                                      | {
+                                          name?: string | undefined
+                                          subFilter?:
+                                            | {
+                                                name?: string | undefined
+                                              }
+                                            | undefined
+                                        }
+                                      | undefined
+                                    name?: string | undefined
+                                    sni?: string | undefined
+                                    transportProtocol?: string | undefined
+                                  }
+                                | undefined
+                              name?: string | undefined
+                              portName?: string | undefined
+                              portNumber?: number | undefined
+                            }
+                          | undefined
+                        proxy?:
+                          | {
+                              metadata?:
+                                | {
+                                    [key: string]: string
+                                  }
+                                | undefined
+                              proxyVersion?: string | undefined
+                            }
+                          | undefined
+                        routeConfiguration?:
+                          | {
+                              gateway?: string | undefined
+                              name?: string | undefined
+                              portName?: string | undefined
+                              portNumber?: number | undefined
+                              vhost?:
+                                | {
+                                    name?: string | undefined
+                                    route?:
+                                      | {
+                                          action?:
+                                            | (
+                                                | 'ANY'
+                                                | 'ROUTE'
+                                                | 'REDIRECT'
+                                                | 'DIRECT_RESPONSE'
+                                              )
+                                            | undefined
+                                          name?: string | undefined
+                                        }
+                                      | undefined
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                      }
+                  )
+                | undefined
               patch?:
                 | {
                     filterClass?:
@@ -4589,6 +5652,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoIstioNetworkingV1Alpha3ServiceEntry = {
   apiVersion?: string | undefined
   kind?: string | undefined
@@ -4735,7 +5799,30 @@ export type IoIstioNetworkingV1Alpha3VirtualService = {
                     allowHeaders?: string[] | undefined
                     allowMethods?: string[] | undefined
                     allowOrigin?: string[] | undefined
-                    allowOrigins?: (any | any | any | any)[] | undefined
+                    allowOrigins?:
+                      | (
+                          | {
+                              exact?: string | undefined
+                              prefix?: string | undefined
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact: string
+                              prefix?: string | undefined
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact?: string | undefined
+                              prefix: string
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact?: string | undefined
+                              prefix?: string | undefined
+                              regex: string
+                            }
+                        )[]
+                      | undefined
                     exposeHeaders?: string[] | undefined
                     maxAge?: string | undefined
                   }
@@ -4748,8 +5835,84 @@ export type IoIstioNetworkingV1Alpha3VirtualService = {
                 | undefined
               fault?:
                 | {
-                    abort?: (any | any | any | any) | undefined
-                    delay?: (any | any | any) | undefined
+                    abort?:
+                      | (
+                          | {
+                              grpcStatus?: string | undefined
+                              http2Error?: string | undefined
+                              httpStatus?: number | undefined
+                              percentage?:
+                                | {
+                                    value?: number | undefined
+                                  }
+                                | undefined
+                            }
+                          | {
+                              grpcStatus?: string | undefined
+                              http2Error?: string | undefined
+                              httpStatus: number
+                              percentage?:
+                                | {
+                                    value?: number | undefined
+                                  }
+                                | undefined
+                            }
+                          | {
+                              grpcStatus: string
+                              http2Error?: string | undefined
+                              httpStatus?: number | undefined
+                              percentage?:
+                                | {
+                                    value?: number | undefined
+                                  }
+                                | undefined
+                            }
+                          | {
+                              grpcStatus?: string | undefined
+                              http2Error: string
+                              httpStatus?: number | undefined
+                              percentage?:
+                                | {
+                                    value?: number | undefined
+                                  }
+                                | undefined
+                            }
+                        )
+                      | undefined
+                    delay?:
+                      | (
+                          | {
+                              exponentialDelay?: string | undefined
+                              fixedDelay?: string | undefined
+                              percent?: number | undefined
+                              percentage?:
+                                | {
+                                    value?: number | undefined
+                                  }
+                                | undefined
+                            }
+                          | {
+                              exponentialDelay?: string | undefined
+                              fixedDelay: string
+                              percent?: number | undefined
+                              percentage?:
+                                | {
+                                    value?: number | undefined
+                                  }
+                                | undefined
+                            }
+                          | {
+                              exponentialDelay: string
+                              fixedDelay?: string | undefined
+                              percent?: number | undefined
+                              percentage?:
+                                | {
+                                    value?: number | undefined
+                                  }
+                                | undefined
+                            }
+                        )
+                      | undefined
                   }
                 | undefined
               headers?:
@@ -4788,33 +5951,185 @@ export type IoIstioNetworkingV1Alpha3VirtualService = {
                 | undefined
               match?:
                 | {
-                    authority?: (any | any | any | any) | undefined
+                    authority?:
+                      | (
+                          | {
+                              exact?: string | undefined
+                              prefix?: string | undefined
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact: string
+                              prefix?: string | undefined
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact?: string | undefined
+                              prefix: string
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact?: string | undefined
+                              prefix?: string | undefined
+                              regex: string
+                            }
+                        )
+                      | undefined
                     gateways?: string[] | undefined
                     headers?:
                       | {
-                          [key: string]: any | any | any | any
+                          [key: string]:
+                            | {
+                                exact?: string | undefined
+                                prefix?: string | undefined
+                                regex?: string | undefined
+                              }
+                            | {
+                                exact: string
+                                prefix?: string | undefined
+                                regex?: string | undefined
+                              }
+                            | {
+                                exact?: string | undefined
+                                prefix: string
+                                regex?: string | undefined
+                              }
+                            | {
+                                exact?: string | undefined
+                                prefix?: string | undefined
+                                regex: string
+                              }
                         }
                       | undefined
                     ignoreUriCase?: boolean | undefined
-                    method?: (any | any | any | any) | undefined
+                    method?:
+                      | (
+                          | {
+                              exact?: string | undefined
+                              prefix?: string | undefined
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact: string
+                              prefix?: string | undefined
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact?: string | undefined
+                              prefix: string
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact?: string | undefined
+                              prefix?: string | undefined
+                              regex: string
+                            }
+                        )
+                      | undefined
                     name?: string | undefined
                     port?: number | undefined
                     queryParams?:
                       | {
-                          [key: string]: any | any | any | any
+                          [key: string]:
+                            | {
+                                exact?: string | undefined
+                                prefix?: string | undefined
+                                regex?: string | undefined
+                              }
+                            | {
+                                exact: string
+                                prefix?: string | undefined
+                                regex?: string | undefined
+                              }
+                            | {
+                                exact?: string | undefined
+                                prefix: string
+                                regex?: string | undefined
+                              }
+                            | {
+                                exact?: string | undefined
+                                prefix?: string | undefined
+                                regex: string
+                              }
                         }
                       | undefined
-                    scheme?: (any | any | any | any) | undefined
+                    scheme?:
+                      | (
+                          | {
+                              exact?: string | undefined
+                              prefix?: string | undefined
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact: string
+                              prefix?: string | undefined
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact?: string | undefined
+                              prefix: string
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact?: string | undefined
+                              prefix?: string | undefined
+                              regex: string
+                            }
+                        )
+                      | undefined
                     sourceLabels?:
                       | {
                           [key: string]: string
                         }
                       | undefined
                     sourceNamespace?: string | undefined
-                    uri?: (any | any | any | any) | undefined
+                    uri?:
+                      | (
+                          | {
+                              exact?: string | undefined
+                              prefix?: string | undefined
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact: string
+                              prefix?: string | undefined
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact?: string | undefined
+                              prefix: string
+                              regex?: string | undefined
+                            }
+                          | {
+                              exact?: string | undefined
+                              prefix?: string | undefined
+                              regex: string
+                            }
+                        )
+                      | undefined
                     withoutHeaders?:
                       | {
-                          [key: string]: any | any | any | any
+                          [key: string]:
+                            | {
+                                exact?: string | undefined
+                                prefix?: string | undefined
+                                regex?: string | undefined
+                              }
+                            | {
+                                exact: string
+                                prefix?: string | undefined
+                                regex?: string | undefined
+                              }
+                            | {
+                                exact?: string | undefined
+                                prefix: string
+                                regex?: string | undefined
+                              }
+                            | {
+                                exact?: string | undefined
+                                prefix?: string | undefined
+                                regex: string
+                              }
                         }
                       | undefined
                   }[]
@@ -4838,7 +6153,40 @@ export type IoIstioNetworkingV1Alpha3VirtualService = {
                 | undefined
               mirror_percent?: (number | null) | undefined
               name?: string | undefined
-              redirect?: (any | any | any) | undefined
+              redirect?:
+                | (
+                    | {
+                        authority?: string | undefined
+                        derivePort?:
+                          | ('FROM_PROTOCOL_DEFAULT' | 'FROM_REQUEST_PORT')
+                          | undefined
+                        port?: number | undefined
+                        redirectCode?: number | undefined
+                        scheme?: string | undefined
+                        uri?: string | undefined
+                      }
+                    | {
+                        authority?: string | undefined
+                        derivePort?:
+                          | ('FROM_PROTOCOL_DEFAULT' | 'FROM_REQUEST_PORT')
+                          | undefined
+                        port: number
+                        redirectCode?: number | undefined
+                        scheme?: string | undefined
+                        uri?: string | undefined
+                      }
+                    | {
+                        authority?: string | undefined
+                        derivePort:
+                          | 'FROM_PROTOCOL_DEFAULT'
+                          | 'FROM_REQUEST_PORT'
+                        port?: number | undefined
+                        redirectCode?: number | undefined
+                        scheme?: string | undefined
+                        uri?: string | undefined
+                      }
+                  )
+                | undefined
               retries?:
                 | {
                     attempts?: number | undefined
@@ -5035,7 +6383,132 @@ export type IoIstioNetworkingV1Alpha3WorkloadGroup = {
                 | undefined
             }
           | undefined
-        probe?: (any | any | any | any) | undefined
+        probe?:
+          | (
+              | {
+                  exec?:
+                    | {
+                        command?: string[] | undefined
+                      }
+                    | undefined
+                  failureThreshold?: number | undefined
+                  httpGet?:
+                    | {
+                        host?: string | undefined
+                        httpHeaders?:
+                          | {
+                              name?: string | undefined
+                              value?: string | undefined
+                            }[]
+                          | undefined
+                        path?: string | undefined
+                        port?: number | undefined
+                        scheme?: string | undefined
+                      }
+                    | undefined
+                  initialDelaySeconds?: number | undefined
+                  periodSeconds?: number | undefined
+                  successThreshold?: number | undefined
+                  tcpSocket?:
+                    | {
+                        host?: string | undefined
+                        port?: number | undefined
+                      }
+                    | undefined
+                  timeoutSeconds?: number | undefined
+                }
+              | {
+                  exec?:
+                    | {
+                        command?: string[] | undefined
+                      }
+                    | undefined
+                  failureThreshold?: number | undefined
+                  httpGet: {
+                    host?: string | undefined
+                    httpHeaders?:
+                      | {
+                          name?: string | undefined
+                          value?: string | undefined
+                        }[]
+                      | undefined
+                    path?: string | undefined
+                    port?: number | undefined
+                    scheme?: string | undefined
+                  }
+                  initialDelaySeconds?: number | undefined
+                  periodSeconds?: number | undefined
+                  successThreshold?: number | undefined
+                  tcpSocket?:
+                    | {
+                        host?: string | undefined
+                        port?: number | undefined
+                      }
+                    | undefined
+                  timeoutSeconds?: number | undefined
+                }
+              | {
+                  exec?:
+                    | {
+                        command?: string[] | undefined
+                      }
+                    | undefined
+                  failureThreshold?: number | undefined
+                  httpGet?:
+                    | {
+                        host?: string | undefined
+                        httpHeaders?:
+                          | {
+                              name?: string | undefined
+                              value?: string | undefined
+                            }[]
+                          | undefined
+                        path?: string | undefined
+                        port?: number | undefined
+                        scheme?: string | undefined
+                      }
+                    | undefined
+                  initialDelaySeconds?: number | undefined
+                  periodSeconds?: number | undefined
+                  successThreshold?: number | undefined
+                  tcpSocket: {
+                    host?: string | undefined
+                    port?: number | undefined
+                  }
+                  timeoutSeconds?: number | undefined
+                }
+              | {
+                  exec: {
+                    command?: string[] | undefined
+                  }
+                  failureThreshold?: number | undefined
+                  httpGet?:
+                    | {
+                        host?: string | undefined
+                        httpHeaders?:
+                          | {
+                              name?: string | undefined
+                              value?: string | undefined
+                            }[]
+                          | undefined
+                        path?: string | undefined
+                        port?: number | undefined
+                        scheme?: string | undefined
+                      }
+                    | undefined
+                  initialDelaySeconds?: number | undefined
+                  periodSeconds?: number | undefined
+                  successThreshold?: number | undefined
+                  tcpSocket?:
+                    | {
+                        host?: string | undefined
+                        port?: number | undefined
+                      }
+                    | undefined
+                  timeoutSeconds?: number | undefined
+                }
+            )
+          | undefined
         template?:
           | {
               address?: string | undefined

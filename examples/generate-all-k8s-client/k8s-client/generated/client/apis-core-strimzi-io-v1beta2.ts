@@ -126,7 +126,7 @@ export const patchCoreStrimziIoV1Beta2NamespacedStrimziPodSet = (
     {
       path: `/apis/core.strimzi.io/v1beta2/namespaces/${args['namespace']}/strimzipodsets/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +177,7 @@ export const patchCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatus = (
     {
       path: `/apis/core.strimzi.io/v1beta2/namespaces/${args['namespace']}/strimzipodsets/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -399,7 +399,7 @@ export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiResponse =
   /** status 200 OK */ IoStrimziCoreV1Beta2StrimziPodSet
@@ -451,7 +451,7 @@ export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiResponse =
   /** status 200 OK */ IoStrimziCoreV1Beta2StrimziPodSetList
@@ -628,3 +628,4 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object

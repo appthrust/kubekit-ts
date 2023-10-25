@@ -151,7 +151,7 @@ export const patchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -203,7 +203,7 @@ export const patchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatus = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -343,7 +343,7 @@ export const patchSecurityIstioIoV1Beta1NamespacedPeerAuthentication = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -394,7 +394,7 @@ export const patchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatus = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -534,7 +534,7 @@ export const patchSecurityIstioIoV1Beta1NamespacedRequestAuthentication = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -587,7 +587,7 @@ export const patchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatus =
       {
         path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications/${args.name}/status`,
         method: 'PATCH',
-        body: args.body,
+        body: args.ioK8SApimachineryPkgApisMetaV1Patch,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -880,7 +880,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1AuthorizationPolicy
@@ -935,7 +935,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiArg
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1PeerAuthenticationList
@@ -1123,7 +1123,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1PeerAuthentication
@@ -1178,7 +1178,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiArg 
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1RequestAuthenticationList
@@ -1369,7 +1369,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1RequestAuthentication
@@ -1424,7 +1424,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiA
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1PeerAuthenticationList
@@ -1568,7 +1568,132 @@ export type IoIstioSecurityV1Beta1AuthorizationPolicy = {
   apiVersion?: string | undefined
   kind?: string | undefined
   metadata?: IoK8SApimachineryPkgApisMetaV1ObjectMeta | undefined
-  spec?: (any | any) | undefined
+  spec?:
+    | (
+        | {
+            action?: ('ALLOW' | 'DENY' | 'AUDIT' | 'CUSTOM') | undefined
+            provider?:
+              | {
+                  name?: string | undefined
+                }
+              | undefined
+            rules?:
+              | {
+                  from?:
+                    | {
+                        source?:
+                          | {
+                              ipBlocks?: string[] | undefined
+                              namespaces?: string[] | undefined
+                              notIpBlocks?: string[] | undefined
+                              notNamespaces?: string[] | undefined
+                              notPrincipals?: string[] | undefined
+                              notRemoteIpBlocks?: string[] | undefined
+                              notRequestPrincipals?: string[] | undefined
+                              principals?: string[] | undefined
+                              remoteIpBlocks?: string[] | undefined
+                              requestPrincipals?: string[] | undefined
+                            }
+                          | undefined
+                      }[]
+                    | undefined
+                  to?:
+                    | {
+                        operation?:
+                          | {
+                              hosts?: string[] | undefined
+                              methods?: string[] | undefined
+                              notHosts?: string[] | undefined
+                              notMethods?: string[] | undefined
+                              notPaths?: string[] | undefined
+                              notPorts?: string[] | undefined
+                              paths?: string[] | undefined
+                              ports?: string[] | undefined
+                            }
+                          | undefined
+                      }[]
+                    | undefined
+                  when?:
+                    | {
+                        key?: string | undefined
+                        notValues?: string[] | undefined
+                        values?: string[] | undefined
+                      }[]
+                    | undefined
+                }[]
+              | undefined
+            selector?:
+              | {
+                  matchLabels?:
+                    | {
+                        [key: string]: string
+                      }
+                    | undefined
+                }
+              | undefined
+          }
+        | {
+            action?: ('ALLOW' | 'DENY' | 'AUDIT' | 'CUSTOM') | undefined
+            provider: {
+              name?: string | undefined
+            }
+            rules?:
+              | {
+                  from?:
+                    | {
+                        source?:
+                          | {
+                              ipBlocks?: string[] | undefined
+                              namespaces?: string[] | undefined
+                              notIpBlocks?: string[] | undefined
+                              notNamespaces?: string[] | undefined
+                              notPrincipals?: string[] | undefined
+                              notRemoteIpBlocks?: string[] | undefined
+                              notRequestPrincipals?: string[] | undefined
+                              principals?: string[] | undefined
+                              remoteIpBlocks?: string[] | undefined
+                              requestPrincipals?: string[] | undefined
+                            }
+                          | undefined
+                      }[]
+                    | undefined
+                  to?:
+                    | {
+                        operation?:
+                          | {
+                              hosts?: string[] | undefined
+                              methods?: string[] | undefined
+                              notHosts?: string[] | undefined
+                              notMethods?: string[] | undefined
+                              notPaths?: string[] | undefined
+                              notPorts?: string[] | undefined
+                              paths?: string[] | undefined
+                              ports?: string[] | undefined
+                            }
+                          | undefined
+                      }[]
+                    | undefined
+                  when?:
+                    | {
+                        key?: string | undefined
+                        notValues?: string[] | undefined
+                        values?: string[] | undefined
+                      }[]
+                    | undefined
+                }[]
+              | undefined
+            selector?:
+              | {
+                  matchLabels?:
+                    | {
+                        [key: string]: string
+                      }
+                    | undefined
+                }
+              | undefined
+          }
+      )
+    | undefined
   status?: object | undefined
 }
 export type IoK8SApimachineryPkgApisMetaV1ListMeta = {
@@ -1619,6 +1744,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoIstioSecurityV1Beta1PeerAuthentication = {
   apiVersion?: string | undefined
   kind?: string | undefined

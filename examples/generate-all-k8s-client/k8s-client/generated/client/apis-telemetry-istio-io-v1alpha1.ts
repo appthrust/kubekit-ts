@@ -126,7 +126,7 @@ export const patchTelemetryIstioIoV1Alpha1NamespacedTelemetry = (
     {
       path: `/apis/telemetry.istio.io/v1alpha1/namespaces/${args['namespace']}/telemetries/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +177,7 @@ export const patchTelemetryIstioIoV1Alpha1NamespacedTelemetryStatus = (
     {
       path: `/apis/telemetry.istio.io/v1alpha1/namespaces/${args['namespace']}/telemetries/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -399,7 +399,7 @@ export type PatchTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadTelemetryIstioIoV1Alpha1NamespacedTelemetryStatusApiResponse =
   /** status 200 OK */ IoIstioTelemetryV1Alpha1Telemetry
@@ -451,7 +451,7 @@ export type PatchTelemetryIstioIoV1Alpha1NamespacedTelemetryStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListTelemetryIstioIoV1Alpha1TelemetryForAllNamespacesApiResponse =
   /** status 200 OK */ IoIstioTelemetryV1Alpha1TelemetryList
@@ -564,7 +564,70 @@ export type IoIstioTelemetryV1Alpha1Telemetry = {
               overrides?:
                 | {
                     disabled?: (boolean | null) | undefined
-                    match?: (any | any | any) | undefined
+                    match?:
+                      | (
+                          | {
+                              customMetric?: string | undefined
+                              metric?:
+                                | (
+                                    | 'ALL_METRICS'
+                                    | 'REQUEST_COUNT'
+                                    | 'REQUEST_DURATION'
+                                    | 'REQUEST_SIZE'
+                                    | 'RESPONSE_SIZE'
+                                    | 'TCP_OPENED_CONNECTIONS'
+                                    | 'TCP_CLOSED_CONNECTIONS'
+                                    | 'TCP_SENT_BYTES'
+                                    | 'TCP_RECEIVED_BYTES'
+                                    | 'GRPC_REQUEST_MESSAGES'
+                                    | 'GRPC_RESPONSE_MESSAGES'
+                                  )
+                                | undefined
+                              mode?:
+                                | ('CLIENT_AND_SERVER' | 'CLIENT' | 'SERVER')
+                                | undefined
+                            }
+                          | {
+                              customMetric?: string | undefined
+                              metric:
+                                | 'ALL_METRICS'
+                                | 'REQUEST_COUNT'
+                                | 'REQUEST_DURATION'
+                                | 'REQUEST_SIZE'
+                                | 'RESPONSE_SIZE'
+                                | 'TCP_OPENED_CONNECTIONS'
+                                | 'TCP_CLOSED_CONNECTIONS'
+                                | 'TCP_SENT_BYTES'
+                                | 'TCP_RECEIVED_BYTES'
+                                | 'GRPC_REQUEST_MESSAGES'
+                                | 'GRPC_RESPONSE_MESSAGES'
+                              mode?:
+                                | ('CLIENT_AND_SERVER' | 'CLIENT' | 'SERVER')
+                                | undefined
+                            }
+                          | {
+                              customMetric: string
+                              metric?:
+                                | (
+                                    | 'ALL_METRICS'
+                                    | 'REQUEST_COUNT'
+                                    | 'REQUEST_DURATION'
+                                    | 'REQUEST_SIZE'
+                                    | 'RESPONSE_SIZE'
+                                    | 'TCP_OPENED_CONNECTIONS'
+                                    | 'TCP_CLOSED_CONNECTIONS'
+                                    | 'TCP_SENT_BYTES'
+                                    | 'TCP_RECEIVED_BYTES'
+                                    | 'GRPC_REQUEST_MESSAGES'
+                                    | 'GRPC_RESPONSE_MESSAGES'
+                                  )
+                                | undefined
+                              mode?:
+                                | ('CLIENT_AND_SERVER' | 'CLIENT' | 'SERVER')
+                                | undefined
+                            }
+                        )
+                      | undefined
                     tagOverrides?:
                       | {
                           [key: string]: {
@@ -595,7 +658,77 @@ export type IoIstioTelemetryV1Alpha1Telemetry = {
           | {
               customTags?:
                 | {
-                    [key: string]: any | any | any | any
+                    [key: string]:
+                      | {
+                          environment?:
+                            | {
+                                defaultValue?: string | undefined
+                                name?: string | undefined
+                              }
+                            | undefined
+                          header?:
+                            | {
+                                defaultValue?: string | undefined
+                                name?: string | undefined
+                              }
+                            | undefined
+                          literal?:
+                            | {
+                                value?: string | undefined
+                              }
+                            | undefined
+                        }
+                      | {
+                          environment?:
+                            | {
+                                defaultValue?: string | undefined
+                                name?: string | undefined
+                              }
+                            | undefined
+                          header?:
+                            | {
+                                defaultValue?: string | undefined
+                                name?: string | undefined
+                              }
+                            | undefined
+                          literal: {
+                            value?: string | undefined
+                          }
+                        }
+                      | {
+                          environment: {
+                            defaultValue?: string | undefined
+                            name?: string | undefined
+                          }
+                          header?:
+                            | {
+                                defaultValue?: string | undefined
+                                name?: string | undefined
+                              }
+                            | undefined
+                          literal?:
+                            | {
+                                value?: string | undefined
+                              }
+                            | undefined
+                        }
+                      | {
+                          environment?:
+                            | {
+                                defaultValue?: string | undefined
+                                name?: string | undefined
+                              }
+                            | undefined
+                          header: {
+                            defaultValue?: string | undefined
+                            name?: string | undefined
+                          }
+                          literal?:
+                            | {
+                                value?: string | undefined
+                              }
+                            | undefined
+                        }
                   }
                 | undefined
               disableSpanReporting?: (boolean | null) | undefined
@@ -659,3 +792,4 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object

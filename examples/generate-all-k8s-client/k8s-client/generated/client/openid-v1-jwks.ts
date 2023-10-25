@@ -8,5 +8,6 @@ export const getServiceAccountIssuerOpenIdKeyset = (
     options
   )
 }
-export type GetServiceAccountIssuerOpenIdKeysetApiResponse = unknown
+export type GetServiceAccountIssuerOpenIdKeysetApiResponse =
+  /** status 200 OK */ string
 export type GetServiceAccountIssuerOpenIdKeysetApiArg = void

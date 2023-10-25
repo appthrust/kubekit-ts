@@ -342,7 +342,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaBridge = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -393,7 +393,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges/${args.name}/scale`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -444,7 +444,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -583,7 +583,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnector = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -634,7 +634,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors/${args.name}/scale`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -685,7 +685,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -824,7 +824,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnect = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -875,7 +875,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnectScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects/${args.name}/scale`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -926,7 +926,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1066,7 +1066,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2 = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1117,7 +1117,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2Scale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s/${args.name}/scale`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1168,7 +1168,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2Status = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1307,7 +1307,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1358,7 +1358,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers/${args.name}/scale`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1409,7 +1409,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1548,7 +1548,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaRebalance = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkarebalances/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1599,7 +1599,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkarebalances/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1738,7 +1738,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafka = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkas/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1789,7 +1789,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkas/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1928,7 +1928,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaTopic = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkatopics/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1979,7 +1979,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkatopics/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2118,7 +2118,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaUser = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkausers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2169,7 +2169,7 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaUserStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkausers/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2780,7 +2780,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
@@ -2832,7 +2832,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaBridge
@@ -2884,7 +2884,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnectorList
@@ -3072,7 +3072,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
@@ -3124,7 +3124,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnector
@@ -3176,7 +3176,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnectList
@@ -3364,7 +3364,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
@@ -3416,7 +3416,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnect
@@ -3468,7 +3468,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2List
@@ -3656,7 +3656,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
@@ -3709,7 +3709,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
@@ -3763,7 +3763,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg =
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMakerList
@@ -3951,7 +3951,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
@@ -4004,7 +4004,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
@@ -4057,7 +4057,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaRebalanceList
@@ -4245,7 +4245,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaRebalance
@@ -4297,7 +4297,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaList
@@ -4484,7 +4484,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2Kafka
@@ -4536,7 +4536,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaTopicList
@@ -4723,7 +4723,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaTopic
@@ -4775,7 +4775,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaUserList
@@ -4962,7 +4962,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaUser
@@ -5014,7 +5014,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
@@ -8005,10 +8005,1336 @@ export type IoStrimziKafkaV1Beta2KafkaMirrorMaker = {
   spec?:
     | (
         | {
-            include: any
+            include: string
+            consumer: {
+              authentication?:
+                | {
+                    accessToken?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    accessTokenIsJwt?: boolean | undefined
+                    audience?: string | undefined
+                    certificateAndKey?:
+                      | {
+                          certificate: string
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    clientId?: string | undefined
+                    clientSecret?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    connectTimeoutSeconds?: number | undefined
+                    disableTlsHostnameVerification?: boolean | undefined
+                    maxTokenExpirySeconds?: number | undefined
+                    passwordSecret?:
+                      | {
+                          password: string
+                          secretName: string
+                        }
+                      | undefined
+                    readTimeoutSeconds?: number | undefined
+                    refreshToken?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    scope?: string | undefined
+                    tlsTrustedCertificates?:
+                      | {
+                          certificate: string
+                          secretName: string
+                        }[]
+                      | undefined
+                    tokenEndpointUri?: string | undefined
+                    type:
+                      | 'tls'
+                      | 'scram-sha-256'
+                      | 'scram-sha-512'
+                      | 'plain'
+                      | 'oauth'
+                    username?: string | undefined
+                  }
+                | undefined
+              bootstrapServers: string
+              config?: object | undefined
+              groupId: string
+              numStreams?: number | undefined
+              offsetCommitInterval?: number | undefined
+              tls?:
+                | {
+                    trustedCertificates?:
+                      | {
+                          certificate: string
+                          secretName: string
+                        }[]
+                      | undefined
+                  }
+                | undefined
+            }
+            image?: string | undefined
+            jvmOptions?:
+              | {
+                  '-XX'?: object | undefined
+                  '-Xms'?: string | undefined
+                  '-Xmx'?: string | undefined
+                  gcLoggingEnabled?: boolean | undefined
+                  javaSystemProperties?:
+                    | {
+                        name?: string | undefined
+                        value?: string | undefined
+                      }[]
+                    | undefined
+                }
+              | undefined
+            livenessProbe?:
+              | {
+                  failureThreshold?: number | undefined
+                  initialDelaySeconds?: number | undefined
+                  periodSeconds?: number | undefined
+                  successThreshold?: number | undefined
+                  timeoutSeconds?: number | undefined
+                }
+              | undefined
+            logging?:
+              | {
+                  loggers?: object | undefined
+                  type: 'inline' | 'external'
+                  valueFrom?:
+                    | {
+                        configMapKeyRef?:
+                          | {
+                              key?: string | undefined
+                              name?: string | undefined
+                              optional?: boolean | undefined
+                            }
+                          | undefined
+                      }
+                    | undefined
+                }
+              | undefined
+            metricsConfig?:
+              | {
+                  type: 'jmxPrometheusExporter'
+                  valueFrom: {
+                    configMapKeyRef?:
+                      | {
+                          key?: string | undefined
+                          name?: string | undefined
+                          optional?: boolean | undefined
+                        }
+                      | undefined
+                  }
+                }
+              | undefined
+            producer: {
+              abortOnSendFailure?: boolean | undefined
+              authentication?:
+                | {
+                    accessToken?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    accessTokenIsJwt?: boolean | undefined
+                    audience?: string | undefined
+                    certificateAndKey?:
+                      | {
+                          certificate: string
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    clientId?: string | undefined
+                    clientSecret?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    connectTimeoutSeconds?: number | undefined
+                    disableTlsHostnameVerification?: boolean | undefined
+                    maxTokenExpirySeconds?: number | undefined
+                    passwordSecret?:
+                      | {
+                          password: string
+                          secretName: string
+                        }
+                      | undefined
+                    readTimeoutSeconds?: number | undefined
+                    refreshToken?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    scope?: string | undefined
+                    tlsTrustedCertificates?:
+                      | {
+                          certificate: string
+                          secretName: string
+                        }[]
+                      | undefined
+                    tokenEndpointUri?: string | undefined
+                    type:
+                      | 'tls'
+                      | 'scram-sha-256'
+                      | 'scram-sha-512'
+                      | 'plain'
+                      | 'oauth'
+                    username?: string | undefined
+                  }
+                | undefined
+              bootstrapServers: string
+              config?: object | undefined
+              tls?:
+                | {
+                    trustedCertificates?:
+                      | {
+                          certificate: string
+                          secretName: string
+                        }[]
+                      | undefined
+                  }
+                | undefined
+            }
+            readinessProbe?:
+              | {
+                  failureThreshold?: number | undefined
+                  initialDelaySeconds?: number | undefined
+                  periodSeconds?: number | undefined
+                  successThreshold?: number | undefined
+                  timeoutSeconds?: number | undefined
+                }
+              | undefined
+            replicas: number
+            resources?:
+              | {
+                  limits?: object | undefined
+                  requests?: object | undefined
+                }
+              | undefined
+            template?:
+              | {
+                  deployment?:
+                    | {
+                        deploymentStrategy?:
+                          | ('RollingUpdate' | 'Recreate')
+                          | undefined
+                        metadata?:
+                          | {
+                              annotations?: object | undefined
+                              labels?: object | undefined
+                            }
+                          | undefined
+                      }
+                    | undefined
+                  mirrorMakerContainer?:
+                    | {
+                        env?:
+                          | {
+                              name?: string | undefined
+                              value?: string | undefined
+                            }[]
+                          | undefined
+                        securityContext?:
+                          | {
+                              allowPrivilegeEscalation?: boolean | undefined
+                              capabilities?:
+                                | {
+                                    add?: string[] | undefined
+                                    drop?: string[] | undefined
+                                  }
+                                | undefined
+                              privileged?: boolean | undefined
+                              procMount?: string | undefined
+                              readOnlyRootFilesystem?: boolean | undefined
+                              runAsGroup?: number | undefined
+                              runAsNonRoot?: boolean | undefined
+                              runAsUser?: number | undefined
+                              seLinuxOptions?:
+                                | {
+                                    level?: string | undefined
+                                    role?: string | undefined
+                                    type?: string | undefined
+                                    user?: string | undefined
+                                  }
+                                | undefined
+                              seccompProfile?:
+                                | {
+                                    localhostProfile?: string | undefined
+                                    type?: string | undefined
+                                  }
+                                | undefined
+                              windowsOptions?:
+                                | {
+                                    gmsaCredentialSpec?: string | undefined
+                                    gmsaCredentialSpecName?: string | undefined
+                                    hostProcess?: boolean | undefined
+                                    runAsUserName?: string | undefined
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                      }
+                    | undefined
+                  pod?:
+                    | {
+                        affinity?:
+                          | {
+                              nodeAffinity?:
+                                | {
+                                    preferredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          preference?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchFields?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                              }
+                                            | undefined
+                                          weight?: number | undefined
+                                        }[]
+                                      | undefined
+                                    requiredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          nodeSelectorTerms?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchFields?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                              }[]
+                                            | undefined
+                                        }
+                                      | undefined
+                                  }
+                                | undefined
+                              podAffinity?:
+                                | {
+                                    preferredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          podAffinityTerm?:
+                                            | {
+                                                labelSelector?:
+                                                  | {
+                                                      matchExpressions?:
+                                                        | {
+                                                            key?:
+                                                              | string
+                                                              | undefined
+                                                            operator?:
+                                                              | string
+                                                              | undefined
+                                                            values?:
+                                                              | string[]
+                                                              | undefined
+                                                          }[]
+                                                        | undefined
+                                                      matchLabels?:
+                                                        | object
+                                                        | undefined
+                                                    }
+                                                  | undefined
+                                                namespaceSelector?:
+                                                  | {
+                                                      matchExpressions?:
+                                                        | {
+                                                            key?:
+                                                              | string
+                                                              | undefined
+                                                            operator?:
+                                                              | string
+                                                              | undefined
+                                                            values?:
+                                                              | string[]
+                                                              | undefined
+                                                          }[]
+                                                        | undefined
+                                                      matchLabels?:
+                                                        | object
+                                                        | undefined
+                                                    }
+                                                  | undefined
+                                                namespaces?:
+                                                  | string[]
+                                                  | undefined
+                                                topologyKey?: string | undefined
+                                              }
+                                            | undefined
+                                          weight?: number | undefined
+                                        }[]
+                                      | undefined
+                                    requiredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          labelSelector?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchLabels?: object | undefined
+                                              }
+                                            | undefined
+                                          namespaceSelector?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchLabels?: object | undefined
+                                              }
+                                            | undefined
+                                          namespaces?: string[] | undefined
+                                          topologyKey?: string | undefined
+                                        }[]
+                                      | undefined
+                                  }
+                                | undefined
+                              podAntiAffinity?:
+                                | {
+                                    preferredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          podAffinityTerm?:
+                                            | {
+                                                labelSelector?:
+                                                  | {
+                                                      matchExpressions?:
+                                                        | {
+                                                            key?:
+                                                              | string
+                                                              | undefined
+                                                            operator?:
+                                                              | string
+                                                              | undefined
+                                                            values?:
+                                                              | string[]
+                                                              | undefined
+                                                          }[]
+                                                        | undefined
+                                                      matchLabels?:
+                                                        | object
+                                                        | undefined
+                                                    }
+                                                  | undefined
+                                                namespaceSelector?:
+                                                  | {
+                                                      matchExpressions?:
+                                                        | {
+                                                            key?:
+                                                              | string
+                                                              | undefined
+                                                            operator?:
+                                                              | string
+                                                              | undefined
+                                                            values?:
+                                                              | string[]
+                                                              | undefined
+                                                          }[]
+                                                        | undefined
+                                                      matchLabels?:
+                                                        | object
+                                                        | undefined
+                                                    }
+                                                  | undefined
+                                                namespaces?:
+                                                  | string[]
+                                                  | undefined
+                                                topologyKey?: string | undefined
+                                              }
+                                            | undefined
+                                          weight?: number | undefined
+                                        }[]
+                                      | undefined
+                                    requiredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          labelSelector?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchLabels?: object | undefined
+                                              }
+                                            | undefined
+                                          namespaceSelector?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchLabels?: object | undefined
+                                              }
+                                            | undefined
+                                          namespaces?: string[] | undefined
+                                          topologyKey?: string | undefined
+                                        }[]
+                                      | undefined
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                        enableServiceLinks?: boolean | undefined
+                        hostAliases?:
+                          | {
+                              hostnames?: string[] | undefined
+                              ip?: string | undefined
+                            }[]
+                          | undefined
+                        imagePullSecrets?:
+                          | {
+                              name?: string | undefined
+                            }[]
+                          | undefined
+                        metadata?:
+                          | {
+                              annotations?: object | undefined
+                              labels?: object | undefined
+                            }
+                          | undefined
+                        priorityClassName?: string | undefined
+                        schedulerName?: string | undefined
+                        securityContext?:
+                          | {
+                              fsGroup?: number | undefined
+                              fsGroupChangePolicy?: string | undefined
+                              runAsGroup?: number | undefined
+                              runAsNonRoot?: boolean | undefined
+                              runAsUser?: number | undefined
+                              seLinuxOptions?:
+                                | {
+                                    level?: string | undefined
+                                    role?: string | undefined
+                                    type?: string | undefined
+                                    user?: string | undefined
+                                  }
+                                | undefined
+                              seccompProfile?:
+                                | {
+                                    localhostProfile?: string | undefined
+                                    type?: string | undefined
+                                  }
+                                | undefined
+                              supplementalGroups?: number[] | undefined
+                              sysctls?:
+                                | {
+                                    name?: string | undefined
+                                    value?: string | undefined
+                                  }[]
+                                | undefined
+                              windowsOptions?:
+                                | {
+                                    gmsaCredentialSpec?: string | undefined
+                                    gmsaCredentialSpecName?: string | undefined
+                                    hostProcess?: boolean | undefined
+                                    runAsUserName?: string | undefined
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                        terminationGracePeriodSeconds?: number | undefined
+                        tmpDirSizeLimit?: string | undefined
+                        tolerations?:
+                          | {
+                              effect?: string | undefined
+                              key?: string | undefined
+                              operator?: string | undefined
+                              tolerationSeconds?: number | undefined
+                              value?: string | undefined
+                            }[]
+                          | undefined
+                        topologySpreadConstraints?:
+                          | {
+                              labelSelector?:
+                                | {
+                                    matchExpressions?:
+                                      | {
+                                          key?: string | undefined
+                                          operator?: string | undefined
+                                          values?: string[] | undefined
+                                        }[]
+                                      | undefined
+                                    matchLabels?: object | undefined
+                                  }
+                                | undefined
+                              maxSkew?: number | undefined
+                              minDomains?: number | undefined
+                              topologyKey?: string | undefined
+                              whenUnsatisfiable?: string | undefined
+                            }[]
+                          | undefined
+                      }
+                    | undefined
+                  podDisruptionBudget?:
+                    | {
+                        maxUnavailable?: number | undefined
+                        metadata?:
+                          | {
+                              annotations?: object | undefined
+                              labels?: object | undefined
+                            }
+                          | undefined
+                      }
+                    | undefined
+                  serviceAccount?:
+                    | {
+                        metadata?:
+                          | {
+                              annotations?: object | undefined
+                              labels?: object | undefined
+                            }
+                          | undefined
+                      }
+                    | undefined
+                }
+              | undefined
+            tracing?:
+              | {
+                  type: 'jaeger'
+                }
+              | undefined
+            version?: string | undefined
+            whitelist?: string | undefined
           }
         | {
-            whitelist: any
+            whitelist: string
+            consumer: {
+              authentication?:
+                | {
+                    accessToken?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    accessTokenIsJwt?: boolean | undefined
+                    audience?: string | undefined
+                    certificateAndKey?:
+                      | {
+                          certificate: string
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    clientId?: string | undefined
+                    clientSecret?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    connectTimeoutSeconds?: number | undefined
+                    disableTlsHostnameVerification?: boolean | undefined
+                    maxTokenExpirySeconds?: number | undefined
+                    passwordSecret?:
+                      | {
+                          password: string
+                          secretName: string
+                        }
+                      | undefined
+                    readTimeoutSeconds?: number | undefined
+                    refreshToken?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    scope?: string | undefined
+                    tlsTrustedCertificates?:
+                      | {
+                          certificate: string
+                          secretName: string
+                        }[]
+                      | undefined
+                    tokenEndpointUri?: string | undefined
+                    type:
+                      | 'tls'
+                      | 'scram-sha-256'
+                      | 'scram-sha-512'
+                      | 'plain'
+                      | 'oauth'
+                    username?: string | undefined
+                  }
+                | undefined
+              bootstrapServers: string
+              config?: object | undefined
+              groupId: string
+              numStreams?: number | undefined
+              offsetCommitInterval?: number | undefined
+              tls?:
+                | {
+                    trustedCertificates?:
+                      | {
+                          certificate: string
+                          secretName: string
+                        }[]
+                      | undefined
+                  }
+                | undefined
+            }
+            image?: string | undefined
+            include?: string | undefined
+            jvmOptions?:
+              | {
+                  '-XX'?: object | undefined
+                  '-Xms'?: string | undefined
+                  '-Xmx'?: string | undefined
+                  gcLoggingEnabled?: boolean | undefined
+                  javaSystemProperties?:
+                    | {
+                        name?: string | undefined
+                        value?: string | undefined
+                      }[]
+                    | undefined
+                }
+              | undefined
+            livenessProbe?:
+              | {
+                  failureThreshold?: number | undefined
+                  initialDelaySeconds?: number | undefined
+                  periodSeconds?: number | undefined
+                  successThreshold?: number | undefined
+                  timeoutSeconds?: number | undefined
+                }
+              | undefined
+            logging?:
+              | {
+                  loggers?: object | undefined
+                  type: 'inline' | 'external'
+                  valueFrom?:
+                    | {
+                        configMapKeyRef?:
+                          | {
+                              key?: string | undefined
+                              name?: string | undefined
+                              optional?: boolean | undefined
+                            }
+                          | undefined
+                      }
+                    | undefined
+                }
+              | undefined
+            metricsConfig?:
+              | {
+                  type: 'jmxPrometheusExporter'
+                  valueFrom: {
+                    configMapKeyRef?:
+                      | {
+                          key?: string | undefined
+                          name?: string | undefined
+                          optional?: boolean | undefined
+                        }
+                      | undefined
+                  }
+                }
+              | undefined
+            producer: {
+              abortOnSendFailure?: boolean | undefined
+              authentication?:
+                | {
+                    accessToken?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    accessTokenIsJwt?: boolean | undefined
+                    audience?: string | undefined
+                    certificateAndKey?:
+                      | {
+                          certificate: string
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    clientId?: string | undefined
+                    clientSecret?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    connectTimeoutSeconds?: number | undefined
+                    disableTlsHostnameVerification?: boolean | undefined
+                    maxTokenExpirySeconds?: number | undefined
+                    passwordSecret?:
+                      | {
+                          password: string
+                          secretName: string
+                        }
+                      | undefined
+                    readTimeoutSeconds?: number | undefined
+                    refreshToken?:
+                      | {
+                          key: string
+                          secretName: string
+                        }
+                      | undefined
+                    scope?: string | undefined
+                    tlsTrustedCertificates?:
+                      | {
+                          certificate: string
+                          secretName: string
+                        }[]
+                      | undefined
+                    tokenEndpointUri?: string | undefined
+                    type:
+                      | 'tls'
+                      | 'scram-sha-256'
+                      | 'scram-sha-512'
+                      | 'plain'
+                      | 'oauth'
+                    username?: string | undefined
+                  }
+                | undefined
+              bootstrapServers: string
+              config?: object | undefined
+              tls?:
+                | {
+                    trustedCertificates?:
+                      | {
+                          certificate: string
+                          secretName: string
+                        }[]
+                      | undefined
+                  }
+                | undefined
+            }
+            readinessProbe?:
+              | {
+                  failureThreshold?: number | undefined
+                  initialDelaySeconds?: number | undefined
+                  periodSeconds?: number | undefined
+                  successThreshold?: number | undefined
+                  timeoutSeconds?: number | undefined
+                }
+              | undefined
+            replicas: number
+            resources?:
+              | {
+                  limits?: object | undefined
+                  requests?: object | undefined
+                }
+              | undefined
+            template?:
+              | {
+                  deployment?:
+                    | {
+                        deploymentStrategy?:
+                          | ('RollingUpdate' | 'Recreate')
+                          | undefined
+                        metadata?:
+                          | {
+                              annotations?: object | undefined
+                              labels?: object | undefined
+                            }
+                          | undefined
+                      }
+                    | undefined
+                  mirrorMakerContainer?:
+                    | {
+                        env?:
+                          | {
+                              name?: string | undefined
+                              value?: string | undefined
+                            }[]
+                          | undefined
+                        securityContext?:
+                          | {
+                              allowPrivilegeEscalation?: boolean | undefined
+                              capabilities?:
+                                | {
+                                    add?: string[] | undefined
+                                    drop?: string[] | undefined
+                                  }
+                                | undefined
+                              privileged?: boolean | undefined
+                              procMount?: string | undefined
+                              readOnlyRootFilesystem?: boolean | undefined
+                              runAsGroup?: number | undefined
+                              runAsNonRoot?: boolean | undefined
+                              runAsUser?: number | undefined
+                              seLinuxOptions?:
+                                | {
+                                    level?: string | undefined
+                                    role?: string | undefined
+                                    type?: string | undefined
+                                    user?: string | undefined
+                                  }
+                                | undefined
+                              seccompProfile?:
+                                | {
+                                    localhostProfile?: string | undefined
+                                    type?: string | undefined
+                                  }
+                                | undefined
+                              windowsOptions?:
+                                | {
+                                    gmsaCredentialSpec?: string | undefined
+                                    gmsaCredentialSpecName?: string | undefined
+                                    hostProcess?: boolean | undefined
+                                    runAsUserName?: string | undefined
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                      }
+                    | undefined
+                  pod?:
+                    | {
+                        affinity?:
+                          | {
+                              nodeAffinity?:
+                                | {
+                                    preferredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          preference?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchFields?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                              }
+                                            | undefined
+                                          weight?: number | undefined
+                                        }[]
+                                      | undefined
+                                    requiredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          nodeSelectorTerms?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchFields?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                              }[]
+                                            | undefined
+                                        }
+                                      | undefined
+                                  }
+                                | undefined
+                              podAffinity?:
+                                | {
+                                    preferredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          podAffinityTerm?:
+                                            | {
+                                                labelSelector?:
+                                                  | {
+                                                      matchExpressions?:
+                                                        | {
+                                                            key?:
+                                                              | string
+                                                              | undefined
+                                                            operator?:
+                                                              | string
+                                                              | undefined
+                                                            values?:
+                                                              | string[]
+                                                              | undefined
+                                                          }[]
+                                                        | undefined
+                                                      matchLabels?:
+                                                        | object
+                                                        | undefined
+                                                    }
+                                                  | undefined
+                                                namespaceSelector?:
+                                                  | {
+                                                      matchExpressions?:
+                                                        | {
+                                                            key?:
+                                                              | string
+                                                              | undefined
+                                                            operator?:
+                                                              | string
+                                                              | undefined
+                                                            values?:
+                                                              | string[]
+                                                              | undefined
+                                                          }[]
+                                                        | undefined
+                                                      matchLabels?:
+                                                        | object
+                                                        | undefined
+                                                    }
+                                                  | undefined
+                                                namespaces?:
+                                                  | string[]
+                                                  | undefined
+                                                topologyKey?: string | undefined
+                                              }
+                                            | undefined
+                                          weight?: number | undefined
+                                        }[]
+                                      | undefined
+                                    requiredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          labelSelector?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchLabels?: object | undefined
+                                              }
+                                            | undefined
+                                          namespaceSelector?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchLabels?: object | undefined
+                                              }
+                                            | undefined
+                                          namespaces?: string[] | undefined
+                                          topologyKey?: string | undefined
+                                        }[]
+                                      | undefined
+                                  }
+                                | undefined
+                              podAntiAffinity?:
+                                | {
+                                    preferredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          podAffinityTerm?:
+                                            | {
+                                                labelSelector?:
+                                                  | {
+                                                      matchExpressions?:
+                                                        | {
+                                                            key?:
+                                                              | string
+                                                              | undefined
+                                                            operator?:
+                                                              | string
+                                                              | undefined
+                                                            values?:
+                                                              | string[]
+                                                              | undefined
+                                                          }[]
+                                                        | undefined
+                                                      matchLabels?:
+                                                        | object
+                                                        | undefined
+                                                    }
+                                                  | undefined
+                                                namespaceSelector?:
+                                                  | {
+                                                      matchExpressions?:
+                                                        | {
+                                                            key?:
+                                                              | string
+                                                              | undefined
+                                                            operator?:
+                                                              | string
+                                                              | undefined
+                                                            values?:
+                                                              | string[]
+                                                              | undefined
+                                                          }[]
+                                                        | undefined
+                                                      matchLabels?:
+                                                        | object
+                                                        | undefined
+                                                    }
+                                                  | undefined
+                                                namespaces?:
+                                                  | string[]
+                                                  | undefined
+                                                topologyKey?: string | undefined
+                                              }
+                                            | undefined
+                                          weight?: number | undefined
+                                        }[]
+                                      | undefined
+                                    requiredDuringSchedulingIgnoredDuringExecution?:
+                                      | {
+                                          labelSelector?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchLabels?: object | undefined
+                                              }
+                                            | undefined
+                                          namespaceSelector?:
+                                            | {
+                                                matchExpressions?:
+                                                  | {
+                                                      key?: string | undefined
+                                                      operator?:
+                                                        | string
+                                                        | undefined
+                                                      values?:
+                                                        | string[]
+                                                        | undefined
+                                                    }[]
+                                                  | undefined
+                                                matchLabels?: object | undefined
+                                              }
+                                            | undefined
+                                          namespaces?: string[] | undefined
+                                          topologyKey?: string | undefined
+                                        }[]
+                                      | undefined
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                        enableServiceLinks?: boolean | undefined
+                        hostAliases?:
+                          | {
+                              hostnames?: string[] | undefined
+                              ip?: string | undefined
+                            }[]
+                          | undefined
+                        imagePullSecrets?:
+                          | {
+                              name?: string | undefined
+                            }[]
+                          | undefined
+                        metadata?:
+                          | {
+                              annotations?: object | undefined
+                              labels?: object | undefined
+                            }
+                          | undefined
+                        priorityClassName?: string | undefined
+                        schedulerName?: string | undefined
+                        securityContext?:
+                          | {
+                              fsGroup?: number | undefined
+                              fsGroupChangePolicy?: string | undefined
+                              runAsGroup?: number | undefined
+                              runAsNonRoot?: boolean | undefined
+                              runAsUser?: number | undefined
+                              seLinuxOptions?:
+                                | {
+                                    level?: string | undefined
+                                    role?: string | undefined
+                                    type?: string | undefined
+                                    user?: string | undefined
+                                  }
+                                | undefined
+                              seccompProfile?:
+                                | {
+                                    localhostProfile?: string | undefined
+                                    type?: string | undefined
+                                  }
+                                | undefined
+                              supplementalGroups?: number[] | undefined
+                              sysctls?:
+                                | {
+                                    name?: string | undefined
+                                    value?: string | undefined
+                                  }[]
+                                | undefined
+                              windowsOptions?:
+                                | {
+                                    gmsaCredentialSpec?: string | undefined
+                                    gmsaCredentialSpecName?: string | undefined
+                                    hostProcess?: boolean | undefined
+                                    runAsUserName?: string | undefined
+                                  }
+                                | undefined
+                            }
+                          | undefined
+                        terminationGracePeriodSeconds?: number | undefined
+                        tmpDirSizeLimit?: string | undefined
+                        tolerations?:
+                          | {
+                              effect?: string | undefined
+                              key?: string | undefined
+                              operator?: string | undefined
+                              tolerationSeconds?: number | undefined
+                              value?: string | undefined
+                            }[]
+                          | undefined
+                        topologySpreadConstraints?:
+                          | {
+                              labelSelector?:
+                                | {
+                                    matchExpressions?:
+                                      | {
+                                          key?: string | undefined
+                                          operator?: string | undefined
+                                          values?: string[] | undefined
+                                        }[]
+                                      | undefined
+                                    matchLabels?: object | undefined
+                                  }
+                                | undefined
+                              maxSkew?: number | undefined
+                              minDomains?: number | undefined
+                              topologyKey?: string | undefined
+                              whenUnsatisfiable?: string | undefined
+                            }[]
+                          | undefined
+                      }
+                    | undefined
+                  podDisruptionBudget?:
+                    | {
+                        maxUnavailable?: number | undefined
+                        metadata?:
+                          | {
+                              annotations?: object | undefined
+                              labels?: object | undefined
+                            }
+                          | undefined
+                      }
+                    | undefined
+                  serviceAccount?:
+                    | {
+                        metadata?:
+                          | {
+                              annotations?: object | undefined
+                              labels?: object | undefined
+                            }
+                          | undefined
+                      }
+                    | undefined
+                }
+              | undefined
+            tracing?:
+              | {
+                  type: 'jaeger'
+                }
+              | undefined
+            version?: string | undefined
           }
       )
     | undefined
@@ -12167,6 +13493,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApiAutoscalingV1ScaleSpec = {
   replicas?: number | undefined
 }

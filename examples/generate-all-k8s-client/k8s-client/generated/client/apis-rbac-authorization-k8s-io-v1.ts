@@ -138,7 +138,7 @@ export const patchRbacAuthorizationV1ClusterRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -280,7 +280,7 @@ export const patchRbacAuthorizationV1ClusterRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterroles/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -422,7 +422,7 @@ export const patchRbacAuthorizationV1NamespacedRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/rolebindings/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -564,7 +564,7 @@ export const patchRbacAuthorizationV1NamespacedRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/roles/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1041,7 +1041,7 @@ export type PatchRbacAuthorizationV1ClusterRoleBindingApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListRbacAuthorizationV1ClusterRoleApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1ClusterRoleList
@@ -1217,7 +1217,7 @@ export type PatchRbacAuthorizationV1ClusterRoleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListRbacAuthorizationV1NamespacedRoleBindingApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1RoleBindingList
@@ -1407,7 +1407,7 @@ export type PatchRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListRbacAuthorizationV1NamespacedRoleApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1RoleList
@@ -1597,7 +1597,7 @@ export type PatchRbacAuthorizationV1NamespacedRoleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListRbacAuthorizationV1RoleBindingForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1RoleBindingList
@@ -2295,6 +2295,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApimachineryPkgApisMetaV1LabelSelectorRequirement = {
   key: string
   operator: string

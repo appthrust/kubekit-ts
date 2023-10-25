@@ -174,7 +174,7 @@ export const patchKafkaStrimziIoV1Beta1NamespacedKafkaTopic = (
     {
       path: `/apis/kafka.strimzi.io/v1beta1/namespaces/${args['namespace']}/kafkatopics/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -225,7 +225,7 @@ export const patchKafkaStrimziIoV1Beta1NamespacedKafkaTopicStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta1/namespaces/${args['namespace']}/kafkatopics/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -364,7 +364,7 @@ export const patchKafkaStrimziIoV1Beta1NamespacedKafkaUser = (
     {
       path: `/apis/kafka.strimzi.io/v1beta1/namespaces/${args['namespace']}/kafkausers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -415,7 +415,7 @@ export const patchKafkaStrimziIoV1Beta1NamespacedKafkaUserStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta1/namespaces/${args['namespace']}/kafkausers/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -704,7 +704,7 @@ export type PatchKafkaStrimziIoV1Beta1NamespacedKafkaTopicApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta1NamespacedKafkaTopicStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta1KafkaTopic
@@ -756,7 +756,7 @@ export type PatchKafkaStrimziIoV1Beta1NamespacedKafkaTopicStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListKafkaStrimziIoV1Beta1NamespacedKafkaUserApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta1KafkaUserList
@@ -943,7 +943,7 @@ export type PatchKafkaStrimziIoV1Beta1NamespacedKafkaUserApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadKafkaStrimziIoV1Beta1NamespacedKafkaUserStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta1KafkaUser
@@ -995,7 +995,7 @@ export type PatchKafkaStrimziIoV1Beta1NamespacedKafkaUserStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
@@ -1214,3 +1214,4 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object

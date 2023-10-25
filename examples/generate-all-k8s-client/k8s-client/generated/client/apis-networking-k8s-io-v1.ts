@@ -138,7 +138,7 @@ export const patchNetworkingV1IngressClass = (
     {
       path: `/apis/networking.k8s.io/v1/ingressclasses/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -304,7 +304,7 @@ export const patchNetworkingV1NamespacedIngress = (
     {
       path: `/apis/networking.k8s.io/v1/namespaces/${args['namespace']}/ingresses/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -355,7 +355,7 @@ export const patchNetworkingV1NamespacedIngressStatus = (
     {
       path: `/apis/networking.k8s.io/v1/namespaces/${args['namespace']}/ingresses/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -497,7 +497,7 @@ export const patchNetworkingV1NamespacedNetworkPolicy = (
     {
       path: `/apis/networking.k8s.io/v1/namespaces/${args['namespace']}/networkpolicies/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -548,7 +548,7 @@ export const patchNetworkingV1NamespacedNetworkPolicyStatus = (
     {
       path: `/apis/networking.k8s.io/v1/namespaces/${args['namespace']}/networkpolicies/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -949,7 +949,7 @@ export type PatchNetworkingV1IngressClassApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListNetworkingV1IngressForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiNetworkingV1IngressList
@@ -1185,7 +1185,7 @@ export type PatchNetworkingV1NamespacedIngressApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadNetworkingV1NamespacedIngressStatusApiResponse =
   /** status 200 OK */ IoK8SApiNetworkingV1Ingress
@@ -1235,7 +1235,7 @@ export type PatchNetworkingV1NamespacedIngressStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListNetworkingV1NamespacedNetworkPolicyApiResponse =
   /** status 200 OK */ IoK8SApiNetworkingV1NetworkPolicyList
@@ -1425,7 +1425,7 @@ export type PatchNetworkingV1NamespacedNetworkPolicyApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadNetworkingV1NamespacedNetworkPolicyStatusApiResponse =
   /** status 200 OK */ IoK8SApiNetworkingV1NetworkPolicy
@@ -1475,7 +1475,7 @@ export type PatchNetworkingV1NamespacedNetworkPolicyStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListNetworkingV1NetworkPolicyForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiNetworkingV1NetworkPolicyList
@@ -2032,6 +2032,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApiCoreV1TypedLocalObjectReference = {
   apiGroup?: string | undefined
   kind: string

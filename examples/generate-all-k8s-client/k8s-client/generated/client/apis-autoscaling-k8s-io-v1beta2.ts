@@ -131,7 +131,7 @@ export const patchAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpoint =
       {
         path: `/apis/autoscaling.k8s.io/v1beta2/namespaces/${args['namespace']}/verticalpodautoscalercheckpoints/${args.name}`,
         method: 'PATCH',
-        body: args.body,
+        body: args.ioK8SApimachineryPkgApisMetaV1Patch,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -271,7 +271,7 @@ export const patchAutoscalingV1Beta2NamespacedVerticalPodAutoscaler = (
     {
       path: `/apis/autoscaling.k8s.io/v1beta2/namespaces/${args['namespace']}/verticalpodautoscalers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -524,7 +524,7 @@ export type PatchAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpointApiA
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    body: Blob
+    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
   }
 export type ListAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiResponse =
   /** status 200 OK */ IoK8SAutoscalingV1Beta2VerticalPodAutoscalerList
@@ -712,7 +712,7 @@ export type PatchAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListAutoscalingV1Beta2VerticalPodAutoscalerCheckpointForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpointList
@@ -934,6 +934,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SAutoscalingV1Beta2VerticalPodAutoscaler = {
   apiVersion?: string | undefined
   kind?: string | undefined

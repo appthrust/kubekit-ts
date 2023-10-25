@@ -126,7 +126,7 @@ export const patchElbv2K8SAwsV1Beta1IngressClassParams = (
     {
       path: `/apis/elbv2.k8s.aws/v1beta1/ingressclassparams/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -265,7 +265,7 @@ export const patchElbv2K8SAwsV1Beta1NamespacedTargetGroupBinding = (
     {
       path: `/apis/elbv2.k8s.aws/v1beta1/namespaces/${args['namespace']}/targetgroupbindings/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -316,7 +316,7 @@ export const patchElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatus = (
     {
       path: `/apis/elbv2.k8s.aws/v1beta1/namespaces/${args['namespace']}/targetgroupbindings/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -523,7 +523,7 @@ export type PatchElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiResponse =
   /** status 200 OK */ AwsK8SElbv2V1Beta1TargetGroupBindingList
@@ -711,7 +711,7 @@ export type PatchElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatusApiResponse =
   /** status 200 OK */ AwsK8SElbv2V1Beta1TargetGroupBinding
@@ -764,7 +764,7 @@ export type PatchElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespacesApiResponse =
   /** status 200 OK */ AwsK8SElbv2V1Beta1TargetGroupBindingList
@@ -948,6 +948,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type AwsK8SElbv2V1Beta1TargetGroupBinding = {
   apiVersion?: string | undefined
   kind?: string | undefined

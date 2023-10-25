@@ -126,7 +126,7 @@ export const patchMutationsGatekeeperShV1Assign = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assign/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +177,7 @@ export const patchMutationsGatekeeperShV1AssignStatus = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assign/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -316,7 +316,7 @@ export const patchMutationsGatekeeperShV1AssignMetadata = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assignmetadata/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -367,7 +367,7 @@ export const patchMutationsGatekeeperShV1AssignMetadataStatus = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assignmetadata/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -506,7 +506,7 @@ export const patchMutationsGatekeeperShV1ModifySet = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/modifyset/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -557,7 +557,7 @@ export const patchMutationsGatekeeperShV1ModifySetStatus = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/modifyset/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -740,7 +740,7 @@ export type PatchMutationsGatekeeperShV1AssignApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadMutationsGatekeeperShV1AssignStatusApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1Assign
@@ -786,7 +786,7 @@ export type PatchMutationsGatekeeperShV1AssignStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListMutationsGatekeeperShV1AssignMetadataApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1AssignMetadataList
@@ -959,7 +959,7 @@ export type PatchMutationsGatekeeperShV1AssignMetadataApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadMutationsGatekeeperShV1AssignMetadataStatusApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1AssignMetadata
@@ -1005,7 +1005,7 @@ export type PatchMutationsGatekeeperShV1AssignMetadataStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListMutationsGatekeeperShV1ModifySetApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1ModifySetList
@@ -1178,7 +1178,7 @@ export type PatchMutationsGatekeeperShV1ModifySetApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadMutationsGatekeeperShV1ModifySetStatusApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1ModifySet
@@ -1224,7 +1224,7 @@ export type PatchMutationsGatekeeperShV1ModifySetStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
@@ -1433,6 +1433,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type ShGatekeeperMutationsV1AssignMetadata = {
   apiVersion?: string | undefined
   kind?: string | undefined

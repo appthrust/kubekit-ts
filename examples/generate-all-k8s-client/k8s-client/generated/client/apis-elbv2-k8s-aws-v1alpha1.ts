@@ -126,7 +126,7 @@ export const patchElbv2K8SAwsV1Alpha1NamespacedTargetGroupBinding = (
     {
       path: `/apis/elbv2.k8s.aws/v1alpha1/namespaces/${args['namespace']}/targetgroupbindings/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +177,7 @@ export const patchElbv2K8SAwsV1Alpha1NamespacedTargetGroupBindingStatus = (
     {
       path: `/apis/elbv2.k8s.aws/v1alpha1/namespaces/${args['namespace']}/targetgroupbindings/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -399,7 +399,7 @@ export type PatchElbv2K8SAwsV1Alpha1NamespacedTargetGroupBindingApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadElbv2K8SAwsV1Alpha1NamespacedTargetGroupBindingStatusApiResponse =
   /** status 200 OK */ AwsK8SElbv2V1Alpha1TargetGroupBinding
@@ -452,7 +452,7 @@ export type PatchElbv2K8SAwsV1Alpha1NamespacedTargetGroupBindingStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListElbv2K8SAwsV1Alpha1TargetGroupBindingForAllNamespacesApiResponse =
   /** status 200 OK */ AwsK8SElbv2V1Alpha1TargetGroupBindingList
@@ -636,3 +636,4 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object

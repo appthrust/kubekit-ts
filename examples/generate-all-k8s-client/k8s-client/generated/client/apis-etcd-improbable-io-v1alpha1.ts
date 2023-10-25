@@ -246,7 +246,7 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdBackup = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackups/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -297,7 +297,7 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackups/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -437,7 +437,7 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackupschedules/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -576,7 +576,7 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdCluster = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -627,7 +627,7 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScale = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters/${args.name}/scale`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -678,7 +678,7 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -817,7 +817,7 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdPeer = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdpeers/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -868,7 +868,7 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdpeers/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1007,7 +1007,7 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdRestore = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdrestores/${args.name}`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1058,7 +1058,7 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdrestores/${args.name}/status`,
       method: 'PATCH',
-      body: args.body,
+      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1487,7 +1487,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdBackup
@@ -1539,7 +1539,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdBackupScheduleList
@@ -1728,7 +1728,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdClusterList
@@ -1916,7 +1916,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
@@ -1968,7 +1968,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdCluster
@@ -2020,7 +2020,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdPeerList
@@ -2207,7 +2207,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdPeer
@@ -2259,7 +2259,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdRestoreList
@@ -2447,7 +2447,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdRestore
@@ -2499,7 +2499,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  body: Blob
+  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
@@ -3580,6 +3580,7 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
+export type IoK8SApimachineryPkgApisMetaV1Patch = object
 export type IoK8SApiAutoscalingV1ScaleSpec = {
   replicas?: number | undefined
 }
