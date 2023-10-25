@@ -350,9 +350,9 @@ export type ListPolicyV1NamespacedPodDisruptionBudgetApiArg = {
 }
 export type CreatePolicyV1NamespacedPodDisruptionBudgetApiResponse =
   /** status 200 OK */
-    | IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 202 Accepted */ IoK8SApiPolicyV1PodDisruptionBudget
+  | IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 202 Accepted */ IoK8SApiPolicyV1PodDisruptionBudget
 export type CreatePolicyV1NamespacedPodDisruptionBudgetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -431,8 +431,8 @@ export type ReadPolicyV1NamespacedPodDisruptionBudgetApiArg = {
 }
 export type ReplacePolicyV1NamespacedPodDisruptionBudgetApiResponse =
   /** status 200 OK */
-    | IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
+  | IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
 export type ReplacePolicyV1NamespacedPodDisruptionBudgetApiArg = {
   /** name of the PodDisruptionBudget */
   name: string
@@ -450,8 +450,8 @@ export type ReplacePolicyV1NamespacedPodDisruptionBudgetApiArg = {
 }
 export type DeletePolicyV1NamespacedPodDisruptionBudgetApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeletePolicyV1NamespacedPodDisruptionBudgetApiArg = {
   /** name of the PodDisruptionBudget */
   name: string
@@ -471,8 +471,8 @@ export type DeletePolicyV1NamespacedPodDisruptionBudgetApiArg = {
 }
 export type PatchPolicyV1NamespacedPodDisruptionBudgetApiResponse =
   /** status 200 OK */
-    | IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
+  | IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
 export type PatchPolicyV1NamespacedPodDisruptionBudgetApiArg = {
   /** name of the PodDisruptionBudget */
   name: string
@@ -502,8 +502,8 @@ export type ReadPolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
 }
 export type ReplacePolicyV1NamespacedPodDisruptionBudgetStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
+  | IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
 export type ReplacePolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
   /** name of the PodDisruptionBudget */
   name: string
@@ -521,8 +521,8 @@ export type ReplacePolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
 }
 export type PatchPolicyV1NamespacedPodDisruptionBudgetStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
+  | IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
 export type PatchPolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
   /** name of the PodDisruptionBudget */
   name: string

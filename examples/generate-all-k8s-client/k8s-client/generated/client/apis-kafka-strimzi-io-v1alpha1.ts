@@ -569,9 +569,9 @@ export type ListKafkaStrimziIoV1Alpha1NamespacedKafkaTopicApiArg = {
 }
 export type CreateKafkaStrimziIoV1Alpha1NamespacedKafkaTopicApiResponse =
   /** status 200 OK */
-    | IoStrimziKafkaV1Alpha1KafkaTopic
-    | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaTopic
-    | /** status 202 Accepted */ IoStrimziKafkaV1Alpha1KafkaTopic
+  | IoStrimziKafkaV1Alpha1KafkaTopic
+  | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaTopic
+  | /** status 202 Accepted */ IoStrimziKafkaV1Alpha1KafkaTopic
 export type CreateKafkaStrimziIoV1Alpha1NamespacedKafkaTopicApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -649,8 +649,8 @@ export type ReadKafkaStrimziIoV1Alpha1NamespacedKafkaTopicApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Alpha1NamespacedKafkaTopicApiResponse =
   /** status 200 OK */
-    | IoStrimziKafkaV1Alpha1KafkaTopic
-    | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaTopic
+  | IoStrimziKafkaV1Alpha1KafkaTopic
+  | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaTopic
 export type ReplaceKafkaStrimziIoV1Alpha1NamespacedKafkaTopicApiArg = {
   /** name of the KafkaTopic */
   name: string
@@ -668,8 +668,8 @@ export type ReplaceKafkaStrimziIoV1Alpha1NamespacedKafkaTopicApiArg = {
 }
 export type DeleteKafkaStrimziIoV1Alpha1NamespacedKafkaTopicApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Alpha1NamespacedKafkaTopicApiArg = {
   /** name of the KafkaTopic */
   name: string
@@ -722,8 +722,8 @@ export type ReadKafkaStrimziIoV1Alpha1NamespacedKafkaTopicStatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Alpha1NamespacedKafkaTopicStatusApiResponse =
   /** status 200 OK */
-    | IoStrimziKafkaV1Alpha1KafkaTopic
-    | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaTopic
+  | IoStrimziKafkaV1Alpha1KafkaTopic
+  | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaTopic
 export type ReplaceKafkaStrimziIoV1Alpha1NamespacedKafkaTopicStatusApiArg = {
   /** name of the KafkaTopic */
   name: string
@@ -808,9 +808,9 @@ export type ListKafkaStrimziIoV1Alpha1NamespacedKafkaUserApiArg = {
 }
 export type CreateKafkaStrimziIoV1Alpha1NamespacedKafkaUserApiResponse =
   /** status 200 OK */
-    | IoStrimziKafkaV1Alpha1KafkaUser
-    | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaUser
-    | /** status 202 Accepted */ IoStrimziKafkaV1Alpha1KafkaUser
+  | IoStrimziKafkaV1Alpha1KafkaUser
+  | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaUser
+  | /** status 202 Accepted */ IoStrimziKafkaV1Alpha1KafkaUser
 export type CreateKafkaStrimziIoV1Alpha1NamespacedKafkaUserApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -888,8 +888,8 @@ export type ReadKafkaStrimziIoV1Alpha1NamespacedKafkaUserApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Alpha1NamespacedKafkaUserApiResponse =
   /** status 200 OK */
-    | IoStrimziKafkaV1Alpha1KafkaUser
-    | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaUser
+  | IoStrimziKafkaV1Alpha1KafkaUser
+  | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaUser
 export type ReplaceKafkaStrimziIoV1Alpha1NamespacedKafkaUserApiArg = {
   /** name of the KafkaUser */
   name: string
@@ -907,8 +907,8 @@ export type ReplaceKafkaStrimziIoV1Alpha1NamespacedKafkaUserApiArg = {
 }
 export type DeleteKafkaStrimziIoV1Alpha1NamespacedKafkaUserApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Alpha1NamespacedKafkaUserApiArg = {
   /** name of the KafkaUser */
   name: string
@@ -961,8 +961,8 @@ export type ReadKafkaStrimziIoV1Alpha1NamespacedKafkaUserStatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Alpha1NamespacedKafkaUserStatusApiResponse =
   /** status 200 OK */
-    | IoStrimziKafkaV1Alpha1KafkaUser
-    | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaUser
+  | IoStrimziKafkaV1Alpha1KafkaUser
+  | /** status 201 Created */ IoStrimziKafkaV1Alpha1KafkaUser
 export type ReplaceKafkaStrimziIoV1Alpha1NamespacedKafkaUserStatusApiArg = {
   /** name of the KafkaUser */
   name: string

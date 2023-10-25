@@ -441,9 +441,9 @@ export type ListAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
 }
 export type CreateAdmissionregistrationV1MutatingWebhookConfigurationApiResponse =
   /** status 200 OK */
-    | IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
-    | /** status 201 Created */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
-    | /** status 202 Accepted */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
+  | IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
+  | /** status 201 Created */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
+  | /** status 202 Accepted */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
 export type CreateAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -517,8 +517,8 @@ export type ReadAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
 }
 export type ReplaceAdmissionregistrationV1MutatingWebhookConfigurationApiResponse =
   /** status 200 OK */
-    | IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
-    | /** status 201 Created */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
+  | IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
+  | /** status 201 Created */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
 export type ReplaceAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
   /** name of the MutatingWebhookConfiguration */
   name: string
@@ -534,8 +534,8 @@ export type ReplaceAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
 }
 export type DeleteAdmissionregistrationV1MutatingWebhookConfigurationApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
   /** name of the MutatingWebhookConfiguration */
   name: string
@@ -553,8 +553,8 @@ export type DeleteAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
 }
 export type PatchAdmissionregistrationV1MutatingWebhookConfigurationApiResponse =
   /** status 200 OK */
-    | IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
-    | /** status 201 Created */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
+  | IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
+  | /** status 201 Created */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
 export type PatchAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
   /** name of the MutatingWebhookConfiguration */
   name: string
@@ -618,9 +618,9 @@ export type ListAdmissionregistrationV1ValidatingWebhookConfigurationApiArg = {
 }
 export type CreateAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse =
   /** status 200 OK */
-    | IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
-    | /** status 201 Created */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
-    | /** status 202 Accepted */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
+  | IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
+  | /** status 201 Created */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
+  | /** status 202 Accepted */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
 export type CreateAdmissionregistrationV1ValidatingWebhookConfigurationApiArg =
   {
     /** If 'true', then the output is pretty printed. */
@@ -695,8 +695,8 @@ export type ReadAdmissionregistrationV1ValidatingWebhookConfigurationApiArg = {
 }
 export type ReplaceAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse =
   /** status 200 OK */
-    | IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
-    | /** status 201 Created */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
+  | IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
+  | /** status 201 Created */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
 export type ReplaceAdmissionregistrationV1ValidatingWebhookConfigurationApiArg =
   {
     /** name of the ValidatingWebhookConfiguration */
@@ -713,8 +713,8 @@ export type ReplaceAdmissionregistrationV1ValidatingWebhookConfigurationApiArg =
   }
 export type DeleteAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAdmissionregistrationV1ValidatingWebhookConfigurationApiArg =
   {
     /** name of the ValidatingWebhookConfiguration */
@@ -733,8 +733,8 @@ export type DeleteAdmissionregistrationV1ValidatingWebhookConfigurationApiArg =
   }
 export type PatchAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse =
   /** status 200 OK */
-    | IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
-    | /** status 201 Created */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
+  | IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
+  | /** status 201 Created */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
 export type PatchAdmissionregistrationV1ValidatingWebhookConfigurationApiArg = {
   /** name of the ValidatingWebhookConfiguration */
   name: string

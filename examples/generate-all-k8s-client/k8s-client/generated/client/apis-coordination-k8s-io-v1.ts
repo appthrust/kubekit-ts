@@ -345,9 +345,9 @@ export type ListCoordinationV1NamespacedLeaseApiArg = {
 }
 export type CreateCoordinationV1NamespacedLeaseApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoordinationV1Lease
-    | /** status 201 Created */ IoK8SApiCoordinationV1Lease
-    | /** status 202 Accepted */ IoK8SApiCoordinationV1Lease
+  | IoK8SApiCoordinationV1Lease
+  | /** status 201 Created */ IoK8SApiCoordinationV1Lease
+  | /** status 202 Accepted */ IoK8SApiCoordinationV1Lease
 export type CreateCoordinationV1NamespacedLeaseApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -426,8 +426,8 @@ export type ReadCoordinationV1NamespacedLeaseApiArg = {
 }
 export type ReplaceCoordinationV1NamespacedLeaseApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoordinationV1Lease
-    | /** status 201 Created */ IoK8SApiCoordinationV1Lease
+  | IoK8SApiCoordinationV1Lease
+  | /** status 201 Created */ IoK8SApiCoordinationV1Lease
 export type ReplaceCoordinationV1NamespacedLeaseApiArg = {
   /** name of the Lease */
   name: string
@@ -445,8 +445,8 @@ export type ReplaceCoordinationV1NamespacedLeaseApiArg = {
 }
 export type DeleteCoordinationV1NamespacedLeaseApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoordinationV1NamespacedLeaseApiArg = {
   /** name of the Lease */
   name: string
@@ -466,8 +466,8 @@ export type DeleteCoordinationV1NamespacedLeaseApiArg = {
 }
 export type PatchCoordinationV1NamespacedLeaseApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoordinationV1Lease
-    | /** status 201 Created */ IoK8SApiCoordinationV1Lease
+  | IoK8SApiCoordinationV1Lease
+  | /** status 201 Created */ IoK8SApiCoordinationV1Lease
 export type PatchCoordinationV1NamespacedLeaseApiArg = {
   /** name of the Lease */
   name: string

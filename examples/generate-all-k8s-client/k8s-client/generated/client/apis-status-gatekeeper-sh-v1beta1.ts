@@ -690,9 +690,9 @@ export type ListStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg = {
 }
 export type CreateStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperStatusV1Beta1ConstraintPodStatus
-    | /** status 201 Created */ ShGatekeeperStatusV1Beta1ConstraintPodStatus
-    | /** status 202 Accepted */ ShGatekeeperStatusV1Beta1ConstraintPodStatus
+  | ShGatekeeperStatusV1Beta1ConstraintPodStatus
+  | /** status 201 Created */ ShGatekeeperStatusV1Beta1ConstraintPodStatus
+  | /** status 202 Accepted */ ShGatekeeperStatusV1Beta1ConstraintPodStatus
 export type CreateStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
@@ -772,8 +772,8 @@ export type ReadStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg = {
 }
 export type ReplaceStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperStatusV1Beta1ConstraintPodStatus
-    | /** status 201 Created */ ShGatekeeperStatusV1Beta1ConstraintPodStatus
+  | ShGatekeeperStatusV1Beta1ConstraintPodStatus
+  | /** status 201 Created */ ShGatekeeperStatusV1Beta1ConstraintPodStatus
 export type ReplaceStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg =
   {
     /** name of the ConstraintPodStatus */
@@ -792,8 +792,8 @@ export type ReplaceStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg 
   }
 export type DeleteStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg =
   {
     /** name of the ConstraintPodStatus */
@@ -883,9 +883,9 @@ export type ListStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusAp
   }
 export type CreateStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatus
-    | /** status 201 Created */ ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatus
-    | /** status 202 Accepted */ ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatus
+  | ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatus
+  | /** status 201 Created */ ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatus
+  | /** status 202 Accepted */ ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatus
 export type CreateStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
@@ -966,8 +966,8 @@ export type ReadStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusAp
   }
 export type ReplaceStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatus
-    | /** status 201 Created */ ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatus
+  | ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatus
+  | /** status 201 Created */ ShGatekeeperStatusV1Beta1ConstraintTemplatePodStatus
 export type ReplaceStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiArg =
   {
     /** name of the ConstraintTemplatePodStatus */
@@ -986,8 +986,8 @@ export type ReplaceStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatu
   }
 export type DeleteStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiArg =
   {
     /** name of the ConstraintTemplatePodStatus */
@@ -1076,9 +1076,9 @@ export type ListStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
 }
 export type CreateStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperStatusV1Beta1MutatorPodStatus
-    | /** status 201 Created */ ShGatekeeperStatusV1Beta1MutatorPodStatus
-    | /** status 202 Accepted */ ShGatekeeperStatusV1Beta1MutatorPodStatus
+  | ShGatekeeperStatusV1Beta1MutatorPodStatus
+  | /** status 201 Created */ ShGatekeeperStatusV1Beta1MutatorPodStatus
+  | /** status 202 Accepted */ ShGatekeeperStatusV1Beta1MutatorPodStatus
 export type CreateStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1157,8 +1157,8 @@ export type ReadStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
 }
 export type ReplaceStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperStatusV1Beta1MutatorPodStatus
-    | /** status 201 Created */ ShGatekeeperStatusV1Beta1MutatorPodStatus
+  | ShGatekeeperStatusV1Beta1MutatorPodStatus
+  | /** status 201 Created */ ShGatekeeperStatusV1Beta1MutatorPodStatus
 export type ReplaceStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
   /** name of the MutatorPodStatus */
   name: string
@@ -1176,8 +1176,8 @@ export type ReplaceStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
 }
 export type DeleteStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
   /** name of the MutatorPodStatus */
   name: string

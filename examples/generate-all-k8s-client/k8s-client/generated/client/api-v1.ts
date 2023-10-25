@@ -4991,7 +4991,8 @@ export type ListCoreV1NamespaceApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1NamespaceApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespaceApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1Namespace
   | /** status 201 Created */ IoK8SApiCoreV1Namespace
   | /** status 202 Accepted */ IoK8SApiCoreV1Namespace
@@ -5006,7 +5007,8 @@ export type CreateCoreV1NamespaceApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Namespace: IoK8SApiCoreV1Namespace
 }
-export type CreateCoreV1NamespacedBindingApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedBindingApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1Binding
   | /** status 201 Created */ IoK8SApiCoreV1Binding
   | /** status 202 Accepted */ IoK8SApiCoreV1Binding
@@ -5071,7 +5073,8 @@ export type ListCoreV1NamespacedConfigMapApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1NamespacedConfigMapApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedConfigMapApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1ConfigMap
   | /** status 201 Created */ IoK8SApiCoreV1ConfigMap
   | /** status 202 Accepted */ IoK8SApiCoreV1ConfigMap
@@ -5151,9 +5154,9 @@ export type ReadCoreV1NamespacedConfigMapApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NamespacedConfigMapApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1ConfigMap
-  | /** status 201 Created */ IoK8SApiCoreV1ConfigMap
+export type ReplaceCoreV1NamespacedConfigMapApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1ConfigMap | /** status 201 Created */ IoK8SApiCoreV1ConfigMap
 export type ReplaceCoreV1NamespacedConfigMapApiArg = {
   /** name of the ConfigMap */
   name: string
@@ -5169,7 +5172,8 @@ export type ReplaceCoreV1NamespacedConfigMapApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1ConfigMap: IoK8SApiCoreV1ConfigMap
 }
-export type DeleteCoreV1NamespacedConfigMapApiResponse = /** status 200 OK */
+export type DeleteCoreV1NamespacedConfigMapApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreV1NamespacedConfigMapApiArg = {
@@ -5189,9 +5193,9 @@ export type DeleteCoreV1NamespacedConfigMapApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1NamespacedConfigMapApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1ConfigMap
-  | /** status 201 Created */ IoK8SApiCoreV1ConfigMap
+export type PatchCoreV1NamespacedConfigMapApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1ConfigMap | /** status 201 Created */ IoK8SApiCoreV1ConfigMap
 export type PatchCoreV1NamespacedConfigMapApiArg = {
   /** name of the ConfigMap */
   name: string
@@ -5257,7 +5261,8 @@ export type ListCoreV1NamespacedEndpointsApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1NamespacedEndpointsApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedEndpointsApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1Endpoints
   | /** status 201 Created */ IoK8SApiCoreV1Endpoints
   | /** status 202 Accepted */ IoK8SApiCoreV1Endpoints
@@ -5337,9 +5342,9 @@ export type ReadCoreV1NamespacedEndpointsApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NamespacedEndpointsApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Endpoints
-  | /** status 201 Created */ IoK8SApiCoreV1Endpoints
+export type ReplaceCoreV1NamespacedEndpointsApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Endpoints | /** status 201 Created */ IoK8SApiCoreV1Endpoints
 export type ReplaceCoreV1NamespacedEndpointsApiArg = {
   /** name of the Endpoints */
   name: string
@@ -5355,7 +5360,8 @@ export type ReplaceCoreV1NamespacedEndpointsApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Endpoints: IoK8SApiCoreV1Endpoints
 }
-export type DeleteCoreV1NamespacedEndpointsApiResponse = /** status 200 OK */
+export type DeleteCoreV1NamespacedEndpointsApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreV1NamespacedEndpointsApiArg = {
@@ -5375,9 +5381,9 @@ export type DeleteCoreV1NamespacedEndpointsApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1NamespacedEndpointsApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Endpoints
-  | /** status 201 Created */ IoK8SApiCoreV1Endpoints
+export type PatchCoreV1NamespacedEndpointsApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Endpoints | /** status 201 Created */ IoK8SApiCoreV1Endpoints
 export type PatchCoreV1NamespacedEndpointsApiArg = {
   /** name of the Endpoints */
   name: string
@@ -5443,7 +5449,8 @@ export type ListCoreV1NamespacedEventApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1NamespacedEventApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedEventApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1Event
   | /** status 201 Created */ IoK8SApiCoreV1Event
   | /** status 202 Accepted */ IoK8SApiCoreV1Event
@@ -5523,9 +5530,9 @@ export type ReadCoreV1NamespacedEventApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NamespacedEventApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Event
-  | /** status 201 Created */ IoK8SApiCoreV1Event
+export type ReplaceCoreV1NamespacedEventApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Event | /** status 201 Created */ IoK8SApiCoreV1Event
 export type ReplaceCoreV1NamespacedEventApiArg = {
   /** name of the Event */
   name: string
@@ -5541,7 +5548,8 @@ export type ReplaceCoreV1NamespacedEventApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Event: IoK8SApiCoreV1Event
 }
-export type DeleteCoreV1NamespacedEventApiResponse = /** status 200 OK */
+export type DeleteCoreV1NamespacedEventApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreV1NamespacedEventApiArg = {
@@ -5561,9 +5569,9 @@ export type DeleteCoreV1NamespacedEventApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1NamespacedEventApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Event
-  | /** status 201 Created */ IoK8SApiCoreV1Event
+export type PatchCoreV1NamespacedEventApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Event | /** status 201 Created */ IoK8SApiCoreV1Event
 export type PatchCoreV1NamespacedEventApiArg = {
   /** name of the Event */
   name: string
@@ -5629,7 +5637,8 @@ export type ListCoreV1NamespacedLimitRangeApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1NamespacedLimitRangeApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedLimitRangeApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1LimitRange
   | /** status 201 Created */ IoK8SApiCoreV1LimitRange
   | /** status 202 Accepted */ IoK8SApiCoreV1LimitRange
@@ -5709,9 +5718,9 @@ export type ReadCoreV1NamespacedLimitRangeApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NamespacedLimitRangeApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1LimitRange
-  | /** status 201 Created */ IoK8SApiCoreV1LimitRange
+export type ReplaceCoreV1NamespacedLimitRangeApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1LimitRange | /** status 201 Created */ IoK8SApiCoreV1LimitRange
 export type ReplaceCoreV1NamespacedLimitRangeApiArg = {
   /** name of the LimitRange */
   name: string
@@ -5727,7 +5736,8 @@ export type ReplaceCoreV1NamespacedLimitRangeApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1LimitRange: IoK8SApiCoreV1LimitRange
 }
-export type DeleteCoreV1NamespacedLimitRangeApiResponse = /** status 200 OK */
+export type DeleteCoreV1NamespacedLimitRangeApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreV1NamespacedLimitRangeApiArg = {
@@ -5747,9 +5757,9 @@ export type DeleteCoreV1NamespacedLimitRangeApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1NamespacedLimitRangeApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1LimitRange
-  | /** status 201 Created */ IoK8SApiCoreV1LimitRange
+export type PatchCoreV1NamespacedLimitRangeApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1LimitRange | /** status 201 Created */ IoK8SApiCoreV1LimitRange
 export type PatchCoreV1NamespacedLimitRangeApiArg = {
   /** name of the LimitRange */
   name: string
@@ -5817,9 +5827,9 @@ export type ListCoreV1NamespacedPersistentVolumeClaimApiArg = {
 }
 export type CreateCoreV1NamespacedPersistentVolumeClaimApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1PersistentVolumeClaim
-    | /** status 201 Created */ IoK8SApiCoreV1PersistentVolumeClaim
-    | /** status 202 Accepted */ IoK8SApiCoreV1PersistentVolumeClaim
+  | IoK8SApiCoreV1PersistentVolumeClaim
+  | /** status 201 Created */ IoK8SApiCoreV1PersistentVolumeClaim
+  | /** status 202 Accepted */ IoK8SApiCoreV1PersistentVolumeClaim
 export type CreateCoreV1NamespacedPersistentVolumeClaimApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -5898,8 +5908,8 @@ export type ReadCoreV1NamespacedPersistentVolumeClaimApiArg = {
 }
 export type ReplaceCoreV1NamespacedPersistentVolumeClaimApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1PersistentVolumeClaim
-    | /** status 201 Created */ IoK8SApiCoreV1PersistentVolumeClaim
+  | IoK8SApiCoreV1PersistentVolumeClaim
+  | /** status 201 Created */ IoK8SApiCoreV1PersistentVolumeClaim
 export type ReplaceCoreV1NamespacedPersistentVolumeClaimApiArg = {
   /** name of the PersistentVolumeClaim */
   name: string
@@ -5917,8 +5927,8 @@ export type ReplaceCoreV1NamespacedPersistentVolumeClaimApiArg = {
 }
 export type DeleteCoreV1NamespacedPersistentVolumeClaimApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1PersistentVolumeClaim
-    | /** status 202 Accepted */ IoK8SApiCoreV1PersistentVolumeClaim
+  | IoK8SApiCoreV1PersistentVolumeClaim
+  | /** status 202 Accepted */ IoK8SApiCoreV1PersistentVolumeClaim
 export type DeleteCoreV1NamespacedPersistentVolumeClaimApiArg = {
   /** name of the PersistentVolumeClaim */
   name: string
@@ -5938,8 +5948,8 @@ export type DeleteCoreV1NamespacedPersistentVolumeClaimApiArg = {
 }
 export type PatchCoreV1NamespacedPersistentVolumeClaimApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1PersistentVolumeClaim
-    | /** status 201 Created */ IoK8SApiCoreV1PersistentVolumeClaim
+  | IoK8SApiCoreV1PersistentVolumeClaim
+  | /** status 201 Created */ IoK8SApiCoreV1PersistentVolumeClaim
 export type PatchCoreV1NamespacedPersistentVolumeClaimApiArg = {
   /** name of the PersistentVolumeClaim */
   name: string
@@ -5969,8 +5979,8 @@ export type ReadCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
 }
 export type ReplaceCoreV1NamespacedPersistentVolumeClaimStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1PersistentVolumeClaim
-    | /** status 201 Created */ IoK8SApiCoreV1PersistentVolumeClaim
+  | IoK8SApiCoreV1PersistentVolumeClaim
+  | /** status 201 Created */ IoK8SApiCoreV1PersistentVolumeClaim
 export type ReplaceCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
   /** name of the PersistentVolumeClaim */
   name: string
@@ -5988,8 +5998,8 @@ export type ReplaceCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
 }
 export type PatchCoreV1NamespacedPersistentVolumeClaimStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1PersistentVolumeClaim
-    | /** status 201 Created */ IoK8SApiCoreV1PersistentVolumeClaim
+  | IoK8SApiCoreV1PersistentVolumeClaim
+  | /** status 201 Created */ IoK8SApiCoreV1PersistentVolumeClaim
 export type PatchCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
   /** name of the PersistentVolumeClaim */
   name: string
@@ -6055,7 +6065,8 @@ export type ListCoreV1NamespacedPodApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1NamespacedPodApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedPodApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1Pod
   | /** status 201 Created */ IoK8SApiCoreV1Pod
   | /** status 202 Accepted */ IoK8SApiCoreV1Pod
@@ -6135,9 +6146,9 @@ export type ReadCoreV1NamespacedPodApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NamespacedPodApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Pod
-  | /** status 201 Created */ IoK8SApiCoreV1Pod
+export type ReplaceCoreV1NamespacedPodApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Pod | /** status 201 Created */ IoK8SApiCoreV1Pod
 export type ReplaceCoreV1NamespacedPodApiArg = {
   /** name of the Pod */
   name: string
@@ -6153,9 +6164,9 @@ export type ReplaceCoreV1NamespacedPodApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Pod: IoK8SApiCoreV1Pod
 }
-export type DeleteCoreV1NamespacedPodApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Pod
-  | /** status 202 Accepted */ IoK8SApiCoreV1Pod
+export type DeleteCoreV1NamespacedPodApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Pod | /** status 202 Accepted */ IoK8SApiCoreV1Pod
 export type DeleteCoreV1NamespacedPodApiArg = {
   /** name of the Pod */
   name: string
@@ -6173,9 +6184,9 @@ export type DeleteCoreV1NamespacedPodApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1NamespacedPodApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Pod
-  | /** status 201 Created */ IoK8SApiCoreV1Pod
+export type PatchCoreV1NamespacedPodApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Pod | /** status 201 Created */ IoK8SApiCoreV1Pod
 export type PatchCoreV1NamespacedPodApiArg = {
   /** name of the Pod */
   name: string
@@ -6229,7 +6240,8 @@ export type ConnectCoreV1PostNamespacedPodAttachApiArg = {
   /** TTY if true indicates that a tty will be allocated for the attach call. This is passed through the container runtime so the tty is allocated on the worker node by the container runtime. Defaults to false. */
   tty?: boolean
 }
-export type CreateCoreV1NamespacedPodBindingApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedPodBindingApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1Binding
   | /** status 201 Created */ IoK8SApiCoreV1Binding
   | /** status 202 Accepted */ IoK8SApiCoreV1Binding
@@ -6260,8 +6272,7 @@ export type ReadCoreV1NamespacedPodEphemeralcontainersApiArg = {
 }
 export type ReplaceCoreV1NamespacedPodEphemeralcontainersApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1Pod
-    | /** status 201 Created */ IoK8SApiCoreV1Pod
+  IoK8SApiCoreV1Pod | /** status 201 Created */ IoK8SApiCoreV1Pod
 export type ReplaceCoreV1NamespacedPodEphemeralcontainersApiArg = {
   /** name of the Pod */
   name: string
@@ -6279,8 +6290,7 @@ export type ReplaceCoreV1NamespacedPodEphemeralcontainersApiArg = {
 }
 export type PatchCoreV1NamespacedPodEphemeralcontainersApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1Pod
-    | /** status 201 Created */ IoK8SApiCoreV1Pod
+  IoK8SApiCoreV1Pod | /** status 201 Created */ IoK8SApiCoreV1Pod
 export type PatchCoreV1NamespacedPodEphemeralcontainersApiArg = {
   /** name of the Pod */
   name: string
@@ -6298,7 +6308,8 @@ export type PatchCoreV1NamespacedPodEphemeralcontainersApiArg = {
   force?: boolean
   ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
-export type CreateCoreV1NamespacedPodEvictionApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedPodEvictionApiResponse =
+  /** status 200 OK */
   | IoK8SApiPolicyV1Eviction
   | /** status 201 Created */ IoK8SApiPolicyV1Eviction
   | /** status 202 Accepted */ IoK8SApiPolicyV1Eviction
@@ -6566,9 +6577,9 @@ export type ReadCoreV1NamespacedPodStatusApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NamespacedPodStatusApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Pod
-  | /** status 201 Created */ IoK8SApiCoreV1Pod
+export type ReplaceCoreV1NamespacedPodStatusApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Pod | /** status 201 Created */ IoK8SApiCoreV1Pod
 export type ReplaceCoreV1NamespacedPodStatusApiArg = {
   /** name of the Pod */
   name: string
@@ -6584,9 +6595,9 @@ export type ReplaceCoreV1NamespacedPodStatusApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Pod: IoK8SApiCoreV1Pod
 }
-export type PatchCoreV1NamespacedPodStatusApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Pod
-  | /** status 201 Created */ IoK8SApiCoreV1Pod
+export type PatchCoreV1NamespacedPodStatusApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Pod | /** status 201 Created */ IoK8SApiCoreV1Pod
 export type PatchCoreV1NamespacedPodStatusApiArg = {
   /** name of the Pod */
   name: string
@@ -6652,7 +6663,8 @@ export type ListCoreV1NamespacedPodTemplateApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1NamespacedPodTemplateApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedPodTemplateApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1PodTemplate
   | /** status 201 Created */ IoK8SApiCoreV1PodTemplate
   | /** status 202 Accepted */ IoK8SApiCoreV1PodTemplate
@@ -6734,8 +6746,8 @@ export type ReadCoreV1NamespacedPodTemplateApiArg = {
 }
 export type ReplaceCoreV1NamespacedPodTemplateApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1PodTemplate
-    | /** status 201 Created */ IoK8SApiCoreV1PodTemplate
+  | IoK8SApiCoreV1PodTemplate
+  | /** status 201 Created */ IoK8SApiCoreV1PodTemplate
 export type ReplaceCoreV1NamespacedPodTemplateApiArg = {
   /** name of the PodTemplate */
   name: string
@@ -6751,7 +6763,8 @@ export type ReplaceCoreV1NamespacedPodTemplateApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1PodTemplate: IoK8SApiCoreV1PodTemplate
 }
-export type DeleteCoreV1NamespacedPodTemplateApiResponse = /** status 200 OK */
+export type DeleteCoreV1NamespacedPodTemplateApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1PodTemplate
   | /** status 202 Accepted */ IoK8SApiCoreV1PodTemplate
 export type DeleteCoreV1NamespacedPodTemplateApiArg = {
@@ -6771,7 +6784,8 @@ export type DeleteCoreV1NamespacedPodTemplateApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1NamespacedPodTemplateApiResponse = /** status 200 OK */
+export type PatchCoreV1NamespacedPodTemplateApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1PodTemplate
   | /** status 201 Created */ IoK8SApiCoreV1PodTemplate
 export type PatchCoreV1NamespacedPodTemplateApiArg = {
@@ -6841,9 +6855,9 @@ export type ListCoreV1NamespacedReplicationControllerApiArg = {
 }
 export type CreateCoreV1NamespacedReplicationControllerApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ReplicationController
-    | /** status 201 Created */ IoK8SApiCoreV1ReplicationController
-    | /** status 202 Accepted */ IoK8SApiCoreV1ReplicationController
+  | IoK8SApiCoreV1ReplicationController
+  | /** status 201 Created */ IoK8SApiCoreV1ReplicationController
+  | /** status 202 Accepted */ IoK8SApiCoreV1ReplicationController
 export type CreateCoreV1NamespacedReplicationControllerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -6922,8 +6936,8 @@ export type ReadCoreV1NamespacedReplicationControllerApiArg = {
 }
 export type ReplaceCoreV1NamespacedReplicationControllerApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ReplicationController
-    | /** status 201 Created */ IoK8SApiCoreV1ReplicationController
+  | IoK8SApiCoreV1ReplicationController
+  | /** status 201 Created */ IoK8SApiCoreV1ReplicationController
 export type ReplaceCoreV1NamespacedReplicationControllerApiArg = {
   /** name of the ReplicationController */
   name: string
@@ -6941,8 +6955,8 @@ export type ReplaceCoreV1NamespacedReplicationControllerApiArg = {
 }
 export type DeleteCoreV1NamespacedReplicationControllerApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreV1NamespacedReplicationControllerApiArg = {
   /** name of the ReplicationController */
   name: string
@@ -6962,8 +6976,8 @@ export type DeleteCoreV1NamespacedReplicationControllerApiArg = {
 }
 export type PatchCoreV1NamespacedReplicationControllerApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ReplicationController
-    | /** status 201 Created */ IoK8SApiCoreV1ReplicationController
+  | IoK8SApiCoreV1ReplicationController
+  | /** status 201 Created */ IoK8SApiCoreV1ReplicationController
 export type PatchCoreV1NamespacedReplicationControllerApiArg = {
   /** name of the ReplicationController */
   name: string
@@ -6993,8 +7007,8 @@ export type ReadCoreV1NamespacedReplicationControllerScaleApiArg = {
 }
 export type ReplaceCoreV1NamespacedReplicationControllerScaleApiResponse =
   /** status 200 OK */
-    | IoK8SApiAutoscalingV1Scale
-    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+  | IoK8SApiAutoscalingV1Scale
+  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceCoreV1NamespacedReplicationControllerScaleApiArg = {
   /** name of the Scale */
   name: string
@@ -7012,8 +7026,8 @@ export type ReplaceCoreV1NamespacedReplicationControllerScaleApiArg = {
 }
 export type PatchCoreV1NamespacedReplicationControllerScaleApiResponse =
   /** status 200 OK */
-    | IoK8SApiAutoscalingV1Scale
-    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+  | IoK8SApiAutoscalingV1Scale
+  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type PatchCoreV1NamespacedReplicationControllerScaleApiArg = {
   /** name of the Scale */
   name: string
@@ -7043,8 +7057,8 @@ export type ReadCoreV1NamespacedReplicationControllerStatusApiArg = {
 }
 export type ReplaceCoreV1NamespacedReplicationControllerStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ReplicationController
-    | /** status 201 Created */ IoK8SApiCoreV1ReplicationController
+  | IoK8SApiCoreV1ReplicationController
+  | /** status 201 Created */ IoK8SApiCoreV1ReplicationController
 export type ReplaceCoreV1NamespacedReplicationControllerStatusApiArg = {
   /** name of the ReplicationController */
   name: string
@@ -7062,8 +7076,8 @@ export type ReplaceCoreV1NamespacedReplicationControllerStatusApiArg = {
 }
 export type PatchCoreV1NamespacedReplicationControllerStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ReplicationController
-    | /** status 201 Created */ IoK8SApiCoreV1ReplicationController
+  | IoK8SApiCoreV1ReplicationController
+  | /** status 201 Created */ IoK8SApiCoreV1ReplicationController
 export type PatchCoreV1NamespacedReplicationControllerStatusApiArg = {
   /** name of the ReplicationController */
   name: string
@@ -7131,9 +7145,9 @@ export type ListCoreV1NamespacedResourceQuotaApiArg = {
 }
 export type CreateCoreV1NamespacedResourceQuotaApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ResourceQuota
-    | /** status 201 Created */ IoK8SApiCoreV1ResourceQuota
-    | /** status 202 Accepted */ IoK8SApiCoreV1ResourceQuota
+  | IoK8SApiCoreV1ResourceQuota
+  | /** status 201 Created */ IoK8SApiCoreV1ResourceQuota
+  | /** status 202 Accepted */ IoK8SApiCoreV1ResourceQuota
 export type CreateCoreV1NamespacedResourceQuotaApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -7212,8 +7226,8 @@ export type ReadCoreV1NamespacedResourceQuotaApiArg = {
 }
 export type ReplaceCoreV1NamespacedResourceQuotaApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ResourceQuota
-    | /** status 201 Created */ IoK8SApiCoreV1ResourceQuota
+  | IoK8SApiCoreV1ResourceQuota
+  | /** status 201 Created */ IoK8SApiCoreV1ResourceQuota
 export type ReplaceCoreV1NamespacedResourceQuotaApiArg = {
   /** name of the ResourceQuota */
   name: string
@@ -7231,8 +7245,8 @@ export type ReplaceCoreV1NamespacedResourceQuotaApiArg = {
 }
 export type DeleteCoreV1NamespacedResourceQuotaApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ResourceQuota
-    | /** status 202 Accepted */ IoK8SApiCoreV1ResourceQuota
+  | IoK8SApiCoreV1ResourceQuota
+  | /** status 202 Accepted */ IoK8SApiCoreV1ResourceQuota
 export type DeleteCoreV1NamespacedResourceQuotaApiArg = {
   /** name of the ResourceQuota */
   name: string
@@ -7252,8 +7266,8 @@ export type DeleteCoreV1NamespacedResourceQuotaApiArg = {
 }
 export type PatchCoreV1NamespacedResourceQuotaApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ResourceQuota
-    | /** status 201 Created */ IoK8SApiCoreV1ResourceQuota
+  | IoK8SApiCoreV1ResourceQuota
+  | /** status 201 Created */ IoK8SApiCoreV1ResourceQuota
 export type PatchCoreV1NamespacedResourceQuotaApiArg = {
   /** name of the ResourceQuota */
   name: string
@@ -7283,8 +7297,8 @@ export type ReadCoreV1NamespacedResourceQuotaStatusApiArg = {
 }
 export type ReplaceCoreV1NamespacedResourceQuotaStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ResourceQuota
-    | /** status 201 Created */ IoK8SApiCoreV1ResourceQuota
+  | IoK8SApiCoreV1ResourceQuota
+  | /** status 201 Created */ IoK8SApiCoreV1ResourceQuota
 export type ReplaceCoreV1NamespacedResourceQuotaStatusApiArg = {
   /** name of the ResourceQuota */
   name: string
@@ -7302,8 +7316,8 @@ export type ReplaceCoreV1NamespacedResourceQuotaStatusApiArg = {
 }
 export type PatchCoreV1NamespacedResourceQuotaStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ResourceQuota
-    | /** status 201 Created */ IoK8SApiCoreV1ResourceQuota
+  | IoK8SApiCoreV1ResourceQuota
+  | /** status 201 Created */ IoK8SApiCoreV1ResourceQuota
 export type PatchCoreV1NamespacedResourceQuotaStatusApiArg = {
   /** name of the ResourceQuota */
   name: string
@@ -7369,7 +7383,8 @@ export type ListCoreV1NamespacedSecretApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1NamespacedSecretApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedSecretApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1Secret
   | /** status 201 Created */ IoK8SApiCoreV1Secret
   | /** status 202 Accepted */ IoK8SApiCoreV1Secret
@@ -7449,9 +7464,9 @@ export type ReadCoreV1NamespacedSecretApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NamespacedSecretApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Secret
-  | /** status 201 Created */ IoK8SApiCoreV1Secret
+export type ReplaceCoreV1NamespacedSecretApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Secret | /** status 201 Created */ IoK8SApiCoreV1Secret
 export type ReplaceCoreV1NamespacedSecretApiArg = {
   /** name of the Secret */
   name: string
@@ -7467,7 +7482,8 @@ export type ReplaceCoreV1NamespacedSecretApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Secret: IoK8SApiCoreV1Secret
 }
-export type DeleteCoreV1NamespacedSecretApiResponse = /** status 200 OK */
+export type DeleteCoreV1NamespacedSecretApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreV1NamespacedSecretApiArg = {
@@ -7487,9 +7503,9 @@ export type DeleteCoreV1NamespacedSecretApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1NamespacedSecretApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Secret
-  | /** status 201 Created */ IoK8SApiCoreV1Secret
+export type PatchCoreV1NamespacedSecretApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Secret | /** status 201 Created */ IoK8SApiCoreV1Secret
 export type PatchCoreV1NamespacedSecretApiArg = {
   /** name of the Secret */
   name: string
@@ -7557,9 +7573,9 @@ export type ListCoreV1NamespacedServiceAccountApiArg = {
 }
 export type CreateCoreV1NamespacedServiceAccountApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ServiceAccount
-    | /** status 201 Created */ IoK8SApiCoreV1ServiceAccount
-    | /** status 202 Accepted */ IoK8SApiCoreV1ServiceAccount
+  | IoK8SApiCoreV1ServiceAccount
+  | /** status 201 Created */ IoK8SApiCoreV1ServiceAccount
+  | /** status 202 Accepted */ IoK8SApiCoreV1ServiceAccount
 export type CreateCoreV1NamespacedServiceAccountApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -7638,8 +7654,8 @@ export type ReadCoreV1NamespacedServiceAccountApiArg = {
 }
 export type ReplaceCoreV1NamespacedServiceAccountApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ServiceAccount
-    | /** status 201 Created */ IoK8SApiCoreV1ServiceAccount
+  | IoK8SApiCoreV1ServiceAccount
+  | /** status 201 Created */ IoK8SApiCoreV1ServiceAccount
 export type ReplaceCoreV1NamespacedServiceAccountApiArg = {
   /** name of the ServiceAccount */
   name: string
@@ -7657,8 +7673,8 @@ export type ReplaceCoreV1NamespacedServiceAccountApiArg = {
 }
 export type DeleteCoreV1NamespacedServiceAccountApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ServiceAccount
-    | /** status 202 Accepted */ IoK8SApiCoreV1ServiceAccount
+  | IoK8SApiCoreV1ServiceAccount
+  | /** status 202 Accepted */ IoK8SApiCoreV1ServiceAccount
 export type DeleteCoreV1NamespacedServiceAccountApiArg = {
   /** name of the ServiceAccount */
   name: string
@@ -7678,8 +7694,8 @@ export type DeleteCoreV1NamespacedServiceAccountApiArg = {
 }
 export type PatchCoreV1NamespacedServiceAccountApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1ServiceAccount
-    | /** status 201 Created */ IoK8SApiCoreV1ServiceAccount
+  | IoK8SApiCoreV1ServiceAccount
+  | /** status 201 Created */ IoK8SApiCoreV1ServiceAccount
 export type PatchCoreV1NamespacedServiceAccountApiArg = {
   /** name of the ServiceAccount */
   name: string
@@ -7699,9 +7715,9 @@ export type PatchCoreV1NamespacedServiceAccountApiArg = {
 }
 export type CreateCoreV1NamespacedServiceAccountTokenApiResponse =
   /** status 200 OK */
-    | IoK8SApiAuthenticationV1TokenRequest
-    | /** status 201 Created */ IoK8SApiAuthenticationV1TokenRequest
-    | /** status 202 Accepted */ IoK8SApiAuthenticationV1TokenRequest
+  | IoK8SApiAuthenticationV1TokenRequest
+  | /** status 201 Created */ IoK8SApiAuthenticationV1TokenRequest
+  | /** status 202 Accepted */ IoK8SApiAuthenticationV1TokenRequest
 export type CreateCoreV1NamespacedServiceAccountTokenApiArg = {
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7765,7 +7781,8 @@ export type ListCoreV1NamespacedServiceApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1NamespacedServiceApiResponse = /** status 200 OK */
+export type CreateCoreV1NamespacedServiceApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1Service
   | /** status 201 Created */ IoK8SApiCoreV1Service
   | /** status 202 Accepted */ IoK8SApiCoreV1Service
@@ -7845,9 +7862,9 @@ export type ReadCoreV1NamespacedServiceApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NamespacedServiceApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Service
-  | /** status 201 Created */ IoK8SApiCoreV1Service
+export type ReplaceCoreV1NamespacedServiceApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Service | /** status 201 Created */ IoK8SApiCoreV1Service
 export type ReplaceCoreV1NamespacedServiceApiArg = {
   /** name of the Service */
   name: string
@@ -7863,9 +7880,9 @@ export type ReplaceCoreV1NamespacedServiceApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Service: IoK8SApiCoreV1Service
 }
-export type DeleteCoreV1NamespacedServiceApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Service
-  | /** status 202 Accepted */ IoK8SApiCoreV1Service
+export type DeleteCoreV1NamespacedServiceApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Service | /** status 202 Accepted */ IoK8SApiCoreV1Service
 export type DeleteCoreV1NamespacedServiceApiArg = {
   /** name of the Service */
   name: string
@@ -7883,9 +7900,9 @@ export type DeleteCoreV1NamespacedServiceApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1NamespacedServiceApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Service
-  | /** status 201 Created */ IoK8SApiCoreV1Service
+export type PatchCoreV1NamespacedServiceApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Service | /** status 201 Created */ IoK8SApiCoreV1Service
 export type PatchCoreV1NamespacedServiceApiArg = {
   /** name of the Service */
   name: string
@@ -8069,8 +8086,7 @@ export type ReadCoreV1NamespacedServiceStatusApiArg = {
 }
 export type ReplaceCoreV1NamespacedServiceStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1Service
-    | /** status 201 Created */ IoK8SApiCoreV1Service
+  IoK8SApiCoreV1Service | /** status 201 Created */ IoK8SApiCoreV1Service
 export type ReplaceCoreV1NamespacedServiceStatusApiArg = {
   /** name of the Service */
   name: string
@@ -8088,8 +8104,7 @@ export type ReplaceCoreV1NamespacedServiceStatusApiArg = {
 }
 export type PatchCoreV1NamespacedServiceStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1Service
-    | /** status 201 Created */ IoK8SApiCoreV1Service
+  IoK8SApiCoreV1Service | /** status 201 Created */ IoK8SApiCoreV1Service
 export type PatchCoreV1NamespacedServiceStatusApiArg = {
   /** name of the Service */
   name: string
@@ -8115,9 +8130,9 @@ export type ReadCoreV1NamespaceApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NamespaceApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Namespace
-  | /** status 201 Created */ IoK8SApiCoreV1Namespace
+export type ReplaceCoreV1NamespaceApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Namespace | /** status 201 Created */ IoK8SApiCoreV1Namespace
 export type ReplaceCoreV1NamespaceApiArg = {
   /** name of the Namespace */
   name: string
@@ -8131,7 +8146,8 @@ export type ReplaceCoreV1NamespaceApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Namespace: IoK8SApiCoreV1Namespace
 }
-export type DeleteCoreV1NamespaceApiResponse = /** status 200 OK */
+export type DeleteCoreV1NamespaceApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreV1NamespaceApiArg = {
@@ -8149,9 +8165,9 @@ export type DeleteCoreV1NamespaceApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1NamespaceApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Namespace
-  | /** status 201 Created */ IoK8SApiCoreV1Namespace
+export type PatchCoreV1NamespaceApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Namespace | /** status 201 Created */ IoK8SApiCoreV1Namespace
 export type PatchCoreV1NamespaceApiArg = {
   /** name of the Namespace */
   name: string
@@ -8167,9 +8183,9 @@ export type PatchCoreV1NamespaceApiArg = {
   force?: boolean
   ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
 }
-export type ReplaceCoreV1NamespaceFinalizeApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Namespace
-  | /** status 201 Created */ IoK8SApiCoreV1Namespace
+export type ReplaceCoreV1NamespaceFinalizeApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Namespace | /** status 201 Created */ IoK8SApiCoreV1Namespace
 export type ReplaceCoreV1NamespaceFinalizeApiArg = {
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8191,9 +8207,9 @@ export type ReadCoreV1NamespaceStatusApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NamespaceStatusApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Namespace
-  | /** status 201 Created */ IoK8SApiCoreV1Namespace
+export type ReplaceCoreV1NamespaceStatusApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Namespace | /** status 201 Created */ IoK8SApiCoreV1Namespace
 export type ReplaceCoreV1NamespaceStatusApiArg = {
   /** name of the Namespace */
   name: string
@@ -8207,9 +8223,9 @@ export type ReplaceCoreV1NamespaceStatusApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Namespace: IoK8SApiCoreV1Namespace
 }
-export type PatchCoreV1NamespaceStatusApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Namespace
-  | /** status 201 Created */ IoK8SApiCoreV1Namespace
+export type PatchCoreV1NamespaceStatusApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Namespace | /** status 201 Created */ IoK8SApiCoreV1Namespace
 export type PatchCoreV1NamespaceStatusApiArg = {
   /** name of the Namespace */
   name: string
@@ -8271,7 +8287,8 @@ export type ListCoreV1NodeApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1NodeApiResponse = /** status 200 OK */
+export type CreateCoreV1NodeApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1Node
   | /** status 201 Created */ IoK8SApiCoreV1Node
   | /** status 202 Accepted */ IoK8SApiCoreV1Node
@@ -8344,9 +8361,9 @@ export type ReadCoreV1NodeApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NodeApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Node
-  | /** status 201 Created */ IoK8SApiCoreV1Node
+export type ReplaceCoreV1NodeApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Node | /** status 201 Created */ IoK8SApiCoreV1Node
 export type ReplaceCoreV1NodeApiArg = {
   /** name of the Node */
   name: string
@@ -8360,7 +8377,8 @@ export type ReplaceCoreV1NodeApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Node: IoK8SApiCoreV1Node
 }
-export type DeleteCoreV1NodeApiResponse = /** status 200 OK */
+export type DeleteCoreV1NodeApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreV1NodeApiArg = {
@@ -8378,9 +8396,9 @@ export type DeleteCoreV1NodeApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1NodeApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Node
-  | /** status 201 Created */ IoK8SApiCoreV1Node
+export type PatchCoreV1NodeApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Node | /** status 201 Created */ IoK8SApiCoreV1Node
 export type PatchCoreV1NodeApiArg = {
   /** name of the Node */
   name: string
@@ -8525,9 +8543,9 @@ export type ReadCoreV1NodeStatusApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1NodeStatusApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Node
-  | /** status 201 Created */ IoK8SApiCoreV1Node
+export type ReplaceCoreV1NodeStatusApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Node | /** status 201 Created */ IoK8SApiCoreV1Node
 export type ReplaceCoreV1NodeStatusApiArg = {
   /** name of the Node */
   name: string
@@ -8541,9 +8559,9 @@ export type ReplaceCoreV1NodeStatusApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1Node: IoK8SApiCoreV1Node
 }
-export type PatchCoreV1NodeStatusApiResponse = /** status 200 OK */
-  | IoK8SApiCoreV1Node
-  | /** status 201 Created */ IoK8SApiCoreV1Node
+export type PatchCoreV1NodeStatusApiResponse =
+  /** status 200 OK */
+  IoK8SApiCoreV1Node | /** status 201 Created */ IoK8SApiCoreV1Node
 export type PatchCoreV1NodeStatusApiArg = {
   /** name of the Node */
   name: string
@@ -8651,7 +8669,8 @@ export type ListCoreV1PersistentVolumeApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateCoreV1PersistentVolumeApiResponse = /** status 200 OK */
+export type CreateCoreV1PersistentVolumeApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1PersistentVolume
   | /** status 201 Created */ IoK8SApiCoreV1PersistentVolume
   | /** status 202 Accepted */ IoK8SApiCoreV1PersistentVolume
@@ -8725,7 +8744,8 @@ export type ReadCoreV1PersistentVolumeApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceCoreV1PersistentVolumeApiResponse = /** status 200 OK */
+export type ReplaceCoreV1PersistentVolumeApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1PersistentVolume
   | /** status 201 Created */ IoK8SApiCoreV1PersistentVolume
 export type ReplaceCoreV1PersistentVolumeApiArg = {
@@ -8741,7 +8761,8 @@ export type ReplaceCoreV1PersistentVolumeApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1PersistentVolume: IoK8SApiCoreV1PersistentVolume
 }
-export type DeleteCoreV1PersistentVolumeApiResponse = /** status 200 OK */
+export type DeleteCoreV1PersistentVolumeApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1PersistentVolume
   | /** status 202 Accepted */ IoK8SApiCoreV1PersistentVolume
 export type DeleteCoreV1PersistentVolumeApiArg = {
@@ -8759,7 +8780,8 @@ export type DeleteCoreV1PersistentVolumeApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchCoreV1PersistentVolumeApiResponse = /** status 200 OK */
+export type PatchCoreV1PersistentVolumeApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1PersistentVolume
   | /** status 201 Created */ IoK8SApiCoreV1PersistentVolume
 export type PatchCoreV1PersistentVolumeApiArg = {
@@ -8787,8 +8809,8 @@ export type ReadCoreV1PersistentVolumeStatusApiArg = {
 }
 export type ReplaceCoreV1PersistentVolumeStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoreV1PersistentVolume
-    | /** status 201 Created */ IoK8SApiCoreV1PersistentVolume
+  | IoK8SApiCoreV1PersistentVolume
+  | /** status 201 Created */ IoK8SApiCoreV1PersistentVolume
 export type ReplaceCoreV1PersistentVolumeStatusApiArg = {
   /** name of the PersistentVolume */
   name: string
@@ -8802,7 +8824,8 @@ export type ReplaceCoreV1PersistentVolumeStatusApiArg = {
   fieldValidation?: string
   ioK8SApiCoreV1PersistentVolume: IoK8SApiCoreV1PersistentVolume
 }
-export type PatchCoreV1PersistentVolumeStatusApiResponse = /** status 200 OK */
+export type PatchCoreV1PersistentVolumeStatusApiResponse =
+  /** status 200 OK */
   | IoK8SApiCoreV1PersistentVolume
   | /** status 201 Created */ IoK8SApiCoreV1PersistentVolume
 export type PatchCoreV1PersistentVolumeStatusApiArg = {

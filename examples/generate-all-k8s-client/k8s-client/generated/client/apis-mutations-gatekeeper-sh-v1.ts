@@ -617,9 +617,9 @@ export type ListMutationsGatekeeperShV1AssignApiArg = {
 }
 export type CreateMutationsGatekeeperShV1AssignApiResponse =
   /** status 200 OK */
-    | ShGatekeeperMutationsV1Assign
-    | /** status 201 Created */ ShGatekeeperMutationsV1Assign
-    | /** status 202 Accepted */ ShGatekeeperMutationsV1Assign
+  | ShGatekeeperMutationsV1Assign
+  | /** status 201 Created */ ShGatekeeperMutationsV1Assign
+  | /** status 202 Accepted */ ShGatekeeperMutationsV1Assign
 export type CreateMutationsGatekeeperShV1AssignApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -691,8 +691,8 @@ export type ReadMutationsGatekeeperShV1AssignApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1AssignApiResponse =
   /** status 200 OK */
-    | ShGatekeeperMutationsV1Assign
-    | /** status 201 Created */ ShGatekeeperMutationsV1Assign
+  | ShGatekeeperMutationsV1Assign
+  | /** status 201 Created */ ShGatekeeperMutationsV1Assign
 export type ReplaceMutationsGatekeeperShV1AssignApiArg = {
   /** name of the Assign */
   name: string
@@ -708,8 +708,8 @@ export type ReplaceMutationsGatekeeperShV1AssignApiArg = {
 }
 export type DeleteMutationsGatekeeperShV1AssignApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1AssignApiArg = {
   /** name of the Assign */
   name: string
@@ -756,8 +756,8 @@ export type ReadMutationsGatekeeperShV1AssignStatusApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1AssignStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperMutationsV1Assign
-    | /** status 201 Created */ ShGatekeeperMutationsV1Assign
+  | ShGatekeeperMutationsV1Assign
+  | /** status 201 Created */ ShGatekeeperMutationsV1Assign
 export type ReplaceMutationsGatekeeperShV1AssignStatusApiArg = {
   /** name of the Assign */
   name: string
@@ -836,9 +836,9 @@ export type ListMutationsGatekeeperShV1AssignMetadataApiArg = {
 }
 export type CreateMutationsGatekeeperShV1AssignMetadataApiResponse =
   /** status 200 OK */
-    | ShGatekeeperMutationsV1AssignMetadata
-    | /** status 201 Created */ ShGatekeeperMutationsV1AssignMetadata
-    | /** status 202 Accepted */ ShGatekeeperMutationsV1AssignMetadata
+  | ShGatekeeperMutationsV1AssignMetadata
+  | /** status 201 Created */ ShGatekeeperMutationsV1AssignMetadata
+  | /** status 202 Accepted */ ShGatekeeperMutationsV1AssignMetadata
 export type CreateMutationsGatekeeperShV1AssignMetadataApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -910,8 +910,8 @@ export type ReadMutationsGatekeeperShV1AssignMetadataApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1AssignMetadataApiResponse =
   /** status 200 OK */
-    | ShGatekeeperMutationsV1AssignMetadata
-    | /** status 201 Created */ ShGatekeeperMutationsV1AssignMetadata
+  | ShGatekeeperMutationsV1AssignMetadata
+  | /** status 201 Created */ ShGatekeeperMutationsV1AssignMetadata
 export type ReplaceMutationsGatekeeperShV1AssignMetadataApiArg = {
   /** name of the AssignMetadata */
   name: string
@@ -927,8 +927,8 @@ export type ReplaceMutationsGatekeeperShV1AssignMetadataApiArg = {
 }
 export type DeleteMutationsGatekeeperShV1AssignMetadataApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1AssignMetadataApiArg = {
   /** name of the AssignMetadata */
   name: string
@@ -975,8 +975,8 @@ export type ReadMutationsGatekeeperShV1AssignMetadataStatusApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1AssignMetadataStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperMutationsV1AssignMetadata
-    | /** status 201 Created */ ShGatekeeperMutationsV1AssignMetadata
+  | ShGatekeeperMutationsV1AssignMetadata
+  | /** status 201 Created */ ShGatekeeperMutationsV1AssignMetadata
 export type ReplaceMutationsGatekeeperShV1AssignMetadataStatusApiArg = {
   /** name of the AssignMetadata */
   name: string
@@ -1055,9 +1055,9 @@ export type ListMutationsGatekeeperShV1ModifySetApiArg = {
 }
 export type CreateMutationsGatekeeperShV1ModifySetApiResponse =
   /** status 200 OK */
-    | ShGatekeeperMutationsV1ModifySet
-    | /** status 201 Created */ ShGatekeeperMutationsV1ModifySet
-    | /** status 202 Accepted */ ShGatekeeperMutationsV1ModifySet
+  | ShGatekeeperMutationsV1ModifySet
+  | /** status 201 Created */ ShGatekeeperMutationsV1ModifySet
+  | /** status 202 Accepted */ ShGatekeeperMutationsV1ModifySet
 export type CreateMutationsGatekeeperShV1ModifySetApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -1129,8 +1129,8 @@ export type ReadMutationsGatekeeperShV1ModifySetApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1ModifySetApiResponse =
   /** status 200 OK */
-    | ShGatekeeperMutationsV1ModifySet
-    | /** status 201 Created */ ShGatekeeperMutationsV1ModifySet
+  | ShGatekeeperMutationsV1ModifySet
+  | /** status 201 Created */ ShGatekeeperMutationsV1ModifySet
 export type ReplaceMutationsGatekeeperShV1ModifySetApiArg = {
   /** name of the ModifySet */
   name: string
@@ -1146,8 +1146,8 @@ export type ReplaceMutationsGatekeeperShV1ModifySetApiArg = {
 }
 export type DeleteMutationsGatekeeperShV1ModifySetApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1ModifySetApiArg = {
   /** name of the ModifySet */
   name: string
@@ -1194,8 +1194,8 @@ export type ReadMutationsGatekeeperShV1ModifySetStatusApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1ModifySetStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperMutationsV1ModifySet
-    | /** status 201 Created */ ShGatekeeperMutationsV1ModifySet
+  | ShGatekeeperMutationsV1ModifySet
+  | /** status 201 Created */ ShGatekeeperMutationsV1ModifySet
 export type ReplaceMutationsGatekeeperShV1ModifySetStatusApiArg = {
   /** name of the ModifySet */
   name: string

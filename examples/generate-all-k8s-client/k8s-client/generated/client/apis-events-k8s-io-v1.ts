@@ -343,7 +343,8 @@ export type ListEventsV1NamespacedEventApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateEventsV1NamespacedEventApiResponse = /** status 200 OK */
+export type CreateEventsV1NamespacedEventApiResponse =
+  /** status 200 OK */
   | IoK8SApiEventsV1Event
   | /** status 201 Created */ IoK8SApiEventsV1Event
   | /** status 202 Accepted */ IoK8SApiEventsV1Event
@@ -423,9 +424,9 @@ export type ReadEventsV1NamespacedEventApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceEventsV1NamespacedEventApiResponse = /** status 200 OK */
-  | IoK8SApiEventsV1Event
-  | /** status 201 Created */ IoK8SApiEventsV1Event
+export type ReplaceEventsV1NamespacedEventApiResponse =
+  /** status 200 OK */
+  IoK8SApiEventsV1Event | /** status 201 Created */ IoK8SApiEventsV1Event
 export type ReplaceEventsV1NamespacedEventApiArg = {
   /** name of the Event */
   name: string
@@ -441,7 +442,8 @@ export type ReplaceEventsV1NamespacedEventApiArg = {
   fieldValidation?: string
   ioK8SApiEventsV1Event: IoK8SApiEventsV1Event
 }
-export type DeleteEventsV1NamespacedEventApiResponse = /** status 200 OK */
+export type DeleteEventsV1NamespacedEventApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEventsV1NamespacedEventApiArg = {
@@ -461,9 +463,9 @@ export type DeleteEventsV1NamespacedEventApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchEventsV1NamespacedEventApiResponse = /** status 200 OK */
-  | IoK8SApiEventsV1Event
-  | /** status 201 Created */ IoK8SApiEventsV1Event
+export type PatchEventsV1NamespacedEventApiResponse =
+  /** status 200 OK */
+  IoK8SApiEventsV1Event | /** status 201 Created */ IoK8SApiEventsV1Event
 export type PatchEventsV1NamespacedEventApiArg = {
   /** name of the Event */
   name: string

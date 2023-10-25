@@ -483,9 +483,9 @@ export type ListSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
   }
 export type CreateSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiResponse =
   /** status 200 OK */
-    | IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
-    | /** status 201 Created */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
-    | /** status 202 Accepted */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+  | IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+  | /** status 201 Created */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+  | /** status 202 Accepted */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
 export type CreateSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
@@ -566,8 +566,8 @@ export type ReadSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
   }
 export type ReplaceSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiResponse =
   /** status 200 OK */
-    | IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
-    | /** status 201 Created */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+  | IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+  | /** status 201 Created */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
 export type ReplaceSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
   {
     /** name of the ScheduledSparkApplication */
@@ -586,8 +586,8 @@ export type ReplaceSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg
   }
 export type DeleteSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
   {
     /** name of the ScheduledSparkApplication */
@@ -643,8 +643,8 @@ export type ReadSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusApi
   }
 export type ReplaceSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusApiResponse =
   /** status 200 OK */
-    | IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
-    | /** status 201 Created */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+  | IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+  | /** status 201 Created */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
 export type ReplaceSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusApiArg =
   {
     /** name of the ScheduledSparkApplication */
@@ -731,9 +731,9 @@ export type ListSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
 }
 export type CreateSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse =
   /** status 200 OK */
-    | IoK8SSparkoperatorV1Beta2SparkApplication
-    | /** status 201 Created */ IoK8SSparkoperatorV1Beta2SparkApplication
-    | /** status 202 Accepted */ IoK8SSparkoperatorV1Beta2SparkApplication
+  | IoK8SSparkoperatorV1Beta2SparkApplication
+  | /** status 201 Created */ IoK8SSparkoperatorV1Beta2SparkApplication
+  | /** status 202 Accepted */ IoK8SSparkoperatorV1Beta2SparkApplication
 export type CreateSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -812,8 +812,8 @@ export type ReadSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
 }
 export type ReplaceSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse =
   /** status 200 OK */
-    | IoK8SSparkoperatorV1Beta2SparkApplication
-    | /** status 201 Created */ IoK8SSparkoperatorV1Beta2SparkApplication
+  | IoK8SSparkoperatorV1Beta2SparkApplication
+  | /** status 201 Created */ IoK8SSparkoperatorV1Beta2SparkApplication
 export type ReplaceSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   /** name of the SparkApplication */
   name: string
@@ -831,8 +831,8 @@ export type ReplaceSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
 }
 export type DeleteSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   /** name of the SparkApplication */
   name: string
@@ -885,8 +885,8 @@ export type ReadSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiArg = {
 }
 export type ReplaceSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiResponse =
   /** status 200 OK */
-    | IoK8SSparkoperatorV1Beta2SparkApplication
-    | /** status 201 Created */ IoK8SSparkoperatorV1Beta2SparkApplication
+  | IoK8SSparkoperatorV1Beta2SparkApplication
+  | /** status 201 Created */ IoK8SSparkoperatorV1Beta2SparkApplication
 export type ReplaceSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiArg =
   {
     /** name of the SparkApplication */

@@ -1351,9 +1351,9 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
 }
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdBackup
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
-    | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdBackup
+  | IoImprobableEtcdV1Alpha1EtcdBackup
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
+  | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdBackup
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1432,8 +1432,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdBackup
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
+  | IoImprobableEtcdV1Alpha1EtcdBackup
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   /** name of the EtcdBackup */
   name: string
@@ -1451,8 +1451,8 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
 }
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   /** name of the EtcdBackup */
   name: string
@@ -1505,8 +1505,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdBackup
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
+  | IoImprobableEtcdV1Alpha1EtcdBackup
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
   /** name of the EtcdBackup */
   name: string
@@ -1591,9 +1591,9 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
 }
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdBackupSchedule
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
-    | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+  | IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+  | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1672,8 +1672,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdBackupSchedule
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+  | IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg =
   {
     /** name of the EtcdBackupSchedule */
@@ -1692,8 +1692,8 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg =
   }
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   /** name of the EtcdBackupSchedule */
   name: string
@@ -1780,9 +1780,9 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
 }
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdCluster
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
-    | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdCluster
+  | IoImprobableEtcdV1Alpha1EtcdCluster
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
+  | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdCluster
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1861,8 +1861,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdCluster
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
+  | IoImprobableEtcdV1Alpha1EtcdCluster
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   /** name of the EtcdCluster */
   name: string
@@ -1880,8 +1880,8 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
 }
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   /** name of the EtcdCluster */
   name: string
@@ -1934,8 +1934,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiResponse =
   /** status 200 OK */
-    | IoK8SApiAutoscalingV1Scale
-    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+  | IoK8SApiAutoscalingV1Scale
+  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
   /** name of the EtcdCluster */
   name: string
@@ -1986,8 +1986,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdCluster
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
+  | IoImprobableEtcdV1Alpha1EtcdCluster
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
   /** name of the EtcdCluster */
   name: string
@@ -2072,9 +2072,9 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
 }
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdPeer
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
-    | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdPeer
+  | IoImprobableEtcdV1Alpha1EtcdPeer
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
+  | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdPeer
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2152,8 +2152,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdPeer
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
+  | IoImprobableEtcdV1Alpha1EtcdPeer
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   /** name of the EtcdPeer */
   name: string
@@ -2171,8 +2171,8 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
 }
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   /** name of the EtcdPeer */
   name: string
@@ -2225,8 +2225,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdPeer
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
+  | IoImprobableEtcdV1Alpha1EtcdPeer
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
   /** name of the EtcdPeer */
   name: string
@@ -2311,9 +2311,9 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
 }
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdRestore
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
-    | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdRestore
+  | IoImprobableEtcdV1Alpha1EtcdRestore
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
+  | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdRestore
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2392,8 +2392,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdRestore
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
+  | IoImprobableEtcdV1Alpha1EtcdRestore
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   /** name of the EtcdRestore */
   name: string
@@ -2411,8 +2411,8 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
 }
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   /** name of the EtcdRestore */
   name: string
@@ -2465,8 +2465,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdRestore
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
+  | IoImprobableEtcdV1Alpha1EtcdRestore
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
   /** name of the EtcdRestore */
   name: string

@@ -186,9 +186,9 @@ export type ListExternaldataGatekeeperShV1Beta1ProviderApiArg = {
 }
 export type CreateExternaldataGatekeeperShV1Beta1ProviderApiResponse =
   /** status 200 OK */
-    | ShGatekeeperExternaldataV1Beta1Provider
-    | /** status 201 Created */ ShGatekeeperExternaldataV1Beta1Provider
-    | /** status 202 Accepted */ ShGatekeeperExternaldataV1Beta1Provider
+  | ShGatekeeperExternaldataV1Beta1Provider
+  | /** status 201 Created */ ShGatekeeperExternaldataV1Beta1Provider
+  | /** status 202 Accepted */ ShGatekeeperExternaldataV1Beta1Provider
 export type CreateExternaldataGatekeeperShV1Beta1ProviderApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -260,8 +260,8 @@ export type ReadExternaldataGatekeeperShV1Beta1ProviderApiArg = {
 }
 export type ReplaceExternaldataGatekeeperShV1Beta1ProviderApiResponse =
   /** status 200 OK */
-    | ShGatekeeperExternaldataV1Beta1Provider
-    | /** status 201 Created */ ShGatekeeperExternaldataV1Beta1Provider
+  | ShGatekeeperExternaldataV1Beta1Provider
+  | /** status 201 Created */ ShGatekeeperExternaldataV1Beta1Provider
 export type ReplaceExternaldataGatekeeperShV1Beta1ProviderApiArg = {
   /** name of the Provider */
   name: string
@@ -277,8 +277,8 @@ export type ReplaceExternaldataGatekeeperShV1Beta1ProviderApiArg = {
 }
 export type DeleteExternaldataGatekeeperShV1Beta1ProviderApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteExternaldataGatekeeperShV1Beta1ProviderApiArg = {
   /** name of the Provider */
   name: string

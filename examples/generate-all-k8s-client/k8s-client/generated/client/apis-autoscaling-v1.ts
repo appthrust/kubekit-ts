@@ -396,9 +396,9 @@ export type ListAutoscalingV1NamespacedHorizontalPodAutoscalerApiArg = {
 }
 export type CreateAutoscalingV1NamespacedHorizontalPodAutoscalerApiResponse =
   /** status 200 OK */
-    | IoK8SApiAutoscalingV1HorizontalPodAutoscaler
-    | /** status 201 Created */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
-    | /** status 202 Accepted */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | /** status 201 Created */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | /** status 202 Accepted */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
 export type CreateAutoscalingV1NamespacedHorizontalPodAutoscalerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -478,8 +478,8 @@ export type ReadAutoscalingV1NamespacedHorizontalPodAutoscalerApiArg = {
 }
 export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerApiResponse =
   /** status 200 OK */
-    | IoK8SApiAutoscalingV1HorizontalPodAutoscaler
-    | /** status 201 Created */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | /** status 201 Created */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
 export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerApiArg = {
   /** name of the HorizontalPodAutoscaler */
   name: string
@@ -497,8 +497,8 @@ export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerApiArg = {
 }
 export type DeleteAutoscalingV1NamespacedHorizontalPodAutoscalerApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAutoscalingV1NamespacedHorizontalPodAutoscalerApiArg = {
   /** name of the HorizontalPodAutoscaler */
   name: string
@@ -518,8 +518,8 @@ export type DeleteAutoscalingV1NamespacedHorizontalPodAutoscalerApiArg = {
 }
 export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerApiResponse =
   /** status 200 OK */
-    | IoK8SApiAutoscalingV1HorizontalPodAutoscaler
-    | /** status 201 Created */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | /** status 201 Created */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
 export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerApiArg = {
   /** name of the HorizontalPodAutoscaler */
   name: string
@@ -549,8 +549,8 @@ export type ReadAutoscalingV1NamespacedHorizontalPodAutoscalerStatusApiArg = {
 }
 export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiAutoscalingV1HorizontalPodAutoscaler
-    | /** status 201 Created */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | /** status 201 Created */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
 export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerStatusApiArg =
   {
     /** name of the HorizontalPodAutoscaler */
@@ -569,8 +569,8 @@ export type ReplaceAutoscalingV1NamespacedHorizontalPodAutoscalerStatusApiArg =
   }
 export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiAutoscalingV1HorizontalPodAutoscaler
-    | /** status 201 Created */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | IoK8SApiAutoscalingV1HorizontalPodAutoscaler
+  | /** status 201 Created */ IoK8SApiAutoscalingV1HorizontalPodAutoscaler
 export type PatchAutoscalingV1NamespacedHorizontalPodAutoscalerStatusApiArg = {
   /** name of the HorizontalPodAutoscaler */
   name: string

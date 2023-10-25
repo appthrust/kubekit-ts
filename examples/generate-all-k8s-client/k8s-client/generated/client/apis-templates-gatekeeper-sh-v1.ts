@@ -237,9 +237,9 @@ export type ListTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
 }
 export type CreateTemplatesGatekeeperShV1ConstraintTemplateApiResponse =
   /** status 200 OK */
-    | ShGatekeeperTemplatesV1ConstraintTemplate
-    | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
-    | /** status 202 Accepted */ ShGatekeeperTemplatesV1ConstraintTemplate
+  | ShGatekeeperTemplatesV1ConstraintTemplate
+  | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
+  | /** status 202 Accepted */ ShGatekeeperTemplatesV1ConstraintTemplate
 export type CreateTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -311,8 +311,8 @@ export type ReadTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
 }
 export type ReplaceTemplatesGatekeeperShV1ConstraintTemplateApiResponse =
   /** status 200 OK */
-    | ShGatekeeperTemplatesV1ConstraintTemplate
-    | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
+  | ShGatekeeperTemplatesV1ConstraintTemplate
+  | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
 export type ReplaceTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
   /** name of the ConstraintTemplate */
   name: string
@@ -328,8 +328,8 @@ export type ReplaceTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
 }
 export type DeleteTemplatesGatekeeperShV1ConstraintTemplateApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
   /** name of the ConstraintTemplate */
   name: string
@@ -376,8 +376,8 @@ export type ReadTemplatesGatekeeperShV1ConstraintTemplateStatusApiArg = {
 }
 export type ReplaceTemplatesGatekeeperShV1ConstraintTemplateStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperTemplatesV1ConstraintTemplate
-    | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
+  | ShGatekeeperTemplatesV1ConstraintTemplate
+  | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
 export type ReplaceTemplatesGatekeeperShV1ConstraintTemplateStatusApiArg = {
   /** name of the ConstraintTemplate */
   name: string

@@ -30,7 +30,8 @@ export const createAuthenticationV1TokenReview = (
 export type GetAuthenticationV1ApiResourcesApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1ApiResourceList
 export type GetAuthenticationV1ApiResourcesApiArg = void
-export type CreateAuthenticationV1TokenReviewApiResponse = /** status 200 OK */
+export type CreateAuthenticationV1TokenReviewApiResponse =
+  /** status 200 OK */
   | IoK8SApiAuthenticationV1TokenReview
   | /** status 201 Created */ IoK8SApiAuthenticationV1TokenReview
   | /** status 202 Accepted */ IoK8SApiAuthenticationV1TokenReview

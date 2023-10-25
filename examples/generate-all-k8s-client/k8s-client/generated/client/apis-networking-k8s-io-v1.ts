@@ -825,7 +825,8 @@ export type ListNetworkingV1IngressClassApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateNetworkingV1IngressClassApiResponse = /** status 200 OK */
+export type CreateNetworkingV1IngressClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiNetworkingV1IngressClass
   | /** status 201 Created */ IoK8SApiNetworkingV1IngressClass
   | /** status 202 Accepted */ IoK8SApiNetworkingV1IngressClass
@@ -899,7 +900,8 @@ export type ReadNetworkingV1IngressClassApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceNetworkingV1IngressClassApiResponse = /** status 200 OK */
+export type ReplaceNetworkingV1IngressClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiNetworkingV1IngressClass
   | /** status 201 Created */ IoK8SApiNetworkingV1IngressClass
 export type ReplaceNetworkingV1IngressClassApiArg = {
@@ -915,7 +917,8 @@ export type ReplaceNetworkingV1IngressClassApiArg = {
   fieldValidation?: string
   ioK8SApiNetworkingV1IngressClass: IoK8SApiNetworkingV1IngressClass
 }
-export type DeleteNetworkingV1IngressClassApiResponse = /** status 200 OK */
+export type DeleteNetworkingV1IngressClassApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingV1IngressClassApiArg = {
@@ -933,7 +936,8 @@ export type DeleteNetworkingV1IngressClassApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchNetworkingV1IngressClassApiResponse = /** status 200 OK */
+export type PatchNetworkingV1IngressClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiNetworkingV1IngressClass
   | /** status 201 Created */ IoK8SApiNetworkingV1IngressClass
 export type PatchNetworkingV1IngressClassApiArg = {
@@ -1047,9 +1051,9 @@ export type ListNetworkingV1NamespacedIngressApiArg = {
 }
 export type CreateNetworkingV1NamespacedIngressApiResponse =
   /** status 200 OK */
-    | IoK8SApiNetworkingV1Ingress
-    | /** status 201 Created */ IoK8SApiNetworkingV1Ingress
-    | /** status 202 Accepted */ IoK8SApiNetworkingV1Ingress
+  | IoK8SApiNetworkingV1Ingress
+  | /** status 201 Created */ IoK8SApiNetworkingV1Ingress
+  | /** status 202 Accepted */ IoK8SApiNetworkingV1Ingress
 export type CreateNetworkingV1NamespacedIngressApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1128,8 +1132,8 @@ export type ReadNetworkingV1NamespacedIngressApiArg = {
 }
 export type ReplaceNetworkingV1NamespacedIngressApiResponse =
   /** status 200 OK */
-    | IoK8SApiNetworkingV1Ingress
-    | /** status 201 Created */ IoK8SApiNetworkingV1Ingress
+  | IoK8SApiNetworkingV1Ingress
+  | /** status 201 Created */ IoK8SApiNetworkingV1Ingress
 export type ReplaceNetworkingV1NamespacedIngressApiArg = {
   /** name of the Ingress */
   name: string
@@ -1147,8 +1151,8 @@ export type ReplaceNetworkingV1NamespacedIngressApiArg = {
 }
 export type DeleteNetworkingV1NamespacedIngressApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingV1NamespacedIngressApiArg = {
   /** name of the Ingress */
   name: string
@@ -1168,8 +1172,8 @@ export type DeleteNetworkingV1NamespacedIngressApiArg = {
 }
 export type PatchNetworkingV1NamespacedIngressApiResponse =
   /** status 200 OK */
-    | IoK8SApiNetworkingV1Ingress
-    | /** status 201 Created */ IoK8SApiNetworkingV1Ingress
+  | IoK8SApiNetworkingV1Ingress
+  | /** status 201 Created */ IoK8SApiNetworkingV1Ingress
 export type PatchNetworkingV1NamespacedIngressApiArg = {
   /** name of the Ingress */
   name: string
@@ -1199,8 +1203,8 @@ export type ReadNetworkingV1NamespacedIngressStatusApiArg = {
 }
 export type ReplaceNetworkingV1NamespacedIngressStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiNetworkingV1Ingress
-    | /** status 201 Created */ IoK8SApiNetworkingV1Ingress
+  | IoK8SApiNetworkingV1Ingress
+  | /** status 201 Created */ IoK8SApiNetworkingV1Ingress
 export type ReplaceNetworkingV1NamespacedIngressStatusApiArg = {
   /** name of the Ingress */
   name: string
@@ -1218,8 +1222,8 @@ export type ReplaceNetworkingV1NamespacedIngressStatusApiArg = {
 }
 export type PatchNetworkingV1NamespacedIngressStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiNetworkingV1Ingress
-    | /** status 201 Created */ IoK8SApiNetworkingV1Ingress
+  | IoK8SApiNetworkingV1Ingress
+  | /** status 201 Created */ IoK8SApiNetworkingV1Ingress
 export type PatchNetworkingV1NamespacedIngressStatusApiArg = {
   /** name of the Ingress */
   name: string
@@ -1287,9 +1291,9 @@ export type ListNetworkingV1NamespacedNetworkPolicyApiArg = {
 }
 export type CreateNetworkingV1NamespacedNetworkPolicyApiResponse =
   /** status 200 OK */
-    | IoK8SApiNetworkingV1NetworkPolicy
-    | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
-    | /** status 202 Accepted */ IoK8SApiNetworkingV1NetworkPolicy
+  | IoK8SApiNetworkingV1NetworkPolicy
+  | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
+  | /** status 202 Accepted */ IoK8SApiNetworkingV1NetworkPolicy
 export type CreateNetworkingV1NamespacedNetworkPolicyApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1368,8 +1372,8 @@ export type ReadNetworkingV1NamespacedNetworkPolicyApiArg = {
 }
 export type ReplaceNetworkingV1NamespacedNetworkPolicyApiResponse =
   /** status 200 OK */
-    | IoK8SApiNetworkingV1NetworkPolicy
-    | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
+  | IoK8SApiNetworkingV1NetworkPolicy
+  | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
 export type ReplaceNetworkingV1NamespacedNetworkPolicyApiArg = {
   /** name of the NetworkPolicy */
   name: string
@@ -1387,8 +1391,8 @@ export type ReplaceNetworkingV1NamespacedNetworkPolicyApiArg = {
 }
 export type DeleteNetworkingV1NamespacedNetworkPolicyApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingV1NamespacedNetworkPolicyApiArg = {
   /** name of the NetworkPolicy */
   name: string
@@ -1408,8 +1412,8 @@ export type DeleteNetworkingV1NamespacedNetworkPolicyApiArg = {
 }
 export type PatchNetworkingV1NamespacedNetworkPolicyApiResponse =
   /** status 200 OK */
-    | IoK8SApiNetworkingV1NetworkPolicy
-    | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
+  | IoK8SApiNetworkingV1NetworkPolicy
+  | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
 export type PatchNetworkingV1NamespacedNetworkPolicyApiArg = {
   /** name of the NetworkPolicy */
   name: string
@@ -1439,8 +1443,8 @@ export type ReadNetworkingV1NamespacedNetworkPolicyStatusApiArg = {
 }
 export type ReplaceNetworkingV1NamespacedNetworkPolicyStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiNetworkingV1NetworkPolicy
-    | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
+  | IoK8SApiNetworkingV1NetworkPolicy
+  | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
 export type ReplaceNetworkingV1NamespacedNetworkPolicyStatusApiArg = {
   /** name of the NetworkPolicy */
   name: string
@@ -1458,8 +1462,8 @@ export type ReplaceNetworkingV1NamespacedNetworkPolicyStatusApiArg = {
 }
 export type PatchNetworkingV1NamespacedNetworkPolicyStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiNetworkingV1NetworkPolicy
-    | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
+  | IoK8SApiNetworkingV1NetworkPolicy
+  | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
 export type PatchNetworkingV1NamespacedNetworkPolicyStatusApiArg = {
   /** name of the NetworkPolicy */
   name: string

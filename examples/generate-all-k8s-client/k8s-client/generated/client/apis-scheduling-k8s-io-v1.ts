@@ -247,7 +247,8 @@ export type ListSchedulingV1PriorityClassApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateSchedulingV1PriorityClassApiResponse = /** status 200 OK */
+export type CreateSchedulingV1PriorityClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiSchedulingV1PriorityClass
   | /** status 201 Created */ IoK8SApiSchedulingV1PriorityClass
   | /** status 202 Accepted */ IoK8SApiSchedulingV1PriorityClass
@@ -321,7 +322,8 @@ export type ReadSchedulingV1PriorityClassApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceSchedulingV1PriorityClassApiResponse = /** status 200 OK */
+export type ReplaceSchedulingV1PriorityClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiSchedulingV1PriorityClass
   | /** status 201 Created */ IoK8SApiSchedulingV1PriorityClass
 export type ReplaceSchedulingV1PriorityClassApiArg = {
@@ -337,7 +339,8 @@ export type ReplaceSchedulingV1PriorityClassApiArg = {
   fieldValidation?: string
   ioK8SApiSchedulingV1PriorityClass: IoK8SApiSchedulingV1PriorityClass
 }
-export type DeleteSchedulingV1PriorityClassApiResponse = /** status 200 OK */
+export type DeleteSchedulingV1PriorityClassApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSchedulingV1PriorityClassApiArg = {
@@ -355,7 +358,8 @@ export type DeleteSchedulingV1PriorityClassApiArg = {
   propagationPolicy?: string
   ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchSchedulingV1PriorityClassApiResponse = /** status 200 OK */
+export type PatchSchedulingV1PriorityClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiSchedulingV1PriorityClass
   | /** status 201 Created */ IoK8SApiSchedulingV1PriorityClass
 export type PatchSchedulingV1PriorityClassApiArg = {

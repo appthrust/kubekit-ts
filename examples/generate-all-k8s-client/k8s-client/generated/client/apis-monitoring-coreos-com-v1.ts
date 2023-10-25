@@ -1287,9 +1287,9 @@ export type ListMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
 }
 export type CreateMonitoringCoreosComV1NamespacedAlertmanagerApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1Alertmanager
-    | /** status 201 Created */ ComCoreosMonitoringV1Alertmanager
-    | /** status 202 Accepted */ ComCoreosMonitoringV1Alertmanager
+  | ComCoreosMonitoringV1Alertmanager
+  | /** status 201 Created */ ComCoreosMonitoringV1Alertmanager
+  | /** status 202 Accepted */ ComCoreosMonitoringV1Alertmanager
 export type CreateMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1368,8 +1368,8 @@ export type ReadMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
 }
 export type ReplaceMonitoringCoreosComV1NamespacedAlertmanagerApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1Alertmanager
-    | /** status 201 Created */ ComCoreosMonitoringV1Alertmanager
+  | ComCoreosMonitoringV1Alertmanager
+  | /** status 201 Created */ ComCoreosMonitoringV1Alertmanager
 export type ReplaceMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   /** name of the Alertmanager */
   name: string
@@ -1387,8 +1387,8 @@ export type ReplaceMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
 }
 export type DeleteMonitoringCoreosComV1NamespacedAlertmanagerApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   /** name of the Alertmanager */
   name: string
@@ -1475,9 +1475,9 @@ export type ListMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
 }
 export type CreateMonitoringCoreosComV1NamespacedPodMonitorApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1PodMonitor
-    | /** status 201 Created */ ComCoreosMonitoringV1PodMonitor
-    | /** status 202 Accepted */ ComCoreosMonitoringV1PodMonitor
+  | ComCoreosMonitoringV1PodMonitor
+  | /** status 201 Created */ ComCoreosMonitoringV1PodMonitor
+  | /** status 202 Accepted */ ComCoreosMonitoringV1PodMonitor
 export type CreateMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1555,8 +1555,8 @@ export type ReadMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
 }
 export type ReplaceMonitoringCoreosComV1NamespacedPodMonitorApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1PodMonitor
-    | /** status 201 Created */ ComCoreosMonitoringV1PodMonitor
+  | ComCoreosMonitoringV1PodMonitor
+  | /** status 201 Created */ ComCoreosMonitoringV1PodMonitor
 export type ReplaceMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   /** name of the PodMonitor */
   name: string
@@ -1574,8 +1574,8 @@ export type ReplaceMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
 }
 export type DeleteMonitoringCoreosComV1NamespacedPodMonitorApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   /** name of the PodMonitor */
   name: string
@@ -1662,9 +1662,9 @@ export type ListMonitoringCoreosComV1NamespacedProbeApiArg = {
 }
 export type CreateMonitoringCoreosComV1NamespacedProbeApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1Probe
-    | /** status 201 Created */ ComCoreosMonitoringV1Probe
-    | /** status 202 Accepted */ ComCoreosMonitoringV1Probe
+  | ComCoreosMonitoringV1Probe
+  | /** status 201 Created */ ComCoreosMonitoringV1Probe
+  | /** status 202 Accepted */ ComCoreosMonitoringV1Probe
 export type CreateMonitoringCoreosComV1NamespacedProbeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1742,8 +1742,8 @@ export type ReadMonitoringCoreosComV1NamespacedProbeApiArg = {
 }
 export type ReplaceMonitoringCoreosComV1NamespacedProbeApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1Probe
-    | /** status 201 Created */ ComCoreosMonitoringV1Probe
+  | ComCoreosMonitoringV1Probe
+  | /** status 201 Created */ ComCoreosMonitoringV1Probe
 export type ReplaceMonitoringCoreosComV1NamespacedProbeApiArg = {
   /** name of the Probe */
   name: string
@@ -1761,8 +1761,8 @@ export type ReplaceMonitoringCoreosComV1NamespacedProbeApiArg = {
 }
 export type DeleteMonitoringCoreosComV1NamespacedProbeApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1NamespacedProbeApiArg = {
   /** name of the Probe */
   name: string
@@ -1849,9 +1849,9 @@ export type ListMonitoringCoreosComV1NamespacedPrometheusApiArg = {
 }
 export type CreateMonitoringCoreosComV1NamespacedPrometheusApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1Prometheus
-    | /** status 201 Created */ ComCoreosMonitoringV1Prometheus
-    | /** status 202 Accepted */ ComCoreosMonitoringV1Prometheus
+  | ComCoreosMonitoringV1Prometheus
+  | /** status 201 Created */ ComCoreosMonitoringV1Prometheus
+  | /** status 202 Accepted */ ComCoreosMonitoringV1Prometheus
 export type CreateMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1929,8 +1929,8 @@ export type ReadMonitoringCoreosComV1NamespacedPrometheusApiArg = {
 }
 export type ReplaceMonitoringCoreosComV1NamespacedPrometheusApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1Prometheus
-    | /** status 201 Created */ ComCoreosMonitoringV1Prometheus
+  | ComCoreosMonitoringV1Prometheus
+  | /** status 201 Created */ ComCoreosMonitoringV1Prometheus
 export type ReplaceMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   /** name of the Prometheus */
   name: string
@@ -1948,8 +1948,8 @@ export type ReplaceMonitoringCoreosComV1NamespacedPrometheusApiArg = {
 }
 export type DeleteMonitoringCoreosComV1NamespacedPrometheusApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   /** name of the Prometheus */
   name: string
@@ -2002,8 +2002,8 @@ export type ReadMonitoringCoreosComV1NamespacedPrometheusStatusApiArg = {
 }
 export type ReplaceMonitoringCoreosComV1NamespacedPrometheusStatusApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1Prometheus
-    | /** status 201 Created */ ComCoreosMonitoringV1Prometheus
+  | ComCoreosMonitoringV1Prometheus
+  | /** status 201 Created */ ComCoreosMonitoringV1Prometheus
 export type ReplaceMonitoringCoreosComV1NamespacedPrometheusStatusApiArg = {
   /** name of the Prometheus */
   name: string
@@ -2088,9 +2088,9 @@ export type ListMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
 }
 export type CreateMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1PrometheusRule
-    | /** status 201 Created */ ComCoreosMonitoringV1PrometheusRule
-    | /** status 202 Accepted */ ComCoreosMonitoringV1PrometheusRule
+  | ComCoreosMonitoringV1PrometheusRule
+  | /** status 201 Created */ ComCoreosMonitoringV1PrometheusRule
+  | /** status 202 Accepted */ ComCoreosMonitoringV1PrometheusRule
 export type CreateMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2169,8 +2169,8 @@ export type ReadMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
 }
 export type ReplaceMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1PrometheusRule
-    | /** status 201 Created */ ComCoreosMonitoringV1PrometheusRule
+  | ComCoreosMonitoringV1PrometheusRule
+  | /** status 201 Created */ ComCoreosMonitoringV1PrometheusRule
 export type ReplaceMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   /** name of the PrometheusRule */
   name: string
@@ -2188,8 +2188,8 @@ export type ReplaceMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
 }
 export type DeleteMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   /** name of the PrometheusRule */
   name: string
@@ -2276,9 +2276,9 @@ export type ListMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
 }
 export type CreateMonitoringCoreosComV1NamespacedServiceMonitorApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1ServiceMonitor
-    | /** status 201 Created */ ComCoreosMonitoringV1ServiceMonitor
-    | /** status 202 Accepted */ ComCoreosMonitoringV1ServiceMonitor
+  | ComCoreosMonitoringV1ServiceMonitor
+  | /** status 201 Created */ ComCoreosMonitoringV1ServiceMonitor
+  | /** status 202 Accepted */ ComCoreosMonitoringV1ServiceMonitor
 export type CreateMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2357,8 +2357,8 @@ export type ReadMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
 }
 export type ReplaceMonitoringCoreosComV1NamespacedServiceMonitorApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1ServiceMonitor
-    | /** status 201 Created */ ComCoreosMonitoringV1ServiceMonitor
+  | ComCoreosMonitoringV1ServiceMonitor
+  | /** status 201 Created */ ComCoreosMonitoringV1ServiceMonitor
 export type ReplaceMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   /** name of the ServiceMonitor */
   name: string
@@ -2376,8 +2376,8 @@ export type ReplaceMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
 }
 export type DeleteMonitoringCoreosComV1NamespacedServiceMonitorApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   /** name of the ServiceMonitor */
   name: string
@@ -2464,9 +2464,9 @@ export type ListMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
 }
 export type CreateMonitoringCoreosComV1NamespacedThanosRulerApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1ThanosRuler
-    | /** status 201 Created */ ComCoreosMonitoringV1ThanosRuler
-    | /** status 202 Accepted */ ComCoreosMonitoringV1ThanosRuler
+  | ComCoreosMonitoringV1ThanosRuler
+  | /** status 201 Created */ ComCoreosMonitoringV1ThanosRuler
+  | /** status 202 Accepted */ ComCoreosMonitoringV1ThanosRuler
 export type CreateMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2544,8 +2544,8 @@ export type ReadMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
 }
 export type ReplaceMonitoringCoreosComV1NamespacedThanosRulerApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1ThanosRuler
-    | /** status 201 Created */ ComCoreosMonitoringV1ThanosRuler
+  | ComCoreosMonitoringV1ThanosRuler
+  | /** status 201 Created */ ComCoreosMonitoringV1ThanosRuler
 export type ReplaceMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   /** name of the ThanosRuler */
   name: string
@@ -2563,8 +2563,8 @@ export type ReplaceMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
 }
 export type DeleteMonitoringCoreosComV1NamespacedThanosRulerApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   /** name of the ThanosRuler */
   name: string

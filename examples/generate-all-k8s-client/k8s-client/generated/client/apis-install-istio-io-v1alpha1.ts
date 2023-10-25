@@ -309,9 +309,9 @@ export type ListInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
 }
 export type CreateInstallIstioIoV1Alpha1NamespacedIstioOperatorApiResponse =
   /** status 200 OK */
-    | IoIstioInstallV1Alpha1IstioOperator
-    | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
-    | /** status 202 Accepted */ IoIstioInstallV1Alpha1IstioOperator
+  | IoIstioInstallV1Alpha1IstioOperator
+  | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
+  | /** status 202 Accepted */ IoIstioInstallV1Alpha1IstioOperator
 export type CreateInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -390,8 +390,8 @@ export type ReadInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
 }
 export type ReplaceInstallIstioIoV1Alpha1NamespacedIstioOperatorApiResponse =
   /** status 200 OK */
-    | IoIstioInstallV1Alpha1IstioOperator
-    | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
+  | IoIstioInstallV1Alpha1IstioOperator
+  | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
 export type ReplaceInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
   /** name of the IstioOperator */
   name: string
@@ -409,8 +409,8 @@ export type ReplaceInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
 }
 export type DeleteInstallIstioIoV1Alpha1NamespacedIstioOperatorApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
   /** name of the IstioOperator */
   name: string
@@ -463,8 +463,8 @@ export type ReadInstallIstioIoV1Alpha1NamespacedIstioOperatorStatusApiArg = {
 }
 export type ReplaceInstallIstioIoV1Alpha1NamespacedIstioOperatorStatusApiResponse =
   /** status 200 OK */
-    | IoIstioInstallV1Alpha1IstioOperator
-    | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
+  | IoIstioInstallV1Alpha1IstioOperator
+  | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
 export type ReplaceInstallIstioIoV1Alpha1NamespacedIstioOperatorStatusApiArg = {
   /** name of the IstioOperator */
   name: string

@@ -186,9 +186,9 @@ export type ListExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
 }
 export type CreateExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
   /** status 200 OK */
-    | ShGatekeeperExpansionV1Alpha1ExpansionTemplate
-    | /** status 201 Created */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
-    | /** status 202 Accepted */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
+  | ShGatekeeperExpansionV1Alpha1ExpansionTemplate
+  | /** status 201 Created */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
+  | /** status 202 Accepted */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
 export type CreateExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -261,8 +261,8 @@ export type ReadExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
 }
 export type ReplaceExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
   /** status 200 OK */
-    | ShGatekeeperExpansionV1Alpha1ExpansionTemplate
-    | /** status 201 Created */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
+  | ShGatekeeperExpansionV1Alpha1ExpansionTemplate
+  | /** status 201 Created */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
 export type ReplaceExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
   /** name of the ExpansionTemplate */
   name: string
@@ -278,8 +278,8 @@ export type ReplaceExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
 }
 export type DeleteExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
   /** name of the ExpansionTemplate */
   name: string
