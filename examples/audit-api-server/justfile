@@ -1,0 +1,13 @@
+up:
+  kind create cluster --config kind-config.yaml --name playground
+
+down:
+  kind delete cluster --name playground
+
+log:
+  #!/bin/bash
+  docker exec playground-control-plane tail -f /var/log/kubernetes/kube-apiserver-audit.log | while IFS= read -r line
+  do
+    echo "$line" | yq e -P -
+    echo "---"
+  done
