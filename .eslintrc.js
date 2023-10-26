@@ -5,7 +5,7 @@ module.exports = {
     // Taken care of by TypeScript's `noUnusedLocals` / `noUnusedParameters`
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
-// Silence some bizarre "rule not found" TSLint error
+    // Silence some bizarre "rule not found" TSLint error
 
     'no-redeclare': 'off',
     // Silence some bizarre "rule not found" TSLint error

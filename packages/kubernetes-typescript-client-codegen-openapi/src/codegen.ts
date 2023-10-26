@@ -52,16 +52,7 @@ export function generateCreateApiCall({
       endpoints: factory.createArrowFunction(
         undefined,
         undefined,
-        [
-          factory.createParameterDeclaration(
-            undefined,
-            undefined,
-            endpointBuilder,
-            undefined,
-            undefined,
-            undefined
-          ),
-        ],
+        [factory.createParameterDeclaration(undefined, undefined, endpointBuilder, undefined, undefined, undefined)],
         undefined,
         factory.createToken(ts.SyntaxKind.EqualsGreaterThanToken),
         factory.createParenthesizedExpression(endpointDefinitions)

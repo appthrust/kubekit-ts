@@ -197,16 +197,17 @@ export async function generateApi(
       let name = isPureSnakeCase && !allNames.includes(camelCaseName) ? camelCaseName : param.name;
 
       if (name in queryArg) {
-        let duplicatedNewName = `${queryArg[name].param?.in}_${name}`
-        duplicatedNewName = isPureSnakeCase && !allNames.includes(duplicatedNewName) ? camelCase(duplicatedNewName) : duplicatedNewName
+        let duplicatedNewName = `${queryArg[name].param?.in}_${name}`;
+        duplicatedNewName =
+          isPureSnakeCase && !allNames.includes(duplicatedNewName) ? camelCase(duplicatedNewName) : duplicatedNewName;
         while (duplicatedNewName in queryArg) {
           duplicatedNewName = '_' + duplicatedNewName;
         }
-        queryArg[duplicatedNewName] = queryArg[name]
-        queryArg[duplicatedNewName].name = duplicatedNewName
-        delete queryArg[name]
+        queryArg[duplicatedNewName] = queryArg[name];
+        queryArg[duplicatedNewName].name = duplicatedNewName;
+        delete queryArg[name];
 
-        name = `${param.in}_${name}`
+        name = `${param.in}_${name}`;
         name = isPureSnakeCase && !allNames.includes(name) ? camelCase(name) : name;
       }
       while (name in queryArg) {
@@ -351,11 +352,7 @@ function accessProperty(rootObject: ts.Identifier, propertyName: string) {
     : factory.createElementAccessExpression(rootObject, factory.createStringLiteral(propertyName));
 }
 
-function generatePathExpression(
-  path: string,
-  pathParameters: QueryArgDefinition[],
-  rootObject: ts.Identifier
-) {
+function generatePathExpression(path: string, pathParameters: QueryArgDefinition[], rootObject: ts.Identifier) {
   const expressions: Array<[string, string]> = [];
 
   const head = path.replace(/\{(.*?)\}(.*?)(?=\{|$)/g, (_, expression, literal) => {
@@ -387,7 +384,7 @@ type QueryArgDefinition = {
   originalName: string;
   type: ts.TypeNode;
   required?: boolean;
-  param?: OpenAPIV3.ParameterObject
+  param?: OpenAPIV3.ParameterObject;
 } & (
   | {
       origin: 'param';
