@@ -147,12 +147,14 @@ export async function apiClient<Response>(
     !httpsOptions.agent &&
     (httpsOptions.ca || httpsOptions.cert || httpsOptions.key)
   ) {
-    const agent = new https.Agent({
-      ca: httpsOptions.ca,
-      cert: httpsOptions.cert,
-      key: httpsOptions.key,
-      port: httpsOptions.port ? Number(httpsOptions.port) : undefined,
-    })
+    const agent = new https.Agent(
+      removeNullableProperties({
+        ca: httpsOptions.ca,
+        cert: httpsOptions.cert,
+        key: httpsOptions.key,
+        port: httpsOptions.port ? Number(httpsOptions.port) : undefined,
+      })
+    )
     httpsOptions.agent = agent
   }
 
