@@ -1,9 +1,9 @@
 import {
-  connectCoreV1GetNamespacedPodExec,
   createCoreV1NamespacedPod,
   deleteCoreV1NamespacedPod,
   listCoreV1NamespacedPod,
   patchCoreV1NamespacedPod,
+  readCoreV1NamespacedPod,
 } from '../k8s-client/generated/client/api-v1'
 
 // $ kubectl run nginx --image=nginx --restart=Never --dry-run=client -o yaml
@@ -105,6 +105,22 @@ async function main() {
     }
   )
 
+  await wait(async () => {
+    const res = await readCoreV1NamespacedPod({
+      name: 'nginx',
+      namespace: 'default',
+    })
+    if (
+      !res.status?.conditions?.find(
+        (c) => c.type === 'Ready' && c.status === 'True'
+      )
+    ) {
+      return retry
+    }
+
+    return res
+  })
+
   await deleteCoreV1NamespacedPod({
     name: 'nginx',
     namespace: 'default',
@@ -112,3 +128,31 @@ async function main() {
   })
 }
 main()
+
+type Executor<T> = (params: ExecutorParams) => Promise<Retry | T>
+type ExecutorParams = { retry: Retry }
+const retry = Symbol()
+type Retry = typeof retry
+
+async function wait<T>(
+  executor: Executor<T>,
+  { interval = 500, timeout = 5000 } = {}
+): Promise<T> {
+  const startTime = Date.now()
+
+  while (true) {
+    const elapsed = Date.now() - startTime
+
+    if (elapsed > timeout) {
+      throw new Error('Timeout reached')
+    }
+
+    const result = await executor({ retry })
+
+    if (result !== retry) {
+      return result
+    }
+
+    await new Promise((r) => setTimeout(r, interval))
+  }
+}
