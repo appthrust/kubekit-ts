@@ -229,17 +229,28 @@ export async function generateApi(
       const schema = apiGen.getSchemaFromContent(body.content);
       const type = apiGen.getTypeFromSchema(schema);
       const schemaName = camelCase((type as any).name || getReferenceName(schema) || 'body');
-      let name = schemaName in queryArg ? 'body' : schemaName;
+      let name = 'body';
 
       while (name in queryArg) {
         name = '_' + name;
+      }
+
+      for (let media in body.content) {
+        body.content[media];
       }
 
       queryArg[name] = {
         origin: 'body',
         name,
         originalName: schemaName,
-        type: apiGen.getTypeFromSchema(schema),
+        type: getBodyNode(
+          Object.fromEntries(
+            Object.keys(body.content).map((mediaType) => [
+              mediaType,
+              apiGen.getTypeFromSchema(body.content[mediaType].schema),
+            ])
+          )
+        ),
         required: true,
         body,
       };
@@ -254,28 +265,41 @@ export async function generateApi(
 
     const queryArgValues = Object.values(queryArg);
 
+    const bodyType = queryArgValues.find((def) => def.origin === 'body')?.type;
+
+    const getType = () => {
+      if (queryArgValues.length === 0) {
+        return factory.createKeywordTypeNode(ts.SyntaxKind.VoidKeyword);
+      }
+      const queryNode = factory.createTypeLiteralNode(
+        queryArgValues
+          .filter((def) => def.origin === 'param')
+          .map((def) =>
+            withQueryComment(
+              factory.createPropertySignature(
+                undefined,
+                propertyName(def.name),
+                createQuestionToken(!def.required),
+                def.type
+              ),
+              def,
+              true
+            )
+          )
+      );
+      if (bodyType) {
+        return factory.createIntersectionTypeNode([queryNode, factory.createParenthesizedType(bodyType)]);
+      }
+      return queryNode;
+    };
+
     const QueryArg = factory.createTypeReferenceNode(
       registerInterface(
         factory.createTypeAliasDeclaration(
           [factory.createModifier(ts.SyntaxKind.ExportKeyword)],
           capitalize(operationName + argSuffix),
           undefined,
-          queryArgValues.length > 0
-            ? factory.createTypeLiteralNode(
-                queryArgValues.map((def) =>
-                  withQueryComment(
-                    factory.createPropertySignature(
-                      undefined,
-                      propertyName(def.name),
-                      createQuestionToken(!def.required),
-                      def.type
-                    ),
-                    def,
-                    true
-                  )
-                )
-              )
-            : factory.createKeywordTypeNode(ts.SyntaxKind.VoidKeyword)
+          getType()
         )
       ).name
     );
@@ -331,12 +355,18 @@ export async function generateApi(
               factory.createIdentifier('method'),
               factory.createStringLiteral(verb.toUpperCase())
             ),
-        bodyParameter === undefined
-          ? undefined
-          : factory.createPropertyAssignment(
-              factory.createIdentifier('body'),
-              factory.createPropertyAccessExpression(rootObject, factory.createIdentifier(bodyParameter.name))
-            ),
+        ...(bodyParameter === undefined
+          ? []
+          : [
+              factory.createPropertyAssignment(
+                factory.createIdentifier('body'),
+                factory.createPropertyAccessExpression(rootObject, factory.createIdentifier(bodyParameter.name))
+              ),
+              factory.createPropertyAssignment(
+                factory.createIdentifier('contentType'),
+                factory.createPropertyAccessExpression(rootObject, factory.createIdentifier('contentType'))
+              ),
+            ]),
         createObjectLiteralProperty(pickParams('cookie'), 'cookies'),
         createObjectLiteralProperty(pickParams('header'), 'headers'),
         createObjectLiteralProperty(pickParams('query'), 'params'),
@@ -382,9 +412,9 @@ function generatePathExpression(path: string, pathParameters: QueryArgDefinition
 type QueryArgDefinition = {
   name: string;
   originalName: string;
-  type: ts.TypeNode;
   required?: boolean;
   param?: OpenAPIV3.ParameterObject;
+  type: ts.TypeNode;
 } & (
   | {
       origin: 'param';
@@ -396,3 +426,23 @@ type QueryArgDefinition = {
     }
 );
 type QueryArgDefinitions = Record<string, QueryArgDefinition>;
+
+function getBodyNode(bodies: { [contentType: string]: ts.TypeNode }): ts.TypeNode {
+  return factory.createParenthesizedType(
+    factory.createUnionTypeNode(
+      Object.keys(bodies).map((contentType) =>
+        factory.createTypeLiteralNode([
+          factory.createPropertySignature(
+            undefined,
+            factory.createIdentifier('contentType'),
+            contentType === '*/*' ? factory.createToken(ts.SyntaxKind.QuestionToken) : undefined,
+            contentType === '*/*'
+              ? factory.createKeywordTypeNode(ts.SyntaxKind.StringKeyword)
+              : factory.createLiteralTypeNode(factory.createStringLiteral(contentType))
+          ),
+          factory.createPropertySignature(undefined, factory.createIdentifier('body'), undefined, bodies[contentType]),
+        ])
+      )
+    )
+  );
+}

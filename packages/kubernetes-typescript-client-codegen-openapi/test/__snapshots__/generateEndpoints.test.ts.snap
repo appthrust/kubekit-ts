@@ -13,13 +13,23 @@ export const getHealthcheck = (
 };
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   return apiClient<UpdatePetApiResponse>(
-    { path: \`/pet\`, method: "PUT", body: args.pet },
+    {
+      path: \`/pet\`,
+      method: "PUT",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
 export const addPet = (args: AddPetApiArg, options?: Options) => {
   return apiClient<AddPetApiResponse>(
-    { path: \`/pet\`, method: "POST", body: args.pet },
+    {
+      path: \`/pet\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -76,6 +86,7 @@ export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
       path: \`/pet/\${args.petId}/uploadImage\`,
       method: "POST",
       body: args.body,
+      contentType: args.contentType,
       params: { additionalMetadata: args.additionalMetadata },
     },
     options
@@ -89,7 +100,12 @@ export const getInventory = (args: GetInventoryApiArg, options?: Options) => {
 };
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   return apiClient<PlaceOrderApiResponse>(
-    { path: \`/store/order\`, method: "POST", body: args.order },
+    {
+      path: \`/store/order\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -107,7 +123,12 @@ export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
 };
 export const createUser = (args: CreateUserApiArg, options?: Options) => {
   return apiClient<CreateUserApiResponse>(
-    { path: \`/user\`, method: "POST", body: args.user },
+    {
+      path: \`/user\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -116,7 +137,12 @@ export const createUsersWithListInput = (
   options?: Options
 ) => {
   return apiClient<CreateUsersWithListInputApiResponse>(
-    { path: \`/user/createWithList\`, method: "POST", body: args.body },
+    {
+      path: \`/user/createWithList\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -140,7 +166,12 @@ export const getUserByName = (args: GetUserByNameApiArg, options?: Options) => {
 };
 export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
   return apiClient<UpdateUserApiResponse>(
-    { path: \`/user/\${args.username}\`, method: "PUT", body: args.user },
+    {
+      path: \`/user/\${args.username}\`,
+      method: "PUT",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -155,15 +186,35 @@ export type GetHealthcheckApiResponse = /** status 200 OK */ {
 };
 export type GetHealthcheckApiArg = void;
 export type UpdatePetApiResponse = /** status 200 Successful operation */ Pet;
-export type UpdatePetApiArg = {
-  /** Update an existent pet in the store */
-  pet: Pet;
-};
+export type UpdatePetApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: Pet;
+    }
+  | {
+      contentType: "application/xml";
+      body: Pet;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: Pet;
+    }
+);
 export type AddPetApiResponse = /** status 200 Successful operation */ Pet;
-export type AddPetApiArg = {
-  /** Create a new pet in the store */
-  pet: Pet;
-};
+export type AddPetApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: Pet;
+    }
+  | {
+      contentType: "application/xml";
+      body: Pet;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: Pet;
+    }
+);
 export type FindPetsByStatusApiResponse =
   /** status 200 successful operation */ Pet[];
 export type FindPetsByStatusApiArg = {
@@ -203,6 +254,8 @@ export type UploadFileApiArg = {
   petId: number;
   /** Additional Metadata */
   additionalMetadata?: string;
+} & {
+  contentType: "application/octet-stream";
   body: Blob;
 };
 export type GetInventoryApiResponse = /** status 200 successful operation */ {
@@ -211,9 +264,20 @@ export type GetInventoryApiResponse = /** status 200 successful operation */ {
 export type GetInventoryApiArg = void;
 export type PlaceOrderApiResponse =
   /** status 200 successful operation */ Order;
-export type PlaceOrderApiArg = {
-  order: Order;
-};
+export type PlaceOrderApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: Order;
+    }
+  | {
+      contentType: "application/xml";
+      body: Order;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: Order;
+    }
+);
 export type GetOrderByIdApiResponse =
   /** status 200 successful operation */ Order;
 export type GetOrderByIdApiArg = {
@@ -226,13 +290,24 @@ export type DeleteOrderApiArg = {
   orderId: number;
 };
 export type CreateUserApiResponse = unknown;
-export type CreateUserApiArg = {
-  /** Created user object */
-  user: User;
-};
+export type CreateUserApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: User;
+    }
+  | {
+      contentType: "application/xml";
+      body: User;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: User;
+    }
+);
 export type CreateUsersWithListInputApiResponse =
   /** status 200 Successful operation */ User;
-export type CreateUsersWithListInputApiArg = {
+export type CreateUsersWithListInputApiArg = {} & {
+  contentType: "application/json";
   body: User[];
 };
 export type LoginUserApiResponse =
@@ -255,9 +330,20 @@ export type UpdateUserApiResponse = unknown;
 export type UpdateUserApiArg = {
   /** name that need to be deleted */
   username: string;
-  /** Update an existent user in the store */
-  user: User;
-};
+} & (
+  | {
+      contentType: "application/json";
+      body: User;
+    }
+  | {
+      contentType: "application/xml";
+      body: User;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: User;
+    }
+);
 export type DeleteUserApiResponse = unknown;
 export type DeleteUserApiArg = {
   /** The name that needs to be deleted */
@@ -347,7 +433,12 @@ exports[`endpoint filtering: should only have endpoints loginUser, placeOrder, g
 import { apiClient, type Options } from "./fixtures/k8sApiClient";
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   return apiClient<PlaceOrderApiResponse>(
-    { path: \`/store/order\`, method: "POST", body: args.order },
+    {
+      path: \`/store/order\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -374,9 +465,20 @@ export const loginUser = (args: LoginUserApiArg, options?: Options) => {
 };
 export type PlaceOrderApiResponse =
   /** status 200 successful operation */ Order;
-export type PlaceOrderApiArg = {
-  order: Order;
-};
+export type PlaceOrderApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: Order;
+    }
+  | {
+      contentType: "application/xml";
+      body: Order;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: Order;
+    }
+);
 export type GetOrderByIdApiResponse =
   /** status 200 successful operation */ Order;
 export type GetOrderByIdApiArg = {
@@ -478,13 +580,23 @@ exports[`yaml parsing should be able to use read a yaml file 1`] = `
 import { apiClient, type Options } from "./tmp/k8sApiClient";
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   return apiClient<UpdatePetApiResponse>(
-    { path: \`/pet\`, method: "PUT", body: args.pet },
+    {
+      path: \`/pet\`,
+      method: "PUT",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
 export const addPet = (args: AddPetApiArg, options?: Options) => {
   return apiClient<AddPetApiResponse>(
-    { path: \`/pet\`, method: "POST", body: args.pet },
+    {
+      path: \`/pet\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -541,6 +653,7 @@ export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
       path: \`/pet/\${args.petId}/uploadImage\`,
       method: "POST",
       body: args.body,
+      contentType: args.contentType,
       params: { additionalMetadata: args.additionalMetadata },
     },
     options
@@ -554,7 +667,12 @@ export const getInventory = (args: GetInventoryApiArg, options?: Options) => {
 };
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   return apiClient<PlaceOrderApiResponse>(
-    { path: \`/store/order\`, method: "POST", body: args.order },
+    {
+      path: \`/store/order\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -572,7 +690,12 @@ export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
 };
 export const createUser = (args: CreateUserApiArg, options?: Options) => {
   return apiClient<CreateUserApiResponse>(
-    { path: \`/user\`, method: "POST", body: args.user },
+    {
+      path: \`/user\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -581,7 +704,12 @@ export const createUsersWithListInput = (
   options?: Options
 ) => {
   return apiClient<CreateUsersWithListInputApiResponse>(
-    { path: \`/user/createWithList\`, method: "POST", body: args.body },
+    {
+      path: \`/user/createWithList\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -605,7 +733,12 @@ export const getUserByName = (args: GetUserByNameApiArg, options?: Options) => {
 };
 export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
   return apiClient<UpdateUserApiResponse>(
-    { path: \`/user/\${args.username}\`, method: "PUT", body: args.user },
+    {
+      path: \`/user/\${args.username}\`,
+      method: "PUT",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -616,15 +749,35 @@ export const deleteUser = (args: DeleteUserApiArg, options?: Options) => {
   );
 };
 export type UpdatePetApiResponse = /** status 200 Successful operation */ Pet;
-export type UpdatePetApiArg = {
-  /** Update an existent pet in the store */
-  pet: Pet;
-};
+export type UpdatePetApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: Pet;
+    }
+  | {
+      contentType: "application/xml";
+      body: Pet;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: Pet;
+    }
+);
 export type AddPetApiResponse = /** status 200 Successful operation */ Pet;
-export type AddPetApiArg = {
-  /** Create a new pet in the store */
-  pet: Pet;
-};
+export type AddPetApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: Pet;
+    }
+  | {
+      contentType: "application/xml";
+      body: Pet;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: Pet;
+    }
+);
 export type FindPetsByStatusApiResponse =
   /** status 200 successful operation */ Pet[];
 export type FindPetsByStatusApiArg = {
@@ -664,6 +817,8 @@ export type UploadFileApiArg = {
   petId: number;
   /** Additional Metadata */
   additionalMetadata?: string;
+} & {
+  contentType: "application/octet-stream";
   body: Blob;
 };
 export type GetInventoryApiResponse = /** status 200 successful operation */ {
@@ -672,9 +827,20 @@ export type GetInventoryApiResponse = /** status 200 successful operation */ {
 export type GetInventoryApiArg = void;
 export type PlaceOrderApiResponse =
   /** status 200 successful operation */ Order;
-export type PlaceOrderApiArg = {
-  order: Order;
-};
+export type PlaceOrderApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: Order;
+    }
+  | {
+      contentType: "application/xml";
+      body: Order;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: Order;
+    }
+);
 export type GetOrderByIdApiResponse =
   /** status 200 successful operation */ Order;
 export type GetOrderByIdApiArg = {
@@ -687,13 +853,24 @@ export type DeleteOrderApiArg = {
   orderId: number;
 };
 export type CreateUserApiResponse = unknown;
-export type CreateUserApiArg = {
-  /** Created user object */
-  user: User;
-};
+export type CreateUserApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: User;
+    }
+  | {
+      contentType: "application/xml";
+      body: User;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: User;
+    }
+);
 export type CreateUsersWithListInputApiResponse =
   /** status 200 Successful operation */ User;
-export type CreateUsersWithListInputApiArg = {
+export type CreateUsersWithListInputApiArg = {} & {
+  contentType: "application/json";
   body: User[];
 };
 export type LoginUserApiResponse =
@@ -716,9 +893,20 @@ export type UpdateUserApiResponse = unknown;
 export type UpdateUserApiArg = {
   /** name that need to be deleted */
   username: string;
-  /** Update an existent user in the store */
-  user: User;
-};
+} & (
+  | {
+      contentType: "application/json";
+      body: User;
+    }
+  | {
+      contentType: "application/xml";
+      body: User;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: User;
+    }
+);
 export type DeleteUserApiResponse = unknown;
 export type DeleteUserApiArg = {
   /** The name that needs to be deleted */
@@ -817,13 +1005,23 @@ exports[`yaml parsing should parse a yaml schema from a URL 1`] = `
 import { apiClient, type Options } from "./tmp/k8sApiClient";
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   return apiClient<UpdatePetApiResponse>(
-    { path: \`/pet\`, method: "PUT", body: args.pet },
+    {
+      path: \`/pet\`,
+      method: "PUT",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
 export const addPet = (args: AddPetApiArg, options?: Options) => {
   return apiClient<AddPetApiResponse>(
-    { path: \`/pet\`, method: "POST", body: args.pet },
+    {
+      path: \`/pet\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -880,6 +1078,7 @@ export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
       path: \`/pet/\${args.petId}/uploadImage\`,
       method: "POST",
       body: args.body,
+      contentType: args.contentType,
       params: { additionalMetadata: args.additionalMetadata },
     },
     options
@@ -893,7 +1092,12 @@ export const getInventory = (args: GetInventoryApiArg, options?: Options) => {
 };
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   return apiClient<PlaceOrderApiResponse>(
-    { path: \`/store/order\`, method: "POST", body: args.order },
+    {
+      path: \`/store/order\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -911,7 +1115,12 @@ export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
 };
 export const createUser = (args: CreateUserApiArg, options?: Options) => {
   return apiClient<CreateUserApiResponse>(
-    { path: \`/user\`, method: "POST", body: args.user },
+    {
+      path: \`/user\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -920,7 +1129,12 @@ export const createUsersWithListInput = (
   options?: Options
 ) => {
   return apiClient<CreateUsersWithListInputApiResponse>(
-    { path: \`/user/createWithList\`, method: "POST", body: args.body },
+    {
+      path: \`/user/createWithList\`,
+      method: "POST",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -944,7 +1158,12 @@ export const getUserByName = (args: GetUserByNameApiArg, options?: Options) => {
 };
 export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
   return apiClient<UpdateUserApiResponse>(
-    { path: \`/user/\${args.username}\`, method: "PUT", body: args.user },
+    {
+      path: \`/user/\${args.username}\`,
+      method: "PUT",
+      body: args.body,
+      contentType: args.contentType,
+    },
     options
   );
 };
@@ -955,15 +1174,35 @@ export const deleteUser = (args: DeleteUserApiArg, options?: Options) => {
   );
 };
 export type UpdatePetApiResponse = /** status 200 Successful operation */ Pet;
-export type UpdatePetApiArg = {
-  /** Update an existent pet in the store */
-  pet: Pet;
-};
+export type UpdatePetApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: Pet;
+    }
+  | {
+      contentType: "application/xml";
+      body: Pet;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: Pet;
+    }
+);
 export type AddPetApiResponse = /** status 200 Successful operation */ Pet;
-export type AddPetApiArg = {
-  /** Create a new pet in the store */
-  pet: Pet;
-};
+export type AddPetApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: Pet;
+    }
+  | {
+      contentType: "application/xml";
+      body: Pet;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: Pet;
+    }
+);
 export type FindPetsByStatusApiResponse =
   /** status 200 successful operation */ Pet[];
 export type FindPetsByStatusApiArg = {
@@ -1003,6 +1242,8 @@ export type UploadFileApiArg = {
   petId: number;
   /** Additional Metadata */
   additionalMetadata?: string;
+} & {
+  contentType: "application/octet-stream";
   body: Blob;
 };
 export type GetInventoryApiResponse = /** status 200 successful operation */ {
@@ -1011,9 +1252,20 @@ export type GetInventoryApiResponse = /** status 200 successful operation */ {
 export type GetInventoryApiArg = void;
 export type PlaceOrderApiResponse =
   /** status 200 successful operation */ Order;
-export type PlaceOrderApiArg = {
-  order: Order;
-};
+export type PlaceOrderApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: Order;
+    }
+  | {
+      contentType: "application/xml";
+      body: Order;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: Order;
+    }
+);
 export type GetOrderByIdApiResponse =
   /** status 200 successful operation */ Order;
 export type GetOrderByIdApiArg = {
@@ -1026,13 +1278,24 @@ export type DeleteOrderApiArg = {
   orderId: number;
 };
 export type CreateUserApiResponse = unknown;
-export type CreateUserApiArg = {
-  /** Created user object */
-  user: User;
-};
+export type CreateUserApiArg = {} & (
+  | {
+      contentType: "application/json";
+      body: User;
+    }
+  | {
+      contentType: "application/xml";
+      body: User;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: User;
+    }
+);
 export type CreateUsersWithListInputApiResponse =
   /** status 200 Successful operation */ User;
-export type CreateUsersWithListInputApiArg = {
+export type CreateUsersWithListInputApiArg = {} & {
+  contentType: "application/json";
   body: User[];
 };
 export type LoginUserApiResponse =
@@ -1055,9 +1318,20 @@ export type UpdateUserApiResponse = unknown;
 export type UpdateUserApiArg = {
   /** name that need to be deleted */
   username: string;
-  /** Update an existent user in the store */
-  user: User;
-};
+} & (
+  | {
+      contentType: "application/json";
+      body: User;
+    }
+  | {
+      contentType: "application/xml";
+      body: User;
+    }
+  | {
+      contentType: "application/x-www-form-urlencoded";
+      body: User;
+    }
+);
 export type DeleteUserApiResponse = unknown;
 export type DeleteUserApiArg = {
   /** The name that needs to be deleted */

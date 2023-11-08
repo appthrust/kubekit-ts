@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-typescript-client-codegen-openapi",
-  "version": "0.0.7",
+  "version": "0.0.12",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "kahirokunn",
