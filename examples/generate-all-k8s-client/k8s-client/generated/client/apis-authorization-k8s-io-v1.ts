@@ -16,7 +16,8 @@ export const createAuthorizationV1NamespacedLocalSubjectAccessReview = (
     {
       path: `/apis/authorization.k8s.io/v1/namespaces/${args['namespace']}/localsubjectaccessreviews`,
       method: 'POST',
-      body: args.ioK8SApiAuthorizationV1LocalSubjectAccessReview,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         dryRun: args.dryRun,
         fieldManager: args.fieldManager,
@@ -35,7 +36,8 @@ export const createAuthorizationV1SelfSubjectAccessReview = (
     {
       path: `/apis/authorization.k8s.io/v1/selfsubjectaccessreviews`,
       method: 'POST',
-      body: args.ioK8SApiAuthorizationV1SelfSubjectAccessReview,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         dryRun: args.dryRun,
         fieldManager: args.fieldManager,
@@ -54,7 +56,8 @@ export const createAuthorizationV1SelfSubjectRulesReview = (
     {
       path: `/apis/authorization.k8s.io/v1/selfsubjectrulesreviews`,
       method: 'POST',
-      body: args.ioK8SApiAuthorizationV1SelfSubjectRulesReview,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         dryRun: args.dryRun,
         fieldManager: args.fieldManager,
@@ -73,7 +76,8 @@ export const createAuthorizationV1SubjectAccessReview = (
     {
       path: `/apis/authorization.k8s.io/v1/subjectaccessreviews`,
       method: 'POST',
-      body: args.ioK8SApiAuthorizationV1SubjectAccessReview,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         dryRun: args.dryRun,
         fieldManager: args.fieldManager,
@@ -103,7 +107,9 @@ export type CreateAuthorizationV1NamespacedLocalSubjectAccessReviewApiArg = {
   namespace: string
   /** If 'true', then the output is pretty printed. */
   pretty?: string
-  ioK8SApiAuthorizationV1LocalSubjectAccessReview: IoK8SApiAuthorizationV1LocalSubjectAccessReview
+} & {
+  contentType?: string
+  body: IoK8SApiAuthorizationV1LocalSubjectAccessReview
 }
 export type CreateAuthorizationV1SelfSubjectAccessReviewApiResponse =
   /** status 200 OK */
@@ -119,7 +125,9 @@ export type CreateAuthorizationV1SelfSubjectAccessReviewApiArg = {
   fieldValidation?: string
   /** If 'true', then the output is pretty printed. */
   pretty?: string
-  ioK8SApiAuthorizationV1SelfSubjectAccessReview: IoK8SApiAuthorizationV1SelfSubjectAccessReview
+} & {
+  contentType?: string
+  body: IoK8SApiAuthorizationV1SelfSubjectAccessReview
 }
 export type CreateAuthorizationV1SelfSubjectRulesReviewApiResponse =
   /** status 200 OK */
@@ -135,7 +143,9 @@ export type CreateAuthorizationV1SelfSubjectRulesReviewApiArg = {
   fieldValidation?: string
   /** If 'true', then the output is pretty printed. */
   pretty?: string
-  ioK8SApiAuthorizationV1SelfSubjectRulesReview: IoK8SApiAuthorizationV1SelfSubjectRulesReview
+} & {
+  contentType?: string
+  body: IoK8SApiAuthorizationV1SelfSubjectRulesReview
 }
 export type CreateAuthorizationV1SubjectAccessReviewApiResponse =
   /** status 200 OK */
@@ -151,7 +161,9 @@ export type CreateAuthorizationV1SubjectAccessReviewApiArg = {
   fieldValidation?: string
   /** If 'true', then the output is pretty printed. */
   pretty?: string
-  ioK8SApiAuthorizationV1SubjectAccessReview: IoK8SApiAuthorizationV1SubjectAccessReview
+} & {
+  contentType?: string
+  body: IoK8SApiAuthorizationV1SubjectAccessReview
 }
 export type IoK8SApimachineryPkgApisMetaV1ApiResource = {
   categories?: string[] | undefined

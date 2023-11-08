@@ -127,7 +127,8 @@ export const createVeleroIoV1NamespacedBackup = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backups`,
       method: 'POST',
-      body: args.ioVeleroV1Backup,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -183,7 +184,8 @@ export const replaceVeleroIoV1NamespacedBackup = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backups/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1Backup,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -202,7 +204,8 @@ export const deleteVeleroIoV1NamespacedBackup = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backups/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -222,7 +225,8 @@ export const patchVeleroIoV1NamespacedBackup = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backups/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -266,7 +270,8 @@ export const createVeleroIoV1NamespacedBackupStorageLocation = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backupstoragelocations`,
       method: 'POST',
-      body: args.ioVeleroV1BackupStorageLocation,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -322,7 +327,8 @@ export const replaceVeleroIoV1NamespacedBackupStorageLocation = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backupstoragelocations/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1BackupStorageLocation,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -341,7 +347,8 @@ export const deleteVeleroIoV1NamespacedBackupStorageLocation = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backupstoragelocations/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -361,7 +368,8 @@ export const patchVeleroIoV1NamespacedBackupStorageLocation = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backupstoragelocations/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -405,7 +413,8 @@ export const createVeleroIoV1NamespacedDeleteBackupRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/deletebackuprequests`,
       method: 'POST',
-      body: args.ioVeleroV1DeleteBackupRequest,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -461,7 +470,8 @@ export const replaceVeleroIoV1NamespacedDeleteBackupRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/deletebackuprequests/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1DeleteBackupRequest,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -480,7 +490,8 @@ export const deleteVeleroIoV1NamespacedDeleteBackupRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/deletebackuprequests/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -500,7 +511,8 @@ export const patchVeleroIoV1NamespacedDeleteBackupRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/deletebackuprequests/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -544,7 +556,8 @@ export const createVeleroIoV1NamespacedDownloadRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/downloadrequests`,
       method: 'POST',
-      body: args.ioVeleroV1DownloadRequest,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -600,7 +613,8 @@ export const replaceVeleroIoV1NamespacedDownloadRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/downloadrequests/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1DownloadRequest,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -619,7 +633,8 @@ export const deleteVeleroIoV1NamespacedDownloadRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/downloadrequests/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -639,7 +654,8 @@ export const patchVeleroIoV1NamespacedDownloadRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/downloadrequests/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -683,7 +699,8 @@ export const createVeleroIoV1NamespacedPodVolumeBackup = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumebackups`,
       method: 'POST',
-      body: args.ioVeleroV1PodVolumeBackup,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -739,7 +756,8 @@ export const replaceVeleroIoV1NamespacedPodVolumeBackup = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumebackups/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1PodVolumeBackup,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -758,7 +776,8 @@ export const deleteVeleroIoV1NamespacedPodVolumeBackup = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumebackups/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -778,7 +797,8 @@ export const patchVeleroIoV1NamespacedPodVolumeBackup = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumebackups/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -822,7 +842,8 @@ export const createVeleroIoV1NamespacedPodVolumeRestore = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumerestores`,
       method: 'POST',
-      body: args.ioVeleroV1PodVolumeRestore,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -878,7 +899,8 @@ export const replaceVeleroIoV1NamespacedPodVolumeRestore = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumerestores/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1PodVolumeRestore,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -897,7 +919,8 @@ export const deleteVeleroIoV1NamespacedPodVolumeRestore = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumerestores/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -917,7 +940,8 @@ export const patchVeleroIoV1NamespacedPodVolumeRestore = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumerestores/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -961,7 +985,8 @@ export const createVeleroIoV1NamespacedResticRepository = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/resticrepositories`,
       method: 'POST',
-      body: args.ioVeleroV1ResticRepository,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1017,7 +1042,8 @@ export const replaceVeleroIoV1NamespacedResticRepository = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/resticrepositories/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1ResticRepository,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1036,7 +1062,8 @@ export const deleteVeleroIoV1NamespacedResticRepository = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/resticrepositories/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1056,7 +1083,8 @@ export const patchVeleroIoV1NamespacedResticRepository = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/resticrepositories/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1100,7 +1128,8 @@ export const createVeleroIoV1NamespacedRestore = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/restores`,
       method: 'POST',
-      body: args.ioVeleroV1Restore,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1156,7 +1185,8 @@ export const replaceVeleroIoV1NamespacedRestore = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/restores/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1Restore,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1175,7 +1205,8 @@ export const deleteVeleroIoV1NamespacedRestore = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/restores/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1195,7 +1226,8 @@ export const patchVeleroIoV1NamespacedRestore = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/restores/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1239,7 +1271,8 @@ export const createVeleroIoV1NamespacedSchedule = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/schedules`,
       method: 'POST',
-      body: args.ioVeleroV1Schedule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1295,7 +1328,8 @@ export const replaceVeleroIoV1NamespacedSchedule = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/schedules/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1Schedule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1314,7 +1348,8 @@ export const deleteVeleroIoV1NamespacedSchedule = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/schedules/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1334,7 +1369,8 @@ export const patchVeleroIoV1NamespacedSchedule = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/schedules/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1378,7 +1414,8 @@ export const createVeleroIoV1NamespacedServerStatusRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/serverstatusrequests`,
       method: 'POST',
-      body: args.ioVeleroV1ServerStatusRequest,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1434,7 +1471,8 @@ export const replaceVeleroIoV1NamespacedServerStatusRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/serverstatusrequests/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1ServerStatusRequest,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1453,7 +1491,8 @@ export const deleteVeleroIoV1NamespacedServerStatusRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/serverstatusrequests/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1473,7 +1512,8 @@ export const patchVeleroIoV1NamespacedServerStatusRequest = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/serverstatusrequests/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1517,7 +1557,8 @@ export const createVeleroIoV1NamespacedVolumeSnapshotLocation = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/volumesnapshotlocations`,
       method: 'POST',
-      body: args.ioVeleroV1VolumeSnapshotLocation,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1573,7 +1614,8 @@ export const replaceVeleroIoV1NamespacedVolumeSnapshotLocation = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/volumesnapshotlocations/${args.name}`,
       method: 'PUT',
-      body: args.ioVeleroV1VolumeSnapshotLocation,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1592,7 +1634,8 @@ export const deleteVeleroIoV1NamespacedVolumeSnapshotLocation = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/volumesnapshotlocations/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1612,7 +1655,8 @@ export const patchVeleroIoV1NamespacedVolumeSnapshotLocation = (
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/volumesnapshotlocations/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2040,8 +2084,16 @@ export type CreateVeleroIoV1NamespacedBackupApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1Backup: IoVeleroV1Backup
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1Backup
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1Backup
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedBackupApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedBackupApiArg = {
@@ -2120,8 +2172,16 @@ export type ReplaceVeleroIoV1NamespacedBackupApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1Backup: IoVeleroV1Backup
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1Backup
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1Backup
+    }
+)
 export type DeleteVeleroIoV1NamespacedBackupApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2141,8 +2201,16 @@ export type DeleteVeleroIoV1NamespacedBackupApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedBackupApiResponse =
   /** status 200 OK */ IoVeleroV1Backup
 export type PatchVeleroIoV1NamespacedBackupApiArg = {
@@ -2160,8 +2228,20 @@ export type PatchVeleroIoV1NamespacedBackupApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1NamespacedBackupStorageLocationApiResponse =
   /** status 200 OK */ IoVeleroV1BackupStorageLocationList
 export type ListVeleroIoV1NamespacedBackupStorageLocationApiArg = {
@@ -2226,8 +2306,16 @@ export type CreateVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1BackupStorageLocation: IoVeleroV1BackupStorageLocation
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1BackupStorageLocation
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1BackupStorageLocation
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedBackupStorageLocationApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedBackupStorageLocationApiArg = {
@@ -2307,8 +2395,16 @@ export type ReplaceVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1BackupStorageLocation: IoVeleroV1BackupStorageLocation
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1BackupStorageLocation
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1BackupStorageLocation
+    }
+)
 export type DeleteVeleroIoV1NamespacedBackupStorageLocationApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2328,8 +2424,16 @@ export type DeleteVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedBackupStorageLocationApiResponse =
   /** status 200 OK */ IoVeleroV1BackupStorageLocation
 export type PatchVeleroIoV1NamespacedBackupStorageLocationApiArg = {
@@ -2347,8 +2451,20 @@ export type PatchVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1NamespacedDeleteBackupRequestApiResponse =
   /** status 200 OK */ IoVeleroV1DeleteBackupRequestList
 export type ListVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
@@ -2413,8 +2529,16 @@ export type CreateVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1DeleteBackupRequest: IoVeleroV1DeleteBackupRequest
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1DeleteBackupRequest
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1DeleteBackupRequest
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedDeleteBackupRequestApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedDeleteBackupRequestApiArg = {
@@ -2494,8 +2618,16 @@ export type ReplaceVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1DeleteBackupRequest: IoVeleroV1DeleteBackupRequest
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1DeleteBackupRequest
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1DeleteBackupRequest
+    }
+)
 export type DeleteVeleroIoV1NamespacedDeleteBackupRequestApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2515,8 +2647,16 @@ export type DeleteVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedDeleteBackupRequestApiResponse =
   /** status 200 OK */ IoVeleroV1DeleteBackupRequest
 export type PatchVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
@@ -2534,8 +2674,20 @@ export type PatchVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1NamespacedDownloadRequestApiResponse =
   /** status 200 OK */ IoVeleroV1DownloadRequestList
 export type ListVeleroIoV1NamespacedDownloadRequestApiArg = {
@@ -2600,8 +2752,16 @@ export type CreateVeleroIoV1NamespacedDownloadRequestApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1DownloadRequest: IoVeleroV1DownloadRequest
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1DownloadRequest
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1DownloadRequest
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedDownloadRequestApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedDownloadRequestApiArg = {
@@ -2681,8 +2841,16 @@ export type ReplaceVeleroIoV1NamespacedDownloadRequestApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1DownloadRequest: IoVeleroV1DownloadRequest
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1DownloadRequest
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1DownloadRequest
+    }
+)
 export type DeleteVeleroIoV1NamespacedDownloadRequestApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2702,8 +2870,16 @@ export type DeleteVeleroIoV1NamespacedDownloadRequestApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedDownloadRequestApiResponse =
   /** status 200 OK */ IoVeleroV1DownloadRequest
 export type PatchVeleroIoV1NamespacedDownloadRequestApiArg = {
@@ -2721,8 +2897,20 @@ export type PatchVeleroIoV1NamespacedDownloadRequestApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1NamespacedPodVolumeBackupApiResponse =
   /** status 200 OK */ IoVeleroV1PodVolumeBackupList
 export type ListVeleroIoV1NamespacedPodVolumeBackupApiArg = {
@@ -2787,8 +2975,16 @@ export type CreateVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1PodVolumeBackup: IoVeleroV1PodVolumeBackup
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1PodVolumeBackup
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1PodVolumeBackup
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedPodVolumeBackupApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedPodVolumeBackupApiArg = {
@@ -2868,8 +3064,16 @@ export type ReplaceVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1PodVolumeBackup: IoVeleroV1PodVolumeBackup
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1PodVolumeBackup
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1PodVolumeBackup
+    }
+)
 export type DeleteVeleroIoV1NamespacedPodVolumeBackupApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2889,8 +3093,16 @@ export type DeleteVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedPodVolumeBackupApiResponse =
   /** status 200 OK */ IoVeleroV1PodVolumeBackup
 export type PatchVeleroIoV1NamespacedPodVolumeBackupApiArg = {
@@ -2908,8 +3120,20 @@ export type PatchVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1NamespacedPodVolumeRestoreApiResponse =
   /** status 200 OK */ IoVeleroV1PodVolumeRestoreList
 export type ListVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
@@ -2974,8 +3198,16 @@ export type CreateVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1PodVolumeRestore: IoVeleroV1PodVolumeRestore
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1PodVolumeRestore
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1PodVolumeRestore
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedPodVolumeRestoreApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedPodVolumeRestoreApiArg = {
@@ -3055,8 +3287,16 @@ export type ReplaceVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1PodVolumeRestore: IoVeleroV1PodVolumeRestore
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1PodVolumeRestore
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1PodVolumeRestore
+    }
+)
 export type DeleteVeleroIoV1NamespacedPodVolumeRestoreApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3076,8 +3316,16 @@ export type DeleteVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedPodVolumeRestoreApiResponse =
   /** status 200 OK */ IoVeleroV1PodVolumeRestore
 export type PatchVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
@@ -3095,8 +3343,20 @@ export type PatchVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1NamespacedResticRepositoryApiResponse =
   /** status 200 OK */ IoVeleroV1ResticRepositoryList
 export type ListVeleroIoV1NamespacedResticRepositoryApiArg = {
@@ -3161,8 +3421,16 @@ export type CreateVeleroIoV1NamespacedResticRepositoryApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1ResticRepository: IoVeleroV1ResticRepository
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1ResticRepository
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1ResticRepository
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedResticRepositoryApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedResticRepositoryApiArg = {
@@ -3242,8 +3510,16 @@ export type ReplaceVeleroIoV1NamespacedResticRepositoryApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1ResticRepository: IoVeleroV1ResticRepository
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1ResticRepository
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1ResticRepository
+    }
+)
 export type DeleteVeleroIoV1NamespacedResticRepositoryApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3263,8 +3539,16 @@ export type DeleteVeleroIoV1NamespacedResticRepositoryApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedResticRepositoryApiResponse =
   /** status 200 OK */ IoVeleroV1ResticRepository
 export type PatchVeleroIoV1NamespacedResticRepositoryApiArg = {
@@ -3282,8 +3566,20 @@ export type PatchVeleroIoV1NamespacedResticRepositoryApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1NamespacedRestoreApiResponse =
   /** status 200 OK */ IoVeleroV1RestoreList
 export type ListVeleroIoV1NamespacedRestoreApiArg = {
@@ -3348,8 +3644,16 @@ export type CreateVeleroIoV1NamespacedRestoreApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1Restore: IoVeleroV1Restore
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1Restore
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1Restore
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedRestoreApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedRestoreApiArg = {
@@ -3428,8 +3732,16 @@ export type ReplaceVeleroIoV1NamespacedRestoreApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1Restore: IoVeleroV1Restore
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1Restore
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1Restore
+    }
+)
 export type DeleteVeleroIoV1NamespacedRestoreApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3449,8 +3761,16 @@ export type DeleteVeleroIoV1NamespacedRestoreApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedRestoreApiResponse =
   /** status 200 OK */ IoVeleroV1Restore
 export type PatchVeleroIoV1NamespacedRestoreApiArg = {
@@ -3468,8 +3788,20 @@ export type PatchVeleroIoV1NamespacedRestoreApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1NamespacedScheduleApiResponse =
   /** status 200 OK */ IoVeleroV1ScheduleList
 export type ListVeleroIoV1NamespacedScheduleApiArg = {
@@ -3534,8 +3866,16 @@ export type CreateVeleroIoV1NamespacedScheduleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1Schedule: IoVeleroV1Schedule
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1Schedule
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1Schedule
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedScheduleApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedScheduleApiArg = {
@@ -3614,8 +3954,16 @@ export type ReplaceVeleroIoV1NamespacedScheduleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1Schedule: IoVeleroV1Schedule
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1Schedule
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1Schedule
+    }
+)
 export type DeleteVeleroIoV1NamespacedScheduleApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3635,8 +3983,16 @@ export type DeleteVeleroIoV1NamespacedScheduleApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedScheduleApiResponse =
   /** status 200 OK */ IoVeleroV1Schedule
 export type PatchVeleroIoV1NamespacedScheduleApiArg = {
@@ -3654,8 +4010,20 @@ export type PatchVeleroIoV1NamespacedScheduleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1NamespacedServerStatusRequestApiResponse =
   /** status 200 OK */ IoVeleroV1ServerStatusRequestList
 export type ListVeleroIoV1NamespacedServerStatusRequestApiArg = {
@@ -3720,8 +4088,16 @@ export type CreateVeleroIoV1NamespacedServerStatusRequestApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1ServerStatusRequest: IoVeleroV1ServerStatusRequest
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1ServerStatusRequest
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1ServerStatusRequest
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedServerStatusRequestApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedServerStatusRequestApiArg = {
@@ -3801,8 +4177,16 @@ export type ReplaceVeleroIoV1NamespacedServerStatusRequestApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1ServerStatusRequest: IoVeleroV1ServerStatusRequest
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1ServerStatusRequest
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1ServerStatusRequest
+    }
+)
 export type DeleteVeleroIoV1NamespacedServerStatusRequestApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3822,8 +4206,16 @@ export type DeleteVeleroIoV1NamespacedServerStatusRequestApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedServerStatusRequestApiResponse =
   /** status 200 OK */ IoVeleroV1ServerStatusRequest
 export type PatchVeleroIoV1NamespacedServerStatusRequestApiArg = {
@@ -3841,8 +4233,20 @@ export type PatchVeleroIoV1NamespacedServerStatusRequestApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse =
   /** status 200 OK */ IoVeleroV1VolumeSnapshotLocationList
 export type ListVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
@@ -3907,8 +4311,16 @@ export type CreateVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1VolumeSnapshotLocation: IoVeleroV1VolumeSnapshotLocation
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1VolumeSnapshotLocation
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1VolumeSnapshotLocation
+    }
+)
 export type DeleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocationApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocationApiArg = {
@@ -3988,8 +4400,16 @@ export type ReplaceVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioVeleroV1VolumeSnapshotLocation: IoVeleroV1VolumeSnapshotLocation
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoVeleroV1VolumeSnapshotLocation
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoVeleroV1VolumeSnapshotLocation
+    }
+)
 export type DeleteVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -4009,8 +4429,16 @@ export type DeleteVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse =
   /** status 200 OK */ IoVeleroV1VolumeSnapshotLocation
 export type PatchVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
@@ -4028,8 +4456,20 @@ export type PatchVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListVeleroIoV1PodVolumeBackupForAllNamespacesApiResponse =
   /** status 200 OK */ IoVeleroV1PodVolumeBackupList
 export type ListVeleroIoV1PodVolumeBackupForAllNamespacesApiArg = {

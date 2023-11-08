@@ -3,6 +3,7 @@ import {
   deleteCoreV1NamespacedPod,
   listCoreV1NamespacedPod,
   patchCoreV1NamespacedPod,
+  patchCoreV1NamespacedPodStatus,
   readCoreV1NamespacedPod,
 } from '../k8s-client/generated/client/api-v1'
 
@@ -27,7 +28,7 @@ async function main() {
   })
   await createCoreV1NamespacedPod({
     namespace: 'default',
-    ioK8SApiCoreV1Pod: {
+    body: {
       metadata: {
         name: 'test',
         namespace: 'default',
@@ -42,68 +43,106 @@ async function main() {
       },
     },
   })
-  await patchCoreV1NamespacedPod(
-    {
-      namespace: 'default',
-      name: 'test',
-      ioK8SApimachineryPkgApisMetaV1Patch: {
-        metadata: {
-          creationTimestamp: null,
-        },
+  await patchCoreV1NamespacedPod({
+    namespace: 'default',
+    name: 'test',
+    contentType: 'application/strategic-merge-patch+json',
+    body: {
+      metadata: {
+        creationTimestamp: null,
       },
-      fieldManager: 'client-side-apply',
-      fieldValidation: 'Strict',
     },
-    {
-      headers: {
-        'Content-Type': 'application/strategic-merge-patch+json',
-      },
-    }
-  )
+    fieldManager: 'client-side-apply',
+    fieldValidation: 'Strict',
+  })
 
   await deleteCoreV1NamespacedPod({
     name: 'test',
     namespace: 'default',
-    ioK8SApimachineryPkgApisMetaV1DeleteOptions: {},
+    body: {},
   })
 
-  await patchCoreV1NamespacedPod(
-    {
-      namespace: 'default',
-      name: 'nginx',
-      fieldManager: 'server-side-apply',
-      fieldValidation: 'Strict',
-      ioK8SApimachineryPkgApisMetaV1Patch: {
-        apiVersion: 'v1',
-        kind: 'Pod',
-        metadata: {
-          creationTimestamp: null,
-          labels: {
-            run: 'nginx',
-          },
-          name: 'nginx',
-          namespace: 'default',
-        },
-        spec: {
-          containers: [
-            {
-              image: 'nginx',
-              name: 'nginx',
-              resources: {},
-            },
-          ],
-          dnsPolicy: 'ClusterFirst',
-          restartPolicy: 'Never',
-        },
-        status: {},
+  await readCoreV1NamespacedPod({
+    name: 'nginx',
+    namespace: 'default',
+  })
+
+  await patchCoreV1NamespacedPod({
+    name: 'nginx',
+    namespace: 'default',
+    fieldManager: 'kahiro',
+    force: true,
+    contentType: 'application/apply-patch+yaml',
+    body: {
+      apiVersion: 'v1',
+      kind: 'Pod',
+      spec: {
+        dnsPolicy: 'Default',
       },
     },
-    {
-      headers: {
-        'Content-Type': 'application/apply-patch+yaml',
+  })
+
+  await patchCoreV1NamespacedPodStatus({
+    name: 'nginx',
+    namespace: 'default',
+    fieldManager: 'kahiro',
+    force: true,
+    contentType: 'application/apply-patch+yaml',
+    body: {
+      apiVersion: 'v1',
+      kind: 'Pod',
+      status: {
+        phase: 'Failed',
       },
-    }
-  )
+    },
+  })
+
+  await patchCoreV1NamespacedPodStatus({
+    name: 'nginx',
+    namespace: 'default',
+    fieldManager: 'kahiro',
+    // force: true,
+    contentType: 'application/apply-patch+yaml',
+    body: {
+      apiVersion: 'v1',
+      kind: 'Pod',
+      status: {
+        phase: 'Failed',
+      },
+    },
+  })
+
+  await patchCoreV1NamespacedPod({
+    namespace: 'default',
+    name: 'nginx',
+    fieldManager: 'server-side-apply',
+    fieldValidation: 'Strict',
+    contentType: 'application/apply-patch+yaml',
+    body: {
+      apiVersion: 'v1',
+      kind: 'Pod',
+      metadata: {
+        creationTimestamp: null,
+        labels: {
+          run: 'nginx',
+        },
+        name: 'nginx',
+        namespace: 'default',
+      },
+      spec: {
+        containers: [
+          {
+            image: 'nginx',
+            name: 'nginx',
+            resources: {},
+          },
+        ],
+        dnsPolicy: 'ClusterFirst',
+        restartPolicy: 'Never',
+      },
+      status: {},
+    },
+  })
 
   await wait(async () => {
     const res = await readCoreV1NamespacedPod({
@@ -124,7 +163,7 @@ async function main() {
   await deleteCoreV1NamespacedPod({
     name: 'nginx',
     namespace: 'default',
-    ioK8SApimachineryPkgApisMetaV1DeleteOptions: {},
+    body: {},
   })
 }
 main()

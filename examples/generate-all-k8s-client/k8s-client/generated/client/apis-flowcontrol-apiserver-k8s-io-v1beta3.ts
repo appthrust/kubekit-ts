@@ -40,7 +40,8 @@ export const createFlowcontrolApiserverV1Beta3FlowSchema = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/flowschemas`,
       method: 'POST',
-      body: args.ioK8SApiFlowcontrolV1Beta3FlowSchema,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -59,7 +60,8 @@ export const deleteFlowcontrolApiserverV1Beta3CollectionFlowSchema = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/flowschemas`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -99,7 +101,8 @@ export const replaceFlowcontrolApiserverV1Beta3FlowSchema = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/flowschemas/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiFlowcontrolV1Beta3FlowSchema,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -118,7 +121,8 @@ export const deleteFlowcontrolApiserverV1Beta3FlowSchema = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/flowschemas/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -138,7 +142,8 @@ export const patchFlowcontrolApiserverV1Beta3FlowSchema = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/flowschemas/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -170,7 +175,8 @@ export const replaceFlowcontrolApiserverV1Beta3FlowSchemaStatus = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/flowschemas/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiFlowcontrolV1Beta3FlowSchema,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -189,7 +195,8 @@ export const patchFlowcontrolApiserverV1Beta3FlowSchemaStatus = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/flowschemas/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -233,7 +240,8 @@ export const createFlowcontrolApiserverV1Beta3PriorityLevelConfiguration = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/prioritylevelconfigurations`,
       method: 'POST',
-      body: args.ioK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -253,7 +261,8 @@ export const deleteFlowcontrolApiserverV1Beta3CollectionPriorityLevelConfigurati
       {
         path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/prioritylevelconfigurations`,
         method: 'DELETE',
-        body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           continue: args['continue'],
@@ -293,7 +302,8 @@ export const replaceFlowcontrolApiserverV1Beta3PriorityLevelConfiguration = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/prioritylevelconfigurations/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -312,7 +322,8 @@ export const deleteFlowcontrolApiserverV1Beta3PriorityLevelConfiguration = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/prioritylevelconfigurations/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -332,7 +343,8 @@ export const patchFlowcontrolApiserverV1Beta3PriorityLevelConfiguration = (
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/prioritylevelconfigurations/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -365,7 +377,8 @@ export const replaceFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatus 
       {
         path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/prioritylevelconfigurations/${args.name}/status`,
         method: 'PUT',
-        body: args.ioK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -385,7 +398,8 @@ export const patchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatus =
       {
         path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/prioritylevelconfigurations/${args.name}/status`,
         method: 'PATCH',
-        body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -556,7 +570,9 @@ export type CreateFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiFlowcontrolV1Beta3FlowSchema: IoK8SApiFlowcontrolV1Beta3FlowSchema
+} & {
+  contentType?: string
+  body: IoK8SApiFlowcontrolV1Beta3FlowSchema
 }
 export type DeleteFlowcontrolApiserverV1Beta3CollectionFlowSchemaApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -607,7 +623,9 @@ export type DeleteFlowcontrolApiserverV1Beta3CollectionFlowSchemaApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadFlowcontrolApiserverV1Beta3FlowSchemaApiResponse =
   /** status 200 OK */ IoK8SApiFlowcontrolV1Beta3FlowSchema
@@ -632,7 +650,9 @@ export type ReplaceFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiFlowcontrolV1Beta3FlowSchema: IoK8SApiFlowcontrolV1Beta3FlowSchema
+} & {
+  contentType?: string
+  body: IoK8SApiFlowcontrolV1Beta3FlowSchema
 }
 export type DeleteFlowcontrolApiserverV1Beta3FlowSchemaApiResponse =
   /** status 200 OK */
@@ -651,7 +671,9 @@ export type DeleteFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchFlowcontrolApiserverV1Beta3FlowSchemaApiResponse =
   /** status 200 OK */
@@ -670,8 +692,24 @@ export type PatchFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadFlowcontrolApiserverV1Beta3FlowSchemaStatusApiResponse =
   /** status 200 OK */ IoK8SApiFlowcontrolV1Beta3FlowSchema
 export type ReadFlowcontrolApiserverV1Beta3FlowSchemaStatusApiArg = {
@@ -695,7 +733,9 @@ export type ReplaceFlowcontrolApiserverV1Beta3FlowSchemaStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiFlowcontrolV1Beta3FlowSchema: IoK8SApiFlowcontrolV1Beta3FlowSchema
+} & {
+  contentType?: string
+  body: IoK8SApiFlowcontrolV1Beta3FlowSchema
 }
 export type PatchFlowcontrolApiserverV1Beta3FlowSchemaStatusApiResponse =
   /** status 200 OK */
@@ -714,8 +754,24 @@ export type PatchFlowcontrolApiserverV1Beta3FlowSchemaStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse =
   /** status 200 OK */ IoK8SApiFlowcontrolV1Beta3PriorityLevelConfigurationList
 export type ListFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg = {
@@ -777,7 +833,9 @@ export type CreateFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration: IoK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration
+  } & {
+    contentType?: string
+    body: IoK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration
   }
 export type DeleteFlowcontrolApiserverV1Beta3CollectionPriorityLevelConfigurationApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -829,7 +887,9 @@ export type DeleteFlowcontrolApiserverV1Beta3CollectionPriorityLevelConfiguratio
     sendInitialEvents?: boolean
     /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
     timeoutSeconds?: number
-    ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+  } & {
+    contentType?: string
+    body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
   }
 export type ReadFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse =
   /** status 200 OK */ IoK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration
@@ -855,7 +915,9 @@ export type ReplaceFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration: IoK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration
+  } & {
+    contentType?: string
+    body: IoK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration
   }
 export type DeleteFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse =
   /** status 200 OK */
@@ -875,7 +937,9 @@ export type DeleteFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg =
     orphanDependents?: boolean
     /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
     propagationPolicy?: string
-    ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+  } & {
+    contentType?: string
+    body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
   }
 export type PatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse =
   /** status 200 OK */
@@ -894,8 +958,24 @@ export type PatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatusApiResponse =
   /** status 200 OK */ IoK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration
 export type ReadFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatusApiArg =
@@ -921,7 +1001,9 @@ export type ReplaceFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatusAp
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration: IoK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration
+  } & {
+    contentType?: string
+    body: IoK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration
   }
 export type PatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatusApiResponse =
   /** status 200 OK */
@@ -941,8 +1023,24 @@ export type PatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatusApiA
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-  }
+  } & (
+    | {
+        contentType: 'application/apply-patch+yaml'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/json-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/strategic-merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+  )
 export type WatchFlowcontrolApiserverV1Beta3FlowSchemaListApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1WatchEvent
 export type WatchFlowcontrolApiserverV1Beta3FlowSchemaListApiArg = {

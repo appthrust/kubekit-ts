@@ -151,7 +151,8 @@ export const createEtcdImprobableIoV1Alpha1NamespacedEtcdBackup = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackups`,
       method: 'POST',
-      body: args.ioImprobableEtcdV1Alpha1EtcdBackup,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -207,7 +208,8 @@ export const replaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackup = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackups/${args.name}`,
       method: 'PUT',
-      body: args.ioImprobableEtcdV1Alpha1EtcdBackup,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -226,7 +228,8 @@ export const deleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackup = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackups/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -246,7 +249,8 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdBackup = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackups/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -278,7 +282,8 @@ export const replaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackups/${args.name}/status`,
       method: 'PUT',
-      body: args.ioImprobableEtcdV1Alpha1EtcdBackup,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -297,7 +302,8 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackups/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -341,7 +347,8 @@ export const createEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackupschedules`,
       method: 'POST',
-      body: args.ioImprobableEtcdV1Alpha1EtcdBackupSchedule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -398,7 +405,8 @@ export const replaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackupschedules/${args.name}`,
       method: 'PUT',
-      body: args.ioImprobableEtcdV1Alpha1EtcdBackupSchedule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -417,7 +425,8 @@ export const deleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackupschedules/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -437,7 +446,8 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackupschedules/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -481,7 +491,8 @@ export const createEtcdImprobableIoV1Alpha1NamespacedEtcdCluster = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters`,
       method: 'POST',
-      body: args.ioImprobableEtcdV1Alpha1EtcdCluster,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -537,7 +548,8 @@ export const replaceEtcdImprobableIoV1Alpha1NamespacedEtcdCluster = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters/${args.name}`,
       method: 'PUT',
-      body: args.ioImprobableEtcdV1Alpha1EtcdCluster,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -556,7 +568,8 @@ export const deleteEtcdImprobableIoV1Alpha1NamespacedEtcdCluster = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -576,7 +589,8 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdCluster = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -608,7 +622,8 @@ export const replaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScale = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters/${args.name}/scale`,
       method: 'PUT',
-      body: args.ioK8SApiAutoscalingV1Scale,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -627,7 +642,8 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScale = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters/${args.name}/scale`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -659,7 +675,8 @@ export const replaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters/${args.name}/status`,
       method: 'PUT',
-      body: args.ioImprobableEtcdV1Alpha1EtcdCluster,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -678,7 +695,8 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -722,7 +740,8 @@ export const createEtcdImprobableIoV1Alpha1NamespacedEtcdPeer = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdpeers`,
       method: 'POST',
-      body: args.ioImprobableEtcdV1Alpha1EtcdPeer,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -778,7 +797,8 @@ export const replaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeer = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdpeers/${args.name}`,
       method: 'PUT',
-      body: args.ioImprobableEtcdV1Alpha1EtcdPeer,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -797,7 +817,8 @@ export const deleteEtcdImprobableIoV1Alpha1NamespacedEtcdPeer = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdpeers/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -817,7 +838,8 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdPeer = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdpeers/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -849,7 +871,8 @@ export const replaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdpeers/${args.name}/status`,
       method: 'PUT',
-      body: args.ioImprobableEtcdV1Alpha1EtcdPeer,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -868,7 +891,8 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdpeers/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -912,7 +936,8 @@ export const createEtcdImprobableIoV1Alpha1NamespacedEtcdRestore = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdrestores`,
       method: 'POST',
-      body: args.ioImprobableEtcdV1Alpha1EtcdRestore,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -968,7 +993,8 @@ export const replaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestore = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdrestores/${args.name}`,
       method: 'PUT',
-      body: args.ioImprobableEtcdV1Alpha1EtcdRestore,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -987,7 +1013,8 @@ export const deleteEtcdImprobableIoV1Alpha1NamespacedEtcdRestore = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdrestores/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1007,7 +1034,8 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdRestore = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdrestores/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1039,7 +1067,8 @@ export const replaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdrestores/${args.name}/status`,
       method: 'PUT',
-      body: args.ioImprobableEtcdV1Alpha1EtcdRestore,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1058,7 +1087,8 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatus = (
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdrestores/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1365,8 +1395,16 @@ export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdBackup: IoImprobableEtcdV1Alpha1EtcdBackup
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdBackup
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdBackup
+    }
+)
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupApiArg =
@@ -1447,8 +1485,16 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdBackup: IoImprobableEtcdV1Alpha1EtcdBackup
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdBackup
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdBackup
+    }
+)
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1468,8 +1514,16 @@ export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdBackup
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
@@ -1487,8 +1541,20 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdBackup
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
@@ -1520,8 +1586,16 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdBackup: IoImprobableEtcdV1Alpha1EtcdBackup
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdBackup
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdBackup
+    }
+)
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdBackup
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
@@ -1539,8 +1613,20 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdBackupScheduleList
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
@@ -1605,8 +1691,16 @@ export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdBackupSchedule: IoImprobableEtcdV1Alpha1EtcdBackupSchedule
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+    }
+)
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupScheduleApiArg =
@@ -1688,8 +1782,16 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioImprobableEtcdV1Alpha1EtcdBackupSchedule: IoImprobableEtcdV1Alpha1EtcdBackupSchedule
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+      }
+  )
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1709,8 +1811,16 @@ export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
@@ -1728,8 +1838,20 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdClusterList
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
@@ -1794,8 +1916,16 @@ export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdCluster: IoImprobableEtcdV1Alpha1EtcdCluster
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdCluster
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdCluster
+    }
+)
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdClusterApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdClusterApiArg =
@@ -1876,8 +2006,16 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdCluster: IoImprobableEtcdV1Alpha1EtcdCluster
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdCluster
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdCluster
+    }
+)
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1897,8 +2035,16 @@ export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdCluster
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
@@ -1916,8 +2062,20 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
@@ -1949,8 +2107,16 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiAutoscalingV1Scale: IoK8SApiAutoscalingV1Scale
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApiAutoscalingV1Scale
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApiAutoscalingV1Scale
+    }
+)
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
@@ -1968,8 +2134,20 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdCluster
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
@@ -2001,8 +2179,16 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdCluster: IoImprobableEtcdV1Alpha1EtcdCluster
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdCluster
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdCluster
+    }
+)
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdCluster
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
@@ -2020,8 +2206,20 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdPeerList
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
@@ -2086,8 +2284,16 @@ export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdPeer: IoImprobableEtcdV1Alpha1EtcdPeer
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdPeer
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdPeer
+    }
+)
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeerApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeerApiArg = {
@@ -2167,8 +2373,16 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdPeer: IoImprobableEtcdV1Alpha1EtcdPeer
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdPeer
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdPeer
+    }
+)
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2188,8 +2402,16 @@ export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdPeer
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
@@ -2207,8 +2429,20 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdPeer
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
@@ -2240,8 +2474,16 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdPeer: IoImprobableEtcdV1Alpha1EtcdPeer
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdPeer
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdPeer
+    }
+)
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdPeer
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
@@ -2259,8 +2501,20 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdRestoreList
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
@@ -2325,8 +2579,16 @@ export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdRestore: IoImprobableEtcdV1Alpha1EtcdRestore
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdRestore
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdRestore
+    }
+)
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestoreApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestoreApiArg =
@@ -2407,8 +2669,16 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdRestore: IoImprobableEtcdV1Alpha1EtcdRestore
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdRestore
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdRestore
+    }
+)
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2428,8 +2698,16 @@ export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdRestore
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
@@ -2447,8 +2725,20 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdRestore
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
@@ -2480,8 +2770,16 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioImprobableEtcdV1Alpha1EtcdRestore: IoImprobableEtcdV1Alpha1EtcdRestore
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoImprobableEtcdV1Alpha1EtcdRestore
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoImprobableEtcdV1Alpha1EtcdRestore
+    }
+)
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiResponse =
   /** status 200 OK */ IoImprobableEtcdV1Alpha1EtcdRestore
 export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
@@ -2499,8 +2797,20 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
 export type IoK8SApimachineryPkgApisMetaV1ManagedFieldsEntry = {

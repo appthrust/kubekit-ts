@@ -64,7 +64,8 @@ export const createDiscoveryV1NamespacedEndpointSlice = (
     {
       path: `/apis/discovery.k8s.io/v1/namespaces/${args['namespace']}/endpointslices`,
       method: 'POST',
-      body: args.ioK8SApiDiscoveryV1EndpointSlice,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -83,7 +84,8 @@ export const deleteDiscoveryV1CollectionNamespacedEndpointSlice = (
     {
       path: `/apis/discovery.k8s.io/v1/namespaces/${args['namespace']}/endpointslices`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -123,7 +125,8 @@ export const replaceDiscoveryV1NamespacedEndpointSlice = (
     {
       path: `/apis/discovery.k8s.io/v1/namespaces/${args['namespace']}/endpointslices/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiDiscoveryV1EndpointSlice,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -142,7 +145,8 @@ export const deleteDiscoveryV1NamespacedEndpointSlice = (
     {
       path: `/apis/discovery.k8s.io/v1/namespaces/${args['namespace']}/endpointslices/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -162,7 +166,8 @@ export const patchDiscoveryV1NamespacedEndpointSlice = (
     {
       path: `/apis/discovery.k8s.io/v1/namespaces/${args['namespace']}/endpointslices/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -359,7 +364,9 @@ export type CreateDiscoveryV1NamespacedEndpointSliceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiDiscoveryV1EndpointSlice: IoK8SApiDiscoveryV1EndpointSlice
+} & {
+  contentType?: string
+  body: IoK8SApiDiscoveryV1EndpointSlice
 }
 export type DeleteDiscoveryV1CollectionNamespacedEndpointSliceApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -412,7 +419,9 @@ export type DeleteDiscoveryV1CollectionNamespacedEndpointSliceApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadDiscoveryV1NamespacedEndpointSliceApiResponse =
   /** status 200 OK */ IoK8SApiDiscoveryV1EndpointSlice
@@ -441,7 +450,9 @@ export type ReplaceDiscoveryV1NamespacedEndpointSliceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiDiscoveryV1EndpointSlice: IoK8SApiDiscoveryV1EndpointSlice
+} & {
+  contentType?: string
+  body: IoK8SApiDiscoveryV1EndpointSlice
 }
 export type DeleteDiscoveryV1NamespacedEndpointSliceApiResponse =
   /** status 200 OK */
@@ -462,7 +473,9 @@ export type DeleteDiscoveryV1NamespacedEndpointSliceApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchDiscoveryV1NamespacedEndpointSliceApiResponse =
   /** status 200 OK */
@@ -483,8 +496,24 @@ export type PatchDiscoveryV1NamespacedEndpointSliceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type WatchDiscoveryV1EndpointSliceListForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1WatchEvent
 export type WatchDiscoveryV1EndpointSliceListForAllNamespacesApiArg = {

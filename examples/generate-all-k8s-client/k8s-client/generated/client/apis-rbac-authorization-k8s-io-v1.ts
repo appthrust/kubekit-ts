@@ -40,7 +40,8 @@ export const createRbacAuthorizationV1ClusterRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterrolebindings`,
       method: 'POST',
-      body: args.ioK8SApiRbacV1ClusterRoleBinding,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -59,7 +60,8 @@ export const deleteRbacAuthorizationV1CollectionClusterRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterrolebindings`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -99,7 +101,8 @@ export const replaceRbacAuthorizationV1ClusterRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiRbacV1ClusterRoleBinding,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -118,7 +121,8 @@ export const deleteRbacAuthorizationV1ClusterRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -138,7 +142,8 @@ export const patchRbacAuthorizationV1ClusterRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -182,7 +187,8 @@ export const createRbacAuthorizationV1ClusterRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterroles`,
       method: 'POST',
-      body: args.ioK8SApiRbacV1ClusterRole,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -201,7 +207,8 @@ export const deleteRbacAuthorizationV1CollectionClusterRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterroles`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -241,7 +248,8 @@ export const replaceRbacAuthorizationV1ClusterRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterroles/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiRbacV1ClusterRole,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -260,7 +268,8 @@ export const deleteRbacAuthorizationV1ClusterRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterroles/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -280,7 +289,8 @@ export const patchRbacAuthorizationV1ClusterRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterroles/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -324,7 +334,8 @@ export const createRbacAuthorizationV1NamespacedRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/rolebindings`,
       method: 'POST',
-      body: args.ioK8SApiRbacV1RoleBinding,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -343,7 +354,8 @@ export const deleteRbacAuthorizationV1CollectionNamespacedRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/rolebindings`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -383,7 +395,8 @@ export const replaceRbacAuthorizationV1NamespacedRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/rolebindings/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiRbacV1RoleBinding,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -402,7 +415,8 @@ export const deleteRbacAuthorizationV1NamespacedRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/rolebindings/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -422,7 +436,8 @@ export const patchRbacAuthorizationV1NamespacedRoleBinding = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/rolebindings/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -466,7 +481,8 @@ export const createRbacAuthorizationV1NamespacedRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/roles`,
       method: 'POST',
-      body: args.ioK8SApiRbacV1Role,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -485,7 +501,8 @@ export const deleteRbacAuthorizationV1CollectionNamespacedRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/roles`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -525,7 +542,8 @@ export const replaceRbacAuthorizationV1NamespacedRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/roles/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiRbacV1Role,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -544,7 +562,8 @@ export const deleteRbacAuthorizationV1NamespacedRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/roles/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -564,7 +583,8 @@ export const patchRbacAuthorizationV1NamespacedRole = (
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/roles/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -927,7 +947,9 @@ export type CreateRbacAuthorizationV1ClusterRoleBindingApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiRbacV1ClusterRoleBinding: IoK8SApiRbacV1ClusterRoleBinding
+} & {
+  contentType?: string
+  body: IoK8SApiRbacV1ClusterRoleBinding
 }
 export type DeleteRbacAuthorizationV1CollectionClusterRoleBindingApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -978,7 +1000,9 @@ export type DeleteRbacAuthorizationV1CollectionClusterRoleBindingApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadRbacAuthorizationV1ClusterRoleBindingApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1ClusterRoleBinding
@@ -1003,7 +1027,9 @@ export type ReplaceRbacAuthorizationV1ClusterRoleBindingApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiRbacV1ClusterRoleBinding: IoK8SApiRbacV1ClusterRoleBinding
+} & {
+  contentType?: string
+  body: IoK8SApiRbacV1ClusterRoleBinding
 }
 export type DeleteRbacAuthorizationV1ClusterRoleBindingApiResponse =
   /** status 200 OK */
@@ -1022,7 +1048,9 @@ export type DeleteRbacAuthorizationV1ClusterRoleBindingApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchRbacAuthorizationV1ClusterRoleBindingApiResponse =
   /** status 200 OK */
@@ -1041,8 +1069,24 @@ export type PatchRbacAuthorizationV1ClusterRoleBindingApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListRbacAuthorizationV1ClusterRoleApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1ClusterRoleList
 export type ListRbacAuthorizationV1ClusterRoleApiArg = {
@@ -1103,7 +1147,9 @@ export type CreateRbacAuthorizationV1ClusterRoleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiRbacV1ClusterRole: IoK8SApiRbacV1ClusterRole
+} & {
+  contentType?: string
+  body: IoK8SApiRbacV1ClusterRole
 }
 export type DeleteRbacAuthorizationV1CollectionClusterRoleApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -1154,7 +1200,9 @@ export type DeleteRbacAuthorizationV1CollectionClusterRoleApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadRbacAuthorizationV1ClusterRoleApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1ClusterRole
@@ -1179,7 +1227,9 @@ export type ReplaceRbacAuthorizationV1ClusterRoleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiRbacV1ClusterRole: IoK8SApiRbacV1ClusterRole
+} & {
+  contentType?: string
+  body: IoK8SApiRbacV1ClusterRole
 }
 export type DeleteRbacAuthorizationV1ClusterRoleApiResponse =
   /** status 200 OK */
@@ -1198,7 +1248,9 @@ export type DeleteRbacAuthorizationV1ClusterRoleApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchRbacAuthorizationV1ClusterRoleApiResponse =
   /** status 200 OK */
@@ -1217,8 +1269,24 @@ export type PatchRbacAuthorizationV1ClusterRoleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListRbacAuthorizationV1NamespacedRoleBindingApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1RoleBindingList
 export type ListRbacAuthorizationV1NamespacedRoleBindingApiArg = {
@@ -1283,7 +1351,9 @@ export type CreateRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiRbacV1RoleBinding: IoK8SApiRbacV1RoleBinding
+} & {
+  contentType?: string
+  body: IoK8SApiRbacV1RoleBinding
 }
 export type DeleteRbacAuthorizationV1CollectionNamespacedRoleBindingApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -1336,7 +1406,9 @@ export type DeleteRbacAuthorizationV1CollectionNamespacedRoleBindingApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadRbacAuthorizationV1NamespacedRoleBindingApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1RoleBinding
@@ -1365,7 +1437,9 @@ export type ReplaceRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiRbacV1RoleBinding: IoK8SApiRbacV1RoleBinding
+} & {
+  contentType?: string
+  body: IoK8SApiRbacV1RoleBinding
 }
 export type DeleteRbacAuthorizationV1NamespacedRoleBindingApiResponse =
   /** status 200 OK */
@@ -1386,7 +1460,9 @@ export type DeleteRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchRbacAuthorizationV1NamespacedRoleBindingApiResponse =
   /** status 200 OK */
@@ -1407,8 +1483,24 @@ export type PatchRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListRbacAuthorizationV1NamespacedRoleApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1RoleList
 export type ListRbacAuthorizationV1NamespacedRoleApiArg = {
@@ -1473,7 +1565,9 @@ export type CreateRbacAuthorizationV1NamespacedRoleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiRbacV1Role: IoK8SApiRbacV1Role
+} & {
+  contentType?: string
+  body: IoK8SApiRbacV1Role
 }
 export type DeleteRbacAuthorizationV1CollectionNamespacedRoleApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -1526,7 +1620,9 @@ export type DeleteRbacAuthorizationV1CollectionNamespacedRoleApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadRbacAuthorizationV1NamespacedRoleApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1Role
@@ -1554,7 +1650,9 @@ export type ReplaceRbacAuthorizationV1NamespacedRoleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiRbacV1Role: IoK8SApiRbacV1Role
+} & {
+  contentType?: string
+  body: IoK8SApiRbacV1Role
 }
 export type DeleteRbacAuthorizationV1NamespacedRoleApiResponse =
   /** status 200 OK */
@@ -1575,7 +1673,9 @@ export type DeleteRbacAuthorizationV1NamespacedRoleApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchRbacAuthorizationV1NamespacedRoleApiResponse =
   /** status 200 OK */
@@ -1595,8 +1695,24 @@ export type PatchRbacAuthorizationV1NamespacedRoleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListRbacAuthorizationV1RoleBindingForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1RoleBindingList
 export type ListRbacAuthorizationV1RoleBindingForAllNamespacesApiArg = {

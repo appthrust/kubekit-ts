@@ -31,7 +31,8 @@ export const createStorageosComV1NamespacedStorageOsCluster = (
     {
       path: `/apis/storageos.com/v1/namespaces/${args['namespace']}/storageosclusters`,
       method: 'POST',
-      body: args.comStorageosV1StorageOsCluster,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -87,7 +88,8 @@ export const replaceStorageosComV1NamespacedStorageOsCluster = (
     {
       path: `/apis/storageos.com/v1/namespaces/${args['namespace']}/storageosclusters/${args.name}`,
       method: 'PUT',
-      body: args.comStorageosV1StorageOsCluster,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -106,7 +108,8 @@ export const deleteStorageosComV1NamespacedStorageOsCluster = (
     {
       path: `/apis/storageos.com/v1/namespaces/${args['namespace']}/storageosclusters/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -126,7 +129,8 @@ export const patchStorageosComV1NamespacedStorageOsCluster = (
     {
       path: `/apis/storageos.com/v1/namespaces/${args['namespace']}/storageosclusters/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -158,7 +162,8 @@ export const replaceStorageosComV1NamespacedStorageOsClusterStatus = (
     {
       path: `/apis/storageos.com/v1/namespaces/${args['namespace']}/storageosclusters/${args.name}/status`,
       method: 'PUT',
-      body: args.comStorageosV1StorageOsCluster,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +182,8 @@ export const patchStorageosComV1NamespacedStorageOsClusterStatus = (
     {
       path: `/apis/storageos.com/v1/namespaces/${args['namespace']}/storageosclusters/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -277,8 +283,16 @@ export type CreateStorageosComV1NamespacedStorageOsClusterApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comStorageosV1StorageOsCluster: ComStorageosV1StorageOsCluster
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComStorageosV1StorageOsCluster
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComStorageosV1StorageOsCluster
+    }
+)
 export type DeleteStorageosComV1CollectionNamespacedStorageOsClusterApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteStorageosComV1CollectionNamespacedStorageOsClusterApiArg = {
@@ -358,8 +372,16 @@ export type ReplaceStorageosComV1NamespacedStorageOsClusterApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comStorageosV1StorageOsCluster: ComStorageosV1StorageOsCluster
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComStorageosV1StorageOsCluster
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComStorageosV1StorageOsCluster
+    }
+)
 export type DeleteStorageosComV1NamespacedStorageOsClusterApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -379,8 +401,16 @@ export type DeleteStorageosComV1NamespacedStorageOsClusterApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchStorageosComV1NamespacedStorageOsClusterApiResponse =
   /** status 200 OK */ ComStorageosV1StorageOsCluster
 export type PatchStorageosComV1NamespacedStorageOsClusterApiArg = {
@@ -398,8 +428,20 @@ export type PatchStorageosComV1NamespacedStorageOsClusterApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadStorageosComV1NamespacedStorageOsClusterStatusApiResponse =
   /** status 200 OK */ ComStorageosV1StorageOsCluster
 export type ReadStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
@@ -431,8 +473,16 @@ export type ReplaceStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comStorageosV1StorageOsCluster: ComStorageosV1StorageOsCluster
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComStorageosV1StorageOsCluster
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComStorageosV1StorageOsCluster
+    }
+)
 export type PatchStorageosComV1NamespacedStorageOsClusterStatusApiResponse =
   /** status 200 OK */ ComStorageosV1StorageOsCluster
 export type PatchStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
@@ -450,8 +500,20 @@ export type PatchStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListStorageosComV1StorageOsClusterForAllNamespacesApiResponse =
   /** status 200 OK */ ComStorageosV1StorageOsClusterList
 export type ListStorageosComV1StorageOsClusterForAllNamespacesApiArg = {

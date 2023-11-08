@@ -55,7 +55,8 @@ export const createMonitoringCoreosComV1NamespacedAlertmanager = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/alertmanagers`,
       method: 'POST',
-      body: args.comCoreosMonitoringV1Alertmanager,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -111,7 +112,8 @@ export const replaceMonitoringCoreosComV1NamespacedAlertmanager = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/alertmanagers/${args.name}`,
       method: 'PUT',
-      body: args.comCoreosMonitoringV1Alertmanager,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -130,7 +132,8 @@ export const deleteMonitoringCoreosComV1NamespacedAlertmanager = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/alertmanagers/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -150,7 +153,8 @@ export const patchMonitoringCoreosComV1NamespacedAlertmanager = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/alertmanagers/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -194,7 +198,8 @@ export const createMonitoringCoreosComV1NamespacedPodMonitor = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/podmonitors`,
       method: 'POST',
-      body: args.comCoreosMonitoringV1PodMonitor,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -250,7 +255,8 @@ export const replaceMonitoringCoreosComV1NamespacedPodMonitor = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/podmonitors/${args.name}`,
       method: 'PUT',
-      body: args.comCoreosMonitoringV1PodMonitor,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -269,7 +275,8 @@ export const deleteMonitoringCoreosComV1NamespacedPodMonitor = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/podmonitors/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -289,7 +296,8 @@ export const patchMonitoringCoreosComV1NamespacedPodMonitor = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/podmonitors/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -333,7 +341,8 @@ export const createMonitoringCoreosComV1NamespacedProbe = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/probes`,
       method: 'POST',
-      body: args.comCoreosMonitoringV1Probe,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -389,7 +398,8 @@ export const replaceMonitoringCoreosComV1NamespacedProbe = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/probes/${args.name}`,
       method: 'PUT',
-      body: args.comCoreosMonitoringV1Probe,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -408,7 +418,8 @@ export const deleteMonitoringCoreosComV1NamespacedProbe = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/probes/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -428,7 +439,8 @@ export const patchMonitoringCoreosComV1NamespacedProbe = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/probes/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -472,7 +484,8 @@ export const createMonitoringCoreosComV1NamespacedPrometheus = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheuses`,
       method: 'POST',
-      body: args.comCoreosMonitoringV1Prometheus,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -528,7 +541,8 @@ export const replaceMonitoringCoreosComV1NamespacedPrometheus = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheuses/${args.name}`,
       method: 'PUT',
-      body: args.comCoreosMonitoringV1Prometheus,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -547,7 +561,8 @@ export const deleteMonitoringCoreosComV1NamespacedPrometheus = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheuses/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -567,7 +582,8 @@ export const patchMonitoringCoreosComV1NamespacedPrometheus = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheuses/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -599,7 +615,8 @@ export const replaceMonitoringCoreosComV1NamespacedPrometheusStatus = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheuses/${args.name}/status`,
       method: 'PUT',
-      body: args.comCoreosMonitoringV1Prometheus,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -618,7 +635,8 @@ export const patchMonitoringCoreosComV1NamespacedPrometheusStatus = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheuses/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -662,7 +680,8 @@ export const createMonitoringCoreosComV1NamespacedPrometheusRule = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheusrules`,
       method: 'POST',
-      body: args.comCoreosMonitoringV1PrometheusRule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -718,7 +737,8 @@ export const replaceMonitoringCoreosComV1NamespacedPrometheusRule = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheusrules/${args.name}`,
       method: 'PUT',
-      body: args.comCoreosMonitoringV1PrometheusRule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -737,7 +757,8 @@ export const deleteMonitoringCoreosComV1NamespacedPrometheusRule = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheusrules/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -757,7 +778,8 @@ export const patchMonitoringCoreosComV1NamespacedPrometheusRule = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheusrules/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -801,7 +823,8 @@ export const createMonitoringCoreosComV1NamespacedServiceMonitor = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/servicemonitors`,
       method: 'POST',
-      body: args.comCoreosMonitoringV1ServiceMonitor,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -857,7 +880,8 @@ export const replaceMonitoringCoreosComV1NamespacedServiceMonitor = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/servicemonitors/${args.name}`,
       method: 'PUT',
-      body: args.comCoreosMonitoringV1ServiceMonitor,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -876,7 +900,8 @@ export const deleteMonitoringCoreosComV1NamespacedServiceMonitor = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/servicemonitors/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -896,7 +921,8 @@ export const patchMonitoringCoreosComV1NamespacedServiceMonitor = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/servicemonitors/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -940,7 +966,8 @@ export const createMonitoringCoreosComV1NamespacedThanosRuler = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/thanosrulers`,
       method: 'POST',
-      body: args.comCoreosMonitoringV1ThanosRuler,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -996,7 +1023,8 @@ export const replaceMonitoringCoreosComV1NamespacedThanosRuler = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/thanosrulers/${args.name}`,
       method: 'PUT',
-      body: args.comCoreosMonitoringV1ThanosRuler,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1015,7 +1043,8 @@ export const deleteMonitoringCoreosComV1NamespacedThanosRuler = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/thanosrulers/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1035,7 +1064,8 @@ export const patchMonitoringCoreosComV1NamespacedThanosRuler = (
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/thanosrulers/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1301,8 +1331,16 @@ export type CreateMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1Alertmanager: ComCoreosMonitoringV1Alertmanager
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1Alertmanager
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1Alertmanager
+    }
+)
 export type DeleteMonitoringCoreosComV1CollectionNamespacedAlertmanagerApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1CollectionNamespacedAlertmanagerApiArg =
@@ -1383,8 +1421,16 @@ export type ReplaceMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1Alertmanager: ComCoreosMonitoringV1Alertmanager
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1Alertmanager
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1Alertmanager
+    }
+)
 export type DeleteMonitoringCoreosComV1NamespacedAlertmanagerApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1404,8 +1450,16 @@ export type DeleteMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchMonitoringCoreosComV1NamespacedAlertmanagerApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1Alertmanager
 export type PatchMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
@@ -1423,8 +1477,20 @@ export type PatchMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListMonitoringCoreosComV1NamespacedPodMonitorApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1PodMonitorList
 export type ListMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
@@ -1489,8 +1555,16 @@ export type CreateMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1PodMonitor: ComCoreosMonitoringV1PodMonitor
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1PodMonitor
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1PodMonitor
+    }
+)
 export type DeleteMonitoringCoreosComV1CollectionNamespacedPodMonitorApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1CollectionNamespacedPodMonitorApiArg = {
@@ -1570,8 +1644,16 @@ export type ReplaceMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1PodMonitor: ComCoreosMonitoringV1PodMonitor
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1PodMonitor
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1PodMonitor
+    }
+)
 export type DeleteMonitoringCoreosComV1NamespacedPodMonitorApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1591,8 +1673,16 @@ export type DeleteMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchMonitoringCoreosComV1NamespacedPodMonitorApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1PodMonitor
 export type PatchMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
@@ -1610,8 +1700,20 @@ export type PatchMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListMonitoringCoreosComV1NamespacedProbeApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1ProbeList
 export type ListMonitoringCoreosComV1NamespacedProbeApiArg = {
@@ -1676,8 +1778,16 @@ export type CreateMonitoringCoreosComV1NamespacedProbeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1Probe: ComCoreosMonitoringV1Probe
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1Probe
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1Probe
+    }
+)
 export type DeleteMonitoringCoreosComV1CollectionNamespacedProbeApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1CollectionNamespacedProbeApiArg = {
@@ -1757,8 +1867,16 @@ export type ReplaceMonitoringCoreosComV1NamespacedProbeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1Probe: ComCoreosMonitoringV1Probe
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1Probe
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1Probe
+    }
+)
 export type DeleteMonitoringCoreosComV1NamespacedProbeApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1778,8 +1896,16 @@ export type DeleteMonitoringCoreosComV1NamespacedProbeApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchMonitoringCoreosComV1NamespacedProbeApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1Probe
 export type PatchMonitoringCoreosComV1NamespacedProbeApiArg = {
@@ -1797,8 +1923,20 @@ export type PatchMonitoringCoreosComV1NamespacedProbeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListMonitoringCoreosComV1NamespacedPrometheusApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1PrometheusList
 export type ListMonitoringCoreosComV1NamespacedPrometheusApiArg = {
@@ -1863,8 +2001,16 @@ export type CreateMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1Prometheus: ComCoreosMonitoringV1Prometheus
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1Prometheus
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1Prometheus
+    }
+)
 export type DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusApiArg = {
@@ -1944,8 +2090,16 @@ export type ReplaceMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1Prometheus: ComCoreosMonitoringV1Prometheus
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1Prometheus
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1Prometheus
+    }
+)
 export type DeleteMonitoringCoreosComV1NamespacedPrometheusApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1965,8 +2119,16 @@ export type DeleteMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchMonitoringCoreosComV1NamespacedPrometheusApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1Prometheus
 export type PatchMonitoringCoreosComV1NamespacedPrometheusApiArg = {
@@ -1984,8 +2146,20 @@ export type PatchMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadMonitoringCoreosComV1NamespacedPrometheusStatusApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1Prometheus
 export type ReadMonitoringCoreosComV1NamespacedPrometheusStatusApiArg = {
@@ -2017,8 +2191,16 @@ export type ReplaceMonitoringCoreosComV1NamespacedPrometheusStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1Prometheus: ComCoreosMonitoringV1Prometheus
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1Prometheus
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1Prometheus
+    }
+)
 export type PatchMonitoringCoreosComV1NamespacedPrometheusStatusApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1Prometheus
 export type PatchMonitoringCoreosComV1NamespacedPrometheusStatusApiArg = {
@@ -2036,8 +2218,20 @@ export type PatchMonitoringCoreosComV1NamespacedPrometheusStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1PrometheusRuleList
 export type ListMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
@@ -2102,8 +2296,16 @@ export type CreateMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1PrometheusRule: ComCoreosMonitoringV1PrometheusRule
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1PrometheusRule
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1PrometheusRule
+    }
+)
 export type DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusRuleApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusRuleApiArg =
@@ -2184,8 +2386,16 @@ export type ReplaceMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1PrometheusRule: ComCoreosMonitoringV1PrometheusRule
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1PrometheusRule
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1PrometheusRule
+    }
+)
 export type DeleteMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2205,8 +2415,16 @@ export type DeleteMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1PrometheusRule
 export type PatchMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
@@ -2224,8 +2442,20 @@ export type PatchMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListMonitoringCoreosComV1NamespacedServiceMonitorApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1ServiceMonitorList
 export type ListMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
@@ -2290,8 +2520,16 @@ export type CreateMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1ServiceMonitor: ComCoreosMonitoringV1ServiceMonitor
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1ServiceMonitor
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1ServiceMonitor
+    }
+)
 export type DeleteMonitoringCoreosComV1CollectionNamespacedServiceMonitorApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1CollectionNamespacedServiceMonitorApiArg =
@@ -2372,8 +2610,16 @@ export type ReplaceMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1ServiceMonitor: ComCoreosMonitoringV1ServiceMonitor
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1ServiceMonitor
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1ServiceMonitor
+    }
+)
 export type DeleteMonitoringCoreosComV1NamespacedServiceMonitorApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2393,8 +2639,16 @@ export type DeleteMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchMonitoringCoreosComV1NamespacedServiceMonitorApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1ServiceMonitor
 export type PatchMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
@@ -2412,8 +2666,20 @@ export type PatchMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListMonitoringCoreosComV1NamespacedThanosRulerApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1ThanosRulerList
 export type ListMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
@@ -2478,8 +2744,16 @@ export type CreateMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1ThanosRuler: ComCoreosMonitoringV1ThanosRuler
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1ThanosRuler
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1ThanosRuler
+    }
+)
 export type DeleteMonitoringCoreosComV1CollectionNamespacedThanosRulerApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1CollectionNamespacedThanosRulerApiArg = {
@@ -2559,8 +2833,16 @@ export type ReplaceMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  comCoreosMonitoringV1ThanosRuler: ComCoreosMonitoringV1ThanosRuler
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ComCoreosMonitoringV1ThanosRuler
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ComCoreosMonitoringV1ThanosRuler
+    }
+)
 export type DeleteMonitoringCoreosComV1NamespacedThanosRulerApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2580,8 +2862,16 @@ export type DeleteMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchMonitoringCoreosComV1NamespacedThanosRulerApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1ThanosRuler
 export type PatchMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
@@ -2599,8 +2889,20 @@ export type PatchMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListMonitoringCoreosComV1PodMonitorForAllNamespacesApiResponse =
   /** status 200 OK */ ComCoreosMonitoringV1PodMonitorList
 export type ListMonitoringCoreosComV1PodMonitorForAllNamespacesApiArg = {

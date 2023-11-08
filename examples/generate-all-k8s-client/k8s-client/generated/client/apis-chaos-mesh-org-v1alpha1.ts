@@ -247,7 +247,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedAwsChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/awschaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1AwsChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -303,7 +304,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedAwsChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/awschaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1AwsChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -322,7 +324,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedAwsChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/awschaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -342,7 +345,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedAwsChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/awschaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -386,7 +390,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedAzureChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/azurechaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1AzureChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -442,7 +447,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedAzureChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/azurechaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1AzureChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -461,7 +467,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedAzureChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/azurechaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -481,7 +488,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedAzureChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/azurechaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -525,7 +533,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedBlockChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/blockchaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1BlockChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -581,7 +590,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedBlockChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/blockchaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1BlockChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -600,7 +610,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedBlockChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/blockchaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -620,7 +631,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedBlockChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/blockchaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -664,7 +676,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedDnsChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/dnschaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1DnsChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -720,7 +733,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedDnsChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/dnschaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1DnsChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -739,7 +753,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedDnsChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/dnschaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -759,7 +774,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedDnsChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/dnschaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -803,7 +819,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedGcpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/gcpchaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1GcpChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -859,7 +876,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedGcpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/gcpchaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1GcpChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -878,7 +896,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedGcpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/gcpchaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -898,7 +917,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedGcpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/gcpchaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -942,7 +962,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedHttpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/httpchaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1HttpChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -998,7 +1019,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedHttpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/httpchaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1HttpChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1017,7 +1039,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedHttpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/httpchaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1037,7 +1060,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedHttpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/httpchaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1081,7 +1105,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedIoChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/iochaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1IoChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1137,7 +1162,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedIoChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/iochaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1IoChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1156,7 +1182,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedIoChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/iochaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1176,7 +1203,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedIoChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/iochaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1220,7 +1248,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedJvmChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/jvmchaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1JvmChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1276,7 +1305,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedJvmChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/jvmchaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1JvmChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1295,7 +1325,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedJvmChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/jvmchaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1315,7 +1346,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedJvmChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/jvmchaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1359,7 +1391,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedKernelChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/kernelchaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1KernelChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1415,7 +1448,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedKernelChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/kernelchaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1KernelChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1434,7 +1468,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedKernelChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/kernelchaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1454,7 +1489,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedKernelChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/kernelchaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1498,7 +1534,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedNetworkChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/networkchaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1NetworkChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1554,7 +1591,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedNetworkChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/networkchaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1NetworkChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1573,7 +1611,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedNetworkChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/networkchaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1593,7 +1632,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedNetworkChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/networkchaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1637,7 +1677,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachinechaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1PhysicalMachineChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1694,7 +1735,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachinechaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1PhysicalMachineChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1713,7 +1755,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachinechaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1733,7 +1776,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachinechaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1777,7 +1821,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedPhysicalMachine = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachines`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1PhysicalMachine,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1833,7 +1878,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachine = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachines/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1PhysicalMachine,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1852,7 +1898,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachine = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachines/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1872,7 +1919,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPhysicalMachine = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachines/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1916,7 +1964,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedPodChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podchaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1PodChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1972,7 +2021,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedPodChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podchaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1PodChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1991,7 +2041,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedPodChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podchaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2011,7 +2062,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podchaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2055,7 +2107,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedPodHttpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podhttpchaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1PodHttpChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2111,7 +2164,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podhttpchaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1PodHttpChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2130,7 +2184,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedPodHttpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podhttpchaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2150,7 +2205,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodHttpChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podhttpchaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2182,7 +2238,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podhttpchaos/${args.name}/status`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1PodHttpChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2201,7 +2258,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podhttpchaos/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2245,7 +2303,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedPodIoChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podiochaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1PodIoChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2301,7 +2360,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedPodIoChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podiochaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1PodIoChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2320,7 +2380,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedPodIoChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podiochaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2340,7 +2401,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodIoChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podiochaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2372,7 +2434,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podiochaos/${args.name}/status`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1PodIoChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2391,7 +2454,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podiochaos/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2435,7 +2499,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedPodNetworkChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podnetworkchaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1PodNetworkChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2491,7 +2556,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podnetworkchaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1PodNetworkChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2510,7 +2576,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedPodNetworkChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podnetworkchaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2530,7 +2597,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podnetworkchaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2562,7 +2630,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podnetworkchaos/${args.name}/status`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1PodNetworkChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2581,7 +2650,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podnetworkchaos/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2625,7 +2695,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedSchedule = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/schedules`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1Schedule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2681,7 +2752,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedSchedule = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/schedules/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1Schedule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2700,7 +2772,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedSchedule = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/schedules/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2720,7 +2793,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedSchedule = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/schedules/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2764,7 +2838,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedStatusCheck = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/statuschecks`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1StatusCheck,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2820,7 +2895,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedStatusCheck = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/statuschecks/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1StatusCheck,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2839,7 +2915,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedStatusCheck = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/statuschecks/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2859,7 +2936,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedStatusCheck = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/statuschecks/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2891,7 +2969,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedStatusCheckStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/statuschecks/${args.name}/status`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1StatusCheck,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2910,7 +2989,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedStatusCheckStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/statuschecks/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2954,7 +3034,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedStressChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/stresschaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1StressChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3010,7 +3091,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedStressChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/stresschaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1StressChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3029,7 +3111,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedStressChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/stresschaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3049,7 +3132,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedStressChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/stresschaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3093,7 +3177,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedTimeChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/timechaos`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1TimeChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3149,7 +3234,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedTimeChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/timechaos/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1TimeChaos,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3168,7 +3254,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedTimeChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/timechaos/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3188,7 +3275,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedTimeChaos = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/timechaos/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3232,7 +3320,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedWorkflowNode = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflownodes`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1WorkflowNode,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3288,7 +3377,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedWorkflowNode = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflownodes/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1WorkflowNode,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3307,7 +3397,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedWorkflowNode = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflownodes/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3327,7 +3418,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedWorkflowNode = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflownodes/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3359,7 +3451,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflownodes/${args.name}/status`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1WorkflowNode,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3378,7 +3471,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflownodes/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3422,7 +3516,8 @@ export const createChaosMeshOrgV1Alpha1NamespacedWorkflow = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflows`,
       method: 'POST',
-      body: args.orgChaosMeshV1Alpha1Workflow,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3478,7 +3573,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedWorkflow = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflows/${args.name}`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1Workflow,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3497,7 +3593,8 @@ export const deleteChaosMeshOrgV1Alpha1NamespacedWorkflow = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflows/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3517,7 +3614,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedWorkflow = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflows/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3549,7 +3647,8 @@ export const replaceChaosMeshOrgV1Alpha1NamespacedWorkflowStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflows/${args.name}/status`,
       method: 'PUT',
-      body: args.orgChaosMeshV1Alpha1Workflow,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3568,7 +3667,8 @@ export const patchChaosMeshOrgV1Alpha1NamespacedWorkflowStatus = (
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflows/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -4370,8 +4470,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1AwsChaos: OrgChaosMeshV1Alpha1AwsChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1AwsChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1AwsChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaosApiArg = {
@@ -4451,8 +4559,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1AwsChaos: OrgChaosMeshV1Alpha1AwsChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1AwsChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1AwsChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedAwsChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -4472,8 +4588,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedAwsChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1AwsChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
@@ -4491,8 +4615,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1AzureChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
@@ -4557,8 +4693,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1AzureChaos: OrgChaosMeshV1Alpha1AzureChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1AzureChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1AzureChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaosApiArg = {
@@ -4638,8 +4782,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1AzureChaos: OrgChaosMeshV1Alpha1AzureChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1AzureChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1AzureChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -4659,8 +4811,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1AzureChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
@@ -4678,8 +4838,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1BlockChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
@@ -4744,8 +4916,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1BlockChaos: OrgChaosMeshV1Alpha1BlockChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1BlockChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1BlockChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaosApiArg = {
@@ -4825,8 +5005,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1BlockChaos: OrgChaosMeshV1Alpha1BlockChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1BlockChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1BlockChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -4846,8 +5034,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1BlockChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
@@ -4865,8 +5061,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1DnsChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
@@ -4931,8 +5139,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1DnsChaos: OrgChaosMeshV1Alpha1DnsChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1DnsChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1DnsChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaosApiArg = {
@@ -5012,8 +5228,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1DnsChaos: OrgChaosMeshV1Alpha1DnsChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1DnsChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1DnsChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -5033,8 +5257,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1DnsChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
@@ -5052,8 +5284,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1GcpChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
@@ -5118,8 +5362,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1GcpChaos: OrgChaosMeshV1Alpha1GcpChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1GcpChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1GcpChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaosApiArg = {
@@ -5199,8 +5451,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1GcpChaos: OrgChaosMeshV1Alpha1GcpChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1GcpChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1GcpChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -5220,8 +5480,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1GcpChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
@@ -5239,8 +5507,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1HttpChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
@@ -5305,8 +5585,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1HttpChaos: OrgChaosMeshV1Alpha1HttpChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1HttpChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1HttpChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaosApiArg = {
@@ -5386,8 +5674,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1HttpChaos: OrgChaosMeshV1Alpha1HttpChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1HttpChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1HttpChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -5407,8 +5703,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1HttpChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
@@ -5426,8 +5730,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1IoChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
@@ -5492,8 +5808,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1IoChaos: OrgChaosMeshV1Alpha1IoChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1IoChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1IoChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaosApiArg = {
@@ -5573,8 +5897,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1IoChaos: OrgChaosMeshV1Alpha1IoChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1IoChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1IoChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -5594,8 +5926,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1IoChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
@@ -5613,8 +5953,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1JvmChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
@@ -5679,8 +6031,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1JvmChaos: OrgChaosMeshV1Alpha1JvmChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1JvmChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1JvmChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaosApiArg = {
@@ -5760,8 +6120,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1JvmChaos: OrgChaosMeshV1Alpha1JvmChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1JvmChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1JvmChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -5781,8 +6149,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1JvmChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
@@ -5800,8 +6176,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1KernelChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
@@ -5866,8 +6254,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1KernelChaos: OrgChaosMeshV1Alpha1KernelChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1KernelChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1KernelChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaosApiArg = {
@@ -5947,8 +6343,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1KernelChaos: OrgChaosMeshV1Alpha1KernelChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1KernelChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1KernelChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -5968,8 +6372,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1KernelChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
@@ -5987,8 +6399,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1NetworkChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
@@ -6053,8 +6477,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1NetworkChaos: OrgChaosMeshV1Alpha1NetworkChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1NetworkChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1NetworkChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaosApiArg = {
@@ -6134,8 +6566,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1NetworkChaos: OrgChaosMeshV1Alpha1NetworkChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1NetworkChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1NetworkChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -6155,8 +6595,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1NetworkChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
@@ -6174,8 +6622,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PhysicalMachineChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
@@ -6240,8 +6700,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PhysicalMachineChaos: OrgChaosMeshV1Alpha1PhysicalMachineChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PhysicalMachineChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PhysicalMachineChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaosApiArg =
@@ -6322,8 +6790,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PhysicalMachineChaos: OrgChaosMeshV1Alpha1PhysicalMachineChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PhysicalMachineChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PhysicalMachineChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -6343,8 +6819,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PhysicalMachineChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
@@ -6362,8 +6846,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PhysicalMachineList
 export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
@@ -6428,8 +6924,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PhysicalMachine: OrgChaosMeshV1Alpha1PhysicalMachine
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PhysicalMachine
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PhysicalMachine
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineApiArg =
@@ -6510,8 +7014,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PhysicalMachine: OrgChaosMeshV1Alpha1PhysicalMachine
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PhysicalMachine
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PhysicalMachine
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -6531,8 +7043,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PhysicalMachine
 export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
@@ -6550,8 +7070,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
@@ -6616,8 +7148,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodChaos: OrgChaosMeshV1Alpha1PodChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaosApiArg = {
@@ -6697,8 +7237,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodChaos: OrgChaosMeshV1Alpha1PodChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -6718,8 +7266,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
@@ -6737,8 +7293,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodHttpChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
@@ -6803,8 +7371,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodHttpChaos: OrgChaosMeshV1Alpha1PodHttpChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodHttpChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodHttpChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaosApiArg = {
@@ -6884,8 +7460,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodHttpChaos: OrgChaosMeshV1Alpha1PodHttpChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodHttpChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodHttpChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -6905,8 +7489,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodHttpChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
@@ -6924,8 +7516,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodHttpChaos
 export type ReadChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
@@ -6957,8 +7561,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodHttpChaos: OrgChaosMeshV1Alpha1PodHttpChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodHttpChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodHttpChaos
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodHttpChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
@@ -6976,8 +7588,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodIoChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
@@ -7042,8 +7666,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodIoChaos: OrgChaosMeshV1Alpha1PodIoChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodIoChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodIoChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaosApiArg = {
@@ -7123,8 +7755,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodIoChaos: OrgChaosMeshV1Alpha1PodIoChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodIoChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodIoChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -7144,8 +7784,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodIoChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
@@ -7163,8 +7811,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodIoChaos
 export type ReadChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
@@ -7196,8 +7856,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodIoChaos: OrgChaosMeshV1Alpha1PodIoChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodIoChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodIoChaos
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodIoChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
@@ -7215,8 +7883,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodNetworkChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
@@ -7281,8 +7961,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodNetworkChaos: OrgChaosMeshV1Alpha1PodNetworkChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodNetworkChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodNetworkChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaosApiArg =
@@ -7363,8 +8051,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodNetworkChaos: OrgChaosMeshV1Alpha1PodNetworkChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodNetworkChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodNetworkChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -7384,8 +8080,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodNetworkChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
@@ -7403,8 +8107,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodNetworkChaos
 export type ReadChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
@@ -7436,8 +8152,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1PodNetworkChaos: OrgChaosMeshV1Alpha1PodNetworkChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1PodNetworkChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1PodNetworkChaos
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1PodNetworkChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
@@ -7455,8 +8179,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1ScheduleList
 export type ListChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
@@ -7521,8 +8257,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1Schedule: OrgChaosMeshV1Alpha1Schedule
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1Schedule
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1Schedule
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedScheduleApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedScheduleApiArg = {
@@ -7602,8 +8346,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1Schedule: OrgChaosMeshV1Alpha1Schedule
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1Schedule
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1Schedule
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -7623,8 +8375,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1Schedule
 export type PatchChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
@@ -7642,8 +8402,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1StatusCheckList
 export type ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
@@ -7708,8 +8480,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1StatusCheck: OrgChaosMeshV1Alpha1StatusCheck
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1StatusCheck
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1StatusCheck
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheckApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheckApiArg = {
@@ -7789,8 +8569,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1StatusCheck: OrgChaosMeshV1Alpha1StatusCheck
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1StatusCheck
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1StatusCheck
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -7810,8 +8598,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1StatusCheck
 export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
@@ -7829,8 +8625,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1StatusCheck
 export type ReadChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
@@ -7862,8 +8670,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1StatusCheck: OrgChaosMeshV1Alpha1StatusCheck
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1StatusCheck
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1StatusCheck
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1StatusCheck
 export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
@@ -7881,8 +8697,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1StressChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
@@ -7947,8 +8775,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1StressChaos: OrgChaosMeshV1Alpha1StressChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1StressChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1StressChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaosApiArg = {
@@ -8028,8 +8864,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1StressChaos: OrgChaosMeshV1Alpha1StressChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1StressChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1StressChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -8049,8 +8893,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1StressChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
@@ -8068,8 +8920,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1TimeChaosList
 export type ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
@@ -8134,8 +8998,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1TimeChaos: OrgChaosMeshV1Alpha1TimeChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1TimeChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1TimeChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaosApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaosApiArg = {
@@ -8215,8 +9087,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1TimeChaos: OrgChaosMeshV1Alpha1TimeChaos
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1TimeChaos
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1TimeChaos
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -8236,8 +9116,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1TimeChaos
 export type PatchChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
@@ -8255,8 +9143,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1WorkflowNodeList
 export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
@@ -8321,8 +9221,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1WorkflowNode: OrgChaosMeshV1Alpha1WorkflowNode
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1WorkflowNode
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1WorkflowNode
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNodeApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNodeApiArg = {
@@ -8402,8 +9310,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1WorkflowNode: OrgChaosMeshV1Alpha1WorkflowNode
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1WorkflowNode
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1WorkflowNode
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -8423,8 +9339,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1WorkflowNode
 export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
@@ -8442,8 +9366,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1WorkflowNode
 export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
@@ -8475,8 +9411,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1WorkflowNode: OrgChaosMeshV1Alpha1WorkflowNode
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1WorkflowNode
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1WorkflowNode
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1WorkflowNode
 export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
@@ -8494,8 +9438,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1WorkflowList
 export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
@@ -8560,8 +9516,16 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1Workflow: OrgChaosMeshV1Alpha1Workflow
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1Workflow
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1Workflow
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowApiArg = {
@@ -8641,8 +9605,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1Workflow: OrgChaosMeshV1Alpha1Workflow
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1Workflow
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1Workflow
+    }
+)
 export type DeleteChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -8662,8 +9634,16 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1Workflow
 export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
@@ -8681,8 +9661,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1Workflow
 export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
@@ -8714,8 +9706,16 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  orgChaosMeshV1Alpha1Workflow: OrgChaosMeshV1Alpha1Workflow
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: OrgChaosMeshV1Alpha1Workflow
+    }
+  | {
+      contentType: 'application/yaml'
+      body: OrgChaosMeshV1Alpha1Workflow
+    }
+)
 export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1Workflow
 export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
@@ -8733,8 +9733,20 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListChaosMeshOrgV1Alpha1NetworkChaosForAllNamespacesApiResponse =
   /** status 200 OK */ OrgChaosMeshV1Alpha1NetworkChaosList
 export type ListChaosMeshOrgV1Alpha1NetworkChaosForAllNamespacesApiArg = {

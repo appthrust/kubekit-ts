@@ -31,7 +31,8 @@ export const createMutationsGatekeeperShV1Assign = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assign`,
       method: 'POST',
-      body: args.shGatekeeperMutationsV1Assign,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -87,7 +88,8 @@ export const replaceMutationsGatekeeperShV1Assign = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assign/${args.name}`,
       method: 'PUT',
-      body: args.shGatekeeperMutationsV1Assign,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -106,7 +108,8 @@ export const deleteMutationsGatekeeperShV1Assign = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assign/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -126,7 +129,8 @@ export const patchMutationsGatekeeperShV1Assign = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assign/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -158,7 +162,8 @@ export const replaceMutationsGatekeeperShV1AssignStatus = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assign/${args.name}/status`,
       method: 'PUT',
-      body: args.shGatekeeperMutationsV1Assign,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +182,8 @@ export const patchMutationsGatekeeperShV1AssignStatus = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assign/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -221,7 +227,8 @@ export const createMutationsGatekeeperShV1AssignMetadata = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assignmetadata`,
       method: 'POST',
-      body: args.shGatekeeperMutationsV1AssignMetadata,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -277,7 +284,8 @@ export const replaceMutationsGatekeeperShV1AssignMetadata = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assignmetadata/${args.name}`,
       method: 'PUT',
-      body: args.shGatekeeperMutationsV1AssignMetadata,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -296,7 +304,8 @@ export const deleteMutationsGatekeeperShV1AssignMetadata = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assignmetadata/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -316,7 +325,8 @@ export const patchMutationsGatekeeperShV1AssignMetadata = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assignmetadata/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -348,7 +358,8 @@ export const replaceMutationsGatekeeperShV1AssignMetadataStatus = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assignmetadata/${args.name}/status`,
       method: 'PUT',
-      body: args.shGatekeeperMutationsV1AssignMetadata,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -367,7 +378,8 @@ export const patchMutationsGatekeeperShV1AssignMetadataStatus = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/assignmetadata/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -411,7 +423,8 @@ export const createMutationsGatekeeperShV1ModifySet = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/modifyset`,
       method: 'POST',
-      body: args.shGatekeeperMutationsV1ModifySet,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -467,7 +480,8 @@ export const replaceMutationsGatekeeperShV1ModifySet = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/modifyset/${args.name}`,
       method: 'PUT',
-      body: args.shGatekeeperMutationsV1ModifySet,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -486,7 +500,8 @@ export const deleteMutationsGatekeeperShV1ModifySet = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/modifyset/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -506,7 +521,8 @@ export const patchMutationsGatekeeperShV1ModifySet = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/modifyset/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -538,7 +554,8 @@ export const replaceMutationsGatekeeperShV1ModifySetStatus = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/modifyset/${args.name}/status`,
       method: 'PUT',
-      body: args.shGatekeeperMutationsV1ModifySet,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -557,7 +574,8 @@ export const patchMutationsGatekeeperShV1ModifySetStatus = (
     {
       path: `/apis/mutations.gatekeeper.sh/v1/modifyset/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -629,8 +647,16 @@ export type CreateMutationsGatekeeperShV1AssignApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperMutationsV1Assign: ShGatekeeperMutationsV1Assign
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperMutationsV1Assign
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperMutationsV1Assign
+    }
+)
 export type DeleteMutationsGatekeeperShV1CollectionAssignApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1CollectionAssignApiArg = {
@@ -704,8 +730,16 @@ export type ReplaceMutationsGatekeeperShV1AssignApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperMutationsV1Assign: ShGatekeeperMutationsV1Assign
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperMutationsV1Assign
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperMutationsV1Assign
+    }
+)
 export type DeleteMutationsGatekeeperShV1AssignApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -723,8 +757,16 @@ export type DeleteMutationsGatekeeperShV1AssignApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchMutationsGatekeeperShV1AssignApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1Assign
 export type PatchMutationsGatekeeperShV1AssignApiArg = {
@@ -740,8 +782,20 @@ export type PatchMutationsGatekeeperShV1AssignApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadMutationsGatekeeperShV1AssignStatusApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1Assign
 export type ReadMutationsGatekeeperShV1AssignStatusApiArg = {
@@ -769,8 +823,16 @@ export type ReplaceMutationsGatekeeperShV1AssignStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperMutationsV1Assign: ShGatekeeperMutationsV1Assign
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperMutationsV1Assign
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperMutationsV1Assign
+    }
+)
 export type PatchMutationsGatekeeperShV1AssignStatusApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1Assign
 export type PatchMutationsGatekeeperShV1AssignStatusApiArg = {
@@ -786,8 +848,20 @@ export type PatchMutationsGatekeeperShV1AssignStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListMutationsGatekeeperShV1AssignMetadataApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1AssignMetadataList
 export type ListMutationsGatekeeperShV1AssignMetadataApiArg = {
@@ -848,8 +922,16 @@ export type CreateMutationsGatekeeperShV1AssignMetadataApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperMutationsV1AssignMetadata: ShGatekeeperMutationsV1AssignMetadata
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperMutationsV1AssignMetadata
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperMutationsV1AssignMetadata
+    }
+)
 export type DeleteMutationsGatekeeperShV1CollectionAssignMetadataApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1CollectionAssignMetadataApiArg = {
@@ -923,8 +1005,16 @@ export type ReplaceMutationsGatekeeperShV1AssignMetadataApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperMutationsV1AssignMetadata: ShGatekeeperMutationsV1AssignMetadata
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperMutationsV1AssignMetadata
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperMutationsV1AssignMetadata
+    }
+)
 export type DeleteMutationsGatekeeperShV1AssignMetadataApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -942,8 +1032,16 @@ export type DeleteMutationsGatekeeperShV1AssignMetadataApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchMutationsGatekeeperShV1AssignMetadataApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1AssignMetadata
 export type PatchMutationsGatekeeperShV1AssignMetadataApiArg = {
@@ -959,8 +1057,20 @@ export type PatchMutationsGatekeeperShV1AssignMetadataApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadMutationsGatekeeperShV1AssignMetadataStatusApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1AssignMetadata
 export type ReadMutationsGatekeeperShV1AssignMetadataStatusApiArg = {
@@ -988,8 +1098,16 @@ export type ReplaceMutationsGatekeeperShV1AssignMetadataStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperMutationsV1AssignMetadata: ShGatekeeperMutationsV1AssignMetadata
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperMutationsV1AssignMetadata
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperMutationsV1AssignMetadata
+    }
+)
 export type PatchMutationsGatekeeperShV1AssignMetadataStatusApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1AssignMetadata
 export type PatchMutationsGatekeeperShV1AssignMetadataStatusApiArg = {
@@ -1005,8 +1123,20 @@ export type PatchMutationsGatekeeperShV1AssignMetadataStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListMutationsGatekeeperShV1ModifySetApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1ModifySetList
 export type ListMutationsGatekeeperShV1ModifySetApiArg = {
@@ -1067,8 +1197,16 @@ export type CreateMutationsGatekeeperShV1ModifySetApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperMutationsV1ModifySet: ShGatekeeperMutationsV1ModifySet
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperMutationsV1ModifySet
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperMutationsV1ModifySet
+    }
+)
 export type DeleteMutationsGatekeeperShV1CollectionModifySetApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1CollectionModifySetApiArg = {
@@ -1142,8 +1280,16 @@ export type ReplaceMutationsGatekeeperShV1ModifySetApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperMutationsV1ModifySet: ShGatekeeperMutationsV1ModifySet
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperMutationsV1ModifySet
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperMutationsV1ModifySet
+    }
+)
 export type DeleteMutationsGatekeeperShV1ModifySetApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1161,8 +1307,16 @@ export type DeleteMutationsGatekeeperShV1ModifySetApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchMutationsGatekeeperShV1ModifySetApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1ModifySet
 export type PatchMutationsGatekeeperShV1ModifySetApiArg = {
@@ -1178,8 +1332,20 @@ export type PatchMutationsGatekeeperShV1ModifySetApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadMutationsGatekeeperShV1ModifySetStatusApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1ModifySet
 export type ReadMutationsGatekeeperShV1ModifySetStatusApiArg = {
@@ -1207,8 +1373,16 @@ export type ReplaceMutationsGatekeeperShV1ModifySetStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperMutationsV1ModifySet: ShGatekeeperMutationsV1ModifySet
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperMutationsV1ModifySet
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperMutationsV1ModifySet
+    }
+)
 export type PatchMutationsGatekeeperShV1ModifySetStatusApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1ModifySet
 export type PatchMutationsGatekeeperShV1ModifySetStatusApiArg = {
@@ -1224,8 +1398,20 @@ export type PatchMutationsGatekeeperShV1ModifySetStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
 export type IoK8SApimachineryPkgApisMetaV1ManagedFieldsEntry = {

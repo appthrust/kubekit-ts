@@ -31,7 +31,8 @@ export const createSparkoperatorV1Beta2NamespacedScheduledSparkApplication = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications`,
       method: 'POST',
-      body: args.ioK8SSparkoperatorV1Beta2ScheduledSparkApplication,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -88,7 +89,8 @@ export const replaceSparkoperatorV1Beta2NamespacedScheduledSparkApplication = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SSparkoperatorV1Beta2ScheduledSparkApplication,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -107,7 +109,8 @@ export const deleteSparkoperatorV1Beta2NamespacedScheduledSparkApplication = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -127,7 +130,8 @@ export const patchSparkoperatorV1Beta2NamespacedScheduledSparkApplication = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -161,7 +165,8 @@ export const replaceSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatu
       {
         path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications/${args.name}/status`,
         method: 'PUT',
-        body: args.ioK8SSparkoperatorV1Beta2ScheduledSparkApplication,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -181,7 +186,8 @@ export const patchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatus 
       {
         path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications/${args.name}/status`,
         method: 'PATCH',
-        body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -225,7 +231,8 @@ export const createSparkoperatorV1Beta2NamespacedSparkApplication = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/sparkapplications`,
       method: 'POST',
-      body: args.ioK8SSparkoperatorV1Beta2SparkApplication,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -281,7 +288,8 @@ export const replaceSparkoperatorV1Beta2NamespacedSparkApplication = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/sparkapplications/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SSparkoperatorV1Beta2SparkApplication,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -300,7 +308,8 @@ export const deleteSparkoperatorV1Beta2NamespacedSparkApplication = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/sparkapplications/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -320,7 +329,8 @@ export const patchSparkoperatorV1Beta2NamespacedSparkApplication = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/sparkapplications/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -352,7 +362,8 @@ export const replaceSparkoperatorV1Beta2NamespacedSparkApplicationStatus = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/sparkapplications/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SSparkoperatorV1Beta2SparkApplication,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -371,7 +382,8 @@ export const patchSparkoperatorV1Beta2NamespacedSparkApplicationStatus = (
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/sparkapplications/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -498,8 +510,16 @@ export type CreateSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg 
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SSparkoperatorV1Beta2ScheduledSparkApplication: IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+      }
+  )
 export type DeleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplicationApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplicationApiArg =
@@ -582,8 +602,16 @@ export type ReplaceSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SSparkoperatorV1Beta2ScheduledSparkApplication: IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+      }
+  )
 export type DeleteSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -604,8 +632,16 @@ export type DeleteSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg 
     orphanDependents?: boolean
     /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
     propagationPolicy?: string
-    ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+      }
+  )
 export type PatchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
 export type PatchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
@@ -624,8 +660,20 @@ export type PatchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-  }
+  } & (
+    | {
+        contentType: 'application/apply-patch+yaml'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/json-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+  )
 export type ReadSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
 export type ReadSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusApiArg =
@@ -659,8 +707,16 @@ export type ReplaceSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatus
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SSparkoperatorV1Beta2ScheduledSparkApplication: IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
+      }
+  )
 export type PatchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplication
 export type PatchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusApiArg =
@@ -679,8 +735,20 @@ export type PatchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusAp
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-  }
+  } & (
+    | {
+        contentType: 'application/apply-patch+yaml'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/json-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+  )
 export type ListSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2SparkApplicationList
 export type ListSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
@@ -745,8 +813,16 @@ export type CreateSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SSparkoperatorV1Beta2SparkApplication: IoK8SSparkoperatorV1Beta2SparkApplication
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SSparkoperatorV1Beta2SparkApplication
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SSparkoperatorV1Beta2SparkApplication
+    }
+)
 export type DeleteSparkoperatorV1Beta2CollectionNamespacedSparkApplicationApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSparkoperatorV1Beta2CollectionNamespacedSparkApplicationApiArg =
@@ -827,8 +903,16 @@ export type ReplaceSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SSparkoperatorV1Beta2SparkApplication: IoK8SSparkoperatorV1Beta2SparkApplication
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SSparkoperatorV1Beta2SparkApplication
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SSparkoperatorV1Beta2SparkApplication
+    }
+)
 export type DeleteSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -848,8 +932,16 @@ export type DeleteSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2SparkApplication
 export type PatchSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
@@ -867,8 +959,20 @@ export type PatchSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2SparkApplication
 export type ReadSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiArg = {
@@ -901,8 +1005,16 @@ export type ReplaceSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SSparkoperatorV1Beta2SparkApplication: IoK8SSparkoperatorV1Beta2SparkApplication
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SSparkoperatorV1Beta2SparkApplication
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SSparkoperatorV1Beta2SparkApplication
+      }
+  )
 export type PatchSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2SparkApplication
 export type PatchSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiArg = {
@@ -920,8 +1032,20 @@ export type PatchSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SSparkoperatorV1Beta2ScheduledSparkApplicationList
 export type ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApiArg =

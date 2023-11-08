@@ -16,7 +16,8 @@ export const createAuthenticationV1TokenReview = (
     {
       path: `/apis/authentication.k8s.io/v1/tokenreviews`,
       method: 'POST',
-      body: args.ioK8SApiAuthenticationV1TokenReview,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         dryRun: args.dryRun,
         fieldManager: args.fieldManager,
@@ -44,7 +45,9 @@ export type CreateAuthenticationV1TokenReviewApiArg = {
   fieldValidation?: string
   /** If 'true', then the output is pretty printed. */
   pretty?: string
-  ioK8SApiAuthenticationV1TokenReview: IoK8SApiAuthenticationV1TokenReview
+} & {
+  contentType?: string
+  body: IoK8SApiAuthenticationV1TokenReview
 }
 export type IoK8SApimachineryPkgApisMetaV1ApiResource = {
   categories?: string[] | undefined

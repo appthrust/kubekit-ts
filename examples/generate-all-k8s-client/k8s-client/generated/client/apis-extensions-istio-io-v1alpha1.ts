@@ -31,7 +31,8 @@ export const createExtensionsIstioIoV1Alpha1NamespacedWasmPlugin = (
     {
       path: `/apis/extensions.istio.io/v1alpha1/namespaces/${args['namespace']}/wasmplugins`,
       method: 'POST',
-      body: args.ioIstioExtensionsV1Alpha1WasmPlugin,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -87,7 +88,8 @@ export const replaceExtensionsIstioIoV1Alpha1NamespacedWasmPlugin = (
     {
       path: `/apis/extensions.istio.io/v1alpha1/namespaces/${args['namespace']}/wasmplugins/${args.name}`,
       method: 'PUT',
-      body: args.ioIstioExtensionsV1Alpha1WasmPlugin,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -106,7 +108,8 @@ export const deleteExtensionsIstioIoV1Alpha1NamespacedWasmPlugin = (
     {
       path: `/apis/extensions.istio.io/v1alpha1/namespaces/${args['namespace']}/wasmplugins/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -126,7 +129,8 @@ export const patchExtensionsIstioIoV1Alpha1NamespacedWasmPlugin = (
     {
       path: `/apis/extensions.istio.io/v1alpha1/namespaces/${args['namespace']}/wasmplugins/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -158,7 +162,8 @@ export const replaceExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatus = (
     {
       path: `/apis/extensions.istio.io/v1alpha1/namespaces/${args['namespace']}/wasmplugins/${args.name}/status`,
       method: 'PUT',
-      body: args.ioIstioExtensionsV1Alpha1WasmPlugin,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +182,8 @@ export const patchExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatus = (
     {
       path: `/apis/extensions.istio.io/v1alpha1/namespaces/${args['namespace']}/wasmplugins/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -277,8 +283,16 @@ export type CreateExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioExtensionsV1Alpha1WasmPlugin: IoIstioExtensionsV1Alpha1WasmPlugin
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioExtensionsV1Alpha1WasmPlugin
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioExtensionsV1Alpha1WasmPlugin
+    }
+)
 export type DeleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPluginApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPluginApiArg =
@@ -359,8 +373,16 @@ export type ReplaceExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioExtensionsV1Alpha1WasmPlugin: IoIstioExtensionsV1Alpha1WasmPlugin
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioExtensionsV1Alpha1WasmPlugin
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioExtensionsV1Alpha1WasmPlugin
+    }
+)
 export type DeleteExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -380,8 +402,16 @@ export type DeleteExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiResponse =
   /** status 200 OK */ IoIstioExtensionsV1Alpha1WasmPlugin
 export type PatchExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
@@ -399,8 +429,20 @@ export type PatchExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiResponse =
   /** status 200 OK */ IoIstioExtensionsV1Alpha1WasmPlugin
 export type ReadExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiArg = {
@@ -432,8 +474,16 @@ export type ReplaceExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioExtensionsV1Alpha1WasmPlugin: IoIstioExtensionsV1Alpha1WasmPlugin
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioExtensionsV1Alpha1WasmPlugin
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioExtensionsV1Alpha1WasmPlugin
+    }
+)
 export type PatchExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiResponse =
   /** status 200 OK */ IoIstioExtensionsV1Alpha1WasmPlugin
 export type PatchExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiArg = {
@@ -451,8 +501,20 @@ export type PatchExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListExtensionsIstioIoV1Alpha1WasmPluginForAllNamespacesApiResponse =
   /** status 200 OK */ IoIstioExtensionsV1Alpha1WasmPluginList
 export type ListExtensionsIstioIoV1Alpha1WasmPluginForAllNamespacesApiArg = {

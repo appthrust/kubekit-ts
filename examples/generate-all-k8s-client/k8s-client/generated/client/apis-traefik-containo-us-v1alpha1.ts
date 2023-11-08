@@ -151,7 +151,8 @@ export const createTraefikContainoUsV1Alpha1NamespacedIngressRoute = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutes`,
       method: 'POST',
-      body: args.usContainoTraefikV1Alpha1IngressRoute,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -207,7 +208,8 @@ export const replaceTraefikContainoUsV1Alpha1NamespacedIngressRoute = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutes/${args.name}`,
       method: 'PUT',
-      body: args.usContainoTraefikV1Alpha1IngressRoute,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -226,7 +228,8 @@ export const deleteTraefikContainoUsV1Alpha1NamespacedIngressRoute = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutes/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -246,7 +249,8 @@ export const patchTraefikContainoUsV1Alpha1NamespacedIngressRoute = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutes/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -290,7 +294,8 @@ export const createTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutetcps`,
       method: 'POST',
-      body: args.usContainoTraefikV1Alpha1IngressRouteTcp,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -347,7 +352,8 @@ export const replaceTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutetcps/${args.name}`,
       method: 'PUT',
-      body: args.usContainoTraefikV1Alpha1IngressRouteTcp,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -366,7 +372,8 @@ export const deleteTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutetcps/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -386,7 +393,8 @@ export const patchTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutetcps/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -430,7 +438,8 @@ export const createTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressrouteudps`,
       method: 'POST',
-      body: args.usContainoTraefikV1Alpha1IngressRouteUdp,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -487,7 +496,8 @@ export const replaceTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressrouteudps/${args.name}`,
       method: 'PUT',
-      body: args.usContainoTraefikV1Alpha1IngressRouteUdp,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -506,7 +516,8 @@ export const deleteTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressrouteudps/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -526,7 +537,8 @@ export const patchTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressrouteudps/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -570,7 +582,8 @@ export const createTraefikContainoUsV1Alpha1NamespacedMiddleware = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewares`,
       method: 'POST',
-      body: args.usContainoTraefikV1Alpha1Middleware,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -626,7 +639,8 @@ export const replaceTraefikContainoUsV1Alpha1NamespacedMiddleware = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewares/${args.name}`,
       method: 'PUT',
-      body: args.usContainoTraefikV1Alpha1Middleware,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -645,7 +659,8 @@ export const deleteTraefikContainoUsV1Alpha1NamespacedMiddleware = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewares/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -665,7 +680,8 @@ export const patchTraefikContainoUsV1Alpha1NamespacedMiddleware = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewares/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -709,7 +725,8 @@ export const createTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewaretcps`,
       method: 'POST',
-      body: args.usContainoTraefikV1Alpha1MiddlewareTcp,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -766,7 +783,8 @@ export const replaceTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewaretcps/${args.name}`,
       method: 'PUT',
-      body: args.usContainoTraefikV1Alpha1MiddlewareTcp,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -785,7 +803,8 @@ export const deleteTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewaretcps/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -805,7 +824,8 @@ export const patchTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewaretcps/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -849,7 +869,8 @@ export const createTraefikContainoUsV1Alpha1NamespacedServersTransport = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/serverstransports`,
       method: 'POST',
-      body: args.usContainoTraefikV1Alpha1ServersTransport,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -906,7 +927,8 @@ export const replaceTraefikContainoUsV1Alpha1NamespacedServersTransport = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/serverstransports/${args.name}`,
       method: 'PUT',
-      body: args.usContainoTraefikV1Alpha1ServersTransport,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -925,7 +947,8 @@ export const deleteTraefikContainoUsV1Alpha1NamespacedServersTransport = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/serverstransports/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -945,7 +968,8 @@ export const patchTraefikContainoUsV1Alpha1NamespacedServersTransport = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/serverstransports/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -989,7 +1013,8 @@ export const createTraefikContainoUsV1Alpha1NamespacedTlsOption = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsoptions`,
       method: 'POST',
-      body: args.usContainoTraefikV1Alpha1TlsOption,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1045,7 +1070,8 @@ export const replaceTraefikContainoUsV1Alpha1NamespacedTlsOption = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsoptions/${args.name}`,
       method: 'PUT',
-      body: args.usContainoTraefikV1Alpha1TlsOption,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1064,7 +1090,8 @@ export const deleteTraefikContainoUsV1Alpha1NamespacedTlsOption = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsoptions/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1084,7 +1111,8 @@ export const patchTraefikContainoUsV1Alpha1NamespacedTlsOption = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsoptions/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1128,7 +1156,8 @@ export const createTraefikContainoUsV1Alpha1NamespacedTlsStore = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsstores`,
       method: 'POST',
-      body: args.usContainoTraefikV1Alpha1TlsStore,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1184,7 +1213,8 @@ export const replaceTraefikContainoUsV1Alpha1NamespacedTlsStore = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsstores/${args.name}`,
       method: 'PUT',
-      body: args.usContainoTraefikV1Alpha1TlsStore,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1203,7 +1233,8 @@ export const deleteTraefikContainoUsV1Alpha1NamespacedTlsStore = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsstores/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1223,7 +1254,8 @@ export const patchTraefikContainoUsV1Alpha1NamespacedTlsStore = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsstores/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1267,7 +1299,8 @@ export const createTraefikContainoUsV1Alpha1NamespacedTraefikService = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/traefikservices`,
       method: 'POST',
-      body: args.usContainoTraefikV1Alpha1TraefikService,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1324,7 +1357,8 @@ export const replaceTraefikContainoUsV1Alpha1NamespacedTraefikService = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/traefikservices/${args.name}`,
       method: 'PUT',
-      body: args.usContainoTraefikV1Alpha1TraefikService,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1343,7 +1377,8 @@ export const deleteTraefikContainoUsV1Alpha1NamespacedTraefikService = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/traefikservices/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1363,7 +1398,8 @@ export const patchTraefikContainoUsV1Alpha1NamespacedTraefikService = (
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/traefikservices/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1767,8 +1803,16 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1IngressRoute: UsContainoTraefikV1Alpha1IngressRoute
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1IngressRoute
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1IngressRoute
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteApiArg =
@@ -1849,8 +1893,16 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1IngressRoute: UsContainoTraefikV1Alpha1IngressRoute
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1IngressRoute
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1IngressRoute
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1870,8 +1922,16 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1IngressRoute
 export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
@@ -1889,8 +1949,20 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1IngressRouteTcpList
 export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
@@ -1955,8 +2027,16 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1IngressRouteTcp: UsContainoTraefikV1Alpha1IngressRouteTcp
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1IngressRouteTcp
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1IngressRouteTcp
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcpApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcpApiArg =
@@ -2037,8 +2117,16 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1IngressRouteTcp: UsContainoTraefikV1Alpha1IngressRouteTcp
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1IngressRouteTcp
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1IngressRouteTcp
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2058,8 +2146,16 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1IngressRouteTcp
 export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
@@ -2077,8 +2173,20 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1IngressRouteUdpList
 export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
@@ -2143,8 +2251,16 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1IngressRouteUdp: UsContainoTraefikV1Alpha1IngressRouteUdp
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1IngressRouteUdp
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1IngressRouteUdp
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdpApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdpApiArg =
@@ -2225,8 +2341,16 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1IngressRouteUdp: UsContainoTraefikV1Alpha1IngressRouteUdp
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1IngressRouteUdp
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1IngressRouteUdp
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2246,8 +2370,16 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1IngressRouteUdp
 export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
@@ -2265,8 +2397,20 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1MiddlewareList
 export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
@@ -2331,8 +2475,16 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1Middleware: UsContainoTraefikV1Alpha1Middleware
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1Middleware
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1Middleware
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareApiArg =
@@ -2413,8 +2565,16 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1Middleware: UsContainoTraefikV1Alpha1Middleware
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1Middleware
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1Middleware
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2434,8 +2594,16 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1Middleware
 export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
@@ -2453,8 +2621,20 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1MiddlewareTcpList
 export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
@@ -2519,8 +2699,16 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1MiddlewareTcp: UsContainoTraefikV1Alpha1MiddlewareTcp
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1MiddlewareTcp
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1MiddlewareTcp
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcpApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcpApiArg =
@@ -2601,8 +2789,16 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1MiddlewareTcp: UsContainoTraefikV1Alpha1MiddlewareTcp
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1MiddlewareTcp
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1MiddlewareTcp
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2622,8 +2818,16 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1MiddlewareTcp
 export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
@@ -2641,8 +2845,20 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1ServersTransportList
 export type ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
@@ -2707,8 +2923,16 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1ServersTransport: UsContainoTraefikV1Alpha1ServersTransport
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1ServersTransport
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1ServersTransport
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransportApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransportApiArg =
@@ -2789,8 +3013,16 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1ServersTransport: UsContainoTraefikV1Alpha1ServersTransport
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1ServersTransport
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1ServersTransport
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2810,8 +3042,16 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1ServersTransport
 export type PatchTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
@@ -2829,8 +3069,20 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1TlsOptionList
 export type ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
@@ -2895,8 +3147,16 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1TlsOption: UsContainoTraefikV1Alpha1TlsOption
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1TlsOption
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1TlsOption
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOptionApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOptionApiArg =
@@ -2977,8 +3237,16 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1TlsOption: UsContainoTraefikV1Alpha1TlsOption
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1TlsOption
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1TlsOption
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2998,8 +3266,16 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1TlsOption
 export type PatchTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
@@ -3017,8 +3293,20 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1TlsStoreList
 export type ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
@@ -3083,8 +3371,16 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1TlsStore: UsContainoTraefikV1Alpha1TlsStore
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1TlsStore
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1TlsStore
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStoreApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStoreApiArg =
@@ -3165,8 +3461,16 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1TlsStore: UsContainoTraefikV1Alpha1TlsStore
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1TlsStore
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1TlsStore
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3186,8 +3490,16 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1TlsStore
 export type PatchTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
@@ -3205,8 +3517,20 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1TraefikServiceList
 export type ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
@@ -3271,8 +3595,16 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1TraefikService: UsContainoTraefikV1Alpha1TraefikService
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1TraefikService
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1TraefikService
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikServiceApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikServiceApiArg =
@@ -3353,8 +3685,16 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  usContainoTraefikV1Alpha1TraefikService: UsContainoTraefikV1Alpha1TraefikService
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: UsContainoTraefikV1Alpha1TraefikService
+    }
+  | {
+      contentType: 'application/yaml'
+      body: UsContainoTraefikV1Alpha1TraefikService
+    }
+)
 export type DeleteTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3374,8 +3714,16 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1TraefikService
 export type PatchTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
@@ -3393,8 +3741,20 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListTraefikContainoUsV1Alpha1ServersTransportForAllNamespacesApiResponse =
   /** status 200 OK */ UsContainoTraefikV1Alpha1ServersTransportList
 export type ListTraefikContainoUsV1Alpha1ServersTransportForAllNamespacesApiArg =

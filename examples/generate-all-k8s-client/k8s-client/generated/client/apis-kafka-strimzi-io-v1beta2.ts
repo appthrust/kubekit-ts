@@ -247,7 +247,8 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaBridge = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges`,
       method: 'POST',
-      body: args.ioStrimziKafkaV1Beta2KafkaBridge,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -303,7 +304,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaBridge = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges/${args.name}`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaBridge,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -322,7 +324,8 @@ export const deleteKafkaStrimziIoV1Beta2NamespacedKafkaBridge = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -342,7 +345,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaBridge = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -374,7 +378,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges/${args.name}/scale`,
       method: 'PUT',
-      body: args.ioK8SApiAutoscalingV1Scale,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -393,7 +398,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges/${args.name}/scale`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -425,7 +431,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges/${args.name}/status`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaBridge,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -444,7 +451,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -488,7 +496,8 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaConnector = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors`,
       method: 'POST',
-      body: args.ioStrimziKafkaV1Beta2KafkaConnector,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -544,7 +553,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaConnector = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors/${args.name}`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaConnector,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -563,7 +573,8 @@ export const deleteKafkaStrimziIoV1Beta2NamespacedKafkaConnector = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -583,7 +594,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnector = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -615,7 +627,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors/${args.name}/scale`,
       method: 'PUT',
-      body: args.ioK8SApiAutoscalingV1Scale,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -634,7 +647,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors/${args.name}/scale`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -666,7 +680,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors/${args.name}/status`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaConnector,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -685,7 +700,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -729,7 +745,8 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaConnect = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects`,
       method: 'POST',
-      body: args.ioStrimziKafkaV1Beta2KafkaConnect,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -785,7 +802,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaConnect = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects/${args.name}`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaConnect,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -804,7 +822,8 @@ export const deleteKafkaStrimziIoV1Beta2NamespacedKafkaConnect = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -824,7 +843,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnect = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -856,7 +876,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects/${args.name}/scale`,
       method: 'PUT',
-      body: args.ioK8SApiAutoscalingV1Scale,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -875,7 +896,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnectScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects/${args.name}/scale`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -907,7 +929,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects/${args.name}/status`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaConnect,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -926,7 +949,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -970,7 +994,8 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2 = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s`,
       method: 'POST',
-      body: args.ioStrimziKafkaV1Beta2KafkaMirrorMaker2,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1027,7 +1052,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2 = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s/${args.name}`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaMirrorMaker2,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1046,7 +1072,8 @@ export const deleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2 = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1066,7 +1093,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2 = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1098,7 +1126,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2Scale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s/${args.name}/scale`,
       method: 'PUT',
-      body: args.ioK8SApiAutoscalingV1Scale,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1117,7 +1146,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2Scale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s/${args.name}/scale`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1149,7 +1179,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2Status = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s/${args.name}/status`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaMirrorMaker2,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1168,7 +1199,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2Status = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1212,7 +1244,8 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers`,
       method: 'POST',
-      body: args.ioStrimziKafkaV1Beta2KafkaMirrorMaker,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1268,7 +1301,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers/${args.name}`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaMirrorMaker,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1287,7 +1321,8 @@ export const deleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1307,7 +1342,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1339,7 +1375,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers/${args.name}/scale`,
       method: 'PUT',
-      body: args.ioK8SApiAutoscalingV1Scale,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1358,7 +1395,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScale = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers/${args.name}/scale`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1390,7 +1428,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers/${args.name}/status`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaMirrorMaker,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1409,7 +1448,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1453,7 +1493,8 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaRebalance = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkarebalances`,
       method: 'POST',
-      body: args.ioStrimziKafkaV1Beta2KafkaRebalance,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1509,7 +1550,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalance = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkarebalances/${args.name}`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaRebalance,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1528,7 +1570,8 @@ export const deleteKafkaStrimziIoV1Beta2NamespacedKafkaRebalance = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkarebalances/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1548,7 +1591,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaRebalance = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkarebalances/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1580,7 +1624,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkarebalances/${args.name}/status`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaRebalance,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1599,7 +1644,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkarebalances/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1643,7 +1689,8 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafka = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkas`,
       method: 'POST',
-      body: args.ioStrimziKafkaV1Beta2Kafka,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1699,7 +1746,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafka = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkas/${args.name}`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2Kafka,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1718,7 +1766,8 @@ export const deleteKafkaStrimziIoV1Beta2NamespacedKafka = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkas/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1738,7 +1787,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafka = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkas/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1770,7 +1820,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkas/${args.name}/status`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2Kafka,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1789,7 +1840,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkas/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1833,7 +1885,8 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaTopic = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkatopics`,
       method: 'POST',
-      body: args.ioStrimziKafkaV1Beta2KafkaTopic,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1889,7 +1942,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaTopic = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkatopics/${args.name}`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaTopic,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1908,7 +1962,8 @@ export const deleteKafkaStrimziIoV1Beta2NamespacedKafkaTopic = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkatopics/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1928,7 +1983,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaTopic = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkatopics/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1960,7 +2016,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkatopics/${args.name}/status`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaTopic,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1979,7 +2036,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkatopics/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2023,7 +2081,8 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaUser = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkausers`,
       method: 'POST',
-      body: args.ioStrimziKafkaV1Beta2KafkaUser,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2079,7 +2138,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaUser = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkausers/${args.name}`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaUser,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2098,7 +2158,8 @@ export const deleteKafkaStrimziIoV1Beta2NamespacedKafkaUser = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkausers/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2118,7 +2179,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaUser = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkausers/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2150,7 +2212,8 @@ export const replaceKafkaStrimziIoV1Beta2NamespacedKafkaUserStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkausers/${args.name}/status`,
       method: 'PUT',
-      body: args.ioStrimziKafkaV1Beta2KafkaUser,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2169,7 +2232,8 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaUserStatus = (
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkausers/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2659,8 +2723,16 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaBridge: IoStrimziKafkaV1Beta2KafkaBridge
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaBridge
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaBridge
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridgeApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridgeApiArg = {
@@ -2740,8 +2812,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaBridge: IoStrimziKafkaV1Beta2KafkaBridge
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaBridge
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaBridge
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2761,8 +2841,16 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaBridge
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
@@ -2780,8 +2868,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
@@ -2813,8 +2913,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiAutoscalingV1Scale: IoK8SApiAutoscalingV1Scale
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApiAutoscalingV1Scale
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApiAutoscalingV1Scale
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
@@ -2832,8 +2940,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaBridge
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
@@ -2865,8 +2985,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaBridge: IoStrimziKafkaV1Beta2KafkaBridge
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaBridge
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaBridge
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaBridge
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
@@ -2884,8 +3012,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnectorList
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
@@ -2950,8 +3090,16 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaConnector: IoStrimziKafkaV1Beta2KafkaConnector
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaConnector
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaConnector
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectorApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectorApiArg =
@@ -3032,8 +3180,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaConnector: IoStrimziKafkaV1Beta2KafkaConnector
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaConnector
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaConnector
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3053,8 +3209,16 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnector
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
@@ -3072,8 +3236,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
@@ -3105,8 +3281,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiAutoscalingV1Scale: IoK8SApiAutoscalingV1Scale
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApiAutoscalingV1Scale
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApiAutoscalingV1Scale
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
@@ -3124,8 +3308,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnector
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
@@ -3157,8 +3353,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaConnector: IoStrimziKafkaV1Beta2KafkaConnector
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaConnector
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaConnector
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnector
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
@@ -3176,8 +3380,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnectList
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
@@ -3242,8 +3458,16 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaConnect: IoStrimziKafkaV1Beta2KafkaConnect
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaConnect
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaConnect
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectApiArg =
@@ -3324,8 +3548,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaConnect: IoStrimziKafkaV1Beta2KafkaConnect
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaConnect
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaConnect
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3345,8 +3577,16 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnect
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
@@ -3364,8 +3604,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
@@ -3397,8 +3649,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiAutoscalingV1Scale: IoK8SApiAutoscalingV1Scale
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApiAutoscalingV1Scale
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApiAutoscalingV1Scale
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
@@ -3416,8 +3676,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnect
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
@@ -3449,8 +3721,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaConnect: IoStrimziKafkaV1Beta2KafkaConnect
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaConnect
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaConnect
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaConnect
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
@@ -3468,8 +3748,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2List
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
@@ -3534,8 +3826,16 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaMirrorMaker2: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2ApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2ApiArg =
@@ -3616,8 +3916,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaMirrorMaker2: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3637,8 +3945,16 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
@@ -3656,8 +3972,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg = {
@@ -3690,8 +4018,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SApiAutoscalingV1Scale: IoK8SApiAutoscalingV1Scale
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SApiAutoscalingV1Scale
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SApiAutoscalingV1Scale
+      }
+  )
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg = {
@@ -3709,8 +4045,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg = {
@@ -3743,8 +4091,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg 
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioStrimziKafkaV1Beta2KafkaMirrorMaker2: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+      }
+  )
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg =
@@ -3763,8 +4119,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg =
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-  }
+  } & (
+    | {
+        contentType: 'application/apply-patch+yaml'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/json-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+  )
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMakerList
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
@@ -3829,8 +4197,16 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaMirrorMaker: IoStrimziKafkaV1Beta2KafkaMirrorMaker
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMakerApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMakerApiArg =
@@ -3911,8 +4287,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaMirrorMaker: IoStrimziKafkaV1Beta2KafkaMirrorMaker
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -3932,8 +4316,16 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
@@ -3951,8 +4343,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg = {
@@ -3985,8 +4389,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SApiAutoscalingV1Scale: IoK8SApiAutoscalingV1Scale
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SApiAutoscalingV1Scale
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SApiAutoscalingV1Scale
+      }
+  )
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg = {
@@ -4004,8 +4416,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg = {
@@ -4038,8 +4462,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioStrimziKafkaV1Beta2KafkaMirrorMaker: IoStrimziKafkaV1Beta2KafkaMirrorMaker
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoStrimziKafkaV1Beta2KafkaMirrorMaker
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoStrimziKafkaV1Beta2KafkaMirrorMaker
+      }
+  )
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg = {
@@ -4057,8 +4489,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaRebalanceList
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
@@ -4123,8 +4567,16 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaRebalance: IoStrimziKafkaV1Beta2KafkaRebalance
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaRebalance
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaRebalance
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalanceApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalanceApiArg =
@@ -4205,8 +4657,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaRebalance: IoStrimziKafkaV1Beta2KafkaRebalance
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaRebalance
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaRebalance
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -4226,8 +4686,16 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaRebalance
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
@@ -4245,8 +4713,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaRebalance
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
@@ -4278,8 +4758,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaRebalance: IoStrimziKafkaV1Beta2KafkaRebalance
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaRebalance
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaRebalance
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaRebalance
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
@@ -4297,8 +4785,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaList
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
@@ -4363,8 +4863,16 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2Kafka: IoStrimziKafkaV1Beta2Kafka
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2Kafka
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2Kafka
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaApiArg = {
@@ -4444,8 +4952,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2Kafka: IoStrimziKafkaV1Beta2Kafka
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2Kafka
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2Kafka
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -4465,8 +4981,16 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2Kafka
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
@@ -4484,8 +5008,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2Kafka
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
@@ -4517,8 +5053,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2Kafka: IoStrimziKafkaV1Beta2Kafka
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2Kafka
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2Kafka
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2Kafka
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
@@ -4536,8 +5080,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaTopicList
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
@@ -4602,8 +5158,16 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaTopic: IoStrimziKafkaV1Beta2KafkaTopic
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaTopic
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaTopic
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopicApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopicApiArg = {
@@ -4683,8 +5247,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaTopic: IoStrimziKafkaV1Beta2KafkaTopic
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaTopic
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaTopic
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -4704,8 +5276,16 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaTopic
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
@@ -4723,8 +5303,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaTopic
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
@@ -4756,8 +5348,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaTopic: IoStrimziKafkaV1Beta2KafkaTopic
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaTopic
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaTopic
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaTopic
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
@@ -4775,8 +5375,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaUserList
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
@@ -4841,8 +5453,16 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaUser: IoStrimziKafkaV1Beta2KafkaUser
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaUser
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaUser
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUserApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUserApiArg = {
@@ -4922,8 +5542,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaUser: IoStrimziKafkaV1Beta2KafkaUser
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaUser
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaUser
+    }
+)
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -4943,8 +5571,16 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaUser
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
@@ -4962,8 +5598,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaUser
 export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
@@ -4995,8 +5643,16 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziKafkaV1Beta2KafkaUser: IoStrimziKafkaV1Beta2KafkaUser
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziKafkaV1Beta2KafkaUser
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziKafkaV1Beta2KafkaUser
+    }
+)
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiResponse =
   /** status 200 OK */ IoStrimziKafkaV1Beta2KafkaUser
 export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
@@ -5014,8 +5670,20 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
 export type IoK8SApimachineryPkgApisMetaV1ManagedFieldsEntry = {

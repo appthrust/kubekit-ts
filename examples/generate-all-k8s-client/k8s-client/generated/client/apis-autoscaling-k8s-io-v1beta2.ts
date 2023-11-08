@@ -32,7 +32,8 @@ export const createAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpoint =
       {
         path: `/apis/autoscaling.k8s.io/v1beta2/namespaces/${args['namespace']}/verticalpodautoscalercheckpoints`,
         method: 'POST',
-        body: args.ioK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -90,7 +91,8 @@ export const replaceAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpoint 
       {
         path: `/apis/autoscaling.k8s.io/v1beta2/namespaces/${args['namespace']}/verticalpodautoscalercheckpoints/${args.name}`,
         method: 'PUT',
-        body: args.ioK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -110,7 +112,8 @@ export const deleteAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpoint =
       {
         path: `/apis/autoscaling.k8s.io/v1beta2/namespaces/${args['namespace']}/verticalpodautoscalercheckpoints/${args.name}`,
         method: 'DELETE',
-        body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -131,7 +134,8 @@ export const patchAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpoint =
       {
         path: `/apis/autoscaling.k8s.io/v1beta2/namespaces/${args['namespace']}/verticalpodautoscalercheckpoints/${args.name}`,
         method: 'PATCH',
-        body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -175,7 +179,8 @@ export const createAutoscalingV1Beta2NamespacedVerticalPodAutoscaler = (
     {
       path: `/apis/autoscaling.k8s.io/v1beta2/namespaces/${args['namespace']}/verticalpodautoscalers`,
       method: 'POST',
-      body: args.ioK8SAutoscalingV1Beta2VerticalPodAutoscaler,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -232,7 +237,8 @@ export const replaceAutoscalingV1Beta2NamespacedVerticalPodAutoscaler = (
     {
       path: `/apis/autoscaling.k8s.io/v1beta2/namespaces/${args['namespace']}/verticalpodautoscalers/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SAutoscalingV1Beta2VerticalPodAutoscaler,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -251,7 +257,8 @@ export const deleteAutoscalingV1Beta2NamespacedVerticalPodAutoscaler = (
     {
       path: `/apis/autoscaling.k8s.io/v1beta2/namespaces/${args['namespace']}/verticalpodautoscalers/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -271,7 +278,8 @@ export const patchAutoscalingV1Beta2NamespacedVerticalPodAutoscaler = (
     {
       path: `/apis/autoscaling.k8s.io/v1beta2/namespaces/${args['namespace']}/verticalpodautoscalers/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -398,8 +406,16 @@ export type CreateAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpointApi
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint: IoK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint
+      }
+  )
 export type DeleteAutoscalingV1Beta2CollectionNamespacedVerticalPodAutoscalerCheckpointApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAutoscalingV1Beta2CollectionNamespacedVerticalPodAutoscalerCheckpointApiArg =
@@ -482,8 +498,16 @@ export type ReplaceAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpointAp
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint: IoK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint
+      }
+  )
 export type DeleteAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpointApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -504,8 +528,16 @@ export type DeleteAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpointApi
     orphanDependents?: boolean
     /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
     propagationPolicy?: string
-    ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+      }
+  )
 export type PatchAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpointApiResponse =
   /** status 200 OK */ IoK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpoint
 export type PatchAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpointApiArg =
@@ -524,8 +556,20 @@ export type PatchAutoscalingV1Beta2NamespacedVerticalPodAutoscalerCheckpointApiA
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-  }
+  } & (
+    | {
+        contentType: 'application/apply-patch+yaml'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/json-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+  )
 export type ListAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiResponse =
   /** status 200 OK */ IoK8SAutoscalingV1Beta2VerticalPodAutoscalerList
 export type ListAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiArg = {
@@ -590,8 +634,16 @@ export type CreateAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SAutoscalingV1Beta2VerticalPodAutoscaler: IoK8SAutoscalingV1Beta2VerticalPodAutoscaler
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SAutoscalingV1Beta2VerticalPodAutoscaler
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SAutoscalingV1Beta2VerticalPodAutoscaler
+    }
+)
 export type DeleteAutoscalingV1Beta2CollectionNamespacedVerticalPodAutoscalerApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAutoscalingV1Beta2CollectionNamespacedVerticalPodAutoscalerApiArg =
@@ -672,8 +724,16 @@ export type ReplaceAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SAutoscalingV1Beta2VerticalPodAutoscaler: IoK8SAutoscalingV1Beta2VerticalPodAutoscaler
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SAutoscalingV1Beta2VerticalPodAutoscaler
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SAutoscalingV1Beta2VerticalPodAutoscaler
+    }
+)
 export type DeleteAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -693,8 +753,16 @@ export type DeleteAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiResponse =
   /** status 200 OK */ IoK8SAutoscalingV1Beta2VerticalPodAutoscaler
 export type PatchAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiArg = {
@@ -712,8 +780,20 @@ export type PatchAutoscalingV1Beta2NamespacedVerticalPodAutoscalerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListAutoscalingV1Beta2VerticalPodAutoscalerCheckpointForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SAutoscalingV1Beta2VerticalPodAutoscalerCheckpointList
 export type ListAutoscalingV1Beta2VerticalPodAutoscalerCheckpointForAllNamespacesApiArg =

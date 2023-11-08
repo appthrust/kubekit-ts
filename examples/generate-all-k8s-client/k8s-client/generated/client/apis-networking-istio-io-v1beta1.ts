@@ -79,7 +79,8 @@ export const createNetworkingIstioIoV1Beta1NamespacedDestinationRule = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/destinationrules`,
       method: 'POST',
-      body: args.ioIstioNetworkingV1Beta1DestinationRule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -136,7 +137,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedDestinationRule = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/destinationrules/${args.name}`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1DestinationRule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -155,7 +157,8 @@ export const deleteNetworkingIstioIoV1Beta1NamespacedDestinationRule = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/destinationrules/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -175,7 +178,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedDestinationRule = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/destinationrules/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -207,7 +211,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/destinationrules/${args.name}/status`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1DestinationRule,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -226,7 +231,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/destinationrules/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -270,7 +276,8 @@ export const createNetworkingIstioIoV1Beta1NamespacedGateway = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/gateways`,
       method: 'POST',
-      body: args.ioIstioNetworkingV1Beta1Gateway,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -326,7 +333,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedGateway = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/gateways/${args.name}`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1Gateway,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -345,7 +353,8 @@ export const deleteNetworkingIstioIoV1Beta1NamespacedGateway = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/gateways/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -365,7 +374,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedGateway = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/gateways/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -397,7 +407,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedGatewayStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/gateways/${args.name}/status`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1Gateway,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -416,7 +427,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedGatewayStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/gateways/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -460,7 +472,8 @@ export const createNetworkingIstioIoV1Beta1NamespacedServiceEntry = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/serviceentries`,
       method: 'POST',
-      body: args.ioIstioNetworkingV1Beta1ServiceEntry,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -516,7 +529,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedServiceEntry = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/serviceentries/${args.name}`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1ServiceEntry,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -535,7 +549,8 @@ export const deleteNetworkingIstioIoV1Beta1NamespacedServiceEntry = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/serviceentries/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -555,7 +570,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedServiceEntry = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/serviceentries/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -587,7 +603,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedServiceEntryStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/serviceentries/${args.name}/status`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1ServiceEntry,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -606,7 +623,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedServiceEntryStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/serviceentries/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -650,7 +668,8 @@ export const createNetworkingIstioIoV1Beta1NamespacedSidecar = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/sidecars`,
       method: 'POST',
-      body: args.ioIstioNetworkingV1Beta1Sidecar,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -706,7 +725,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedSidecar = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/sidecars/${args.name}`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1Sidecar,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -725,7 +745,8 @@ export const deleteNetworkingIstioIoV1Beta1NamespacedSidecar = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/sidecars/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -745,7 +766,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedSidecar = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/sidecars/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -777,7 +799,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedSidecarStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/sidecars/${args.name}/status`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1Sidecar,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -796,7 +819,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedSidecarStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/sidecars/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -840,7 +864,8 @@ export const createNetworkingIstioIoV1Beta1NamespacedVirtualService = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/virtualservices`,
       method: 'POST',
-      body: args.ioIstioNetworkingV1Beta1VirtualService,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -897,7 +922,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedVirtualService = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/virtualservices/${args.name}`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1VirtualService,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -916,7 +942,8 @@ export const deleteNetworkingIstioIoV1Beta1NamespacedVirtualService = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/virtualservices/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -936,7 +963,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedVirtualService = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/virtualservices/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -968,7 +996,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/virtualservices/${args.name}/status`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1VirtualService,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -987,7 +1016,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/virtualservices/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1031,7 +1061,8 @@ export const createNetworkingIstioIoV1Beta1NamespacedWorkloadEntry = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/workloadentries`,
       method: 'POST',
-      body: args.ioIstioNetworkingV1Beta1WorkloadEntry,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1087,7 +1118,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedWorkloadEntry = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/workloadentries/${args.name}`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1WorkloadEntry,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1106,7 +1138,8 @@ export const deleteNetworkingIstioIoV1Beta1NamespacedWorkloadEntry = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/workloadentries/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1126,7 +1159,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedWorkloadEntry = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/workloadentries/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1158,7 +1192,8 @@ export const replaceNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/workloadentries/${args.name}/status`,
       method: 'PUT',
-      body: args.ioIstioNetworkingV1Beta1WorkloadEntry,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1177,7 +1212,8 @@ export const patchNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatus = (
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/workloadentries/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1442,8 +1478,16 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1DestinationRule: IoIstioNetworkingV1Beta1DestinationRule
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1DestinationRule
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1DestinationRule
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRuleApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRuleApiArg =
@@ -1524,8 +1568,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1DestinationRule: IoIstioNetworkingV1Beta1DestinationRule
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1DestinationRule
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1DestinationRule
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1545,8 +1597,16 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1DestinationRule
 export type PatchNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
@@ -1564,8 +1624,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1DestinationRule
 export type ReadNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatusApiArg =
@@ -1599,8 +1671,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatusApiArg
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioIstioNetworkingV1Beta1DestinationRule: IoIstioNetworkingV1Beta1DestinationRule
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoIstioNetworkingV1Beta1DestinationRule
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoIstioNetworkingV1Beta1DestinationRule
+      }
+  )
 export type PatchNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1DestinationRule
 export type PatchNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatusApiArg =
@@ -1619,8 +1699,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatusApiArg =
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-  }
+  } & (
+    | {
+        contentType: 'application/apply-patch+yaml'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/json-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+  )
 export type ListNetworkingIstioIoV1Beta1NamespacedGatewayApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1GatewayList
 export type ListNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
@@ -1685,8 +1777,16 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1Gateway: IoIstioNetworkingV1Beta1Gateway
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1Gateway
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1Gateway
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedGatewayApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedGatewayApiArg = {
@@ -1766,8 +1866,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1Gateway: IoIstioNetworkingV1Beta1Gateway
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1Gateway
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1Gateway
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1NamespacedGatewayApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1787,8 +1895,16 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchNetworkingIstioIoV1Beta1NamespacedGatewayApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1Gateway
 export type PatchNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
@@ -1806,8 +1922,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadNetworkingIstioIoV1Beta1NamespacedGatewayStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1Gateway
 export type ReadNetworkingIstioIoV1Beta1NamespacedGatewayStatusApiArg = {
@@ -1839,8 +1967,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedGatewayStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1Gateway: IoIstioNetworkingV1Beta1Gateway
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1Gateway
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1Gateway
+    }
+)
 export type PatchNetworkingIstioIoV1Beta1NamespacedGatewayStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1Gateway
 export type PatchNetworkingIstioIoV1Beta1NamespacedGatewayStatusApiArg = {
@@ -1858,8 +1994,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedGatewayStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListNetworkingIstioIoV1Beta1NamespacedServiceEntryApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1ServiceEntryList
 export type ListNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
@@ -1924,8 +2072,16 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1ServiceEntry: IoIstioNetworkingV1Beta1ServiceEntry
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1ServiceEntry
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1ServiceEntry
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntryApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntryApiArg =
@@ -2006,8 +2162,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1ServiceEntry: IoIstioNetworkingV1Beta1ServiceEntry
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1ServiceEntry
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1ServiceEntry
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1NamespacedServiceEntryApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2027,8 +2191,16 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchNetworkingIstioIoV1Beta1NamespacedServiceEntryApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1ServiceEntry
 export type PatchNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
@@ -2046,8 +2218,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadNetworkingIstioIoV1Beta1NamespacedServiceEntryStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1ServiceEntry
 export type ReadNetworkingIstioIoV1Beta1NamespacedServiceEntryStatusApiArg = {
@@ -2080,8 +2264,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedServiceEntryStatusApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioIstioNetworkingV1Beta1ServiceEntry: IoIstioNetworkingV1Beta1ServiceEntry
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoIstioNetworkingV1Beta1ServiceEntry
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoIstioNetworkingV1Beta1ServiceEntry
+      }
+  )
 export type PatchNetworkingIstioIoV1Beta1NamespacedServiceEntryStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1ServiceEntry
 export type PatchNetworkingIstioIoV1Beta1NamespacedServiceEntryStatusApiArg = {
@@ -2099,8 +2291,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedServiceEntryStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListNetworkingIstioIoV1Beta1NamespacedSidecarApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1SidecarList
 export type ListNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
@@ -2165,8 +2369,16 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1Sidecar: IoIstioNetworkingV1Beta1Sidecar
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1Sidecar
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1Sidecar
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecarApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecarApiArg = {
@@ -2246,8 +2458,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1Sidecar: IoIstioNetworkingV1Beta1Sidecar
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1Sidecar
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1Sidecar
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1NamespacedSidecarApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2267,8 +2487,16 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchNetworkingIstioIoV1Beta1NamespacedSidecarApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1Sidecar
 export type PatchNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
@@ -2286,8 +2514,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadNetworkingIstioIoV1Beta1NamespacedSidecarStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1Sidecar
 export type ReadNetworkingIstioIoV1Beta1NamespacedSidecarStatusApiArg = {
@@ -2319,8 +2559,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedSidecarStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1Sidecar: IoIstioNetworkingV1Beta1Sidecar
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1Sidecar
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1Sidecar
+    }
+)
 export type PatchNetworkingIstioIoV1Beta1NamespacedSidecarStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1Sidecar
 export type PatchNetworkingIstioIoV1Beta1NamespacedSidecarStatusApiArg = {
@@ -2338,8 +2586,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedSidecarStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1VirtualServiceList
 export type ListNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
@@ -2404,8 +2664,16 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1VirtualService: IoIstioNetworkingV1Beta1VirtualService
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1VirtualService
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1VirtualService
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualServiceApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualServiceApiArg =
@@ -2486,8 +2754,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1VirtualService: IoIstioNetworkingV1Beta1VirtualService
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1VirtualService
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1VirtualService
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2507,8 +2783,16 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1VirtualService
 export type PatchNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
@@ -2526,8 +2810,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1VirtualService
 export type ReadNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatusApiArg = {
@@ -2560,8 +2856,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatusApiArg 
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioIstioNetworkingV1Beta1VirtualService: IoIstioNetworkingV1Beta1VirtualService
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoIstioNetworkingV1Beta1VirtualService
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoIstioNetworkingV1Beta1VirtualService
+      }
+  )
 export type PatchNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1VirtualService
 export type PatchNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatusApiArg =
@@ -2580,8 +2884,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatusApiArg =
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-  }
+  } & (
+    | {
+        contentType: 'application/apply-patch+yaml'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/json-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+  )
 export type ListNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1WorkloadEntryList
 export type ListNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
@@ -2646,8 +2962,16 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1WorkloadEntry: IoIstioNetworkingV1Beta1WorkloadEntry
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1WorkloadEntry
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1WorkloadEntry
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntryApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntryApiArg =
@@ -2728,8 +3052,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioNetworkingV1Beta1WorkloadEntry: IoIstioNetworkingV1Beta1WorkloadEntry
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioNetworkingV1Beta1WorkloadEntry
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioNetworkingV1Beta1WorkloadEntry
+    }
+)
 export type DeleteNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -2749,8 +3081,16 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1WorkloadEntry
 export type PatchNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
@@ -2768,8 +3108,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1WorkloadEntry
 export type ReadNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatusApiArg = {
@@ -2802,8 +3154,16 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatusApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioIstioNetworkingV1Beta1WorkloadEntry: IoIstioNetworkingV1Beta1WorkloadEntry
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoIstioNetworkingV1Beta1WorkloadEntry
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoIstioNetworkingV1Beta1WorkloadEntry
+      }
+  )
 export type PatchNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatusApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1WorkloadEntry
 export type PatchNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatusApiArg = {
@@ -2821,8 +3181,20 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListNetworkingIstioIoV1Beta1ServiceEntryForAllNamespacesApiResponse =
   /** status 200 OK */ IoIstioNetworkingV1Beta1ServiceEntryList
 export type ListNetworkingIstioIoV1Beta1ServiceEntryForAllNamespacesApiArg = {

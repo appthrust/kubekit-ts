@@ -39,6 +39,7 @@ type QueryArgsSpec = {
   path: string
   method?: 'GET' | 'DELETE' | 'PATCH' | 'POST' | 'PUT' | 'OPTIONS' | 'HEAD'
   body?: any
+  contentType?: string
   params?: any
 }
 
@@ -121,11 +122,12 @@ export async function apiClient<Response>(
     ...extraOptions,
   }
 
-  let { path, method, params, body } = { ...args }
+  let { path, method, params, body, contentType } = { ...args }
 
   let httpsOptions: https.RequestOptions = {
     path,
     headers: {
+      contentType,
       ...options.headers,
     },
   }

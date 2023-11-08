@@ -31,7 +31,8 @@ export const createTemplatesGatekeeperShV1Alpha1ConstraintTemplate = (
     {
       path: `/apis/templates.gatekeeper.sh/v1alpha1/constrainttemplates`,
       method: 'POST',
-      body: args.shGatekeeperTemplatesV1Alpha1ConstraintTemplate,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -87,7 +88,8 @@ export const replaceTemplatesGatekeeperShV1Alpha1ConstraintTemplate = (
     {
       path: `/apis/templates.gatekeeper.sh/v1alpha1/constrainttemplates/${args.name}`,
       method: 'PUT',
-      body: args.shGatekeeperTemplatesV1Alpha1ConstraintTemplate,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -106,7 +108,8 @@ export const deleteTemplatesGatekeeperShV1Alpha1ConstraintTemplate = (
     {
       path: `/apis/templates.gatekeeper.sh/v1alpha1/constrainttemplates/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -126,7 +129,8 @@ export const patchTemplatesGatekeeperShV1Alpha1ConstraintTemplate = (
     {
       path: `/apis/templates.gatekeeper.sh/v1alpha1/constrainttemplates/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -158,7 +162,8 @@ export const replaceTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatus = (
     {
       path: `/apis/templates.gatekeeper.sh/v1alpha1/constrainttemplates/${args.name}/status`,
       method: 'PUT',
-      body: args.shGatekeeperTemplatesV1Alpha1ConstraintTemplate,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +182,8 @@ export const patchTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatus = (
     {
       path: `/apis/templates.gatekeeper.sh/v1alpha1/constrainttemplates/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -249,8 +255,16 @@ export type CreateTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperTemplatesV1Alpha1ConstraintTemplate: ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
+    }
+)
 export type DeleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplateApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplateApiArg =
@@ -325,8 +339,16 @@ export type ReplaceTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperTemplatesV1Alpha1ConstraintTemplate: ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
+    }
+)
 export type DeleteTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -344,8 +366,16 @@ export type DeleteTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse =
   /** status 200 OK */ ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
 export type PatchTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
@@ -361,8 +391,20 @@ export type PatchTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiResponse =
   /** status 200 OK */ ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
 export type ReadTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiArg = {
@@ -391,8 +433,16 @@ export type ReplaceTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    shGatekeeperTemplatesV1Alpha1ConstraintTemplate: ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
+      }
+    | {
+        contentType: 'application/yaml'
+        body: ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
+      }
+  )
 export type PatchTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiResponse =
   /** status 200 OK */ ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
 export type PatchTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiArg = {
@@ -408,8 +458,20 @@ export type PatchTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
 export type IoK8SApimachineryPkgApisMetaV1ManagedFieldsEntry = {

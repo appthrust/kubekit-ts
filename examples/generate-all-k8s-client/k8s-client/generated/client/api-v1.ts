@@ -172,7 +172,8 @@ export const createCoreV1Namespace = (
     {
       path: `/api/v1/namespaces`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1Namespace,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -191,7 +192,8 @@ export const createCoreV1NamespacedBinding = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/bindings`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1Binding,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         dryRun: args.dryRun,
         fieldManager: args.fieldManager,
@@ -234,7 +236,8 @@ export const createCoreV1NamespacedConfigMap = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/configmaps`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1ConfigMap,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -253,7 +256,8 @@ export const deleteCoreV1CollectionNamespacedConfigMap = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/configmaps`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -293,7 +297,8 @@ export const replaceCoreV1NamespacedConfigMap = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/configmaps/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1ConfigMap,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -312,7 +317,8 @@ export const deleteCoreV1NamespacedConfigMap = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/configmaps/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -332,7 +338,8 @@ export const patchCoreV1NamespacedConfigMap = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/configmaps/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -376,7 +383,8 @@ export const createCoreV1NamespacedEndpoints = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/endpoints`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1Endpoints,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -395,7 +403,8 @@ export const deleteCoreV1CollectionNamespacedEndpoints = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/endpoints`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -435,7 +444,8 @@ export const replaceCoreV1NamespacedEndpoints = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/endpoints/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Endpoints,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -454,7 +464,8 @@ export const deleteCoreV1NamespacedEndpoints = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/endpoints/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -474,7 +485,8 @@ export const patchCoreV1NamespacedEndpoints = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/endpoints/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -518,7 +530,8 @@ export const createCoreV1NamespacedEvent = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/events`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1Event,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -537,7 +550,8 @@ export const deleteCoreV1CollectionNamespacedEvent = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/events`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -577,7 +591,8 @@ export const replaceCoreV1NamespacedEvent = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/events/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Event,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -596,7 +611,8 @@ export const deleteCoreV1NamespacedEvent = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/events/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -616,7 +632,8 @@ export const patchCoreV1NamespacedEvent = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/events/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -660,7 +677,8 @@ export const createCoreV1NamespacedLimitRange = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/limitranges`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1LimitRange,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -679,7 +697,8 @@ export const deleteCoreV1CollectionNamespacedLimitRange = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/limitranges`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -719,7 +738,8 @@ export const replaceCoreV1NamespacedLimitRange = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/limitranges/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1LimitRange,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -738,7 +758,8 @@ export const deleteCoreV1NamespacedLimitRange = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/limitranges/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -758,7 +779,8 @@ export const patchCoreV1NamespacedLimitRange = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/limitranges/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -802,7 +824,8 @@ export const createCoreV1NamespacedPersistentVolumeClaim = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1PersistentVolumeClaim,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -821,7 +844,8 @@ export const deleteCoreV1CollectionNamespacedPersistentVolumeClaim = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -861,7 +885,8 @@ export const replaceCoreV1NamespacedPersistentVolumeClaim = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1PersistentVolumeClaim,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -880,7 +905,8 @@ export const deleteCoreV1NamespacedPersistentVolumeClaim = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -900,7 +926,8 @@ export const patchCoreV1NamespacedPersistentVolumeClaim = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -932,7 +959,8 @@ export const replaceCoreV1NamespacedPersistentVolumeClaimStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1PersistentVolumeClaim,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -951,7 +979,8 @@ export const patchCoreV1NamespacedPersistentVolumeClaimStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -995,7 +1024,8 @@ export const createCoreV1NamespacedPod = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1Pod,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1014,7 +1044,8 @@ export const deleteCoreV1CollectionNamespacedPod = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -1054,7 +1085,8 @@ export const replaceCoreV1NamespacedPod = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Pod,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1073,7 +1105,8 @@ export const deleteCoreV1NamespacedPod = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1093,7 +1126,8 @@ export const patchCoreV1NamespacedPod = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1150,7 +1184,8 @@ export const createCoreV1NamespacedPodBinding = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/binding`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1Binding,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         dryRun: args.dryRun,
         fieldManager: args.fieldManager,
@@ -1181,7 +1216,8 @@ export const replaceCoreV1NamespacedPodEphemeralcontainers = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/ephemeralcontainers`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Pod,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1200,7 +1236,8 @@ export const patchCoreV1NamespacedPodEphemeralcontainers = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/ephemeralcontainers`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1220,7 +1257,8 @@ export const createCoreV1NamespacedPodEviction = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/eviction`,
       method: 'POST',
-      body: args.ioK8SApiPolicyV1Eviction,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         dryRun: args.dryRun,
         fieldManager: args.fieldManager,
@@ -1517,7 +1555,8 @@ export const replaceCoreV1NamespacedPodStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Pod,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1536,7 +1575,8 @@ export const patchCoreV1NamespacedPodStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1580,7 +1620,8 @@ export const createCoreV1NamespacedPodTemplate = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/podtemplates`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1PodTemplate,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1599,7 +1640,8 @@ export const deleteCoreV1CollectionNamespacedPodTemplate = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/podtemplates`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -1639,7 +1681,8 @@ export const replaceCoreV1NamespacedPodTemplate = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/podtemplates/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1PodTemplate,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1658,7 +1701,8 @@ export const deleteCoreV1NamespacedPodTemplate = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/podtemplates/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1678,7 +1722,8 @@ export const patchCoreV1NamespacedPodTemplate = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/podtemplates/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1722,7 +1767,8 @@ export const createCoreV1NamespacedReplicationController = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1ReplicationController,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1741,7 +1787,8 @@ export const deleteCoreV1CollectionNamespacedReplicationController = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -1781,7 +1828,8 @@ export const replaceCoreV1NamespacedReplicationController = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1ReplicationController,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1800,7 +1848,8 @@ export const deleteCoreV1NamespacedReplicationController = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1820,7 +1869,8 @@ export const patchCoreV1NamespacedReplicationController = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1852,7 +1902,8 @@ export const replaceCoreV1NamespacedReplicationControllerScale = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}/scale`,
       method: 'PUT',
-      body: args.ioK8SApiAutoscalingV1Scale,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1871,7 +1922,8 @@ export const patchCoreV1NamespacedReplicationControllerScale = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}/scale`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1903,7 +1955,8 @@ export const replaceCoreV1NamespacedReplicationControllerStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1ReplicationController,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1922,7 +1975,8 @@ export const patchCoreV1NamespacedReplicationControllerStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1966,7 +2020,8 @@ export const createCoreV1NamespacedResourceQuota = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1ResourceQuota,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1985,7 +2040,8 @@ export const deleteCoreV1CollectionNamespacedResourceQuota = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -2025,7 +2081,8 @@ export const replaceCoreV1NamespacedResourceQuota = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1ResourceQuota,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2044,7 +2101,8 @@ export const deleteCoreV1NamespacedResourceQuota = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2064,7 +2122,8 @@ export const patchCoreV1NamespacedResourceQuota = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2096,7 +2155,8 @@ export const replaceCoreV1NamespacedResourceQuotaStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1ResourceQuota,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2115,7 +2175,8 @@ export const patchCoreV1NamespacedResourceQuotaStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2159,7 +2220,8 @@ export const createCoreV1NamespacedSecret = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/secrets`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1Secret,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2178,7 +2240,8 @@ export const deleteCoreV1CollectionNamespacedSecret = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/secrets`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -2218,7 +2281,8 @@ export const replaceCoreV1NamespacedSecret = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/secrets/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Secret,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2237,7 +2301,8 @@ export const deleteCoreV1NamespacedSecret = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/secrets/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2257,7 +2322,8 @@ export const patchCoreV1NamespacedSecret = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/secrets/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2301,7 +2367,8 @@ export const createCoreV1NamespacedServiceAccount = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/serviceaccounts`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1ServiceAccount,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2320,7 +2387,8 @@ export const deleteCoreV1CollectionNamespacedServiceAccount = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/serviceaccounts`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -2360,7 +2428,8 @@ export const replaceCoreV1NamespacedServiceAccount = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/serviceaccounts/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1ServiceAccount,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2379,7 +2448,8 @@ export const deleteCoreV1NamespacedServiceAccount = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/serviceaccounts/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2399,7 +2469,8 @@ export const patchCoreV1NamespacedServiceAccount = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/serviceaccounts/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2419,7 +2490,8 @@ export const createCoreV1NamespacedServiceAccountToken = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/serviceaccounts/${args.name}/token`,
       method: 'POST',
-      body: args.ioK8SApiAuthenticationV1TokenRequest,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         dryRun: args.dryRun,
         fieldManager: args.fieldManager,
@@ -2462,7 +2534,8 @@ export const createCoreV1NamespacedService = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/services`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1Service,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2481,7 +2554,8 @@ export const deleteCoreV1CollectionNamespacedService = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/services`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -2521,7 +2595,8 @@ export const replaceCoreV1NamespacedService = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Service,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2540,7 +2615,8 @@ export const deleteCoreV1NamespacedService = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2560,7 +2636,8 @@ export const patchCoreV1NamespacedService = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2772,7 +2849,8 @@ export const replaceCoreV1NamespacedServiceStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Service,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2791,7 +2869,8 @@ export const patchCoreV1NamespacedServiceStatus = (
     {
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2823,7 +2902,8 @@ export const replaceCoreV1Namespace = (
     {
       path: `/api/v1/namespaces/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Namespace,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2842,7 +2922,8 @@ export const deleteCoreV1Namespace = (
     {
       path: `/api/v1/namespaces/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2862,7 +2943,8 @@ export const patchCoreV1Namespace = (
     {
       path: `/api/v1/namespaces/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2882,7 +2964,8 @@ export const replaceCoreV1NamespaceFinalize = (
     {
       path: `/api/v1/namespaces/${args.name}/finalize`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Namespace,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         dryRun: args.dryRun,
         fieldManager: args.fieldManager,
@@ -2913,7 +2996,8 @@ export const replaceCoreV1NamespaceStatus = (
     {
       path: `/api/v1/namespaces/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Namespace,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2932,7 +3016,8 @@ export const patchCoreV1NamespaceStatus = (
     {
       path: `/api/v1/namespaces/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2976,7 +3061,8 @@ export const createCoreV1Node = (
     {
       path: `/api/v1/nodes`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1Node,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -2995,7 +3081,8 @@ export const deleteCoreV1CollectionNode = (
     {
       path: `/api/v1/nodes`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -3032,7 +3119,8 @@ export const replaceCoreV1Node = (
     {
       path: `/api/v1/nodes/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Node,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3051,7 +3139,8 @@ export const deleteCoreV1Node = (
     {
       path: `/api/v1/nodes/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3071,7 +3160,8 @@ export const patchCoreV1Node = (
     {
       path: `/api/v1/nodes/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3280,7 +3370,8 @@ export const replaceCoreV1NodeStatus = (
     {
       path: `/api/v1/nodes/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1Node,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3299,7 +3390,8 @@ export const patchCoreV1NodeStatus = (
     {
       path: `/api/v1/nodes/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3367,7 +3459,8 @@ export const createCoreV1PersistentVolume = (
     {
       path: `/api/v1/persistentvolumes`,
       method: 'POST',
-      body: args.ioK8SApiCoreV1PersistentVolume,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3386,7 +3479,8 @@ export const deleteCoreV1CollectionPersistentVolume = (
     {
       path: `/api/v1/persistentvolumes`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -3426,7 +3520,8 @@ export const replaceCoreV1PersistentVolume = (
     {
       path: `/api/v1/persistentvolumes/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1PersistentVolume,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3445,7 +3540,8 @@ export const deleteCoreV1PersistentVolume = (
     {
       path: `/api/v1/persistentvolumes/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3465,7 +3561,8 @@ export const patchCoreV1PersistentVolume = (
     {
       path: `/api/v1/persistentvolumes/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3497,7 +3594,8 @@ export const replaceCoreV1PersistentVolumeStatus = (
     {
       path: `/api/v1/persistentvolumes/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiCoreV1PersistentVolume,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -3516,7 +3614,8 @@ export const patchCoreV1PersistentVolumeStatus = (
     {
       path: `/api/v1/persistentvolumes/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -5005,7 +5104,9 @@ export type CreateCoreV1NamespaceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Namespace: IoK8SApiCoreV1Namespace
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Namespace
 }
 export type CreateCoreV1NamespacedBindingApiResponse =
   /** status 200 OK */
@@ -5023,7 +5124,9 @@ export type CreateCoreV1NamespacedBindingApiArg = {
   namespace: string
   /** If 'true', then the output is pretty printed. */
   pretty?: string
-  ioK8SApiCoreV1Binding: IoK8SApiCoreV1Binding
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Binding
 }
 export type ListCoreV1NamespacedConfigMapApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ConfigMapList
@@ -5089,7 +5192,9 @@ export type CreateCoreV1NamespacedConfigMapApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1ConfigMap: IoK8SApiCoreV1ConfigMap
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1ConfigMap
 }
 export type DeleteCoreV1CollectionNamespacedConfigMapApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -5142,7 +5247,9 @@ export type DeleteCoreV1CollectionNamespacedConfigMapApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedConfigMapApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ConfigMap
@@ -5170,7 +5277,9 @@ export type ReplaceCoreV1NamespacedConfigMapApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1ConfigMap: IoK8SApiCoreV1ConfigMap
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1ConfigMap
 }
 export type DeleteCoreV1NamespacedConfigMapApiResponse =
   /** status 200 OK */
@@ -5191,7 +5300,9 @@ export type DeleteCoreV1NamespacedConfigMapApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedConfigMapApiResponse =
   /** status 200 OK */
@@ -5211,8 +5322,24 @@ export type PatchCoreV1NamespacedConfigMapApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NamespacedEndpointsApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1EndpointsList
 export type ListCoreV1NamespacedEndpointsApiArg = {
@@ -5277,7 +5404,9 @@ export type CreateCoreV1NamespacedEndpointsApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Endpoints: IoK8SApiCoreV1Endpoints
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Endpoints
 }
 export type DeleteCoreV1CollectionNamespacedEndpointsApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -5330,7 +5459,9 @@ export type DeleteCoreV1CollectionNamespacedEndpointsApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedEndpointsApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1Endpoints
@@ -5358,7 +5489,9 @@ export type ReplaceCoreV1NamespacedEndpointsApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Endpoints: IoK8SApiCoreV1Endpoints
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Endpoints
 }
 export type DeleteCoreV1NamespacedEndpointsApiResponse =
   /** status 200 OK */
@@ -5379,7 +5512,9 @@ export type DeleteCoreV1NamespacedEndpointsApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedEndpointsApiResponse =
   /** status 200 OK */
@@ -5399,8 +5534,24 @@ export type PatchCoreV1NamespacedEndpointsApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NamespacedEventApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1EventList
 export type ListCoreV1NamespacedEventApiArg = {
@@ -5465,7 +5616,9 @@ export type CreateCoreV1NamespacedEventApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Event: IoK8SApiCoreV1Event
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Event
 }
 export type DeleteCoreV1CollectionNamespacedEventApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -5518,7 +5671,9 @@ export type DeleteCoreV1CollectionNamespacedEventApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedEventApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1Event
@@ -5546,7 +5701,9 @@ export type ReplaceCoreV1NamespacedEventApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Event: IoK8SApiCoreV1Event
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Event
 }
 export type DeleteCoreV1NamespacedEventApiResponse =
   /** status 200 OK */
@@ -5567,7 +5724,9 @@ export type DeleteCoreV1NamespacedEventApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedEventApiResponse =
   /** status 200 OK */
@@ -5587,8 +5746,24 @@ export type PatchCoreV1NamespacedEventApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NamespacedLimitRangeApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1LimitRangeList
 export type ListCoreV1NamespacedLimitRangeApiArg = {
@@ -5653,7 +5828,9 @@ export type CreateCoreV1NamespacedLimitRangeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1LimitRange: IoK8SApiCoreV1LimitRange
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1LimitRange
 }
 export type DeleteCoreV1CollectionNamespacedLimitRangeApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -5706,7 +5883,9 @@ export type DeleteCoreV1CollectionNamespacedLimitRangeApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedLimitRangeApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1LimitRange
@@ -5734,7 +5913,9 @@ export type ReplaceCoreV1NamespacedLimitRangeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1LimitRange: IoK8SApiCoreV1LimitRange
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1LimitRange
 }
 export type DeleteCoreV1NamespacedLimitRangeApiResponse =
   /** status 200 OK */
@@ -5755,7 +5936,9 @@ export type DeleteCoreV1NamespacedLimitRangeApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedLimitRangeApiResponse =
   /** status 200 OK */
@@ -5775,8 +5958,24 @@ export type PatchCoreV1NamespacedLimitRangeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NamespacedPersistentVolumeClaimApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolumeClaimList
 export type ListCoreV1NamespacedPersistentVolumeClaimApiArg = {
@@ -5841,7 +6040,9 @@ export type CreateCoreV1NamespacedPersistentVolumeClaimApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1PersistentVolumeClaim: IoK8SApiCoreV1PersistentVolumeClaim
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1PersistentVolumeClaim
 }
 export type DeleteCoreV1CollectionNamespacedPersistentVolumeClaimApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -5894,7 +6095,9 @@ export type DeleteCoreV1CollectionNamespacedPersistentVolumeClaimApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedPersistentVolumeClaimApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolumeClaim
@@ -5923,7 +6126,9 @@ export type ReplaceCoreV1NamespacedPersistentVolumeClaimApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1PersistentVolumeClaim: IoK8SApiCoreV1PersistentVolumeClaim
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1PersistentVolumeClaim
 }
 export type DeleteCoreV1NamespacedPersistentVolumeClaimApiResponse =
   /** status 200 OK */
@@ -5944,7 +6149,9 @@ export type DeleteCoreV1NamespacedPersistentVolumeClaimApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedPersistentVolumeClaimApiResponse =
   /** status 200 OK */
@@ -5965,8 +6172,24 @@ export type PatchCoreV1NamespacedPersistentVolumeClaimApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadCoreV1NamespacedPersistentVolumeClaimStatusApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolumeClaim
 export type ReadCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
@@ -5994,7 +6217,9 @@ export type ReplaceCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1PersistentVolumeClaim: IoK8SApiCoreV1PersistentVolumeClaim
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1PersistentVolumeClaim
 }
 export type PatchCoreV1NamespacedPersistentVolumeClaimStatusApiResponse =
   /** status 200 OK */
@@ -6015,8 +6240,24 @@ export type PatchCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NamespacedPodApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PodList
 export type ListCoreV1NamespacedPodApiArg = {
@@ -6081,7 +6322,9 @@ export type CreateCoreV1NamespacedPodApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Pod: IoK8SApiCoreV1Pod
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Pod
 }
 export type DeleteCoreV1CollectionNamespacedPodApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -6134,7 +6377,9 @@ export type DeleteCoreV1CollectionNamespacedPodApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedPodApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1Pod
@@ -6162,7 +6407,9 @@ export type ReplaceCoreV1NamespacedPodApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Pod: IoK8SApiCoreV1Pod
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Pod
 }
 export type DeleteCoreV1NamespacedPodApiResponse =
   /** status 200 OK */
@@ -6182,7 +6429,9 @@ export type DeleteCoreV1NamespacedPodApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedPodApiResponse =
   /** status 200 OK */
@@ -6202,8 +6451,24 @@ export type PatchCoreV1NamespacedPodApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ConnectCoreV1GetNamespacedPodAttachApiResponse =
   /** status 200 OK */ string
 export type ConnectCoreV1GetNamespacedPodAttachApiArg = {
@@ -6258,7 +6523,9 @@ export type CreateCoreV1NamespacedPodBindingApiArg = {
   namespace: string
   /** If 'true', then the output is pretty printed. */
   pretty?: string
-  ioK8SApiCoreV1Binding: IoK8SApiCoreV1Binding
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Binding
 }
 export type ReadCoreV1NamespacedPodEphemeralcontainersApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1Pod
@@ -6286,7 +6553,9 @@ export type ReplaceCoreV1NamespacedPodEphemeralcontainersApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Pod: IoK8SApiCoreV1Pod
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Pod
 }
 export type PatchCoreV1NamespacedPodEphemeralcontainersApiResponse =
   /** status 200 OK */
@@ -6306,8 +6575,24 @@ export type PatchCoreV1NamespacedPodEphemeralcontainersApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type CreateCoreV1NamespacedPodEvictionApiResponse =
   /** status 200 OK */
   | IoK8SApiPolicyV1Eviction
@@ -6326,7 +6611,9 @@ export type CreateCoreV1NamespacedPodEvictionApiArg = {
   namespace: string
   /** If 'true', then the output is pretty printed. */
   pretty?: string
-  ioK8SApiPolicyV1Eviction: IoK8SApiPolicyV1Eviction
+} & {
+  contentType?: string
+  body: IoK8SApiPolicyV1Eviction
 }
 export type ConnectCoreV1GetNamespacedPodExecApiResponse =
   /** status 200 OK */ string
@@ -6593,7 +6880,9 @@ export type ReplaceCoreV1NamespacedPodStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Pod: IoK8SApiCoreV1Pod
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Pod
 }
 export type PatchCoreV1NamespacedPodStatusApiResponse =
   /** status 200 OK */
@@ -6613,8 +6902,24 @@ export type PatchCoreV1NamespacedPodStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NamespacedPodTemplateApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PodTemplateList
 export type ListCoreV1NamespacedPodTemplateApiArg = {
@@ -6679,7 +6984,9 @@ export type CreateCoreV1NamespacedPodTemplateApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1PodTemplate: IoK8SApiCoreV1PodTemplate
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1PodTemplate
 }
 export type DeleteCoreV1CollectionNamespacedPodTemplateApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -6732,7 +7039,9 @@ export type DeleteCoreV1CollectionNamespacedPodTemplateApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedPodTemplateApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PodTemplate
@@ -6761,7 +7070,9 @@ export type ReplaceCoreV1NamespacedPodTemplateApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1PodTemplate: IoK8SApiCoreV1PodTemplate
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1PodTemplate
 }
 export type DeleteCoreV1NamespacedPodTemplateApiResponse =
   /** status 200 OK */
@@ -6782,7 +7093,9 @@ export type DeleteCoreV1NamespacedPodTemplateApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedPodTemplateApiResponse =
   /** status 200 OK */
@@ -6803,8 +7116,24 @@ export type PatchCoreV1NamespacedPodTemplateApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NamespacedReplicationControllerApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ReplicationControllerList
 export type ListCoreV1NamespacedReplicationControllerApiArg = {
@@ -6869,7 +7198,9 @@ export type CreateCoreV1NamespacedReplicationControllerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1ReplicationController: IoK8SApiCoreV1ReplicationController
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1ReplicationController
 }
 export type DeleteCoreV1CollectionNamespacedReplicationControllerApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -6922,7 +7253,9 @@ export type DeleteCoreV1CollectionNamespacedReplicationControllerApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedReplicationControllerApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ReplicationController
@@ -6951,7 +7284,9 @@ export type ReplaceCoreV1NamespacedReplicationControllerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1ReplicationController: IoK8SApiCoreV1ReplicationController
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1ReplicationController
 }
 export type DeleteCoreV1NamespacedReplicationControllerApiResponse =
   /** status 200 OK */
@@ -6972,7 +7307,9 @@ export type DeleteCoreV1NamespacedReplicationControllerApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedReplicationControllerApiResponse =
   /** status 200 OK */
@@ -6993,8 +7330,24 @@ export type PatchCoreV1NamespacedReplicationControllerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadCoreV1NamespacedReplicationControllerScaleApiResponse =
   /** status 200 OK */ IoK8SApiAutoscalingV1Scale
 export type ReadCoreV1NamespacedReplicationControllerScaleApiArg = {
@@ -7022,7 +7375,9 @@ export type ReplaceCoreV1NamespacedReplicationControllerScaleApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiAutoscalingV1Scale: IoK8SApiAutoscalingV1Scale
+} & {
+  contentType?: string
+  body: IoK8SApiAutoscalingV1Scale
 }
 export type PatchCoreV1NamespacedReplicationControllerScaleApiResponse =
   /** status 200 OK */
@@ -7043,8 +7398,24 @@ export type PatchCoreV1NamespacedReplicationControllerScaleApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadCoreV1NamespacedReplicationControllerStatusApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ReplicationController
 export type ReadCoreV1NamespacedReplicationControllerStatusApiArg = {
@@ -7072,7 +7443,9 @@ export type ReplaceCoreV1NamespacedReplicationControllerStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1ReplicationController: IoK8SApiCoreV1ReplicationController
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1ReplicationController
 }
 export type PatchCoreV1NamespacedReplicationControllerStatusApiResponse =
   /** status 200 OK */
@@ -7093,8 +7466,24 @@ export type PatchCoreV1NamespacedReplicationControllerStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NamespacedResourceQuotaApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ResourceQuotaList
 export type ListCoreV1NamespacedResourceQuotaApiArg = {
@@ -7159,7 +7548,9 @@ export type CreateCoreV1NamespacedResourceQuotaApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1ResourceQuota: IoK8SApiCoreV1ResourceQuota
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1ResourceQuota
 }
 export type DeleteCoreV1CollectionNamespacedResourceQuotaApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -7212,7 +7603,9 @@ export type DeleteCoreV1CollectionNamespacedResourceQuotaApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedResourceQuotaApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ResourceQuota
@@ -7241,7 +7634,9 @@ export type ReplaceCoreV1NamespacedResourceQuotaApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1ResourceQuota: IoK8SApiCoreV1ResourceQuota
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1ResourceQuota
 }
 export type DeleteCoreV1NamespacedResourceQuotaApiResponse =
   /** status 200 OK */
@@ -7262,7 +7657,9 @@ export type DeleteCoreV1NamespacedResourceQuotaApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedResourceQuotaApiResponse =
   /** status 200 OK */
@@ -7283,8 +7680,24 @@ export type PatchCoreV1NamespacedResourceQuotaApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadCoreV1NamespacedResourceQuotaStatusApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ResourceQuota
 export type ReadCoreV1NamespacedResourceQuotaStatusApiArg = {
@@ -7312,7 +7725,9 @@ export type ReplaceCoreV1NamespacedResourceQuotaStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1ResourceQuota: IoK8SApiCoreV1ResourceQuota
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1ResourceQuota
 }
 export type PatchCoreV1NamespacedResourceQuotaStatusApiResponse =
   /** status 200 OK */
@@ -7333,8 +7748,24 @@ export type PatchCoreV1NamespacedResourceQuotaStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NamespacedSecretApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1SecretList
 export type ListCoreV1NamespacedSecretApiArg = {
@@ -7399,7 +7830,9 @@ export type CreateCoreV1NamespacedSecretApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Secret: IoK8SApiCoreV1Secret
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Secret
 }
 export type DeleteCoreV1CollectionNamespacedSecretApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -7452,7 +7885,9 @@ export type DeleteCoreV1CollectionNamespacedSecretApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedSecretApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1Secret
@@ -7480,7 +7915,9 @@ export type ReplaceCoreV1NamespacedSecretApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Secret: IoK8SApiCoreV1Secret
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Secret
 }
 export type DeleteCoreV1NamespacedSecretApiResponse =
   /** status 200 OK */
@@ -7501,7 +7938,9 @@ export type DeleteCoreV1NamespacedSecretApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedSecretApiResponse =
   /** status 200 OK */
@@ -7521,8 +7960,24 @@ export type PatchCoreV1NamespacedSecretApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NamespacedServiceAccountApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ServiceAccountList
 export type ListCoreV1NamespacedServiceAccountApiArg = {
@@ -7587,7 +8042,9 @@ export type CreateCoreV1NamespacedServiceAccountApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1ServiceAccount: IoK8SApiCoreV1ServiceAccount
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1ServiceAccount
 }
 export type DeleteCoreV1CollectionNamespacedServiceAccountApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -7640,7 +8097,9 @@ export type DeleteCoreV1CollectionNamespacedServiceAccountApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedServiceAccountApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ServiceAccount
@@ -7669,7 +8128,9 @@ export type ReplaceCoreV1NamespacedServiceAccountApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1ServiceAccount: IoK8SApiCoreV1ServiceAccount
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1ServiceAccount
 }
 export type DeleteCoreV1NamespacedServiceAccountApiResponse =
   /** status 200 OK */
@@ -7690,7 +8151,9 @@ export type DeleteCoreV1NamespacedServiceAccountApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedServiceAccountApiResponse =
   /** status 200 OK */
@@ -7711,8 +8174,24 @@ export type PatchCoreV1NamespacedServiceAccountApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type CreateCoreV1NamespacedServiceAccountTokenApiResponse =
   /** status 200 OK */
   | IoK8SApiAuthenticationV1TokenRequest
@@ -7731,7 +8210,9 @@ export type CreateCoreV1NamespacedServiceAccountTokenApiArg = {
   namespace: string
   /** If 'true', then the output is pretty printed. */
   pretty?: string
-  ioK8SApiAuthenticationV1TokenRequest: IoK8SApiAuthenticationV1TokenRequest
+} & {
+  contentType?: string
+  body: IoK8SApiAuthenticationV1TokenRequest
 }
 export type ListCoreV1NamespacedServiceApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1ServiceList
@@ -7797,7 +8278,9 @@ export type CreateCoreV1NamespacedServiceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Service: IoK8SApiCoreV1Service
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Service
 }
 export type DeleteCoreV1CollectionNamespacedServiceApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -7850,7 +8333,9 @@ export type DeleteCoreV1CollectionNamespacedServiceApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NamespacedServiceApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1Service
@@ -7878,7 +8363,9 @@ export type ReplaceCoreV1NamespacedServiceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Service: IoK8SApiCoreV1Service
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Service
 }
 export type DeleteCoreV1NamespacedServiceApiResponse =
   /** status 200 OK */
@@ -7898,7 +8385,9 @@ export type DeleteCoreV1NamespacedServiceApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespacedServiceApiResponse =
   /** status 200 OK */
@@ -7918,8 +8407,24 @@ export type PatchCoreV1NamespacedServiceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ConnectCoreV1GetNamespacedServiceProxyApiResponse =
   /** status 200 OK */ string
 export type ConnectCoreV1GetNamespacedServiceProxyApiArg = {
@@ -8100,7 +8605,9 @@ export type ReplaceCoreV1NamespacedServiceStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Service: IoK8SApiCoreV1Service
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Service
 }
 export type PatchCoreV1NamespacedServiceStatusApiResponse =
   /** status 200 OK */
@@ -8120,8 +8627,24 @@ export type PatchCoreV1NamespacedServiceStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadCoreV1NamespaceApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1Namespace
 export type ReadCoreV1NamespaceApiArg = {
@@ -8144,7 +8667,9 @@ export type ReplaceCoreV1NamespaceApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Namespace: IoK8SApiCoreV1Namespace
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Namespace
 }
 export type DeleteCoreV1NamespaceApiResponse =
   /** status 200 OK */
@@ -8163,7 +8688,9 @@ export type DeleteCoreV1NamespaceApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NamespaceApiResponse =
   /** status 200 OK */
@@ -8181,8 +8708,24 @@ export type PatchCoreV1NamespaceApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReplaceCoreV1NamespaceFinalizeApiResponse =
   /** status 200 OK */
   IoK8SApiCoreV1Namespace | /** status 201 Created */ IoK8SApiCoreV1Namespace
@@ -8197,7 +8740,9 @@ export type ReplaceCoreV1NamespaceFinalizeApiArg = {
   name: string
   /** If 'true', then the output is pretty printed. */
   pretty?: string
-  ioK8SApiCoreV1Namespace: IoK8SApiCoreV1Namespace
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Namespace
 }
 export type ReadCoreV1NamespaceStatusApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1Namespace
@@ -8221,7 +8766,9 @@ export type ReplaceCoreV1NamespaceStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Namespace: IoK8SApiCoreV1Namespace
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Namespace
 }
 export type PatchCoreV1NamespaceStatusApiResponse =
   /** status 200 OK */
@@ -8239,8 +8786,24 @@ export type PatchCoreV1NamespaceStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1NodeApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1NodeList
 export type ListCoreV1NodeApiArg = {
@@ -8301,7 +8864,9 @@ export type CreateCoreV1NodeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Node: IoK8SApiCoreV1Node
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Node
 }
 export type DeleteCoreV1CollectionNodeApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -8352,7 +8917,9 @@ export type DeleteCoreV1CollectionNodeApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1NodeApiResponse = /** status 200 OK */ IoK8SApiCoreV1Node
 export type ReadCoreV1NodeApiArg = {
@@ -8375,7 +8942,9 @@ export type ReplaceCoreV1NodeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Node: IoK8SApiCoreV1Node
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Node
 }
 export type DeleteCoreV1NodeApiResponse =
   /** status 200 OK */
@@ -8394,7 +8963,9 @@ export type DeleteCoreV1NodeApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1NodeApiResponse =
   /** status 200 OK */
@@ -8412,8 +8983,24 @@ export type PatchCoreV1NodeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ConnectCoreV1GetNodeProxyApiResponse = /** status 200 OK */ string
 export type ConnectCoreV1GetNodeProxyApiArg = {
   /** name of the NodeProxyOptions */
@@ -8557,7 +9144,9 @@ export type ReplaceCoreV1NodeStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1Node: IoK8SApiCoreV1Node
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1Node
 }
 export type PatchCoreV1NodeStatusApiResponse =
   /** status 200 OK */
@@ -8575,8 +9164,24 @@ export type PatchCoreV1NodeStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolumeClaimList
 export type ListCoreV1PersistentVolumeClaimForAllNamespacesApiArg = {
@@ -8683,7 +9288,9 @@ export type CreateCoreV1PersistentVolumeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1PersistentVolume: IoK8SApiCoreV1PersistentVolume
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1PersistentVolume
 }
 export type DeleteCoreV1CollectionPersistentVolumeApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -8734,7 +9341,9 @@ export type DeleteCoreV1CollectionPersistentVolumeApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadCoreV1PersistentVolumeApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolume
@@ -8759,7 +9368,9 @@ export type ReplaceCoreV1PersistentVolumeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1PersistentVolume: IoK8SApiCoreV1PersistentVolume
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1PersistentVolume
 }
 export type DeleteCoreV1PersistentVolumeApiResponse =
   /** status 200 OK */
@@ -8778,7 +9389,9 @@ export type DeleteCoreV1PersistentVolumeApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchCoreV1PersistentVolumeApiResponse =
   /** status 200 OK */
@@ -8797,8 +9410,24 @@ export type PatchCoreV1PersistentVolumeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadCoreV1PersistentVolumeStatusApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolume
 export type ReadCoreV1PersistentVolumeStatusApiArg = {
@@ -8822,7 +9451,9 @@ export type ReplaceCoreV1PersistentVolumeStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiCoreV1PersistentVolume: IoK8SApiCoreV1PersistentVolume
+} & {
+  contentType?: string
+  body: IoK8SApiCoreV1PersistentVolume
 }
 export type PatchCoreV1PersistentVolumeStatusApiResponse =
   /** status 200 OK */
@@ -8841,8 +9472,24 @@ export type PatchCoreV1PersistentVolumeStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreV1PodForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PodList
 export type ListCoreV1PodForAllNamespacesApiArg = {

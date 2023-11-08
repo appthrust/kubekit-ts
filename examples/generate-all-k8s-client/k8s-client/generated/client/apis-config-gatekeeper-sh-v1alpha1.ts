@@ -55,7 +55,8 @@ export const createConfigGatekeeperShV1Alpha1NamespacedConfig = (
     {
       path: `/apis/config.gatekeeper.sh/v1alpha1/namespaces/${args['namespace']}/configs`,
       method: 'POST',
-      body: args.shGatekeeperConfigV1Alpha1Config,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -111,7 +112,8 @@ export const replaceConfigGatekeeperShV1Alpha1NamespacedConfig = (
     {
       path: `/apis/config.gatekeeper.sh/v1alpha1/namespaces/${args['namespace']}/configs/${args.name}`,
       method: 'PUT',
-      body: args.shGatekeeperConfigV1Alpha1Config,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -130,7 +132,8 @@ export const deleteConfigGatekeeperShV1Alpha1NamespacedConfig = (
     {
       path: `/apis/config.gatekeeper.sh/v1alpha1/namespaces/${args['namespace']}/configs/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -150,7 +153,8 @@ export const patchConfigGatekeeperShV1Alpha1NamespacedConfig = (
     {
       path: `/apis/config.gatekeeper.sh/v1alpha1/namespaces/${args['namespace']}/configs/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -272,8 +276,16 @@ export type CreateConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperConfigV1Alpha1Config: ShGatekeeperConfigV1Alpha1Config
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperConfigV1Alpha1Config
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperConfigV1Alpha1Config
+    }
+)
 export type DeleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfigApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfigApiArg = {
@@ -353,8 +365,16 @@ export type ReplaceConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  shGatekeeperConfigV1Alpha1Config: ShGatekeeperConfigV1Alpha1Config
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: ShGatekeeperConfigV1Alpha1Config
+    }
+  | {
+      contentType: 'application/yaml'
+      body: ShGatekeeperConfigV1Alpha1Config
+    }
+)
 export type DeleteConfigGatekeeperShV1Alpha1NamespacedConfigApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -374,8 +394,16 @@ export type DeleteConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchConfigGatekeeperShV1Alpha1NamespacedConfigApiResponse =
   /** status 200 OK */ ShGatekeeperConfigV1Alpha1Config
 export type PatchConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
@@ -393,8 +421,20 @@ export type PatchConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
 export type IoK8SApimachineryPkgApisMetaV1ManagedFieldsEntry = {

@@ -31,7 +31,8 @@ export const createOperatorTigeraIoV1ApiServer = (
     {
       path: `/apis/operator.tigera.io/v1/apiservers`,
       method: 'POST',
-      body: args.ioTigeraOperatorV1ApiServer,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -87,7 +88,8 @@ export const replaceOperatorTigeraIoV1ApiServer = (
     {
       path: `/apis/operator.tigera.io/v1/apiservers/${args.name}`,
       method: 'PUT',
-      body: args.ioTigeraOperatorV1ApiServer,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -106,7 +108,8 @@ export const deleteOperatorTigeraIoV1ApiServer = (
     {
       path: `/apis/operator.tigera.io/v1/apiservers/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -126,7 +129,8 @@ export const patchOperatorTigeraIoV1ApiServer = (
     {
       path: `/apis/operator.tigera.io/v1/apiservers/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -158,7 +162,8 @@ export const replaceOperatorTigeraIoV1ApiServerStatus = (
     {
       path: `/apis/operator.tigera.io/v1/apiservers/${args.name}/status`,
       method: 'PUT',
-      body: args.ioTigeraOperatorV1ApiServer,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +182,8 @@ export const patchOperatorTigeraIoV1ApiServerStatus = (
     {
       path: `/apis/operator.tigera.io/v1/apiservers/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -221,7 +227,8 @@ export const createOperatorTigeraIoV1ImageSet = (
     {
       path: `/apis/operator.tigera.io/v1/imagesets`,
       method: 'POST',
-      body: args.ioTigeraOperatorV1ImageSet,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -277,7 +284,8 @@ export const replaceOperatorTigeraIoV1ImageSet = (
     {
       path: `/apis/operator.tigera.io/v1/imagesets/${args.name}`,
       method: 'PUT',
-      body: args.ioTigeraOperatorV1ImageSet,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -296,7 +304,8 @@ export const deleteOperatorTigeraIoV1ImageSet = (
     {
       path: `/apis/operator.tigera.io/v1/imagesets/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -316,7 +325,8 @@ export const patchOperatorTigeraIoV1ImageSet = (
     {
       path: `/apis/operator.tigera.io/v1/imagesets/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -348,7 +358,8 @@ export const replaceOperatorTigeraIoV1ImageSetStatus = (
     {
       path: `/apis/operator.tigera.io/v1/imagesets/${args.name}/status`,
       method: 'PUT',
-      body: args.ioTigeraOperatorV1ImageSet,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -367,7 +378,8 @@ export const patchOperatorTigeraIoV1ImageSetStatus = (
     {
       path: `/apis/operator.tigera.io/v1/imagesets/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -411,7 +423,8 @@ export const createOperatorTigeraIoV1Installation = (
     {
       path: `/apis/operator.tigera.io/v1/installations`,
       method: 'POST',
-      body: args.ioTigeraOperatorV1Installation,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -467,7 +480,8 @@ export const replaceOperatorTigeraIoV1Installation = (
     {
       path: `/apis/operator.tigera.io/v1/installations/${args.name}`,
       method: 'PUT',
-      body: args.ioTigeraOperatorV1Installation,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -486,7 +500,8 @@ export const deleteOperatorTigeraIoV1Installation = (
     {
       path: `/apis/operator.tigera.io/v1/installations/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -506,7 +521,8 @@ export const patchOperatorTigeraIoV1Installation = (
     {
       path: `/apis/operator.tigera.io/v1/installations/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -538,7 +554,8 @@ export const replaceOperatorTigeraIoV1InstallationStatus = (
     {
       path: `/apis/operator.tigera.io/v1/installations/${args.name}/status`,
       method: 'PUT',
-      body: args.ioTigeraOperatorV1Installation,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -557,7 +574,8 @@ export const patchOperatorTigeraIoV1InstallationStatus = (
     {
       path: `/apis/operator.tigera.io/v1/installations/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -601,7 +619,8 @@ export const createOperatorTigeraIoV1TigeraStatus = (
     {
       path: `/apis/operator.tigera.io/v1/tigerastatuses`,
       method: 'POST',
-      body: args.ioTigeraOperatorV1TigeraStatus,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -657,7 +676,8 @@ export const replaceOperatorTigeraIoV1TigeraStatus = (
     {
       path: `/apis/operator.tigera.io/v1/tigerastatuses/${args.name}`,
       method: 'PUT',
-      body: args.ioTigeraOperatorV1TigeraStatus,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -676,7 +696,8 @@ export const deleteOperatorTigeraIoV1TigeraStatus = (
     {
       path: `/apis/operator.tigera.io/v1/tigerastatuses/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -696,7 +717,8 @@ export const patchOperatorTigeraIoV1TigeraStatus = (
     {
       path: `/apis/operator.tigera.io/v1/tigerastatuses/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -728,7 +750,8 @@ export const replaceOperatorTigeraIoV1TigeraStatusStatus = (
     {
       path: `/apis/operator.tigera.io/v1/tigerastatuses/${args.name}/status`,
       method: 'PUT',
-      body: args.ioTigeraOperatorV1TigeraStatus,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -747,7 +770,8 @@ export const patchOperatorTigeraIoV1TigeraStatusStatus = (
     {
       path: `/apis/operator.tigera.io/v1/tigerastatuses/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -819,8 +843,16 @@ export type CreateOperatorTigeraIoV1ApiServerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1ApiServer: IoTigeraOperatorV1ApiServer
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1ApiServer
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1ApiServer
+    }
+)
 export type DeleteOperatorTigeraIoV1CollectionApiServerApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1CollectionApiServerApiArg = {
@@ -894,8 +926,16 @@ export type ReplaceOperatorTigeraIoV1ApiServerApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1ApiServer: IoTigeraOperatorV1ApiServer
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1ApiServer
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1ApiServer
+    }
+)
 export type DeleteOperatorTigeraIoV1ApiServerApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -913,8 +953,16 @@ export type DeleteOperatorTigeraIoV1ApiServerApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchOperatorTigeraIoV1ApiServerApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ApiServer
 export type PatchOperatorTigeraIoV1ApiServerApiArg = {
@@ -930,8 +978,20 @@ export type PatchOperatorTigeraIoV1ApiServerApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadOperatorTigeraIoV1ApiServerStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ApiServer
 export type ReadOperatorTigeraIoV1ApiServerStatusApiArg = {
@@ -959,8 +1019,16 @@ export type ReplaceOperatorTigeraIoV1ApiServerStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1ApiServer: IoTigeraOperatorV1ApiServer
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1ApiServer
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1ApiServer
+    }
+)
 export type PatchOperatorTigeraIoV1ApiServerStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ApiServer
 export type PatchOperatorTigeraIoV1ApiServerStatusApiArg = {
@@ -976,8 +1044,20 @@ export type PatchOperatorTigeraIoV1ApiServerStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListOperatorTigeraIoV1ImageSetApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ImageSetList
 export type ListOperatorTigeraIoV1ImageSetApiArg = {
@@ -1038,8 +1118,16 @@ export type CreateOperatorTigeraIoV1ImageSetApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1ImageSet: IoTigeraOperatorV1ImageSet
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1ImageSet
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1ImageSet
+    }
+)
 export type DeleteOperatorTigeraIoV1CollectionImageSetApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1CollectionImageSetApiArg = {
@@ -1113,8 +1201,16 @@ export type ReplaceOperatorTigeraIoV1ImageSetApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1ImageSet: IoTigeraOperatorV1ImageSet
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1ImageSet
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1ImageSet
+    }
+)
 export type DeleteOperatorTigeraIoV1ImageSetApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1132,8 +1228,16 @@ export type DeleteOperatorTigeraIoV1ImageSetApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchOperatorTigeraIoV1ImageSetApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ImageSet
 export type PatchOperatorTigeraIoV1ImageSetApiArg = {
@@ -1149,8 +1253,20 @@ export type PatchOperatorTigeraIoV1ImageSetApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadOperatorTigeraIoV1ImageSetStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ImageSet
 export type ReadOperatorTigeraIoV1ImageSetStatusApiArg = {
@@ -1178,8 +1294,16 @@ export type ReplaceOperatorTigeraIoV1ImageSetStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1ImageSet: IoTigeraOperatorV1ImageSet
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1ImageSet
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1ImageSet
+    }
+)
 export type PatchOperatorTigeraIoV1ImageSetStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ImageSet
 export type PatchOperatorTigeraIoV1ImageSetStatusApiArg = {
@@ -1195,8 +1319,20 @@ export type PatchOperatorTigeraIoV1ImageSetStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListOperatorTigeraIoV1InstallationApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1InstallationList
 export type ListOperatorTigeraIoV1InstallationApiArg = {
@@ -1257,8 +1393,16 @@ export type CreateOperatorTigeraIoV1InstallationApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1Installation: IoTigeraOperatorV1Installation
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1Installation
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1Installation
+    }
+)
 export type DeleteOperatorTigeraIoV1CollectionInstallationApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1CollectionInstallationApiArg = {
@@ -1332,8 +1476,16 @@ export type ReplaceOperatorTigeraIoV1InstallationApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1Installation: IoTigeraOperatorV1Installation
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1Installation
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1Installation
+    }
+)
 export type DeleteOperatorTigeraIoV1InstallationApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1351,8 +1503,16 @@ export type DeleteOperatorTigeraIoV1InstallationApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchOperatorTigeraIoV1InstallationApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1Installation
 export type PatchOperatorTigeraIoV1InstallationApiArg = {
@@ -1368,8 +1528,20 @@ export type PatchOperatorTigeraIoV1InstallationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadOperatorTigeraIoV1InstallationStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1Installation
 export type ReadOperatorTigeraIoV1InstallationStatusApiArg = {
@@ -1397,8 +1569,16 @@ export type ReplaceOperatorTigeraIoV1InstallationStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1Installation: IoTigeraOperatorV1Installation
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1Installation
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1Installation
+    }
+)
 export type PatchOperatorTigeraIoV1InstallationStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1Installation
 export type PatchOperatorTigeraIoV1InstallationStatusApiArg = {
@@ -1414,8 +1594,20 @@ export type PatchOperatorTigeraIoV1InstallationStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListOperatorTigeraIoV1TigeraStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1TigeraStatusList
 export type ListOperatorTigeraIoV1TigeraStatusApiArg = {
@@ -1476,8 +1668,16 @@ export type CreateOperatorTigeraIoV1TigeraStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1TigeraStatus: IoTigeraOperatorV1TigeraStatus
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1TigeraStatus
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1TigeraStatus
+    }
+)
 export type DeleteOperatorTigeraIoV1CollectionTigeraStatusApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1CollectionTigeraStatusApiArg = {
@@ -1551,8 +1751,16 @@ export type ReplaceOperatorTigeraIoV1TigeraStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1TigeraStatus: IoTigeraOperatorV1TigeraStatus
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1TigeraStatus
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1TigeraStatus
+    }
+)
 export type DeleteOperatorTigeraIoV1TigeraStatusApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1570,8 +1778,16 @@ export type DeleteOperatorTigeraIoV1TigeraStatusApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchOperatorTigeraIoV1TigeraStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1TigeraStatus
 export type PatchOperatorTigeraIoV1TigeraStatusApiArg = {
@@ -1587,8 +1803,20 @@ export type PatchOperatorTigeraIoV1TigeraStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadOperatorTigeraIoV1TigeraStatusStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1TigeraStatus
 export type ReadOperatorTigeraIoV1TigeraStatusStatusApiArg = {
@@ -1616,8 +1844,16 @@ export type ReplaceOperatorTigeraIoV1TigeraStatusStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioTigeraOperatorV1TigeraStatus: IoTigeraOperatorV1TigeraStatus
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoTigeraOperatorV1TigeraStatus
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoTigeraOperatorV1TigeraStatus
+    }
+)
 export type PatchOperatorTigeraIoV1TigeraStatusStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1TigeraStatus
 export type PatchOperatorTigeraIoV1TigeraStatusStatusApiArg = {
@@ -1633,8 +1869,20 @@ export type PatchOperatorTigeraIoV1TigeraStatusStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type IoK8SApimachineryPkgApisMetaV1Time = string
 export type IoK8SApimachineryPkgApisMetaV1FieldsV1 = object
 export type IoK8SApimachineryPkgApisMetaV1ManagedFieldsEntry = {

@@ -40,7 +40,8 @@ export const createStorageV1CsiDriver = (
     {
       path: `/apis/storage.k8s.io/v1/csidrivers`,
       method: 'POST',
-      body: args.ioK8SApiStorageV1CsiDriver,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -59,7 +60,8 @@ export const deleteStorageV1CollectionCsiDriver = (
     {
       path: `/apis/storage.k8s.io/v1/csidrivers`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -99,7 +101,8 @@ export const replaceStorageV1CsiDriver = (
     {
       path: `/apis/storage.k8s.io/v1/csidrivers/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiStorageV1CsiDriver,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -118,7 +121,8 @@ export const deleteStorageV1CsiDriver = (
     {
       path: `/apis/storage.k8s.io/v1/csidrivers/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -138,7 +142,8 @@ export const patchStorageV1CsiDriver = (
     {
       path: `/apis/storage.k8s.io/v1/csidrivers/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -182,7 +187,8 @@ export const createStorageV1CsiNode = (
     {
       path: `/apis/storage.k8s.io/v1/csinodes`,
       method: 'POST',
-      body: args.ioK8SApiStorageV1CsiNode,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -201,7 +207,8 @@ export const deleteStorageV1CollectionCsiNode = (
     {
       path: `/apis/storage.k8s.io/v1/csinodes`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -241,7 +248,8 @@ export const replaceStorageV1CsiNode = (
     {
       path: `/apis/storage.k8s.io/v1/csinodes/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiStorageV1CsiNode,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -260,7 +268,8 @@ export const deleteStorageV1CsiNode = (
     {
       path: `/apis/storage.k8s.io/v1/csinodes/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -280,7 +289,8 @@ export const patchStorageV1CsiNode = (
     {
       path: `/apis/storage.k8s.io/v1/csinodes/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -348,7 +358,8 @@ export const createStorageV1NamespacedCsiStorageCapacity = (
     {
       path: `/apis/storage.k8s.io/v1/namespaces/${args['namespace']}/csistoragecapacities`,
       method: 'POST',
-      body: args.ioK8SApiStorageV1CsiStorageCapacity,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -367,7 +378,8 @@ export const deleteStorageV1CollectionNamespacedCsiStorageCapacity = (
     {
       path: `/apis/storage.k8s.io/v1/namespaces/${args['namespace']}/csistoragecapacities`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -407,7 +419,8 @@ export const replaceStorageV1NamespacedCsiStorageCapacity = (
     {
       path: `/apis/storage.k8s.io/v1/namespaces/${args['namespace']}/csistoragecapacities/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiStorageV1CsiStorageCapacity,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -426,7 +439,8 @@ export const deleteStorageV1NamespacedCsiStorageCapacity = (
     {
       path: `/apis/storage.k8s.io/v1/namespaces/${args['namespace']}/csistoragecapacities/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -446,7 +460,8 @@ export const patchStorageV1NamespacedCsiStorageCapacity = (
     {
       path: `/apis/storage.k8s.io/v1/namespaces/${args['namespace']}/csistoragecapacities/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -490,7 +505,8 @@ export const createStorageV1StorageClass = (
     {
       path: `/apis/storage.k8s.io/v1/storageclasses`,
       method: 'POST',
-      body: args.ioK8SApiStorageV1StorageClass,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -509,7 +525,8 @@ export const deleteStorageV1CollectionStorageClass = (
     {
       path: `/apis/storage.k8s.io/v1/storageclasses`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -549,7 +566,8 @@ export const replaceStorageV1StorageClass = (
     {
       path: `/apis/storage.k8s.io/v1/storageclasses/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiStorageV1StorageClass,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -568,7 +586,8 @@ export const deleteStorageV1StorageClass = (
     {
       path: `/apis/storage.k8s.io/v1/storageclasses/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -588,7 +607,8 @@ export const patchStorageV1StorageClass = (
     {
       path: `/apis/storage.k8s.io/v1/storageclasses/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -632,7 +652,8 @@ export const createStorageV1VolumeAttachment = (
     {
       path: `/apis/storage.k8s.io/v1/volumeattachments`,
       method: 'POST',
-      body: args.ioK8SApiStorageV1VolumeAttachment,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -651,7 +672,8 @@ export const deleteStorageV1CollectionVolumeAttachment = (
     {
       path: `/apis/storage.k8s.io/v1/volumeattachments`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -691,7 +713,8 @@ export const replaceStorageV1VolumeAttachment = (
     {
       path: `/apis/storage.k8s.io/v1/volumeattachments/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiStorageV1VolumeAttachment,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -710,7 +733,8 @@ export const deleteStorageV1VolumeAttachment = (
     {
       path: `/apis/storage.k8s.io/v1/volumeattachments/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -730,7 +754,8 @@ export const patchStorageV1VolumeAttachment = (
     {
       path: `/apis/storage.k8s.io/v1/volumeattachments/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -762,7 +787,8 @@ export const replaceStorageV1VolumeAttachmentStatus = (
     {
       path: `/apis/storage.k8s.io/v1/volumeattachments/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiStorageV1VolumeAttachment,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -781,7 +807,8 @@ export const patchStorageV1VolumeAttachmentStatus = (
     {
       path: `/apis/storage.k8s.io/v1/volumeattachments/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -1120,7 +1147,9 @@ export type CreateStorageV1CsiDriverApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1CsiDriver: IoK8SApiStorageV1CsiDriver
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1CsiDriver
 }
 export type DeleteStorageV1CollectionCsiDriverApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -1171,7 +1200,9 @@ export type DeleteStorageV1CollectionCsiDriverApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadStorageV1CsiDriverApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1CsiDriver
@@ -1196,7 +1227,9 @@ export type ReplaceStorageV1CsiDriverApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1CsiDriver: IoK8SApiStorageV1CsiDriver
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1CsiDriver
 }
 export type DeleteStorageV1CsiDriverApiResponse =
   /** status 200 OK */
@@ -1215,7 +1248,9 @@ export type DeleteStorageV1CsiDriverApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchStorageV1CsiDriverApiResponse =
   /** status 200 OK */
@@ -1234,8 +1269,24 @@ export type PatchStorageV1CsiDriverApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListStorageV1CsiNodeApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1CsiNodeList
 export type ListStorageV1CsiNodeApiArg = {
@@ -1296,7 +1347,9 @@ export type CreateStorageV1CsiNodeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1CsiNode: IoK8SApiStorageV1CsiNode
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1CsiNode
 }
 export type DeleteStorageV1CollectionCsiNodeApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -1347,7 +1400,9 @@ export type DeleteStorageV1CollectionCsiNodeApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadStorageV1CsiNodeApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1CsiNode
@@ -1371,7 +1426,9 @@ export type ReplaceStorageV1CsiNodeApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1CsiNode: IoK8SApiStorageV1CsiNode
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1CsiNode
 }
 export type DeleteStorageV1CsiNodeApiResponse =
   /** status 200 OK */
@@ -1389,7 +1446,9 @@ export type DeleteStorageV1CsiNodeApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchStorageV1CsiNodeApiResponse =
   /** status 200 OK */
@@ -1407,8 +1466,24 @@ export type PatchStorageV1CsiNodeApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListStorageV1CsiStorageCapacityForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1CsiStorageCapacityList
 export type ListStorageV1CsiStorageCapacityForAllNamespacesApiArg = {
@@ -1519,7 +1594,9 @@ export type CreateStorageV1NamespacedCsiStorageCapacityApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1CsiStorageCapacity: IoK8SApiStorageV1CsiStorageCapacity
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1CsiStorageCapacity
 }
 export type DeleteStorageV1CollectionNamespacedCsiStorageCapacityApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -1572,7 +1649,9 @@ export type DeleteStorageV1CollectionNamespacedCsiStorageCapacityApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadStorageV1NamespacedCsiStorageCapacityApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1CsiStorageCapacity
@@ -1601,7 +1680,9 @@ export type ReplaceStorageV1NamespacedCsiStorageCapacityApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1CsiStorageCapacity: IoK8SApiStorageV1CsiStorageCapacity
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1CsiStorageCapacity
 }
 export type DeleteStorageV1NamespacedCsiStorageCapacityApiResponse =
   /** status 200 OK */
@@ -1622,7 +1703,9 @@ export type DeleteStorageV1NamespacedCsiStorageCapacityApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchStorageV1NamespacedCsiStorageCapacityApiResponse =
   /** status 200 OK */
@@ -1643,8 +1726,24 @@ export type PatchStorageV1NamespacedCsiStorageCapacityApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListStorageV1StorageClassApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1StorageClassList
 export type ListStorageV1StorageClassApiArg = {
@@ -1705,7 +1804,9 @@ export type CreateStorageV1StorageClassApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1StorageClass: IoK8SApiStorageV1StorageClass
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1StorageClass
 }
 export type DeleteStorageV1CollectionStorageClassApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -1756,7 +1857,9 @@ export type DeleteStorageV1CollectionStorageClassApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadStorageV1StorageClassApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1StorageClass
@@ -1781,7 +1884,9 @@ export type ReplaceStorageV1StorageClassApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1StorageClass: IoK8SApiStorageV1StorageClass
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1StorageClass
 }
 export type DeleteStorageV1StorageClassApiResponse =
   /** status 200 OK */
@@ -1800,7 +1905,9 @@ export type DeleteStorageV1StorageClassApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchStorageV1StorageClassApiResponse =
   /** status 200 OK */
@@ -1819,8 +1926,24 @@ export type PatchStorageV1StorageClassApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListStorageV1VolumeAttachmentApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1VolumeAttachmentList
 export type ListStorageV1VolumeAttachmentApiArg = {
@@ -1881,7 +2004,9 @@ export type CreateStorageV1VolumeAttachmentApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1VolumeAttachment: IoK8SApiStorageV1VolumeAttachment
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1VolumeAttachment
 }
 export type DeleteStorageV1CollectionVolumeAttachmentApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -1932,7 +2057,9 @@ export type DeleteStorageV1CollectionVolumeAttachmentApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadStorageV1VolumeAttachmentApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1VolumeAttachment
@@ -1957,7 +2084,9 @@ export type ReplaceStorageV1VolumeAttachmentApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1VolumeAttachment: IoK8SApiStorageV1VolumeAttachment
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1VolumeAttachment
 }
 export type DeleteStorageV1VolumeAttachmentApiResponse =
   /** status 200 OK */
@@ -1976,7 +2105,9 @@ export type DeleteStorageV1VolumeAttachmentApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchStorageV1VolumeAttachmentApiResponse =
   /** status 200 OK */
@@ -1995,8 +2126,24 @@ export type PatchStorageV1VolumeAttachmentApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadStorageV1VolumeAttachmentStatusApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1VolumeAttachment
 export type ReadStorageV1VolumeAttachmentStatusApiArg = {
@@ -2020,7 +2167,9 @@ export type ReplaceStorageV1VolumeAttachmentStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiStorageV1VolumeAttachment: IoK8SApiStorageV1VolumeAttachment
+} & {
+  contentType?: string
+  body: IoK8SApiStorageV1VolumeAttachment
 }
 export type PatchStorageV1VolumeAttachmentStatusApiResponse =
   /** status 200 OK */
@@ -2039,8 +2188,24 @@ export type PatchStorageV1VolumeAttachmentStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type WatchStorageV1CsiDriverListApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1WatchEvent
 export type WatchStorageV1CsiDriverListApiArg = {

@@ -55,7 +55,8 @@ export const createSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies`,
       method: 'POST',
-      body: args.ioIstioSecurityV1Beta1AuthorizationPolicy,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -112,7 +113,8 @@ export const replaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies/${args.name}`,
       method: 'PUT',
-      body: args.ioIstioSecurityV1Beta1AuthorizationPolicy,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -131,7 +133,8 @@ export const deleteSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -151,7 +154,8 @@ export const patchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -184,7 +188,8 @@ export const replaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatus =
       {
         path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies/${args.name}/status`,
         method: 'PUT',
-        body: args.ioIstioSecurityV1Beta1AuthorizationPolicy,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -203,7 +208,8 @@ export const patchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatus = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -247,7 +253,8 @@ export const createSecurityIstioIoV1Beta1NamespacedPeerAuthentication = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications`,
       method: 'POST',
-      body: args.ioIstioSecurityV1Beta1PeerAuthentication,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -304,7 +311,8 @@ export const replaceSecurityIstioIoV1Beta1NamespacedPeerAuthentication = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications/${args.name}`,
       method: 'PUT',
-      body: args.ioIstioSecurityV1Beta1PeerAuthentication,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -323,7 +331,8 @@ export const deleteSecurityIstioIoV1Beta1NamespacedPeerAuthentication = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -343,7 +352,8 @@ export const patchSecurityIstioIoV1Beta1NamespacedPeerAuthentication = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -375,7 +385,8 @@ export const replaceSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatus = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications/${args.name}/status`,
       method: 'PUT',
-      body: args.ioIstioSecurityV1Beta1PeerAuthentication,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -394,7 +405,8 @@ export const patchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatus = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -438,7 +450,8 @@ export const createSecurityIstioIoV1Beta1NamespacedRequestAuthentication = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications`,
       method: 'POST',
-      body: args.ioIstioSecurityV1Beta1RequestAuthentication,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -495,7 +508,8 @@ export const replaceSecurityIstioIoV1Beta1NamespacedRequestAuthentication = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications/${args.name}`,
       method: 'PUT',
-      body: args.ioIstioSecurityV1Beta1RequestAuthentication,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -514,7 +528,8 @@ export const deleteSecurityIstioIoV1Beta1NamespacedRequestAuthentication = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -534,7 +549,8 @@ export const patchSecurityIstioIoV1Beta1NamespacedRequestAuthentication = (
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -567,7 +583,8 @@ export const replaceSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatus 
       {
         path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications/${args.name}/status`,
         method: 'PUT',
-        body: args.ioIstioSecurityV1Beta1RequestAuthentication,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -587,7 +604,8 @@ export const patchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatus =
       {
         path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications/${args.name}/status`,
         method: 'PATCH',
-        body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+        body: args.body,
+        contentType: args.contentType,
         params: {
           pretty: args.pretty,
           dryRun: args.dryRun,
@@ -758,8 +776,16 @@ export type CreateSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioSecurityV1Beta1AuthorizationPolicy: IoIstioSecurityV1Beta1AuthorizationPolicy
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioSecurityV1Beta1AuthorizationPolicy
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioSecurityV1Beta1AuthorizationPolicy
+    }
+)
 export type DeleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicyApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicyApiArg =
@@ -840,8 +866,16 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioSecurityV1Beta1AuthorizationPolicy: IoIstioSecurityV1Beta1AuthorizationPolicy
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioSecurityV1Beta1AuthorizationPolicy
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioSecurityV1Beta1AuthorizationPolicy
+    }
+)
 export type DeleteSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -861,8 +895,16 @@ export type DeleteSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1AuthorizationPolicy
 export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
@@ -880,8 +922,20 @@ export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1AuthorizationPolicy
 export type ReadSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiArg =
@@ -915,8 +969,16 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiA
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioIstioSecurityV1Beta1AuthorizationPolicy: IoIstioSecurityV1Beta1AuthorizationPolicy
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoIstioSecurityV1Beta1AuthorizationPolicy
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoIstioSecurityV1Beta1AuthorizationPolicy
+      }
+  )
 export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1AuthorizationPolicy
 export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiArg =
@@ -935,8 +997,20 @@ export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiArg
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-  }
+  } & (
+    | {
+        contentType: 'application/apply-patch+yaml'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/json-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+  )
 export type ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1PeerAuthenticationList
 export type ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
@@ -1001,8 +1075,16 @@ export type CreateSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioSecurityV1Beta1PeerAuthentication: IoIstioSecurityV1Beta1PeerAuthentication
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioSecurityV1Beta1PeerAuthentication
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioSecurityV1Beta1PeerAuthentication
+    }
+)
 export type DeleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthenticationApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthenticationApiArg =
@@ -1083,8 +1165,16 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioIstioSecurityV1Beta1PeerAuthentication: IoIstioSecurityV1Beta1PeerAuthentication
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoIstioSecurityV1Beta1PeerAuthentication
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoIstioSecurityV1Beta1PeerAuthentication
+    }
+)
 export type DeleteSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1104,8 +1194,16 @@ export type DeleteSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1PeerAuthentication
 export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
@@ -1123,8 +1221,20 @@ export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1PeerAuthentication
 export type ReadSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiArg =
@@ -1158,8 +1268,16 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiAr
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioIstioSecurityV1Beta1PeerAuthentication: IoIstioSecurityV1Beta1PeerAuthentication
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoIstioSecurityV1Beta1PeerAuthentication
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoIstioSecurityV1Beta1PeerAuthentication
+      }
+  )
 export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1PeerAuthentication
 export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiArg =
@@ -1178,8 +1296,20 @@ export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiArg 
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-  }
+  } & (
+    | {
+        contentType: 'application/apply-patch+yaml'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/json-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+  )
 export type ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1RequestAuthenticationList
 export type ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg = {
@@ -1245,8 +1375,16 @@ export type CreateSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioIstioSecurityV1Beta1RequestAuthentication: IoIstioSecurityV1Beta1RequestAuthentication
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoIstioSecurityV1Beta1RequestAuthentication
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoIstioSecurityV1Beta1RequestAuthentication
+      }
+  )
 export type DeleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthenticationApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthenticationApiArg =
@@ -1328,8 +1466,16 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg =
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioIstioSecurityV1Beta1RequestAuthentication: IoIstioSecurityV1Beta1RequestAuthentication
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoIstioSecurityV1Beta1RequestAuthentication
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoIstioSecurityV1Beta1RequestAuthentication
+      }
+  )
 export type DeleteSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -1350,8 +1496,16 @@ export type DeleteSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg =
     orphanDependents?: boolean
     /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
     propagationPolicy?: string
-    ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+      }
+  )
 export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1RequestAuthentication
 export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg = {
@@ -1369,8 +1523,20 @@ export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1RequestAuthentication
 export type ReadSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiArg =
@@ -1404,8 +1570,16 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusAp
     fieldManager?: string
     /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
     fieldValidation?: string
-    ioIstioSecurityV1Beta1RequestAuthentication: IoIstioSecurityV1Beta1RequestAuthentication
-  }
+  } & (
+    | {
+        contentType: 'application/json'
+        body: IoIstioSecurityV1Beta1RequestAuthentication
+      }
+    | {
+        contentType: 'application/yaml'
+        body: IoIstioSecurityV1Beta1RequestAuthentication
+      }
+  )
 export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1RequestAuthentication
 export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiArg =
@@ -1424,8 +1598,20 @@ export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiA
     fieldValidation?: string
     /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
     force?: boolean
-    ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-  }
+  } & (
+    | {
+        contentType: 'application/apply-patch+yaml'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/json-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+    | {
+        contentType: 'application/merge-patch+json'
+        body: IoK8SApimachineryPkgApisMetaV1Patch
+      }
+  )
 export type ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiResponse =
   /** status 200 OK */ IoIstioSecurityV1Beta1PeerAuthenticationList
 export type ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiArg =

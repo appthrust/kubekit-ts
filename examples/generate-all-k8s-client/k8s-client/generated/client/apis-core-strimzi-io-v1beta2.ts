@@ -31,7 +31,8 @@ export const createCoreStrimziIoV1Beta2NamespacedStrimziPodSet = (
     {
       path: `/apis/core.strimzi.io/v1beta2/namespaces/${args['namespace']}/strimzipodsets`,
       method: 'POST',
-      body: args.ioStrimziCoreV1Beta2StrimziPodSet,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -87,7 +88,8 @@ export const replaceCoreStrimziIoV1Beta2NamespacedStrimziPodSet = (
     {
       path: `/apis/core.strimzi.io/v1beta2/namespaces/${args['namespace']}/strimzipodsets/${args.name}`,
       method: 'PUT',
-      body: args.ioStrimziCoreV1Beta2StrimziPodSet,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -106,7 +108,8 @@ export const deleteCoreStrimziIoV1Beta2NamespacedStrimziPodSet = (
     {
       path: `/apis/core.strimzi.io/v1beta2/namespaces/${args['namespace']}/strimzipodsets/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -126,7 +129,8 @@ export const patchCoreStrimziIoV1Beta2NamespacedStrimziPodSet = (
     {
       path: `/apis/core.strimzi.io/v1beta2/namespaces/${args['namespace']}/strimzipodsets/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -158,7 +162,8 @@ export const replaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatus = (
     {
       path: `/apis/core.strimzi.io/v1beta2/namespaces/${args['namespace']}/strimzipodsets/${args.name}/status`,
       method: 'PUT',
-      body: args.ioStrimziCoreV1Beta2StrimziPodSet,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -177,7 +182,8 @@ export const patchCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatus = (
     {
       path: `/apis/core.strimzi.io/v1beta2/namespaces/${args['namespace']}/strimzipodsets/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -277,8 +283,16 @@ export type CreateCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziCoreV1Beta2StrimziPodSet: IoStrimziCoreV1Beta2StrimziPodSet
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziCoreV1Beta2StrimziPodSet
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziCoreV1Beta2StrimziPodSet
+    }
+)
 export type DeleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSetApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSetApiArg =
@@ -359,8 +373,16 @@ export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziCoreV1Beta2StrimziPodSet: IoStrimziCoreV1Beta2StrimziPodSet
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziCoreV1Beta2StrimziPodSet
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziCoreV1Beta2StrimziPodSet
+    }
+)
 export type DeleteCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse =
   /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
@@ -380,8 +402,16 @@ export type DeleteCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+    }
+)
 export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse =
   /** status 200 OK */ IoStrimziCoreV1Beta2StrimziPodSet
 export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
@@ -399,8 +429,20 @@ export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiResponse =
   /** status 200 OK */ IoStrimziCoreV1Beta2StrimziPodSet
 export type ReadCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
@@ -432,8 +474,16 @@ export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioStrimziCoreV1Beta2StrimziPodSet: IoStrimziCoreV1Beta2StrimziPodSet
-}
+} & (
+  | {
+      contentType: 'application/json'
+      body: IoStrimziCoreV1Beta2StrimziPodSet
+    }
+  | {
+      contentType: 'application/yaml'
+      body: IoStrimziCoreV1Beta2StrimziPodSet
+    }
+)
 export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiResponse =
   /** status 200 OK */ IoStrimziCoreV1Beta2StrimziPodSet
 export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
@@ -451,8 +501,20 @@ export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiResponse =
   /** status 200 OK */ IoStrimziCoreV1Beta2StrimziPodSetList
 export type ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiArg = {

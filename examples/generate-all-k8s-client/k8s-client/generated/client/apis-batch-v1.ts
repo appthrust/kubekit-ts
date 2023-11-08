@@ -88,7 +88,8 @@ export const createBatchV1NamespacedCronJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/cronjobs`,
       method: 'POST',
-      body: args.ioK8SApiBatchV1CronJob,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -107,7 +108,8 @@ export const deleteBatchV1CollectionNamespacedCronJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/cronjobs`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -147,7 +149,8 @@ export const replaceBatchV1NamespacedCronJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/cronjobs/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiBatchV1CronJob,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -166,7 +169,8 @@ export const deleteBatchV1NamespacedCronJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/cronjobs/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -186,7 +190,8 @@ export const patchBatchV1NamespacedCronJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/cronjobs/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -218,7 +223,8 @@ export const replaceBatchV1NamespacedCronJobStatus = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/cronjobs/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiBatchV1CronJob,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -237,7 +243,8 @@ export const patchBatchV1NamespacedCronJobStatus = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/cronjobs/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -281,7 +288,8 @@ export const createBatchV1NamespacedJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/jobs`,
       method: 'POST',
-      body: args.ioK8SApiBatchV1Job,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -300,7 +308,8 @@ export const deleteBatchV1CollectionNamespacedJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/jobs`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         continue: args['continue'],
@@ -340,7 +349,8 @@ export const replaceBatchV1NamespacedJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/jobs/${args.name}`,
       method: 'PUT',
-      body: args.ioK8SApiBatchV1Job,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -359,7 +369,8 @@ export const deleteBatchV1NamespacedJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/jobs/${args.name}`,
       method: 'DELETE',
-      body: args.ioK8SApimachineryPkgApisMetaV1DeleteOptions,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -379,7 +390,8 @@ export const patchBatchV1NamespacedJob = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/jobs/${args.name}`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -411,7 +423,8 @@ export const replaceBatchV1NamespacedJobStatus = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/jobs/${args.name}/status`,
       method: 'PUT',
-      body: args.ioK8SApiBatchV1Job,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -430,7 +443,8 @@ export const patchBatchV1NamespacedJobStatus = (
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/jobs/${args.name}/status`,
       method: 'PATCH',
-      body: args.ioK8SApimachineryPkgApisMetaV1Patch,
+      body: args.body,
+      contentType: args.contentType,
       params: {
         pretty: args.pretty,
         dryRun: args.dryRun,
@@ -745,7 +759,9 @@ export type CreateBatchV1NamespacedCronJobApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiBatchV1CronJob: IoK8SApiBatchV1CronJob
+} & {
+  contentType?: string
+  body: IoK8SApiBatchV1CronJob
 }
 export type DeleteBatchV1CollectionNamespacedCronJobApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -798,7 +814,9 @@ export type DeleteBatchV1CollectionNamespacedCronJobApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadBatchV1NamespacedCronJobApiResponse =
   /** status 200 OK */ IoK8SApiBatchV1CronJob
@@ -826,7 +844,9 @@ export type ReplaceBatchV1NamespacedCronJobApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiBatchV1CronJob: IoK8SApiBatchV1CronJob
+} & {
+  contentType?: string
+  body: IoK8SApiBatchV1CronJob
 }
 export type DeleteBatchV1NamespacedCronJobApiResponse =
   /** status 200 OK */
@@ -847,7 +867,9 @@ export type DeleteBatchV1NamespacedCronJobApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchBatchV1NamespacedCronJobApiResponse =
   /** status 200 OK */
@@ -867,8 +889,24 @@ export type PatchBatchV1NamespacedCronJobApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadBatchV1NamespacedCronJobStatusApiResponse =
   /** status 200 OK */ IoK8SApiBatchV1CronJob
 export type ReadBatchV1NamespacedCronJobStatusApiArg = {
@@ -895,7 +933,9 @@ export type ReplaceBatchV1NamespacedCronJobStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiBatchV1CronJob: IoK8SApiBatchV1CronJob
+} & {
+  contentType?: string
+  body: IoK8SApiBatchV1CronJob
 }
 export type PatchBatchV1NamespacedCronJobStatusApiResponse =
   /** status 200 OK */
@@ -915,8 +955,24 @@ export type PatchBatchV1NamespacedCronJobStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ListBatchV1NamespacedJobApiResponse =
   /** status 200 OK */ IoK8SApiBatchV1JobList
 export type ListBatchV1NamespacedJobApiArg = {
@@ -981,7 +1037,9 @@ export type CreateBatchV1NamespacedJobApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiBatchV1Job: IoK8SApiBatchV1Job
+} & {
+  contentType?: string
+  body: IoK8SApiBatchV1Job
 }
 export type DeleteBatchV1CollectionNamespacedJobApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
@@ -1034,7 +1092,9 @@ export type DeleteBatchV1CollectionNamespacedJobApiArg = {
   sendInitialEvents?: boolean
   /** Timeout for the list/watch call. This limits the duration of the call, regardless of any activity or inactivity. */
   timeoutSeconds?: number
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type ReadBatchV1NamespacedJobApiResponse =
   /** status 200 OK */ IoK8SApiBatchV1Job
@@ -1062,7 +1122,9 @@ export type ReplaceBatchV1NamespacedJobApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiBatchV1Job: IoK8SApiBatchV1Job
+} & {
+  contentType?: string
+  body: IoK8SApiBatchV1Job
 }
 export type DeleteBatchV1NamespacedJobApiResponse =
   /** status 200 OK */
@@ -1083,7 +1145,9 @@ export type DeleteBatchV1NamespacedJobApiArg = {
   orphanDependents?: boolean
   /** Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground. */
   propagationPolicy?: string
-  ioK8SApimachineryPkgApisMetaV1DeleteOptions: IoK8SApimachineryPkgApisMetaV1DeleteOptions
+} & {
+  contentType?: string
+  body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
 export type PatchBatchV1NamespacedJobApiResponse =
   /** status 200 OK */
@@ -1103,8 +1167,24 @@ export type PatchBatchV1NamespacedJobApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type ReadBatchV1NamespacedJobStatusApiResponse =
   /** status 200 OK */ IoK8SApiBatchV1Job
 export type ReadBatchV1NamespacedJobStatusApiArg = {
@@ -1131,7 +1211,9 @@ export type ReplaceBatchV1NamespacedJobStatusApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  ioK8SApiBatchV1Job: IoK8SApiBatchV1Job
+} & {
+  contentType?: string
+  body: IoK8SApiBatchV1Job
 }
 export type PatchBatchV1NamespacedJobStatusApiResponse =
   /** status 200 OK */
@@ -1151,8 +1233,24 @@ export type PatchBatchV1NamespacedJobStatusApiArg = {
   fieldValidation?: string
   /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
   force?: boolean
-  ioK8SApimachineryPkgApisMetaV1Patch: IoK8SApimachineryPkgApisMetaV1Patch
-}
+} & (
+  | {
+      contentType: 'application/apply-patch+yaml'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/json-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+  | {
+      contentType: 'application/strategic-merge-patch+json'
+      body: IoK8SApimachineryPkgApisMetaV1Patch
+    }
+)
 export type WatchBatchV1CronJobListForAllNamespacesApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1WatchEvent
 export type WatchBatchV1CronJobListForAllNamespacesApiArg = {
