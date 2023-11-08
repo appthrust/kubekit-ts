@@ -1,4 +1,3 @@
-import fetch, { FetchError } from 'node-fetch';
 import * as https from 'node:https';
 import * as k8s from '@kubernetes/client-node';
 
@@ -50,9 +49,9 @@ const interceptors: Interceptor[] = [
     kc.loadFromDefault();
     const nextOpts: https.RequestOptions = { ...opts };
     // @kubernetes/client-node@0.18用
-    await kc.applytoHTTPSOptions(nextOpts);
+    // await kc.applytoHTTPSOptions(nextOpts);
     // @kubernetes/client-node@0.19用
-    // await kc.applyToHTTPSOptions(nextOpts)
+    await kc.applyToHTTPSOptions(nextOpts);
     const cluster = kc.getCurrentCluster();
     if (cluster?.server) {
       const url = new URL(cluster.server);
