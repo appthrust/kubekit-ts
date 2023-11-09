@@ -62,56 +62,6 @@ async function main() {
     body: {},
   })
 
-  await readCoreV1NamespacedPod({
-    name: 'nginx',
-    namespace: 'default',
-  })
-
-  await patchCoreV1NamespacedPod({
-    name: 'nginx',
-    namespace: 'default',
-    fieldManager: 'kahiro',
-    force: true,
-    contentType: 'application/apply-patch+yaml',
-    body: {
-      apiVersion: 'v1',
-      kind: 'Pod',
-      spec: {
-        dnsPolicy: 'Default',
-      },
-    },
-  })
-
-  await patchCoreV1NamespacedPodStatus({
-    name: 'nginx',
-    namespace: 'default',
-    fieldManager: 'kahiro',
-    force: true,
-    contentType: 'application/apply-patch+yaml',
-    body: {
-      apiVersion: 'v1',
-      kind: 'Pod',
-      status: {
-        phase: 'Failed',
-      },
-    },
-  })
-
-  await patchCoreV1NamespacedPodStatus({
-    name: 'nginx',
-    namespace: 'default',
-    fieldManager: 'kahiro',
-    // force: true,
-    contentType: 'application/apply-patch+yaml',
-    body: {
-      apiVersion: 'v1',
-      kind: 'Pod',
-      status: {
-        phase: 'Failed',
-      },
-    },
-  })
-
   await patchCoreV1NamespacedPod({
     namespace: 'default',
     name: 'nginx',
@@ -144,21 +94,41 @@ async function main() {
     },
   })
 
-  await wait(async () => {
-    const res = await readCoreV1NamespacedPod({
-      name: 'nginx',
-      namespace: 'default',
-    })
-    if (
-      !res.status?.conditions?.find(
-        (c) => c.type === 'Ready' && c.status === 'True'
-      )
-    ) {
-      return retry
-    }
-
-    return res
+  await readCoreV1NamespacedPod({
+    name: 'nginx',
+    namespace: 'default',
   })
+
+  await patchCoreV1NamespacedPodStatus({
+    name: 'nginx',
+    namespace: 'default',
+    fieldManager: 'kahiro',
+    // force: true,
+    contentType: 'application/apply-patch+yaml',
+    body: {
+      apiVersion: 'v1',
+      kind: 'Pod',
+      status: {
+        phase: 'Failed',
+      },
+    },
+  })
+
+  // await wait(async () => {
+  //   const res = await readCoreV1NamespacedPod({
+  //     name: 'nginx',
+  //     namespace: 'default',
+  //   })
+  //   if (
+  //     !res.status?.conditions?.find(
+  //       (c) => c.type === 'Ready' && c.status === 'True'
+  //     )
+  //   ) {
+  //     return retry
+  //   }
+
+  //   return res
+  // })
 
   await deleteCoreV1NamespacedPod({
     name: 'nginx',
