@@ -24,6 +24,7 @@ install-eks-blueprints-add-ons-depends-crds:
 generate-code:
   #!/bin/sh
   kind create cluster --name openapi
+  kubectl config use-context kind-openapi
 
   CURRENT_CONTEXT=$(kubectl config current-context)
 

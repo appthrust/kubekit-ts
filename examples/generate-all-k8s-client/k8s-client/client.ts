@@ -182,7 +182,9 @@ export async function apiClient<Response>(
   const headers: Record<string, string> = {
     ...(httpsOptions.headers as any),
   }
-  if (!httpsOptions.headers?.['Content-Type'] && isJson) {
+  if (contentType) {
+    headers['Content-Type'] = contentType
+  } else if (!httpsOptions.headers?.['Content-Type'] && isJson) {
     headers['Content-Type'] = 'application/json'
   }
 
