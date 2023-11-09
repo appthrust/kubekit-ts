@@ -2709,9 +2709,9 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
 }
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaBridge
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaBridge
-  | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaBridge
+    | IoStrimziKafkaV1Beta2KafkaBridge
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaBridge
+    | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaBridge
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2797,8 +2797,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaBridge
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaBridge
+    | IoStrimziKafkaV1Beta2KafkaBridge
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaBridge
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   /** name of the KafkaBridge */
   name: string
@@ -2824,8 +2824,8 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
 )
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   /** name of the KafkaBridge */
   name: string
@@ -2871,7 +2871,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaBridge
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2898,8 +2898,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
   /** name of the KafkaBridge */
   name: string
@@ -2943,7 +2943,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2970,8 +2970,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaBridge
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaBridge
+    | IoStrimziKafkaV1Beta2KafkaBridge
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaBridge
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
   /** name of the KafkaBridge */
   name: string
@@ -3015,7 +3015,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaBridge
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3076,9 +3076,9 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
 }
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaConnector
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnector
-  | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaConnector
+    | IoStrimziKafkaV1Beta2KafkaConnector
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnector
+    | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaConnector
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3165,8 +3165,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaConnector
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnector
+    | IoStrimziKafkaV1Beta2KafkaConnector
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnector
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   /** name of the KafkaConnector */
   name: string
@@ -3192,8 +3192,8 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
 )
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   /** name of the KafkaConnector */
   name: string
@@ -3239,7 +3239,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaConnector
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3266,8 +3266,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
   /** name of the KafkaConnector */
   name: string
@@ -3311,7 +3311,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3338,8 +3338,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaConnector
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnector
+    | IoStrimziKafkaV1Beta2KafkaConnector
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnector
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
   /** name of the KafkaConnector */
   name: string
@@ -3383,7 +3383,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaConnector
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3444,9 +3444,9 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
 }
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaConnect
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnect
-  | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaConnect
+    | IoStrimziKafkaV1Beta2KafkaConnect
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnect
+    | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaConnect
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3533,8 +3533,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaConnect
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnect
+    | IoStrimziKafkaV1Beta2KafkaConnect
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnect
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   /** name of the KafkaConnect */
   name: string
@@ -3560,8 +3560,8 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
 )
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   /** name of the KafkaConnect */
   name: string
@@ -3607,7 +3607,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaConnect
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3634,8 +3634,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
   /** name of the KafkaConnect */
   name: string
@@ -3679,7 +3679,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3706,8 +3706,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaConnect
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnect
+    | IoStrimziKafkaV1Beta2KafkaConnect
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaConnect
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
   /** name of the KafkaConnect */
   name: string
@@ -3751,7 +3751,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaConnect
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3812,9 +3812,9 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
 }
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaMirrorMaker2
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
-  | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    | IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3901,8 +3901,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaMirrorMaker2
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    | IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   /** name of the KafkaMirrorMaker2 */
   name: string
@@ -3928,8 +3928,8 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
 )
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   /** name of the KafkaMirrorMaker2 */
   name: string
@@ -3975,7 +3975,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
     }
   | {
       contentType: 'application/json-patch+json'
@@ -4002,8 +4002,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg =
   {
     /** name of the KafkaMirrorMaker2 */
@@ -4048,7 +4048,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
   | {
       contentType: 'application/json-patch+json'
@@ -4075,8 +4075,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaMirrorMaker2
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    | IoStrimziKafkaV1Beta2KafkaMirrorMaker2
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker2
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg =
   {
     /** name of the KafkaMirrorMaker2 */
@@ -4122,7 +4122,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg =
   } & (
     | {
         contentType: 'application/apply-patch+yaml'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoStrimziKafkaV1Beta2KafkaMirrorMaker2
       }
     | {
         contentType: 'application/json-patch+json'
@@ -4183,9 +4183,9 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
 }
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaMirrorMaker
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
-  | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    | IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -4272,8 +4272,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaMirrorMaker
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    | IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   /** name of the KafkaMirrorMaker */
   name: string
@@ -4299,8 +4299,8 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
 )
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   /** name of the KafkaMirrorMaker */
   name: string
@@ -4346,7 +4346,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker
     }
   | {
       contentType: 'application/json-patch+json'
@@ -4373,8 +4373,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg =
   {
     /** name of the KafkaMirrorMaker */
@@ -4419,7 +4419,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
   | {
       contentType: 'application/json-patch+json'
@@ -4446,8 +4446,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaMirrorMaker
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    | IoStrimziKafkaV1Beta2KafkaMirrorMaker
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaMirrorMaker
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg =
   {
     /** name of the KafkaMirrorMaker */
@@ -4492,7 +4492,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaMirrorMaker
     }
   | {
       contentType: 'application/json-patch+json'
@@ -4553,9 +4553,9 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
 }
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaRebalance
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaRebalance
-  | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaRebalance
+    | IoStrimziKafkaV1Beta2KafkaRebalance
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaRebalance
+    | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaRebalance
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -4642,8 +4642,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaRebalance
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaRebalance
+    | IoStrimziKafkaV1Beta2KafkaRebalance
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaRebalance
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   /** name of the KafkaRebalance */
   name: string
@@ -4669,8 +4669,8 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
 )
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   /** name of the KafkaRebalance */
   name: string
@@ -4716,7 +4716,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaRebalance
     }
   | {
       contentType: 'application/json-patch+json'
@@ -4743,8 +4743,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaRebalance
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaRebalance
+    | IoStrimziKafkaV1Beta2KafkaRebalance
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaRebalance
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
   /** name of the KafkaRebalance */
   name: string
@@ -4788,7 +4788,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaRebalance
     }
   | {
       contentType: 'application/json-patch+json'
@@ -4849,9 +4849,9 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
 }
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2Kafka
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2Kafka
-  | /** status 202 Accepted */ IoStrimziKafkaV1Beta2Kafka
+    | IoStrimziKafkaV1Beta2Kafka
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2Kafka
+    | /** status 202 Accepted */ IoStrimziKafkaV1Beta2Kafka
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -4937,8 +4937,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2Kafka
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2Kafka
+    | IoStrimziKafkaV1Beta2Kafka
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2Kafka
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   /** name of the Kafka */
   name: string
@@ -4964,8 +4964,8 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
 )
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   /** name of the Kafka */
   name: string
@@ -5011,7 +5011,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2Kafka
     }
   | {
       contentType: 'application/json-patch+json'
@@ -5038,8 +5038,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2Kafka
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2Kafka
+    | IoStrimziKafkaV1Beta2Kafka
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2Kafka
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
   /** name of the Kafka */
   name: string
@@ -5083,7 +5083,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2Kafka
     }
   | {
       contentType: 'application/json-patch+json'
@@ -5144,9 +5144,9 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
 }
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaTopic
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaTopic
-  | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaTopic
+    | IoStrimziKafkaV1Beta2KafkaTopic
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaTopic
+    | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaTopic
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -5232,8 +5232,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaTopic
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaTopic
+    | IoStrimziKafkaV1Beta2KafkaTopic
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaTopic
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   /** name of the KafkaTopic */
   name: string
@@ -5259,8 +5259,8 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
 )
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   /** name of the KafkaTopic */
   name: string
@@ -5306,7 +5306,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaTopic
     }
   | {
       contentType: 'application/json-patch+json'
@@ -5333,8 +5333,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaTopic
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaTopic
+    | IoStrimziKafkaV1Beta2KafkaTopic
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaTopic
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
   /** name of the KafkaTopic */
   name: string
@@ -5378,7 +5378,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaTopic
     }
   | {
       contentType: 'application/json-patch+json'
@@ -5439,9 +5439,9 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
 }
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaUser
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaUser
-  | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaUser
+    | IoStrimziKafkaV1Beta2KafkaUser
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaUser
+    | /** status 202 Accepted */ IoStrimziKafkaV1Beta2KafkaUser
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -5527,8 +5527,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaUser
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaUser
+    | IoStrimziKafkaV1Beta2KafkaUser
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaUser
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   /** name of the KafkaUser */
   name: string
@@ -5554,8 +5554,8 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
 )
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   /** name of the KafkaUser */
   name: string
@@ -5601,7 +5601,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaUser
     }
   | {
       contentType: 'application/json-patch+json'
@@ -5628,8 +5628,8 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
 }
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiResponse =
   /** status 200 OK */
-  | IoStrimziKafkaV1Beta2KafkaUser
-  | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaUser
+    | IoStrimziKafkaV1Beta2KafkaUser
+    | /** status 201 Created */ IoStrimziKafkaV1Beta2KafkaUser
 export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
   /** name of the KafkaUser */
   name: string
@@ -5673,7 +5673,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziKafkaV1Beta2KafkaUser
     }
   | {
       contentType: 'application/json-patch+json'

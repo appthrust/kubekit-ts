@@ -49,7 +49,9 @@ async function main() {
     contentType: 'application/strategic-merge-patch+json',
     body: {
       metadata: {
-        creationTimestamp: null,
+        annotations: {
+          patch: 'true'
+        }
       },
     },
     fieldManager: 'client-side-apply',
@@ -72,7 +74,6 @@ async function main() {
       apiVersion: 'v1',
       kind: 'Pod',
       metadata: {
-        creationTimestamp: null,
         labels: {
           run: 'nginx',
         },
@@ -103,7 +104,6 @@ async function main() {
     name: 'nginx',
     namespace: 'default',
     fieldManager: 'kahiro',
-    // force: true,
     contentType: 'application/apply-patch+yaml',
     body: {
       apiVersion: 'v1',

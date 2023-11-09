@@ -269,9 +269,9 @@ export type ListCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
 }
 export type CreateCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse =
   /** status 200 OK */
-  | IoStrimziCoreV1Beta2StrimziPodSet
-  | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
-  | /** status 202 Accepted */ IoStrimziCoreV1Beta2StrimziPodSet
+    | IoStrimziCoreV1Beta2StrimziPodSet
+    | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
+    | /** status 202 Accepted */ IoStrimziCoreV1Beta2StrimziPodSet
 export type CreateCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -358,8 +358,8 @@ export type ReadCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
 }
 export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse =
   /** status 200 OK */
-  | IoStrimziCoreV1Beta2StrimziPodSet
-  | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
+    | IoStrimziCoreV1Beta2StrimziPodSet
+    | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
 export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   /** name of the StrimziPodSet */
   name: string
@@ -385,8 +385,8 @@ export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
 )
 export type DeleteCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   /** name of the StrimziPodSet */
   name: string
@@ -432,7 +432,7 @@ export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziCoreV1Beta2StrimziPodSet
     }
   | {
       contentType: 'application/json-patch+json'
@@ -459,8 +459,8 @@ export type ReadCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
 }
 export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiResponse =
   /** status 200 OK */
-  | IoStrimziCoreV1Beta2StrimziPodSet
-  | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
+    | IoStrimziCoreV1Beta2StrimziPodSet
+    | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
 export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
   /** name of the StrimziPodSet */
   name: string
@@ -504,7 +504,7 @@ export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziCoreV1Beta2StrimziPodSet
     }
   | {
       contentType: 'application/json-patch+json'

@@ -266,9 +266,9 @@ export type ListMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   }
 export type CreateMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiResponse =
   /** status 200 OK */
-  | ComCoreosMonitoringV1Alpha1AlertmanagerConfig
-  | /** status 201 Created */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
-  | /** status 202 Accepted */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
+    | ComCoreosMonitoringV1Alpha1AlertmanagerConfig
+    | /** status 201 Created */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
+    | /** status 202 Accepted */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
 export type CreateMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
@@ -357,8 +357,8 @@ export type ReadMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   }
 export type ReplaceMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiResponse =
   /** status 200 OK */
-  | ComCoreosMonitoringV1Alpha1AlertmanagerConfig
-  | /** status 201 Created */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
+    | ComCoreosMonitoringV1Alpha1AlertmanagerConfig
+    | /** status 201 Created */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
 export type ReplaceMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   {
     /** name of the AlertmanagerConfig */
@@ -385,8 +385,8 @@ export type ReplaceMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg
   )
 export type DeleteMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   {
     /** name of the AlertmanagerConfig */
@@ -434,7 +434,7 @@ export type PatchMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   } & (
     | {
         contentType: 'application/apply-patch+yaml'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: ComCoreosMonitoringV1Alpha1AlertmanagerConfig
       }
     | {
         contentType: 'application/json-patch+json'

@@ -269,9 +269,9 @@ export type ListTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
 }
 export type CreateTelemetryIstioIoV1Alpha1NamespacedTelemetryApiResponse =
   /** status 200 OK */
-  | IoIstioTelemetryV1Alpha1Telemetry
-  | /** status 201 Created */ IoIstioTelemetryV1Alpha1Telemetry
-  | /** status 202 Accepted */ IoIstioTelemetryV1Alpha1Telemetry
+    | IoIstioTelemetryV1Alpha1Telemetry
+    | /** status 201 Created */ IoIstioTelemetryV1Alpha1Telemetry
+    | /** status 202 Accepted */ IoIstioTelemetryV1Alpha1Telemetry
 export type CreateTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -358,8 +358,8 @@ export type ReadTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
 }
 export type ReplaceTelemetryIstioIoV1Alpha1NamespacedTelemetryApiResponse =
   /** status 200 OK */
-  | IoIstioTelemetryV1Alpha1Telemetry
-  | /** status 201 Created */ IoIstioTelemetryV1Alpha1Telemetry
+    | IoIstioTelemetryV1Alpha1Telemetry
+    | /** status 201 Created */ IoIstioTelemetryV1Alpha1Telemetry
 export type ReplaceTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
   /** name of the Telemetry */
   name: string
@@ -385,8 +385,8 @@ export type ReplaceTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
 )
 export type DeleteTelemetryIstioIoV1Alpha1NamespacedTelemetryApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
   /** name of the Telemetry */
   name: string
@@ -432,7 +432,7 @@ export type PatchTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioTelemetryV1Alpha1Telemetry
     }
   | {
       contentType: 'application/json-patch+json'
@@ -459,8 +459,8 @@ export type ReadTelemetryIstioIoV1Alpha1NamespacedTelemetryStatusApiArg = {
 }
 export type ReplaceTelemetryIstioIoV1Alpha1NamespacedTelemetryStatusApiResponse =
   /** status 200 OK */
-  | IoIstioTelemetryV1Alpha1Telemetry
-  | /** status 201 Created */ IoIstioTelemetryV1Alpha1Telemetry
+    | IoIstioTelemetryV1Alpha1Telemetry
+    | /** status 201 Created */ IoIstioTelemetryV1Alpha1Telemetry
 export type ReplaceTelemetryIstioIoV1Alpha1NamespacedTelemetryStatusApiArg = {
   /** name of the Telemetry */
   name: string
@@ -504,7 +504,7 @@ export type PatchTelemetryIstioIoV1Alpha1NamespacedTelemetryStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioTelemetryV1Alpha1Telemetry
     }
   | {
       contentType: 'application/json-patch+json'

@@ -1785,9 +1785,9 @@ export type ListAppsV1NamespacedControllerRevisionApiArg = {
 }
 export type CreateAppsV1NamespacedControllerRevisionApiResponse =
   /** status 200 OK */
-  | IoK8SApiAppsV1ControllerRevision
-  | /** status 201 Created */ IoK8SApiAppsV1ControllerRevision
-  | /** status 202 Accepted */ IoK8SApiAppsV1ControllerRevision
+    | IoK8SApiAppsV1ControllerRevision
+    | /** status 201 Created */ IoK8SApiAppsV1ControllerRevision
+    | /** status 202 Accepted */ IoK8SApiAppsV1ControllerRevision
 export type CreateAppsV1NamespacedControllerRevisionApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1870,8 +1870,8 @@ export type ReadAppsV1NamespacedControllerRevisionApiArg = {
 }
 export type ReplaceAppsV1NamespacedControllerRevisionApiResponse =
   /** status 200 OK */
-  | IoK8SApiAppsV1ControllerRevision
-  | /** status 201 Created */ IoK8SApiAppsV1ControllerRevision
+    | IoK8SApiAppsV1ControllerRevision
+    | /** status 201 Created */ IoK8SApiAppsV1ControllerRevision
 export type ReplaceAppsV1NamespacedControllerRevisionApiArg = {
   /** name of the ControllerRevision */
   name: string
@@ -1891,8 +1891,8 @@ export type ReplaceAppsV1NamespacedControllerRevisionApiArg = {
 }
 export type DeleteAppsV1NamespacedControllerRevisionApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAppsV1NamespacedControllerRevisionApiArg = {
   /** name of the ControllerRevision */
   name: string
@@ -1914,8 +1914,8 @@ export type DeleteAppsV1NamespacedControllerRevisionApiArg = {
 }
 export type PatchAppsV1NamespacedControllerRevisionApiResponse =
   /** status 200 OK */
-  | IoK8SApiAppsV1ControllerRevision
-  | /** status 201 Created */ IoK8SApiAppsV1ControllerRevision
+    | IoK8SApiAppsV1ControllerRevision
+    | /** status 201 Created */ IoK8SApiAppsV1ControllerRevision
 export type PatchAppsV1NamespacedControllerRevisionApiArg = {
   /** name of the ControllerRevision */
   name: string
@@ -1934,7 +1934,7 @@ export type PatchAppsV1NamespacedControllerRevisionApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1ControllerRevision
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1946,7 +1946,7 @@ export type PatchAppsV1NamespacedControllerRevisionApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1ControllerRevision
     }
 )
 export type ListAppsV1NamespacedDaemonSetApiResponse =
@@ -1997,8 +1997,7 @@ export type ListAppsV1NamespacedDaemonSetApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateAppsV1NamespacedDaemonSetApiResponse =
-  /** status 200 OK */
+export type CreateAppsV1NamespacedDaemonSetApiResponse = /** status 200 OK */
   | IoK8SApiAppsV1DaemonSet
   | /** status 201 Created */ IoK8SApiAppsV1DaemonSet
   | /** status 202 Accepted */ IoK8SApiAppsV1DaemonSet
@@ -2082,9 +2081,9 @@ export type ReadAppsV1NamespacedDaemonSetApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceAppsV1NamespacedDaemonSetApiResponse =
-  /** status 200 OK */
-  IoK8SApiAppsV1DaemonSet | /** status 201 Created */ IoK8SApiAppsV1DaemonSet
+export type ReplaceAppsV1NamespacedDaemonSetApiResponse = /** status 200 OK */
+  | IoK8SApiAppsV1DaemonSet
+  | /** status 201 Created */ IoK8SApiAppsV1DaemonSet
 export type ReplaceAppsV1NamespacedDaemonSetApiArg = {
   /** name of the DaemonSet */
   name: string
@@ -2102,8 +2101,7 @@ export type ReplaceAppsV1NamespacedDaemonSetApiArg = {
   contentType?: string
   body: IoK8SApiAppsV1DaemonSet
 }
-export type DeleteAppsV1NamespacedDaemonSetApiResponse =
-  /** status 200 OK */
+export type DeleteAppsV1NamespacedDaemonSetApiResponse = /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAppsV1NamespacedDaemonSetApiArg = {
@@ -2125,9 +2123,9 @@ export type DeleteAppsV1NamespacedDaemonSetApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchAppsV1NamespacedDaemonSetApiResponse =
-  /** status 200 OK */
-  IoK8SApiAppsV1DaemonSet | /** status 201 Created */ IoK8SApiAppsV1DaemonSet
+export type PatchAppsV1NamespacedDaemonSetApiResponse = /** status 200 OK */
+  | IoK8SApiAppsV1DaemonSet
+  | /** status 201 Created */ IoK8SApiAppsV1DaemonSet
 export type PatchAppsV1NamespacedDaemonSetApiArg = {
   /** name of the DaemonSet */
   name: string
@@ -2146,7 +2144,7 @@ export type PatchAppsV1NamespacedDaemonSetApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1DaemonSet
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2158,7 +2156,7 @@ export type PatchAppsV1NamespacedDaemonSetApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1DaemonSet
     }
 )
 export type ReadAppsV1NamespacedDaemonSetStatusApiResponse =
@@ -2173,7 +2171,8 @@ export type ReadAppsV1NamespacedDaemonSetStatusApiArg = {
 }
 export type ReplaceAppsV1NamespacedDaemonSetStatusApiResponse =
   /** status 200 OK */
-  IoK8SApiAppsV1DaemonSet | /** status 201 Created */ IoK8SApiAppsV1DaemonSet
+    | IoK8SApiAppsV1DaemonSet
+    | /** status 201 Created */ IoK8SApiAppsV1DaemonSet
 export type ReplaceAppsV1NamespacedDaemonSetStatusApiArg = {
   /** name of the DaemonSet */
   name: string
@@ -2193,7 +2192,8 @@ export type ReplaceAppsV1NamespacedDaemonSetStatusApiArg = {
 }
 export type PatchAppsV1NamespacedDaemonSetStatusApiResponse =
   /** status 200 OK */
-  IoK8SApiAppsV1DaemonSet | /** status 201 Created */ IoK8SApiAppsV1DaemonSet
+    | IoK8SApiAppsV1DaemonSet
+    | /** status 201 Created */ IoK8SApiAppsV1DaemonSet
 export type PatchAppsV1NamespacedDaemonSetStatusApiArg = {
   /** name of the DaemonSet */
   name: string
@@ -2212,7 +2212,7 @@ export type PatchAppsV1NamespacedDaemonSetStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1DaemonSet
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2224,7 +2224,7 @@ export type PatchAppsV1NamespacedDaemonSetStatusApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1DaemonSet
     }
 )
 export type ListAppsV1NamespacedDeploymentApiResponse =
@@ -2275,8 +2275,7 @@ export type ListAppsV1NamespacedDeploymentApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateAppsV1NamespacedDeploymentApiResponse =
-  /** status 200 OK */
+export type CreateAppsV1NamespacedDeploymentApiResponse = /** status 200 OK */
   | IoK8SApiAppsV1Deployment
   | /** status 201 Created */ IoK8SApiAppsV1Deployment
   | /** status 202 Accepted */ IoK8SApiAppsV1Deployment
@@ -2360,9 +2359,9 @@ export type ReadAppsV1NamespacedDeploymentApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceAppsV1NamespacedDeploymentApiResponse =
-  /** status 200 OK */
-  IoK8SApiAppsV1Deployment | /** status 201 Created */ IoK8SApiAppsV1Deployment
+export type ReplaceAppsV1NamespacedDeploymentApiResponse = /** status 200 OK */
+  | IoK8SApiAppsV1Deployment
+  | /** status 201 Created */ IoK8SApiAppsV1Deployment
 export type ReplaceAppsV1NamespacedDeploymentApiArg = {
   /** name of the Deployment */
   name: string
@@ -2380,8 +2379,7 @@ export type ReplaceAppsV1NamespacedDeploymentApiArg = {
   contentType?: string
   body: IoK8SApiAppsV1Deployment
 }
-export type DeleteAppsV1NamespacedDeploymentApiResponse =
-  /** status 200 OK */
+export type DeleteAppsV1NamespacedDeploymentApiResponse = /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAppsV1NamespacedDeploymentApiArg = {
@@ -2403,9 +2401,9 @@ export type DeleteAppsV1NamespacedDeploymentApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchAppsV1NamespacedDeploymentApiResponse =
-  /** status 200 OK */
-  IoK8SApiAppsV1Deployment | /** status 201 Created */ IoK8SApiAppsV1Deployment
+export type PatchAppsV1NamespacedDeploymentApiResponse = /** status 200 OK */
+  | IoK8SApiAppsV1Deployment
+  | /** status 201 Created */ IoK8SApiAppsV1Deployment
 export type PatchAppsV1NamespacedDeploymentApiArg = {
   /** name of the Deployment */
   name: string
@@ -2424,7 +2422,7 @@ export type PatchAppsV1NamespacedDeploymentApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1Deployment
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2436,7 +2434,7 @@ export type PatchAppsV1NamespacedDeploymentApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1Deployment
     }
 )
 export type ReadAppsV1NamespacedDeploymentScaleApiResponse =
@@ -2451,8 +2449,8 @@ export type ReadAppsV1NamespacedDeploymentScaleApiArg = {
 }
 export type ReplaceAppsV1NamespacedDeploymentScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceAppsV1NamespacedDeploymentScaleApiArg = {
   /** name of the Scale */
   name: string
@@ -2472,8 +2470,8 @@ export type ReplaceAppsV1NamespacedDeploymentScaleApiArg = {
 }
 export type PatchAppsV1NamespacedDeploymentScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type PatchAppsV1NamespacedDeploymentScaleApiArg = {
   /** name of the Scale */
   name: string
@@ -2492,7 +2490,7 @@ export type PatchAppsV1NamespacedDeploymentScaleApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2504,7 +2502,7 @@ export type PatchAppsV1NamespacedDeploymentScaleApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
 )
 export type ReadAppsV1NamespacedDeploymentStatusApiResponse =
@@ -2519,7 +2517,8 @@ export type ReadAppsV1NamespacedDeploymentStatusApiArg = {
 }
 export type ReplaceAppsV1NamespacedDeploymentStatusApiResponse =
   /** status 200 OK */
-  IoK8SApiAppsV1Deployment | /** status 201 Created */ IoK8SApiAppsV1Deployment
+    | IoK8SApiAppsV1Deployment
+    | /** status 201 Created */ IoK8SApiAppsV1Deployment
 export type ReplaceAppsV1NamespacedDeploymentStatusApiArg = {
   /** name of the Deployment */
   name: string
@@ -2539,7 +2538,8 @@ export type ReplaceAppsV1NamespacedDeploymentStatusApiArg = {
 }
 export type PatchAppsV1NamespacedDeploymentStatusApiResponse =
   /** status 200 OK */
-  IoK8SApiAppsV1Deployment | /** status 201 Created */ IoK8SApiAppsV1Deployment
+    | IoK8SApiAppsV1Deployment
+    | /** status 201 Created */ IoK8SApiAppsV1Deployment
 export type PatchAppsV1NamespacedDeploymentStatusApiArg = {
   /** name of the Deployment */
   name: string
@@ -2558,7 +2558,7 @@ export type PatchAppsV1NamespacedDeploymentStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1Deployment
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2570,7 +2570,7 @@ export type PatchAppsV1NamespacedDeploymentStatusApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1Deployment
     }
 )
 export type ListAppsV1NamespacedReplicaSetApiResponse =
@@ -2621,8 +2621,7 @@ export type ListAppsV1NamespacedReplicaSetApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateAppsV1NamespacedReplicaSetApiResponse =
-  /** status 200 OK */
+export type CreateAppsV1NamespacedReplicaSetApiResponse = /** status 200 OK */
   | IoK8SApiAppsV1ReplicaSet
   | /** status 201 Created */ IoK8SApiAppsV1ReplicaSet
   | /** status 202 Accepted */ IoK8SApiAppsV1ReplicaSet
@@ -2706,9 +2705,9 @@ export type ReadAppsV1NamespacedReplicaSetApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceAppsV1NamespacedReplicaSetApiResponse =
-  /** status 200 OK */
-  IoK8SApiAppsV1ReplicaSet | /** status 201 Created */ IoK8SApiAppsV1ReplicaSet
+export type ReplaceAppsV1NamespacedReplicaSetApiResponse = /** status 200 OK */
+  | IoK8SApiAppsV1ReplicaSet
+  | /** status 201 Created */ IoK8SApiAppsV1ReplicaSet
 export type ReplaceAppsV1NamespacedReplicaSetApiArg = {
   /** name of the ReplicaSet */
   name: string
@@ -2726,8 +2725,7 @@ export type ReplaceAppsV1NamespacedReplicaSetApiArg = {
   contentType?: string
   body: IoK8SApiAppsV1ReplicaSet
 }
-export type DeleteAppsV1NamespacedReplicaSetApiResponse =
-  /** status 200 OK */
+export type DeleteAppsV1NamespacedReplicaSetApiResponse = /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAppsV1NamespacedReplicaSetApiArg = {
@@ -2749,9 +2747,9 @@ export type DeleteAppsV1NamespacedReplicaSetApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchAppsV1NamespacedReplicaSetApiResponse =
-  /** status 200 OK */
-  IoK8SApiAppsV1ReplicaSet | /** status 201 Created */ IoK8SApiAppsV1ReplicaSet
+export type PatchAppsV1NamespacedReplicaSetApiResponse = /** status 200 OK */
+  | IoK8SApiAppsV1ReplicaSet
+  | /** status 201 Created */ IoK8SApiAppsV1ReplicaSet
 export type PatchAppsV1NamespacedReplicaSetApiArg = {
   /** name of the ReplicaSet */
   name: string
@@ -2770,7 +2768,7 @@ export type PatchAppsV1NamespacedReplicaSetApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1ReplicaSet
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2782,7 +2780,7 @@ export type PatchAppsV1NamespacedReplicaSetApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1ReplicaSet
     }
 )
 export type ReadAppsV1NamespacedReplicaSetScaleApiResponse =
@@ -2797,8 +2795,8 @@ export type ReadAppsV1NamespacedReplicaSetScaleApiArg = {
 }
 export type ReplaceAppsV1NamespacedReplicaSetScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceAppsV1NamespacedReplicaSetScaleApiArg = {
   /** name of the Scale */
   name: string
@@ -2818,8 +2816,8 @@ export type ReplaceAppsV1NamespacedReplicaSetScaleApiArg = {
 }
 export type PatchAppsV1NamespacedReplicaSetScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type PatchAppsV1NamespacedReplicaSetScaleApiArg = {
   /** name of the Scale */
   name: string
@@ -2838,7 +2836,7 @@ export type PatchAppsV1NamespacedReplicaSetScaleApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2850,7 +2848,7 @@ export type PatchAppsV1NamespacedReplicaSetScaleApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
 )
 export type ReadAppsV1NamespacedReplicaSetStatusApiResponse =
@@ -2865,7 +2863,8 @@ export type ReadAppsV1NamespacedReplicaSetStatusApiArg = {
 }
 export type ReplaceAppsV1NamespacedReplicaSetStatusApiResponse =
   /** status 200 OK */
-  IoK8SApiAppsV1ReplicaSet | /** status 201 Created */ IoK8SApiAppsV1ReplicaSet
+    | IoK8SApiAppsV1ReplicaSet
+    | /** status 201 Created */ IoK8SApiAppsV1ReplicaSet
 export type ReplaceAppsV1NamespacedReplicaSetStatusApiArg = {
   /** name of the ReplicaSet */
   name: string
@@ -2885,7 +2884,8 @@ export type ReplaceAppsV1NamespacedReplicaSetStatusApiArg = {
 }
 export type PatchAppsV1NamespacedReplicaSetStatusApiResponse =
   /** status 200 OK */
-  IoK8SApiAppsV1ReplicaSet | /** status 201 Created */ IoK8SApiAppsV1ReplicaSet
+    | IoK8SApiAppsV1ReplicaSet
+    | /** status 201 Created */ IoK8SApiAppsV1ReplicaSet
 export type PatchAppsV1NamespacedReplicaSetStatusApiArg = {
   /** name of the ReplicaSet */
   name: string
@@ -2904,7 +2904,7 @@ export type PatchAppsV1NamespacedReplicaSetStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1ReplicaSet
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2916,7 +2916,7 @@ export type PatchAppsV1NamespacedReplicaSetStatusApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1ReplicaSet
     }
 )
 export type ListAppsV1NamespacedStatefulSetApiResponse =
@@ -2967,8 +2967,7 @@ export type ListAppsV1NamespacedStatefulSetApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateAppsV1NamespacedStatefulSetApiResponse =
-  /** status 200 OK */
+export type CreateAppsV1NamespacedStatefulSetApiResponse = /** status 200 OK */
   | IoK8SApiAppsV1StatefulSet
   | /** status 201 Created */ IoK8SApiAppsV1StatefulSet
   | /** status 202 Accepted */ IoK8SApiAppsV1StatefulSet
@@ -3054,8 +3053,8 @@ export type ReadAppsV1NamespacedStatefulSetApiArg = {
 }
 export type ReplaceAppsV1NamespacedStatefulSetApiResponse =
   /** status 200 OK */
-  | IoK8SApiAppsV1StatefulSet
-  | /** status 201 Created */ IoK8SApiAppsV1StatefulSet
+    | IoK8SApiAppsV1StatefulSet
+    | /** status 201 Created */ IoK8SApiAppsV1StatefulSet
 export type ReplaceAppsV1NamespacedStatefulSetApiArg = {
   /** name of the StatefulSet */
   name: string
@@ -3073,8 +3072,7 @@ export type ReplaceAppsV1NamespacedStatefulSetApiArg = {
   contentType?: string
   body: IoK8SApiAppsV1StatefulSet
 }
-export type DeleteAppsV1NamespacedStatefulSetApiResponse =
-  /** status 200 OK */
+export type DeleteAppsV1NamespacedStatefulSetApiResponse = /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAppsV1NamespacedStatefulSetApiArg = {
@@ -3096,8 +3094,7 @@ export type DeleteAppsV1NamespacedStatefulSetApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchAppsV1NamespacedStatefulSetApiResponse =
-  /** status 200 OK */
+export type PatchAppsV1NamespacedStatefulSetApiResponse = /** status 200 OK */
   | IoK8SApiAppsV1StatefulSet
   | /** status 201 Created */ IoK8SApiAppsV1StatefulSet
 export type PatchAppsV1NamespacedStatefulSetApiArg = {
@@ -3118,7 +3115,7 @@ export type PatchAppsV1NamespacedStatefulSetApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1StatefulSet
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3130,7 +3127,7 @@ export type PatchAppsV1NamespacedStatefulSetApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1StatefulSet
     }
 )
 export type ReadAppsV1NamespacedStatefulSetScaleApiResponse =
@@ -3145,8 +3142,8 @@ export type ReadAppsV1NamespacedStatefulSetScaleApiArg = {
 }
 export type ReplaceAppsV1NamespacedStatefulSetScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceAppsV1NamespacedStatefulSetScaleApiArg = {
   /** name of the Scale */
   name: string
@@ -3166,8 +3163,8 @@ export type ReplaceAppsV1NamespacedStatefulSetScaleApiArg = {
 }
 export type PatchAppsV1NamespacedStatefulSetScaleApiResponse =
   /** status 200 OK */
-  | IoK8SApiAutoscalingV1Scale
-  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+    | IoK8SApiAutoscalingV1Scale
+    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type PatchAppsV1NamespacedStatefulSetScaleApiArg = {
   /** name of the Scale */
   name: string
@@ -3186,7 +3183,7 @@ export type PatchAppsV1NamespacedStatefulSetScaleApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3198,7 +3195,7 @@ export type PatchAppsV1NamespacedStatefulSetScaleApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
 )
 export type ReadAppsV1NamespacedStatefulSetStatusApiResponse =
@@ -3213,8 +3210,8 @@ export type ReadAppsV1NamespacedStatefulSetStatusApiArg = {
 }
 export type ReplaceAppsV1NamespacedStatefulSetStatusApiResponse =
   /** status 200 OK */
-  | IoK8SApiAppsV1StatefulSet
-  | /** status 201 Created */ IoK8SApiAppsV1StatefulSet
+    | IoK8SApiAppsV1StatefulSet
+    | /** status 201 Created */ IoK8SApiAppsV1StatefulSet
 export type ReplaceAppsV1NamespacedStatefulSetStatusApiArg = {
   /** name of the StatefulSet */
   name: string
@@ -3234,8 +3231,8 @@ export type ReplaceAppsV1NamespacedStatefulSetStatusApiArg = {
 }
 export type PatchAppsV1NamespacedStatefulSetStatusApiResponse =
   /** status 200 OK */
-  | IoK8SApiAppsV1StatefulSet
-  | /** status 201 Created */ IoK8SApiAppsV1StatefulSet
+    | IoK8SApiAppsV1StatefulSet
+    | /** status 201 Created */ IoK8SApiAppsV1StatefulSet
 export type PatchAppsV1NamespacedStatefulSetStatusApiArg = {
   /** name of the StatefulSet */
   name: string
@@ -3254,7 +3251,7 @@ export type PatchAppsV1NamespacedStatefulSetStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1StatefulSet
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3266,7 +3263,7 @@ export type PatchAppsV1NamespacedStatefulSetStatusApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAppsV1StatefulSet
     }
 )
 export type ListAppsV1ReplicaSetForAllNamespacesApiResponse =

@@ -4456,9 +4456,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedAwsChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1AwsChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1AwsChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1AwsChaos
+    | OrgChaosMeshV1Alpha1AwsChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1AwsChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1AwsChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -4544,8 +4544,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedAwsChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1AwsChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1AwsChaos
+    | OrgChaosMeshV1Alpha1AwsChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1AwsChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   /** name of the AWSChaos */
   name: string
@@ -4571,8 +4571,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedAwsChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   /** name of the AWSChaos */
   name: string
@@ -4618,7 +4618,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1AwsChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -4679,9 +4679,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1AzureChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1AzureChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1AzureChaos
+    | OrgChaosMeshV1Alpha1AzureChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1AzureChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1AzureChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -4767,8 +4767,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1AzureChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1AzureChaos
+    | OrgChaosMeshV1Alpha1AzureChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1AzureChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   /** name of the AzureChaos */
   name: string
@@ -4794,8 +4794,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   /** name of the AzureChaos */
   name: string
@@ -4841,7 +4841,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1AzureChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -4902,9 +4902,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1BlockChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1BlockChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1BlockChaos
+    | OrgChaosMeshV1Alpha1BlockChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1BlockChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1BlockChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -4990,8 +4990,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1BlockChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1BlockChaos
+    | OrgChaosMeshV1Alpha1BlockChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1BlockChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   /** name of the BlockChaos */
   name: string
@@ -5017,8 +5017,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   /** name of the BlockChaos */
   name: string
@@ -5064,7 +5064,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1BlockChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -5125,9 +5125,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1DnsChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1DnsChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1DnsChaos
+    | OrgChaosMeshV1Alpha1DnsChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1DnsChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1DnsChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -5213,8 +5213,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1DnsChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1DnsChaos
+    | OrgChaosMeshV1Alpha1DnsChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1DnsChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   /** name of the DNSChaos */
   name: string
@@ -5240,8 +5240,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   /** name of the DNSChaos */
   name: string
@@ -5287,7 +5287,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1DnsChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -5348,9 +5348,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1GcpChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1GcpChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1GcpChaos
+    | OrgChaosMeshV1Alpha1GcpChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1GcpChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1GcpChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -5436,8 +5436,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1GcpChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1GcpChaos
+    | OrgChaosMeshV1Alpha1GcpChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1GcpChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   /** name of the GCPChaos */
   name: string
@@ -5463,8 +5463,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   /** name of the GCPChaos */
   name: string
@@ -5510,7 +5510,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1GcpChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -5571,9 +5571,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1HttpChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1HttpChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1HttpChaos
+    | OrgChaosMeshV1Alpha1HttpChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1HttpChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1HttpChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -5659,8 +5659,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1HttpChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1HttpChaos
+    | OrgChaosMeshV1Alpha1HttpChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1HttpChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   /** name of the HTTPChaos */
   name: string
@@ -5686,8 +5686,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   /** name of the HTTPChaos */
   name: string
@@ -5733,7 +5733,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1HttpChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -5794,9 +5794,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1IoChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1IoChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1IoChaos
+    | OrgChaosMeshV1Alpha1IoChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1IoChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1IoChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -5882,8 +5882,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1IoChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1IoChaos
+    | OrgChaosMeshV1Alpha1IoChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1IoChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   /** name of the IOChaos */
   name: string
@@ -5909,8 +5909,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   /** name of the IOChaos */
   name: string
@@ -5956,7 +5956,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1IoChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -6017,9 +6017,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1JvmChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1JvmChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1JvmChaos
+    | OrgChaosMeshV1Alpha1JvmChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1JvmChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1JvmChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -6105,8 +6105,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1JvmChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1JvmChaos
+    | OrgChaosMeshV1Alpha1JvmChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1JvmChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   /** name of the JVMChaos */
   name: string
@@ -6132,8 +6132,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   /** name of the JVMChaos */
   name: string
@@ -6179,7 +6179,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1JvmChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -6240,9 +6240,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1KernelChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1KernelChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1KernelChaos
+    | OrgChaosMeshV1Alpha1KernelChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1KernelChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1KernelChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -6328,8 +6328,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1KernelChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1KernelChaos
+    | OrgChaosMeshV1Alpha1KernelChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1KernelChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   /** name of the KernelChaos */
   name: string
@@ -6355,8 +6355,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   /** name of the KernelChaos */
   name: string
@@ -6402,7 +6402,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1KernelChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -6463,9 +6463,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1NetworkChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1NetworkChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1NetworkChaos
+    | OrgChaosMeshV1Alpha1NetworkChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1NetworkChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1NetworkChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -6551,8 +6551,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1NetworkChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1NetworkChaos
+    | OrgChaosMeshV1Alpha1NetworkChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1NetworkChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   /** name of the NetworkChaos */
   name: string
@@ -6578,8 +6578,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   /** name of the NetworkChaos */
   name: string
@@ -6625,7 +6625,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1NetworkChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -6686,9 +6686,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PhysicalMachineChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PhysicalMachineChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PhysicalMachineChaos
+    | OrgChaosMeshV1Alpha1PhysicalMachineChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PhysicalMachineChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PhysicalMachineChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -6775,8 +6775,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PhysicalMachineChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PhysicalMachineChaos
+    | OrgChaosMeshV1Alpha1PhysicalMachineChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PhysicalMachineChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   /** name of the PhysicalMachineChaos */
   name: string
@@ -6802,8 +6802,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   /** name of the PhysicalMachineChaos */
   name: string
@@ -6849,7 +6849,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1PhysicalMachineChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -6910,9 +6910,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PhysicalMachine
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PhysicalMachine
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PhysicalMachine
+    | OrgChaosMeshV1Alpha1PhysicalMachine
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PhysicalMachine
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PhysicalMachine
 export type CreateChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -6999,8 +6999,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PhysicalMachine
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PhysicalMachine
+    | OrgChaosMeshV1Alpha1PhysicalMachine
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PhysicalMachine
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   /** name of the PhysicalMachine */
   name: string
@@ -7026,8 +7026,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   /** name of the PhysicalMachine */
   name: string
@@ -7073,7 +7073,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1PhysicalMachine
     }
   | {
       contentType: 'application/json-patch+json'
@@ -7134,9 +7134,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PodChaos
+    | OrgChaosMeshV1Alpha1PodChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PodChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -7222,8 +7222,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodChaos
+    | OrgChaosMeshV1Alpha1PodChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   /** name of the PodChaos */
   name: string
@@ -7249,8 +7249,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   /** name of the PodChaos */
   name: string
@@ -7296,7 +7296,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1PodChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -7357,9 +7357,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodHttpChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodHttpChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PodHttpChaos
+    | OrgChaosMeshV1Alpha1PodHttpChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodHttpChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PodHttpChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -7445,8 +7445,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodHttpChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodHttpChaos
+    | OrgChaosMeshV1Alpha1PodHttpChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodHttpChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   /** name of the PodHttpChaos */
   name: string
@@ -7472,8 +7472,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   /** name of the PodHttpChaos */
   name: string
@@ -7519,7 +7519,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1PodHttpChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -7546,8 +7546,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodHttpChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodHttpChaos
+    | OrgChaosMeshV1Alpha1PodHttpChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodHttpChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
   /** name of the PodHttpChaos */
   name: string
@@ -7591,7 +7591,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1PodHttpChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -7652,9 +7652,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodIoChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodIoChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PodIoChaos
+    | OrgChaosMeshV1Alpha1PodIoChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodIoChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PodIoChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -7740,8 +7740,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodIoChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodIoChaos
+    | OrgChaosMeshV1Alpha1PodIoChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodIoChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   /** name of the PodIOChaos */
   name: string
@@ -7767,8 +7767,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   /** name of the PodIOChaos */
   name: string
@@ -7814,7 +7814,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1PodIoChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -7841,8 +7841,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodIoChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodIoChaos
+    | OrgChaosMeshV1Alpha1PodIoChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodIoChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
   /** name of the PodIOChaos */
   name: string
@@ -7886,7 +7886,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1PodIoChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -7947,9 +7947,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodNetworkChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodNetworkChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PodNetworkChaos
+    | OrgChaosMeshV1Alpha1PodNetworkChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodNetworkChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1PodNetworkChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -8036,8 +8036,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodNetworkChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodNetworkChaos
+    | OrgChaosMeshV1Alpha1PodNetworkChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodNetworkChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   /** name of the PodNetworkChaos */
   name: string
@@ -8063,8 +8063,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   /** name of the PodNetworkChaos */
   name: string
@@ -8110,7 +8110,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1PodNetworkChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -8137,8 +8137,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1PodNetworkChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1PodNetworkChaos
+    | OrgChaosMeshV1Alpha1PodNetworkChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1PodNetworkChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
   /** name of the PodNetworkChaos */
   name: string
@@ -8182,7 +8182,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1PodNetworkChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -8243,9 +8243,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1Schedule
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1Schedule
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1Schedule
+    | OrgChaosMeshV1Alpha1Schedule
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1Schedule
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1Schedule
 export type CreateChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -8331,8 +8331,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1Schedule
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1Schedule
+    | OrgChaosMeshV1Alpha1Schedule
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1Schedule
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   /** name of the Schedule */
   name: string
@@ -8358,8 +8358,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   /** name of the Schedule */
   name: string
@@ -8405,7 +8405,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1Schedule
     }
   | {
       contentType: 'application/json-patch+json'
@@ -8466,9 +8466,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1StatusCheck
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1StatusCheck
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1StatusCheck
+    | OrgChaosMeshV1Alpha1StatusCheck
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1StatusCheck
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1StatusCheck
 export type CreateChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -8554,8 +8554,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1StatusCheck
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1StatusCheck
+    | OrgChaosMeshV1Alpha1StatusCheck
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1StatusCheck
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   /** name of the StatusCheck */
   name: string
@@ -8581,8 +8581,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   /** name of the StatusCheck */
   name: string
@@ -8628,7 +8628,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1StatusCheck
     }
   | {
       contentType: 'application/json-patch+json'
@@ -8655,8 +8655,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1StatusCheck
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1StatusCheck
+    | OrgChaosMeshV1Alpha1StatusCheck
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1StatusCheck
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
   /** name of the StatusCheck */
   name: string
@@ -8700,7 +8700,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1StatusCheck
     }
   | {
       contentType: 'application/json-patch+json'
@@ -8761,9 +8761,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1StressChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1StressChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1StressChaos
+    | OrgChaosMeshV1Alpha1StressChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1StressChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1StressChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -8849,8 +8849,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1StressChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1StressChaos
+    | OrgChaosMeshV1Alpha1StressChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1StressChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   /** name of the StressChaos */
   name: string
@@ -8876,8 +8876,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   /** name of the StressChaos */
   name: string
@@ -8923,7 +8923,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1StressChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -8984,9 +8984,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1TimeChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1TimeChaos
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1TimeChaos
+    | OrgChaosMeshV1Alpha1TimeChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1TimeChaos
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1TimeChaos
 export type CreateChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -9072,8 +9072,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1TimeChaos
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1TimeChaos
+    | OrgChaosMeshV1Alpha1TimeChaos
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1TimeChaos
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   /** name of the TimeChaos */
   name: string
@@ -9099,8 +9099,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   /** name of the TimeChaos */
   name: string
@@ -9146,7 +9146,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1TimeChaos
     }
   | {
       contentType: 'application/json-patch+json'
@@ -9207,9 +9207,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1WorkflowNode
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1WorkflowNode
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1WorkflowNode
+    | OrgChaosMeshV1Alpha1WorkflowNode
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1WorkflowNode
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1WorkflowNode
 export type CreateChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -9295,8 +9295,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1WorkflowNode
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1WorkflowNode
+    | OrgChaosMeshV1Alpha1WorkflowNode
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1WorkflowNode
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   /** name of the WorkflowNode */
   name: string
@@ -9322,8 +9322,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   /** name of the WorkflowNode */
   name: string
@@ -9369,7 +9369,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1WorkflowNode
     }
   | {
       contentType: 'application/json-patch+json'
@@ -9396,8 +9396,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1WorkflowNode
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1WorkflowNode
+    | OrgChaosMeshV1Alpha1WorkflowNode
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1WorkflowNode
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
   /** name of the WorkflowNode */
   name: string
@@ -9441,7 +9441,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1WorkflowNode
     }
   | {
       contentType: 'application/json-patch+json'
@@ -9502,9 +9502,9 @@ export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
 }
 export type CreateChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1Workflow
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1Workflow
-  | /** status 202 Accepted */ OrgChaosMeshV1Alpha1Workflow
+    | OrgChaosMeshV1Alpha1Workflow
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1Workflow
+    | /** status 202 Accepted */ OrgChaosMeshV1Alpha1Workflow
 export type CreateChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -9590,8 +9590,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1Workflow
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1Workflow
+    | OrgChaosMeshV1Alpha1Workflow
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1Workflow
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   /** name of the Workflow */
   name: string
@@ -9617,8 +9617,8 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
 )
 export type DeleteChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   /** name of the Workflow */
   name: string
@@ -9664,7 +9664,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1Workflow
     }
   | {
       contentType: 'application/json-patch+json'
@@ -9691,8 +9691,8 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
 }
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiResponse =
   /** status 200 OK */
-  | OrgChaosMeshV1Alpha1Workflow
-  | /** status 201 Created */ OrgChaosMeshV1Alpha1Workflow
+    | OrgChaosMeshV1Alpha1Workflow
+    | /** status 201 Created */ OrgChaosMeshV1Alpha1Workflow
 export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
   /** name of the Workflow */
   name: string
@@ -9736,7 +9736,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgChaosMeshV1Alpha1Workflow
     }
   | {
       contentType: 'application/json-patch+json'

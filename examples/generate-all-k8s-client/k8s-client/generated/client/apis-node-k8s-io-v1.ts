@@ -252,8 +252,7 @@ export type ListNodeV1RuntimeClassApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateNodeV1RuntimeClassApiResponse =
-  /** status 200 OK */
+export type CreateNodeV1RuntimeClassApiResponse = /** status 200 OK */
   | IoK8SApiNodeV1RuntimeClass
   | /** status 201 Created */ IoK8SApiNodeV1RuntimeClass
   | /** status 202 Accepted */ IoK8SApiNodeV1RuntimeClass
@@ -331,8 +330,7 @@ export type ReadNodeV1RuntimeClassApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceNodeV1RuntimeClassApiResponse =
-  /** status 200 OK */
+export type ReplaceNodeV1RuntimeClassApiResponse = /** status 200 OK */
   | IoK8SApiNodeV1RuntimeClass
   | /** status 201 Created */ IoK8SApiNodeV1RuntimeClass
 export type ReplaceNodeV1RuntimeClassApiArg = {
@@ -350,8 +348,7 @@ export type ReplaceNodeV1RuntimeClassApiArg = {
   contentType?: string
   body: IoK8SApiNodeV1RuntimeClass
 }
-export type DeleteNodeV1RuntimeClassApiResponse =
-  /** status 200 OK */
+export type DeleteNodeV1RuntimeClassApiResponse = /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNodeV1RuntimeClassApiArg = {
@@ -371,8 +368,7 @@ export type DeleteNodeV1RuntimeClassApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchNodeV1RuntimeClassApiResponse =
-  /** status 200 OK */
+export type PatchNodeV1RuntimeClassApiResponse = /** status 200 OK */
   | IoK8SApiNodeV1RuntimeClass
   | /** status 201 Created */ IoK8SApiNodeV1RuntimeClass
 export type PatchNodeV1RuntimeClassApiArg = {
@@ -391,7 +387,7 @@ export type PatchNodeV1RuntimeClassApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiNodeV1RuntimeClass
     }
   | {
       contentType: 'application/json-patch+json'
@@ -403,7 +399,7 @@ export type PatchNodeV1RuntimeClassApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiNodeV1RuntimeClass
     }
 )
 export type WatchNodeV1RuntimeClassListApiResponse =

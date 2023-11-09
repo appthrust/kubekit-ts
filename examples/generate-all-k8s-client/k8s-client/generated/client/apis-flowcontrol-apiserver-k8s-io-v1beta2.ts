@@ -558,9 +558,9 @@ export type ListFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
 }
 export type CreateFlowcontrolApiserverV1Beta2FlowSchemaApiResponse =
   /** status 200 OK */
-  | IoK8SApiFlowcontrolV1Beta2FlowSchema
-  | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2FlowSchema
-  | /** status 202 Accepted */ IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | /** status 202 Accepted */ IoK8SApiFlowcontrolV1Beta2FlowSchema
 export type CreateFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -637,8 +637,8 @@ export type ReadFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
 }
 export type ReplaceFlowcontrolApiserverV1Beta2FlowSchemaApiResponse =
   /** status 200 OK */
-  | IoK8SApiFlowcontrolV1Beta2FlowSchema
-  | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2FlowSchema
 export type ReplaceFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
   /** name of the FlowSchema */
   name: string
@@ -656,8 +656,8 @@ export type ReplaceFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
 }
 export type DeleteFlowcontrolApiserverV1Beta2FlowSchemaApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
   /** name of the FlowSchema */
   name: string
@@ -677,8 +677,8 @@ export type DeleteFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
 }
 export type PatchFlowcontrolApiserverV1Beta2FlowSchemaApiResponse =
   /** status 200 OK */
-  | IoK8SApiFlowcontrolV1Beta2FlowSchema
-  | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2FlowSchema
 export type PatchFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
   /** name of the FlowSchema */
   name: string
@@ -695,7 +695,7 @@ export type PatchFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiFlowcontrolV1Beta2FlowSchema
     }
   | {
       contentType: 'application/json-patch+json'
@@ -707,7 +707,7 @@ export type PatchFlowcontrolApiserverV1Beta2FlowSchemaApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiFlowcontrolV1Beta2FlowSchema
     }
 )
 export type ReadFlowcontrolApiserverV1Beta2FlowSchemaStatusApiResponse =
@@ -720,8 +720,8 @@ export type ReadFlowcontrolApiserverV1Beta2FlowSchemaStatusApiArg = {
 }
 export type ReplaceFlowcontrolApiserverV1Beta2FlowSchemaStatusApiResponse =
   /** status 200 OK */
-  | IoK8SApiFlowcontrolV1Beta2FlowSchema
-  | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2FlowSchema
 export type ReplaceFlowcontrolApiserverV1Beta2FlowSchemaStatusApiArg = {
   /** name of the FlowSchema */
   name: string
@@ -739,8 +739,8 @@ export type ReplaceFlowcontrolApiserverV1Beta2FlowSchemaStatusApiArg = {
 }
 export type PatchFlowcontrolApiserverV1Beta2FlowSchemaStatusApiResponse =
   /** status 200 OK */
-  | IoK8SApiFlowcontrolV1Beta2FlowSchema
-  | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | IoK8SApiFlowcontrolV1Beta2FlowSchema
+    | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2FlowSchema
 export type PatchFlowcontrolApiserverV1Beta2FlowSchemaStatusApiArg = {
   /** name of the FlowSchema */
   name: string
@@ -757,7 +757,7 @@ export type PatchFlowcontrolApiserverV1Beta2FlowSchemaStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiFlowcontrolV1Beta2FlowSchema
     }
   | {
       contentType: 'application/json-patch+json'
@@ -769,7 +769,7 @@ export type PatchFlowcontrolApiserverV1Beta2FlowSchemaStatusApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiFlowcontrolV1Beta2FlowSchema
     }
 )
 export type ListFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiResponse =
@@ -820,9 +820,9 @@ export type ListFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg = {
 }
 export type CreateFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiResponse =
   /** status 200 OK */
-  | IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
-  | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
-  | /** status 202 Accepted */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | /** status 202 Accepted */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
 export type CreateFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg =
   {
     /** If 'true', then the output is pretty printed. */
@@ -901,8 +901,8 @@ export type ReadFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg = {
 }
 export type ReplaceFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiResponse =
   /** status 200 OK */
-  | IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
-  | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
 export type ReplaceFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg =
   {
     /** name of the PriorityLevelConfiguration */
@@ -921,8 +921,8 @@ export type ReplaceFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg =
   }
 export type DeleteFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg =
   {
     /** name of the PriorityLevelConfiguration */
@@ -943,8 +943,8 @@ export type DeleteFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg =
   }
 export type PatchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiResponse =
   /** status 200 OK */
-  | IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
-  | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
 export type PatchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg = {
   /** name of the PriorityLevelConfiguration */
   name: string
@@ -961,7 +961,7 @@ export type PatchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
     }
   | {
       contentType: 'application/json-patch+json'
@@ -973,7 +973,7 @@ export type PatchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
     }
 )
 export type ReadFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusApiResponse =
@@ -987,8 +987,8 @@ export type ReadFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusApiAr
   }
 export type ReplaceFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusApiResponse =
   /** status 200 OK */
-  | IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
-  | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
 export type ReplaceFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusApiArg =
   {
     /** name of the PriorityLevelConfiguration */
@@ -1007,8 +1007,8 @@ export type ReplaceFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusAp
   }
 export type PatchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusApiResponse =
   /** status 200 OK */
-  | IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
-  | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
+    | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
 export type PatchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusApiArg =
   {
     /** name of the PriorityLevelConfiguration */
@@ -1026,7 +1026,7 @@ export type PatchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusApiA
   } & (
     | {
         contentType: 'application/apply-patch+yaml'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
       }
     | {
         contentType: 'application/json-patch+json'
@@ -1038,7 +1038,7 @@ export type PatchFlowcontrolApiserverV1Beta2PriorityLevelConfigurationStatusApiA
       }
     | {
         contentType: 'application/strategic-merge-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoK8SApiFlowcontrolV1Beta2PriorityLevelConfiguration
       }
   )
 export type WatchFlowcontrolApiserverV1Beta2FlowSchemaListApiResponse =

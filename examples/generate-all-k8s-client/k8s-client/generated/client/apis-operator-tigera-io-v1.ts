@@ -829,8 +829,7 @@ export type ListOperatorTigeraIoV1ApiServerApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateOperatorTigeraIoV1ApiServerApiResponse =
-  /** status 200 OK */
+export type CreateOperatorTigeraIoV1ApiServerApiResponse = /** status 200 OK */
   | IoTigeraOperatorV1ApiServer
   | /** status 201 Created */ IoTigeraOperatorV1ApiServer
   | /** status 202 Accepted */ IoTigeraOperatorV1ApiServer
@@ -913,8 +912,8 @@ export type ReadOperatorTigeraIoV1ApiServerApiArg = {
 }
 export type ReplaceOperatorTigeraIoV1ApiServerApiResponse =
   /** status 200 OK */
-  | IoTigeraOperatorV1ApiServer
-  | /** status 201 Created */ IoTigeraOperatorV1ApiServer
+    | IoTigeraOperatorV1ApiServer
+    | /** status 201 Created */ IoTigeraOperatorV1ApiServer
 export type ReplaceOperatorTigeraIoV1ApiServerApiArg = {
   /** name of the APIServer */
   name: string
@@ -936,8 +935,7 @@ export type ReplaceOperatorTigeraIoV1ApiServerApiArg = {
       body: IoTigeraOperatorV1ApiServer
     }
 )
-export type DeleteOperatorTigeraIoV1ApiServerApiResponse =
-  /** status 200 OK */
+export type DeleteOperatorTigeraIoV1ApiServerApiResponse = /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1ApiServerApiArg = {
@@ -981,7 +979,7 @@ export type PatchOperatorTigeraIoV1ApiServerApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoTigeraOperatorV1ApiServer
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1006,8 +1004,8 @@ export type ReadOperatorTigeraIoV1ApiServerStatusApiArg = {
 }
 export type ReplaceOperatorTigeraIoV1ApiServerStatusApiResponse =
   /** status 200 OK */
-  | IoTigeraOperatorV1ApiServer
-  | /** status 201 Created */ IoTigeraOperatorV1ApiServer
+    | IoTigeraOperatorV1ApiServer
+    | /** status 201 Created */ IoTigeraOperatorV1ApiServer
 export type ReplaceOperatorTigeraIoV1ApiServerStatusApiArg = {
   /** name of the APIServer */
   name: string
@@ -1047,7 +1045,7 @@ export type PatchOperatorTigeraIoV1ApiServerStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoTigeraOperatorV1ApiServer
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1104,8 +1102,7 @@ export type ListOperatorTigeraIoV1ImageSetApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateOperatorTigeraIoV1ImageSetApiResponse =
-  /** status 200 OK */
+export type CreateOperatorTigeraIoV1ImageSetApiResponse = /** status 200 OK */
   | IoTigeraOperatorV1ImageSet
   | /** status 201 Created */ IoTigeraOperatorV1ImageSet
   | /** status 202 Accepted */ IoTigeraOperatorV1ImageSet
@@ -1186,8 +1183,7 @@ export type ReadOperatorTigeraIoV1ImageSetApiArg = {
     Defaults to unset */
   resourceVersion?: string
 }
-export type ReplaceOperatorTigeraIoV1ImageSetApiResponse =
-  /** status 200 OK */
+export type ReplaceOperatorTigeraIoV1ImageSetApiResponse = /** status 200 OK */
   | IoTigeraOperatorV1ImageSet
   | /** status 201 Created */ IoTigeraOperatorV1ImageSet
 export type ReplaceOperatorTigeraIoV1ImageSetApiArg = {
@@ -1211,8 +1207,7 @@ export type ReplaceOperatorTigeraIoV1ImageSetApiArg = {
       body: IoTigeraOperatorV1ImageSet
     }
 )
-export type DeleteOperatorTigeraIoV1ImageSetApiResponse =
-  /** status 200 OK */
+export type DeleteOperatorTigeraIoV1ImageSetApiResponse = /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1ImageSetApiArg = {
@@ -1256,7 +1251,7 @@ export type PatchOperatorTigeraIoV1ImageSetApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoTigeraOperatorV1ImageSet
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1281,8 +1276,8 @@ export type ReadOperatorTigeraIoV1ImageSetStatusApiArg = {
 }
 export type ReplaceOperatorTigeraIoV1ImageSetStatusApiResponse =
   /** status 200 OK */
-  | IoTigeraOperatorV1ImageSet
-  | /** status 201 Created */ IoTigeraOperatorV1ImageSet
+    | IoTigeraOperatorV1ImageSet
+    | /** status 201 Created */ IoTigeraOperatorV1ImageSet
 export type ReplaceOperatorTigeraIoV1ImageSetStatusApiArg = {
   /** name of the ImageSet */
   name: string
@@ -1322,7 +1317,7 @@ export type PatchOperatorTigeraIoV1ImageSetStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoTigeraOperatorV1ImageSet
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1381,9 +1376,9 @@ export type ListOperatorTigeraIoV1InstallationApiArg = {
 }
 export type CreateOperatorTigeraIoV1InstallationApiResponse =
   /** status 200 OK */
-  | IoTigeraOperatorV1Installation
-  | /** status 201 Created */ IoTigeraOperatorV1Installation
-  | /** status 202 Accepted */ IoTigeraOperatorV1Installation
+    | IoTigeraOperatorV1Installation
+    | /** status 201 Created */ IoTigeraOperatorV1Installation
+    | /** status 202 Accepted */ IoTigeraOperatorV1Installation
 export type CreateOperatorTigeraIoV1InstallationApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -1463,8 +1458,8 @@ export type ReadOperatorTigeraIoV1InstallationApiArg = {
 }
 export type ReplaceOperatorTigeraIoV1InstallationApiResponse =
   /** status 200 OK */
-  | IoTigeraOperatorV1Installation
-  | /** status 201 Created */ IoTigeraOperatorV1Installation
+    | IoTigeraOperatorV1Installation
+    | /** status 201 Created */ IoTigeraOperatorV1Installation
 export type ReplaceOperatorTigeraIoV1InstallationApiArg = {
   /** name of the Installation */
   name: string
@@ -1488,8 +1483,8 @@ export type ReplaceOperatorTigeraIoV1InstallationApiArg = {
 )
 export type DeleteOperatorTigeraIoV1InstallationApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1InstallationApiArg = {
   /** name of the Installation */
   name: string
@@ -1531,7 +1526,7 @@ export type PatchOperatorTigeraIoV1InstallationApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoTigeraOperatorV1Installation
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1556,8 +1551,8 @@ export type ReadOperatorTigeraIoV1InstallationStatusApiArg = {
 }
 export type ReplaceOperatorTigeraIoV1InstallationStatusApiResponse =
   /** status 200 OK */
-  | IoTigeraOperatorV1Installation
-  | /** status 201 Created */ IoTigeraOperatorV1Installation
+    | IoTigeraOperatorV1Installation
+    | /** status 201 Created */ IoTigeraOperatorV1Installation
 export type ReplaceOperatorTigeraIoV1InstallationStatusApiArg = {
   /** name of the Installation */
   name: string
@@ -1597,7 +1592,7 @@ export type PatchOperatorTigeraIoV1InstallationStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoTigeraOperatorV1Installation
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1656,9 +1651,9 @@ export type ListOperatorTigeraIoV1TigeraStatusApiArg = {
 }
 export type CreateOperatorTigeraIoV1TigeraStatusApiResponse =
   /** status 200 OK */
-  | IoTigeraOperatorV1TigeraStatus
-  | /** status 201 Created */ IoTigeraOperatorV1TigeraStatus
-  | /** status 202 Accepted */ IoTigeraOperatorV1TigeraStatus
+    | IoTigeraOperatorV1TigeraStatus
+    | /** status 201 Created */ IoTigeraOperatorV1TigeraStatus
+    | /** status 202 Accepted */ IoTigeraOperatorV1TigeraStatus
 export type CreateOperatorTigeraIoV1TigeraStatusApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -1738,8 +1733,8 @@ export type ReadOperatorTigeraIoV1TigeraStatusApiArg = {
 }
 export type ReplaceOperatorTigeraIoV1TigeraStatusApiResponse =
   /** status 200 OK */
-  | IoTigeraOperatorV1TigeraStatus
-  | /** status 201 Created */ IoTigeraOperatorV1TigeraStatus
+    | IoTigeraOperatorV1TigeraStatus
+    | /** status 201 Created */ IoTigeraOperatorV1TigeraStatus
 export type ReplaceOperatorTigeraIoV1TigeraStatusApiArg = {
   /** name of the TigeraStatus */
   name: string
@@ -1763,8 +1758,8 @@ export type ReplaceOperatorTigeraIoV1TigeraStatusApiArg = {
 )
 export type DeleteOperatorTigeraIoV1TigeraStatusApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1TigeraStatusApiArg = {
   /** name of the TigeraStatus */
   name: string
@@ -1806,7 +1801,7 @@ export type PatchOperatorTigeraIoV1TigeraStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoTigeraOperatorV1TigeraStatus
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1831,8 +1826,8 @@ export type ReadOperatorTigeraIoV1TigeraStatusStatusApiArg = {
 }
 export type ReplaceOperatorTigeraIoV1TigeraStatusStatusApiResponse =
   /** status 200 OK */
-  | IoTigeraOperatorV1TigeraStatus
-  | /** status 201 Created */ IoTigeraOperatorV1TigeraStatus
+    | IoTigeraOperatorV1TigeraStatus
+    | /** status 201 Created */ IoTigeraOperatorV1TigeraStatus
 export type ReplaceOperatorTigeraIoV1TigeraStatusStatusApiArg = {
   /** name of the TigeraStatus */
   name: string
@@ -1872,7 +1867,7 @@ export type PatchOperatorTigeraIoV1TigeraStatusStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoTigeraOperatorV1TigeraStatus
     }
   | {
       contentType: 'application/json-patch+json'

@@ -360,9 +360,9 @@ export type ListCertificatesV1CertificateSigningRequestApiArg = {
 }
 export type CreateCertificatesV1CertificateSigningRequestApiResponse =
   /** status 200 OK */
-  | IoK8SApiCertificatesV1CertificateSigningRequest
-  | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
-  | /** status 202 Accepted */ IoK8SApiCertificatesV1CertificateSigningRequest
+    | IoK8SApiCertificatesV1CertificateSigningRequest
+    | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
+    | /** status 202 Accepted */ IoK8SApiCertificatesV1CertificateSigningRequest
 export type CreateCertificatesV1CertificateSigningRequestApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -439,8 +439,8 @@ export type ReadCertificatesV1CertificateSigningRequestApiArg = {
 }
 export type ReplaceCertificatesV1CertificateSigningRequestApiResponse =
   /** status 200 OK */
-  | IoK8SApiCertificatesV1CertificateSigningRequest
-  | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
+    | IoK8SApiCertificatesV1CertificateSigningRequest
+    | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
 export type ReplaceCertificatesV1CertificateSigningRequestApiArg = {
   /** name of the CertificateSigningRequest */
   name: string
@@ -458,8 +458,8 @@ export type ReplaceCertificatesV1CertificateSigningRequestApiArg = {
 }
 export type DeleteCertificatesV1CertificateSigningRequestApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCertificatesV1CertificateSigningRequestApiArg = {
   /** name of the CertificateSigningRequest */
   name: string
@@ -479,8 +479,8 @@ export type DeleteCertificatesV1CertificateSigningRequestApiArg = {
 }
 export type PatchCertificatesV1CertificateSigningRequestApiResponse =
   /** status 200 OK */
-  | IoK8SApiCertificatesV1CertificateSigningRequest
-  | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
+    | IoK8SApiCertificatesV1CertificateSigningRequest
+    | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
 export type PatchCertificatesV1CertificateSigningRequestApiArg = {
   /** name of the CertificateSigningRequest */
   name: string
@@ -497,7 +497,7 @@ export type PatchCertificatesV1CertificateSigningRequestApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiCertificatesV1CertificateSigningRequest
     }
   | {
       contentType: 'application/json-patch+json'
@@ -509,7 +509,7 @@ export type PatchCertificatesV1CertificateSigningRequestApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiCertificatesV1CertificateSigningRequest
     }
 )
 export type ReadCertificatesV1CertificateSigningRequestApprovalApiResponse =
@@ -522,8 +522,8 @@ export type ReadCertificatesV1CertificateSigningRequestApprovalApiArg = {
 }
 export type ReplaceCertificatesV1CertificateSigningRequestApprovalApiResponse =
   /** status 200 OK */
-  | IoK8SApiCertificatesV1CertificateSigningRequest
-  | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
+    | IoK8SApiCertificatesV1CertificateSigningRequest
+    | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
 export type ReplaceCertificatesV1CertificateSigningRequestApprovalApiArg = {
   /** name of the CertificateSigningRequest */
   name: string
@@ -541,8 +541,8 @@ export type ReplaceCertificatesV1CertificateSigningRequestApprovalApiArg = {
 }
 export type PatchCertificatesV1CertificateSigningRequestApprovalApiResponse =
   /** status 200 OK */
-  | IoK8SApiCertificatesV1CertificateSigningRequest
-  | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
+    | IoK8SApiCertificatesV1CertificateSigningRequest
+    | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
 export type PatchCertificatesV1CertificateSigningRequestApprovalApiArg = {
   /** name of the CertificateSigningRequest */
   name: string
@@ -559,7 +559,7 @@ export type PatchCertificatesV1CertificateSigningRequestApprovalApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiCertificatesV1CertificateSigningRequest
     }
   | {
       contentType: 'application/json-patch+json'
@@ -571,7 +571,7 @@ export type PatchCertificatesV1CertificateSigningRequestApprovalApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiCertificatesV1CertificateSigningRequest
     }
 )
 export type ReadCertificatesV1CertificateSigningRequestStatusApiResponse =
@@ -584,8 +584,8 @@ export type ReadCertificatesV1CertificateSigningRequestStatusApiArg = {
 }
 export type ReplaceCertificatesV1CertificateSigningRequestStatusApiResponse =
   /** status 200 OK */
-  | IoK8SApiCertificatesV1CertificateSigningRequest
-  | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
+    | IoK8SApiCertificatesV1CertificateSigningRequest
+    | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
 export type ReplaceCertificatesV1CertificateSigningRequestStatusApiArg = {
   /** name of the CertificateSigningRequest */
   name: string
@@ -603,8 +603,8 @@ export type ReplaceCertificatesV1CertificateSigningRequestStatusApiArg = {
 }
 export type PatchCertificatesV1CertificateSigningRequestStatusApiResponse =
   /** status 200 OK */
-  | IoK8SApiCertificatesV1CertificateSigningRequest
-  | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
+    | IoK8SApiCertificatesV1CertificateSigningRequest
+    | /** status 201 Created */ IoK8SApiCertificatesV1CertificateSigningRequest
 export type PatchCertificatesV1CertificateSigningRequestStatusApiArg = {
   /** name of the CertificateSigningRequest */
   name: string
@@ -621,7 +621,7 @@ export type PatchCertificatesV1CertificateSigningRequestStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiCertificatesV1CertificateSigningRequest
     }
   | {
       contentType: 'application/json-patch+json'
@@ -633,7 +633,7 @@ export type PatchCertificatesV1CertificateSigningRequestStatusApiArg = {
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiCertificatesV1CertificateSigningRequest
     }
 )
 export type WatchCertificatesV1CertificateSigningRequestListApiResponse =

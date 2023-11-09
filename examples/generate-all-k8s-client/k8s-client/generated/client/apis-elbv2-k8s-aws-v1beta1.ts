@@ -410,9 +410,9 @@ export type ListElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
 }
 export type CreateElbv2K8SAwsV1Beta1IngressClassParamsApiResponse =
   /** status 200 OK */
-  | AwsK8SElbv2V1Beta1IngressClassParams
-  | /** status 201 Created */ AwsK8SElbv2V1Beta1IngressClassParams
-  | /** status 202 Accepted */ AwsK8SElbv2V1Beta1IngressClassParams
+    | AwsK8SElbv2V1Beta1IngressClassParams
+    | /** status 201 Created */ AwsK8SElbv2V1Beta1IngressClassParams
+    | /** status 202 Accepted */ AwsK8SElbv2V1Beta1IngressClassParams
 export type CreateElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -492,8 +492,8 @@ export type ReadElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
 }
 export type ReplaceElbv2K8SAwsV1Beta1IngressClassParamsApiResponse =
   /** status 200 OK */
-  | AwsK8SElbv2V1Beta1IngressClassParams
-  | /** status 201 Created */ AwsK8SElbv2V1Beta1IngressClassParams
+    | AwsK8SElbv2V1Beta1IngressClassParams
+    | /** status 201 Created */ AwsK8SElbv2V1Beta1IngressClassParams
 export type ReplaceElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
   /** name of the IngressClassParams */
   name: string
@@ -517,8 +517,8 @@ export type ReplaceElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
 )
 export type DeleteElbv2K8SAwsV1Beta1IngressClassParamsApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
   /** name of the IngressClassParams */
   name: string
@@ -560,7 +560,7 @@ export type PatchElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: AwsK8SElbv2V1Beta1IngressClassParams
     }
   | {
       contentType: 'application/json-patch+json'
@@ -621,9 +621,9 @@ export type ListElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
 }
 export type CreateElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiResponse =
   /** status 200 OK */
-  | AwsK8SElbv2V1Beta1TargetGroupBinding
-  | /** status 201 Created */ AwsK8SElbv2V1Beta1TargetGroupBinding
-  | /** status 202 Accepted */ AwsK8SElbv2V1Beta1TargetGroupBinding
+    | AwsK8SElbv2V1Beta1TargetGroupBinding
+    | /** status 201 Created */ AwsK8SElbv2V1Beta1TargetGroupBinding
+    | /** status 202 Accepted */ AwsK8SElbv2V1Beta1TargetGroupBinding
 export type CreateElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -710,8 +710,8 @@ export type ReadElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
 }
 export type ReplaceElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiResponse =
   /** status 200 OK */
-  | AwsK8SElbv2V1Beta1TargetGroupBinding
-  | /** status 201 Created */ AwsK8SElbv2V1Beta1TargetGroupBinding
+    | AwsK8SElbv2V1Beta1TargetGroupBinding
+    | /** status 201 Created */ AwsK8SElbv2V1Beta1TargetGroupBinding
 export type ReplaceElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
   /** name of the TargetGroupBinding */
   name: string
@@ -737,8 +737,8 @@ export type ReplaceElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
 )
 export type DeleteElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
   /** name of the TargetGroupBinding */
   name: string
@@ -784,7 +784,7 @@ export type PatchElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: AwsK8SElbv2V1Beta1TargetGroupBinding
     }
   | {
       contentType: 'application/json-patch+json'
@@ -811,8 +811,8 @@ export type ReadElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatusApiArg = {
 }
 export type ReplaceElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatusApiResponse =
   /** status 200 OK */
-  | AwsK8SElbv2V1Beta1TargetGroupBinding
-  | /** status 201 Created */ AwsK8SElbv2V1Beta1TargetGroupBinding
+    | AwsK8SElbv2V1Beta1TargetGroupBinding
+    | /** status 201 Created */ AwsK8SElbv2V1Beta1TargetGroupBinding
 export type ReplaceElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatusApiArg =
   {
     /** name of the TargetGroupBinding */
@@ -857,7 +857,7 @@ export type PatchElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: AwsK8SElbv2V1Beta1TargetGroupBinding
     }
   | {
       contentType: 'application/json-patch+json'

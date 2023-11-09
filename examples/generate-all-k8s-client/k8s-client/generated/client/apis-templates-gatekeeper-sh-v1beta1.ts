@@ -243,9 +243,9 @@ export type ListTemplatesGatekeeperShV1Beta1ConstraintTemplateApiArg = {
 }
 export type CreateTemplatesGatekeeperShV1Beta1ConstraintTemplateApiResponse =
   /** status 200 OK */
-  | ShGatekeeperTemplatesV1Beta1ConstraintTemplate
-  | /** status 201 Created */ ShGatekeeperTemplatesV1Beta1ConstraintTemplate
-  | /** status 202 Accepted */ ShGatekeeperTemplatesV1Beta1ConstraintTemplate
+    | ShGatekeeperTemplatesV1Beta1ConstraintTemplate
+    | /** status 201 Created */ ShGatekeeperTemplatesV1Beta1ConstraintTemplate
+    | /** status 202 Accepted */ ShGatekeeperTemplatesV1Beta1ConstraintTemplate
 export type CreateTemplatesGatekeeperShV1Beta1ConstraintTemplateApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -326,8 +326,8 @@ export type ReadTemplatesGatekeeperShV1Beta1ConstraintTemplateApiArg = {
 }
 export type ReplaceTemplatesGatekeeperShV1Beta1ConstraintTemplateApiResponse =
   /** status 200 OK */
-  | ShGatekeeperTemplatesV1Beta1ConstraintTemplate
-  | /** status 201 Created */ ShGatekeeperTemplatesV1Beta1ConstraintTemplate
+    | ShGatekeeperTemplatesV1Beta1ConstraintTemplate
+    | /** status 201 Created */ ShGatekeeperTemplatesV1Beta1ConstraintTemplate
 export type ReplaceTemplatesGatekeeperShV1Beta1ConstraintTemplateApiArg = {
   /** name of the ConstraintTemplate */
   name: string
@@ -351,8 +351,8 @@ export type ReplaceTemplatesGatekeeperShV1Beta1ConstraintTemplateApiArg = {
 )
 export type DeleteTemplatesGatekeeperShV1Beta1ConstraintTemplateApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTemplatesGatekeeperShV1Beta1ConstraintTemplateApiArg = {
   /** name of the ConstraintTemplate */
   name: string
@@ -394,7 +394,7 @@ export type PatchTemplatesGatekeeperShV1Beta1ConstraintTemplateApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperTemplatesV1Beta1ConstraintTemplate
     }
   | {
       contentType: 'application/json-patch+json'
@@ -419,8 +419,8 @@ export type ReadTemplatesGatekeeperShV1Beta1ConstraintTemplateStatusApiArg = {
 }
 export type ReplaceTemplatesGatekeeperShV1Beta1ConstraintTemplateStatusApiResponse =
   /** status 200 OK */
-  | ShGatekeeperTemplatesV1Beta1ConstraintTemplate
-  | /** status 201 Created */ ShGatekeeperTemplatesV1Beta1ConstraintTemplate
+    | ShGatekeeperTemplatesV1Beta1ConstraintTemplate
+    | /** status 201 Created */ ShGatekeeperTemplatesV1Beta1ConstraintTemplate
 export type ReplaceTemplatesGatekeeperShV1Beta1ConstraintTemplateStatusApiArg =
   {
     /** name of the ConstraintTemplate */
@@ -461,7 +461,7 @@ export type PatchTemplatesGatekeeperShV1Beta1ConstraintTemplateStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperTemplatesV1Beta1ConstraintTemplate
     }
   | {
       contentType: 'application/json-patch+json'

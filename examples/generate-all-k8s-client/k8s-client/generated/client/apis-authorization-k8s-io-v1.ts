@@ -93,9 +93,9 @@ export type GetAuthorizationV1ApiResourcesApiResponse =
 export type GetAuthorizationV1ApiResourcesApiArg = void
 export type CreateAuthorizationV1NamespacedLocalSubjectAccessReviewApiResponse =
   /** status 200 OK */
-  | IoK8SApiAuthorizationV1LocalSubjectAccessReview
-  | /** status 201 Created */ IoK8SApiAuthorizationV1LocalSubjectAccessReview
-  | /** status 202 Accepted */ IoK8SApiAuthorizationV1LocalSubjectAccessReview
+    | IoK8SApiAuthorizationV1LocalSubjectAccessReview
+    | /** status 201 Created */ IoK8SApiAuthorizationV1LocalSubjectAccessReview
+    | /** status 202 Accepted */ IoK8SApiAuthorizationV1LocalSubjectAccessReview
 export type CreateAuthorizationV1NamespacedLocalSubjectAccessReviewApiArg = {
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -113,9 +113,9 @@ export type CreateAuthorizationV1NamespacedLocalSubjectAccessReviewApiArg = {
 }
 export type CreateAuthorizationV1SelfSubjectAccessReviewApiResponse =
   /** status 200 OK */
-  | IoK8SApiAuthorizationV1SelfSubjectAccessReview
-  | /** status 201 Created */ IoK8SApiAuthorizationV1SelfSubjectAccessReview
-  | /** status 202 Accepted */ IoK8SApiAuthorizationV1SelfSubjectAccessReview
+    | IoK8SApiAuthorizationV1SelfSubjectAccessReview
+    | /** status 201 Created */ IoK8SApiAuthorizationV1SelfSubjectAccessReview
+    | /** status 202 Accepted */ IoK8SApiAuthorizationV1SelfSubjectAccessReview
 export type CreateAuthorizationV1SelfSubjectAccessReviewApiArg = {
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -131,9 +131,9 @@ export type CreateAuthorizationV1SelfSubjectAccessReviewApiArg = {
 }
 export type CreateAuthorizationV1SelfSubjectRulesReviewApiResponse =
   /** status 200 OK */
-  | IoK8SApiAuthorizationV1SelfSubjectRulesReview
-  | /** status 201 Created */ IoK8SApiAuthorizationV1SelfSubjectRulesReview
-  | /** status 202 Accepted */ IoK8SApiAuthorizationV1SelfSubjectRulesReview
+    | IoK8SApiAuthorizationV1SelfSubjectRulesReview
+    | /** status 201 Created */ IoK8SApiAuthorizationV1SelfSubjectRulesReview
+    | /** status 202 Accepted */ IoK8SApiAuthorizationV1SelfSubjectRulesReview
 export type CreateAuthorizationV1SelfSubjectRulesReviewApiArg = {
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -149,9 +149,9 @@ export type CreateAuthorizationV1SelfSubjectRulesReviewApiArg = {
 }
 export type CreateAuthorizationV1SubjectAccessReviewApiResponse =
   /** status 200 OK */
-  | IoK8SApiAuthorizationV1SubjectAccessReview
-  | /** status 201 Created */ IoK8SApiAuthorizationV1SubjectAccessReview
-  | /** status 202 Accepted */ IoK8SApiAuthorizationV1SubjectAccessReview
+    | IoK8SApiAuthorizationV1SubjectAccessReview
+    | /** status 201 Created */ IoK8SApiAuthorizationV1SubjectAccessReview
+    | /** status 202 Accepted */ IoK8SApiAuthorizationV1SubjectAccessReview
 export type CreateAuthorizationV1SubjectAccessReviewApiArg = {
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

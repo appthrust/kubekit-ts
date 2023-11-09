@@ -1789,9 +1789,9 @@ export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
 }
 export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1IngressRoute
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRoute
-  | /** status 202 Accepted */ UsContainoTraefikV1Alpha1IngressRoute
+    | UsContainoTraefikV1Alpha1IngressRoute
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRoute
+    | /** status 202 Accepted */ UsContainoTraefikV1Alpha1IngressRoute
 export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1878,8 +1878,8 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
 }
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1IngressRoute
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRoute
+    | UsContainoTraefikV1Alpha1IngressRoute
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRoute
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   /** name of the IngressRoute */
   name: string
@@ -1905,8 +1905,8 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
 )
 export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   /** name of the IngressRoute */
   name: string
@@ -1952,7 +1952,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: UsContainoTraefikV1Alpha1IngressRoute
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2013,9 +2013,9 @@ export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
 }
 export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1IngressRouteTcp
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRouteTcp
-  | /** status 202 Accepted */ UsContainoTraefikV1Alpha1IngressRouteTcp
+    | UsContainoTraefikV1Alpha1IngressRouteTcp
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRouteTcp
+    | /** status 202 Accepted */ UsContainoTraefikV1Alpha1IngressRouteTcp
 export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2102,8 +2102,8 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
 }
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1IngressRouteTcp
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRouteTcp
+    | UsContainoTraefikV1Alpha1IngressRouteTcp
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRouteTcp
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   /** name of the IngressRouteTCP */
   name: string
@@ -2129,8 +2129,8 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
 )
 export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   /** name of the IngressRouteTCP */
   name: string
@@ -2176,7 +2176,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: UsContainoTraefikV1Alpha1IngressRouteTcp
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2237,9 +2237,9 @@ export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
 }
 export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1IngressRouteUdp
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRouteUdp
-  | /** status 202 Accepted */ UsContainoTraefikV1Alpha1IngressRouteUdp
+    | UsContainoTraefikV1Alpha1IngressRouteUdp
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRouteUdp
+    | /** status 202 Accepted */ UsContainoTraefikV1Alpha1IngressRouteUdp
 export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2326,8 +2326,8 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
 }
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1IngressRouteUdp
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRouteUdp
+    | UsContainoTraefikV1Alpha1IngressRouteUdp
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1IngressRouteUdp
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   /** name of the IngressRouteUDP */
   name: string
@@ -2353,8 +2353,8 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
 )
 export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   /** name of the IngressRouteUDP */
   name: string
@@ -2400,7 +2400,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: UsContainoTraefikV1Alpha1IngressRouteUdp
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2461,9 +2461,9 @@ export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
 }
 export type CreateTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1Middleware
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1Middleware
-  | /** status 202 Accepted */ UsContainoTraefikV1Alpha1Middleware
+    | UsContainoTraefikV1Alpha1Middleware
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1Middleware
+    | /** status 202 Accepted */ UsContainoTraefikV1Alpha1Middleware
 export type CreateTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2550,8 +2550,8 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
 }
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1Middleware
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1Middleware
+    | UsContainoTraefikV1Alpha1Middleware
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1Middleware
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   /** name of the Middleware */
   name: string
@@ -2577,8 +2577,8 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
 )
 export type DeleteTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   /** name of the Middleware */
   name: string
@@ -2624,7 +2624,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: UsContainoTraefikV1Alpha1Middleware
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2685,9 +2685,9 @@ export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
 }
 export type CreateTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1MiddlewareTcp
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1MiddlewareTcp
-  | /** status 202 Accepted */ UsContainoTraefikV1Alpha1MiddlewareTcp
+    | UsContainoTraefikV1Alpha1MiddlewareTcp
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1MiddlewareTcp
+    | /** status 202 Accepted */ UsContainoTraefikV1Alpha1MiddlewareTcp
 export type CreateTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2774,8 +2774,8 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
 }
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1MiddlewareTcp
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1MiddlewareTcp
+    | UsContainoTraefikV1Alpha1MiddlewareTcp
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1MiddlewareTcp
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   /** name of the MiddlewareTCP */
   name: string
@@ -2801,8 +2801,8 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
 )
 export type DeleteTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   /** name of the MiddlewareTCP */
   name: string
@@ -2848,7 +2848,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: UsContainoTraefikV1Alpha1MiddlewareTcp
     }
   | {
       contentType: 'application/json-patch+json'
@@ -2909,9 +2909,9 @@ export type ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
 }
 export type CreateTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1ServersTransport
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1ServersTransport
-  | /** status 202 Accepted */ UsContainoTraefikV1Alpha1ServersTransport
+    | UsContainoTraefikV1Alpha1ServersTransport
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1ServersTransport
+    | /** status 202 Accepted */ UsContainoTraefikV1Alpha1ServersTransport
 export type CreateTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2998,8 +2998,8 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
 }
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1ServersTransport
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1ServersTransport
+    | UsContainoTraefikV1Alpha1ServersTransport
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1ServersTransport
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   /** name of the ServersTransport */
   name: string
@@ -3025,8 +3025,8 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
 )
 export type DeleteTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   /** name of the ServersTransport */
   name: string
@@ -3072,7 +3072,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: UsContainoTraefikV1Alpha1ServersTransport
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3133,9 +3133,9 @@ export type ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
 }
 export type CreateTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1TlsOption
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1TlsOption
-  | /** status 202 Accepted */ UsContainoTraefikV1Alpha1TlsOption
+    | UsContainoTraefikV1Alpha1TlsOption
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1TlsOption
+    | /** status 202 Accepted */ UsContainoTraefikV1Alpha1TlsOption
 export type CreateTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3222,8 +3222,8 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
 }
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1TlsOption
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1TlsOption
+    | UsContainoTraefikV1Alpha1TlsOption
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1TlsOption
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   /** name of the TLSOption */
   name: string
@@ -3249,8 +3249,8 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
 )
 export type DeleteTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   /** name of the TLSOption */
   name: string
@@ -3296,7 +3296,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: UsContainoTraefikV1Alpha1TlsOption
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3357,9 +3357,9 @@ export type ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
 }
 export type CreateTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1TlsStore
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1TlsStore
-  | /** status 202 Accepted */ UsContainoTraefikV1Alpha1TlsStore
+    | UsContainoTraefikV1Alpha1TlsStore
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1TlsStore
+    | /** status 202 Accepted */ UsContainoTraefikV1Alpha1TlsStore
 export type CreateTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3446,8 +3446,8 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
 }
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1TlsStore
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1TlsStore
+    | UsContainoTraefikV1Alpha1TlsStore
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1TlsStore
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   /** name of the TLSStore */
   name: string
@@ -3473,8 +3473,8 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
 )
 export type DeleteTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   /** name of the TLSStore */
   name: string
@@ -3520,7 +3520,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: UsContainoTraefikV1Alpha1TlsStore
     }
   | {
       contentType: 'application/json-patch+json'
@@ -3581,9 +3581,9 @@ export type ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
 }
 export type CreateTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1TraefikService
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1TraefikService
-  | /** status 202 Accepted */ UsContainoTraefikV1Alpha1TraefikService
+    | UsContainoTraefikV1Alpha1TraefikService
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1TraefikService
+    | /** status 202 Accepted */ UsContainoTraefikV1Alpha1TraefikService
 export type CreateTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3670,8 +3670,8 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
 }
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse =
   /** status 200 OK */
-  | UsContainoTraefikV1Alpha1TraefikService
-  | /** status 201 Created */ UsContainoTraefikV1Alpha1TraefikService
+    | UsContainoTraefikV1Alpha1TraefikService
+    | /** status 201 Created */ UsContainoTraefikV1Alpha1TraefikService
 export type ReplaceTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   /** name of the TraefikService */
   name: string
@@ -3697,8 +3697,8 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
 )
 export type DeleteTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   /** name of the TraefikService */
   name: string
@@ -3744,7 +3744,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: UsContainoTraefikV1Alpha1TraefikService
     }
   | {
       contentType: 'application/json-patch+json'

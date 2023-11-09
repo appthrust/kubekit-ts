@@ -190,9 +190,9 @@ export type ListExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
 }
 export type CreateExternaldataGatekeeperShV1Alpha1ProviderApiResponse =
   /** status 200 OK */
-  | ShGatekeeperExternaldataV1Alpha1Provider
-  | /** status 201 Created */ ShGatekeeperExternaldataV1Alpha1Provider
-  | /** status 202 Accepted */ ShGatekeeperExternaldataV1Alpha1Provider
+    | ShGatekeeperExternaldataV1Alpha1Provider
+    | /** status 201 Created */ ShGatekeeperExternaldataV1Alpha1Provider
+    | /** status 202 Accepted */ ShGatekeeperExternaldataV1Alpha1Provider
 export type CreateExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -272,8 +272,8 @@ export type ReadExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
 }
 export type ReplaceExternaldataGatekeeperShV1Alpha1ProviderApiResponse =
   /** status 200 OK */
-  | ShGatekeeperExternaldataV1Alpha1Provider
-  | /** status 201 Created */ ShGatekeeperExternaldataV1Alpha1Provider
+    | ShGatekeeperExternaldataV1Alpha1Provider
+    | /** status 201 Created */ ShGatekeeperExternaldataV1Alpha1Provider
 export type ReplaceExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
   /** name of the Provider */
   name: string
@@ -297,8 +297,8 @@ export type ReplaceExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
 )
 export type DeleteExternaldataGatekeeperShV1Alpha1ProviderApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
   /** name of the Provider */
   name: string
@@ -340,7 +340,7 @@ export type PatchExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperExternaldataV1Alpha1Provider
     }
   | {
       contentType: 'application/json-patch+json'

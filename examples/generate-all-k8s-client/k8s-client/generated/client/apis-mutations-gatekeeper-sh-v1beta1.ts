@@ -635,9 +635,9 @@ export type ListMutationsGatekeeperShV1Beta1AssignApiArg = {
 }
 export type CreateMutationsGatekeeperShV1Beta1AssignApiResponse =
   /** status 200 OK */
-  | ShGatekeeperMutationsV1Beta1Assign
-  | /** status 201 Created */ ShGatekeeperMutationsV1Beta1Assign
-  | /** status 202 Accepted */ ShGatekeeperMutationsV1Beta1Assign
+    | ShGatekeeperMutationsV1Beta1Assign
+    | /** status 201 Created */ ShGatekeeperMutationsV1Beta1Assign
+    | /** status 202 Accepted */ ShGatekeeperMutationsV1Beta1Assign
 export type CreateMutationsGatekeeperShV1Beta1AssignApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -717,8 +717,8 @@ export type ReadMutationsGatekeeperShV1Beta1AssignApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1Beta1AssignApiResponse =
   /** status 200 OK */
-  | ShGatekeeperMutationsV1Beta1Assign
-  | /** status 201 Created */ ShGatekeeperMutationsV1Beta1Assign
+    | ShGatekeeperMutationsV1Beta1Assign
+    | /** status 201 Created */ ShGatekeeperMutationsV1Beta1Assign
 export type ReplaceMutationsGatekeeperShV1Beta1AssignApiArg = {
   /** name of the Assign */
   name: string
@@ -742,8 +742,8 @@ export type ReplaceMutationsGatekeeperShV1Beta1AssignApiArg = {
 )
 export type DeleteMutationsGatekeeperShV1Beta1AssignApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1Beta1AssignApiArg = {
   /** name of the Assign */
   name: string
@@ -785,7 +785,7 @@ export type PatchMutationsGatekeeperShV1Beta1AssignApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperMutationsV1Beta1Assign
     }
   | {
       contentType: 'application/json-patch+json'
@@ -810,8 +810,8 @@ export type ReadMutationsGatekeeperShV1Beta1AssignStatusApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1Beta1AssignStatusApiResponse =
   /** status 200 OK */
-  | ShGatekeeperMutationsV1Beta1Assign
-  | /** status 201 Created */ ShGatekeeperMutationsV1Beta1Assign
+    | ShGatekeeperMutationsV1Beta1Assign
+    | /** status 201 Created */ ShGatekeeperMutationsV1Beta1Assign
 export type ReplaceMutationsGatekeeperShV1Beta1AssignStatusApiArg = {
   /** name of the Assign */
   name: string
@@ -851,7 +851,7 @@ export type PatchMutationsGatekeeperShV1Beta1AssignStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperMutationsV1Beta1Assign
     }
   | {
       contentType: 'application/json-patch+json'
@@ -910,9 +910,9 @@ export type ListMutationsGatekeeperShV1Beta1AssignMetadataApiArg = {
 }
 export type CreateMutationsGatekeeperShV1Beta1AssignMetadataApiResponse =
   /** status 200 OK */
-  | ShGatekeeperMutationsV1Beta1AssignMetadata
-  | /** status 201 Created */ ShGatekeeperMutationsV1Beta1AssignMetadata
-  | /** status 202 Accepted */ ShGatekeeperMutationsV1Beta1AssignMetadata
+    | ShGatekeeperMutationsV1Beta1AssignMetadata
+    | /** status 201 Created */ ShGatekeeperMutationsV1Beta1AssignMetadata
+    | /** status 202 Accepted */ ShGatekeeperMutationsV1Beta1AssignMetadata
 export type CreateMutationsGatekeeperShV1Beta1AssignMetadataApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -992,8 +992,8 @@ export type ReadMutationsGatekeeperShV1Beta1AssignMetadataApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1Beta1AssignMetadataApiResponse =
   /** status 200 OK */
-  | ShGatekeeperMutationsV1Beta1AssignMetadata
-  | /** status 201 Created */ ShGatekeeperMutationsV1Beta1AssignMetadata
+    | ShGatekeeperMutationsV1Beta1AssignMetadata
+    | /** status 201 Created */ ShGatekeeperMutationsV1Beta1AssignMetadata
 export type ReplaceMutationsGatekeeperShV1Beta1AssignMetadataApiArg = {
   /** name of the AssignMetadata */
   name: string
@@ -1017,8 +1017,8 @@ export type ReplaceMutationsGatekeeperShV1Beta1AssignMetadataApiArg = {
 )
 export type DeleteMutationsGatekeeperShV1Beta1AssignMetadataApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1Beta1AssignMetadataApiArg = {
   /** name of the AssignMetadata */
   name: string
@@ -1060,7 +1060,7 @@ export type PatchMutationsGatekeeperShV1Beta1AssignMetadataApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperMutationsV1Beta1AssignMetadata
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1085,8 +1085,8 @@ export type ReadMutationsGatekeeperShV1Beta1AssignMetadataStatusApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1Beta1AssignMetadataStatusApiResponse =
   /** status 200 OK */
-  | ShGatekeeperMutationsV1Beta1AssignMetadata
-  | /** status 201 Created */ ShGatekeeperMutationsV1Beta1AssignMetadata
+    | ShGatekeeperMutationsV1Beta1AssignMetadata
+    | /** status 201 Created */ ShGatekeeperMutationsV1Beta1AssignMetadata
 export type ReplaceMutationsGatekeeperShV1Beta1AssignMetadataStatusApiArg = {
   /** name of the AssignMetadata */
   name: string
@@ -1126,7 +1126,7 @@ export type PatchMutationsGatekeeperShV1Beta1AssignMetadataStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperMutationsV1Beta1AssignMetadata
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1185,9 +1185,9 @@ export type ListMutationsGatekeeperShV1Beta1ModifySetApiArg = {
 }
 export type CreateMutationsGatekeeperShV1Beta1ModifySetApiResponse =
   /** status 200 OK */
-  | ShGatekeeperMutationsV1Beta1ModifySet
-  | /** status 201 Created */ ShGatekeeperMutationsV1Beta1ModifySet
-  | /** status 202 Accepted */ ShGatekeeperMutationsV1Beta1ModifySet
+    | ShGatekeeperMutationsV1Beta1ModifySet
+    | /** status 201 Created */ ShGatekeeperMutationsV1Beta1ModifySet
+    | /** status 202 Accepted */ ShGatekeeperMutationsV1Beta1ModifySet
 export type CreateMutationsGatekeeperShV1Beta1ModifySetApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -1267,8 +1267,8 @@ export type ReadMutationsGatekeeperShV1Beta1ModifySetApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1Beta1ModifySetApiResponse =
   /** status 200 OK */
-  | ShGatekeeperMutationsV1Beta1ModifySet
-  | /** status 201 Created */ ShGatekeeperMutationsV1Beta1ModifySet
+    | ShGatekeeperMutationsV1Beta1ModifySet
+    | /** status 201 Created */ ShGatekeeperMutationsV1Beta1ModifySet
 export type ReplaceMutationsGatekeeperShV1Beta1ModifySetApiArg = {
   /** name of the ModifySet */
   name: string
@@ -1292,8 +1292,8 @@ export type ReplaceMutationsGatekeeperShV1Beta1ModifySetApiArg = {
 )
 export type DeleteMutationsGatekeeperShV1Beta1ModifySetApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1Beta1ModifySetApiArg = {
   /** name of the ModifySet */
   name: string
@@ -1335,7 +1335,7 @@ export type PatchMutationsGatekeeperShV1Beta1ModifySetApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperMutationsV1Beta1ModifySet
     }
   | {
       contentType: 'application/json-patch+json'
@@ -1360,8 +1360,8 @@ export type ReadMutationsGatekeeperShV1Beta1ModifySetStatusApiArg = {
 }
 export type ReplaceMutationsGatekeeperShV1Beta1ModifySetStatusApiResponse =
   /** status 200 OK */
-  | ShGatekeeperMutationsV1Beta1ModifySet
-  | /** status 201 Created */ ShGatekeeperMutationsV1Beta1ModifySet
+    | ShGatekeeperMutationsV1Beta1ModifySet
+    | /** status 201 Created */ ShGatekeeperMutationsV1Beta1ModifySet
 export type ReplaceMutationsGatekeeperShV1Beta1ModifySetStatusApiArg = {
   /** name of the ModifySet */
   name: string
@@ -1401,7 +1401,7 @@ export type PatchMutationsGatekeeperShV1Beta1ModifySetStatusApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperMutationsV1Beta1ModifySet
     }
   | {
       contentType: 'application/json-patch+json'

@@ -1,5 +1,6 @@
 import { $ } from 'https://deno.land/x/zx_deno/mod.mjs'
 import * as path from 'https://deno.land/std/path/mod.ts'
+import { OpenAPIV3 } from "npm:openapi-types";
 
 type Path = string
 type Url = string
@@ -65,8 +66,8 @@ await Promise.all(
       getTsFileName(sourcePath)
     )
     await $`mkdir -p $(dirname ${swaggerFilePath})`
-    const res = await $`kubectl get --raw /openapi/v3/${sourcePath}`
-    await Deno.writeTextFile(swaggerFilePath, res.toString())
+    const result = replaceK8sOpenapi(JSON.parse((await $`kubectl get --raw /openapi/v3/${sourcePath}`).toString()))
+    await Deno.writeTextFile(swaggerFilePath, JSON.stringify(result.doc, undefined, 2))
     await Deno.writeTextFile(
       k8sClientCodegenConfigFilePath,
       genK8sClientCodegenConfigSourceCode(
@@ -84,3 +85,31 @@ await Promise.all(
     await $`npx kubernetes-typescript-client-codegen-openapi ${k8sClientCodegenConfigFilePath}`
   })
 )
+
+export function replaceK8sOpenapi(doc: OpenAPIV3.Document) {
+  let modified = false
+  for (const path in doc.paths) {
+    const putContent = (doc.paths[path]?.put?.requestBody as OpenAPIV3.RequestBodyObject)?.content
+    const putRequestBody = putContent?.['*/*'] || putContent?.['application/json'] || putContent?.['application/yaml']
+    if (!putRequestBody) {
+      continue
+    }
+    const applyPatchRequestBody = (doc.paths[path]?.patch?.requestBody as OpenAPIV3.RequestBodyObject)?.content['application/apply-patch+yaml']
+
+    if (applyPatchRequestBody) {
+      applyPatchRequestBody.schema = putRequestBody.schema
+      modified = true
+    }
+
+    const strategicMergePatchRequestBody = (doc.paths[path]?.patch?.requestBody as OpenAPIV3.RequestBodyObject)?.content['application/strategic-merge-patch+json']
+    if (strategicMergePatchRequestBody) {
+      strategicMergePatchRequestBody.schema = putRequestBody.schema
+      modified = true
+    }
+  }
+
+  return {
+    modified,
+    doc,
+  }
+}

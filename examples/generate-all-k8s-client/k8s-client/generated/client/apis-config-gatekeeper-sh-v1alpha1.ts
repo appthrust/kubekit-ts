@@ -262,9 +262,9 @@ export type ListConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
 }
 export type CreateConfigGatekeeperShV1Alpha1NamespacedConfigApiResponse =
   /** status 200 OK */
-  | ShGatekeeperConfigV1Alpha1Config
-  | /** status 201 Created */ ShGatekeeperConfigV1Alpha1Config
-  | /** status 202 Accepted */ ShGatekeeperConfigV1Alpha1Config
+    | ShGatekeeperConfigV1Alpha1Config
+    | /** status 201 Created */ ShGatekeeperConfigV1Alpha1Config
+    | /** status 202 Accepted */ ShGatekeeperConfigV1Alpha1Config
 export type CreateConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -350,8 +350,8 @@ export type ReadConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
 }
 export type ReplaceConfigGatekeeperShV1Alpha1NamespacedConfigApiResponse =
   /** status 200 OK */
-  | ShGatekeeperConfigV1Alpha1Config
-  | /** status 201 Created */ ShGatekeeperConfigV1Alpha1Config
+    | ShGatekeeperConfigV1Alpha1Config
+    | /** status 201 Created */ ShGatekeeperConfigV1Alpha1Config
 export type ReplaceConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   /** name of the Config */
   name: string
@@ -377,8 +377,8 @@ export type ReplaceConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
 )
 export type DeleteConfigGatekeeperShV1Alpha1NamespacedConfigApiResponse =
   /** status 200 OK */
-  | IoK8SApimachineryPkgApisMetaV1Status
-  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+    | IoK8SApimachineryPkgApisMetaV1Status
+    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   /** name of the Config */
   name: string
@@ -424,7 +424,7 @@ export type PatchConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
 } & (
   | {
       contentType: 'application/apply-patch+yaml'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperConfigV1Alpha1Config
     }
   | {
       contentType: 'application/json-patch+json'
