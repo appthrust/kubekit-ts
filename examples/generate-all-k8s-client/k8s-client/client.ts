@@ -127,7 +127,6 @@ export async function apiClient<Response>(
   let httpsOptions: https.RequestOptions = {
     path,
     headers: {
-      contentType,
       ...options.headers,
     },
   }
@@ -177,7 +176,7 @@ export async function apiClient<Response>(
     url.pathname = httpsOptions.path
   }
   let isJson = false
-  if (isPlainObject(body)) {
+  if (isPlainObject(body) || Array.isArray(body)) {
     isJson = true
     body = JSON.stringify(body)
   }
