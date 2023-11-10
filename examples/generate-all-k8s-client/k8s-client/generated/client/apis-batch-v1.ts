@@ -743,7 +743,8 @@ export type ListBatchV1NamespacedCronJobApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateBatchV1NamespacedCronJobApiResponse = /** status 200 OK */
+export type CreateBatchV1NamespacedCronJobApiResponse =
+  /** status 200 OK */
   | IoK8SApiBatchV1CronJob
   | /** status 201 Created */ IoK8SApiBatchV1CronJob
   | /** status 202 Accepted */ IoK8SApiBatchV1CronJob
@@ -827,9 +828,9 @@ export type ReadBatchV1NamespacedCronJobApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceBatchV1NamespacedCronJobApiResponse = /** status 200 OK */
-  | IoK8SApiBatchV1CronJob
-  | /** status 201 Created */ IoK8SApiBatchV1CronJob
+export type ReplaceBatchV1NamespacedCronJobApiResponse =
+  /** status 200 OK */
+  IoK8SApiBatchV1CronJob | /** status 201 Created */ IoK8SApiBatchV1CronJob
 export type ReplaceBatchV1NamespacedCronJobApiArg = {
   /** name of the CronJob */
   name: string
@@ -847,7 +848,8 @@ export type ReplaceBatchV1NamespacedCronJobApiArg = {
   contentType?: string
   body: IoK8SApiBatchV1CronJob
 }
-export type DeleteBatchV1NamespacedCronJobApiResponse = /** status 200 OK */
+export type DeleteBatchV1NamespacedCronJobApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteBatchV1NamespacedCronJobApiArg = {
@@ -869,9 +871,9 @@ export type DeleteBatchV1NamespacedCronJobApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchBatchV1NamespacedCronJobApiResponse = /** status 200 OK */
-  | IoK8SApiBatchV1CronJob
-  | /** status 201 Created */ IoK8SApiBatchV1CronJob
+export type PatchBatchV1NamespacedCronJobApiResponse =
+  /** status 200 OK */
+  IoK8SApiBatchV1CronJob | /** status 201 Created */ IoK8SApiBatchV1CronJob
 export type PatchBatchV1NamespacedCronJobApiArg = {
   /** name of the CronJob */
   name: string
@@ -894,11 +896,11 @@ export type PatchBatchV1NamespacedCronJobApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiBatchV1CronJob
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -917,8 +919,7 @@ export type ReadBatchV1NamespacedCronJobStatusApiArg = {
 }
 export type ReplaceBatchV1NamespacedCronJobStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiBatchV1CronJob
-    | /** status 201 Created */ IoK8SApiBatchV1CronJob
+  IoK8SApiBatchV1CronJob | /** status 201 Created */ IoK8SApiBatchV1CronJob
 export type ReplaceBatchV1NamespacedCronJobStatusApiArg = {
   /** name of the CronJob */
   name: string
@@ -938,8 +939,7 @@ export type ReplaceBatchV1NamespacedCronJobStatusApiArg = {
 }
 export type PatchBatchV1NamespacedCronJobStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiBatchV1CronJob
-    | /** status 201 Created */ IoK8SApiBatchV1CronJob
+  IoK8SApiBatchV1CronJob | /** status 201 Created */ IoK8SApiBatchV1CronJob
 export type PatchBatchV1NamespacedCronJobStatusApiArg = {
   /** name of the CronJob */
   name: string
@@ -962,11 +962,11 @@ export type PatchBatchV1NamespacedCronJobStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiBatchV1CronJob
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -1021,7 +1021,8 @@ export type ListBatchV1NamespacedJobApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateBatchV1NamespacedJobApiResponse = /** status 200 OK */
+export type CreateBatchV1NamespacedJobApiResponse =
+  /** status 200 OK */
   | IoK8SApiBatchV1Job
   | /** status 201 Created */ IoK8SApiBatchV1Job
   | /** status 202 Accepted */ IoK8SApiBatchV1Job
@@ -1105,9 +1106,9 @@ export type ReadBatchV1NamespacedJobApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceBatchV1NamespacedJobApiResponse = /** status 200 OK */
-  | IoK8SApiBatchV1Job
-  | /** status 201 Created */ IoK8SApiBatchV1Job
+export type ReplaceBatchV1NamespacedJobApiResponse =
+  /** status 200 OK */
+  IoK8SApiBatchV1Job | /** status 201 Created */ IoK8SApiBatchV1Job
 export type ReplaceBatchV1NamespacedJobApiArg = {
   /** name of the Job */
   name: string
@@ -1125,7 +1126,8 @@ export type ReplaceBatchV1NamespacedJobApiArg = {
   contentType?: string
   body: IoK8SApiBatchV1Job
 }
-export type DeleteBatchV1NamespacedJobApiResponse = /** status 200 OK */
+export type DeleteBatchV1NamespacedJobApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteBatchV1NamespacedJobApiArg = {
@@ -1147,9 +1149,9 @@ export type DeleteBatchV1NamespacedJobApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchBatchV1NamespacedJobApiResponse = /** status 200 OK */
-  | IoK8SApiBatchV1Job
-  | /** status 201 Created */ IoK8SApiBatchV1Job
+export type PatchBatchV1NamespacedJobApiResponse =
+  /** status 200 OK */
+  IoK8SApiBatchV1Job | /** status 201 Created */ IoK8SApiBatchV1Job
 export type PatchBatchV1NamespacedJobApiArg = {
   /** name of the Job */
   name: string
@@ -1172,11 +1174,11 @@ export type PatchBatchV1NamespacedJobApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiBatchV1Job
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -1193,9 +1195,9 @@ export type ReadBatchV1NamespacedJobStatusApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceBatchV1NamespacedJobStatusApiResponse = /** status 200 OK */
-  | IoK8SApiBatchV1Job
-  | /** status 201 Created */ IoK8SApiBatchV1Job
+export type ReplaceBatchV1NamespacedJobStatusApiResponse =
+  /** status 200 OK */
+  IoK8SApiBatchV1Job | /** status 201 Created */ IoK8SApiBatchV1Job
 export type ReplaceBatchV1NamespacedJobStatusApiArg = {
   /** name of the Job */
   name: string
@@ -1213,9 +1215,9 @@ export type ReplaceBatchV1NamespacedJobStatusApiArg = {
   contentType?: string
   body: IoK8SApiBatchV1Job
 }
-export type PatchBatchV1NamespacedJobStatusApiResponse = /** status 200 OK */
-  | IoK8SApiBatchV1Job
-  | /** status 201 Created */ IoK8SApiBatchV1Job
+export type PatchBatchV1NamespacedJobStatusApiResponse =
+  /** status 200 OK */
+  IoK8SApiBatchV1Job | /** status 201 Created */ IoK8SApiBatchV1Job
 export type PatchBatchV1NamespacedJobStatusApiArg = {
   /** name of the Job */
   name: string
@@ -1238,11 +1240,11 @@ export type PatchBatchV1NamespacedJobStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiBatchV1Job
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -2450,7 +2452,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoK8SApimachineryPkgRuntimeRawExtension = object
 export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
   object: IoK8SApimachineryPkgRuntimeRawExtension

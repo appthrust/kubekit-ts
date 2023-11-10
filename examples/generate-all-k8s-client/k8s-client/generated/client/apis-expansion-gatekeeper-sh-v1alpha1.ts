@@ -190,9 +190,9 @@ export type ListExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
 }
 export type CreateExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
   /** status 200 OK */
-    | ShGatekeeperExpansionV1Alpha1ExpansionTemplate
-    | /** status 201 Created */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
-    | /** status 202 Accepted */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
+  | ShGatekeeperExpansionV1Alpha1ExpansionTemplate
+  | /** status 201 Created */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
+  | /** status 202 Accepted */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
 export type CreateExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -273,8 +273,8 @@ export type ReadExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
 }
 export type ReplaceExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
   /** status 200 OK */
-    | ShGatekeeperExpansionV1Alpha1ExpansionTemplate
-    | /** status 201 Created */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
+  | ShGatekeeperExpansionV1Alpha1ExpansionTemplate
+  | /** status 201 Created */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
 export type ReplaceExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
   /** name of the ExpansionTemplate */
   name: string
@@ -298,8 +298,8 @@ export type ReplaceExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
 )
 export type DeleteExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
   /** name of the ExpansionTemplate */
   name: string
@@ -345,11 +345,11 @@ export type PatchExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperExpansionV1Alpha1ExpansionTemplate
     }
 )
 export type IoK8SApimachineryPkgApisMetaV1Time = string
@@ -469,4 +469,40 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]

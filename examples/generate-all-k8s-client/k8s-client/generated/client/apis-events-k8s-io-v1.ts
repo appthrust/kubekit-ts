@@ -348,7 +348,8 @@ export type ListEventsV1NamespacedEventApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateEventsV1NamespacedEventApiResponse = /** status 200 OK */
+export type CreateEventsV1NamespacedEventApiResponse =
+  /** status 200 OK */
   | IoK8SApiEventsV1Event
   | /** status 201 Created */ IoK8SApiEventsV1Event
   | /** status 202 Accepted */ IoK8SApiEventsV1Event
@@ -432,9 +433,9 @@ export type ReadEventsV1NamespacedEventApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceEventsV1NamespacedEventApiResponse = /** status 200 OK */
-  | IoK8SApiEventsV1Event
-  | /** status 201 Created */ IoK8SApiEventsV1Event
+export type ReplaceEventsV1NamespacedEventApiResponse =
+  /** status 200 OK */
+  IoK8SApiEventsV1Event | /** status 201 Created */ IoK8SApiEventsV1Event
 export type ReplaceEventsV1NamespacedEventApiArg = {
   /** name of the Event */
   name: string
@@ -452,7 +453,8 @@ export type ReplaceEventsV1NamespacedEventApiArg = {
   contentType?: string
   body: IoK8SApiEventsV1Event
 }
-export type DeleteEventsV1NamespacedEventApiResponse = /** status 200 OK */
+export type DeleteEventsV1NamespacedEventApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEventsV1NamespacedEventApiArg = {
@@ -474,9 +476,9 @@ export type DeleteEventsV1NamespacedEventApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchEventsV1NamespacedEventApiResponse = /** status 200 OK */
-  | IoK8SApiEventsV1Event
-  | /** status 201 Created */ IoK8SApiEventsV1Event
+export type PatchEventsV1NamespacedEventApiResponse =
+  /** status 200 OK */
+  IoK8SApiEventsV1Event | /** status 201 Created */ IoK8SApiEventsV1Event
 export type PatchEventsV1NamespacedEventApiArg = {
   /** name of the Event */
   name: string
@@ -499,11 +501,11 @@ export type PatchEventsV1NamespacedEventApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiEventsV1Event
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -801,7 +803,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoK8SApimachineryPkgRuntimeRawExtension = object
 export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
   object: IoK8SApimachineryPkgRuntimeRawExtension

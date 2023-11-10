@@ -315,9 +315,9 @@ export type ListYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
 }
 export type CreateYunikornApacheOrgV1Alpha1NamespacedApplicationApiResponse =
   /** status 200 OK */
-    | OrgApacheYunikornV1Alpha1Application
-    | /** status 201 Created */ OrgApacheYunikornV1Alpha1Application
-    | /** status 202 Accepted */ OrgApacheYunikornV1Alpha1Application
+  | OrgApacheYunikornV1Alpha1Application
+  | /** status 201 Created */ OrgApacheYunikornV1Alpha1Application
+  | /** status 202 Accepted */ OrgApacheYunikornV1Alpha1Application
 export type CreateYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -404,8 +404,8 @@ export type ReadYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
 }
 export type ReplaceYunikornApacheOrgV1Alpha1NamespacedApplicationApiResponse =
   /** status 200 OK */
-    | OrgApacheYunikornV1Alpha1Application
-    | /** status 201 Created */ OrgApacheYunikornV1Alpha1Application
+  | OrgApacheYunikornV1Alpha1Application
+  | /** status 201 Created */ OrgApacheYunikornV1Alpha1Application
 export type ReplaceYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
   /** name of the Application */
   name: string
@@ -431,8 +431,8 @@ export type ReplaceYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
 )
 export type DeleteYunikornApacheOrgV1Alpha1NamespacedApplicationApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
   /** name of the Application */
   name: string
@@ -482,11 +482,11 @@ export type PatchYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgApacheYunikornV1Alpha1Application
     }
 )
 export type ReadYunikornApacheOrgV1Alpha1NamespacedApplicationStatusApiResponse =
@@ -505,8 +505,8 @@ export type ReadYunikornApacheOrgV1Alpha1NamespacedApplicationStatusApiArg = {
 }
 export type ReplaceYunikornApacheOrgV1Alpha1NamespacedApplicationStatusApiResponse =
   /** status 200 OK */
-    | OrgApacheYunikornV1Alpha1Application
-    | /** status 201 Created */ OrgApacheYunikornV1Alpha1Application
+  | OrgApacheYunikornV1Alpha1Application
+  | /** status 201 Created */ OrgApacheYunikornV1Alpha1Application
 export type ReplaceYunikornApacheOrgV1Alpha1NamespacedApplicationStatusApiArg =
   {
     /** name of the Application */
@@ -555,11 +555,11 @@ export type PatchYunikornApacheOrgV1Alpha1NamespacedApplicationStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: OrgApacheYunikornV1Alpha1Application
     }
 )
 export type IoK8SApimachineryPkgApisMetaV1Time = string
@@ -707,4 +707,40 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]

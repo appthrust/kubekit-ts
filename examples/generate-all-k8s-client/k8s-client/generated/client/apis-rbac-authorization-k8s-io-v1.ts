@@ -935,9 +935,9 @@ export type ListRbacAuthorizationV1ClusterRoleBindingApiArg = {
 }
 export type CreateRbacAuthorizationV1ClusterRoleBindingApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1ClusterRoleBinding
-    | /** status 201 Created */ IoK8SApiRbacV1ClusterRoleBinding
-    | /** status 202 Accepted */ IoK8SApiRbacV1ClusterRoleBinding
+  | IoK8SApiRbacV1ClusterRoleBinding
+  | /** status 201 Created */ IoK8SApiRbacV1ClusterRoleBinding
+  | /** status 202 Accepted */ IoK8SApiRbacV1ClusterRoleBinding
 export type CreateRbacAuthorizationV1ClusterRoleBindingApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -1014,8 +1014,8 @@ export type ReadRbacAuthorizationV1ClusterRoleBindingApiArg = {
 }
 export type ReplaceRbacAuthorizationV1ClusterRoleBindingApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1ClusterRoleBinding
-    | /** status 201 Created */ IoK8SApiRbacV1ClusterRoleBinding
+  | IoK8SApiRbacV1ClusterRoleBinding
+  | /** status 201 Created */ IoK8SApiRbacV1ClusterRoleBinding
 export type ReplaceRbacAuthorizationV1ClusterRoleBindingApiArg = {
   /** name of the ClusterRoleBinding */
   name: string
@@ -1033,8 +1033,8 @@ export type ReplaceRbacAuthorizationV1ClusterRoleBindingApiArg = {
 }
 export type DeleteRbacAuthorizationV1ClusterRoleBindingApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteRbacAuthorizationV1ClusterRoleBindingApiArg = {
   /** name of the ClusterRoleBinding */
   name: string
@@ -1054,8 +1054,8 @@ export type DeleteRbacAuthorizationV1ClusterRoleBindingApiArg = {
 }
 export type PatchRbacAuthorizationV1ClusterRoleBindingApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1ClusterRoleBinding
-    | /** status 201 Created */ IoK8SApiRbacV1ClusterRoleBinding
+  | IoK8SApiRbacV1ClusterRoleBinding
+  | /** status 201 Created */ IoK8SApiRbacV1ClusterRoleBinding
 export type PatchRbacAuthorizationV1ClusterRoleBindingApiArg = {
   /** name of the ClusterRoleBinding */
   name: string
@@ -1076,11 +1076,11 @@ export type PatchRbacAuthorizationV1ClusterRoleBindingApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiRbacV1ClusterRoleBinding
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -1135,9 +1135,9 @@ export type ListRbacAuthorizationV1ClusterRoleApiArg = {
 }
 export type CreateRbacAuthorizationV1ClusterRoleApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1ClusterRole
-    | /** status 201 Created */ IoK8SApiRbacV1ClusterRole
-    | /** status 202 Accepted */ IoK8SApiRbacV1ClusterRole
+  | IoK8SApiRbacV1ClusterRole
+  | /** status 201 Created */ IoK8SApiRbacV1ClusterRole
+  | /** status 202 Accepted */ IoK8SApiRbacV1ClusterRole
 export type CreateRbacAuthorizationV1ClusterRoleApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -1214,8 +1214,8 @@ export type ReadRbacAuthorizationV1ClusterRoleApiArg = {
 }
 export type ReplaceRbacAuthorizationV1ClusterRoleApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1ClusterRole
-    | /** status 201 Created */ IoK8SApiRbacV1ClusterRole
+  | IoK8SApiRbacV1ClusterRole
+  | /** status 201 Created */ IoK8SApiRbacV1ClusterRole
 export type ReplaceRbacAuthorizationV1ClusterRoleApiArg = {
   /** name of the ClusterRole */
   name: string
@@ -1233,8 +1233,8 @@ export type ReplaceRbacAuthorizationV1ClusterRoleApiArg = {
 }
 export type DeleteRbacAuthorizationV1ClusterRoleApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteRbacAuthorizationV1ClusterRoleApiArg = {
   /** name of the ClusterRole */
   name: string
@@ -1254,8 +1254,8 @@ export type DeleteRbacAuthorizationV1ClusterRoleApiArg = {
 }
 export type PatchRbacAuthorizationV1ClusterRoleApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1ClusterRole
-    | /** status 201 Created */ IoK8SApiRbacV1ClusterRole
+  | IoK8SApiRbacV1ClusterRole
+  | /** status 201 Created */ IoK8SApiRbacV1ClusterRole
 export type PatchRbacAuthorizationV1ClusterRoleApiArg = {
   /** name of the ClusterRole */
   name: string
@@ -1276,11 +1276,11 @@ export type PatchRbacAuthorizationV1ClusterRoleApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiRbacV1ClusterRole
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -1337,9 +1337,9 @@ export type ListRbacAuthorizationV1NamespacedRoleBindingApiArg = {
 }
 export type CreateRbacAuthorizationV1NamespacedRoleBindingApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1RoleBinding
-    | /** status 201 Created */ IoK8SApiRbacV1RoleBinding
-    | /** status 202 Accepted */ IoK8SApiRbacV1RoleBinding
+  | IoK8SApiRbacV1RoleBinding
+  | /** status 201 Created */ IoK8SApiRbacV1RoleBinding
+  | /** status 202 Accepted */ IoK8SApiRbacV1RoleBinding
 export type CreateRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1422,8 +1422,8 @@ export type ReadRbacAuthorizationV1NamespacedRoleBindingApiArg = {
 }
 export type ReplaceRbacAuthorizationV1NamespacedRoleBindingApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1RoleBinding
-    | /** status 201 Created */ IoK8SApiRbacV1RoleBinding
+  | IoK8SApiRbacV1RoleBinding
+  | /** status 201 Created */ IoK8SApiRbacV1RoleBinding
 export type ReplaceRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   /** name of the RoleBinding */
   name: string
@@ -1443,8 +1443,8 @@ export type ReplaceRbacAuthorizationV1NamespacedRoleBindingApiArg = {
 }
 export type DeleteRbacAuthorizationV1NamespacedRoleBindingApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   /** name of the RoleBinding */
   name: string
@@ -1466,8 +1466,8 @@ export type DeleteRbacAuthorizationV1NamespacedRoleBindingApiArg = {
 }
 export type PatchRbacAuthorizationV1NamespacedRoleBindingApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1RoleBinding
-    | /** status 201 Created */ IoK8SApiRbacV1RoleBinding
+  | IoK8SApiRbacV1RoleBinding
+  | /** status 201 Created */ IoK8SApiRbacV1RoleBinding
 export type PatchRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   /** name of the RoleBinding */
   name: string
@@ -1490,11 +1490,11 @@ export type PatchRbacAuthorizationV1NamespacedRoleBindingApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiRbacV1RoleBinding
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -1551,9 +1551,9 @@ export type ListRbacAuthorizationV1NamespacedRoleApiArg = {
 }
 export type CreateRbacAuthorizationV1NamespacedRoleApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1Role
-    | /** status 201 Created */ IoK8SApiRbacV1Role
-    | /** status 202 Accepted */ IoK8SApiRbacV1Role
+  | IoK8SApiRbacV1Role
+  | /** status 201 Created */ IoK8SApiRbacV1Role
+  | /** status 202 Accepted */ IoK8SApiRbacV1Role
 export type CreateRbacAuthorizationV1NamespacedRoleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1636,8 +1636,7 @@ export type ReadRbacAuthorizationV1NamespacedRoleApiArg = {
 }
 export type ReplaceRbacAuthorizationV1NamespacedRoleApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1Role
-    | /** status 201 Created */ IoK8SApiRbacV1Role
+  IoK8SApiRbacV1Role | /** status 201 Created */ IoK8SApiRbacV1Role
 export type ReplaceRbacAuthorizationV1NamespacedRoleApiArg = {
   /** name of the Role */
   name: string
@@ -1657,8 +1656,8 @@ export type ReplaceRbacAuthorizationV1NamespacedRoleApiArg = {
 }
 export type DeleteRbacAuthorizationV1NamespacedRoleApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteRbacAuthorizationV1NamespacedRoleApiArg = {
   /** name of the Role */
   name: string
@@ -1680,8 +1679,7 @@ export type DeleteRbacAuthorizationV1NamespacedRoleApiArg = {
 }
 export type PatchRbacAuthorizationV1NamespacedRoleApiResponse =
   /** status 200 OK */
-    | IoK8SApiRbacV1Role
-    | /** status 201 Created */ IoK8SApiRbacV1Role
+  IoK8SApiRbacV1Role | /** status 201 Created */ IoK8SApiRbacV1Role
 export type PatchRbacAuthorizationV1NamespacedRoleApiArg = {
   /** name of the Role */
   name: string
@@ -1704,11 +1702,11 @@ export type PatchRbacAuthorizationV1NamespacedRoleApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiRbacV1Role
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -2411,7 +2409,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoK8SApimachineryPkgApisMetaV1LabelSelectorRequirement = {
   key: string
   operator: string

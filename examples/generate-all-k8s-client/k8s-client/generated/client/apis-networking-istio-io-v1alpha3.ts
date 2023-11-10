@@ -1952,9 +1952,9 @@ export type ListNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiArg = {
 }
 export type CreateNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3DestinationRule
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3DestinationRule
-    | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3DestinationRule
+  | IoIstioNetworkingV1Alpha3DestinationRule
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3DestinationRule
+  | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3DestinationRule
 export type CreateNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2041,8 +2041,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3DestinationRule
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3DestinationRule
+  | IoIstioNetworkingV1Alpha3DestinationRule
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3DestinationRule
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiArg = {
   /** name of the DestinationRule */
   name: string
@@ -2068,8 +2068,8 @@ export type ReplaceNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiArg = {
 )
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiArg = {
   /** name of the DestinationRule */
   name: string
@@ -2119,11 +2119,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedDestinationRuleApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3DestinationRule
     }
 )
 export type ReadNetworkingIstioIoV1Alpha3NamespacedDestinationRuleStatusApiResponse =
@@ -2143,8 +2143,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedDestinationRuleStatusApiArg =
   }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedDestinationRuleStatusApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3DestinationRule
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3DestinationRule
+  | IoIstioNetworkingV1Alpha3DestinationRule
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3DestinationRule
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedDestinationRuleStatusApiArg =
   {
     /** name of the DestinationRule */
@@ -2194,11 +2194,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedDestinationRuleStatusApiArg 
       }
     | {
         contentType: 'application/json-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: JsonPatchOperations
       }
     | {
         contentType: 'application/merge-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoIstioNetworkingV1Alpha3DestinationRule
       }
   )
 export type ListNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiResponse =
@@ -2251,9 +2251,9 @@ export type ListNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiArg = {
 }
 export type CreateNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3EnvoyFilter
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3EnvoyFilter
-    | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3EnvoyFilter
+  | IoIstioNetworkingV1Alpha3EnvoyFilter
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3EnvoyFilter
+  | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3EnvoyFilter
 export type CreateNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2340,8 +2340,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3EnvoyFilter
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3EnvoyFilter
+  | IoIstioNetworkingV1Alpha3EnvoyFilter
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3EnvoyFilter
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiArg = {
   /** name of the EnvoyFilter */
   name: string
@@ -2367,8 +2367,8 @@ export type ReplaceNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiArg = {
 )
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiArg = {
   /** name of the EnvoyFilter */
   name: string
@@ -2418,11 +2418,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3EnvoyFilter
     }
 )
 export type ReadNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterStatusApiResponse =
@@ -2441,8 +2441,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterStatusApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterStatusApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3EnvoyFilter
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3EnvoyFilter
+  | IoIstioNetworkingV1Alpha3EnvoyFilter
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3EnvoyFilter
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterStatusApiArg =
   {
     /** name of the EnvoyFilter */
@@ -2491,11 +2491,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedEnvoyFilterStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3EnvoyFilter
     }
 )
 export type ListNetworkingIstioIoV1Alpha3NamespacedGatewayApiResponse =
@@ -2548,9 +2548,9 @@ export type ListNetworkingIstioIoV1Alpha3NamespacedGatewayApiArg = {
 }
 export type CreateNetworkingIstioIoV1Alpha3NamespacedGatewayApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3Gateway
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3Gateway
-    | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3Gateway
+  | IoIstioNetworkingV1Alpha3Gateway
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3Gateway
+  | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3Gateway
 export type CreateNetworkingIstioIoV1Alpha3NamespacedGatewayApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2636,8 +2636,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedGatewayApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedGatewayApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3Gateway
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3Gateway
+  | IoIstioNetworkingV1Alpha3Gateway
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3Gateway
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedGatewayApiArg = {
   /** name of the Gateway */
   name: string
@@ -2663,8 +2663,8 @@ export type ReplaceNetworkingIstioIoV1Alpha3NamespacedGatewayApiArg = {
 )
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedGatewayApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedGatewayApiArg = {
   /** name of the Gateway */
   name: string
@@ -2714,11 +2714,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedGatewayApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3Gateway
     }
 )
 export type ReadNetworkingIstioIoV1Alpha3NamespacedGatewayStatusApiResponse =
@@ -2737,8 +2737,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedGatewayStatusApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedGatewayStatusApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3Gateway
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3Gateway
+  | IoIstioNetworkingV1Alpha3Gateway
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3Gateway
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedGatewayStatusApiArg = {
   /** name of the Gateway */
   name: string
@@ -2786,11 +2786,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedGatewayStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3Gateway
     }
 )
 export type ListNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiResponse =
@@ -2843,9 +2843,9 @@ export type ListNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiArg = {
 }
 export type CreateNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3ServiceEntry
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3ServiceEntry
-    | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3ServiceEntry
+  | IoIstioNetworkingV1Alpha3ServiceEntry
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3ServiceEntry
+  | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3ServiceEntry
 export type CreateNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2932,8 +2932,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3ServiceEntry
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3ServiceEntry
+  | IoIstioNetworkingV1Alpha3ServiceEntry
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3ServiceEntry
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiArg = {
   /** name of the ServiceEntry */
   name: string
@@ -2959,8 +2959,8 @@ export type ReplaceNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiArg = {
 )
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiArg = {
   /** name of the ServiceEntry */
   name: string
@@ -3010,11 +3010,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedServiceEntryApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3ServiceEntry
     }
 )
 export type ReadNetworkingIstioIoV1Alpha3NamespacedServiceEntryStatusApiResponse =
@@ -3033,8 +3033,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedServiceEntryStatusApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedServiceEntryStatusApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3ServiceEntry
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3ServiceEntry
+  | IoIstioNetworkingV1Alpha3ServiceEntry
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3ServiceEntry
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedServiceEntryStatusApiArg =
   {
     /** name of the ServiceEntry */
@@ -3083,11 +3083,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedServiceEntryStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3ServiceEntry
     }
 )
 export type ListNetworkingIstioIoV1Alpha3NamespacedSidecarApiResponse =
@@ -3140,9 +3140,9 @@ export type ListNetworkingIstioIoV1Alpha3NamespacedSidecarApiArg = {
 }
 export type CreateNetworkingIstioIoV1Alpha3NamespacedSidecarApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3Sidecar
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3Sidecar
-    | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3Sidecar
+  | IoIstioNetworkingV1Alpha3Sidecar
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3Sidecar
+  | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3Sidecar
 export type CreateNetworkingIstioIoV1Alpha3NamespacedSidecarApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3228,8 +3228,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedSidecarApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedSidecarApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3Sidecar
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3Sidecar
+  | IoIstioNetworkingV1Alpha3Sidecar
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3Sidecar
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedSidecarApiArg = {
   /** name of the Sidecar */
   name: string
@@ -3255,8 +3255,8 @@ export type ReplaceNetworkingIstioIoV1Alpha3NamespacedSidecarApiArg = {
 )
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedSidecarApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedSidecarApiArg = {
   /** name of the Sidecar */
   name: string
@@ -3306,11 +3306,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedSidecarApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3Sidecar
     }
 )
 export type ReadNetworkingIstioIoV1Alpha3NamespacedSidecarStatusApiResponse =
@@ -3329,8 +3329,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedSidecarStatusApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedSidecarStatusApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3Sidecar
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3Sidecar
+  | IoIstioNetworkingV1Alpha3Sidecar
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3Sidecar
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedSidecarStatusApiArg = {
   /** name of the Sidecar */
   name: string
@@ -3378,11 +3378,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedSidecarStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3Sidecar
     }
 )
 export type ListNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiResponse =
@@ -3435,9 +3435,9 @@ export type ListNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiArg = {
 }
 export type CreateNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3VirtualService
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3VirtualService
-    | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3VirtualService
+  | IoIstioNetworkingV1Alpha3VirtualService
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3VirtualService
+  | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3VirtualService
 export type CreateNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3524,8 +3524,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3VirtualService
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3VirtualService
+  | IoIstioNetworkingV1Alpha3VirtualService
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3VirtualService
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiArg = {
   /** name of the VirtualService */
   name: string
@@ -3551,8 +3551,8 @@ export type ReplaceNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiArg = {
 )
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiArg = {
   /** name of the VirtualService */
   name: string
@@ -3602,11 +3602,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedVirtualServiceApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3VirtualService
     }
 )
 export type ReadNetworkingIstioIoV1Alpha3NamespacedVirtualServiceStatusApiResponse =
@@ -3626,8 +3626,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedVirtualServiceStatusApiArg =
   }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedVirtualServiceStatusApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3VirtualService
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3VirtualService
+  | IoIstioNetworkingV1Alpha3VirtualService
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3VirtualService
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedVirtualServiceStatusApiArg =
   {
     /** name of the VirtualService */
@@ -3677,11 +3677,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedVirtualServiceStatusApiArg =
       }
     | {
         contentType: 'application/json-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: JsonPatchOperations
       }
     | {
         contentType: 'application/merge-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoIstioNetworkingV1Alpha3VirtualService
       }
   )
 export type ListNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiResponse =
@@ -3734,9 +3734,9 @@ export type ListNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiArg = {
 }
 export type CreateNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3WorkloadEntry
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadEntry
-    | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3WorkloadEntry
+  | IoIstioNetworkingV1Alpha3WorkloadEntry
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadEntry
+  | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3WorkloadEntry
 export type CreateNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3823,8 +3823,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3WorkloadEntry
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadEntry
+  | IoIstioNetworkingV1Alpha3WorkloadEntry
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadEntry
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiArg = {
   /** name of the WorkloadEntry */
   name: string
@@ -3850,8 +3850,8 @@ export type ReplaceNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiArg = {
 )
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiArg = {
   /** name of the WorkloadEntry */
   name: string
@@ -3901,11 +3901,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3WorkloadEntry
     }
 )
 export type ReadNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryStatusApiResponse =
@@ -3924,8 +3924,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryStatusApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryStatusApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3WorkloadEntry
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadEntry
+  | IoIstioNetworkingV1Alpha3WorkloadEntry
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadEntry
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryStatusApiArg =
   {
     /** name of the WorkloadEntry */
@@ -3975,11 +3975,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedWorkloadEntryStatusApiArg =
       }
     | {
         contentType: 'application/json-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: JsonPatchOperations
       }
     | {
         contentType: 'application/merge-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoIstioNetworkingV1Alpha3WorkloadEntry
       }
   )
 export type ListNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiResponse =
@@ -4032,9 +4032,9 @@ export type ListNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiArg = {
 }
 export type CreateNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3WorkloadGroup
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadGroup
-    | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3WorkloadGroup
+  | IoIstioNetworkingV1Alpha3WorkloadGroup
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadGroup
+  | /** status 202 Accepted */ IoIstioNetworkingV1Alpha3WorkloadGroup
 export type CreateNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -4121,8 +4121,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3WorkloadGroup
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadGroup
+  | IoIstioNetworkingV1Alpha3WorkloadGroup
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadGroup
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiArg = {
   /** name of the WorkloadGroup */
   name: string
@@ -4148,8 +4148,8 @@ export type ReplaceNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiArg = {
 )
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiArg = {
   /** name of the WorkloadGroup */
   name: string
@@ -4199,11 +4199,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioNetworkingV1Alpha3WorkloadGroup
     }
 )
 export type ReadNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupStatusApiResponse =
@@ -4222,8 +4222,8 @@ export type ReadNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupStatusApiArg = {
 }
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupStatusApiResponse =
   /** status 200 OK */
-    | IoIstioNetworkingV1Alpha3WorkloadGroup
-    | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadGroup
+  | IoIstioNetworkingV1Alpha3WorkloadGroup
+  | /** status 201 Created */ IoIstioNetworkingV1Alpha3WorkloadGroup
 export type ReplaceNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupStatusApiArg =
   {
     /** name of the WorkloadGroup */
@@ -4273,11 +4273,11 @@ export type PatchNetworkingIstioIoV1Alpha3NamespacedWorkloadGroupStatusApiArg =
       }
     | {
         contentType: 'application/json-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: JsonPatchOperations
       }
     | {
         contentType: 'application/merge-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoIstioNetworkingV1Alpha3WorkloadGroup
       }
   )
 export type ListNetworkingIstioIoV1Alpha3ServiceEntryForAllNamespacesApiResponse =
@@ -6148,7 +6148,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoIstioNetworkingV1Alpha3ServiceEntry = {
   apiVersion?: string | undefined
   kind?: string | undefined

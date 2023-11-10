@@ -1381,9 +1381,9 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
 }
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdBackup
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
-    | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdBackup
+  | IoImprobableEtcdV1Alpha1EtcdBackup
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
+  | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdBackup
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1470,8 +1470,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdBackup
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
+  | IoImprobableEtcdV1Alpha1EtcdBackup
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   /** name of the EtcdBackup */
   name: string
@@ -1497,8 +1497,8 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
 )
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   /** name of the EtcdBackup */
   name: string
@@ -1548,11 +1548,11 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoImprobableEtcdV1Alpha1EtcdBackup
     }
 )
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiResponse =
@@ -1571,8 +1571,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdBackup
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
+  | IoImprobableEtcdV1Alpha1EtcdBackup
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackup
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
   /** name of the EtcdBackup */
   name: string
@@ -1620,11 +1620,11 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoImprobableEtcdV1Alpha1EtcdBackup
     }
 )
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
@@ -1677,9 +1677,9 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
 }
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdBackupSchedule
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
-    | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+  | IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+  | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1766,8 +1766,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdBackupSchedule
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+  | IoImprobableEtcdV1Alpha1EtcdBackupSchedule
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdBackupSchedule
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg =
   {
     /** name of the EtcdBackupSchedule */
@@ -1794,8 +1794,8 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg =
   )
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   /** name of the EtcdBackupSchedule */
   name: string
@@ -1845,11 +1845,11 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoImprobableEtcdV1Alpha1EtcdBackupSchedule
     }
 )
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
@@ -1902,9 +1902,9 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
 }
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdCluster
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
-    | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdCluster
+  | IoImprobableEtcdV1Alpha1EtcdCluster
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
+  | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdCluster
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1991,8 +1991,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdCluster
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
+  | IoImprobableEtcdV1Alpha1EtcdCluster
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   /** name of the EtcdCluster */
   name: string
@@ -2018,8 +2018,8 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
 )
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   /** name of the EtcdCluster */
   name: string
@@ -2069,11 +2069,11 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoImprobableEtcdV1Alpha1EtcdCluster
     }
 )
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiResponse =
@@ -2092,8 +2092,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiResponse =
   /** status 200 OK */
-    | IoK8SApiAutoscalingV1Scale
-    | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
+  | IoK8SApiAutoscalingV1Scale
+  | /** status 201 Created */ IoK8SApiAutoscalingV1Scale
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
   /** name of the EtcdCluster */
   name: string
@@ -2141,11 +2141,11 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiAutoscalingV1Scale
     }
 )
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiResponse =
@@ -2164,8 +2164,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdCluster
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
+  | IoImprobableEtcdV1Alpha1EtcdCluster
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdCluster
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
   /** name of the EtcdCluster */
   name: string
@@ -2213,11 +2213,11 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoImprobableEtcdV1Alpha1EtcdCluster
     }
 )
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
@@ -2270,9 +2270,9 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
 }
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdPeer
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
-    | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdPeer
+  | IoImprobableEtcdV1Alpha1EtcdPeer
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
+  | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdPeer
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2358,8 +2358,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdPeer
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
+  | IoImprobableEtcdV1Alpha1EtcdPeer
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   /** name of the EtcdPeer */
   name: string
@@ -2385,8 +2385,8 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
 )
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   /** name of the EtcdPeer */
   name: string
@@ -2436,11 +2436,11 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoImprobableEtcdV1Alpha1EtcdPeer
     }
 )
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiResponse =
@@ -2459,8 +2459,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdPeer
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
+  | IoImprobableEtcdV1Alpha1EtcdPeer
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdPeer
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
   /** name of the EtcdPeer */
   name: string
@@ -2508,11 +2508,11 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoImprobableEtcdV1Alpha1EtcdPeer
     }
 )
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
@@ -2565,9 +2565,9 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
 }
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdRestore
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
-    | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdRestore
+  | IoImprobableEtcdV1Alpha1EtcdRestore
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
+  | /** status 202 Accepted */ IoImprobableEtcdV1Alpha1EtcdRestore
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2654,8 +2654,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdRestore
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
+  | IoImprobableEtcdV1Alpha1EtcdRestore
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   /** name of the EtcdRestore */
   name: string
@@ -2681,8 +2681,8 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
 )
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   /** name of the EtcdRestore */
   name: string
@@ -2732,11 +2732,11 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoImprobableEtcdV1Alpha1EtcdRestore
     }
 )
 export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiResponse =
@@ -2755,8 +2755,8 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
 }
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiResponse =
   /** status 200 OK */
-    | IoImprobableEtcdV1Alpha1EtcdRestore
-    | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
+  | IoImprobableEtcdV1Alpha1EtcdRestore
+  | /** status 201 Created */ IoImprobableEtcdV1Alpha1EtcdRestore
 export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
   /** name of the EtcdRestore */
   name: string
@@ -2804,11 +2804,11 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoImprobableEtcdV1Alpha1EtcdRestore
     }
 )
 export type IoK8SApimachineryPkgApisMetaV1Time = string
@@ -3890,7 +3890,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoK8SApiAutoscalingV1ScaleSpec = {
   replicas?: number | undefined
 }

@@ -266,9 +266,9 @@ export type ListMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   }
 export type CreateMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1Alpha1AlertmanagerConfig
-    | /** status 201 Created */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
-    | /** status 202 Accepted */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
+  | ComCoreosMonitoringV1Alpha1AlertmanagerConfig
+  | /** status 201 Created */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
+  | /** status 202 Accepted */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
 export type CreateMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
@@ -357,8 +357,8 @@ export type ReadMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   }
 export type ReplaceMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiResponse =
   /** status 200 OK */
-    | ComCoreosMonitoringV1Alpha1AlertmanagerConfig
-    | /** status 201 Created */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
+  | ComCoreosMonitoringV1Alpha1AlertmanagerConfig
+  | /** status 201 Created */ ComCoreosMonitoringV1Alpha1AlertmanagerConfig
 export type ReplaceMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   {
     /** name of the AlertmanagerConfig */
@@ -385,8 +385,8 @@ export type ReplaceMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg
   )
 export type DeleteMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   {
     /** name of the AlertmanagerConfig */
@@ -438,11 +438,11 @@ export type PatchMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
       }
     | {
         contentType: 'application/json-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: JsonPatchOperations
       }
     | {
         contentType: 'application/merge-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: ComCoreosMonitoringV1Alpha1AlertmanagerConfig
       }
   )
 export type IoK8SApimachineryPkgApisMetaV1Time = string
@@ -2094,4 +2094,40 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]

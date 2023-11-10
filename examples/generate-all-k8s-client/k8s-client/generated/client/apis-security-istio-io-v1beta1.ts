@@ -762,9 +762,9 @@ export type ListSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
 }
 export type CreateSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiResponse =
   /** status 200 OK */
-    | IoIstioSecurityV1Beta1AuthorizationPolicy
-    | /** status 201 Created */ IoIstioSecurityV1Beta1AuthorizationPolicy
-    | /** status 202 Accepted */ IoIstioSecurityV1Beta1AuthorizationPolicy
+  | IoIstioSecurityV1Beta1AuthorizationPolicy
+  | /** status 201 Created */ IoIstioSecurityV1Beta1AuthorizationPolicy
+  | /** status 202 Accepted */ IoIstioSecurityV1Beta1AuthorizationPolicy
 export type CreateSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -851,8 +851,8 @@ export type ReadSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
 }
 export type ReplaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiResponse =
   /** status 200 OK */
-    | IoIstioSecurityV1Beta1AuthorizationPolicy
-    | /** status 201 Created */ IoIstioSecurityV1Beta1AuthorizationPolicy
+  | IoIstioSecurityV1Beta1AuthorizationPolicy
+  | /** status 201 Created */ IoIstioSecurityV1Beta1AuthorizationPolicy
 export type ReplaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   /** name of the AuthorizationPolicy */
   name: string
@@ -878,8 +878,8 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
 )
 export type DeleteSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   /** name of the AuthorizationPolicy */
   name: string
@@ -929,11 +929,11 @@ export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioSecurityV1Beta1AuthorizationPolicy
     }
 )
 export type ReadSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiResponse =
@@ -953,8 +953,8 @@ export type ReadSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiArg 
   }
 export type ReplaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiResponse =
   /** status 200 OK */
-    | IoIstioSecurityV1Beta1AuthorizationPolicy
-    | /** status 201 Created */ IoIstioSecurityV1Beta1AuthorizationPolicy
+  | IoIstioSecurityV1Beta1AuthorizationPolicy
+  | /** status 201 Created */ IoIstioSecurityV1Beta1AuthorizationPolicy
 export type ReplaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiArg =
   {
     /** name of the AuthorizationPolicy */
@@ -1004,11 +1004,11 @@ export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiArg
       }
     | {
         contentType: 'application/json-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: JsonPatchOperations
       }
     | {
         contentType: 'application/merge-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoIstioSecurityV1Beta1AuthorizationPolicy
       }
   )
 export type ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse =
@@ -1061,9 +1061,9 @@ export type ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
 }
 export type CreateSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse =
   /** status 200 OK */
-    | IoIstioSecurityV1Beta1PeerAuthentication
-    | /** status 201 Created */ IoIstioSecurityV1Beta1PeerAuthentication
-    | /** status 202 Accepted */ IoIstioSecurityV1Beta1PeerAuthentication
+  | IoIstioSecurityV1Beta1PeerAuthentication
+  | /** status 201 Created */ IoIstioSecurityV1Beta1PeerAuthentication
+  | /** status 202 Accepted */ IoIstioSecurityV1Beta1PeerAuthentication
 export type CreateSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1150,8 +1150,8 @@ export type ReadSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
 }
 export type ReplaceSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse =
   /** status 200 OK */
-    | IoIstioSecurityV1Beta1PeerAuthentication
-    | /** status 201 Created */ IoIstioSecurityV1Beta1PeerAuthentication
+  | IoIstioSecurityV1Beta1PeerAuthentication
+  | /** status 201 Created */ IoIstioSecurityV1Beta1PeerAuthentication
 export type ReplaceSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   /** name of the PeerAuthentication */
   name: string
@@ -1177,8 +1177,8 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
 )
 export type DeleteSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   /** name of the PeerAuthentication */
   name: string
@@ -1228,11 +1228,11 @@ export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioSecurityV1Beta1PeerAuthentication
     }
 )
 export type ReadSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiResponse =
@@ -1252,8 +1252,8 @@ export type ReadSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiArg =
   }
 export type ReplaceSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiResponse =
   /** status 200 OK */
-    | IoIstioSecurityV1Beta1PeerAuthentication
-    | /** status 201 Created */ IoIstioSecurityV1Beta1PeerAuthentication
+  | IoIstioSecurityV1Beta1PeerAuthentication
+  | /** status 201 Created */ IoIstioSecurityV1Beta1PeerAuthentication
 export type ReplaceSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiArg =
   {
     /** name of the PeerAuthentication */
@@ -1303,11 +1303,11 @@ export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiArg 
       }
     | {
         contentType: 'application/json-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: JsonPatchOperations
       }
     | {
         contentType: 'application/merge-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoIstioSecurityV1Beta1PeerAuthentication
       }
   )
 export type ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse =
@@ -1360,9 +1360,9 @@ export type ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg = {
 }
 export type CreateSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse =
   /** status 200 OK */
-    | IoIstioSecurityV1Beta1RequestAuthentication
-    | /** status 201 Created */ IoIstioSecurityV1Beta1RequestAuthentication
-    | /** status 202 Accepted */ IoIstioSecurityV1Beta1RequestAuthentication
+  | IoIstioSecurityV1Beta1RequestAuthentication
+  | /** status 201 Created */ IoIstioSecurityV1Beta1RequestAuthentication
+  | /** status 202 Accepted */ IoIstioSecurityV1Beta1RequestAuthentication
 export type CreateSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
@@ -1450,8 +1450,8 @@ export type ReadSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg = {
 }
 export type ReplaceSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse =
   /** status 200 OK */
-    | IoIstioSecurityV1Beta1RequestAuthentication
-    | /** status 201 Created */ IoIstioSecurityV1Beta1RequestAuthentication
+  | IoIstioSecurityV1Beta1RequestAuthentication
+  | /** status 201 Created */ IoIstioSecurityV1Beta1RequestAuthentication
 export type ReplaceSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg =
   {
     /** name of the RequestAuthentication */
@@ -1478,8 +1478,8 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg =
   )
 export type DeleteSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg =
   {
     /** name of the RequestAuthentication */
@@ -1530,11 +1530,11 @@ export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioSecurityV1Beta1RequestAuthentication
     }
 )
 export type ReadSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiResponse =
@@ -1554,8 +1554,8 @@ export type ReadSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiAr
   }
 export type ReplaceSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiResponse =
   /** status 200 OK */
-    | IoIstioSecurityV1Beta1RequestAuthentication
-    | /** status 201 Created */ IoIstioSecurityV1Beta1RequestAuthentication
+  | IoIstioSecurityV1Beta1RequestAuthentication
+  | /** status 201 Created */ IoIstioSecurityV1Beta1RequestAuthentication
 export type ReplaceSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiArg =
   {
     /** name of the RequestAuthentication */
@@ -1605,11 +1605,11 @@ export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiA
       }
     | {
         contentType: 'application/json-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: JsonPatchOperations
       }
     | {
         contentType: 'application/merge-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoIstioSecurityV1Beta1RequestAuthentication
       }
   )
 export type ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiResponse =
@@ -1930,7 +1930,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoIstioSecurityV1Beta1PeerAuthentication = {
   apiVersion?: string | undefined
   kind?: string | undefined

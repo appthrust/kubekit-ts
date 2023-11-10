@@ -269,9 +269,9 @@ export type ListExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
 }
 export type CreateExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiResponse =
   /** status 200 OK */
-    | IoIstioExtensionsV1Alpha1WasmPlugin
-    | /** status 201 Created */ IoIstioExtensionsV1Alpha1WasmPlugin
-    | /** status 202 Accepted */ IoIstioExtensionsV1Alpha1WasmPlugin
+  | IoIstioExtensionsV1Alpha1WasmPlugin
+  | /** status 201 Created */ IoIstioExtensionsV1Alpha1WasmPlugin
+  | /** status 202 Accepted */ IoIstioExtensionsV1Alpha1WasmPlugin
 export type CreateExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -358,8 +358,8 @@ export type ReadExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
 }
 export type ReplaceExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiResponse =
   /** status 200 OK */
-    | IoIstioExtensionsV1Alpha1WasmPlugin
-    | /** status 201 Created */ IoIstioExtensionsV1Alpha1WasmPlugin
+  | IoIstioExtensionsV1Alpha1WasmPlugin
+  | /** status 201 Created */ IoIstioExtensionsV1Alpha1WasmPlugin
 export type ReplaceExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   /** name of the WasmPlugin */
   name: string
@@ -385,8 +385,8 @@ export type ReplaceExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
 )
 export type DeleteExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   /** name of the WasmPlugin */
   name: string
@@ -436,11 +436,11 @@ export type PatchExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioExtensionsV1Alpha1WasmPlugin
     }
 )
 export type ReadExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiResponse =
@@ -459,8 +459,8 @@ export type ReadExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiArg = {
 }
 export type ReplaceExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiResponse =
   /** status 200 OK */
-    | IoIstioExtensionsV1Alpha1WasmPlugin
-    | /** status 201 Created */ IoIstioExtensionsV1Alpha1WasmPlugin
+  | IoIstioExtensionsV1Alpha1WasmPlugin
+  | /** status 201 Created */ IoIstioExtensionsV1Alpha1WasmPlugin
 export type ReplaceExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiArg = {
   /** name of the WasmPlugin */
   name: string
@@ -508,11 +508,11 @@ export type PatchExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioExtensionsV1Alpha1WasmPlugin
     }
 )
 export type ListExtensionsIstioIoV1Alpha1WasmPluginForAllNamespacesApiResponse =
@@ -683,4 +683,40 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]

@@ -50,12 +50,22 @@ async function main() {
     body: {
       metadata: {
         annotations: {
-          patch: 'true'
-        }
+          patch: 'true',
+        },
       },
     },
     fieldManager: 'client-side-apply',
     fieldValidation: 'Strict',
+  })
+
+  await patchCoreV1NamespacedPod({
+    namespace: 'default',
+    name: 'test',
+    contentType: 'application/json-patch+json',
+    body: [
+      { op: 'add', path: '/metadata/annotations/testpatch', value: 'success' },
+    ],
+    fieldManager: 'json-patch',
   })
 
   await deleteCoreV1NamespacedPod({

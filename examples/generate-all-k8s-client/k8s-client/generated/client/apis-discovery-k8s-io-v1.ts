@@ -350,9 +350,9 @@ export type ListDiscoveryV1NamespacedEndpointSliceApiArg = {
 }
 export type CreateDiscoveryV1NamespacedEndpointSliceApiResponse =
   /** status 200 OK */
-    | IoK8SApiDiscoveryV1EndpointSlice
-    | /** status 201 Created */ IoK8SApiDiscoveryV1EndpointSlice
-    | /** status 202 Accepted */ IoK8SApiDiscoveryV1EndpointSlice
+  | IoK8SApiDiscoveryV1EndpointSlice
+  | /** status 201 Created */ IoK8SApiDiscoveryV1EndpointSlice
+  | /** status 202 Accepted */ IoK8SApiDiscoveryV1EndpointSlice
 export type CreateDiscoveryV1NamespacedEndpointSliceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -435,8 +435,8 @@ export type ReadDiscoveryV1NamespacedEndpointSliceApiArg = {
 }
 export type ReplaceDiscoveryV1NamespacedEndpointSliceApiResponse =
   /** status 200 OK */
-    | IoK8SApiDiscoveryV1EndpointSlice
-    | /** status 201 Created */ IoK8SApiDiscoveryV1EndpointSlice
+  | IoK8SApiDiscoveryV1EndpointSlice
+  | /** status 201 Created */ IoK8SApiDiscoveryV1EndpointSlice
 export type ReplaceDiscoveryV1NamespacedEndpointSliceApiArg = {
   /** name of the EndpointSlice */
   name: string
@@ -456,8 +456,8 @@ export type ReplaceDiscoveryV1NamespacedEndpointSliceApiArg = {
 }
 export type DeleteDiscoveryV1NamespacedEndpointSliceApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteDiscoveryV1NamespacedEndpointSliceApiArg = {
   /** name of the EndpointSlice */
   name: string
@@ -479,8 +479,8 @@ export type DeleteDiscoveryV1NamespacedEndpointSliceApiArg = {
 }
 export type PatchDiscoveryV1NamespacedEndpointSliceApiResponse =
   /** status 200 OK */
-    | IoK8SApiDiscoveryV1EndpointSlice
-    | /** status 201 Created */ IoK8SApiDiscoveryV1EndpointSlice
+  | IoK8SApiDiscoveryV1EndpointSlice
+  | /** status 201 Created */ IoK8SApiDiscoveryV1EndpointSlice
 export type PatchDiscoveryV1NamespacedEndpointSliceApiArg = {
   /** name of the EndpointSlice */
   name: string
@@ -503,11 +503,11 @@ export type PatchDiscoveryV1NamespacedEndpointSliceApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiDiscoveryV1EndpointSlice
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -816,7 +816,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoK8SApimachineryPkgRuntimeRawExtension = object
 export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
   object: IoK8SApimachineryPkgRuntimeRawExtension

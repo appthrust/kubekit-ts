@@ -350,9 +350,9 @@ export type ListCoordinationV1NamespacedLeaseApiArg = {
 }
 export type CreateCoordinationV1NamespacedLeaseApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoordinationV1Lease
-    | /** status 201 Created */ IoK8SApiCoordinationV1Lease
-    | /** status 202 Accepted */ IoK8SApiCoordinationV1Lease
+  | IoK8SApiCoordinationV1Lease
+  | /** status 201 Created */ IoK8SApiCoordinationV1Lease
+  | /** status 202 Accepted */ IoK8SApiCoordinationV1Lease
 export type CreateCoordinationV1NamespacedLeaseApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -435,8 +435,8 @@ export type ReadCoordinationV1NamespacedLeaseApiArg = {
 }
 export type ReplaceCoordinationV1NamespacedLeaseApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoordinationV1Lease
-    | /** status 201 Created */ IoK8SApiCoordinationV1Lease
+  | IoK8SApiCoordinationV1Lease
+  | /** status 201 Created */ IoK8SApiCoordinationV1Lease
 export type ReplaceCoordinationV1NamespacedLeaseApiArg = {
   /** name of the Lease */
   name: string
@@ -456,8 +456,8 @@ export type ReplaceCoordinationV1NamespacedLeaseApiArg = {
 }
 export type DeleteCoordinationV1NamespacedLeaseApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoordinationV1NamespacedLeaseApiArg = {
   /** name of the Lease */
   name: string
@@ -479,8 +479,8 @@ export type DeleteCoordinationV1NamespacedLeaseApiArg = {
 }
 export type PatchCoordinationV1NamespacedLeaseApiResponse =
   /** status 200 OK */
-    | IoK8SApiCoordinationV1Lease
-    | /** status 201 Created */ IoK8SApiCoordinationV1Lease
+  | IoK8SApiCoordinationV1Lease
+  | /** status 201 Created */ IoK8SApiCoordinationV1Lease
 export type PatchCoordinationV1NamespacedLeaseApiArg = {
   /** name of the Lease */
   name: string
@@ -503,11 +503,11 @@ export type PatchCoordinationV1NamespacedLeaseApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiCoordinationV1Lease
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -782,7 +782,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoK8SApimachineryPkgRuntimeRawExtension = object
 export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
   object: IoK8SApimachineryPkgRuntimeRawExtension

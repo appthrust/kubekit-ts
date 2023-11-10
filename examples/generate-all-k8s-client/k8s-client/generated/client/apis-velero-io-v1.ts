@@ -2068,7 +2068,8 @@ export type ListVeleroIoV1NamespacedBackupApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateVeleroIoV1NamespacedBackupApiResponse = /** status 200 OK */
+export type CreateVeleroIoV1NamespacedBackupApiResponse =
+  /** status 200 OK */
   | IoVeleroV1Backup
   | /** status 201 Created */ IoVeleroV1Backup
   | /** status 202 Accepted */ IoVeleroV1Backup
@@ -2155,9 +2156,9 @@ export type ReadVeleroIoV1NamespacedBackupApiArg = {
     Defaults to unset */
   resourceVersion?: string
 }
-export type ReplaceVeleroIoV1NamespacedBackupApiResponse = /** status 200 OK */
-  | IoVeleroV1Backup
-  | /** status 201 Created */ IoVeleroV1Backup
+export type ReplaceVeleroIoV1NamespacedBackupApiResponse =
+  /** status 200 OK */
+  IoVeleroV1Backup | /** status 201 Created */ IoVeleroV1Backup
 export type ReplaceVeleroIoV1NamespacedBackupApiArg = {
   /** name of the Backup */
   name: string
@@ -2181,7 +2182,8 @@ export type ReplaceVeleroIoV1NamespacedBackupApiArg = {
       body: IoVeleroV1Backup
     }
 )
-export type DeleteVeleroIoV1NamespacedBackupApiResponse = /** status 200 OK */
+export type DeleteVeleroIoV1NamespacedBackupApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedBackupApiArg = {
@@ -2233,11 +2235,11 @@ export type PatchVeleroIoV1NamespacedBackupApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1Backup
     }
 )
 export type ListVeleroIoV1NamespacedBackupStorageLocationApiResponse =
@@ -2290,9 +2292,9 @@ export type ListVeleroIoV1NamespacedBackupStorageLocationApiArg = {
 }
 export type CreateVeleroIoV1NamespacedBackupStorageLocationApiResponse =
   /** status 200 OK */
-    | IoVeleroV1BackupStorageLocation
-    | /** status 201 Created */ IoVeleroV1BackupStorageLocation
-    | /** status 202 Accepted */ IoVeleroV1BackupStorageLocation
+  | IoVeleroV1BackupStorageLocation
+  | /** status 201 Created */ IoVeleroV1BackupStorageLocation
+  | /** status 202 Accepted */ IoVeleroV1BackupStorageLocation
 export type CreateVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2378,8 +2380,8 @@ export type ReadVeleroIoV1NamespacedBackupStorageLocationApiArg = {
 }
 export type ReplaceVeleroIoV1NamespacedBackupStorageLocationApiResponse =
   /** status 200 OK */
-    | IoVeleroV1BackupStorageLocation
-    | /** status 201 Created */ IoVeleroV1BackupStorageLocation
+  | IoVeleroV1BackupStorageLocation
+  | /** status 201 Created */ IoVeleroV1BackupStorageLocation
 export type ReplaceVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   /** name of the BackupStorageLocation */
   name: string
@@ -2405,8 +2407,8 @@ export type ReplaceVeleroIoV1NamespacedBackupStorageLocationApiArg = {
 )
 export type DeleteVeleroIoV1NamespacedBackupStorageLocationApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   /** name of the BackupStorageLocation */
   name: string
@@ -2456,11 +2458,11 @@ export type PatchVeleroIoV1NamespacedBackupStorageLocationApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1BackupStorageLocation
     }
 )
 export type ListVeleroIoV1NamespacedDeleteBackupRequestApiResponse =
@@ -2513,9 +2515,9 @@ export type ListVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
 }
 export type CreateVeleroIoV1NamespacedDeleteBackupRequestApiResponse =
   /** status 200 OK */
-    | IoVeleroV1DeleteBackupRequest
-    | /** status 201 Created */ IoVeleroV1DeleteBackupRequest
-    | /** status 202 Accepted */ IoVeleroV1DeleteBackupRequest
+  | IoVeleroV1DeleteBackupRequest
+  | /** status 201 Created */ IoVeleroV1DeleteBackupRequest
+  | /** status 202 Accepted */ IoVeleroV1DeleteBackupRequest
 export type CreateVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2601,8 +2603,8 @@ export type ReadVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
 }
 export type ReplaceVeleroIoV1NamespacedDeleteBackupRequestApiResponse =
   /** status 200 OK */
-    | IoVeleroV1DeleteBackupRequest
-    | /** status 201 Created */ IoVeleroV1DeleteBackupRequest
+  | IoVeleroV1DeleteBackupRequest
+  | /** status 201 Created */ IoVeleroV1DeleteBackupRequest
 export type ReplaceVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   /** name of the DeleteBackupRequest */
   name: string
@@ -2628,8 +2630,8 @@ export type ReplaceVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
 )
 export type DeleteVeleroIoV1NamespacedDeleteBackupRequestApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   /** name of the DeleteBackupRequest */
   name: string
@@ -2679,11 +2681,11 @@ export type PatchVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1DeleteBackupRequest
     }
 )
 export type ListVeleroIoV1NamespacedDownloadRequestApiResponse =
@@ -2736,9 +2738,9 @@ export type ListVeleroIoV1NamespacedDownloadRequestApiArg = {
 }
 export type CreateVeleroIoV1NamespacedDownloadRequestApiResponse =
   /** status 200 OK */
-    | IoVeleroV1DownloadRequest
-    | /** status 201 Created */ IoVeleroV1DownloadRequest
-    | /** status 202 Accepted */ IoVeleroV1DownloadRequest
+  | IoVeleroV1DownloadRequest
+  | /** status 201 Created */ IoVeleroV1DownloadRequest
+  | /** status 202 Accepted */ IoVeleroV1DownloadRequest
 export type CreateVeleroIoV1NamespacedDownloadRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -2824,8 +2826,8 @@ export type ReadVeleroIoV1NamespacedDownloadRequestApiArg = {
 }
 export type ReplaceVeleroIoV1NamespacedDownloadRequestApiResponse =
   /** status 200 OK */
-    | IoVeleroV1DownloadRequest
-    | /** status 201 Created */ IoVeleroV1DownloadRequest
+  | IoVeleroV1DownloadRequest
+  | /** status 201 Created */ IoVeleroV1DownloadRequest
 export type ReplaceVeleroIoV1NamespacedDownloadRequestApiArg = {
   /** name of the DownloadRequest */
   name: string
@@ -2851,8 +2853,8 @@ export type ReplaceVeleroIoV1NamespacedDownloadRequestApiArg = {
 )
 export type DeleteVeleroIoV1NamespacedDownloadRequestApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedDownloadRequestApiArg = {
   /** name of the DownloadRequest */
   name: string
@@ -2902,11 +2904,11 @@ export type PatchVeleroIoV1NamespacedDownloadRequestApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1DownloadRequest
     }
 )
 export type ListVeleroIoV1NamespacedPodVolumeBackupApiResponse =
@@ -2959,9 +2961,9 @@ export type ListVeleroIoV1NamespacedPodVolumeBackupApiArg = {
 }
 export type CreateVeleroIoV1NamespacedPodVolumeBackupApiResponse =
   /** status 200 OK */
-    | IoVeleroV1PodVolumeBackup
-    | /** status 201 Created */ IoVeleroV1PodVolumeBackup
-    | /** status 202 Accepted */ IoVeleroV1PodVolumeBackup
+  | IoVeleroV1PodVolumeBackup
+  | /** status 201 Created */ IoVeleroV1PodVolumeBackup
+  | /** status 202 Accepted */ IoVeleroV1PodVolumeBackup
 export type CreateVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3047,8 +3049,8 @@ export type ReadVeleroIoV1NamespacedPodVolumeBackupApiArg = {
 }
 export type ReplaceVeleroIoV1NamespacedPodVolumeBackupApiResponse =
   /** status 200 OK */
-    | IoVeleroV1PodVolumeBackup
-    | /** status 201 Created */ IoVeleroV1PodVolumeBackup
+  | IoVeleroV1PodVolumeBackup
+  | /** status 201 Created */ IoVeleroV1PodVolumeBackup
 export type ReplaceVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   /** name of the PodVolumeBackup */
   name: string
@@ -3074,8 +3076,8 @@ export type ReplaceVeleroIoV1NamespacedPodVolumeBackupApiArg = {
 )
 export type DeleteVeleroIoV1NamespacedPodVolumeBackupApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   /** name of the PodVolumeBackup */
   name: string
@@ -3125,11 +3127,11 @@ export type PatchVeleroIoV1NamespacedPodVolumeBackupApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1PodVolumeBackup
     }
 )
 export type ListVeleroIoV1NamespacedPodVolumeRestoreApiResponse =
@@ -3182,9 +3184,9 @@ export type ListVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
 }
 export type CreateVeleroIoV1NamespacedPodVolumeRestoreApiResponse =
   /** status 200 OK */
-    | IoVeleroV1PodVolumeRestore
-    | /** status 201 Created */ IoVeleroV1PodVolumeRestore
-    | /** status 202 Accepted */ IoVeleroV1PodVolumeRestore
+  | IoVeleroV1PodVolumeRestore
+  | /** status 201 Created */ IoVeleroV1PodVolumeRestore
+  | /** status 202 Accepted */ IoVeleroV1PodVolumeRestore
 export type CreateVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3270,8 +3272,8 @@ export type ReadVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
 }
 export type ReplaceVeleroIoV1NamespacedPodVolumeRestoreApiResponse =
   /** status 200 OK */
-    | IoVeleroV1PodVolumeRestore
-    | /** status 201 Created */ IoVeleroV1PodVolumeRestore
+  | IoVeleroV1PodVolumeRestore
+  | /** status 201 Created */ IoVeleroV1PodVolumeRestore
 export type ReplaceVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   /** name of the PodVolumeRestore */
   name: string
@@ -3297,8 +3299,8 @@ export type ReplaceVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
 )
 export type DeleteVeleroIoV1NamespacedPodVolumeRestoreApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   /** name of the PodVolumeRestore */
   name: string
@@ -3348,11 +3350,11 @@ export type PatchVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1PodVolumeRestore
     }
 )
 export type ListVeleroIoV1NamespacedResticRepositoryApiResponse =
@@ -3405,9 +3407,9 @@ export type ListVeleroIoV1NamespacedResticRepositoryApiArg = {
 }
 export type CreateVeleroIoV1NamespacedResticRepositoryApiResponse =
   /** status 200 OK */
-    | IoVeleroV1ResticRepository
-    | /** status 201 Created */ IoVeleroV1ResticRepository
-    | /** status 202 Accepted */ IoVeleroV1ResticRepository
+  | IoVeleroV1ResticRepository
+  | /** status 201 Created */ IoVeleroV1ResticRepository
+  | /** status 202 Accepted */ IoVeleroV1ResticRepository
 export type CreateVeleroIoV1NamespacedResticRepositoryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3493,8 +3495,8 @@ export type ReadVeleroIoV1NamespacedResticRepositoryApiArg = {
 }
 export type ReplaceVeleroIoV1NamespacedResticRepositoryApiResponse =
   /** status 200 OK */
-    | IoVeleroV1ResticRepository
-    | /** status 201 Created */ IoVeleroV1ResticRepository
+  | IoVeleroV1ResticRepository
+  | /** status 201 Created */ IoVeleroV1ResticRepository
 export type ReplaceVeleroIoV1NamespacedResticRepositoryApiArg = {
   /** name of the ResticRepository */
   name: string
@@ -3520,8 +3522,8 @@ export type ReplaceVeleroIoV1NamespacedResticRepositoryApiArg = {
 )
 export type DeleteVeleroIoV1NamespacedResticRepositoryApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedResticRepositoryApiArg = {
   /** name of the ResticRepository */
   name: string
@@ -3571,11 +3573,11 @@ export type PatchVeleroIoV1NamespacedResticRepositoryApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1ResticRepository
     }
 )
 export type ListVeleroIoV1NamespacedRestoreApiResponse =
@@ -3626,7 +3628,8 @@ export type ListVeleroIoV1NamespacedRestoreApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateVeleroIoV1NamespacedRestoreApiResponse = /** status 200 OK */
+export type CreateVeleroIoV1NamespacedRestoreApiResponse =
+  /** status 200 OK */
   | IoVeleroV1Restore
   | /** status 201 Created */ IoVeleroV1Restore
   | /** status 202 Accepted */ IoVeleroV1Restore
@@ -3715,8 +3718,7 @@ export type ReadVeleroIoV1NamespacedRestoreApiArg = {
 }
 export type ReplaceVeleroIoV1NamespacedRestoreApiResponse =
   /** status 200 OK */
-    | IoVeleroV1Restore
-    | /** status 201 Created */ IoVeleroV1Restore
+  IoVeleroV1Restore | /** status 201 Created */ IoVeleroV1Restore
 export type ReplaceVeleroIoV1NamespacedRestoreApiArg = {
   /** name of the Restore */
   name: string
@@ -3740,7 +3742,8 @@ export type ReplaceVeleroIoV1NamespacedRestoreApiArg = {
       body: IoVeleroV1Restore
     }
 )
-export type DeleteVeleroIoV1NamespacedRestoreApiResponse = /** status 200 OK */
+export type DeleteVeleroIoV1NamespacedRestoreApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedRestoreApiArg = {
@@ -3792,11 +3795,11 @@ export type PatchVeleroIoV1NamespacedRestoreApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1Restore
     }
 )
 export type ListVeleroIoV1NamespacedScheduleApiResponse =
@@ -3849,9 +3852,9 @@ export type ListVeleroIoV1NamespacedScheduleApiArg = {
 }
 export type CreateVeleroIoV1NamespacedScheduleApiResponse =
   /** status 200 OK */
-    | IoVeleroV1Schedule
-    | /** status 201 Created */ IoVeleroV1Schedule
-    | /** status 202 Accepted */ IoVeleroV1Schedule
+  | IoVeleroV1Schedule
+  | /** status 201 Created */ IoVeleroV1Schedule
+  | /** status 202 Accepted */ IoVeleroV1Schedule
 export type CreateVeleroIoV1NamespacedScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -3937,8 +3940,7 @@ export type ReadVeleroIoV1NamespacedScheduleApiArg = {
 }
 export type ReplaceVeleroIoV1NamespacedScheduleApiResponse =
   /** status 200 OK */
-    | IoVeleroV1Schedule
-    | /** status 201 Created */ IoVeleroV1Schedule
+  IoVeleroV1Schedule | /** status 201 Created */ IoVeleroV1Schedule
 export type ReplaceVeleroIoV1NamespacedScheduleApiArg = {
   /** name of the Schedule */
   name: string
@@ -3964,8 +3966,8 @@ export type ReplaceVeleroIoV1NamespacedScheduleApiArg = {
 )
 export type DeleteVeleroIoV1NamespacedScheduleApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedScheduleApiArg = {
   /** name of the Schedule */
   name: string
@@ -4015,11 +4017,11 @@ export type PatchVeleroIoV1NamespacedScheduleApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1Schedule
     }
 )
 export type ListVeleroIoV1NamespacedServerStatusRequestApiResponse =
@@ -4072,9 +4074,9 @@ export type ListVeleroIoV1NamespacedServerStatusRequestApiArg = {
 }
 export type CreateVeleroIoV1NamespacedServerStatusRequestApiResponse =
   /** status 200 OK */
-    | IoVeleroV1ServerStatusRequest
-    | /** status 201 Created */ IoVeleroV1ServerStatusRequest
-    | /** status 202 Accepted */ IoVeleroV1ServerStatusRequest
+  | IoVeleroV1ServerStatusRequest
+  | /** status 201 Created */ IoVeleroV1ServerStatusRequest
+  | /** status 202 Accepted */ IoVeleroV1ServerStatusRequest
 export type CreateVeleroIoV1NamespacedServerStatusRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -4160,8 +4162,8 @@ export type ReadVeleroIoV1NamespacedServerStatusRequestApiArg = {
 }
 export type ReplaceVeleroIoV1NamespacedServerStatusRequestApiResponse =
   /** status 200 OK */
-    | IoVeleroV1ServerStatusRequest
-    | /** status 201 Created */ IoVeleroV1ServerStatusRequest
+  | IoVeleroV1ServerStatusRequest
+  | /** status 201 Created */ IoVeleroV1ServerStatusRequest
 export type ReplaceVeleroIoV1NamespacedServerStatusRequestApiArg = {
   /** name of the ServerStatusRequest */
   name: string
@@ -4187,8 +4189,8 @@ export type ReplaceVeleroIoV1NamespacedServerStatusRequestApiArg = {
 )
 export type DeleteVeleroIoV1NamespacedServerStatusRequestApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedServerStatusRequestApiArg = {
   /** name of the ServerStatusRequest */
   name: string
@@ -4238,11 +4240,11 @@ export type PatchVeleroIoV1NamespacedServerStatusRequestApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1ServerStatusRequest
     }
 )
 export type ListVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse =
@@ -4295,9 +4297,9 @@ export type ListVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
 }
 export type CreateVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse =
   /** status 200 OK */
-    | IoVeleroV1VolumeSnapshotLocation
-    | /** status 201 Created */ IoVeleroV1VolumeSnapshotLocation
-    | /** status 202 Accepted */ IoVeleroV1VolumeSnapshotLocation
+  | IoVeleroV1VolumeSnapshotLocation
+  | /** status 201 Created */ IoVeleroV1VolumeSnapshotLocation
+  | /** status 202 Accepted */ IoVeleroV1VolumeSnapshotLocation
 export type CreateVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -4383,8 +4385,8 @@ export type ReadVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
 }
 export type ReplaceVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse =
   /** status 200 OK */
-    | IoVeleroV1VolumeSnapshotLocation
-    | /** status 201 Created */ IoVeleroV1VolumeSnapshotLocation
+  | IoVeleroV1VolumeSnapshotLocation
+  | /** status 201 Created */ IoVeleroV1VolumeSnapshotLocation
 export type ReplaceVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   /** name of the VolumeSnapshotLocation */
   name: string
@@ -4410,8 +4412,8 @@ export type ReplaceVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
 )
 export type DeleteVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   /** name of the VolumeSnapshotLocation */
   name: string
@@ -4461,11 +4463,11 @@ export type PatchVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoVeleroV1VolumeSnapshotLocation
     }
 )
 export type ListVeleroIoV1PodVolumeBackupForAllNamespacesApiResponse =
@@ -5141,7 +5143,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoVeleroV1PodVolumeBackup = {
   apiVersion?: string | undefined
   kind?: string | undefined

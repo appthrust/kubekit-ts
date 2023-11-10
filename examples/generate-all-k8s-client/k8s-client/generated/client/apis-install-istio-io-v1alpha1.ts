@@ -315,9 +315,9 @@ export type ListInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
 }
 export type CreateInstallIstioIoV1Alpha1NamespacedIstioOperatorApiResponse =
   /** status 200 OK */
-    | IoIstioInstallV1Alpha1IstioOperator
-    | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
-    | /** status 202 Accepted */ IoIstioInstallV1Alpha1IstioOperator
+  | IoIstioInstallV1Alpha1IstioOperator
+  | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
+  | /** status 202 Accepted */ IoIstioInstallV1Alpha1IstioOperator
 export type CreateInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -404,8 +404,8 @@ export type ReadInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
 }
 export type ReplaceInstallIstioIoV1Alpha1NamespacedIstioOperatorApiResponse =
   /** status 200 OK */
-    | IoIstioInstallV1Alpha1IstioOperator
-    | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
+  | IoIstioInstallV1Alpha1IstioOperator
+  | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
 export type ReplaceInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
   /** name of the IstioOperator */
   name: string
@@ -431,8 +431,8 @@ export type ReplaceInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
 )
 export type DeleteInstallIstioIoV1Alpha1NamespacedIstioOperatorApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
   /** name of the IstioOperator */
   name: string
@@ -482,11 +482,11 @@ export type PatchInstallIstioIoV1Alpha1NamespacedIstioOperatorApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioInstallV1Alpha1IstioOperator
     }
 )
 export type ReadInstallIstioIoV1Alpha1NamespacedIstioOperatorStatusApiResponse =
@@ -505,8 +505,8 @@ export type ReadInstallIstioIoV1Alpha1NamespacedIstioOperatorStatusApiArg = {
 }
 export type ReplaceInstallIstioIoV1Alpha1NamespacedIstioOperatorStatusApiResponse =
   /** status 200 OK */
-    | IoIstioInstallV1Alpha1IstioOperator
-    | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
+  | IoIstioInstallV1Alpha1IstioOperator
+  | /** status 201 Created */ IoIstioInstallV1Alpha1IstioOperator
 export type ReplaceInstallIstioIoV1Alpha1NamespacedIstioOperatorStatusApiArg = {
   /** name of the IstioOperator */
   name: string
@@ -554,11 +554,11 @@ export type PatchInstallIstioIoV1Alpha1NamespacedIstioOperatorStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoIstioInstallV1Alpha1IstioOperator
     }
 )
 export type IoK8SApimachineryPkgApisMetaV1Time = string
@@ -658,4 +658,40 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]

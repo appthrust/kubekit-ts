@@ -190,9 +190,9 @@ export type ListExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
 }
 export type CreateExternaldataGatekeeperShV1Alpha1ProviderApiResponse =
   /** status 200 OK */
-    | ShGatekeeperExternaldataV1Alpha1Provider
-    | /** status 201 Created */ ShGatekeeperExternaldataV1Alpha1Provider
-    | /** status 202 Accepted */ ShGatekeeperExternaldataV1Alpha1Provider
+  | ShGatekeeperExternaldataV1Alpha1Provider
+  | /** status 201 Created */ ShGatekeeperExternaldataV1Alpha1Provider
+  | /** status 202 Accepted */ ShGatekeeperExternaldataV1Alpha1Provider
 export type CreateExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -272,8 +272,8 @@ export type ReadExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
 }
 export type ReplaceExternaldataGatekeeperShV1Alpha1ProviderApiResponse =
   /** status 200 OK */
-    | ShGatekeeperExternaldataV1Alpha1Provider
-    | /** status 201 Created */ ShGatekeeperExternaldataV1Alpha1Provider
+  | ShGatekeeperExternaldataV1Alpha1Provider
+  | /** status 201 Created */ ShGatekeeperExternaldataV1Alpha1Provider
 export type ReplaceExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
   /** name of the Provider */
   name: string
@@ -297,8 +297,8 @@ export type ReplaceExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
 )
 export type DeleteExternaldataGatekeeperShV1Alpha1ProviderApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
   /** name of the Provider */
   name: string
@@ -344,11 +344,11 @@ export type PatchExternaldataGatekeeperShV1Alpha1ProviderApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperExternaldataV1Alpha1Provider
     }
 )
 export type IoK8SApimachineryPkgApisMetaV1Time = string
@@ -455,4 +455,40 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]

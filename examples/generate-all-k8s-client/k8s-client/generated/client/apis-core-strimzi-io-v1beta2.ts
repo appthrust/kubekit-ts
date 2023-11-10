@@ -269,9 +269,9 @@ export type ListCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
 }
 export type CreateCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse =
   /** status 200 OK */
-    | IoStrimziCoreV1Beta2StrimziPodSet
-    | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
-    | /** status 202 Accepted */ IoStrimziCoreV1Beta2StrimziPodSet
+  | IoStrimziCoreV1Beta2StrimziPodSet
+  | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
+  | /** status 202 Accepted */ IoStrimziCoreV1Beta2StrimziPodSet
 export type CreateCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -358,8 +358,8 @@ export type ReadCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
 }
 export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse =
   /** status 200 OK */
-    | IoStrimziCoreV1Beta2StrimziPodSet
-    | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
+  | IoStrimziCoreV1Beta2StrimziPodSet
+  | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
 export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   /** name of the StrimziPodSet */
   name: string
@@ -385,8 +385,8 @@ export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
 )
 export type DeleteCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   /** name of the StrimziPodSet */
   name: string
@@ -436,11 +436,11 @@ export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziCoreV1Beta2StrimziPodSet
     }
 )
 export type ReadCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiResponse =
@@ -459,8 +459,8 @@ export type ReadCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
 }
 export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiResponse =
   /** status 200 OK */
-    | IoStrimziCoreV1Beta2StrimziPodSet
-    | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
+  | IoStrimziCoreV1Beta2StrimziPodSet
+  | /** status 201 Created */ IoStrimziCoreV1Beta2StrimziPodSet
 export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
   /** name of the StrimziPodSet */
   name: string
@@ -508,11 +508,11 @@ export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoStrimziCoreV1Beta2StrimziPodSet
     }
 )
 export type ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiResponse =
@@ -690,4 +690,40 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]

@@ -1133,7 +1133,8 @@ export type ListStorageV1CsiDriverApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateStorageV1CsiDriverApiResponse = /** status 200 OK */
+export type CreateStorageV1CsiDriverApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1CsiDriver
   | /** status 201 Created */ IoK8SApiStorageV1CsiDriver
   | /** status 202 Accepted */ IoK8SApiStorageV1CsiDriver
@@ -1211,7 +1212,8 @@ export type ReadStorageV1CsiDriverApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceStorageV1CsiDriverApiResponse = /** status 200 OK */
+export type ReplaceStorageV1CsiDriverApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1CsiDriver
   | /** status 201 Created */ IoK8SApiStorageV1CsiDriver
 export type ReplaceStorageV1CsiDriverApiArg = {
@@ -1229,7 +1231,8 @@ export type ReplaceStorageV1CsiDriverApiArg = {
   contentType?: string
   body: IoK8SApiStorageV1CsiDriver
 }
-export type DeleteStorageV1CsiDriverApiResponse = /** status 200 OK */
+export type DeleteStorageV1CsiDriverApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1CsiDriver
   | /** status 202 Accepted */ IoK8SApiStorageV1CsiDriver
 export type DeleteStorageV1CsiDriverApiArg = {
@@ -1249,7 +1252,8 @@ export type DeleteStorageV1CsiDriverApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchStorageV1CsiDriverApiResponse = /** status 200 OK */
+export type PatchStorageV1CsiDriverApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1CsiDriver
   | /** status 201 Created */ IoK8SApiStorageV1CsiDriver
 export type PatchStorageV1CsiDriverApiArg = {
@@ -1272,11 +1276,11 @@ export type PatchStorageV1CsiDriverApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiStorageV1CsiDriver
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -1329,7 +1333,8 @@ export type ListStorageV1CsiNodeApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateStorageV1CsiNodeApiResponse = /** status 200 OK */
+export type CreateStorageV1CsiNodeApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1CsiNode
   | /** status 201 Created */ IoK8SApiStorageV1CsiNode
   | /** status 202 Accepted */ IoK8SApiStorageV1CsiNode
@@ -1407,9 +1412,9 @@ export type ReadStorageV1CsiNodeApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceStorageV1CsiNodeApiResponse = /** status 200 OK */
-  | IoK8SApiStorageV1CsiNode
-  | /** status 201 Created */ IoK8SApiStorageV1CsiNode
+export type ReplaceStorageV1CsiNodeApiResponse =
+  /** status 200 OK */
+  IoK8SApiStorageV1CsiNode | /** status 201 Created */ IoK8SApiStorageV1CsiNode
 export type ReplaceStorageV1CsiNodeApiArg = {
   /** name of the CSINode */
   name: string
@@ -1425,9 +1430,9 @@ export type ReplaceStorageV1CsiNodeApiArg = {
   contentType?: string
   body: IoK8SApiStorageV1CsiNode
 }
-export type DeleteStorageV1CsiNodeApiResponse = /** status 200 OK */
-  | IoK8SApiStorageV1CsiNode
-  | /** status 202 Accepted */ IoK8SApiStorageV1CsiNode
+export type DeleteStorageV1CsiNodeApiResponse =
+  /** status 200 OK */
+  IoK8SApiStorageV1CsiNode | /** status 202 Accepted */ IoK8SApiStorageV1CsiNode
 export type DeleteStorageV1CsiNodeApiArg = {
   /** name of the CSINode */
   name: string
@@ -1445,9 +1450,9 @@ export type DeleteStorageV1CsiNodeApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchStorageV1CsiNodeApiResponse = /** status 200 OK */
-  | IoK8SApiStorageV1CsiNode
-  | /** status 201 Created */ IoK8SApiStorageV1CsiNode
+export type PatchStorageV1CsiNodeApiResponse =
+  /** status 200 OK */
+  IoK8SApiStorageV1CsiNode | /** status 201 Created */ IoK8SApiStorageV1CsiNode
 export type PatchStorageV1CsiNodeApiArg = {
   /** name of the CSINode */
   name: string
@@ -1468,11 +1473,11 @@ export type PatchStorageV1CsiNodeApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiStorageV1CsiNode
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -1575,9 +1580,9 @@ export type ListStorageV1NamespacedCsiStorageCapacityApiArg = {
 }
 export type CreateStorageV1NamespacedCsiStorageCapacityApiResponse =
   /** status 200 OK */
-    | IoK8SApiStorageV1CsiStorageCapacity
-    | /** status 201 Created */ IoK8SApiStorageV1CsiStorageCapacity
-    | /** status 202 Accepted */ IoK8SApiStorageV1CsiStorageCapacity
+  | IoK8SApiStorageV1CsiStorageCapacity
+  | /** status 201 Created */ IoK8SApiStorageV1CsiStorageCapacity
+  | /** status 202 Accepted */ IoK8SApiStorageV1CsiStorageCapacity
 export type CreateStorageV1NamespacedCsiStorageCapacityApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -1660,8 +1665,8 @@ export type ReadStorageV1NamespacedCsiStorageCapacityApiArg = {
 }
 export type ReplaceStorageV1NamespacedCsiStorageCapacityApiResponse =
   /** status 200 OK */
-    | IoK8SApiStorageV1CsiStorageCapacity
-    | /** status 201 Created */ IoK8SApiStorageV1CsiStorageCapacity
+  | IoK8SApiStorageV1CsiStorageCapacity
+  | /** status 201 Created */ IoK8SApiStorageV1CsiStorageCapacity
 export type ReplaceStorageV1NamespacedCsiStorageCapacityApiArg = {
   /** name of the CSIStorageCapacity */
   name: string
@@ -1681,8 +1686,8 @@ export type ReplaceStorageV1NamespacedCsiStorageCapacityApiArg = {
 }
 export type DeleteStorageV1NamespacedCsiStorageCapacityApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteStorageV1NamespacedCsiStorageCapacityApiArg = {
   /** name of the CSIStorageCapacity */
   name: string
@@ -1704,8 +1709,8 @@ export type DeleteStorageV1NamespacedCsiStorageCapacityApiArg = {
 }
 export type PatchStorageV1NamespacedCsiStorageCapacityApiResponse =
   /** status 200 OK */
-    | IoK8SApiStorageV1CsiStorageCapacity
-    | /** status 201 Created */ IoK8SApiStorageV1CsiStorageCapacity
+  | IoK8SApiStorageV1CsiStorageCapacity
+  | /** status 201 Created */ IoK8SApiStorageV1CsiStorageCapacity
 export type PatchStorageV1NamespacedCsiStorageCapacityApiArg = {
   /** name of the CSIStorageCapacity */
   name: string
@@ -1728,11 +1733,11 @@ export type PatchStorageV1NamespacedCsiStorageCapacityApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiStorageV1CsiStorageCapacity
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -1785,7 +1790,8 @@ export type ListStorageV1StorageClassApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateStorageV1StorageClassApiResponse = /** status 200 OK */
+export type CreateStorageV1StorageClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1StorageClass
   | /** status 201 Created */ IoK8SApiStorageV1StorageClass
   | /** status 202 Accepted */ IoK8SApiStorageV1StorageClass
@@ -1863,7 +1869,8 @@ export type ReadStorageV1StorageClassApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceStorageV1StorageClassApiResponse = /** status 200 OK */
+export type ReplaceStorageV1StorageClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1StorageClass
   | /** status 201 Created */ IoK8SApiStorageV1StorageClass
 export type ReplaceStorageV1StorageClassApiArg = {
@@ -1881,7 +1888,8 @@ export type ReplaceStorageV1StorageClassApiArg = {
   contentType?: string
   body: IoK8SApiStorageV1StorageClass
 }
-export type DeleteStorageV1StorageClassApiResponse = /** status 200 OK */
+export type DeleteStorageV1StorageClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1StorageClass
   | /** status 202 Accepted */ IoK8SApiStorageV1StorageClass
 export type DeleteStorageV1StorageClassApiArg = {
@@ -1901,7 +1909,8 @@ export type DeleteStorageV1StorageClassApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchStorageV1StorageClassApiResponse = /** status 200 OK */
+export type PatchStorageV1StorageClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1StorageClass
   | /** status 201 Created */ IoK8SApiStorageV1StorageClass
 export type PatchStorageV1StorageClassApiArg = {
@@ -1924,11 +1933,11 @@ export type PatchStorageV1StorageClassApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiStorageV1StorageClass
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -1981,7 +1990,8 @@ export type ListStorageV1VolumeAttachmentApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateStorageV1VolumeAttachmentApiResponse = /** status 200 OK */
+export type CreateStorageV1VolumeAttachmentApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1VolumeAttachment
   | /** status 201 Created */ IoK8SApiStorageV1VolumeAttachment
   | /** status 202 Accepted */ IoK8SApiStorageV1VolumeAttachment
@@ -2059,7 +2069,8 @@ export type ReadStorageV1VolumeAttachmentApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceStorageV1VolumeAttachmentApiResponse = /** status 200 OK */
+export type ReplaceStorageV1VolumeAttachmentApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1VolumeAttachment
   | /** status 201 Created */ IoK8SApiStorageV1VolumeAttachment
 export type ReplaceStorageV1VolumeAttachmentApiArg = {
@@ -2077,7 +2088,8 @@ export type ReplaceStorageV1VolumeAttachmentApiArg = {
   contentType?: string
   body: IoK8SApiStorageV1VolumeAttachment
 }
-export type DeleteStorageV1VolumeAttachmentApiResponse = /** status 200 OK */
+export type DeleteStorageV1VolumeAttachmentApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1VolumeAttachment
   | /** status 202 Accepted */ IoK8SApiStorageV1VolumeAttachment
 export type DeleteStorageV1VolumeAttachmentApiArg = {
@@ -2097,7 +2109,8 @@ export type DeleteStorageV1VolumeAttachmentApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchStorageV1VolumeAttachmentApiResponse = /** status 200 OK */
+export type PatchStorageV1VolumeAttachmentApiResponse =
+  /** status 200 OK */
   | IoK8SApiStorageV1VolumeAttachment
   | /** status 201 Created */ IoK8SApiStorageV1VolumeAttachment
 export type PatchStorageV1VolumeAttachmentApiArg = {
@@ -2120,11 +2133,11 @@ export type PatchStorageV1VolumeAttachmentApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiStorageV1VolumeAttachment
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -2141,8 +2154,8 @@ export type ReadStorageV1VolumeAttachmentStatusApiArg = {
 }
 export type ReplaceStorageV1VolumeAttachmentStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiStorageV1VolumeAttachment
-    | /** status 201 Created */ IoK8SApiStorageV1VolumeAttachment
+  | IoK8SApiStorageV1VolumeAttachment
+  | /** status 201 Created */ IoK8SApiStorageV1VolumeAttachment
 export type ReplaceStorageV1VolumeAttachmentStatusApiArg = {
   /** name of the VolumeAttachment */
   name: string
@@ -2160,8 +2173,8 @@ export type ReplaceStorageV1VolumeAttachmentStatusApiArg = {
 }
 export type PatchStorageV1VolumeAttachmentStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiStorageV1VolumeAttachment
-    | /** status 201 Created */ IoK8SApiStorageV1VolumeAttachment
+  | IoK8SApiStorageV1VolumeAttachment
+  | /** status 201 Created */ IoK8SApiStorageV1VolumeAttachment
 export type PatchStorageV1VolumeAttachmentStatusApiArg = {
   /** name of the VolumeAttachment */
   name: string
@@ -2182,11 +2195,11 @@ export type PatchStorageV1VolumeAttachmentStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiStorageV1VolumeAttachment
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -2843,7 +2856,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoK8SApiStorageV1VolumeNodeResources = {
   count?: number | undefined
 }

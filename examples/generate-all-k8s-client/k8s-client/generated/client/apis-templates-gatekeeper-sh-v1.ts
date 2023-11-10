@@ -243,9 +243,9 @@ export type ListTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
 }
 export type CreateTemplatesGatekeeperShV1ConstraintTemplateApiResponse =
   /** status 200 OK */
-    | ShGatekeeperTemplatesV1ConstraintTemplate
-    | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
-    | /** status 202 Accepted */ ShGatekeeperTemplatesV1ConstraintTemplate
+  | ShGatekeeperTemplatesV1ConstraintTemplate
+  | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
+  | /** status 202 Accepted */ ShGatekeeperTemplatesV1ConstraintTemplate
 export type CreateTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
@@ -325,8 +325,8 @@ export type ReadTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
 }
 export type ReplaceTemplatesGatekeeperShV1ConstraintTemplateApiResponse =
   /** status 200 OK */
-    | ShGatekeeperTemplatesV1ConstraintTemplate
-    | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
+  | ShGatekeeperTemplatesV1ConstraintTemplate
+  | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
 export type ReplaceTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
   /** name of the ConstraintTemplate */
   name: string
@@ -350,8 +350,8 @@ export type ReplaceTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
 )
 export type DeleteTemplatesGatekeeperShV1ConstraintTemplateApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
   /** name of the ConstraintTemplate */
   name: string
@@ -397,11 +397,11 @@ export type PatchTemplatesGatekeeperShV1ConstraintTemplateApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperTemplatesV1ConstraintTemplate
     }
 )
 export type ReadTemplatesGatekeeperShV1ConstraintTemplateStatusApiResponse =
@@ -418,8 +418,8 @@ export type ReadTemplatesGatekeeperShV1ConstraintTemplateStatusApiArg = {
 }
 export type ReplaceTemplatesGatekeeperShV1ConstraintTemplateStatusApiResponse =
   /** status 200 OK */
-    | ShGatekeeperTemplatesV1ConstraintTemplate
-    | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
+  | ShGatekeeperTemplatesV1ConstraintTemplate
+  | /** status 201 Created */ ShGatekeeperTemplatesV1ConstraintTemplate
 export type ReplaceTemplatesGatekeeperShV1ConstraintTemplateStatusApiArg = {
   /** name of the ConstraintTemplate */
   name: string
@@ -463,11 +463,11 @@ export type PatchTemplatesGatekeeperShV1ConstraintTemplateStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ShGatekeeperTemplatesV1ConstraintTemplate
     }
 )
 export type IoK8SApimachineryPkgApisMetaV1Time = string
@@ -616,4 +616,40 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]

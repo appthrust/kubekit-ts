@@ -357,9 +357,9 @@ export type ListPolicyV1NamespacedPodDisruptionBudgetApiArg = {
 }
 export type CreatePolicyV1NamespacedPodDisruptionBudgetApiResponse =
   /** status 200 OK */
-    | IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 202 Accepted */ IoK8SApiPolicyV1PodDisruptionBudget
+  | IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 202 Accepted */ IoK8SApiPolicyV1PodDisruptionBudget
 export type CreatePolicyV1NamespacedPodDisruptionBudgetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -442,8 +442,8 @@ export type ReadPolicyV1NamespacedPodDisruptionBudgetApiArg = {
 }
 export type ReplacePolicyV1NamespacedPodDisruptionBudgetApiResponse =
   /** status 200 OK */
-    | IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
+  | IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
 export type ReplacePolicyV1NamespacedPodDisruptionBudgetApiArg = {
   /** name of the PodDisruptionBudget */
   name: string
@@ -463,8 +463,8 @@ export type ReplacePolicyV1NamespacedPodDisruptionBudgetApiArg = {
 }
 export type DeletePolicyV1NamespacedPodDisruptionBudgetApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeletePolicyV1NamespacedPodDisruptionBudgetApiArg = {
   /** name of the PodDisruptionBudget */
   name: string
@@ -486,8 +486,8 @@ export type DeletePolicyV1NamespacedPodDisruptionBudgetApiArg = {
 }
 export type PatchPolicyV1NamespacedPodDisruptionBudgetApiResponse =
   /** status 200 OK */
-    | IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
+  | IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
 export type PatchPolicyV1NamespacedPodDisruptionBudgetApiArg = {
   /** name of the PodDisruptionBudget */
   name: string
@@ -510,11 +510,11 @@ export type PatchPolicyV1NamespacedPodDisruptionBudgetApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiPolicyV1PodDisruptionBudget
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -533,8 +533,8 @@ export type ReadPolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
 }
 export type ReplacePolicyV1NamespacedPodDisruptionBudgetStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
+  | IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
 export type ReplacePolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
   /** name of the PodDisruptionBudget */
   name: string
@@ -554,8 +554,8 @@ export type ReplacePolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
 }
 export type PatchPolicyV1NamespacedPodDisruptionBudgetStatusApiResponse =
   /** status 200 OK */
-    | IoK8SApiPolicyV1PodDisruptionBudget
-    | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
+  | IoK8SApiPolicyV1PodDisruptionBudget
+  | /** status 201 Created */ IoK8SApiPolicyV1PodDisruptionBudget
 export type PatchPolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
   /** name of the PodDisruptionBudget */
   name: string
@@ -578,11 +578,11 @@ export type PatchPolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiPolicyV1PodDisruptionBudget
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -939,7 +939,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoK8SApimachineryPkgRuntimeRawExtension = object
 export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
   object: IoK8SApimachineryPkgRuntimeRawExtension

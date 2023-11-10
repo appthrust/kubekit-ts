@@ -252,7 +252,8 @@ export type ListNodeV1RuntimeClassApiArg = {
   /** Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. */
   watch?: boolean
 }
-export type CreateNodeV1RuntimeClassApiResponse = /** status 200 OK */
+export type CreateNodeV1RuntimeClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiNodeV1RuntimeClass
   | /** status 201 Created */ IoK8SApiNodeV1RuntimeClass
   | /** status 202 Accepted */ IoK8SApiNodeV1RuntimeClass
@@ -330,7 +331,8 @@ export type ReadNodeV1RuntimeClassApiArg = {
   /** If 'true', then the output is pretty printed. */
   pretty?: string
 }
-export type ReplaceNodeV1RuntimeClassApiResponse = /** status 200 OK */
+export type ReplaceNodeV1RuntimeClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiNodeV1RuntimeClass
   | /** status 201 Created */ IoK8SApiNodeV1RuntimeClass
 export type ReplaceNodeV1RuntimeClassApiArg = {
@@ -348,7 +350,8 @@ export type ReplaceNodeV1RuntimeClassApiArg = {
   contentType?: string
   body: IoK8SApiNodeV1RuntimeClass
 }
-export type DeleteNodeV1RuntimeClassApiResponse = /** status 200 OK */
+export type DeleteNodeV1RuntimeClassApiResponse =
+  /** status 200 OK */
   | IoK8SApimachineryPkgApisMetaV1Status
   | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNodeV1RuntimeClassApiArg = {
@@ -368,7 +371,8 @@ export type DeleteNodeV1RuntimeClassApiArg = {
   contentType?: string
   body: IoK8SApimachineryPkgApisMetaV1DeleteOptions
 }
-export type PatchNodeV1RuntimeClassApiResponse = /** status 200 OK */
+export type PatchNodeV1RuntimeClassApiResponse =
+  /** status 200 OK */
   | IoK8SApiNodeV1RuntimeClass
   | /** status 201 Created */ IoK8SApiNodeV1RuntimeClass
 export type PatchNodeV1RuntimeClassApiArg = {
@@ -391,11 +395,11 @@ export type PatchNodeV1RuntimeClassApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SApiNodeV1RuntimeClass
     }
   | {
       contentType: 'application/strategic-merge-patch+json'
@@ -637,7 +641,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoK8SApimachineryPkgRuntimeRawExtension = object
 export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
   object: IoK8SApimachineryPkgRuntimeRawExtension

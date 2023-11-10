@@ -269,9 +269,9 @@ export type ListStorageosComV1NamespacedStorageOsClusterApiArg = {
 }
 export type CreateStorageosComV1NamespacedStorageOsClusterApiResponse =
   /** status 200 OK */
-    | ComStorageosV1StorageOsCluster
-    | /** status 201 Created */ ComStorageosV1StorageOsCluster
-    | /** status 202 Accepted */ ComStorageosV1StorageOsCluster
+  | ComStorageosV1StorageOsCluster
+  | /** status 201 Created */ ComStorageosV1StorageOsCluster
+  | /** status 202 Accepted */ ComStorageosV1StorageOsCluster
 export type CreateStorageosComV1NamespacedStorageOsClusterApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -357,8 +357,8 @@ export type ReadStorageosComV1NamespacedStorageOsClusterApiArg = {
 }
 export type ReplaceStorageosComV1NamespacedStorageOsClusterApiResponse =
   /** status 200 OK */
-    | ComStorageosV1StorageOsCluster
-    | /** status 201 Created */ ComStorageosV1StorageOsCluster
+  | ComStorageosV1StorageOsCluster
+  | /** status 201 Created */ ComStorageosV1StorageOsCluster
 export type ReplaceStorageosComV1NamespacedStorageOsClusterApiArg = {
   /** name of the StorageOSCluster */
   name: string
@@ -384,8 +384,8 @@ export type ReplaceStorageosComV1NamespacedStorageOsClusterApiArg = {
 )
 export type DeleteStorageosComV1NamespacedStorageOsClusterApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteStorageosComV1NamespacedStorageOsClusterApiArg = {
   /** name of the StorageOSCluster */
   name: string
@@ -435,11 +435,11 @@ export type PatchStorageosComV1NamespacedStorageOsClusterApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ComStorageosV1StorageOsCluster
     }
 )
 export type ReadStorageosComV1NamespacedStorageOsClusterStatusApiResponse =
@@ -458,8 +458,8 @@ export type ReadStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
 }
 export type ReplaceStorageosComV1NamespacedStorageOsClusterStatusApiResponse =
   /** status 200 OK */
-    | ComStorageosV1StorageOsCluster
-    | /** status 201 Created */ ComStorageosV1StorageOsCluster
+  | ComStorageosV1StorageOsCluster
+  | /** status 201 Created */ ComStorageosV1StorageOsCluster
 export type ReplaceStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
   /** name of the StorageOSCluster */
   name: string
@@ -507,11 +507,11 @@ export type PatchStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: ComStorageosV1StorageOsCluster
     }
 )
 export type ListStorageosComV1StorageOsClusterForAllNamespacesApiResponse =
@@ -845,4 +845,40 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]

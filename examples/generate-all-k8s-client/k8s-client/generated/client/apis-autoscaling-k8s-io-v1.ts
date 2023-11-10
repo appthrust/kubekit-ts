@@ -385,9 +385,9 @@ export type ListAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg = {
 }
 export type CreateAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiResponse =
   /** status 200 OK */
-    | IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
-    | /** status 201 Created */ IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
-    | /** status 202 Accepted */ IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
+  | IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
+  | /** status 201 Created */ IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
+  | /** status 202 Accepted */ IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
 export type CreateAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
@@ -475,8 +475,8 @@ export type ReadAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg = {
 }
 export type ReplaceAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiResponse =
   /** status 200 OK */
-    | IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
-    | /** status 201 Created */ IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
+  | IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
+  | /** status 201 Created */ IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
 export type ReplaceAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg =
   {
     /** name of the VerticalPodAutoscalerCheckpoint */
@@ -503,8 +503,8 @@ export type ReplaceAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg 
   )
 export type DeleteAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg =
   {
     /** name of the VerticalPodAutoscalerCheckpoint */
@@ -556,11 +556,11 @@ export type PatchAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg =
       }
     | {
         contentType: 'application/json-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: JsonPatchOperations
       }
     | {
         contentType: 'application/merge-patch+json'
-        body: IoK8SApimachineryPkgApisMetaV1Patch
+        body: IoK8SAutoscalingV1VerticalPodAutoscalerCheckpoint
       }
   )
 export type ListAutoscalingV1NamespacedVerticalPodAutoscalerApiResponse =
@@ -613,9 +613,9 @@ export type ListAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
 }
 export type CreateAutoscalingV1NamespacedVerticalPodAutoscalerApiResponse =
   /** status 200 OK */
-    | IoK8SAutoscalingV1VerticalPodAutoscaler
-    | /** status 201 Created */ IoK8SAutoscalingV1VerticalPodAutoscaler
-    | /** status 202 Accepted */ IoK8SAutoscalingV1VerticalPodAutoscaler
+  | IoK8SAutoscalingV1VerticalPodAutoscaler
+  | /** status 201 Created */ IoK8SAutoscalingV1VerticalPodAutoscaler
+  | /** status 202 Accepted */ IoK8SAutoscalingV1VerticalPodAutoscaler
 export type CreateAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
@@ -702,8 +702,8 @@ export type ReadAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
 }
 export type ReplaceAutoscalingV1NamespacedVerticalPodAutoscalerApiResponse =
   /** status 200 OK */
-    | IoK8SAutoscalingV1VerticalPodAutoscaler
-    | /** status 201 Created */ IoK8SAutoscalingV1VerticalPodAutoscaler
+  | IoK8SAutoscalingV1VerticalPodAutoscaler
+  | /** status 201 Created */ IoK8SAutoscalingV1VerticalPodAutoscaler
 export type ReplaceAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
   /** name of the VerticalPodAutoscaler */
   name: string
@@ -729,8 +729,8 @@ export type ReplaceAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
 )
 export type DeleteAutoscalingV1NamespacedVerticalPodAutoscalerApiResponse =
   /** status 200 OK */
-    | IoK8SApimachineryPkgApisMetaV1Status
-    | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
+  | IoK8SApimachineryPkgApisMetaV1Status
+  | /** status 202 Accepted */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
   /** name of the VerticalPodAutoscaler */
   name: string
@@ -780,11 +780,11 @@ export type PatchAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
     }
   | {
       contentType: 'application/json-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: JsonPatchOperations
     }
   | {
       contentType: 'application/merge-patch+json'
-      body: IoK8SApimachineryPkgApisMetaV1Patch
+      body: IoK8SAutoscalingV1VerticalPodAutoscaler
     }
 )
 export type ListAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespacesApiResponse =
@@ -1006,7 +1006,43 @@ export type IoK8SApimachineryPkgApisMetaV1DeleteOptions = {
   preconditions?: IoK8SApimachineryPkgApisMetaV1Preconditions | undefined
   propagationPolicy?: string | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Patch = object
+export type AddOperation = {
+  op: 'add'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type RemoveOperation = {
+  op: 'remove'
+  path: string
+}
+export type ReplaceOperation = {
+  op: 'replace'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type MoveOperation = {
+  op: 'move'
+  path: string
+  from: string
+}
+export type CopyOperation = {
+  op: 'copy'
+  path: string
+  from: string
+}
+export type TestOperation = {
+  op: 'test'
+  path: string
+  value: string | number | boolean | any | object
+}
+export type JsonPatchOperation =
+  | AddOperation
+  | RemoveOperation
+  | ReplaceOperation
+  | MoveOperation
+  | CopyOperation
+  | TestOperation
+export type JsonPatchOperations = JsonPatchOperation[]
 export type IoK8SAutoscalingV1VerticalPodAutoscaler = {
   apiVersion?: string | undefined
   kind?: string | undefined
