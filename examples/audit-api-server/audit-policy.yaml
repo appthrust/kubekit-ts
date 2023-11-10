@@ -1,10 +1,10 @@
 apiVersion: audit.k8s.io/v1
 kind: Policy
 omitStages:
-- RequestReceived
-- ResponseStarted
-- Panic
+  - RequestReceived
+  - ResponseStarted
+  - Panic
 rules:
-- level: RequestResponse
-  users:
-  - kubernetes-admin
+  - level: RequestResponse
+    users:
+      - kubernetes-admin

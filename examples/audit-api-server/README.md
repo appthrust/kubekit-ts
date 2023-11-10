@@ -1,4 +1,4 @@
-# k8s api clientの開発をする際のTips
+# k8s api client の開発をする際の Tips
 
 ## 1. 開発用のクラスタを立ち上げる
 
@@ -6,10 +6,10 @@
 just up
 ```
 
-## 2. kubectlで実行したい操作を実施し、verboseを有効化する
+## 2. kubectl で実行したい操作を実施し、verbose を有効化する
 
-kubectlには `-v` オプションが設定できます.
--vオプションには現在1~10の値を設定でき、それによってログの詳細度を変更できます.
+kubectl には `-v` オプションが設定できます.
+-v オプションには現在 1~10 の値を設定でき、それによってログの詳細度を変更できます.
 
 例:
 
@@ -17,7 +17,7 @@ kubectlには `-v` オプションが設定できます.
 kubectl run nginx --image=nginx --restart=Never -v=9
 ```
 
-ただし、kubectlはRequestのBodyや一部のHeaderを表示しません.
+ただし、kubectl は Request の Body や一部の Header を表示しません.
 
 ### 例
 
@@ -43,17 +43,17 @@ I1026 12:24:46.958314    5903 apply.go:534] Running apply post-processor functio
 その為、これだけだと模倣するのに必要な情報が足りない場合があります.
 その際には、以下のステップで解決できます.
 
-## 3. Apiサーバーのログを流す
+## 3. Api サーバーのログを流す
 
-> kubectlはRequest Bodyや一部のRequest Headerを表示しません.
+> kubectl は Request Body や一部の Request Header を表示しません.
 
-この問題を解決する為に、api serverのaudit logを以下のコマンドを実行し、流しっぱなしにします.
+この問題を解決する為に、api server の audit log を以下のコマンドを実行し、流しっぱなしにします.
 
 ```sh
 just log
 ```
 
-ここではRequestの内容が全て確認できます.
+ここでは Request の内容が全て確認できます.
 
 ```yaml
 kind: Event
@@ -103,8 +103,8 @@ responseObject:
     name: nginx
     namespace: default
     uid: 2c5e7503-d9a8-43d2-8281-4d186e552c37
-    resourceVersion: "7817"
-    creationTimestamp: "2023-10-26T03:22:48Z"
+    resourceVersion: '7817'
+    creationTimestamp: '2023-10-26T03:22:48Z'
     labels:
       run: nginx
     annotations:
@@ -122,7 +122,7 @@ responseObject:
       - manager: kubectl
         operation: Apply
         apiVersion: v1
-        time: "2023-10-26T03:28:36Z"
+        time: '2023-10-26T03:28:36Z'
         fieldsType: FieldsV1
         fieldsV1:
           f:metadata:
@@ -140,7 +140,7 @@ responseObject:
       - manager: kubectl-run
         operation: Update
         apiVersion: v1
-        time: "2023-10-26T03:22:48Z"
+        time: '2023-10-26T03:22:48Z'
         fieldsType: FieldsV1
         fieldsV1:
           f:metadata:
@@ -166,7 +166,7 @@ responseObject:
       - manager: kubelet
         operation: Update
         apiVersion: v1
-        time: "2023-10-26T03:22:51Z"
+        time: '2023-10-26T03:22:51Z'
         fieldsType: FieldsV1
         fieldsV1:
           f:status:
@@ -255,31 +255,31 @@ responseObject:
     phase: Running
     conditions:
       - type: Initialized
-        status: "True"
+        status: 'True'
         lastProbeTime: null
-        lastTransitionTime: "2023-10-26T03:22:48Z"
+        lastTransitionTime: '2023-10-26T03:22:48Z'
       - type: Ready
-        status: "True"
+        status: 'True'
         lastProbeTime: null
-        lastTransitionTime: "2023-10-26T03:22:51Z"
+        lastTransitionTime: '2023-10-26T03:22:51Z'
       - type: ContainersReady
-        status: "True"
+        status: 'True'
         lastProbeTime: null
-        lastTransitionTime: "2023-10-26T03:22:51Z"
+        lastTransitionTime: '2023-10-26T03:22:51Z'
       - type: PodScheduled
-        status: "True"
+        status: 'True'
         lastProbeTime: null
-        lastTransitionTime: "2023-10-26T03:22:48Z"
+        lastTransitionTime: '2023-10-26T03:22:48Z'
     hostIP: 172.20.0.2
     podIP: 10.244.0.8
     podIPs:
       - ip: 10.244.0.8
-    startTime: "2023-10-26T03:22:48Z"
+    startTime: '2023-10-26T03:22:48Z'
     containerStatuses:
       - name: nginx
         state:
           running:
-            startedAt: "2023-10-26T03:22:50Z"
+            startedAt: '2023-10-26T03:22:50Z'
         lastState: {}
         ready: true
         restartCount: 0
@@ -288,15 +288,15 @@ responseObject:
         containerID: containerd://63fcc8b25fb5010ac625a468387d69d40ba60fd742eec23f8f7ef606ec73b697
         started: true
     qosClass: BestEffort
-requestReceivedTimestamp: "2023-10-26T03:28:36.350508Z"
-stageTimestamp: "2023-10-26T03:28:36.354447Z"
+requestReceivedTimestamp: '2023-10-26T03:28:36.350508Z'
+stageTimestamp: '2023-10-26T03:28:36.354447Z'
 annotations:
   authorization.k8s.io/decision: allow
-  authorization.k8s.io/reason: ""
+  authorization.k8s.io/reason: ''
   pod-security.kubernetes.io/enforce-policy: privileged:latest
 ```
 
-requestObjectの中身が全て書いてありますね.
+requestObject の中身が全て書いてありますね.
 
 ## 模倣してみる
 
@@ -324,7 +324,7 @@ requestObject:
   status: {}
 ```
 
-の2つの部分を参考に組み立てると、server-side applyを生成したclientで実行するには、以下の様になります
+の 2 つの部分を参考に組み立てると、server-side apply を生成した client で実行するには、以下の様になります
 
 ```ts
 import { patchCoreV1NamespacedPod } from './k8s-client/generated/client/api-v1'
@@ -337,28 +337,28 @@ async function main() {
       fieldManager: 'server-side-apply',
       fieldValidation: 'Strict',
       ioK8SApimachineryPkgApisMetaV1Patch: {
-        apiVersion: "v1",
-        kind: "Pod",
+        apiVersion: 'v1',
+        kind: 'Pod',
         metadata: {
           creationTimestamp: null,
           labels: {
-            run: "nginx"
+            run: 'nginx',
           },
-          name: "nginx",
-          namespace: "default"
+          name: 'nginx',
+          namespace: 'default',
         },
         spec: {
           containers: [
             {
-              image: "nginx",
-              name: "nginx",
-              resources: {}
-            }
+              image: 'nginx',
+              name: 'nginx',
+              resources: {},
+            },
           ],
-          dnsPolicy: "ClusterFirst",
-          restartPolicy: "Never"
+          dnsPolicy: 'ClusterFirst',
+          restartPolicy: 'Never',
         },
-        status: {}
+        status: {},
       },
     },
     {
