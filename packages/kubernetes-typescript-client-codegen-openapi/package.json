@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-typescript-client-codegen-openapi",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "kahirokunn",
@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.0.2",
-    "@kahirokunn/oazapfts-patched": "^0.0.0-development",
+    "@kahirokunn/oazapfts-patched": "^0.0.1",
     "commander": "^6.2.0",
     "prettier": "^2.8.8",
     "semver": "^7.3.5",
