@@ -72,6 +72,7 @@ export async function generateApi(
     isDataResponse = defaultIsDataResponse,
     filterEndpoints,
     unionUndefined = true,
+    strict = true,
   }: GenerationOptions
 ) {
   const v3Doc = await getV3Doc(spec);
@@ -347,7 +348,7 @@ export async function generateApi(
       [
         factory.createPropertyAssignment(
           factory.createIdentifier('path'),
-          generatePathExpression(path, pickParams('path'), rootObject)
+          generatePathExpression(path, pickParams('path'), rootObject, strict)
         ),
         verb.toUpperCase() === 'GET'
           ? undefined
@@ -382,13 +383,30 @@ function accessProperty(rootObject: ts.Identifier, propertyName: string) {
     : factory.createElementAccessExpression(rootObject, factory.createStringLiteral(propertyName));
 }
 
-function generatePathExpression(path: string, pathParameters: QueryArgDefinition[], rootObject: ts.Identifier) {
+function generatePathExpression(path: string, pathParameters: QueryArgDefinition[], rootObject: ts.Identifier, strict: boolean) {
   const expressions: Array<[string, string]> = [];
 
   const head = path.replace(/\{(.*?)\}(.*?)(?=\{|$)/g, (_, expression, literal) => {
-    const param = pathParameters.find((p) => p.originalName === expression);
+    let param = pathParameters.find((p) => p.originalName === expression);
     if (!param) {
-      throw new Error(`path parameter ${expression} does not seem to be defined in '${path}'!`);
+      if (strict) {
+        throw new Error(`path parameter ${expression} does not seem to be defined in '${path}'!`);
+      }
+      param = {
+        origin: 'param',
+        name: expression,
+        originalName: expression,
+        type: factory.createToken(ts.SyntaxKind.StringKeyword),
+        required: true,
+        param: {
+          name: expression,
+          in: 'path',
+          description: 'The name that needs to be deleted',
+          required: true,
+          schema: { type: 'string' },
+        },
+      };
+      pathParameters.push(param);
     }
     expressions.push([param.name, literal]);
     return '';

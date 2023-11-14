@@ -55,6 +55,12 @@ export interface CommonOptions {
    * `true` will generate a union type for `undefined` properties like: `{ id?: string | undefined }` instead of `{ id?: string }`
    */
   unionUndefined?: boolean;
+
+  /**
+   * defaults to true
+   * If `true`, an error will occur if the path parameter does not exist, but if `false`, it will be automatically filled in as a string.
+   */
+  strict?: boolean;
 }
 
 export type TextMatcher = string | RegExp | (string | RegExp)[];

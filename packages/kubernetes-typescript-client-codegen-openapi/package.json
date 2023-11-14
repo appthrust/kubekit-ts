@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-typescript-client-codegen-openapi",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "kahirokunn",
@@ -20,7 +20,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "esm:test:update": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --updateSnapshot",
     "test:update": "jest --runInBand --updateSnapshot",
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --silent=false",
     "cli": "esr src/bin/cli.ts"
   },
   "files": [
