@@ -1,0 +1,9 @@
+update-swagger:
+  #!/bin/sh
+  # Swaggerが壊れています. 一時的に手動でパッチしています.
+  # https://github.com/orgs/vercel/discussions/4813#discussioncomment-7539757
+  wget -O swagger.json https://openapi.vercel.sh/
+
+generate-code:
+  #!/bin/sh
+  npx kubernetes-typescript-client-codegen-openapi ./vercel.config.ts
