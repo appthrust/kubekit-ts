@@ -1950,9 +1950,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kahirokunn/oazapfts-patched@npm:^0.0.0-development":
-  version: 0.0.0-development
-  resolution: "@kahirokunn/oazapfts-patched@npm:0.0.0-development"
+"@kahirokunn/oazapfts-patched@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "@kahirokunn/oazapfts-patched@npm:0.0.1"
   dependencies:
     "@apidevtools/swagger-parser": ^10.1.0
     lodash: ^4.17.21
@@ -1961,7 +1961,7 @@ __metadata:
     typescript: ^5.2.2
   bin:
     oazapfts: lib/codegen/cli.js
-  checksum: 3db476c3bcf83d5e31a03a4a328242495b6fa63efb8b6e7c7f9741cb454ab71d6470bc103d938db976e527dfab5c7936cee1875bc4e692fb233460cbbbce227c
+  checksum: 1effc1f4adaee6bd0e0401f4ad5f8de1d6afa738cba231136e167481ef1c7be6291cbf3a4a63f4baa632001076236398128c85da716a689dd1aa89df9e345735
   languageName: node
   linkType: hard
 
@@ -2470,6 +2470,16 @@ __metadata:
   version: 3.0.5
   resolution: "@types/minimatch@npm:3.0.5"
   checksum: c41d136f67231c3131cf1d4ca0b06687f4a322918a3a5adddc87ce90ed9dbd175a3610adee36b106ae68c0b92c637c35e02b58c8a56c424f71d30993ea220b92
+  languageName: node
+  linkType: hard
+
+"@types/node-fetch@npm:^2.6.9":
+  version: 2.6.9
+  resolution: "@types/node-fetch@npm:2.6.9"
+  dependencies:
+    "@types/node": "*"
+    form-data: ^4.0.0
+  checksum: 212269aff4b251477c13c33cee6cea23e4fd630be6c0bfa3714968cce7efd7055b52f2f82aab3394596d8c758335cc802e7c5fa3f775e7f2a472fa914c90dc15
   languageName: node
   linkType: hard
 
@@ -5460,7 +5470,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"form-data@npm:4.0.0":
+"form-data@npm:4.0.0, form-data@npm:^4.0.0":
   version: 4.0.0
   resolution: "form-data@npm:4.0.0"
   dependencies:
@@ -7692,7 +7702,7 @@ __metadata:
     "@babel/core": ^7.12.10
     "@babel/preset-env": ^7.12.11
     "@babel/preset-typescript": ^7.23.2
-    "@kahirokunn/oazapfts-patched": ^0.0.0-development
+    "@kahirokunn/oazapfts-patched": ^0.0.1
     "@kubernetes/client-node": ^0.19.0
     "@reduxjs/toolkit": ^1.6.0
     "@types/commander": ^2.12.2
@@ -9843,6 +9853,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "rtk-monorepo@workspace:."
   dependencies:
+    "@types/node-fetch": ^2.6.9
     eslint: ^7.25.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-flowtype: ^5.7.2
