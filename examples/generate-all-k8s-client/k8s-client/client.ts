@@ -1,6 +1,7 @@
 import * as k8s from '@kubernetes/client-node'
-import fetch, { FetchError } from 'node-fetch'
-import * as https from 'node:https'
+import type * as https from 'node:https'
+
+import { Agent } from 'undici'
 
 type RemoveUndefined<T> = {
   [K in keyof T]: Exclude<T[K], undefined | null>
@@ -116,7 +117,13 @@ export async function apiClient<Response>(
       return false
     }
 
-    if (error instanceof FetchError) {
+    if (
+      typeof error === 'object' &&
+      error !== null &&
+      'toString' in error &&
+      typeof error.toString === 'function' &&
+      error.toString().includes('TypeError: fetch failed')
+    ) {
       return true
     }
     if (res && res.status >= 500) {
@@ -158,15 +165,16 @@ export async function apiClient<Response>(
     !httpsOptions.agent &&
     (httpsOptions.ca || httpsOptions.cert || httpsOptions.key)
   ) {
-    const agent = new https.Agent(
-      removeNullableProperties({
+    const agent = new Agent({
+      connect: removeNullableProperties({
         ca: httpsOptions.ca,
         cert: httpsOptions.cert,
         key: httpsOptions.key,
         port: httpsOptions.port ? Number(httpsOptions.port) : undefined,
-      })
-    )
-    httpsOptions.agent = agent
+      }),
+    })
+    // https://github.com/nodejs/node/issues/48977
+    httpsOptions.agent = agent as any
   }
 
   if (!httpsOptions.protocol) {
@@ -208,7 +216,8 @@ export async function apiClient<Response>(
           headers,
           protocol: httpsOptions.protocol || undefined,
           method,
-          agent: httpsOptions.agent,
+          // https://github.com/nodejs/node/issues/48977
+          dispatcher: httpsOptions.agent,
           body,
         })
       )
@@ -218,6 +227,28 @@ export async function apiClient<Response>(
       const isJsonResponse = contentType?.includes('application/json') ?? false
 
       if (isSuccess && isJsonResponse) {
+        if ('watch' in params && params.watch && response.body) {
+          const reader = response.body.getReader()
+          const textDecoder = new TextDecoder()
+          let buffer = ''
+          while (true) {
+            const { value, done } = await reader.read()
+            if (done) break
+
+            buffer += textDecoder.decode(value, { stream: true })
+            while (true) {
+              const newlineIndex = buffer.indexOf('\n')
+              if (newlineIndex === -1) break
+              const line = buffer.slice(0, newlineIndex)
+              buffer = buffer.slice(newlineIndex + 1)
+
+              console.log('----------------')
+              console.log(JSON.parse(line))
+            }
+          }
+
+          return JSON.parse(await response.text()) as Response
+        }
         return (await response.json()) as Response
       }
 
