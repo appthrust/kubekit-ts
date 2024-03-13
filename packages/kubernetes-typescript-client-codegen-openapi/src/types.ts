@@ -39,6 +39,10 @@ export interface CommonOptions {
    */
   optionsImport?: string;
   /**
+   * defaults to "WatchExtraOptions"
+   */
+  watchExtraOptions?: string;
+  /**
    * defaults to "enhancedApi"
    */
   exportName?: string;

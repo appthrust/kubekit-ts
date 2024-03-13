@@ -77,61 +77,173 @@ export function generateEndpointDefinition({
   Response,
   QueryArg,
   queryFn,
+  isWatch,
 }: {
   operationName: string;
   Response: ts.TypeReferenceNode;
   QueryArg: ts.TypeReferenceNode;
   queryFn: ts.ObjectLiteralExpression;
+  isWatch: boolean;
 }) {
-  return factory.createVariableStatement(
-    [factory.createToken(ts.SyntaxKind.ExportKeyword)],
-    factory.createVariableDeclarationList(
+  if (!isWatch) {
+    return [
+      factory.createVariableStatement(
+        [factory.createToken(ts.SyntaxKind.ExportKeyword)],
+        factory.createVariableDeclarationList(
+          [
+            factory.createVariableDeclaration(
+              factory.createIdentifier(operationName),
+              undefined,
+              undefined,
+              factory.createArrowFunction(
+                undefined,
+                undefined,
+                [
+                  factory.createParameterDeclaration(
+                    undefined,
+                    undefined,
+                    factory.createIdentifier('args'),
+                    undefined,
+                    QueryArg,
+                    undefined
+                  ),
+                  factory.createParameterDeclaration(
+                    undefined,
+                    undefined,
+                    factory.createIdentifier('options'),
+                    factory.createToken(ts.SyntaxKind.QuestionToken),
+                    factory.createTypeReferenceNode(factory.createIdentifier('Options'), undefined),
+                    undefined
+                  ),
+                ],
+                undefined,
+                factory.createToken(ts.SyntaxKind.EqualsGreaterThanToken),
+                factory.createBlock(
+                  [
+                    factory.createReturnStatement(
+                      factory.createCallExpression(
+                        factory.createIdentifier('apiClient'),
+                        [Response],
+                        [queryFn, factory.createIdentifier('options')]
+                      )
+                    ),
+                  ],
+                  true
+                )
+              )
+            ),
+          ],
+          ts.NodeFlags.Const
+        )
+      ),
+    ];
+  }
+  return [
+    factory.createFunctionDeclaration(
+      [factory.createToken(ts.SyntaxKind.ExportKeyword)],
+      undefined,
+      factory.createIdentifier(operationName),
+      undefined,
       [
-        factory.createVariableDeclaration(
-          factory.createIdentifier(operationName),
+        factory.createParameterDeclaration(
           undefined,
           undefined,
-          factory.createArrowFunction(
-            undefined,
-            undefined,
-            [
-              factory.createParameterDeclaration(
-                undefined,
-                undefined,
-                factory.createIdentifier('args'),
-                undefined,
-                QueryArg,
-                undefined
-              ),
-              factory.createParameterDeclaration(
-                undefined,
-                undefined,
-                factory.createIdentifier('options'),
-                factory.createToken(ts.SyntaxKind.QuestionToken),
-                factory.createTypeReferenceNode(factory.createIdentifier('Options'), undefined),
-                undefined
-              ),
-            ],
-            undefined,
-            factory.createToken(ts.SyntaxKind.EqualsGreaterThanToken),
-            factory.createBlock(
-              [
-                factory.createReturnStatement(
-                  factory.createCallExpression(
-                    factory.createIdentifier('apiClient'),
-                    [Response],
-                    [queryFn, factory.createIdentifier('options')]
-                  )
-                ),
-              ],
-              true
-            )
-          )
+          factory.createIdentifier('args'),
+          undefined,
+          factory.createTypeReferenceNode(factory.createIdentifier('NoWatch'), [QueryArg]),
+          undefined
+        ),
+        factory.createParameterDeclaration(
+          undefined,
+          undefined,
+          factory.createIdentifier('options'),
+          factory.createToken(ts.SyntaxKind.QuestionToken),
+          factory.createTypeReferenceNode(factory.createIdentifier('Options'), undefined),
+          undefined
         ),
       ],
-      ts.NodeFlags.Const
-    )
-  );
+      factory.createTypeReferenceNode(factory.createIdentifier('Promise'), [Response]),
+      undefined
+    ),
+    factory.createFunctionDeclaration(
+      [factory.createToken(ts.SyntaxKind.ExportKeyword)],
+      undefined,
+      factory.createIdentifier(operationName),
+      undefined,
+      [
+        factory.createParameterDeclaration(
+          undefined,
+          undefined,
+          factory.createIdentifier('args'),
+          undefined,
+          factory.createIntersectionTypeNode([
+            QueryArg,
+            factory.createTypeLiteralNode([
+              factory.createPropertySignature(
+                undefined,
+                factory.createIdentifier('watch'),
+                undefined,
+                factory.createLiteralTypeNode(factory.createTrue())
+              ),
+            ]),
+          ]),
+          undefined
+        ),
+        factory.createParameterDeclaration(
+          undefined,
+          undefined,
+          factory.createIdentifier('options'),
+          undefined,
+          factory.createIntersectionTypeNode([
+            factory.createTypeReferenceNode(factory.createIdentifier('Options'), undefined),
+            factory.createTypeReferenceNode(factory.createIdentifier('WatchExtraOptions'), [Response]),
+          ]),
+          undefined
+        ),
+      ],
+      factory.createTypeReferenceNode(factory.createIdentifier('Promise'), [
+        factory.createKeywordTypeNode(ts.SyntaxKind.VoidKeyword),
+      ]),
+      undefined
+    ),
+    factory.createFunctionDeclaration(
+      [factory.createToken(ts.SyntaxKind.ExportKeyword)],
+      undefined,
+      factory.createIdentifier(operationName),
+      undefined,
+      [
+        factory.createParameterDeclaration(
+          undefined,
+          undefined,
+          factory.createIdentifier('args'),
+          undefined,
+          factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword),
+          undefined
+        ),
+        factory.createParameterDeclaration(
+          undefined,
+          undefined,
+          factory.createIdentifier('options'),
+          undefined,
+          factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword),
+          undefined
+        ),
+      ],
+      factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword),
+      factory.createBlock(
+        [
+          factory.createReturnStatement(
+            factory.createCallExpression(
+              factory.createIdentifier('apiClient'),
+              [Response],
+              [queryFn, factory.createIdentifier('options')]
+            )
+          ),
+        ],
+        true
+      )
+    ),
+  ];
 }
 
 export function generateTagTypes({ addTagTypes }: { addTagTypes: string[] }) {

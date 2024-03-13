@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`calling without \`outputFile\` returns the generated api 1`] = `
-import { apiClient, type Options } from "./fixtures/k8sApiClient";
+import {
+  apiClient,
+  type Options,
+  type WatchExtraOptions,
+} from "./fixtures/k8sApiClient";
 export const getHealthcheck = (
   args: GetHealthcheckApiArg,
   options?: Options
@@ -392,7 +396,11 @@ export type User = {
 `;
 
 exports[`duplicate parameter names must be prefixed with a path or query prefix 1`] = `
-import { apiClient, type Options } from "./fixtures/k8sApiClient";
+import {
+  apiClient,
+  type Options,
+  type WatchExtraOptions,
+} from "./fixtures/k8sApiClient";
 export const patchApiV1ListByItemId = (
   args: PatchApiV1ListByItemIdApiArg,
   options?: Options
@@ -430,7 +438,11 @@ export type PatchApiV2BySomeNameApiArg = {
 `;
 
 exports[`endpoint filtering: should only have endpoints loginUser, placeOrder, getOrderById, deleteOrder 1`] = `
-import { apiClient, type Options } from "./fixtures/k8sApiClient";
+import {
+  apiClient,
+  type Options,
+  type WatchExtraOptions,
+} from "./fixtures/k8sApiClient";
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   return apiClient<PlaceOrderApiResponse>(
     {
@@ -510,7 +522,11 @@ export type Order = {
 `;
 
 exports[`should use brackets in a querystring urls arg, when the arg contains full stops 1`] = `
-import { apiClient, type Options } from "./fixtures/k8sApiClient";
+import {
+  apiClient,
+  type Options,
+  type WatchExtraOptions,
+} from "./fixtures/k8sApiClient";
 export const patchApiV1ListByItemId = (
   args: PatchApiV1ListByItemIdApiArg,
   options?: Options
@@ -548,7 +564,11 @@ export type PatchApiV2BySomeNameApiArg = {
 `;
 
 exports[`tests from issues issue #2002: should be able to generate proper intersection types 1`] = `
-import { apiClient, type Options } from "./tmp/k8sApiClient";
+import {
+  apiClient,
+  type Options,
+  type WatchExtraOptions,
+} from "./tmp/k8sApiClient";
 export const getApiV1Animals = (
   args: GetApiV1AnimalsApiArg,
   options?: Options
@@ -577,7 +597,11 @@ export type AnimalType = "All" | "Cats" | "Dogs";
 `;
 
 exports[`yaml parsing should be able to use read a yaml file 1`] = `
-import { apiClient, type Options } from "./tmp/k8sApiClient";
+import {
+  apiClient,
+  type Options,
+  type WatchExtraOptions,
+} from "./tmp/k8sApiClient";
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   return apiClient<UpdatePetApiResponse>(
     {
@@ -955,7 +979,11 @@ export type User = {
 `;
 
 exports[`yaml parsing should generate params with non quoted keys if they don't contain special characters 1`] = `
-import { apiClient, type Options } from "./tmp/k8sApiClient";
+import {
+  apiClient,
+  type Options,
+  type WatchExtraOptions,
+} from "./tmp/k8sApiClient";
 export const getStructureDefinition = (
   args: GetStructureDefinitionApiArg,
   options?: Options
@@ -1002,7 +1030,11 @@ export type FhirJsonResource = object;
 `;
 
 exports[`yaml parsing should parse a yaml schema from a URL 1`] = `
-import { apiClient, type Options } from "./tmp/k8sApiClient";
+import {
+  apiClient,
+  type Options,
+  type WatchExtraOptions,
+} from "./tmp/k8sApiClient";
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   return apiClient<UpdatePetApiResponse>(
     {

@@ -66,6 +66,7 @@ export async function generateApi(
     apiFile,
     apiImport = 'apiClient',
     optionsImport = 'Options',
+    watchExtraOptions = 'WatchExtraOptions',
     argSuffix = 'ApiArg',
     responseSuffix = 'ApiResponse',
     outputFile,
@@ -119,12 +120,16 @@ export async function generateApi(
         generateImportNode(apiFile, {
           [apiImport]: { isTypeOnly: false, name: 'apiClient' },
           [optionsImport]: { isTypeOnly: true, name: 'Options' },
+          [watchExtraOptions]: { isTypeOnly: true, name: 'WatchExtraOptions' }
         }),
-        ...operationDefinitions.map((operationDefinition) =>
-          generateRequester({
-            operationDefinition,
-          })
-        ),
+        noWatch,
+        ...operationDefinitions
+          .map((operationDefinition) =>
+            generateRequester({
+              operationDefinition,
+            })
+          )
+          .flat(),
         ...Object.values(interfaces),
         ...apiGen['aliases'],
       ],
@@ -265,6 +270,10 @@ export async function generateApi(
     };
 
     const queryArgValues = Object.values(queryArg);
+    const isWatch =
+      queryArgValues.findIndex(
+        (queryArg) => queryArg.origin === 'param' && queryArg.param.name === 'watch' && queryArg.param.in === 'query'
+      ) !== -1;
 
     const bodyType = queryArgValues.find((def) => def.origin === 'body')?.type;
 
@@ -310,6 +319,7 @@ export async function generateApi(
       Response: ResponseTypeName,
       QueryArg,
       queryFn: generateQueryFn({ operationDefinition, queryArg }),
+      isWatch,
     });
   }
 
@@ -383,7 +393,12 @@ function accessProperty(rootObject: ts.Identifier, propertyName: string) {
     : factory.createElementAccessExpression(rootObject, factory.createStringLiteral(propertyName));
 }
 
-function generatePathExpression(path: string, pathParameters: QueryArgDefinition[], rootObject: ts.Identifier, strict: boolean) {
+function generatePathExpression(
+  path: string,
+  pathParameters: QueryArgDefinition[],
+  rootObject: ts.Identifier,
+  strict: boolean
+) {
   const expressions: Array<[string, string]> = [];
 
   const head = path.replace(/\{(.*?)\}(.*?)(?=\{|$)/g, (_, expression, literal) => {
@@ -464,3 +479,35 @@ function getBodyNode(bodies: { [contentType: string]: ts.TypeNode }): ts.TypeNod
     )
   );
 }
+
+// type NoWatch<T> = Omit<T, 'watch'> & {
+//   watch?: false
+// }
+const noWatch = factory.createTypeAliasDeclaration(
+  undefined,
+  factory.createIdentifier("NoWatch"),
+  [factory.createTypeParameterDeclaration(
+    undefined,
+    factory.createIdentifier("T"),
+    undefined,
+    undefined
+  )],
+  factory.createIntersectionTypeNode([
+    factory.createTypeReferenceNode(
+      factory.createIdentifier("Omit"),
+      [
+        factory.createTypeReferenceNode(
+          factory.createIdentifier("T"),
+          undefined
+        ),
+        factory.createLiteralTypeNode(factory.createStringLiteral("watch"))
+      ]
+    ),
+    factory.createTypeLiteralNode([factory.createPropertySignature(
+      undefined,
+      factory.createIdentifier("watch"),
+      factory.createToken(ts.SyntaxKind.QuestionToken),
+      factory.createLiteralTypeNode(factory.createFalse())
+    )])
+  ])
+)

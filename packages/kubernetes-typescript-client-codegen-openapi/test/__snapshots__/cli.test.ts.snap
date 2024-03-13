@@ -1,11 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CLI options testing generation with \`config.example.js\` 1`] = `
-import { apiClient, type Options } from '../fixtures/k8sApiClient';
+import { apiClient, type Options, type WatchExtraOptions } from '../fixtures/k8sApiClient';
 export const getCoreV1ApiResources = (args: GetCoreV1ApiResourcesApiArg, options?: Options) => {
   return apiClient<GetCoreV1ApiResourcesApiResponse>({ path: \`/api/v1/\` }, options);
 };
-export const listCoreV1ComponentStatus = (args: ListCoreV1ComponentStatusApiArg, options?: Options) => {
+export function listCoreV1ComponentStatus(
+  args: NoWatch<ListCoreV1ComponentStatusApiResponse>,
+  options?: Options
+): Promise<ListCoreV1ComponentStatusApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ComponentStatusApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ComponentStatusApiResponse>
+): Promise<void>;
+export function listCoreV1ComponentStatus(args: any, options: any): any {
   return apiClient<ListCoreV1ComponentStatusApiResponse>(
     {
       path: \`/api/v1/componentstatuses\`,
@@ -25,17 +35,24 @@ export const listCoreV1ComponentStatus = (args: ListCoreV1ComponentStatusApiArg,
     },
     options
   );
-};
+}
 export const readCoreV1ComponentStatus = (args: ReadCoreV1ComponentStatusApiArg, options?: Options) => {
   return apiClient<ReadCoreV1ComponentStatusApiResponse>(
     { path: \`/api/v1/componentstatuses/\${args.name}\`, params: { pretty: args.pretty } },
     options
   );
 };
-export const listCoreV1ConfigMapForAllNamespaces = (
-  args: ListCoreV1ConfigMapForAllNamespacesApiArg,
+export function listCoreV1ConfigMapForAllNamespaces(
+  args: NoWatch<ListCoreV1ConfigMapForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1ConfigMapForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ConfigMapForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ConfigMapForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1ConfigMapForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1ConfigMapForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/configmaps\`,
@@ -55,11 +72,18 @@ export const listCoreV1ConfigMapForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1EndpointsForAllNamespaces = (
-  args: ListCoreV1EndpointsForAllNamespacesApiArg,
+}
+export function listCoreV1EndpointsForAllNamespaces(
+  args: NoWatch<ListCoreV1EndpointsForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1EndpointsForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1EndpointsForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1EndpointsForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1EndpointsForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1EndpointsForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/endpoints\`,
@@ -79,8 +103,18 @@ export const listCoreV1EndpointsForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1EventForAllNamespaces = (args: ListCoreV1EventForAllNamespacesApiArg, options?: Options) => {
+}
+export function listCoreV1EventForAllNamespaces(
+  args: NoWatch<ListCoreV1EventForAllNamespacesApiResponse>,
+  options?: Options
+): Promise<ListCoreV1EventForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1EventForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1EventForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1EventForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1EventForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/events\`,
@@ -100,11 +134,18 @@ export const listCoreV1EventForAllNamespaces = (args: ListCoreV1EventForAllNames
     },
     options
   );
-};
-export const listCoreV1LimitRangeForAllNamespaces = (
-  args: ListCoreV1LimitRangeForAllNamespacesApiArg,
+}
+export function listCoreV1LimitRangeForAllNamespaces(
+  args: NoWatch<ListCoreV1LimitRangeForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1LimitRangeForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1LimitRangeForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1LimitRangeForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1LimitRangeForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1LimitRangeForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/limitranges\`,
@@ -124,8 +165,18 @@ export const listCoreV1LimitRangeForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1Namespace = (args: ListCoreV1NamespaceApiArg, options?: Options) => {
+}
+export function listCoreV1Namespace(
+  args: NoWatch<ListCoreV1NamespaceApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespaceApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespaceApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespaceApiResponse>
+): Promise<void>;
+export function listCoreV1Namespace(args: any, options: any): any {
   return apiClient<ListCoreV1NamespaceApiResponse>(
     {
       path: \`/api/v1/namespaces\`,
@@ -145,7 +196,7 @@ export const listCoreV1Namespace = (args: ListCoreV1NamespaceApiArg, options?: O
     },
     options
   );
-};
+}
 export const createCoreV1Namespace = (args: CreateCoreV1NamespaceApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespaceApiResponse>(
     {
@@ -180,7 +231,17 @@ export const createCoreV1NamespacedBinding = (args: CreateCoreV1NamespacedBindin
     options
   );
 };
-export const listCoreV1NamespacedConfigMap = (args: ListCoreV1NamespacedConfigMapApiArg, options?: Options) => {
+export function listCoreV1NamespacedConfigMap(
+  args: NoWatch<ListCoreV1NamespacedConfigMapApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedConfigMapApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedConfigMapApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedConfigMapApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedConfigMap(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedConfigMapApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/configmaps\`,
@@ -200,7 +261,7 @@ export const listCoreV1NamespacedConfigMap = (args: ListCoreV1NamespacedConfigMa
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedConfigMap = (args: CreateCoreV1NamespacedConfigMapApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedConfigMapApiResponse>(
     {
@@ -306,7 +367,17 @@ export const patchCoreV1NamespacedConfigMap = (args: PatchCoreV1NamespacedConfig
     options
   );
 };
-export const listCoreV1NamespacedEndpoints = (args: ListCoreV1NamespacedEndpointsApiArg, options?: Options) => {
+export function listCoreV1NamespacedEndpoints(
+  args: NoWatch<ListCoreV1NamespacedEndpointsApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedEndpointsApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedEndpointsApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedEndpointsApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedEndpoints(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedEndpointsApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/endpoints\`,
@@ -326,7 +397,7 @@ export const listCoreV1NamespacedEndpoints = (args: ListCoreV1NamespacedEndpoint
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedEndpoints = (args: CreateCoreV1NamespacedEndpointsApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedEndpointsApiResponse>(
     {
@@ -432,7 +503,17 @@ export const patchCoreV1NamespacedEndpoints = (args: PatchCoreV1NamespacedEndpoi
     options
   );
 };
-export const listCoreV1NamespacedEvent = (args: ListCoreV1NamespacedEventApiArg, options?: Options) => {
+export function listCoreV1NamespacedEvent(
+  args: NoWatch<ListCoreV1NamespacedEventApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedEventApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedEventApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedEventApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedEvent(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedEventApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/events\`,
@@ -452,7 +533,7 @@ export const listCoreV1NamespacedEvent = (args: ListCoreV1NamespacedEventApiArg,
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedEvent = (args: CreateCoreV1NamespacedEventApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedEventApiResponse>(
     {
@@ -558,7 +639,17 @@ export const patchCoreV1NamespacedEvent = (args: PatchCoreV1NamespacedEventApiAr
     options
   );
 };
-export const listCoreV1NamespacedLimitRange = (args: ListCoreV1NamespacedLimitRangeApiArg, options?: Options) => {
+export function listCoreV1NamespacedLimitRange(
+  args: NoWatch<ListCoreV1NamespacedLimitRangeApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedLimitRangeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedLimitRangeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedLimitRangeApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedLimitRange(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedLimitRangeApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/limitranges\`,
@@ -578,7 +669,7 @@ export const listCoreV1NamespacedLimitRange = (args: ListCoreV1NamespacedLimitRa
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedLimitRange = (args: CreateCoreV1NamespacedLimitRangeApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedLimitRangeApiResponse>(
     {
@@ -684,10 +775,17 @@ export const patchCoreV1NamespacedLimitRange = (args: PatchCoreV1NamespacedLimit
     options
   );
 };
-export const listCoreV1NamespacedPersistentVolumeClaim = (
-  args: ListCoreV1NamespacedPersistentVolumeClaimApiArg,
+export function listCoreV1NamespacedPersistentVolumeClaim(
+  args: NoWatch<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedPersistentVolumeClaimApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedPersistentVolumeClaim(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/persistentvolumeclaims\`,
@@ -707,7 +805,7 @@ export const listCoreV1NamespacedPersistentVolumeClaim = (
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedPersistentVolumeClaim = (
   args: CreateCoreV1NamespacedPersistentVolumeClaimApiArg,
   options?: Options
@@ -884,7 +982,17 @@ export const patchCoreV1NamespacedPersistentVolumeClaimStatus = (
     options
   );
 };
-export const listCoreV1NamespacedPod = (args: ListCoreV1NamespacedPodApiArg, options?: Options) => {
+export function listCoreV1NamespacedPod(
+  args: NoWatch<ListCoreV1NamespacedPodApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedPodApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedPodApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedPodApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedPod(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedPodApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/pods\`,
@@ -904,7 +1012,7 @@ export const listCoreV1NamespacedPod = (args: ListCoreV1NamespacedPodApiArg, opt
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedPod = (args: CreateCoreV1NamespacedPodApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedPodApiResponse>(
     {
@@ -1417,7 +1525,17 @@ export const patchCoreV1NamespacedPodStatus = (args: PatchCoreV1NamespacedPodSta
     options
   );
 };
-export const listCoreV1NamespacedPodTemplate = (args: ListCoreV1NamespacedPodTemplateApiArg, options?: Options) => {
+export function listCoreV1NamespacedPodTemplate(
+  args: NoWatch<ListCoreV1NamespacedPodTemplateApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedPodTemplateApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedPodTemplateApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedPodTemplateApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedPodTemplate(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedPodTemplateApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/podtemplates\`,
@@ -1437,7 +1555,7 @@ export const listCoreV1NamespacedPodTemplate = (args: ListCoreV1NamespacedPodTem
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedPodTemplate = (args: CreateCoreV1NamespacedPodTemplateApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedPodTemplateApiResponse>(
     {
@@ -1546,10 +1664,17 @@ export const patchCoreV1NamespacedPodTemplate = (args: PatchCoreV1NamespacedPodT
     options
   );
 };
-export const listCoreV1NamespacedReplicationController = (
-  args: ListCoreV1NamespacedReplicationControllerApiArg,
+export function listCoreV1NamespacedReplicationController(
+  args: NoWatch<ListCoreV1NamespacedReplicationControllerApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedReplicationControllerApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedReplicationControllerApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedReplicationControllerApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedReplicationController(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedReplicationControllerApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/replicationcontrollers\`,
@@ -1569,7 +1694,7 @@ export const listCoreV1NamespacedReplicationController = (
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedReplicationController = (
   args: CreateCoreV1NamespacedReplicationControllerApiArg,
   options?: Options
@@ -1799,7 +1924,17 @@ export const patchCoreV1NamespacedReplicationControllerStatus = (
     options
   );
 };
-export const listCoreV1NamespacedResourceQuota = (args: ListCoreV1NamespacedResourceQuotaApiArg, options?: Options) => {
+export function listCoreV1NamespacedResourceQuota(
+  args: NoWatch<ListCoreV1NamespacedResourceQuotaApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedResourceQuotaApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedResourceQuotaApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedResourceQuotaApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedResourceQuota(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedResourceQuotaApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/resourcequotas\`,
@@ -1819,7 +1954,7 @@ export const listCoreV1NamespacedResourceQuota = (args: ListCoreV1NamespacedReso
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedResourceQuota = (
   args: CreateCoreV1NamespacedResourceQuotaApiArg,
   options?: Options
@@ -1990,7 +2125,17 @@ export const patchCoreV1NamespacedResourceQuotaStatus = (
     options
   );
 };
-export const listCoreV1NamespacedSecret = (args: ListCoreV1NamespacedSecretApiArg, options?: Options) => {
+export function listCoreV1NamespacedSecret(
+  args: NoWatch<ListCoreV1NamespacedSecretApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedSecretApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedSecretApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedSecretApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedSecret(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedSecretApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/secrets\`,
@@ -2010,7 +2155,7 @@ export const listCoreV1NamespacedSecret = (args: ListCoreV1NamespacedSecretApiAr
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedSecret = (args: CreateCoreV1NamespacedSecretApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedSecretApiResponse>(
     {
@@ -2116,10 +2261,17 @@ export const patchCoreV1NamespacedSecret = (args: PatchCoreV1NamespacedSecretApi
     options
   );
 };
-export const listCoreV1NamespacedServiceAccount = (
-  args: ListCoreV1NamespacedServiceAccountApiArg,
+export function listCoreV1NamespacedServiceAccount(
+  args: NoWatch<ListCoreV1NamespacedServiceAccountApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedServiceAccountApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedServiceAccountApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedServiceAccountApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedServiceAccount(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedServiceAccountApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/serviceaccounts\`,
@@ -2139,7 +2291,7 @@ export const listCoreV1NamespacedServiceAccount = (
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedServiceAccount = (
   args: CreateCoreV1NamespacedServiceAccountApiArg,
   options?: Options
@@ -2280,7 +2432,17 @@ export const createCoreV1NamespacedServiceAccountToken = (
     options
   );
 };
-export const listCoreV1NamespacedService = (args: ListCoreV1NamespacedServiceApiArg, options?: Options) => {
+export function listCoreV1NamespacedService(
+  args: NoWatch<ListCoreV1NamespacedServiceApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedServiceApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedServiceApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedServiceApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedService(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedServiceApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/services\`,
@@ -2300,7 +2462,7 @@ export const listCoreV1NamespacedService = (args: ListCoreV1NamespacedServiceApi
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedService = (args: CreateCoreV1NamespacedServiceApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedServiceApiResponse>(
     {
@@ -2747,7 +2909,17 @@ export const patchCoreV1NamespaceStatus = (args: PatchCoreV1NamespaceStatusApiAr
     options
   );
 };
-export const listCoreV1Node = (args: ListCoreV1NodeApiArg, options?: Options) => {
+export function listCoreV1Node(
+  args: NoWatch<ListCoreV1NodeApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NodeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NodeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NodeApiResponse>
+): Promise<void>;
+export function listCoreV1Node(args: any, options: any): any {
   return apiClient<ListCoreV1NodeApiResponse>(
     {
       path: \`/api/v1/nodes\`,
@@ -2767,7 +2939,7 @@ export const listCoreV1Node = (args: ListCoreV1NodeApiArg, options?: Options) =>
     },
     options
   );
-};
+}
 export const createCoreV1Node = (args: CreateCoreV1NodeApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NodeApiResponse>(
     {
@@ -3010,10 +3182,17 @@ export const patchCoreV1NodeStatus = (args: PatchCoreV1NodeStatusApiArg, options
     options
   );
 };
-export const listCoreV1PersistentVolumeClaimForAllNamespaces = (
-  args: ListCoreV1PersistentVolumeClaimForAllNamespacesApiArg,
+export function listCoreV1PersistentVolumeClaimForAllNamespaces(
+  args: NoWatch<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1PersistentVolumeClaimForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/persistentvolumeclaims\`,
@@ -3033,8 +3212,18 @@ export const listCoreV1PersistentVolumeClaimForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1PersistentVolume = (args: ListCoreV1PersistentVolumeApiArg, options?: Options) => {
+}
+export function listCoreV1PersistentVolume(
+  args: NoWatch<ListCoreV1PersistentVolumeApiResponse>,
+  options?: Options
+): Promise<ListCoreV1PersistentVolumeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1PersistentVolumeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1PersistentVolumeApiResponse>
+): Promise<void>;
+export function listCoreV1PersistentVolume(args: any, options: any): any {
   return apiClient<ListCoreV1PersistentVolumeApiResponse>(
     {
       path: \`/api/v1/persistentvolumes\`,
@@ -3054,7 +3243,7 @@ export const listCoreV1PersistentVolume = (args: ListCoreV1PersistentVolumeApiAr
     },
     options
   );
-};
+}
 export const createCoreV1PersistentVolume = (args: CreateCoreV1PersistentVolumeApiArg, options?: Options) => {
   return apiClient<CreateCoreV1PersistentVolumeApiResponse>(
     {
@@ -3204,7 +3393,17 @@ export const patchCoreV1PersistentVolumeStatus = (args: PatchCoreV1PersistentVol
     options
   );
 };
-export const listCoreV1PodForAllNamespaces = (args: ListCoreV1PodForAllNamespacesApiArg, options?: Options) => {
+export function listCoreV1PodForAllNamespaces(
+  args: NoWatch<ListCoreV1PodForAllNamespacesApiResponse>,
+  options?: Options
+): Promise<ListCoreV1PodForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1PodForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1PodForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1PodForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1PodForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/pods\`,
@@ -3224,11 +3423,18 @@ export const listCoreV1PodForAllNamespaces = (args: ListCoreV1PodForAllNamespace
     },
     options
   );
-};
-export const listCoreV1PodTemplateForAllNamespaces = (
-  args: ListCoreV1PodTemplateForAllNamespacesApiArg,
+}
+export function listCoreV1PodTemplateForAllNamespaces(
+  args: NoWatch<ListCoreV1PodTemplateForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1PodTemplateForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1PodTemplateForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1PodTemplateForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1PodTemplateForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1PodTemplateForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/podtemplates\`,
@@ -3248,11 +3454,18 @@ export const listCoreV1PodTemplateForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1ReplicationControllerForAllNamespaces = (
-  args: ListCoreV1ReplicationControllerForAllNamespacesApiArg,
+}
+export function listCoreV1ReplicationControllerForAllNamespaces(
+  args: NoWatch<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ReplicationControllerForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1ReplicationControllerForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/replicationcontrollers\`,
@@ -3272,11 +3485,18 @@ export const listCoreV1ReplicationControllerForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1ResourceQuotaForAllNamespaces = (
-  args: ListCoreV1ResourceQuotaForAllNamespacesApiArg,
+}
+export function listCoreV1ResourceQuotaForAllNamespaces(
+  args: NoWatch<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ResourceQuotaForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1ResourceQuotaForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/resourcequotas\`,
@@ -3296,8 +3516,18 @@ export const listCoreV1ResourceQuotaForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1SecretForAllNamespaces = (args: ListCoreV1SecretForAllNamespacesApiArg, options?: Options) => {
+}
+export function listCoreV1SecretForAllNamespaces(
+  args: NoWatch<ListCoreV1SecretForAllNamespacesApiResponse>,
+  options?: Options
+): Promise<ListCoreV1SecretForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1SecretForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1SecretForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1SecretForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1SecretForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/secrets\`,
@@ -3317,11 +3547,18 @@ export const listCoreV1SecretForAllNamespaces = (args: ListCoreV1SecretForAllNam
     },
     options
   );
-};
-export const listCoreV1ServiceAccountForAllNamespaces = (
-  args: ListCoreV1ServiceAccountForAllNamespacesApiArg,
+}
+export function listCoreV1ServiceAccountForAllNamespaces(
+  args: NoWatch<ListCoreV1ServiceAccountForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1ServiceAccountForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ServiceAccountForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ServiceAccountForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1ServiceAccountForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1ServiceAccountForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/serviceaccounts\`,
@@ -3341,8 +3578,18 @@ export const listCoreV1ServiceAccountForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1ServiceForAllNamespaces = (args: ListCoreV1ServiceForAllNamespacesApiArg, options?: Options) => {
+}
+export function listCoreV1ServiceForAllNamespaces(
+  args: NoWatch<ListCoreV1ServiceForAllNamespacesApiResponse>,
+  options?: Options
+): Promise<ListCoreV1ServiceForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ServiceForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ServiceForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1ServiceForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1ServiceForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/services\`,
@@ -3362,11 +3609,18 @@ export const listCoreV1ServiceForAllNamespaces = (args: ListCoreV1ServiceForAllN
     },
     options
   );
-};
-export const watchCoreV1ConfigMapListForAllNamespaces = (
-  args: WatchCoreV1ConfigMapListForAllNamespacesApiArg,
+}
+export function watchCoreV1ConfigMapListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1ConfigMapListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1ConfigMapListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/configmaps\`,
@@ -3386,11 +3640,18 @@ export const watchCoreV1ConfigMapListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1EndpointsListForAllNamespaces = (
-  args: WatchCoreV1EndpointsListForAllNamespacesApiArg,
+}
+export function watchCoreV1EndpointsListForAllNamespaces(
+  args: NoWatch<WatchCoreV1EndpointsListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1EndpointsListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1EndpointsListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1EndpointsListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1EndpointsListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1EndpointsListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/endpoints\`,
@@ -3410,11 +3671,18 @@ export const watchCoreV1EndpointsListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1EventListForAllNamespaces = (
-  args: WatchCoreV1EventListForAllNamespacesApiArg,
+}
+export function watchCoreV1EventListForAllNamespaces(
+  args: NoWatch<WatchCoreV1EventListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1EventListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1EventListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1EventListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1EventListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1EventListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/events\`,
@@ -3434,11 +3702,18 @@ export const watchCoreV1EventListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1LimitRangeListForAllNamespaces = (
-  args: WatchCoreV1LimitRangeListForAllNamespacesApiArg,
+}
+export function watchCoreV1LimitRangeListForAllNamespaces(
+  args: NoWatch<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1LimitRangeListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1LimitRangeListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/limitranges\`,
@@ -3458,8 +3733,18 @@ export const watchCoreV1LimitRangeListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1NamespaceList = (args: WatchCoreV1NamespaceListApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespaceList(
+  args: NoWatch<WatchCoreV1NamespaceListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespaceListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespaceListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespaceListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespaceList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespaceListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces\`,
@@ -3479,11 +3764,18 @@ export const watchCoreV1NamespaceList = (args: WatchCoreV1NamespaceListApiArg, o
     },
     options
   );
-};
-export const watchCoreV1NamespacedConfigMapList = (
-  args: WatchCoreV1NamespacedConfigMapListApiArg,
+}
+export function watchCoreV1NamespacedConfigMapList(
+  args: NoWatch<WatchCoreV1NamespacedConfigMapListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedConfigMapListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedConfigMapListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedConfigMapListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedConfigMapList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedConfigMapListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/configmaps\`,
@@ -3503,8 +3795,18 @@ export const watchCoreV1NamespacedConfigMapList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedConfigMap = (args: WatchCoreV1NamespacedConfigMapApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedConfigMap(
+  args: NoWatch<WatchCoreV1NamespacedConfigMapApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedConfigMapApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedConfigMapApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedConfigMapApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedConfigMap(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedConfigMapApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/configmaps/\${args.name}\`,
@@ -3524,11 +3826,18 @@ export const watchCoreV1NamespacedConfigMap = (args: WatchCoreV1NamespacedConfig
     },
     options
   );
-};
-export const watchCoreV1NamespacedEndpointsList = (
-  args: WatchCoreV1NamespacedEndpointsListApiArg,
+}
+export function watchCoreV1NamespacedEndpointsList(
+  args: NoWatch<WatchCoreV1NamespacedEndpointsListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedEndpointsListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedEndpointsListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedEndpointsListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedEndpointsList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEndpointsListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/endpoints\`,
@@ -3548,8 +3857,18 @@ export const watchCoreV1NamespacedEndpointsList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedEndpoints = (args: WatchCoreV1NamespacedEndpointsApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedEndpoints(
+  args: NoWatch<WatchCoreV1NamespacedEndpointsApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedEndpointsApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedEndpointsApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedEndpointsApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedEndpoints(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEndpointsApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/endpoints/\${args.name}\`,
@@ -3569,8 +3888,18 @@ export const watchCoreV1NamespacedEndpoints = (args: WatchCoreV1NamespacedEndpoi
     },
     options
   );
-};
-export const watchCoreV1NamespacedEventList = (args: WatchCoreV1NamespacedEventListApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedEventList(
+  args: NoWatch<WatchCoreV1NamespacedEventListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedEventListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedEventListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedEventListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedEventList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEventListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/events\`,
@@ -3590,8 +3919,18 @@ export const watchCoreV1NamespacedEventList = (args: WatchCoreV1NamespacedEventL
     },
     options
   );
-};
-export const watchCoreV1NamespacedEvent = (args: WatchCoreV1NamespacedEventApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedEvent(
+  args: NoWatch<WatchCoreV1NamespacedEventApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedEventApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedEventApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedEventApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedEvent(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEventApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/events/\${args.name}\`,
@@ -3611,11 +3950,18 @@ export const watchCoreV1NamespacedEvent = (args: WatchCoreV1NamespacedEventApiAr
     },
     options
   );
-};
-export const watchCoreV1NamespacedLimitRangeList = (
-  args: WatchCoreV1NamespacedLimitRangeListApiArg,
+}
+export function watchCoreV1NamespacedLimitRangeList(
+  args: NoWatch<WatchCoreV1NamespacedLimitRangeListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedLimitRangeListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedLimitRangeListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedLimitRangeListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedLimitRangeList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedLimitRangeListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/limitranges\`,
@@ -3635,8 +3981,18 @@ export const watchCoreV1NamespacedLimitRangeList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedLimitRange = (args: WatchCoreV1NamespacedLimitRangeApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedLimitRange(
+  args: NoWatch<WatchCoreV1NamespacedLimitRangeApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedLimitRangeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedLimitRangeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedLimitRangeApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedLimitRange(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedLimitRangeApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/limitranges/\${args.name}\`,
@@ -3656,11 +4012,18 @@ export const watchCoreV1NamespacedLimitRange = (args: WatchCoreV1NamespacedLimit
     },
     options
   );
-};
-export const watchCoreV1NamespacedPersistentVolumeClaimList = (
-  args: WatchCoreV1NamespacedPersistentVolumeClaimListApiArg,
+}
+export function watchCoreV1NamespacedPersistentVolumeClaimList(
+  args: NoWatch<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPersistentVolumeClaimList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/persistentvolumeclaims\`,
@@ -3680,11 +4043,18 @@ export const watchCoreV1NamespacedPersistentVolumeClaimList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedPersistentVolumeClaim = (
-  args: WatchCoreV1NamespacedPersistentVolumeClaimApiArg,
+}
+export function watchCoreV1NamespacedPersistentVolumeClaim(
+  args: NoWatch<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPersistentVolumeClaimApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPersistentVolumeClaim(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/persistentvolumeclaims/\${args.name}\`,
@@ -3704,8 +4074,18 @@ export const watchCoreV1NamespacedPersistentVolumeClaim = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedPodList = (args: WatchCoreV1NamespacedPodListApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedPodList(
+  args: NoWatch<WatchCoreV1NamespacedPodListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedPodListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPodListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPodListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPodList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/pods\`,
@@ -3725,8 +4105,18 @@ export const watchCoreV1NamespacedPodList = (args: WatchCoreV1NamespacedPodListA
     },
     options
   );
-};
-export const watchCoreV1NamespacedPod = (args: WatchCoreV1NamespacedPodApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedPod(
+  args: NoWatch<WatchCoreV1NamespacedPodApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedPodApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPodApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPodApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPod(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/pods/\${args.name}\`,
@@ -3746,11 +4136,18 @@ export const watchCoreV1NamespacedPod = (args: WatchCoreV1NamespacedPodApiArg, o
     },
     options
   );
-};
-export const watchCoreV1NamespacedPodTemplateList = (
-  args: WatchCoreV1NamespacedPodTemplateListApiArg,
+}
+export function watchCoreV1NamespacedPodTemplateList(
+  args: NoWatch<WatchCoreV1NamespacedPodTemplateListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPodTemplateListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPodTemplateListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPodTemplateListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPodTemplateList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodTemplateListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/podtemplates\`,
@@ -3770,8 +4167,18 @@ export const watchCoreV1NamespacedPodTemplateList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedPodTemplate = (args: WatchCoreV1NamespacedPodTemplateApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedPodTemplate(
+  args: NoWatch<WatchCoreV1NamespacedPodTemplateApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedPodTemplateApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPodTemplateApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPodTemplateApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPodTemplate(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodTemplateApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/podtemplates/\${args.name}\`,
@@ -3791,11 +4198,18 @@ export const watchCoreV1NamespacedPodTemplate = (args: WatchCoreV1NamespacedPodT
     },
     options
   );
-};
-export const watchCoreV1NamespacedReplicationControllerList = (
-  args: WatchCoreV1NamespacedReplicationControllerListApiArg,
+}
+export function watchCoreV1NamespacedReplicationControllerList(
+  args: NoWatch<WatchCoreV1NamespacedReplicationControllerListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedReplicationControllerListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedReplicationControllerListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedReplicationControllerListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedReplicationControllerList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedReplicationControllerListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/replicationcontrollers\`,
@@ -3815,11 +4229,18 @@ export const watchCoreV1NamespacedReplicationControllerList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedReplicationController = (
-  args: WatchCoreV1NamespacedReplicationControllerApiArg,
+}
+export function watchCoreV1NamespacedReplicationController(
+  args: NoWatch<WatchCoreV1NamespacedReplicationControllerApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedReplicationControllerApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedReplicationControllerApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedReplicationControllerApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedReplicationController(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedReplicationControllerApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/replicationcontrollers/\${args.name}\`,
@@ -3839,11 +4260,18 @@ export const watchCoreV1NamespacedReplicationController = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedResourceQuotaList = (
-  args: WatchCoreV1NamespacedResourceQuotaListApiArg,
+}
+export function watchCoreV1NamespacedResourceQuotaList(
+  args: NoWatch<WatchCoreV1NamespacedResourceQuotaListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedResourceQuotaListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedResourceQuotaListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedResourceQuotaListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedResourceQuotaList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedResourceQuotaListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/resourcequotas\`,
@@ -3863,11 +4291,18 @@ export const watchCoreV1NamespacedResourceQuotaList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedResourceQuota = (
-  args: WatchCoreV1NamespacedResourceQuotaApiArg,
+}
+export function watchCoreV1NamespacedResourceQuota(
+  args: NoWatch<WatchCoreV1NamespacedResourceQuotaApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedResourceQuotaApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedResourceQuotaApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedResourceQuotaApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedResourceQuota(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedResourceQuotaApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/resourcequotas/\${args.name}\`,
@@ -3887,8 +4322,18 @@ export const watchCoreV1NamespacedResourceQuota = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedSecretList = (args: WatchCoreV1NamespacedSecretListApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedSecretList(
+  args: NoWatch<WatchCoreV1NamespacedSecretListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedSecretListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedSecretListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedSecretListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedSecretList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedSecretListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/secrets\`,
@@ -3908,8 +4353,18 @@ export const watchCoreV1NamespacedSecretList = (args: WatchCoreV1NamespacedSecre
     },
     options
   );
-};
-export const watchCoreV1NamespacedSecret = (args: WatchCoreV1NamespacedSecretApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedSecret(
+  args: NoWatch<WatchCoreV1NamespacedSecretApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedSecretApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedSecretApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedSecretApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedSecret(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedSecretApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/secrets/\${args.name}\`,
@@ -3929,11 +4384,18 @@ export const watchCoreV1NamespacedSecret = (args: WatchCoreV1NamespacedSecretApi
     },
     options
   );
-};
-export const watchCoreV1NamespacedServiceAccountList = (
-  args: WatchCoreV1NamespacedServiceAccountListApiArg,
+}
+export function watchCoreV1NamespacedServiceAccountList(
+  args: NoWatch<WatchCoreV1NamespacedServiceAccountListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedServiceAccountListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedServiceAccountListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedServiceAccountListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedServiceAccountList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedServiceAccountListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/serviceaccounts\`,
@@ -3953,11 +4415,18 @@ export const watchCoreV1NamespacedServiceAccountList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedServiceAccount = (
-  args: WatchCoreV1NamespacedServiceAccountApiArg,
+}
+export function watchCoreV1NamespacedServiceAccount(
+  args: NoWatch<WatchCoreV1NamespacedServiceAccountApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedServiceAccountApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedServiceAccountApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedServiceAccountApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedServiceAccount(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedServiceAccountApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/serviceaccounts/\${args.name}\`,
@@ -3977,8 +4446,18 @@ export const watchCoreV1NamespacedServiceAccount = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedServiceList = (args: WatchCoreV1NamespacedServiceListApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedServiceList(
+  args: NoWatch<WatchCoreV1NamespacedServiceListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedServiceListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedServiceListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedServiceListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedServiceList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedServiceListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/services\`,
@@ -3998,8 +4477,18 @@ export const watchCoreV1NamespacedServiceList = (args: WatchCoreV1NamespacedServ
     },
     options
   );
-};
-export const watchCoreV1NamespacedService = (args: WatchCoreV1NamespacedServiceApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedService(
+  args: NoWatch<WatchCoreV1NamespacedServiceApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedServiceApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedServiceApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedServiceApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedService(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedServiceApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/services/\${args.name}\`,
@@ -4019,8 +4508,18 @@ export const watchCoreV1NamespacedService = (args: WatchCoreV1NamespacedServiceA
     },
     options
   );
-};
-export const watchCoreV1Namespace = (args: WatchCoreV1NamespaceApiArg, options?: Options) => {
+}
+export function watchCoreV1Namespace(
+  args: NoWatch<WatchCoreV1NamespaceApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespaceApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespaceApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespaceApiResponse>
+): Promise<void>;
+export function watchCoreV1Namespace(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespaceApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args.name}\`,
@@ -4040,8 +4539,18 @@ export const watchCoreV1Namespace = (args: WatchCoreV1NamespaceApiArg, options?:
     },
     options
   );
-};
-export const watchCoreV1NodeList = (args: WatchCoreV1NodeListApiArg, options?: Options) => {
+}
+export function watchCoreV1NodeList(
+  args: NoWatch<WatchCoreV1NodeListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NodeListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NodeListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NodeListApiResponse>
+): Promise<void>;
+export function watchCoreV1NodeList(args: any, options: any): any {
   return apiClient<WatchCoreV1NodeListApiResponse>(
     {
       path: \`/api/v1/watch/nodes\`,
@@ -4061,8 +4570,18 @@ export const watchCoreV1NodeList = (args: WatchCoreV1NodeListApiArg, options?: O
     },
     options
   );
-};
-export const watchCoreV1Node = (args: WatchCoreV1NodeApiArg, options?: Options) => {
+}
+export function watchCoreV1Node(
+  args: NoWatch<WatchCoreV1NodeApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NodeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NodeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NodeApiResponse>
+): Promise<void>;
+export function watchCoreV1Node(args: any, options: any): any {
   return apiClient<WatchCoreV1NodeApiResponse>(
     {
       path: \`/api/v1/watch/nodes/\${args.name}\`,
@@ -4082,11 +4601,18 @@ export const watchCoreV1Node = (args: WatchCoreV1NodeApiArg, options?: Options) 
     },
     options
   );
-};
-export const watchCoreV1PersistentVolumeClaimListForAllNamespaces = (
-  args: WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiArg,
+}
+export function watchCoreV1PersistentVolumeClaimListForAllNamespaces(
+  args: NoWatch<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1PersistentVolumeClaimListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/persistentvolumeclaims\`,
@@ -4106,8 +4632,18 @@ export const watchCoreV1PersistentVolumeClaimListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1PersistentVolumeList = (args: WatchCoreV1PersistentVolumeListApiArg, options?: Options) => {
+}
+export function watchCoreV1PersistentVolumeList(
+  args: NoWatch<WatchCoreV1PersistentVolumeListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1PersistentVolumeListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1PersistentVolumeListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1PersistentVolumeListApiResponse>
+): Promise<void>;
+export function watchCoreV1PersistentVolumeList(args: any, options: any): any {
   return apiClient<WatchCoreV1PersistentVolumeListApiResponse>(
     {
       path: \`/api/v1/watch/persistentvolumes\`,
@@ -4127,8 +4663,18 @@ export const watchCoreV1PersistentVolumeList = (args: WatchCoreV1PersistentVolum
     },
     options
   );
-};
-export const watchCoreV1PersistentVolume = (args: WatchCoreV1PersistentVolumeApiArg, options?: Options) => {
+}
+export function watchCoreV1PersistentVolume(
+  args: NoWatch<WatchCoreV1PersistentVolumeApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1PersistentVolumeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1PersistentVolumeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1PersistentVolumeApiResponse>
+): Promise<void>;
+export function watchCoreV1PersistentVolume(args: any, options: any): any {
   return apiClient<WatchCoreV1PersistentVolumeApiResponse>(
     {
       path: \`/api/v1/watch/persistentvolumes/\${args.name}\`,
@@ -4148,11 +4694,18 @@ export const watchCoreV1PersistentVolume = (args: WatchCoreV1PersistentVolumeApi
     },
     options
   );
-};
-export const watchCoreV1PodListForAllNamespaces = (
-  args: WatchCoreV1PodListForAllNamespacesApiArg,
+}
+export function watchCoreV1PodListForAllNamespaces(
+  args: NoWatch<WatchCoreV1PodListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PodListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1PodListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1PodListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1PodListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1PodListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/pods\`,
@@ -4172,11 +4725,18 @@ export const watchCoreV1PodListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1PodTemplateListForAllNamespaces = (
-  args: WatchCoreV1PodTemplateListForAllNamespacesApiArg,
+}
+export function watchCoreV1PodTemplateListForAllNamespaces(
+  args: NoWatch<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1PodTemplateListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1PodTemplateListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/podtemplates\`,
@@ -4196,11 +4756,18 @@ export const watchCoreV1PodTemplateListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1ReplicationControllerListForAllNamespaces = (
-  args: WatchCoreV1ReplicationControllerListForAllNamespacesApiArg,
+}
+export function watchCoreV1ReplicationControllerListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1ReplicationControllerListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/replicationcontrollers\`,
@@ -4220,11 +4787,18 @@ export const watchCoreV1ReplicationControllerListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1ResourceQuotaListForAllNamespaces = (
-  args: WatchCoreV1ResourceQuotaListForAllNamespacesApiArg,
+}
+export function watchCoreV1ResourceQuotaListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1ResourceQuotaListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/resourcequotas\`,
@@ -4244,11 +4818,18 @@ export const watchCoreV1ResourceQuotaListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1SecretListForAllNamespaces = (
-  args: WatchCoreV1SecretListForAllNamespacesApiArg,
+}
+export function watchCoreV1SecretListForAllNamespaces(
+  args: NoWatch<WatchCoreV1SecretListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1SecretListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1SecretListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1SecretListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1SecretListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1SecretListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/secrets\`,
@@ -4268,11 +4849,18 @@ export const watchCoreV1SecretListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1ServiceAccountListForAllNamespaces = (
-  args: WatchCoreV1ServiceAccountListForAllNamespacesApiArg,
+}
+export function watchCoreV1ServiceAccountListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1ServiceAccountListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1ServiceAccountListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/serviceaccounts\`,
@@ -4292,11 +4880,18 @@ export const watchCoreV1ServiceAccountListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1ServiceListForAllNamespaces = (
-  args: WatchCoreV1ServiceListForAllNamespacesApiArg,
+}
+export function watchCoreV1ServiceListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ServiceListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ServiceListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1ServiceListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1ServiceListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1ServiceListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1ServiceListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/services\`,
@@ -4316,7 +4911,7 @@ export const watchCoreV1ServiceListForAllNamespaces = (
     },
     options
   );
-};
+}
 export type GetCoreV1ApiResourcesApiResponse = /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1ApiResourceList;
 export type GetCoreV1ApiResourcesApiArg = void;
 export type ListCoreV1ComponentStatusApiResponse = /** status 200 OK */ IoK8SApiCoreV1ComponentStatusList;
@@ -12783,11 +13378,21 @@ export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
 `;
 
 exports[`CLI options testing paths are relative to configfile, not to cwd 1`] = `
-import { apiClient, type Options } from '../fixtures/k8sApiClient';
+import { apiClient, type Options, type WatchExtraOptions } from '../fixtures/k8sApiClient';
 export const getCoreV1ApiResources = (args: GetCoreV1ApiResourcesApiArg, options?: Options) => {
   return apiClient<GetCoreV1ApiResourcesApiResponse>({ path: \`/api/v1/\` }, options);
 };
-export const listCoreV1ComponentStatus = (args: ListCoreV1ComponentStatusApiArg, options?: Options) => {
+export function listCoreV1ComponentStatus(
+  args: NoWatch<ListCoreV1ComponentStatusApiResponse>,
+  options?: Options
+): Promise<ListCoreV1ComponentStatusApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ComponentStatusApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ComponentStatusApiResponse>
+): Promise<void>;
+export function listCoreV1ComponentStatus(args: any, options: any): any {
   return apiClient<ListCoreV1ComponentStatusApiResponse>(
     {
       path: \`/api/v1/componentstatuses\`,
@@ -12807,17 +13412,24 @@ export const listCoreV1ComponentStatus = (args: ListCoreV1ComponentStatusApiArg,
     },
     options
   );
-};
+}
 export const readCoreV1ComponentStatus = (args: ReadCoreV1ComponentStatusApiArg, options?: Options) => {
   return apiClient<ReadCoreV1ComponentStatusApiResponse>(
     { path: \`/api/v1/componentstatuses/\${args.name}\`, params: { pretty: args.pretty } },
     options
   );
 };
-export const listCoreV1ConfigMapForAllNamespaces = (
-  args: ListCoreV1ConfigMapForAllNamespacesApiArg,
+export function listCoreV1ConfigMapForAllNamespaces(
+  args: NoWatch<ListCoreV1ConfigMapForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1ConfigMapForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ConfigMapForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ConfigMapForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1ConfigMapForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1ConfigMapForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/configmaps\`,
@@ -12837,11 +13449,18 @@ export const listCoreV1ConfigMapForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1EndpointsForAllNamespaces = (
-  args: ListCoreV1EndpointsForAllNamespacesApiArg,
+}
+export function listCoreV1EndpointsForAllNamespaces(
+  args: NoWatch<ListCoreV1EndpointsForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1EndpointsForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1EndpointsForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1EndpointsForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1EndpointsForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1EndpointsForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/endpoints\`,
@@ -12861,8 +13480,18 @@ export const listCoreV1EndpointsForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1EventForAllNamespaces = (args: ListCoreV1EventForAllNamespacesApiArg, options?: Options) => {
+}
+export function listCoreV1EventForAllNamespaces(
+  args: NoWatch<ListCoreV1EventForAllNamespacesApiResponse>,
+  options?: Options
+): Promise<ListCoreV1EventForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1EventForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1EventForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1EventForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1EventForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/events\`,
@@ -12882,11 +13511,18 @@ export const listCoreV1EventForAllNamespaces = (args: ListCoreV1EventForAllNames
     },
     options
   );
-};
-export const listCoreV1LimitRangeForAllNamespaces = (
-  args: ListCoreV1LimitRangeForAllNamespacesApiArg,
+}
+export function listCoreV1LimitRangeForAllNamespaces(
+  args: NoWatch<ListCoreV1LimitRangeForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1LimitRangeForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1LimitRangeForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1LimitRangeForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1LimitRangeForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1LimitRangeForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/limitranges\`,
@@ -12906,8 +13542,18 @@ export const listCoreV1LimitRangeForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1Namespace = (args: ListCoreV1NamespaceApiArg, options?: Options) => {
+}
+export function listCoreV1Namespace(
+  args: NoWatch<ListCoreV1NamespaceApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespaceApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespaceApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespaceApiResponse>
+): Promise<void>;
+export function listCoreV1Namespace(args: any, options: any): any {
   return apiClient<ListCoreV1NamespaceApiResponse>(
     {
       path: \`/api/v1/namespaces\`,
@@ -12927,7 +13573,7 @@ export const listCoreV1Namespace = (args: ListCoreV1NamespaceApiArg, options?: O
     },
     options
   );
-};
+}
 export const createCoreV1Namespace = (args: CreateCoreV1NamespaceApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespaceApiResponse>(
     {
@@ -12962,7 +13608,17 @@ export const createCoreV1NamespacedBinding = (args: CreateCoreV1NamespacedBindin
     options
   );
 };
-export const listCoreV1NamespacedConfigMap = (args: ListCoreV1NamespacedConfigMapApiArg, options?: Options) => {
+export function listCoreV1NamespacedConfigMap(
+  args: NoWatch<ListCoreV1NamespacedConfigMapApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedConfigMapApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedConfigMapApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedConfigMapApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedConfigMap(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedConfigMapApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/configmaps\`,
@@ -12982,7 +13638,7 @@ export const listCoreV1NamespacedConfigMap = (args: ListCoreV1NamespacedConfigMa
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedConfigMap = (args: CreateCoreV1NamespacedConfigMapApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedConfigMapApiResponse>(
     {
@@ -13088,7 +13744,17 @@ export const patchCoreV1NamespacedConfigMap = (args: PatchCoreV1NamespacedConfig
     options
   );
 };
-export const listCoreV1NamespacedEndpoints = (args: ListCoreV1NamespacedEndpointsApiArg, options?: Options) => {
+export function listCoreV1NamespacedEndpoints(
+  args: NoWatch<ListCoreV1NamespacedEndpointsApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedEndpointsApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedEndpointsApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedEndpointsApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedEndpoints(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedEndpointsApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/endpoints\`,
@@ -13108,7 +13774,7 @@ export const listCoreV1NamespacedEndpoints = (args: ListCoreV1NamespacedEndpoint
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedEndpoints = (args: CreateCoreV1NamespacedEndpointsApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedEndpointsApiResponse>(
     {
@@ -13214,7 +13880,17 @@ export const patchCoreV1NamespacedEndpoints = (args: PatchCoreV1NamespacedEndpoi
     options
   );
 };
-export const listCoreV1NamespacedEvent = (args: ListCoreV1NamespacedEventApiArg, options?: Options) => {
+export function listCoreV1NamespacedEvent(
+  args: NoWatch<ListCoreV1NamespacedEventApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedEventApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedEventApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedEventApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedEvent(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedEventApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/events\`,
@@ -13234,7 +13910,7 @@ export const listCoreV1NamespacedEvent = (args: ListCoreV1NamespacedEventApiArg,
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedEvent = (args: CreateCoreV1NamespacedEventApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedEventApiResponse>(
     {
@@ -13340,7 +14016,17 @@ export const patchCoreV1NamespacedEvent = (args: PatchCoreV1NamespacedEventApiAr
     options
   );
 };
-export const listCoreV1NamespacedLimitRange = (args: ListCoreV1NamespacedLimitRangeApiArg, options?: Options) => {
+export function listCoreV1NamespacedLimitRange(
+  args: NoWatch<ListCoreV1NamespacedLimitRangeApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedLimitRangeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedLimitRangeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedLimitRangeApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedLimitRange(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedLimitRangeApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/limitranges\`,
@@ -13360,7 +14046,7 @@ export const listCoreV1NamespacedLimitRange = (args: ListCoreV1NamespacedLimitRa
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedLimitRange = (args: CreateCoreV1NamespacedLimitRangeApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedLimitRangeApiResponse>(
     {
@@ -13466,10 +14152,17 @@ export const patchCoreV1NamespacedLimitRange = (args: PatchCoreV1NamespacedLimit
     options
   );
 };
-export const listCoreV1NamespacedPersistentVolumeClaim = (
-  args: ListCoreV1NamespacedPersistentVolumeClaimApiArg,
+export function listCoreV1NamespacedPersistentVolumeClaim(
+  args: NoWatch<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedPersistentVolumeClaimApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedPersistentVolumeClaim(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/persistentvolumeclaims\`,
@@ -13489,7 +14182,7 @@ export const listCoreV1NamespacedPersistentVolumeClaim = (
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedPersistentVolumeClaim = (
   args: CreateCoreV1NamespacedPersistentVolumeClaimApiArg,
   options?: Options
@@ -13666,7 +14359,17 @@ export const patchCoreV1NamespacedPersistentVolumeClaimStatus = (
     options
   );
 };
-export const listCoreV1NamespacedPod = (args: ListCoreV1NamespacedPodApiArg, options?: Options) => {
+export function listCoreV1NamespacedPod(
+  args: NoWatch<ListCoreV1NamespacedPodApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedPodApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedPodApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedPodApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedPod(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedPodApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/pods\`,
@@ -13686,7 +14389,7 @@ export const listCoreV1NamespacedPod = (args: ListCoreV1NamespacedPodApiArg, opt
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedPod = (args: CreateCoreV1NamespacedPodApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedPodApiResponse>(
     {
@@ -14199,7 +14902,17 @@ export const patchCoreV1NamespacedPodStatus = (args: PatchCoreV1NamespacedPodSta
     options
   );
 };
-export const listCoreV1NamespacedPodTemplate = (args: ListCoreV1NamespacedPodTemplateApiArg, options?: Options) => {
+export function listCoreV1NamespacedPodTemplate(
+  args: NoWatch<ListCoreV1NamespacedPodTemplateApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedPodTemplateApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedPodTemplateApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedPodTemplateApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedPodTemplate(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedPodTemplateApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/podtemplates\`,
@@ -14219,7 +14932,7 @@ export const listCoreV1NamespacedPodTemplate = (args: ListCoreV1NamespacedPodTem
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedPodTemplate = (args: CreateCoreV1NamespacedPodTemplateApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedPodTemplateApiResponse>(
     {
@@ -14328,10 +15041,17 @@ export const patchCoreV1NamespacedPodTemplate = (args: PatchCoreV1NamespacedPodT
     options
   );
 };
-export const listCoreV1NamespacedReplicationController = (
-  args: ListCoreV1NamespacedReplicationControllerApiArg,
+export function listCoreV1NamespacedReplicationController(
+  args: NoWatch<ListCoreV1NamespacedReplicationControllerApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedReplicationControllerApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedReplicationControllerApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedReplicationControllerApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedReplicationController(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedReplicationControllerApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/replicationcontrollers\`,
@@ -14351,7 +15071,7 @@ export const listCoreV1NamespacedReplicationController = (
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedReplicationController = (
   args: CreateCoreV1NamespacedReplicationControllerApiArg,
   options?: Options
@@ -14581,7 +15301,17 @@ export const patchCoreV1NamespacedReplicationControllerStatus = (
     options
   );
 };
-export const listCoreV1NamespacedResourceQuota = (args: ListCoreV1NamespacedResourceQuotaApiArg, options?: Options) => {
+export function listCoreV1NamespacedResourceQuota(
+  args: NoWatch<ListCoreV1NamespacedResourceQuotaApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedResourceQuotaApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedResourceQuotaApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedResourceQuotaApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedResourceQuota(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedResourceQuotaApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/resourcequotas\`,
@@ -14601,7 +15331,7 @@ export const listCoreV1NamespacedResourceQuota = (args: ListCoreV1NamespacedReso
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedResourceQuota = (
   args: CreateCoreV1NamespacedResourceQuotaApiArg,
   options?: Options
@@ -14772,7 +15502,17 @@ export const patchCoreV1NamespacedResourceQuotaStatus = (
     options
   );
 };
-export const listCoreV1NamespacedSecret = (args: ListCoreV1NamespacedSecretApiArg, options?: Options) => {
+export function listCoreV1NamespacedSecret(
+  args: NoWatch<ListCoreV1NamespacedSecretApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedSecretApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedSecretApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedSecretApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedSecret(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedSecretApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/secrets\`,
@@ -14792,7 +15532,7 @@ export const listCoreV1NamespacedSecret = (args: ListCoreV1NamespacedSecretApiAr
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedSecret = (args: CreateCoreV1NamespacedSecretApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedSecretApiResponse>(
     {
@@ -14898,10 +15638,17 @@ export const patchCoreV1NamespacedSecret = (args: PatchCoreV1NamespacedSecretApi
     options
   );
 };
-export const listCoreV1NamespacedServiceAccount = (
-  args: ListCoreV1NamespacedServiceAccountApiArg,
+export function listCoreV1NamespacedServiceAccount(
+  args: NoWatch<ListCoreV1NamespacedServiceAccountApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedServiceAccountApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedServiceAccountApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedServiceAccountApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedServiceAccount(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedServiceAccountApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/serviceaccounts\`,
@@ -14921,7 +15668,7 @@ export const listCoreV1NamespacedServiceAccount = (
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedServiceAccount = (
   args: CreateCoreV1NamespacedServiceAccountApiArg,
   options?: Options
@@ -15062,7 +15809,17 @@ export const createCoreV1NamespacedServiceAccountToken = (
     options
   );
 };
-export const listCoreV1NamespacedService = (args: ListCoreV1NamespacedServiceApiArg, options?: Options) => {
+export function listCoreV1NamespacedService(
+  args: NoWatch<ListCoreV1NamespacedServiceApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NamespacedServiceApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NamespacedServiceApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NamespacedServiceApiResponse>
+): Promise<void>;
+export function listCoreV1NamespacedService(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedServiceApiResponse>(
     {
       path: \`/api/v1/namespaces/\${args['namespace']}/services\`,
@@ -15082,7 +15839,7 @@ export const listCoreV1NamespacedService = (args: ListCoreV1NamespacedServiceApi
     },
     options
   );
-};
+}
 export const createCoreV1NamespacedService = (args: CreateCoreV1NamespacedServiceApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NamespacedServiceApiResponse>(
     {
@@ -15529,7 +16286,17 @@ export const patchCoreV1NamespaceStatus = (args: PatchCoreV1NamespaceStatusApiAr
     options
   );
 };
-export const listCoreV1Node = (args: ListCoreV1NodeApiArg, options?: Options) => {
+export function listCoreV1Node(
+  args: NoWatch<ListCoreV1NodeApiResponse>,
+  options?: Options
+): Promise<ListCoreV1NodeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1NodeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1NodeApiResponse>
+): Promise<void>;
+export function listCoreV1Node(args: any, options: any): any {
   return apiClient<ListCoreV1NodeApiResponse>(
     {
       path: \`/api/v1/nodes\`,
@@ -15549,7 +16316,7 @@ export const listCoreV1Node = (args: ListCoreV1NodeApiArg, options?: Options) =>
     },
     options
   );
-};
+}
 export const createCoreV1Node = (args: CreateCoreV1NodeApiArg, options?: Options) => {
   return apiClient<CreateCoreV1NodeApiResponse>(
     {
@@ -15792,10 +16559,17 @@ export const patchCoreV1NodeStatus = (args: PatchCoreV1NodeStatusApiArg, options
     options
   );
 };
-export const listCoreV1PersistentVolumeClaimForAllNamespaces = (
-  args: ListCoreV1PersistentVolumeClaimForAllNamespacesApiArg,
+export function listCoreV1PersistentVolumeClaimForAllNamespaces(
+  args: NoWatch<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1PersistentVolumeClaimForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/persistentvolumeclaims\`,
@@ -15815,8 +16589,18 @@ export const listCoreV1PersistentVolumeClaimForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1PersistentVolume = (args: ListCoreV1PersistentVolumeApiArg, options?: Options) => {
+}
+export function listCoreV1PersistentVolume(
+  args: NoWatch<ListCoreV1PersistentVolumeApiResponse>,
+  options?: Options
+): Promise<ListCoreV1PersistentVolumeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1PersistentVolumeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1PersistentVolumeApiResponse>
+): Promise<void>;
+export function listCoreV1PersistentVolume(args: any, options: any): any {
   return apiClient<ListCoreV1PersistentVolumeApiResponse>(
     {
       path: \`/api/v1/persistentvolumes\`,
@@ -15836,7 +16620,7 @@ export const listCoreV1PersistentVolume = (args: ListCoreV1PersistentVolumeApiAr
     },
     options
   );
-};
+}
 export const createCoreV1PersistentVolume = (args: CreateCoreV1PersistentVolumeApiArg, options?: Options) => {
   return apiClient<CreateCoreV1PersistentVolumeApiResponse>(
     {
@@ -15986,7 +16770,17 @@ export const patchCoreV1PersistentVolumeStatus = (args: PatchCoreV1PersistentVol
     options
   );
 };
-export const listCoreV1PodForAllNamespaces = (args: ListCoreV1PodForAllNamespacesApiArg, options?: Options) => {
+export function listCoreV1PodForAllNamespaces(
+  args: NoWatch<ListCoreV1PodForAllNamespacesApiResponse>,
+  options?: Options
+): Promise<ListCoreV1PodForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1PodForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1PodForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1PodForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1PodForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/pods\`,
@@ -16006,11 +16800,18 @@ export const listCoreV1PodForAllNamespaces = (args: ListCoreV1PodForAllNamespace
     },
     options
   );
-};
-export const listCoreV1PodTemplateForAllNamespaces = (
-  args: ListCoreV1PodTemplateForAllNamespacesApiArg,
+}
+export function listCoreV1PodTemplateForAllNamespaces(
+  args: NoWatch<ListCoreV1PodTemplateForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1PodTemplateForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1PodTemplateForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1PodTemplateForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1PodTemplateForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1PodTemplateForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/podtemplates\`,
@@ -16030,11 +16831,18 @@ export const listCoreV1PodTemplateForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1ReplicationControllerForAllNamespaces = (
-  args: ListCoreV1ReplicationControllerForAllNamespacesApiArg,
+}
+export function listCoreV1ReplicationControllerForAllNamespaces(
+  args: NoWatch<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ReplicationControllerForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1ReplicationControllerForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/replicationcontrollers\`,
@@ -16054,11 +16862,18 @@ export const listCoreV1ReplicationControllerForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1ResourceQuotaForAllNamespaces = (
-  args: ListCoreV1ResourceQuotaForAllNamespacesApiArg,
+}
+export function listCoreV1ResourceQuotaForAllNamespaces(
+  args: NoWatch<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ResourceQuotaForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1ResourceQuotaForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/resourcequotas\`,
@@ -16078,8 +16893,18 @@ export const listCoreV1ResourceQuotaForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1SecretForAllNamespaces = (args: ListCoreV1SecretForAllNamespacesApiArg, options?: Options) => {
+}
+export function listCoreV1SecretForAllNamespaces(
+  args: NoWatch<ListCoreV1SecretForAllNamespacesApiResponse>,
+  options?: Options
+): Promise<ListCoreV1SecretForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1SecretForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1SecretForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1SecretForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1SecretForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/secrets\`,
@@ -16099,11 +16924,18 @@ export const listCoreV1SecretForAllNamespaces = (args: ListCoreV1SecretForAllNam
     },
     options
   );
-};
-export const listCoreV1ServiceAccountForAllNamespaces = (
-  args: ListCoreV1ServiceAccountForAllNamespacesApiArg,
+}
+export function listCoreV1ServiceAccountForAllNamespaces(
+  args: NoWatch<ListCoreV1ServiceAccountForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<ListCoreV1ServiceAccountForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ServiceAccountForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ServiceAccountForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1ServiceAccountForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1ServiceAccountForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/serviceaccounts\`,
@@ -16123,8 +16955,18 @@ export const listCoreV1ServiceAccountForAllNamespaces = (
     },
     options
   );
-};
-export const listCoreV1ServiceForAllNamespaces = (args: ListCoreV1ServiceForAllNamespacesApiArg, options?: Options) => {
+}
+export function listCoreV1ServiceForAllNamespaces(
+  args: NoWatch<ListCoreV1ServiceForAllNamespacesApiResponse>,
+  options?: Options
+): Promise<ListCoreV1ServiceForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1ServiceForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<ListCoreV1ServiceForAllNamespacesApiResponse>
+): Promise<void>;
+export function listCoreV1ServiceForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1ServiceForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/services\`,
@@ -16144,11 +16986,18 @@ export const listCoreV1ServiceForAllNamespaces = (args: ListCoreV1ServiceForAllN
     },
     options
   );
-};
-export const watchCoreV1ConfigMapListForAllNamespaces = (
-  args: WatchCoreV1ConfigMapListForAllNamespacesApiArg,
+}
+export function watchCoreV1ConfigMapListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1ConfigMapListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1ConfigMapListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/configmaps\`,
@@ -16168,11 +17017,18 @@ export const watchCoreV1ConfigMapListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1EndpointsListForAllNamespaces = (
-  args: WatchCoreV1EndpointsListForAllNamespacesApiArg,
+}
+export function watchCoreV1EndpointsListForAllNamespaces(
+  args: NoWatch<WatchCoreV1EndpointsListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1EndpointsListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1EndpointsListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1EndpointsListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1EndpointsListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1EndpointsListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/endpoints\`,
@@ -16192,11 +17048,18 @@ export const watchCoreV1EndpointsListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1EventListForAllNamespaces = (
-  args: WatchCoreV1EventListForAllNamespacesApiArg,
+}
+export function watchCoreV1EventListForAllNamespaces(
+  args: NoWatch<WatchCoreV1EventListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1EventListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1EventListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1EventListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1EventListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1EventListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/events\`,
@@ -16216,11 +17079,18 @@ export const watchCoreV1EventListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1LimitRangeListForAllNamespaces = (
-  args: WatchCoreV1LimitRangeListForAllNamespacesApiArg,
+}
+export function watchCoreV1LimitRangeListForAllNamespaces(
+  args: NoWatch<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1LimitRangeListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1LimitRangeListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/limitranges\`,
@@ -16240,8 +17110,18 @@ export const watchCoreV1LimitRangeListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1NamespaceList = (args: WatchCoreV1NamespaceListApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespaceList(
+  args: NoWatch<WatchCoreV1NamespaceListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespaceListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespaceListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespaceListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespaceList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespaceListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces\`,
@@ -16261,11 +17141,18 @@ export const watchCoreV1NamespaceList = (args: WatchCoreV1NamespaceListApiArg, o
     },
     options
   );
-};
-export const watchCoreV1NamespacedConfigMapList = (
-  args: WatchCoreV1NamespacedConfigMapListApiArg,
+}
+export function watchCoreV1NamespacedConfigMapList(
+  args: NoWatch<WatchCoreV1NamespacedConfigMapListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedConfigMapListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedConfigMapListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedConfigMapListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedConfigMapList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedConfigMapListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/configmaps\`,
@@ -16285,8 +17172,18 @@ export const watchCoreV1NamespacedConfigMapList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedConfigMap = (args: WatchCoreV1NamespacedConfigMapApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedConfigMap(
+  args: NoWatch<WatchCoreV1NamespacedConfigMapApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedConfigMapApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedConfigMapApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedConfigMapApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedConfigMap(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedConfigMapApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/configmaps/\${args.name}\`,
@@ -16306,11 +17203,18 @@ export const watchCoreV1NamespacedConfigMap = (args: WatchCoreV1NamespacedConfig
     },
     options
   );
-};
-export const watchCoreV1NamespacedEndpointsList = (
-  args: WatchCoreV1NamespacedEndpointsListApiArg,
+}
+export function watchCoreV1NamespacedEndpointsList(
+  args: NoWatch<WatchCoreV1NamespacedEndpointsListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedEndpointsListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedEndpointsListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedEndpointsListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedEndpointsList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEndpointsListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/endpoints\`,
@@ -16330,8 +17234,18 @@ export const watchCoreV1NamespacedEndpointsList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedEndpoints = (args: WatchCoreV1NamespacedEndpointsApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedEndpoints(
+  args: NoWatch<WatchCoreV1NamespacedEndpointsApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedEndpointsApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedEndpointsApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedEndpointsApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedEndpoints(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEndpointsApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/endpoints/\${args.name}\`,
@@ -16351,8 +17265,18 @@ export const watchCoreV1NamespacedEndpoints = (args: WatchCoreV1NamespacedEndpoi
     },
     options
   );
-};
-export const watchCoreV1NamespacedEventList = (args: WatchCoreV1NamespacedEventListApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedEventList(
+  args: NoWatch<WatchCoreV1NamespacedEventListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedEventListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedEventListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedEventListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedEventList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEventListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/events\`,
@@ -16372,8 +17296,18 @@ export const watchCoreV1NamespacedEventList = (args: WatchCoreV1NamespacedEventL
     },
     options
   );
-};
-export const watchCoreV1NamespacedEvent = (args: WatchCoreV1NamespacedEventApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedEvent(
+  args: NoWatch<WatchCoreV1NamespacedEventApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedEventApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedEventApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedEventApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedEvent(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEventApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/events/\${args.name}\`,
@@ -16393,11 +17327,18 @@ export const watchCoreV1NamespacedEvent = (args: WatchCoreV1NamespacedEventApiAr
     },
     options
   );
-};
-export const watchCoreV1NamespacedLimitRangeList = (
-  args: WatchCoreV1NamespacedLimitRangeListApiArg,
+}
+export function watchCoreV1NamespacedLimitRangeList(
+  args: NoWatch<WatchCoreV1NamespacedLimitRangeListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedLimitRangeListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedLimitRangeListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedLimitRangeListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedLimitRangeList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedLimitRangeListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/limitranges\`,
@@ -16417,8 +17358,18 @@ export const watchCoreV1NamespacedLimitRangeList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedLimitRange = (args: WatchCoreV1NamespacedLimitRangeApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedLimitRange(
+  args: NoWatch<WatchCoreV1NamespacedLimitRangeApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedLimitRangeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedLimitRangeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedLimitRangeApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedLimitRange(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedLimitRangeApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/limitranges/\${args.name}\`,
@@ -16438,11 +17389,18 @@ export const watchCoreV1NamespacedLimitRange = (args: WatchCoreV1NamespacedLimit
     },
     options
   );
-};
-export const watchCoreV1NamespacedPersistentVolumeClaimList = (
-  args: WatchCoreV1NamespacedPersistentVolumeClaimListApiArg,
+}
+export function watchCoreV1NamespacedPersistentVolumeClaimList(
+  args: NoWatch<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPersistentVolumeClaimList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/persistentvolumeclaims\`,
@@ -16462,11 +17420,18 @@ export const watchCoreV1NamespacedPersistentVolumeClaimList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedPersistentVolumeClaim = (
-  args: WatchCoreV1NamespacedPersistentVolumeClaimApiArg,
+}
+export function watchCoreV1NamespacedPersistentVolumeClaim(
+  args: NoWatch<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPersistentVolumeClaimApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPersistentVolumeClaim(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/persistentvolumeclaims/\${args.name}\`,
@@ -16486,8 +17451,18 @@ export const watchCoreV1NamespacedPersistentVolumeClaim = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedPodList = (args: WatchCoreV1NamespacedPodListApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedPodList(
+  args: NoWatch<WatchCoreV1NamespacedPodListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedPodListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPodListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPodListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPodList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/pods\`,
@@ -16507,8 +17482,18 @@ export const watchCoreV1NamespacedPodList = (args: WatchCoreV1NamespacedPodListA
     },
     options
   );
-};
-export const watchCoreV1NamespacedPod = (args: WatchCoreV1NamespacedPodApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedPod(
+  args: NoWatch<WatchCoreV1NamespacedPodApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedPodApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPodApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPodApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPod(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/pods/\${args.name}\`,
@@ -16528,11 +17513,18 @@ export const watchCoreV1NamespacedPod = (args: WatchCoreV1NamespacedPodApiArg, o
     },
     options
   );
-};
-export const watchCoreV1NamespacedPodTemplateList = (
-  args: WatchCoreV1NamespacedPodTemplateListApiArg,
+}
+export function watchCoreV1NamespacedPodTemplateList(
+  args: NoWatch<WatchCoreV1NamespacedPodTemplateListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPodTemplateListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPodTemplateListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPodTemplateListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPodTemplateList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodTemplateListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/podtemplates\`,
@@ -16552,8 +17544,18 @@ export const watchCoreV1NamespacedPodTemplateList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedPodTemplate = (args: WatchCoreV1NamespacedPodTemplateApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedPodTemplate(
+  args: NoWatch<WatchCoreV1NamespacedPodTemplateApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedPodTemplateApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedPodTemplateApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedPodTemplateApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedPodTemplate(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodTemplateApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/podtemplates/\${args.name}\`,
@@ -16573,11 +17575,18 @@ export const watchCoreV1NamespacedPodTemplate = (args: WatchCoreV1NamespacedPodT
     },
     options
   );
-};
-export const watchCoreV1NamespacedReplicationControllerList = (
-  args: WatchCoreV1NamespacedReplicationControllerListApiArg,
+}
+export function watchCoreV1NamespacedReplicationControllerList(
+  args: NoWatch<WatchCoreV1NamespacedReplicationControllerListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedReplicationControllerListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedReplicationControllerListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedReplicationControllerListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedReplicationControllerList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedReplicationControllerListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/replicationcontrollers\`,
@@ -16597,11 +17606,18 @@ export const watchCoreV1NamespacedReplicationControllerList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedReplicationController = (
-  args: WatchCoreV1NamespacedReplicationControllerApiArg,
+}
+export function watchCoreV1NamespacedReplicationController(
+  args: NoWatch<WatchCoreV1NamespacedReplicationControllerApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedReplicationControllerApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedReplicationControllerApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedReplicationControllerApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedReplicationController(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedReplicationControllerApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/replicationcontrollers/\${args.name}\`,
@@ -16621,11 +17637,18 @@ export const watchCoreV1NamespacedReplicationController = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedResourceQuotaList = (
-  args: WatchCoreV1NamespacedResourceQuotaListApiArg,
+}
+export function watchCoreV1NamespacedResourceQuotaList(
+  args: NoWatch<WatchCoreV1NamespacedResourceQuotaListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedResourceQuotaListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedResourceQuotaListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedResourceQuotaListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedResourceQuotaList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedResourceQuotaListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/resourcequotas\`,
@@ -16645,11 +17668,18 @@ export const watchCoreV1NamespacedResourceQuotaList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedResourceQuota = (
-  args: WatchCoreV1NamespacedResourceQuotaApiArg,
+}
+export function watchCoreV1NamespacedResourceQuota(
+  args: NoWatch<WatchCoreV1NamespacedResourceQuotaApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedResourceQuotaApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedResourceQuotaApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedResourceQuotaApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedResourceQuota(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedResourceQuotaApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/resourcequotas/\${args.name}\`,
@@ -16669,8 +17699,18 @@ export const watchCoreV1NamespacedResourceQuota = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedSecretList = (args: WatchCoreV1NamespacedSecretListApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedSecretList(
+  args: NoWatch<WatchCoreV1NamespacedSecretListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedSecretListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedSecretListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedSecretListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedSecretList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedSecretListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/secrets\`,
@@ -16690,8 +17730,18 @@ export const watchCoreV1NamespacedSecretList = (args: WatchCoreV1NamespacedSecre
     },
     options
   );
-};
-export const watchCoreV1NamespacedSecret = (args: WatchCoreV1NamespacedSecretApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedSecret(
+  args: NoWatch<WatchCoreV1NamespacedSecretApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedSecretApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedSecretApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedSecretApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedSecret(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedSecretApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/secrets/\${args.name}\`,
@@ -16711,11 +17761,18 @@ export const watchCoreV1NamespacedSecret = (args: WatchCoreV1NamespacedSecretApi
     },
     options
   );
-};
-export const watchCoreV1NamespacedServiceAccountList = (
-  args: WatchCoreV1NamespacedServiceAccountListApiArg,
+}
+export function watchCoreV1NamespacedServiceAccountList(
+  args: NoWatch<WatchCoreV1NamespacedServiceAccountListApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedServiceAccountListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedServiceAccountListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedServiceAccountListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedServiceAccountList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedServiceAccountListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/serviceaccounts\`,
@@ -16735,11 +17792,18 @@ export const watchCoreV1NamespacedServiceAccountList = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedServiceAccount = (
-  args: WatchCoreV1NamespacedServiceAccountApiArg,
+}
+export function watchCoreV1NamespacedServiceAccount(
+  args: NoWatch<WatchCoreV1NamespacedServiceAccountApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedServiceAccountApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedServiceAccountApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedServiceAccountApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedServiceAccount(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedServiceAccountApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/serviceaccounts/\${args.name}\`,
@@ -16759,8 +17823,18 @@ export const watchCoreV1NamespacedServiceAccount = (
     },
     options
   );
-};
-export const watchCoreV1NamespacedServiceList = (args: WatchCoreV1NamespacedServiceListApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedServiceList(
+  args: NoWatch<WatchCoreV1NamespacedServiceListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedServiceListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedServiceListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedServiceListApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedServiceList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedServiceListApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/services\`,
@@ -16780,8 +17854,18 @@ export const watchCoreV1NamespacedServiceList = (args: WatchCoreV1NamespacedServ
     },
     options
   );
-};
-export const watchCoreV1NamespacedService = (args: WatchCoreV1NamespacedServiceApiArg, options?: Options) => {
+}
+export function watchCoreV1NamespacedService(
+  args: NoWatch<WatchCoreV1NamespacedServiceApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespacedServiceApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespacedServiceApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespacedServiceApiResponse>
+): Promise<void>;
+export function watchCoreV1NamespacedService(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedServiceApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args['namespace']}/services/\${args.name}\`,
@@ -16801,8 +17885,18 @@ export const watchCoreV1NamespacedService = (args: WatchCoreV1NamespacedServiceA
     },
     options
   );
-};
-export const watchCoreV1Namespace = (args: WatchCoreV1NamespaceApiArg, options?: Options) => {
+}
+export function watchCoreV1Namespace(
+  args: NoWatch<WatchCoreV1NamespaceApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NamespaceApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NamespaceApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NamespaceApiResponse>
+): Promise<void>;
+export function watchCoreV1Namespace(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespaceApiResponse>(
     {
       path: \`/api/v1/watch/namespaces/\${args.name}\`,
@@ -16822,8 +17916,18 @@ export const watchCoreV1Namespace = (args: WatchCoreV1NamespaceApiArg, options?:
     },
     options
   );
-};
-export const watchCoreV1NodeList = (args: WatchCoreV1NodeListApiArg, options?: Options) => {
+}
+export function watchCoreV1NodeList(
+  args: NoWatch<WatchCoreV1NodeListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NodeListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NodeListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NodeListApiResponse>
+): Promise<void>;
+export function watchCoreV1NodeList(args: any, options: any): any {
   return apiClient<WatchCoreV1NodeListApiResponse>(
     {
       path: \`/api/v1/watch/nodes\`,
@@ -16843,8 +17947,18 @@ export const watchCoreV1NodeList = (args: WatchCoreV1NodeListApiArg, options?: O
     },
     options
   );
-};
-export const watchCoreV1Node = (args: WatchCoreV1NodeApiArg, options?: Options) => {
+}
+export function watchCoreV1Node(
+  args: NoWatch<WatchCoreV1NodeApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1NodeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1NodeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1NodeApiResponse>
+): Promise<void>;
+export function watchCoreV1Node(args: any, options: any): any {
   return apiClient<WatchCoreV1NodeApiResponse>(
     {
       path: \`/api/v1/watch/nodes/\${args.name}\`,
@@ -16864,11 +17978,18 @@ export const watchCoreV1Node = (args: WatchCoreV1NodeApiArg, options?: Options) 
     },
     options
   );
-};
-export const watchCoreV1PersistentVolumeClaimListForAllNamespaces = (
-  args: WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiArg,
+}
+export function watchCoreV1PersistentVolumeClaimListForAllNamespaces(
+  args: NoWatch<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1PersistentVolumeClaimListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/persistentvolumeclaims\`,
@@ -16888,8 +18009,18 @@ export const watchCoreV1PersistentVolumeClaimListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1PersistentVolumeList = (args: WatchCoreV1PersistentVolumeListApiArg, options?: Options) => {
+}
+export function watchCoreV1PersistentVolumeList(
+  args: NoWatch<WatchCoreV1PersistentVolumeListApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1PersistentVolumeListApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1PersistentVolumeListApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1PersistentVolumeListApiResponse>
+): Promise<void>;
+export function watchCoreV1PersistentVolumeList(args: any, options: any): any {
   return apiClient<WatchCoreV1PersistentVolumeListApiResponse>(
     {
       path: \`/api/v1/watch/persistentvolumes\`,
@@ -16909,8 +18040,18 @@ export const watchCoreV1PersistentVolumeList = (args: WatchCoreV1PersistentVolum
     },
     options
   );
-};
-export const watchCoreV1PersistentVolume = (args: WatchCoreV1PersistentVolumeApiArg, options?: Options) => {
+}
+export function watchCoreV1PersistentVolume(
+  args: NoWatch<WatchCoreV1PersistentVolumeApiResponse>,
+  options?: Options
+): Promise<WatchCoreV1PersistentVolumeApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1PersistentVolumeApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1PersistentVolumeApiResponse>
+): Promise<void>;
+export function watchCoreV1PersistentVolume(args: any, options: any): any {
   return apiClient<WatchCoreV1PersistentVolumeApiResponse>(
     {
       path: \`/api/v1/watch/persistentvolumes/\${args.name}\`,
@@ -16930,11 +18071,18 @@ export const watchCoreV1PersistentVolume = (args: WatchCoreV1PersistentVolumeApi
     },
     options
   );
-};
-export const watchCoreV1PodListForAllNamespaces = (
-  args: WatchCoreV1PodListForAllNamespacesApiArg,
+}
+export function watchCoreV1PodListForAllNamespaces(
+  args: NoWatch<WatchCoreV1PodListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PodListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1PodListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1PodListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1PodListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1PodListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/pods\`,
@@ -16954,11 +18102,18 @@ export const watchCoreV1PodListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1PodTemplateListForAllNamespaces = (
-  args: WatchCoreV1PodTemplateListForAllNamespacesApiArg,
+}
+export function watchCoreV1PodTemplateListForAllNamespaces(
+  args: NoWatch<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1PodTemplateListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1PodTemplateListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/podtemplates\`,
@@ -16978,11 +18133,18 @@ export const watchCoreV1PodTemplateListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1ReplicationControllerListForAllNamespaces = (
-  args: WatchCoreV1ReplicationControllerListForAllNamespacesApiArg,
+}
+export function watchCoreV1ReplicationControllerListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1ReplicationControllerListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/replicationcontrollers\`,
@@ -17002,11 +18164,18 @@ export const watchCoreV1ReplicationControllerListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1ResourceQuotaListForAllNamespaces = (
-  args: WatchCoreV1ResourceQuotaListForAllNamespacesApiArg,
+}
+export function watchCoreV1ResourceQuotaListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1ResourceQuotaListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/resourcequotas\`,
@@ -17026,11 +18195,18 @@ export const watchCoreV1ResourceQuotaListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1SecretListForAllNamespaces = (
-  args: WatchCoreV1SecretListForAllNamespacesApiArg,
+}
+export function watchCoreV1SecretListForAllNamespaces(
+  args: NoWatch<WatchCoreV1SecretListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1SecretListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1SecretListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1SecretListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1SecretListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1SecretListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/secrets\`,
@@ -17050,11 +18226,18 @@ export const watchCoreV1SecretListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1ServiceAccountListForAllNamespaces = (
-  args: WatchCoreV1ServiceAccountListForAllNamespacesApiArg,
+}
+export function watchCoreV1ServiceAccountListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1ServiceAccountListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1ServiceAccountListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/serviceaccounts\`,
@@ -17074,11 +18257,18 @@ export const watchCoreV1ServiceAccountListForAllNamespaces = (
     },
     options
   );
-};
-export const watchCoreV1ServiceListForAllNamespaces = (
-  args: WatchCoreV1ServiceListForAllNamespacesApiArg,
+}
+export function watchCoreV1ServiceListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ServiceListForAllNamespacesApiResponse>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ServiceListForAllNamespacesApiResponse>;
+export function listCoreV1PodForAllNamespaces(
+  args: WatchCoreV1ServiceListForAllNamespacesApiResponse & {
+    watch: true;
+  },
+  options?: Options & WatchExtraOptions<WatchCoreV1ServiceListForAllNamespacesApiResponse>
+): Promise<void>;
+export function watchCoreV1ServiceListForAllNamespaces(args: any, options: any): any {
   return apiClient<WatchCoreV1ServiceListForAllNamespacesApiResponse>(
     {
       path: \`/api/v1/watch/services\`,
@@ -17098,7 +18288,7 @@ export const watchCoreV1ServiceListForAllNamespaces = (
     },
     options
   );
-};
+}
 export type GetCoreV1ApiResourcesApiResponse = /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1ApiResourceList;
 export type GetCoreV1ApiResourcesApiArg = void;
 export type ListCoreV1ComponentStatusApiResponse = /** status 200 OK */ IoK8SApiCoreV1ComponentStatusList;

@@ -1,19 +1,18 @@
-import * as k8s from '@kubernetes/client-node'
-import type * as https from 'node:https'
+import * as k8s from '@kubernetes/client-node';
+import type * as https from 'node:https';
 
-import { Agent } from 'undici'
+import { Agent } from 'undici';
 
 type RemoveUndefined<T> = {
-  [K in keyof T]: Exclude<T[K], undefined | null>
-}
+  [K in keyof T]: Exclude<T[K], undefined | null>;
+};
 
-export function removeNullableProperties<
-  T extends Record<string, unknown | undefined> | undefined
->(object: T): RemoveUndefined<T> {
-  if (!object) return object as RemoveUndefined<T>
-  for (const key of Object.keys(object))
-    (object[key] === undefined || object[key] === null) && delete object[key]
-  return object as RemoveUndefined<T>
+export function removeNullableProperties<T extends Record<string, unknown | undefined> | undefined>(
+  object: T
+): RemoveUndefined<T> {
+  if (!object) return object as RemoveUndefined<T>;
+  for (const key of Object.keys(object)) (object[key] === undefined || object[key] === null) && delete object[key];
+  return object as RemoveUndefined<T>;
 }
 
 /**
@@ -30,87 +29,71 @@ export function removeNullableProperties<
  * @param maxRetries - Maximum number of retries
  */
 async function defaultBackoff(attempt: number, maxRetries: number) {
-  const attempts = Math.min(attempt, maxRetries)
+  const attempts = Math.min(attempt, maxRetries);
 
-  const timeout = Math.trunc((Math.random() + 0.4) * (300 << attempts))
-  await new Promise((resolve) =>
-    setTimeout((response: any) => resolve(response), timeout)
-  )
+  const timeout = Math.trunc((Math.random() + 0.4) * (300 << attempts));
+  await new Promise((resolve) => setTimeout((response: any) => resolve(response), timeout));
 }
 
-const isPlainObject = (value: any) => value?.constructor === Object
+const isPlainObject = (value: any) => value?.constructor === Object;
 
 type QueryArgumentsSpec = {
-  path: string | undefined
-  method?:
-    | 'GET'
-    | 'DELETE'
-    | 'PATCH'
-    | 'POST'
-    | 'PUT'
-    | 'OPTIONS'
-    | 'HEAD'
-    | undefined
-  body?: any | undefined
-  contentType?: string | undefined
-  params?: any | undefined
-}
+  path: string | undefined;
+  method?: 'GET' | 'DELETE' | 'PATCH' | 'POST' | 'PUT' | 'OPTIONS' | 'HEAD' | undefined;
+  body?: any | undefined;
+  contentType?: string | undefined;
+  params?: any | undefined;
+};
 
-type MaybePromise<T> = T | Promise<T>
+type MaybePromise<T> = T | Promise<T>;
 
 type InterceptorArguments = {
-  args: QueryArgumentsSpec
-  opts: https.RequestOptions
-}
-type Interceptor = (
-  arguments_: InterceptorArguments,
-  options: Options
-) => MaybePromise<https.RequestOptions>
+  args: QueryArgumentsSpec;
+  opts: https.RequestOptions;
+};
+type Interceptor = (arguments_: InterceptorArguments, options: Options) => MaybePromise<https.RequestOptions>;
 
 const interceptors: Interceptor[] = [
   async function injectKubernetesParameters({ opts }) {
-    const kc = new k8s.KubeConfig()
-    kc.loadFromDefault()
-    const nextOptions: https.RequestOptions = { ...opts }
-    await kc.applyToHTTPSOptions(nextOptions)
+    const kc = new k8s.KubeConfig();
+    kc.loadFromDefault();
+    const nextOptions: https.RequestOptions = { ...opts };
+    await kc.applyToHTTPSOptions(nextOptions);
 
-    const cluster = kc.getCurrentCluster()
+    const cluster = kc.getCurrentCluster();
 
     if (cluster?.server) {
-      const url = new URL(cluster.server)
-      nextOptions.host = url.hostname
-      nextOptions.protocol = url.protocol
-      nextOptions.port = url.port
+      const url = new URL(cluster.server);
+      nextOptions.host = url.hostname;
+      nextOptions.protocol = url.protocol;
+      nextOptions.port = url.port;
     }
-    return nextOptions
+    return nextOptions;
   },
-]
+];
 
 type RetryConditionFunction = (extraArguments: {
-  res?: Response
-  error: unknown
-  args: QueryArgumentsSpec
-  attempt: number
-  options: RetryOptions
-}) => boolean | Promise<boolean>
+  res?: Response;
+  error: unknown;
+  args: QueryArgumentsSpec;
+  attempt: number;
+  options: RetryOptions;
+}) => boolean | Promise<boolean>;
 
 type RetryOptions = {
-  retryCondition?: RetryConditionFunction
-  maxRetries?: number
-}
+  retryCondition?: RetryConditionFunction;
+  maxRetries?: number;
+};
 
 type HttpOptions = {
   headers?: Record<string, string> | undefined;
   signal?: AbortSignal;
 };
 
-export type WatchEventType = 'ADDED' | 'Modified' | 'Deleted' | 'BOOKMARK'
+export type WatchEventType = 'ADDED' | 'Modified' | 'Deleted' | 'BOOKMARK';
 export type WatchExtraOptions<T> = {
-  watchEventHandler: (e: {
-    type: WatchEventType
-    object: T
-  }) => MaybePromise<unknown>
-}
+  watchEventHandler: (e: { type: WatchEventType; object: T }) => MaybePromise<unknown>;
+};
 export type Options = RetryOptions & HttpOptions;
 
 export async function apiClient<Response>(
@@ -291,5 +274,5 @@ export async function apiClient<Response>(
 }
 
 const toSearchParameters = (parameters: Record<string, string>) => {
-  return new URLSearchParams(removeNullableProperties(parameters))
-}
+  return new URLSearchParams(removeNullableProperties(parameters));
+};

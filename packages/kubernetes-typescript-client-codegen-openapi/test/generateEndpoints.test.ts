@@ -100,7 +100,7 @@ describe('import paths', () => {
       filterEndpoints: [],
     });
     expect(await fs.promises.readFile('./tmp/out.ts', 'utf8')).toContain(
-      "import { apiClient, type Options } from '../fixtures/k8sApiClient'"
+      "import { apiClient, type Options, type WatchExtraOptions } from '../fixtures/k8sApiClient'"
     );
   });
 
@@ -117,7 +117,7 @@ describe('import paths', () => {
       filterEndpoints: [],
     });
     expect(await fs.promises.readFile('./tmp/out.ts', 'utf8')).toContain(
-      "import { apiClient, type Options } from './k8sApiClient'"
+      "import { apiClient, type Options, type WatchExtraOptions } from './k8sApiClient'"
     );
   });
 });
