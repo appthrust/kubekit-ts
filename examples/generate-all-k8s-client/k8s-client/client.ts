@@ -99,8 +99,9 @@ type RetryOptions = {
   maxRetries?: number
 }
 
-type HttpHeaderOptions = {
+type HttpOptions = {
   headers?: Record<string, string> | undefined
+  signal?: AbortSignal
 }
 
 export type WatchEventType = 'ADDED' | 'Modified' | 'Deleted' | 'BOOKMARK'
@@ -110,12 +111,12 @@ export type WatchExtraOptions<T> = {
     object: T
   }) => MaybePromise<unknown>
 }
-export type Options = RetryOptions & HttpHeaderOptions
+export type Options = RetryOptions & HttpOptions
 
 export async function apiClient<Response>(
   arguments_: QueryArgumentsSpec,
-  extraOptions: Options & WatchExtraOptions<Response>
-): Promise<Response> {
+  extraOptions: Options | (Options & WatchExtraOptions<Response>) = {}
+): Promise<Response | void> {
   const maxRetries = extraOptions.maxRetries ?? 3
 
   const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => {
@@ -124,15 +125,24 @@ export async function apiClient<Response>(
       return false
     }
 
-    if (
-      typeof error === 'object' &&
-      error !== null &&
-      'toString' in error &&
-      typeof error.toString === 'function' &&
-      error.toString().includes('TypeError: fetch failed')
-    ) {
-      return true
+    if (typeof error === 'object' && error !== null) {
+      const isAbortError = Boolean(
+        'name' in error && error.name === 'AbortError'
+      )
+
+      if (isAbortError) {
+        return false
+      }
+
+      if (
+        'toString' in error &&
+        typeof error.toString === 'function' &&
+        error.toString().includes('TypeError: fetch failed')
+      ) {
+        return true
+      }
     }
+
     if (res && res.status >= 500) {
       return true
     }
@@ -226,6 +236,7 @@ export async function apiClient<Response>(
           // https://github.com/nodejs/node/issues/48977
           dispatcher: httpsOptions.agent,
           body,
+          signal: extraOptions.signal,
         })
       )
 
@@ -245,7 +256,9 @@ export async function apiClient<Response>(
           let buffer = ''
           while (true) {
             const { value, done } = await reader.read()
-            if (done) break
+            if (done) {
+              return void 0
+            }
 
             buffer += textDecoder.decode(value, { stream: true })
             while (true) {
@@ -257,8 +270,6 @@ export async function apiClient<Response>(
               await extraOptions.watchEventHandler(JSON.parse(line))
             }
           }
-
-          return JSON.parse(await response.text()) as Response
         }
         return (await response.json()) as Response
       }

@@ -99,9 +99,10 @@ type RetryOptions = {
   maxRetries?: number
 }
 
-type HttpHeaderOptions = {
-  headers?: Record<string, string> | undefined
-}
+type HttpOptions = {
+  headers?: Record<string, string> | undefined;
+  signal?: AbortSignal;
+};
 
 export type WatchEventType = 'ADDED' | 'Modified' | 'Deleted' | 'BOOKMARK'
 export type WatchExtraOptions<T> = {
@@ -110,52 +111,59 @@ export type WatchExtraOptions<T> = {
     object: T
   }) => MaybePromise<unknown>
 }
-export type Options = RetryOptions & HttpHeaderOptions
+export type Options = RetryOptions & HttpOptions;
 
 export async function apiClient<Response>(
   arguments_: QueryArgumentsSpec,
-  extraOptions: Options & WatchExtraOptions<Response>
-): Promise<Response> {
-  const maxRetries = extraOptions.maxRetries ?? 3
+  extraOptions: Options | (Options & WatchExtraOptions<Response>) = {}
+): Promise<Response | void> {
+  const maxRetries = extraOptions.maxRetries ?? 3;
 
   const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => {
-    const { res, attempt, error } = object
+    const { res, attempt, error } = object;
     if (attempt > maxRetries) {
-      return false
+      return false;
     }
 
-    if (
-      typeof error === 'object' &&
-      error !== null &&
-      'toString' in error &&
-      typeof error.toString === 'function' &&
-      error.toString().includes('TypeError: fetch failed')
-    ) {
-      return true
+    if (typeof error === 'object' && error !== null) {
+      const isAbortError = Boolean('name' in error && error.name === 'AbortError');
+
+      if (isAbortError) {
+        return false;
+      }
+
+      if (
+        'toString' in error &&
+        typeof error.toString === 'function' &&
+        error.toString().includes('TypeError: fetch failed')
+      ) {
+        return true;
+      }
     }
+
     if (res && res.status >= 500) {
-      return true
+      return true;
     }
-    return false
-  }
+    return false;
+  };
 
   const options = {
     maxRetries,
     backoff: defaultBackoff,
     retryCondition: defaultRetryCondition,
     ...removeNullableProperties(extraOptions),
-  }
+  };
 
-  let { path, method, params, body, contentType } = { ...arguments_ }
+  let { path, method, params, body, contentType } = { ...arguments_ };
 
   let httpsOptions: https.RequestOptions = {
     path,
     headers: {
       ...options.headers,
     },
-  }
+  };
   if (method) {
-    httpsOptions.method = method
+    httpsOptions.method = method;
   }
 
   for (const interceptor of interceptors) {
@@ -165,13 +173,10 @@ export async function apiClient<Response>(
         opts: httpsOptions,
       },
       options
-    )
+    );
   }
 
-  if (
-    !httpsOptions.agent &&
-    (httpsOptions.ca || httpsOptions.cert || httpsOptions.key)
-  ) {
+  if (!httpsOptions.agent && (httpsOptions.ca || httpsOptions.cert || httpsOptions.key)) {
     const agent = new Agent({
       connect: removeNullableProperties({
         ca: httpsOptions.ca,
@@ -179,42 +184,42 @@ export async function apiClient<Response>(
         key: httpsOptions.key,
         port: httpsOptions.port ? Number(httpsOptions.port) : undefined,
       }),
-    })
+    });
     // https://github.com/nodejs/node/issues/48977
-    httpsOptions.agent = agent as any
+    httpsOptions.agent = agent as any;
   }
 
   if (!httpsOptions.protocol) {
-    httpsOptions.protocol = 'http:'
+    httpsOptions.protocol = 'http:';
   }
-  const host = httpsOptions.host || httpsOptions.hostname
-  let baseUrl = `${httpsOptions.protocol}//${host}`
-  const searchParameters = toSearchParameters(params)
+  const host = httpsOptions.host || httpsOptions.hostname;
+  let baseUrl = `${httpsOptions.protocol}//${host}`;
+  const searchParameters = toSearchParameters(params);
   if (searchParameters.size > 0) {
-    baseUrl += (baseUrl.includes('?') ? '&' : '?') + toSearchParameters(params)
+    baseUrl += (baseUrl.includes('?') ? '&' : '?') + toSearchParameters(params);
   }
-  const url = new URL(baseUrl)
+  const url = new URL(baseUrl);
   if (httpsOptions.port) {
-    url.port = httpsOptions.port.toString()
+    url.port = httpsOptions.port.toString();
   }
   if (httpsOptions.path) {
-    url.pathname = httpsOptions.path
+    url.pathname = httpsOptions.path;
   }
-  let isJson = false
+  let isJson = false;
   if (isPlainObject(body) || Array.isArray(body)) {
-    isJson = true
-    body = JSON.stringify(body)
+    isJson = true;
+    body = JSON.stringify(body);
   }
   const headers: Record<string, string> = {
     ...(httpsOptions.headers as any),
-  }
+  };
   if (contentType) {
-    headers['Content-Type'] = contentType
+    headers['Content-Type'] = contentType;
   } else if (!httpsOptions.headers?.['Content-Type'] && isJson) {
-    headers['Content-Type'] = 'application/json'
+    headers['Content-Type'] = 'application/json';
   }
 
-  let retry = 0
+  let retry = 0;
   while (true) {
     try {
       const response = await fetch(
@@ -226,53 +231,47 @@ export async function apiClient<Response>(
           // https://github.com/nodejs/node/issues/48977
           dispatcher: httpsOptions.agent,
           body,
+          signal: extraOptions.signal,
         })
-      )
+      );
 
-      const isSuccess = response.status >= 200 && response.status < 300
-      const contentType = response.headers.get('content-type')
-      const isJsonResponse = contentType?.includes('application/json') ?? false
+      const isSuccess = response.status >= 200 && response.status < 300;
+      const contentType = response.headers.get('content-type');
+      const isJsonResponse = contentType?.includes('application/json') ?? false;
 
       if (isSuccess && isJsonResponse) {
-        if (
-          'watch' in params &&
-          params.watch &&
-          response.body &&
-          'watchEventHandler' in extraOptions
-        ) {
-          const reader = response.body.getReader()
-          const textDecoder = new TextDecoder()
-          let buffer = ''
+        if ('watch' in params && params.watch && response.body && 'watchEventHandler' in extraOptions) {
+          const reader = response.body.getReader();
+          const textDecoder = new TextDecoder();
+          let buffer = '';
           while (true) {
-            const { value, done } = await reader.read()
-            if (done) break
+            const { value, done } = await reader.read();
+            if (done) {
+              return void 0;
+            }
 
-            buffer += textDecoder.decode(value, { stream: true })
+            buffer += textDecoder.decode(value, { stream: true });
             while (true) {
-              const newlineIndex = buffer.indexOf('\n')
-              if (newlineIndex === -1) break
-              const line = buffer.slice(0, newlineIndex)
-              buffer = buffer.slice(newlineIndex + 1)
+              const newlineIndex = buffer.indexOf('\n');
+              if (newlineIndex === -1) break;
+              const line = buffer.slice(0, newlineIndex);
+              buffer = buffer.slice(newlineIndex + 1);
 
-              await extraOptions.watchEventHandler(JSON.parse(line))
+              await extraOptions.watchEventHandler(JSON.parse(line));
             }
           }
-
-          return JSON.parse(await response.text()) as Response
         }
-        return (await response.json()) as Response
+        return (await response.json()) as Response;
       }
 
       // helpful message for debugging
-      const text = await response.text()
+      const text = await response.text();
       if (response.status === 404 && text.includes('404 page not found')) {
-        console.info(
-          `Did you forget to install your Custom Resources Definitions? path: ${httpsOptions.path}`
-        )
+        console.info(`Did you forget to install your Custom Resources Definitions? path: ${httpsOptions.path}`);
       }
-      throw new Error(text)
+      throw new Error(text);
     } catch (error: any) {
-      retry++
+      retry++;
 
       if (
         !(await options.retryCondition({
@@ -283,10 +282,10 @@ export async function apiClient<Response>(
           options: options,
         }))
       ) {
-        throw error
+        throw error;
       }
 
-      await options.backoff(retry, options.maxRetries)
+      await options.backoff(retry, options.maxRetries);
     }
   }
 }
