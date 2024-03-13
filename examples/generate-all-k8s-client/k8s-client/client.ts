@@ -103,13 +103,20 @@ type HttpHeaderOptions = {
   headers?: Record<string, string> | undefined
 }
 
+export type WatchEventType = 'ADDED' | 'Modified' | 'Deleted' | 'BOOKMARK'
+export type WatchExtraOptions<T> = {
+  watchEventHandler: (e: {
+    type: WatchEventType
+    object: T
+  }) => MaybePromise<unknown>
+}
 export type Options = RetryOptions & HttpHeaderOptions
 
 export async function apiClient<Response>(
   arguments_: QueryArgumentsSpec,
-  extraOptions?: Options
+  extraOptions: Options & WatchExtraOptions<Response>
 ): Promise<Response> {
-  const maxRetries = extraOptions?.maxRetries ?? 3
+  const maxRetries = extraOptions.maxRetries ?? 3
 
   const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => {
     const { res, attempt, error } = object
@@ -227,7 +234,12 @@ export async function apiClient<Response>(
       const isJsonResponse = contentType?.includes('application/json') ?? false
 
       if (isSuccess && isJsonResponse) {
-        if ('watch' in params && params.watch && response.body) {
+        if (
+          'watch' in params &&
+          params.watch &&
+          response.body &&
+          'watchEventHandler' in extraOptions
+        ) {
           const reader = response.body.getReader()
           const textDecoder = new TextDecoder()
           let buffer = ''
@@ -242,8 +254,7 @@ export async function apiClient<Response>(
               const line = buffer.slice(0, newlineIndex)
               buffer = buffer.slice(newlineIndex + 1)
 
-              console.log('----------------')
-              console.log(JSON.parse(line))
+              await extraOptions.watchEventHandler(JSON.parse(line))
             }
           }
 
