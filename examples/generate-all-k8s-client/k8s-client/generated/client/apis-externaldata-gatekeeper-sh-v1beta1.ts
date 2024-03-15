@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listExternaldataGatekeeperShV1Beta1Provider = (
-  args: ListExternaldataGatekeeperShV1Beta1ProviderApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listExternaldataGatekeeperShV1Beta1Provider(
+  args: NoWatch<ListExternaldataGatekeeperShV1Beta1ProviderApiArg>,
   options?: Options
-) => {
+): Promise<ListExternaldataGatekeeperShV1Beta1ProviderApiResponse>
+export function listExternaldataGatekeeperShV1Beta1Provider(
+  args: ListExternaldataGatekeeperShV1Beta1ProviderApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListExternaldataGatekeeperShV1Beta1ProviderApiResponse>
+): Promise<void>
+export function listExternaldataGatekeeperShV1Beta1Provider(
+  args: any,
+  options: any
+): any {
   return apiClient<ListExternaldataGatekeeperShV1Beta1ProviderApiResponse>(
     {
       path: `/apis/externaldata.gatekeeper.sh/v1beta1/providers`,
@@ -43,10 +57,21 @@ export const createExternaldataGatekeeperShV1Beta1Provider = (
     options
   )
 }
-export const deleteExternaldataGatekeeperShV1Beta1CollectionProvider = (
-  args: DeleteExternaldataGatekeeperShV1Beta1CollectionProviderApiArg,
+export function deleteExternaldataGatekeeperShV1Beta1CollectionProvider(
+  args: NoWatch<DeleteExternaldataGatekeeperShV1Beta1CollectionProviderApiArg>,
   options?: Options
-) => {
+): Promise<DeleteExternaldataGatekeeperShV1Beta1CollectionProviderApiResponse>
+export function deleteExternaldataGatekeeperShV1Beta1CollectionProvider(
+  args: DeleteExternaldataGatekeeperShV1Beta1CollectionProviderApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteExternaldataGatekeeperShV1Beta1CollectionProviderApiResponse>
+): Promise<void>
+export function deleteExternaldataGatekeeperShV1Beta1CollectionProvider(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteExternaldataGatekeeperShV1Beta1CollectionProviderApiResponse>(
     {
       path: `/apis/externaldata.gatekeeper.sh/v1beta1/providers`,
@@ -145,7 +170,7 @@ export const patchExternaldataGatekeeperShV1Beta1Provider = (
 export type ListExternaldataGatekeeperShV1Beta1ProviderApiResponse =
   /** status 200 OK */ ShGatekeeperExternaldataV1Beta1ProviderList
 export type ListExternaldataGatekeeperShV1Beta1ProviderApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -194,7 +219,7 @@ export type CreateExternaldataGatekeeperShV1Beta1ProviderApiResponse =
   | /** status 201 Created */ ShGatekeeperExternaldataV1Beta1Provider
   | /** status 202 Accepted */ ShGatekeeperExternaldataV1Beta1Provider
 export type CreateExternaldataGatekeeperShV1Beta1ProviderApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -215,7 +240,7 @@ export type CreateExternaldataGatekeeperShV1Beta1ProviderApiArg = {
 export type DeleteExternaldataGatekeeperShV1Beta1CollectionProviderApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteExternaldataGatekeeperShV1Beta1CollectionProviderApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -263,7 +288,7 @@ export type ReadExternaldataGatekeeperShV1Beta1ProviderApiResponse =
 export type ReadExternaldataGatekeeperShV1Beta1ProviderApiArg = {
   /** name of the Provider */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -277,7 +302,7 @@ export type ReplaceExternaldataGatekeeperShV1Beta1ProviderApiResponse =
 export type ReplaceExternaldataGatekeeperShV1Beta1ProviderApiArg = {
   /** name of the Provider */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -302,7 +327,7 @@ export type DeleteExternaldataGatekeeperShV1Beta1ProviderApiResponse =
 export type DeleteExternaldataGatekeeperShV1Beta1ProviderApiArg = {
   /** name of the Provider */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -327,7 +352,7 @@ export type PatchExternaldataGatekeeperShV1Beta1ProviderApiResponse =
 export type PatchExternaldataGatekeeperShV1Beta1ProviderApiArg = {
   /** name of the Provider */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

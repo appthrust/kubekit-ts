@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getBatchApiGroup = (
   args: GetBatchApiGroupApiArg,
   options?: Options

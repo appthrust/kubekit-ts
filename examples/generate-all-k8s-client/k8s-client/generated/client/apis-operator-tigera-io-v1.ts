@@ -1,8 +1,19 @@
-import { apiClient, type Options } from '../../client'
-export const listOperatorTigeraIoV1ApiServer = (
-  args: ListOperatorTigeraIoV1ApiServerApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listOperatorTigeraIoV1ApiServer(
+  args: NoWatch<ListOperatorTigeraIoV1ApiServerApiArg>,
   options?: Options
-) => {
+): Promise<ListOperatorTigeraIoV1ApiServerApiResponse>
+export function listOperatorTigeraIoV1ApiServer(
+  args: ListOperatorTigeraIoV1ApiServerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListOperatorTigeraIoV1ApiServerApiResponse>
+): Promise<void>
+export function listOperatorTigeraIoV1ApiServer(args: any, options: any): any {
   return apiClient<ListOperatorTigeraIoV1ApiServerApiResponse>(
     {
       path: `/apis/operator.tigera.io/v1/apiservers`,
@@ -43,10 +54,21 @@ export const createOperatorTigeraIoV1ApiServer = (
     options
   )
 }
-export const deleteOperatorTigeraIoV1CollectionApiServer = (
-  args: DeleteOperatorTigeraIoV1CollectionApiServerApiArg,
+export function deleteOperatorTigeraIoV1CollectionApiServer(
+  args: NoWatch<DeleteOperatorTigeraIoV1CollectionApiServerApiArg>,
   options?: Options
-) => {
+): Promise<DeleteOperatorTigeraIoV1CollectionApiServerApiResponse>
+export function deleteOperatorTigeraIoV1CollectionApiServer(
+  args: DeleteOperatorTigeraIoV1CollectionApiServerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteOperatorTigeraIoV1CollectionApiServerApiResponse>
+): Promise<void>
+export function deleteOperatorTigeraIoV1CollectionApiServer(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteOperatorTigeraIoV1CollectionApiServerApiResponse>(
     {
       path: `/apis/operator.tigera.io/v1/apiservers`,
@@ -195,10 +217,18 @@ export const patchOperatorTigeraIoV1ApiServerStatus = (
     options
   )
 }
-export const listOperatorTigeraIoV1ImageSet = (
-  args: ListOperatorTigeraIoV1ImageSetApiArg,
+export function listOperatorTigeraIoV1ImageSet(
+  args: NoWatch<ListOperatorTigeraIoV1ImageSetApiArg>,
   options?: Options
-) => {
+): Promise<ListOperatorTigeraIoV1ImageSetApiResponse>
+export function listOperatorTigeraIoV1ImageSet(
+  args: ListOperatorTigeraIoV1ImageSetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListOperatorTigeraIoV1ImageSetApiResponse>
+): Promise<void>
+export function listOperatorTigeraIoV1ImageSet(args: any, options: any): any {
   return apiClient<ListOperatorTigeraIoV1ImageSetApiResponse>(
     {
       path: `/apis/operator.tigera.io/v1/imagesets`,
@@ -239,10 +269,21 @@ export const createOperatorTigeraIoV1ImageSet = (
     options
   )
 }
-export const deleteOperatorTigeraIoV1CollectionImageSet = (
-  args: DeleteOperatorTigeraIoV1CollectionImageSetApiArg,
+export function deleteOperatorTigeraIoV1CollectionImageSet(
+  args: NoWatch<DeleteOperatorTigeraIoV1CollectionImageSetApiArg>,
   options?: Options
-) => {
+): Promise<DeleteOperatorTigeraIoV1CollectionImageSetApiResponse>
+export function deleteOperatorTigeraIoV1CollectionImageSet(
+  args: DeleteOperatorTigeraIoV1CollectionImageSetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteOperatorTigeraIoV1CollectionImageSetApiResponse>
+): Promise<void>
+export function deleteOperatorTigeraIoV1CollectionImageSet(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteOperatorTigeraIoV1CollectionImageSetApiResponse>(
     {
       path: `/apis/operator.tigera.io/v1/imagesets`,
@@ -391,10 +432,21 @@ export const patchOperatorTigeraIoV1ImageSetStatus = (
     options
   )
 }
-export const listOperatorTigeraIoV1Installation = (
-  args: ListOperatorTigeraIoV1InstallationApiArg,
+export function listOperatorTigeraIoV1Installation(
+  args: NoWatch<ListOperatorTigeraIoV1InstallationApiArg>,
   options?: Options
-) => {
+): Promise<ListOperatorTigeraIoV1InstallationApiResponse>
+export function listOperatorTigeraIoV1Installation(
+  args: ListOperatorTigeraIoV1InstallationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListOperatorTigeraIoV1InstallationApiResponse>
+): Promise<void>
+export function listOperatorTigeraIoV1Installation(
+  args: any,
+  options: any
+): any {
   return apiClient<ListOperatorTigeraIoV1InstallationApiResponse>(
     {
       path: `/apis/operator.tigera.io/v1/installations`,
@@ -435,10 +487,21 @@ export const createOperatorTigeraIoV1Installation = (
     options
   )
 }
-export const deleteOperatorTigeraIoV1CollectionInstallation = (
-  args: DeleteOperatorTigeraIoV1CollectionInstallationApiArg,
+export function deleteOperatorTigeraIoV1CollectionInstallation(
+  args: NoWatch<DeleteOperatorTigeraIoV1CollectionInstallationApiArg>,
   options?: Options
-) => {
+): Promise<DeleteOperatorTigeraIoV1CollectionInstallationApiResponse>
+export function deleteOperatorTigeraIoV1CollectionInstallation(
+  args: DeleteOperatorTigeraIoV1CollectionInstallationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteOperatorTigeraIoV1CollectionInstallationApiResponse>
+): Promise<void>
+export function deleteOperatorTigeraIoV1CollectionInstallation(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteOperatorTigeraIoV1CollectionInstallationApiResponse>(
     {
       path: `/apis/operator.tigera.io/v1/installations`,
@@ -587,10 +650,21 @@ export const patchOperatorTigeraIoV1InstallationStatus = (
     options
   )
 }
-export const listOperatorTigeraIoV1TigeraStatus = (
-  args: ListOperatorTigeraIoV1TigeraStatusApiArg,
+export function listOperatorTigeraIoV1TigeraStatus(
+  args: NoWatch<ListOperatorTigeraIoV1TigeraStatusApiArg>,
   options?: Options
-) => {
+): Promise<ListOperatorTigeraIoV1TigeraStatusApiResponse>
+export function listOperatorTigeraIoV1TigeraStatus(
+  args: ListOperatorTigeraIoV1TigeraStatusApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListOperatorTigeraIoV1TigeraStatusApiResponse>
+): Promise<void>
+export function listOperatorTigeraIoV1TigeraStatus(
+  args: any,
+  options: any
+): any {
   return apiClient<ListOperatorTigeraIoV1TigeraStatusApiResponse>(
     {
       path: `/apis/operator.tigera.io/v1/tigerastatuses`,
@@ -631,10 +705,21 @@ export const createOperatorTigeraIoV1TigeraStatus = (
     options
   )
 }
-export const deleteOperatorTigeraIoV1CollectionTigeraStatus = (
-  args: DeleteOperatorTigeraIoV1CollectionTigeraStatusApiArg,
+export function deleteOperatorTigeraIoV1CollectionTigeraStatus(
+  args: NoWatch<DeleteOperatorTigeraIoV1CollectionTigeraStatusApiArg>,
   options?: Options
-) => {
+): Promise<DeleteOperatorTigeraIoV1CollectionTigeraStatusApiResponse>
+export function deleteOperatorTigeraIoV1CollectionTigeraStatus(
+  args: DeleteOperatorTigeraIoV1CollectionTigeraStatusApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteOperatorTigeraIoV1CollectionTigeraStatusApiResponse>
+): Promise<void>
+export function deleteOperatorTigeraIoV1CollectionTigeraStatus(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteOperatorTigeraIoV1CollectionTigeraStatusApiResponse>(
     {
       path: `/apis/operator.tigera.io/v1/tigerastatuses`,
@@ -786,7 +871,7 @@ export const patchOperatorTigeraIoV1TigeraStatusStatus = (
 export type ListOperatorTigeraIoV1ApiServerApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ApiServerList
 export type ListOperatorTigeraIoV1ApiServerApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -835,7 +920,7 @@ export type CreateOperatorTigeraIoV1ApiServerApiResponse =
   | /** status 201 Created */ IoTigeraOperatorV1ApiServer
   | /** status 202 Accepted */ IoTigeraOperatorV1ApiServer
 export type CreateOperatorTigeraIoV1ApiServerApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -856,7 +941,7 @@ export type CreateOperatorTigeraIoV1ApiServerApiArg = {
 export type DeleteOperatorTigeraIoV1CollectionApiServerApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1CollectionApiServerApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -904,7 +989,7 @@ export type ReadOperatorTigeraIoV1ApiServerApiResponse =
 export type ReadOperatorTigeraIoV1ApiServerApiArg = {
   /** name of the APIServer */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -918,7 +1003,7 @@ export type ReplaceOperatorTigeraIoV1ApiServerApiResponse =
 export type ReplaceOperatorTigeraIoV1ApiServerApiArg = {
   /** name of the APIServer */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -943,7 +1028,7 @@ export type DeleteOperatorTigeraIoV1ApiServerApiResponse =
 export type DeleteOperatorTigeraIoV1ApiServerApiArg = {
   /** name of the APIServer */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -968,7 +1053,7 @@ export type PatchOperatorTigeraIoV1ApiServerApiResponse =
 export type PatchOperatorTigeraIoV1ApiServerApiArg = {
   /** name of the APIServer */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -997,7 +1082,7 @@ export type ReadOperatorTigeraIoV1ApiServerStatusApiResponse =
 export type ReadOperatorTigeraIoV1ApiServerStatusApiArg = {
   /** name of the APIServer */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1011,7 +1096,7 @@ export type ReplaceOperatorTigeraIoV1ApiServerStatusApiResponse =
 export type ReplaceOperatorTigeraIoV1ApiServerStatusApiArg = {
   /** name of the APIServer */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1034,7 +1119,7 @@ export type PatchOperatorTigeraIoV1ApiServerStatusApiResponse =
 export type PatchOperatorTigeraIoV1ApiServerStatusApiArg = {
   /** name of the APIServer */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1061,7 +1146,7 @@ export type PatchOperatorTigeraIoV1ApiServerStatusApiArg = {
 export type ListOperatorTigeraIoV1ImageSetApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1ImageSetList
 export type ListOperatorTigeraIoV1ImageSetApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1110,7 +1195,7 @@ export type CreateOperatorTigeraIoV1ImageSetApiResponse =
   | /** status 201 Created */ IoTigeraOperatorV1ImageSet
   | /** status 202 Accepted */ IoTigeraOperatorV1ImageSet
 export type CreateOperatorTigeraIoV1ImageSetApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1131,7 +1216,7 @@ export type CreateOperatorTigeraIoV1ImageSetApiArg = {
 export type DeleteOperatorTigeraIoV1CollectionImageSetApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1CollectionImageSetApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1179,7 +1264,7 @@ export type ReadOperatorTigeraIoV1ImageSetApiResponse =
 export type ReadOperatorTigeraIoV1ImageSetApiArg = {
   /** name of the ImageSet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1193,7 +1278,7 @@ export type ReplaceOperatorTigeraIoV1ImageSetApiResponse =
 export type ReplaceOperatorTigeraIoV1ImageSetApiArg = {
   /** name of the ImageSet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1218,7 +1303,7 @@ export type DeleteOperatorTigeraIoV1ImageSetApiResponse =
 export type DeleteOperatorTigeraIoV1ImageSetApiArg = {
   /** name of the ImageSet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1243,7 +1328,7 @@ export type PatchOperatorTigeraIoV1ImageSetApiResponse =
 export type PatchOperatorTigeraIoV1ImageSetApiArg = {
   /** name of the ImageSet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1272,7 +1357,7 @@ export type ReadOperatorTigeraIoV1ImageSetStatusApiResponse =
 export type ReadOperatorTigeraIoV1ImageSetStatusApiArg = {
   /** name of the ImageSet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1286,7 +1371,7 @@ export type ReplaceOperatorTigeraIoV1ImageSetStatusApiResponse =
 export type ReplaceOperatorTigeraIoV1ImageSetStatusApiArg = {
   /** name of the ImageSet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1309,7 +1394,7 @@ export type PatchOperatorTigeraIoV1ImageSetStatusApiResponse =
 export type PatchOperatorTigeraIoV1ImageSetStatusApiArg = {
   /** name of the ImageSet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1336,7 +1421,7 @@ export type PatchOperatorTigeraIoV1ImageSetStatusApiArg = {
 export type ListOperatorTigeraIoV1InstallationApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1InstallationList
 export type ListOperatorTigeraIoV1InstallationApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1385,7 +1470,7 @@ export type CreateOperatorTigeraIoV1InstallationApiResponse =
   | /** status 201 Created */ IoTigeraOperatorV1Installation
   | /** status 202 Accepted */ IoTigeraOperatorV1Installation
 export type CreateOperatorTigeraIoV1InstallationApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1406,7 +1491,7 @@ export type CreateOperatorTigeraIoV1InstallationApiArg = {
 export type DeleteOperatorTigeraIoV1CollectionInstallationApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1CollectionInstallationApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1454,7 +1539,7 @@ export type ReadOperatorTigeraIoV1InstallationApiResponse =
 export type ReadOperatorTigeraIoV1InstallationApiArg = {
   /** name of the Installation */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1468,7 +1553,7 @@ export type ReplaceOperatorTigeraIoV1InstallationApiResponse =
 export type ReplaceOperatorTigeraIoV1InstallationApiArg = {
   /** name of the Installation */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1493,7 +1578,7 @@ export type DeleteOperatorTigeraIoV1InstallationApiResponse =
 export type DeleteOperatorTigeraIoV1InstallationApiArg = {
   /** name of the Installation */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1518,7 +1603,7 @@ export type PatchOperatorTigeraIoV1InstallationApiResponse =
 export type PatchOperatorTigeraIoV1InstallationApiArg = {
   /** name of the Installation */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1547,7 +1632,7 @@ export type ReadOperatorTigeraIoV1InstallationStatusApiResponse =
 export type ReadOperatorTigeraIoV1InstallationStatusApiArg = {
   /** name of the Installation */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1561,7 +1646,7 @@ export type ReplaceOperatorTigeraIoV1InstallationStatusApiResponse =
 export type ReplaceOperatorTigeraIoV1InstallationStatusApiArg = {
   /** name of the Installation */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1584,7 +1669,7 @@ export type PatchOperatorTigeraIoV1InstallationStatusApiResponse =
 export type PatchOperatorTigeraIoV1InstallationStatusApiArg = {
   /** name of the Installation */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1611,7 +1696,7 @@ export type PatchOperatorTigeraIoV1InstallationStatusApiArg = {
 export type ListOperatorTigeraIoV1TigeraStatusApiResponse =
   /** status 200 OK */ IoTigeraOperatorV1TigeraStatusList
 export type ListOperatorTigeraIoV1TigeraStatusApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1660,7 +1745,7 @@ export type CreateOperatorTigeraIoV1TigeraStatusApiResponse =
   | /** status 201 Created */ IoTigeraOperatorV1TigeraStatus
   | /** status 202 Accepted */ IoTigeraOperatorV1TigeraStatus
 export type CreateOperatorTigeraIoV1TigeraStatusApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1681,7 +1766,7 @@ export type CreateOperatorTigeraIoV1TigeraStatusApiArg = {
 export type DeleteOperatorTigeraIoV1CollectionTigeraStatusApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteOperatorTigeraIoV1CollectionTigeraStatusApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1729,7 +1814,7 @@ export type ReadOperatorTigeraIoV1TigeraStatusApiResponse =
 export type ReadOperatorTigeraIoV1TigeraStatusApiArg = {
   /** name of the TigeraStatus */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1743,7 +1828,7 @@ export type ReplaceOperatorTigeraIoV1TigeraStatusApiResponse =
 export type ReplaceOperatorTigeraIoV1TigeraStatusApiArg = {
   /** name of the TigeraStatus */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1768,7 +1853,7 @@ export type DeleteOperatorTigeraIoV1TigeraStatusApiResponse =
 export type DeleteOperatorTigeraIoV1TigeraStatusApiArg = {
   /** name of the TigeraStatus */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1793,7 +1878,7 @@ export type PatchOperatorTigeraIoV1TigeraStatusApiResponse =
 export type PatchOperatorTigeraIoV1TigeraStatusApiArg = {
   /** name of the TigeraStatus */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1822,7 +1907,7 @@ export type ReadOperatorTigeraIoV1TigeraStatusStatusApiResponse =
 export type ReadOperatorTigeraIoV1TigeraStatusStatusApiArg = {
   /** name of the TigeraStatus */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1836,7 +1921,7 @@ export type ReplaceOperatorTigeraIoV1TigeraStatusStatusApiResponse =
 export type ReplaceOperatorTigeraIoV1TigeraStatusStatusApiArg = {
   /** name of the TigeraStatus */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1859,7 +1944,7 @@ export type PatchOperatorTigeraIoV1TigeraStatusStatusApiResponse =
 export type PatchOperatorTigeraIoV1TigeraStatusStatusApiArg = {
   /** name of the TigeraStatus */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listNetworkingIstioIoV1Beta1DestinationRuleForAllNamespaces = (
-  args: ListNetworkingIstioIoV1Beta1DestinationRuleForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listNetworkingIstioIoV1Beta1DestinationRuleForAllNamespaces(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1DestinationRuleForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1DestinationRuleForAllNamespacesApiResponse>
+export function listNetworkingIstioIoV1Beta1DestinationRuleForAllNamespaces(
+  args: ListNetworkingIstioIoV1Beta1DestinationRuleForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1DestinationRuleForAllNamespacesApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1DestinationRuleForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1DestinationRuleForAllNamespacesApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/destinationrules`,
@@ -23,10 +37,21 @@ export const listNetworkingIstioIoV1Beta1DestinationRuleForAllNamespaces = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1GatewayForAllNamespaces = (
-  args: ListNetworkingIstioIoV1Beta1GatewayForAllNamespacesApiArg,
+export function listNetworkingIstioIoV1Beta1GatewayForAllNamespaces(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1GatewayForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1GatewayForAllNamespacesApiResponse>
+export function listNetworkingIstioIoV1Beta1GatewayForAllNamespaces(
+  args: ListNetworkingIstioIoV1Beta1GatewayForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1GatewayForAllNamespacesApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1GatewayForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1GatewayForAllNamespacesApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/gateways`,
@@ -47,10 +72,21 @@ export const listNetworkingIstioIoV1Beta1GatewayForAllNamespaces = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1NamespacedDestinationRule = (
-  args: ListNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg,
+export function listNetworkingIstioIoV1Beta1NamespacedDestinationRule(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiResponse>
+export function listNetworkingIstioIoV1Beta1NamespacedDestinationRule(
+  args: ListNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1NamespacedDestinationRule(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/destinationrules`,
@@ -91,32 +127,42 @@ export const createNetworkingIstioIoV1Beta1NamespacedDestinationRule = (
     options
   )
 }
-export const deleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRule =
-  (
-    args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRuleApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRuleApiResponse>(
-      {
-        path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/destinationrules`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRule(
+  args: NoWatch<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRuleApiArg>,
+  options?: Options
+): Promise<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRuleApiResponse>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRule(
+  args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRuleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRuleApiResponse>
+): Promise<void>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRule(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRuleApiResponse>(
+    {
+      path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/destinationrules`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readNetworkingIstioIoV1Beta1NamespacedDestinationRule = (
   args: ReadNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg,
   options?: Options
@@ -244,10 +290,21 @@ export const patchNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatus = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1NamespacedGateway = (
-  args: ListNetworkingIstioIoV1Beta1NamespacedGatewayApiArg,
+export function listNetworkingIstioIoV1Beta1NamespacedGateway(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1NamespacedGatewayApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1NamespacedGatewayApiResponse>
+export function listNetworkingIstioIoV1Beta1NamespacedGateway(
+  args: ListNetworkingIstioIoV1Beta1NamespacedGatewayApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1NamespacedGatewayApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1NamespacedGateway(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1NamespacedGatewayApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/gateways`,
@@ -288,10 +345,21 @@ export const createNetworkingIstioIoV1Beta1NamespacedGateway = (
     options
   )
 }
-export const deleteNetworkingIstioIoV1Beta1CollectionNamespacedGateway = (
-  args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedGatewayApiArg,
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedGateway(
+  args: NoWatch<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedGatewayApiArg>,
   options?: Options
-) => {
+): Promise<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedGatewayApiResponse>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedGateway(
+  args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedGatewayApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedGatewayApiResponse>
+): Promise<void>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedGateway(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedGatewayApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/gateways`,
@@ -440,10 +508,21 @@ export const patchNetworkingIstioIoV1Beta1NamespacedGatewayStatus = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1NamespacedServiceEntry = (
-  args: ListNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg,
+export function listNetworkingIstioIoV1Beta1NamespacedServiceEntry(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1NamespacedServiceEntryApiResponse>
+export function listNetworkingIstioIoV1Beta1NamespacedServiceEntry(
+  args: ListNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1NamespacedServiceEntryApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1NamespacedServiceEntry(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1NamespacedServiceEntryApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/serviceentries`,
@@ -484,10 +563,21 @@ export const createNetworkingIstioIoV1Beta1NamespacedServiceEntry = (
     options
   )
 }
-export const deleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntry = (
-  args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntryApiArg,
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntry(
+  args: NoWatch<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntryApiArg>,
   options?: Options
-) => {
+): Promise<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntryApiResponse>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntry(
+  args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntryApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntryApiResponse>
+): Promise<void>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntry(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntryApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/serviceentries`,
@@ -636,10 +726,21 @@ export const patchNetworkingIstioIoV1Beta1NamespacedServiceEntryStatus = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1NamespacedSidecar = (
-  args: ListNetworkingIstioIoV1Beta1NamespacedSidecarApiArg,
+export function listNetworkingIstioIoV1Beta1NamespacedSidecar(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1NamespacedSidecarApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1NamespacedSidecarApiResponse>
+export function listNetworkingIstioIoV1Beta1NamespacedSidecar(
+  args: ListNetworkingIstioIoV1Beta1NamespacedSidecarApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1NamespacedSidecarApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1NamespacedSidecar(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1NamespacedSidecarApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/sidecars`,
@@ -680,10 +781,21 @@ export const createNetworkingIstioIoV1Beta1NamespacedSidecar = (
     options
   )
 }
-export const deleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecar = (
-  args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecarApiArg,
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecar(
+  args: NoWatch<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecarApiArg>,
   options?: Options
-) => {
+): Promise<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecarApiResponse>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecar(
+  args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecarApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecarApiResponse>
+): Promise<void>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecar(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecarApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/sidecars`,
@@ -832,10 +944,21 @@ export const patchNetworkingIstioIoV1Beta1NamespacedSidecarStatus = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1NamespacedVirtualService = (
-  args: ListNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg,
+export function listNetworkingIstioIoV1Beta1NamespacedVirtualService(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiResponse>
+export function listNetworkingIstioIoV1Beta1NamespacedVirtualService(
+  args: ListNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1NamespacedVirtualService(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/virtualservices`,
@@ -876,32 +999,42 @@ export const createNetworkingIstioIoV1Beta1NamespacedVirtualService = (
     options
   )
 }
-export const deleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualService =
-  (
-    args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualServiceApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualServiceApiResponse>(
-      {
-        path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/virtualservices`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualService(
+  args: NoWatch<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualServiceApiArg>,
+  options?: Options
+): Promise<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualServiceApiResponse>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualService(
+  args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualServiceApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualServiceApiResponse>
+): Promise<void>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualService(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualServiceApiResponse>(
+    {
+      path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/virtualservices`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readNetworkingIstioIoV1Beta1NamespacedVirtualService = (
   args: ReadNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg,
   options?: Options
@@ -1029,10 +1162,21 @@ export const patchNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatus = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1NamespacedWorkloadEntry = (
-  args: ListNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg,
+export function listNetworkingIstioIoV1Beta1NamespacedWorkloadEntry(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiResponse>
+export function listNetworkingIstioIoV1Beta1NamespacedWorkloadEntry(
+  args: ListNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1NamespacedWorkloadEntry(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/workloadentries`,
@@ -1073,10 +1217,21 @@ export const createNetworkingIstioIoV1Beta1NamespacedWorkloadEntry = (
     options
   )
 }
-export const deleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntry = (
-  args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntryApiArg,
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntry(
+  args: NoWatch<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntryApiArg>,
   options?: Options
-) => {
+): Promise<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntryApiResponse>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntry(
+  args: DeleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntryApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntryApiResponse>
+): Promise<void>
+export function deleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntry(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntryApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/namespaces/${args['namespace']}/workloadentries`,
@@ -1225,10 +1380,21 @@ export const patchNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatus = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1ServiceEntryForAllNamespaces = (
-  args: ListNetworkingIstioIoV1Beta1ServiceEntryForAllNamespacesApiArg,
+export function listNetworkingIstioIoV1Beta1ServiceEntryForAllNamespaces(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1ServiceEntryForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1ServiceEntryForAllNamespacesApiResponse>
+export function listNetworkingIstioIoV1Beta1ServiceEntryForAllNamespaces(
+  args: ListNetworkingIstioIoV1Beta1ServiceEntryForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1ServiceEntryForAllNamespacesApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1ServiceEntryForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1ServiceEntryForAllNamespacesApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/serviceentries`,
@@ -1249,10 +1415,21 @@ export const listNetworkingIstioIoV1Beta1ServiceEntryForAllNamespaces = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1SidecarForAllNamespaces = (
-  args: ListNetworkingIstioIoV1Beta1SidecarForAllNamespacesApiArg,
+export function listNetworkingIstioIoV1Beta1SidecarForAllNamespaces(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1SidecarForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1SidecarForAllNamespacesApiResponse>
+export function listNetworkingIstioIoV1Beta1SidecarForAllNamespaces(
+  args: ListNetworkingIstioIoV1Beta1SidecarForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1SidecarForAllNamespacesApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1SidecarForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1SidecarForAllNamespacesApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/sidecars`,
@@ -1273,10 +1450,21 @@ export const listNetworkingIstioIoV1Beta1SidecarForAllNamespaces = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1VirtualServiceForAllNamespaces = (
-  args: ListNetworkingIstioIoV1Beta1VirtualServiceForAllNamespacesApiArg,
+export function listNetworkingIstioIoV1Beta1VirtualServiceForAllNamespaces(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1VirtualServiceForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1VirtualServiceForAllNamespacesApiResponse>
+export function listNetworkingIstioIoV1Beta1VirtualServiceForAllNamespaces(
+  args: ListNetworkingIstioIoV1Beta1VirtualServiceForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1VirtualServiceForAllNamespacesApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1VirtualServiceForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1VirtualServiceForAllNamespacesApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/virtualservices`,
@@ -1297,10 +1485,21 @@ export const listNetworkingIstioIoV1Beta1VirtualServiceForAllNamespaces = (
     options
   )
 }
-export const listNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespaces = (
-  args: ListNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespacesApiArg,
+export function listNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespaces(
+  args: NoWatch<ListNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespacesApiResponse>
+export function listNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespaces(
+  args: ListNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespacesApiResponse>
+): Promise<void>
+export function listNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespacesApiResponse>(
     {
       path: `/apis/networking.istio.io/v1beta1/workloadentries`,
@@ -1339,7 +1538,7 @@ export type ListNetworkingIstioIoV1Beta1DestinationRuleForAllNamespacesApiArg =
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1385,7 +1584,7 @@ export type ListNetworkingIstioIoV1Beta1GatewayForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1419,7 +1618,7 @@ export type ListNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiResponse =
 export type ListNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1470,7 +1669,7 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiResponse =
 export type CreateNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1494,7 +1693,7 @@ export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedDestinationRuleApi
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -1544,7 +1743,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1560,7 +1759,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1587,7 +1786,7 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1614,7 +1813,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedDestinationRuleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1646,7 +1845,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1663,7 +1862,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatusApiArg
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1689,7 +1888,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedDestinationRuleStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1718,7 +1917,7 @@ export type ListNetworkingIstioIoV1Beta1NamespacedGatewayApiResponse =
 export type ListNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1769,7 +1968,7 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedGatewayApiResponse =
 export type CreateNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1792,7 +1991,7 @@ export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedGatewayApiResponse
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedGatewayApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1842,7 +2041,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1858,7 +2057,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1885,7 +2084,7 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1912,7 +2111,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedGatewayApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1943,7 +2142,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedGatewayStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1959,7 +2158,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedGatewayStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1984,7 +2183,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedGatewayStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2013,7 +2212,7 @@ export type ListNetworkingIstioIoV1Beta1NamespacedServiceEntryApiResponse =
 export type ListNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2064,7 +2263,7 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedServiceEntryApiResponse =
 export type CreateNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2088,7 +2287,7 @@ export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedServiceEntryApiArg
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -2138,7 +2337,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2154,7 +2353,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2181,7 +2380,7 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2208,7 +2407,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedServiceEntryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2239,7 +2438,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedServiceEntryStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2256,7 +2455,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedServiceEntryStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -2281,7 +2480,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedServiceEntryStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2310,7 +2509,7 @@ export type ListNetworkingIstioIoV1Beta1NamespacedSidecarApiResponse =
 export type ListNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2361,7 +2560,7 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedSidecarApiResponse =
 export type CreateNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2384,7 +2583,7 @@ export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecarApiResponse
 export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedSidecarApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2434,7 +2633,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2450,7 +2649,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2477,7 +2676,7 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2504,7 +2703,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedSidecarApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2535,7 +2734,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedSidecarStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2551,7 +2750,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedSidecarStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2576,7 +2775,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedSidecarStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2605,7 +2804,7 @@ export type ListNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiResponse =
 export type ListNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2656,7 +2855,7 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiResponse =
 export type CreateNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2680,7 +2879,7 @@ export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedVirtualServiceApiA
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -2730,7 +2929,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2746,7 +2945,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2773,7 +2972,7 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2800,7 +2999,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedVirtualServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2831,7 +3030,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2848,7 +3047,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatusApiArg 
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -2874,7 +3073,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedVirtualServiceStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -2903,7 +3102,7 @@ export type ListNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiResponse =
 export type ListNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2954,7 +3153,7 @@ export type CreateNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiResponse =
 export type CreateNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2978,7 +3177,7 @@ export type DeleteNetworkingIstioIoV1Beta1CollectionNamespacedWorkloadEntryApiAr
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -3028,7 +3227,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3044,7 +3243,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3071,7 +3270,7 @@ export type DeleteNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3098,7 +3297,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedWorkloadEntryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3129,7 +3328,7 @@ export type ReadNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3146,7 +3345,7 @@ export type ReplaceNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -3171,7 +3370,7 @@ export type PatchNetworkingIstioIoV1Beta1NamespacedWorkloadEntryStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3212,7 +3411,7 @@ export type ListNetworkingIstioIoV1Beta1ServiceEntryForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3258,7 +3457,7 @@ export type ListNetworkingIstioIoV1Beta1SidecarForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3304,7 +3503,7 @@ export type ListNetworkingIstioIoV1Beta1VirtualServiceForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3350,7 +3549,7 @@ export type ListNetworkingIstioIoV1Beta1WorkloadEntryForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

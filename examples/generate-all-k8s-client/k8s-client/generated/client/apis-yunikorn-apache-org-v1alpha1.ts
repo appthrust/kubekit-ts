@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listYunikornApacheOrgV1Alpha1ApplicationForAllNamespaces = (
-  args: ListYunikornApacheOrgV1Alpha1ApplicationForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listYunikornApacheOrgV1Alpha1ApplicationForAllNamespaces(
+  args: NoWatch<ListYunikornApacheOrgV1Alpha1ApplicationForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListYunikornApacheOrgV1Alpha1ApplicationForAllNamespacesApiResponse>
+export function listYunikornApacheOrgV1Alpha1ApplicationForAllNamespaces(
+  args: ListYunikornApacheOrgV1Alpha1ApplicationForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListYunikornApacheOrgV1Alpha1ApplicationForAllNamespacesApiResponse>
+): Promise<void>
+export function listYunikornApacheOrgV1Alpha1ApplicationForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListYunikornApacheOrgV1Alpha1ApplicationForAllNamespacesApiResponse>(
     {
       path: `/apis/yunikorn.apache.org/v1alpha1/applications`,
@@ -23,10 +37,21 @@ export const listYunikornApacheOrgV1Alpha1ApplicationForAllNamespaces = (
     options
   )
 }
-export const listYunikornApacheOrgV1Alpha1NamespacedApplication = (
-  args: ListYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg,
+export function listYunikornApacheOrgV1Alpha1NamespacedApplication(
+  args: NoWatch<ListYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg>,
   options?: Options
-) => {
+): Promise<ListYunikornApacheOrgV1Alpha1NamespacedApplicationApiResponse>
+export function listYunikornApacheOrgV1Alpha1NamespacedApplication(
+  args: ListYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListYunikornApacheOrgV1Alpha1NamespacedApplicationApiResponse>
+): Promise<void>
+export function listYunikornApacheOrgV1Alpha1NamespacedApplication(
+  args: any,
+  options: any
+): any {
   return apiClient<ListYunikornApacheOrgV1Alpha1NamespacedApplicationApiResponse>(
     {
       path: `/apis/yunikorn.apache.org/v1alpha1/namespaces/${args['namespace']}/applications`,
@@ -67,10 +92,21 @@ export const createYunikornApacheOrgV1Alpha1NamespacedApplication = (
     options
   )
 }
-export const deleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplication = (
-  args: DeleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplicationApiArg,
+export function deleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplication(
+  args: NoWatch<DeleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplicationApiArg>,
   options?: Options
-) => {
+): Promise<DeleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplicationApiResponse>
+export function deleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplication(
+  args: DeleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplicationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplicationApiResponse>
+): Promise<void>
+export function deleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplication(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplicationApiResponse>(
     {
       path: `/apis/yunikorn.apache.org/v1alpha1/namespaces/${args['namespace']}/applications`,
@@ -236,7 +272,7 @@ export type ListYunikornApacheOrgV1Alpha1ApplicationForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -270,7 +306,7 @@ export type ListYunikornApacheOrgV1Alpha1NamespacedApplicationApiResponse =
 export type ListYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -321,7 +357,7 @@ export type CreateYunikornApacheOrgV1Alpha1NamespacedApplicationApiResponse =
 export type CreateYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -345,7 +381,7 @@ export type DeleteYunikornApacheOrgV1Alpha1CollectionNamespacedApplicationApiArg
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -395,7 +431,7 @@ export type ReadYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -411,7 +447,7 @@ export type ReplaceYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -438,7 +474,7 @@ export type DeleteYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -465,7 +501,7 @@ export type PatchYunikornApacheOrgV1Alpha1NamespacedApplicationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -496,7 +532,7 @@ export type ReadYunikornApacheOrgV1Alpha1NamespacedApplicationStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -513,7 +549,7 @@ export type ReplaceYunikornApacheOrgV1Alpha1NamespacedApplicationStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -538,7 +574,7 @@ export type PatchYunikornApacheOrgV1Alpha1NamespacedApplicationStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

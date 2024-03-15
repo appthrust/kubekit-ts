@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listConfigGatekeeperShV1Alpha1ConfigForAllNamespaces = (
-  args: ListConfigGatekeeperShV1Alpha1ConfigForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listConfigGatekeeperShV1Alpha1ConfigForAllNamespaces(
+  args: NoWatch<ListConfigGatekeeperShV1Alpha1ConfigForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListConfigGatekeeperShV1Alpha1ConfigForAllNamespacesApiResponse>
+export function listConfigGatekeeperShV1Alpha1ConfigForAllNamespaces(
+  args: ListConfigGatekeeperShV1Alpha1ConfigForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListConfigGatekeeperShV1Alpha1ConfigForAllNamespacesApiResponse>
+): Promise<void>
+export function listConfigGatekeeperShV1Alpha1ConfigForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListConfigGatekeeperShV1Alpha1ConfigForAllNamespacesApiResponse>(
     {
       path: `/apis/config.gatekeeper.sh/v1alpha1/configs`,
@@ -23,10 +37,21 @@ export const listConfigGatekeeperShV1Alpha1ConfigForAllNamespaces = (
     options
   )
 }
-export const listConfigGatekeeperShV1Alpha1NamespacedConfig = (
-  args: ListConfigGatekeeperShV1Alpha1NamespacedConfigApiArg,
+export function listConfigGatekeeperShV1Alpha1NamespacedConfig(
+  args: NoWatch<ListConfigGatekeeperShV1Alpha1NamespacedConfigApiArg>,
   options?: Options
-) => {
+): Promise<ListConfigGatekeeperShV1Alpha1NamespacedConfigApiResponse>
+export function listConfigGatekeeperShV1Alpha1NamespacedConfig(
+  args: ListConfigGatekeeperShV1Alpha1NamespacedConfigApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListConfigGatekeeperShV1Alpha1NamespacedConfigApiResponse>
+): Promise<void>
+export function listConfigGatekeeperShV1Alpha1NamespacedConfig(
+  args: any,
+  options: any
+): any {
   return apiClient<ListConfigGatekeeperShV1Alpha1NamespacedConfigApiResponse>(
     {
       path: `/apis/config.gatekeeper.sh/v1alpha1/namespaces/${args['namespace']}/configs`,
@@ -67,10 +92,21 @@ export const createConfigGatekeeperShV1Alpha1NamespacedConfig = (
     options
   )
 }
-export const deleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfig = (
-  args: DeleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfigApiArg,
+export function deleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfig(
+  args: NoWatch<DeleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfigApiArg>,
   options?: Options
-) => {
+): Promise<DeleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfigApiResponse>
+export function deleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfig(
+  args: DeleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfigApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfigApiResponse>
+): Promise<void>
+export function deleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfig(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfigApiResponse>(
     {
       path: `/apis/config.gatekeeper.sh/v1alpha1/namespaces/${args['namespace']}/configs`,
@@ -183,7 +219,7 @@ export type ListConfigGatekeeperShV1Alpha1ConfigForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -217,7 +253,7 @@ export type ListConfigGatekeeperShV1Alpha1NamespacedConfigApiResponse =
 export type ListConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -268,7 +304,7 @@ export type CreateConfigGatekeeperShV1Alpha1NamespacedConfigApiResponse =
 export type CreateConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -291,7 +327,7 @@ export type DeleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfigApiRespons
 export type DeleteConfigGatekeeperShV1Alpha1CollectionNamespacedConfigApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -341,7 +377,7 @@ export type ReadConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -357,7 +393,7 @@ export type ReplaceConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -384,7 +420,7 @@ export type DeleteConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -411,7 +447,7 @@ export type PatchConfigGatekeeperShV1Alpha1NamespacedConfigApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listSparkoperatorV1Beta2NamespacedScheduledSparkApplication = (
-  args: ListSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listSparkoperatorV1Beta2NamespacedScheduledSparkApplication(
+  args: NoWatch<ListSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg>,
   options?: Options
-) => {
+): Promise<ListSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiResponse>
+export function listSparkoperatorV1Beta2NamespacedScheduledSparkApplication(
+  args: ListSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiResponse>
+): Promise<void>
+export function listSparkoperatorV1Beta2NamespacedScheduledSparkApplication(
+  args: any,
+  options: any
+): any {
   return apiClient<ListSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiResponse>(
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications`,
@@ -43,32 +57,42 @@ export const createSparkoperatorV1Beta2NamespacedScheduledSparkApplication = (
     options
   )
 }
-export const deleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplication =
-  (
-    args: DeleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplicationApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplicationApiResponse>(
-      {
-        path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplication(
+  args: NoWatch<DeleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplicationApiArg>,
+  options?: Options
+): Promise<DeleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplicationApiResponse>
+export function deleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplication(
+  args: DeleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplicationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplicationApiResponse>
+): Promise<void>
+export function deleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplication(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplicationApiResponse>(
+    {
+      path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/scheduledsparkapplications`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readSparkoperatorV1Beta2NamespacedScheduledSparkApplication = (
   args: ReadSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg,
   options?: Options
@@ -199,10 +223,21 @@ export const patchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatus 
       options
     )
   }
-export const listSparkoperatorV1Beta2NamespacedSparkApplication = (
-  args: ListSparkoperatorV1Beta2NamespacedSparkApplicationApiArg,
+export function listSparkoperatorV1Beta2NamespacedSparkApplication(
+  args: NoWatch<ListSparkoperatorV1Beta2NamespacedSparkApplicationApiArg>,
   options?: Options
-) => {
+): Promise<ListSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse>
+export function listSparkoperatorV1Beta2NamespacedSparkApplication(
+  args: ListSparkoperatorV1Beta2NamespacedSparkApplicationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse>
+): Promise<void>
+export function listSparkoperatorV1Beta2NamespacedSparkApplication(
+  args: any,
+  options: any
+): any {
   return apiClient<ListSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse>(
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/sparkapplications`,
@@ -243,10 +278,21 @@ export const createSparkoperatorV1Beta2NamespacedSparkApplication = (
     options
   )
 }
-export const deleteSparkoperatorV1Beta2CollectionNamespacedSparkApplication = (
-  args: DeleteSparkoperatorV1Beta2CollectionNamespacedSparkApplicationApiArg,
+export function deleteSparkoperatorV1Beta2CollectionNamespacedSparkApplication(
+  args: NoWatch<DeleteSparkoperatorV1Beta2CollectionNamespacedSparkApplicationApiArg>,
   options?: Options
-) => {
+): Promise<DeleteSparkoperatorV1Beta2CollectionNamespacedSparkApplicationApiResponse>
+export function deleteSparkoperatorV1Beta2CollectionNamespacedSparkApplication(
+  args: DeleteSparkoperatorV1Beta2CollectionNamespacedSparkApplicationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteSparkoperatorV1Beta2CollectionNamespacedSparkApplicationApiResponse>
+): Promise<void>
+export function deleteSparkoperatorV1Beta2CollectionNamespacedSparkApplication(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteSparkoperatorV1Beta2CollectionNamespacedSparkApplicationApiResponse>(
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/namespaces/${args['namespace']}/sparkapplications`,
@@ -395,35 +441,56 @@ export const patchSparkoperatorV1Beta2NamespacedSparkApplicationStatus = (
     options
   )
 }
-export const listSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespaces =
-  (
-    args: ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApiArg,
-    options?: Options
-  ) => {
-    return apiClient<ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApiResponse>(
-      {
-        path: `/apis/sparkoperator.k8s.io/v1beta2/scheduledsparkapplications`,
-        params: {
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          pretty: args.pretty,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
-      },
-      options
-    )
-  }
-export const listSparkoperatorV1Beta2SparkApplicationForAllNamespaces = (
-  args: ListSparkoperatorV1Beta2SparkApplicationForAllNamespacesApiArg,
+export function listSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespaces(
+  args: NoWatch<ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApiResponse>
+export function listSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespaces(
+  args: ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApiResponse>
+): Promise<void>
+export function listSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespaces(
+  args: any,
+  options: any
+): any {
+  return apiClient<ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApiResponse>(
+    {
+      path: `/apis/sparkoperator.k8s.io/v1beta2/scheduledsparkapplications`,
+      params: {
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        pretty: args.pretty,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
+      },
+    },
+    options
+  )
+}
+export function listSparkoperatorV1Beta2SparkApplicationForAllNamespaces(
+  args: NoWatch<ListSparkoperatorV1Beta2SparkApplicationForAllNamespacesApiArg>,
+  options?: Options
+): Promise<ListSparkoperatorV1Beta2SparkApplicationForAllNamespacesApiResponse>
+export function listSparkoperatorV1Beta2SparkApplicationForAllNamespaces(
+  args: ListSparkoperatorV1Beta2SparkApplicationForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListSparkoperatorV1Beta2SparkApplicationForAllNamespacesApiResponse>
+): Promise<void>
+export function listSparkoperatorV1Beta2SparkApplicationForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListSparkoperatorV1Beta2SparkApplicationForAllNamespacesApiResponse>(
     {
       path: `/apis/sparkoperator.k8s.io/v1beta2/sparkapplications`,
@@ -450,7 +517,7 @@ export type ListSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -502,7 +569,7 @@ export type CreateSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -526,7 +593,7 @@ export type DeleteSparkoperatorV1Beta2CollectionNamespacedScheduledSparkApplicat
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -577,7 +644,7 @@ export type ReadSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -594,7 +661,7 @@ export type ReplaceSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -622,7 +689,7 @@ export type DeleteSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg 
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -650,7 +717,7 @@ export type PatchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -682,7 +749,7 @@ export type ReadSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusApi
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -699,7 +766,7 @@ export type ReplaceSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatus
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -725,7 +792,7 @@ export type PatchSparkoperatorV1Beta2NamespacedScheduledSparkApplicationStatusAp
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -754,7 +821,7 @@ export type ListSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse =
 export type ListSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -805,7 +872,7 @@ export type CreateSparkoperatorV1Beta2NamespacedSparkApplicationApiResponse =
 export type CreateSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -829,7 +896,7 @@ export type DeleteSparkoperatorV1Beta2CollectionNamespacedSparkApplicationApiArg
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -879,7 +946,7 @@ export type ReadSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -895,7 +962,7 @@ export type ReplaceSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -922,7 +989,7 @@ export type DeleteSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -949,7 +1016,7 @@ export type PatchSparkoperatorV1Beta2NamespacedSparkApplicationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -980,7 +1047,7 @@ export type ReadSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -997,7 +1064,7 @@ export type ReplaceSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1022,7 +1089,7 @@ export type PatchSparkoperatorV1Beta2NamespacedSparkApplicationStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1064,7 +1131,7 @@ export type ListSparkoperatorV1Beta2ScheduledSparkApplicationForAllNamespacesApi
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1110,7 +1177,7 @@ export type ListSparkoperatorV1Beta2SparkApplicationForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

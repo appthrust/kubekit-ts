@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getAdmissionregistrationV1ApiResources = (
   args: GetAdmissionregistrationV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,21 @@ export const getAdmissionregistrationV1ApiResources = (
     options
   )
 }
-export const listAdmissionregistrationV1MutatingWebhookConfiguration = (
-  args: ListAdmissionregistrationV1MutatingWebhookConfigurationApiArg,
+export function listAdmissionregistrationV1MutatingWebhookConfiguration(
+  args: NoWatch<ListAdmissionregistrationV1MutatingWebhookConfigurationApiArg>,
   options?: Options
-) => {
+): Promise<ListAdmissionregistrationV1MutatingWebhookConfigurationApiResponse>
+export function listAdmissionregistrationV1MutatingWebhookConfiguration(
+  args: ListAdmissionregistrationV1MutatingWebhookConfigurationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAdmissionregistrationV1MutatingWebhookConfigurationApiResponse>
+): Promise<void>
+export function listAdmissionregistrationV1MutatingWebhookConfiguration(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAdmissionregistrationV1MutatingWebhookConfigurationApiResponse>(
     {
       path: `/apis/admissionregistration.k8s.io/v1/mutatingwebhookconfigurations`,
@@ -156,10 +170,21 @@ export const patchAdmissionregistrationV1MutatingWebhookConfiguration = (
     options
   )
 }
-export const listAdmissionregistrationV1ValidatingWebhookConfiguration = (
-  args: ListAdmissionregistrationV1ValidatingWebhookConfigurationApiArg,
+export function listAdmissionregistrationV1ValidatingWebhookConfiguration(
+  args: NoWatch<ListAdmissionregistrationV1ValidatingWebhookConfigurationApiArg>,
   options?: Options
-) => {
+): Promise<ListAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse>
+export function listAdmissionregistrationV1ValidatingWebhookConfiguration(
+  args: ListAdmissionregistrationV1ValidatingWebhookConfigurationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse>
+): Promise<void>
+export function listAdmissionregistrationV1ValidatingWebhookConfiguration(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse>(
     {
       path: `/apis/admissionregistration.k8s.io/v1/validatingwebhookconfigurations`,
@@ -304,10 +329,21 @@ export const patchAdmissionregistrationV1ValidatingWebhookConfiguration = (
     options
   )
 }
-export const watchAdmissionregistrationV1MutatingWebhookConfigurationList = (
-  args: WatchAdmissionregistrationV1MutatingWebhookConfigurationListApiArg,
+export function watchAdmissionregistrationV1MutatingWebhookConfigurationList(
+  args: NoWatch<WatchAdmissionregistrationV1MutatingWebhookConfigurationListApiArg>,
   options?: Options
-) => {
+): Promise<WatchAdmissionregistrationV1MutatingWebhookConfigurationListApiResponse>
+export function watchAdmissionregistrationV1MutatingWebhookConfigurationList(
+  args: WatchAdmissionregistrationV1MutatingWebhookConfigurationListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAdmissionregistrationV1MutatingWebhookConfigurationListApiResponse>
+): Promise<void>
+export function watchAdmissionregistrationV1MutatingWebhookConfigurationList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAdmissionregistrationV1MutatingWebhookConfigurationListApiResponse>(
     {
       path: `/apis/admissionregistration.k8s.io/v1/watch/mutatingwebhookconfigurations`,
@@ -328,10 +364,21 @@ export const watchAdmissionregistrationV1MutatingWebhookConfigurationList = (
     options
   )
 }
-export const watchAdmissionregistrationV1MutatingWebhookConfiguration = (
-  args: WatchAdmissionregistrationV1MutatingWebhookConfigurationApiArg,
+export function watchAdmissionregistrationV1MutatingWebhookConfiguration(
+  args: NoWatch<WatchAdmissionregistrationV1MutatingWebhookConfigurationApiArg>,
   options?: Options
-) => {
+): Promise<WatchAdmissionregistrationV1MutatingWebhookConfigurationApiResponse>
+export function watchAdmissionregistrationV1MutatingWebhookConfiguration(
+  args: WatchAdmissionregistrationV1MutatingWebhookConfigurationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAdmissionregistrationV1MutatingWebhookConfigurationApiResponse>
+): Promise<void>
+export function watchAdmissionregistrationV1MutatingWebhookConfiguration(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAdmissionregistrationV1MutatingWebhookConfigurationApiResponse>(
     {
       path: `/apis/admissionregistration.k8s.io/v1/watch/mutatingwebhookconfigurations/${args.name}`,
@@ -352,10 +399,21 @@ export const watchAdmissionregistrationV1MutatingWebhookConfiguration = (
     options
   )
 }
-export const watchAdmissionregistrationV1ValidatingWebhookConfigurationList = (
-  args: WatchAdmissionregistrationV1ValidatingWebhookConfigurationListApiArg,
+export function watchAdmissionregistrationV1ValidatingWebhookConfigurationList(
+  args: NoWatch<WatchAdmissionregistrationV1ValidatingWebhookConfigurationListApiArg>,
   options?: Options
-) => {
+): Promise<WatchAdmissionregistrationV1ValidatingWebhookConfigurationListApiResponse>
+export function watchAdmissionregistrationV1ValidatingWebhookConfigurationList(
+  args: WatchAdmissionregistrationV1ValidatingWebhookConfigurationListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAdmissionregistrationV1ValidatingWebhookConfigurationListApiResponse>
+): Promise<void>
+export function watchAdmissionregistrationV1ValidatingWebhookConfigurationList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAdmissionregistrationV1ValidatingWebhookConfigurationListApiResponse>(
     {
       path: `/apis/admissionregistration.k8s.io/v1/watch/validatingwebhookconfigurations`,
@@ -376,10 +434,21 @@ export const watchAdmissionregistrationV1ValidatingWebhookConfigurationList = (
     options
   )
 }
-export const watchAdmissionregistrationV1ValidatingWebhookConfiguration = (
-  args: WatchAdmissionregistrationV1ValidatingWebhookConfigurationApiArg,
+export function watchAdmissionregistrationV1ValidatingWebhookConfiguration(
+  args: NoWatch<WatchAdmissionregistrationV1ValidatingWebhookConfigurationApiArg>,
   options?: Options
-) => {
+): Promise<WatchAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse>
+export function watchAdmissionregistrationV1ValidatingWebhookConfiguration(
+  args: WatchAdmissionregistrationV1ValidatingWebhookConfigurationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse>
+): Promise<void>
+export function watchAdmissionregistrationV1ValidatingWebhookConfiguration(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse>(
     {
       path: `/apis/admissionregistration.k8s.io/v1/watch/validatingwebhookconfigurations/${args.name}`,
@@ -406,7 +475,7 @@ export type GetAdmissionregistrationV1ApiResourcesApiArg = void
 export type ListAdmissionregistrationV1MutatingWebhookConfigurationApiResponse =
   /** status 200 OK */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfigurationList
 export type ListAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -455,7 +524,7 @@ export type CreateAdmissionregistrationV1MutatingWebhookConfigurationApiResponse
   | /** status 201 Created */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
   | /** status 202 Accepted */ IoK8SApiAdmissionregistrationV1MutatingWebhookConfiguration
 export type CreateAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -471,7 +540,7 @@ export type DeleteAdmissionregistrationV1CollectionMutatingWebhookConfigurationA
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAdmissionregistrationV1CollectionMutatingWebhookConfigurationApiArg =
   {
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -526,7 +595,7 @@ export type ReadAdmissionregistrationV1MutatingWebhookConfigurationApiResponse =
 export type ReadAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
   /** name of the MutatingWebhookConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAdmissionregistrationV1MutatingWebhookConfigurationApiResponse =
@@ -536,7 +605,7 @@ export type ReplaceAdmissionregistrationV1MutatingWebhookConfigurationApiRespons
 export type ReplaceAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
   /** name of the MutatingWebhookConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -555,7 +624,7 @@ export type DeleteAdmissionregistrationV1MutatingWebhookConfigurationApiResponse
 export type DeleteAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
   /** name of the MutatingWebhookConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -576,7 +645,7 @@ export type PatchAdmissionregistrationV1MutatingWebhookConfigurationApiResponse 
 export type PatchAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
   /** name of the MutatingWebhookConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -607,7 +676,7 @@ export type PatchAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
 export type ListAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse =
   /** status 200 OK */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfigurationList
 export type ListAdmissionregistrationV1ValidatingWebhookConfigurationApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -657,7 +726,7 @@ export type CreateAdmissionregistrationV1ValidatingWebhookConfigurationApiRespon
   | /** status 202 Accepted */ IoK8SApiAdmissionregistrationV1ValidatingWebhookConfiguration
 export type CreateAdmissionregistrationV1ValidatingWebhookConfigurationApiArg =
   {
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -673,7 +742,7 @@ export type DeleteAdmissionregistrationV1CollectionValidatingWebhookConfiguratio
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteAdmissionregistrationV1CollectionValidatingWebhookConfigurationApiArg =
   {
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -728,7 +797,7 @@ export type ReadAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse
 export type ReadAdmissionregistrationV1ValidatingWebhookConfigurationApiArg = {
   /** name of the ValidatingWebhookConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAdmissionregistrationV1ValidatingWebhookConfigurationApiResponse =
@@ -739,7 +808,7 @@ export type ReplaceAdmissionregistrationV1ValidatingWebhookConfigurationApiArg =
   {
     /** name of the ValidatingWebhookConfiguration */
     name: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -759,7 +828,7 @@ export type DeleteAdmissionregistrationV1ValidatingWebhookConfigurationApiArg =
   {
     /** name of the ValidatingWebhookConfiguration */
     name: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -780,7 +849,7 @@ export type PatchAdmissionregistrationV1ValidatingWebhookConfigurationApiRespons
 export type PatchAdmissionregistrationV1ValidatingWebhookConfigurationApiArg = {
   /** name of the ValidatingWebhookConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -826,7 +895,7 @@ export type WatchAdmissionregistrationV1MutatingWebhookConfigurationListApiArg =
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -874,7 +943,7 @@ export type WatchAdmissionregistrationV1MutatingWebhookConfigurationApiArg = {
   limit?: number
   /** name of the MutatingWebhookConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -921,7 +990,7 @@ export type WatchAdmissionregistrationV1ValidatingWebhookConfigurationListApiArg
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -969,7 +1038,7 @@ export type WatchAdmissionregistrationV1ValidatingWebhookConfigurationApiArg = {
   limit?: number
   /** name of the ValidatingWebhookConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

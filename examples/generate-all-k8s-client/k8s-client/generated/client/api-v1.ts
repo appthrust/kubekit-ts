@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getCoreV1ApiResources = (
   args: GetCoreV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,17 @@ export const getCoreV1ApiResources = (
     options
   )
 }
-export const listCoreV1ComponentStatus = (
-  args: ListCoreV1ComponentStatusApiArg,
+export function listCoreV1ComponentStatus(
+  args: NoWatch<ListCoreV1ComponentStatusApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1ComponentStatusApiResponse>
+export function listCoreV1ComponentStatus(
+  args: ListCoreV1ComponentStatusApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1ComponentStatusApiResponse>
+): Promise<void>
+export function listCoreV1ComponentStatus(args: any, options: any): any {
   return apiClient<ListCoreV1ComponentStatusApiResponse>(
     {
       path: `/api/v1/componentstatuses`,
@@ -44,10 +54,21 @@ export const readCoreV1ComponentStatus = (
     options
   )
 }
-export const listCoreV1ConfigMapForAllNamespaces = (
-  args: ListCoreV1ConfigMapForAllNamespacesApiArg,
+export function listCoreV1ConfigMapForAllNamespaces(
+  args: NoWatch<ListCoreV1ConfigMapForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1ConfigMapForAllNamespacesApiResponse>
+export function listCoreV1ConfigMapForAllNamespaces(
+  args: ListCoreV1ConfigMapForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1ConfigMapForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1ConfigMapForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1ConfigMapForAllNamespacesApiResponse>(
     {
       path: `/api/v1/configmaps`,
@@ -68,10 +89,21 @@ export const listCoreV1ConfigMapForAllNamespaces = (
     options
   )
 }
-export const listCoreV1EndpointsForAllNamespaces = (
-  args: ListCoreV1EndpointsForAllNamespacesApiArg,
+export function listCoreV1EndpointsForAllNamespaces(
+  args: NoWatch<ListCoreV1EndpointsForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1EndpointsForAllNamespacesApiResponse>
+export function listCoreV1EndpointsForAllNamespaces(
+  args: ListCoreV1EndpointsForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1EndpointsForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1EndpointsForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1EndpointsForAllNamespacesApiResponse>(
     {
       path: `/api/v1/endpoints`,
@@ -92,10 +124,18 @@ export const listCoreV1EndpointsForAllNamespaces = (
     options
   )
 }
-export const listCoreV1EventForAllNamespaces = (
-  args: ListCoreV1EventForAllNamespacesApiArg,
+export function listCoreV1EventForAllNamespaces(
+  args: NoWatch<ListCoreV1EventForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1EventForAllNamespacesApiResponse>
+export function listCoreV1EventForAllNamespaces(
+  args: ListCoreV1EventForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1EventForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1EventForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1EventForAllNamespacesApiResponse>(
     {
       path: `/api/v1/events`,
@@ -116,10 +156,21 @@ export const listCoreV1EventForAllNamespaces = (
     options
   )
 }
-export const listCoreV1LimitRangeForAllNamespaces = (
-  args: ListCoreV1LimitRangeForAllNamespacesApiArg,
+export function listCoreV1LimitRangeForAllNamespaces(
+  args: NoWatch<ListCoreV1LimitRangeForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1LimitRangeForAllNamespacesApiResponse>
+export function listCoreV1LimitRangeForAllNamespaces(
+  args: ListCoreV1LimitRangeForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1LimitRangeForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1LimitRangeForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1LimitRangeForAllNamespacesApiResponse>(
     {
       path: `/api/v1/limitranges`,
@@ -140,10 +191,17 @@ export const listCoreV1LimitRangeForAllNamespaces = (
     options
   )
 }
-export const listCoreV1Namespace = (
-  args: ListCoreV1NamespaceApiArg,
+export function listCoreV1Namespace(
+  args: NoWatch<ListCoreV1NamespaceApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespaceApiResponse>
+export function listCoreV1Namespace(
+  args: ListCoreV1NamespaceApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1NamespaceApiResponse>
+): Promise<void>
+export function listCoreV1Namespace(args: any, options: any): any {
   return apiClient<ListCoreV1NamespaceApiResponse>(
     {
       path: `/api/v1/namespaces`,
@@ -204,10 +262,17 @@ export const createCoreV1NamespacedBinding = (
     options
   )
 }
-export const listCoreV1NamespacedConfigMap = (
-  args: ListCoreV1NamespacedConfigMapApiArg,
+export function listCoreV1NamespacedConfigMap(
+  args: NoWatch<ListCoreV1NamespacedConfigMapApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedConfigMapApiResponse>
+export function listCoreV1NamespacedConfigMap(
+  args: ListCoreV1NamespacedConfigMapApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1NamespacedConfigMapApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedConfigMap(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedConfigMapApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/configmaps`,
@@ -351,10 +416,17 @@ export const patchCoreV1NamespacedConfigMap = (
     options
   )
 }
-export const listCoreV1NamespacedEndpoints = (
-  args: ListCoreV1NamespacedEndpointsApiArg,
+export function listCoreV1NamespacedEndpoints(
+  args: NoWatch<ListCoreV1NamespacedEndpointsApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedEndpointsApiResponse>
+export function listCoreV1NamespacedEndpoints(
+  args: ListCoreV1NamespacedEndpointsApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1NamespacedEndpointsApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedEndpoints(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedEndpointsApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/endpoints`,
@@ -498,10 +570,17 @@ export const patchCoreV1NamespacedEndpoints = (
     options
   )
 }
-export const listCoreV1NamespacedEvent = (
-  args: ListCoreV1NamespacedEventApiArg,
+export function listCoreV1NamespacedEvent(
+  args: NoWatch<ListCoreV1NamespacedEventApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedEventApiResponse>
+export function listCoreV1NamespacedEvent(
+  args: ListCoreV1NamespacedEventApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1NamespacedEventApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedEvent(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedEventApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/events`,
@@ -645,10 +724,18 @@ export const patchCoreV1NamespacedEvent = (
     options
   )
 }
-export const listCoreV1NamespacedLimitRange = (
-  args: ListCoreV1NamespacedLimitRangeApiArg,
+export function listCoreV1NamespacedLimitRange(
+  args: NoWatch<ListCoreV1NamespacedLimitRangeApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedLimitRangeApiResponse>
+export function listCoreV1NamespacedLimitRange(
+  args: ListCoreV1NamespacedLimitRangeApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1NamespacedLimitRangeApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedLimitRange(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedLimitRangeApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/limitranges`,
@@ -792,10 +879,21 @@ export const patchCoreV1NamespacedLimitRange = (
     options
   )
 }
-export const listCoreV1NamespacedPersistentVolumeClaim = (
-  args: ListCoreV1NamespacedPersistentVolumeClaimApiArg,
+export function listCoreV1NamespacedPersistentVolumeClaim(
+  args: NoWatch<ListCoreV1NamespacedPersistentVolumeClaimApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>
+export function listCoreV1NamespacedPersistentVolumeClaim(
+  args: ListCoreV1NamespacedPersistentVolumeClaimApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedPersistentVolumeClaim(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims`,
@@ -992,10 +1090,17 @@ export const patchCoreV1NamespacedPersistentVolumeClaimStatus = (
     options
   )
 }
-export const listCoreV1NamespacedPod = (
-  args: ListCoreV1NamespacedPodApiArg,
+export function listCoreV1NamespacedPod(
+  args: NoWatch<ListCoreV1NamespacedPodApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedPodApiResponse>
+export function listCoreV1NamespacedPod(
+  args: ListCoreV1NamespacedPodApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1NamespacedPodApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedPod(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedPodApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods`,
@@ -1588,10 +1693,18 @@ export const patchCoreV1NamespacedPodStatus = (
     options
   )
 }
-export const listCoreV1NamespacedPodTemplate = (
-  args: ListCoreV1NamespacedPodTemplateApiArg,
+export function listCoreV1NamespacedPodTemplate(
+  args: NoWatch<ListCoreV1NamespacedPodTemplateApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedPodTemplateApiResponse>
+export function listCoreV1NamespacedPodTemplate(
+  args: ListCoreV1NamespacedPodTemplateApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1NamespacedPodTemplateApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedPodTemplate(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedPodTemplateApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/podtemplates`,
@@ -1735,10 +1848,21 @@ export const patchCoreV1NamespacedPodTemplate = (
     options
   )
 }
-export const listCoreV1NamespacedReplicationController = (
-  args: ListCoreV1NamespacedReplicationControllerApiArg,
+export function listCoreV1NamespacedReplicationController(
+  args: NoWatch<ListCoreV1NamespacedReplicationControllerApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedReplicationControllerApiResponse>
+export function listCoreV1NamespacedReplicationController(
+  args: ListCoreV1NamespacedReplicationControllerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1NamespacedReplicationControllerApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedReplicationController(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1NamespacedReplicationControllerApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers`,
@@ -1988,10 +2112,21 @@ export const patchCoreV1NamespacedReplicationControllerStatus = (
     options
   )
 }
-export const listCoreV1NamespacedResourceQuota = (
-  args: ListCoreV1NamespacedResourceQuotaApiArg,
+export function listCoreV1NamespacedResourceQuota(
+  args: NoWatch<ListCoreV1NamespacedResourceQuotaApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedResourceQuotaApiResponse>
+export function listCoreV1NamespacedResourceQuota(
+  args: ListCoreV1NamespacedResourceQuotaApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1NamespacedResourceQuotaApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedResourceQuota(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1NamespacedResourceQuotaApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas`,
@@ -2188,10 +2323,17 @@ export const patchCoreV1NamespacedResourceQuotaStatus = (
     options
   )
 }
-export const listCoreV1NamespacedSecret = (
-  args: ListCoreV1NamespacedSecretApiArg,
+export function listCoreV1NamespacedSecret(
+  args: NoWatch<ListCoreV1NamespacedSecretApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedSecretApiResponse>
+export function listCoreV1NamespacedSecret(
+  args: ListCoreV1NamespacedSecretApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1NamespacedSecretApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedSecret(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedSecretApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/secrets`,
@@ -2335,10 +2477,21 @@ export const patchCoreV1NamespacedSecret = (
     options
   )
 }
-export const listCoreV1NamespacedServiceAccount = (
-  args: ListCoreV1NamespacedServiceAccountApiArg,
+export function listCoreV1NamespacedServiceAccount(
+  args: NoWatch<ListCoreV1NamespacedServiceAccountApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedServiceAccountApiResponse>
+export function listCoreV1NamespacedServiceAccount(
+  args: ListCoreV1NamespacedServiceAccountApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1NamespacedServiceAccountApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedServiceAccount(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1NamespacedServiceAccountApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/serviceaccounts`,
@@ -2502,10 +2655,17 @@ export const createCoreV1NamespacedServiceAccountToken = (
     options
   )
 }
-export const listCoreV1NamespacedService = (
-  args: ListCoreV1NamespacedServiceApiArg,
+export function listCoreV1NamespacedService(
+  args: NoWatch<ListCoreV1NamespacedServiceApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NamespacedServiceApiResponse>
+export function listCoreV1NamespacedService(
+  args: ListCoreV1NamespacedServiceApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1NamespacedServiceApiResponse>
+): Promise<void>
+export function listCoreV1NamespacedService(args: any, options: any): any {
   return apiClient<ListCoreV1NamespacedServiceApiResponse>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/services`,
@@ -3029,10 +3189,17 @@ export const patchCoreV1NamespaceStatus = (
     options
   )
 }
-export const listCoreV1Node = (
-  args: ListCoreV1NodeApiArg,
+export function listCoreV1Node(
+  args: NoWatch<ListCoreV1NodeApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1NodeApiResponse>
+export function listCoreV1Node(
+  args: ListCoreV1NodeApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1NodeApiResponse>
+): Promise<void>
+export function listCoreV1Node(args: any, options: any): any {
   return apiClient<ListCoreV1NodeApiResponse>(
     {
       path: `/api/v1/nodes`,
@@ -3403,10 +3570,21 @@ export const patchCoreV1NodeStatus = (
     options
   )
 }
-export const listCoreV1PersistentVolumeClaimForAllNamespaces = (
-  args: ListCoreV1PersistentVolumeClaimForAllNamespacesApiArg,
+export function listCoreV1PersistentVolumeClaimForAllNamespaces(
+  args: NoWatch<ListCoreV1PersistentVolumeClaimForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>
+export function listCoreV1PersistentVolumeClaimForAllNamespaces(
+  args: ListCoreV1PersistentVolumeClaimForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1PersistentVolumeClaimForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>(
     {
       path: `/api/v1/persistentvolumeclaims`,
@@ -3427,10 +3605,17 @@ export const listCoreV1PersistentVolumeClaimForAllNamespaces = (
     options
   )
 }
-export const listCoreV1PersistentVolume = (
-  args: ListCoreV1PersistentVolumeApiArg,
+export function listCoreV1PersistentVolume(
+  args: NoWatch<ListCoreV1PersistentVolumeApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1PersistentVolumeApiResponse>
+export function listCoreV1PersistentVolume(
+  args: ListCoreV1PersistentVolumeApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1PersistentVolumeApiResponse>
+): Promise<void>
+export function listCoreV1PersistentVolume(args: any, options: any): any {
   return apiClient<ListCoreV1PersistentVolumeApiResponse>(
     {
       path: `/api/v1/persistentvolumes`,
@@ -3627,10 +3812,17 @@ export const patchCoreV1PersistentVolumeStatus = (
     options
   )
 }
-export const listCoreV1PodForAllNamespaces = (
-  args: ListCoreV1PodForAllNamespacesApiArg,
+export function listCoreV1PodForAllNamespaces(
+  args: NoWatch<ListCoreV1PodForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1PodForAllNamespacesApiResponse>
+export function listCoreV1PodForAllNamespaces(
+  args: ListCoreV1PodForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListCoreV1PodForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1PodForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1PodForAllNamespacesApiResponse>(
     {
       path: `/api/v1/pods`,
@@ -3651,10 +3843,21 @@ export const listCoreV1PodForAllNamespaces = (
     options
   )
 }
-export const listCoreV1PodTemplateForAllNamespaces = (
-  args: ListCoreV1PodTemplateForAllNamespacesApiArg,
+export function listCoreV1PodTemplateForAllNamespaces(
+  args: NoWatch<ListCoreV1PodTemplateForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1PodTemplateForAllNamespacesApiResponse>
+export function listCoreV1PodTemplateForAllNamespaces(
+  args: ListCoreV1PodTemplateForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1PodTemplateForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1PodTemplateForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1PodTemplateForAllNamespacesApiResponse>(
     {
       path: `/api/v1/podtemplates`,
@@ -3675,10 +3878,21 @@ export const listCoreV1PodTemplateForAllNamespaces = (
     options
   )
 }
-export const listCoreV1ReplicationControllerForAllNamespaces = (
-  args: ListCoreV1ReplicationControllerForAllNamespacesApiArg,
+export function listCoreV1ReplicationControllerForAllNamespaces(
+  args: NoWatch<ListCoreV1ReplicationControllerForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>
+export function listCoreV1ReplicationControllerForAllNamespaces(
+  args: ListCoreV1ReplicationControllerForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1ReplicationControllerForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>(
     {
       path: `/api/v1/replicationcontrollers`,
@@ -3699,10 +3913,21 @@ export const listCoreV1ReplicationControllerForAllNamespaces = (
     options
   )
 }
-export const listCoreV1ResourceQuotaForAllNamespaces = (
-  args: ListCoreV1ResourceQuotaForAllNamespacesApiArg,
+export function listCoreV1ResourceQuotaForAllNamespaces(
+  args: NoWatch<ListCoreV1ResourceQuotaForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>
+export function listCoreV1ResourceQuotaForAllNamespaces(
+  args: ListCoreV1ResourceQuotaForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1ResourceQuotaForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>(
     {
       path: `/api/v1/resourcequotas`,
@@ -3723,10 +3948,18 @@ export const listCoreV1ResourceQuotaForAllNamespaces = (
     options
   )
 }
-export const listCoreV1SecretForAllNamespaces = (
-  args: ListCoreV1SecretForAllNamespacesApiArg,
+export function listCoreV1SecretForAllNamespaces(
+  args: NoWatch<ListCoreV1SecretForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1SecretForAllNamespacesApiResponse>
+export function listCoreV1SecretForAllNamespaces(
+  args: ListCoreV1SecretForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1SecretForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1SecretForAllNamespaces(args: any, options: any): any {
   return apiClient<ListCoreV1SecretForAllNamespacesApiResponse>(
     {
       path: `/api/v1/secrets`,
@@ -3747,10 +3980,21 @@ export const listCoreV1SecretForAllNamespaces = (
     options
   )
 }
-export const listCoreV1ServiceAccountForAllNamespaces = (
-  args: ListCoreV1ServiceAccountForAllNamespacesApiArg,
+export function listCoreV1ServiceAccountForAllNamespaces(
+  args: NoWatch<ListCoreV1ServiceAccountForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1ServiceAccountForAllNamespacesApiResponse>
+export function listCoreV1ServiceAccountForAllNamespaces(
+  args: ListCoreV1ServiceAccountForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1ServiceAccountForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1ServiceAccountForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1ServiceAccountForAllNamespacesApiResponse>(
     {
       path: `/api/v1/serviceaccounts`,
@@ -3771,10 +4015,21 @@ export const listCoreV1ServiceAccountForAllNamespaces = (
     options
   )
 }
-export const listCoreV1ServiceForAllNamespaces = (
-  args: ListCoreV1ServiceForAllNamespacesApiArg,
+export function listCoreV1ServiceForAllNamespaces(
+  args: NoWatch<ListCoreV1ServiceForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreV1ServiceForAllNamespacesApiResponse>
+export function listCoreV1ServiceForAllNamespaces(
+  args: ListCoreV1ServiceForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreV1ServiceForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreV1ServiceForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreV1ServiceForAllNamespacesApiResponse>(
     {
       path: `/api/v1/services`,
@@ -3795,10 +4050,21 @@ export const listCoreV1ServiceForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1ConfigMapListForAllNamespaces = (
-  args: WatchCoreV1ConfigMapListForAllNamespacesApiArg,
+export function watchCoreV1ConfigMapListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ConfigMapListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>
+export function watchCoreV1ConfigMapListForAllNamespaces(
+  args: WatchCoreV1ConfigMapListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1ConfigMapListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/configmaps`,
@@ -3819,10 +4085,21 @@ export const watchCoreV1ConfigMapListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1EndpointsListForAllNamespaces = (
-  args: WatchCoreV1EndpointsListForAllNamespacesApiArg,
+export function watchCoreV1EndpointsListForAllNamespaces(
+  args: NoWatch<WatchCoreV1EndpointsListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1EndpointsListForAllNamespacesApiResponse>
+export function watchCoreV1EndpointsListForAllNamespaces(
+  args: WatchCoreV1EndpointsListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1EndpointsListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1EndpointsListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1EndpointsListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/endpoints`,
@@ -3843,10 +4120,21 @@ export const watchCoreV1EndpointsListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1EventListForAllNamespaces = (
-  args: WatchCoreV1EventListForAllNamespacesApiArg,
+export function watchCoreV1EventListForAllNamespaces(
+  args: NoWatch<WatchCoreV1EventListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1EventListForAllNamespacesApiResponse>
+export function watchCoreV1EventListForAllNamespaces(
+  args: WatchCoreV1EventListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1EventListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1EventListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1EventListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/events`,
@@ -3867,10 +4155,21 @@ export const watchCoreV1EventListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1LimitRangeListForAllNamespaces = (
-  args: WatchCoreV1LimitRangeListForAllNamespacesApiArg,
+export function watchCoreV1LimitRangeListForAllNamespaces(
+  args: NoWatch<WatchCoreV1LimitRangeListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>
+export function watchCoreV1LimitRangeListForAllNamespaces(
+  args: WatchCoreV1LimitRangeListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1LimitRangeListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/limitranges`,
@@ -3891,10 +4190,17 @@ export const watchCoreV1LimitRangeListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1NamespaceList = (
-  args: WatchCoreV1NamespaceListApiArg,
+export function watchCoreV1NamespaceList(
+  args: NoWatch<WatchCoreV1NamespaceListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespaceListApiResponse>
+export function watchCoreV1NamespaceList(
+  args: WatchCoreV1NamespaceListApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchCoreV1NamespaceListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespaceList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespaceListApiResponse>(
     {
       path: `/api/v1/watch/namespaces`,
@@ -3915,10 +4221,21 @@ export const watchCoreV1NamespaceList = (
     options
   )
 }
-export const watchCoreV1NamespacedConfigMapList = (
-  args: WatchCoreV1NamespacedConfigMapListApiArg,
+export function watchCoreV1NamespacedConfigMapList(
+  args: NoWatch<WatchCoreV1NamespacedConfigMapListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedConfigMapListApiResponse>
+export function watchCoreV1NamespacedConfigMapList(
+  args: WatchCoreV1NamespacedConfigMapListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedConfigMapListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedConfigMapList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedConfigMapListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/configmaps`,
@@ -3939,10 +4256,18 @@ export const watchCoreV1NamespacedConfigMapList = (
     options
   )
 }
-export const watchCoreV1NamespacedConfigMap = (
-  args: WatchCoreV1NamespacedConfigMapApiArg,
+export function watchCoreV1NamespacedConfigMap(
+  args: NoWatch<WatchCoreV1NamespacedConfigMapApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedConfigMapApiResponse>
+export function watchCoreV1NamespacedConfigMap(
+  args: WatchCoreV1NamespacedConfigMapApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedConfigMapApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedConfigMap(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedConfigMapApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/configmaps/${args.name}`,
@@ -3963,10 +4288,21 @@ export const watchCoreV1NamespacedConfigMap = (
     options
   )
 }
-export const watchCoreV1NamespacedEndpointsList = (
-  args: WatchCoreV1NamespacedEndpointsListApiArg,
+export function watchCoreV1NamespacedEndpointsList(
+  args: NoWatch<WatchCoreV1NamespacedEndpointsListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedEndpointsListApiResponse>
+export function watchCoreV1NamespacedEndpointsList(
+  args: WatchCoreV1NamespacedEndpointsListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedEndpointsListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedEndpointsList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedEndpointsListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/endpoints`,
@@ -3987,10 +4323,18 @@ export const watchCoreV1NamespacedEndpointsList = (
     options
   )
 }
-export const watchCoreV1NamespacedEndpoints = (
-  args: WatchCoreV1NamespacedEndpointsApiArg,
+export function watchCoreV1NamespacedEndpoints(
+  args: NoWatch<WatchCoreV1NamespacedEndpointsApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedEndpointsApiResponse>
+export function watchCoreV1NamespacedEndpoints(
+  args: WatchCoreV1NamespacedEndpointsApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedEndpointsApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedEndpoints(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEndpointsApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/endpoints/${args.name}`,
@@ -4011,10 +4355,18 @@ export const watchCoreV1NamespacedEndpoints = (
     options
   )
 }
-export const watchCoreV1NamespacedEventList = (
-  args: WatchCoreV1NamespacedEventListApiArg,
+export function watchCoreV1NamespacedEventList(
+  args: NoWatch<WatchCoreV1NamespacedEventListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedEventListApiResponse>
+export function watchCoreV1NamespacedEventList(
+  args: WatchCoreV1NamespacedEventListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedEventListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedEventList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEventListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/events`,
@@ -4035,10 +4387,17 @@ export const watchCoreV1NamespacedEventList = (
     options
   )
 }
-export const watchCoreV1NamespacedEvent = (
-  args: WatchCoreV1NamespacedEventApiArg,
+export function watchCoreV1NamespacedEvent(
+  args: NoWatch<WatchCoreV1NamespacedEventApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedEventApiResponse>
+export function watchCoreV1NamespacedEvent(
+  args: WatchCoreV1NamespacedEventApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchCoreV1NamespacedEventApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedEvent(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedEventApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/events/${args.name}`,
@@ -4059,10 +4418,21 @@ export const watchCoreV1NamespacedEvent = (
     options
   )
 }
-export const watchCoreV1NamespacedLimitRangeList = (
-  args: WatchCoreV1NamespacedLimitRangeListApiArg,
+export function watchCoreV1NamespacedLimitRangeList(
+  args: NoWatch<WatchCoreV1NamespacedLimitRangeListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedLimitRangeListApiResponse>
+export function watchCoreV1NamespacedLimitRangeList(
+  args: WatchCoreV1NamespacedLimitRangeListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedLimitRangeListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedLimitRangeList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedLimitRangeListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/limitranges`,
@@ -4083,10 +4453,18 @@ export const watchCoreV1NamespacedLimitRangeList = (
     options
   )
 }
-export const watchCoreV1NamespacedLimitRange = (
-  args: WatchCoreV1NamespacedLimitRangeApiArg,
+export function watchCoreV1NamespacedLimitRange(
+  args: NoWatch<WatchCoreV1NamespacedLimitRangeApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedLimitRangeApiResponse>
+export function watchCoreV1NamespacedLimitRange(
+  args: WatchCoreV1NamespacedLimitRangeApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedLimitRangeApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedLimitRange(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedLimitRangeApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/limitranges/${args.name}`,
@@ -4107,10 +4485,21 @@ export const watchCoreV1NamespacedLimitRange = (
     options
   )
 }
-export const watchCoreV1NamespacedPersistentVolumeClaimList = (
-  args: WatchCoreV1NamespacedPersistentVolumeClaimListApiArg,
+export function watchCoreV1NamespacedPersistentVolumeClaimList(
+  args: NoWatch<WatchCoreV1NamespacedPersistentVolumeClaimListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>
+export function watchCoreV1NamespacedPersistentVolumeClaimList(
+  args: WatchCoreV1NamespacedPersistentVolumeClaimListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedPersistentVolumeClaimList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/persistentvolumeclaims`,
@@ -4131,10 +4520,21 @@ export const watchCoreV1NamespacedPersistentVolumeClaimList = (
     options
   )
 }
-export const watchCoreV1NamespacedPersistentVolumeClaim = (
-  args: WatchCoreV1NamespacedPersistentVolumeClaimApiArg,
+export function watchCoreV1NamespacedPersistentVolumeClaim(
+  args: NoWatch<WatchCoreV1NamespacedPersistentVolumeClaimApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>
+export function watchCoreV1NamespacedPersistentVolumeClaim(
+  args: WatchCoreV1NamespacedPersistentVolumeClaimApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedPersistentVolumeClaim(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/persistentvolumeclaims/${args.name}`,
@@ -4155,10 +4555,17 @@ export const watchCoreV1NamespacedPersistentVolumeClaim = (
     options
   )
 }
-export const watchCoreV1NamespacedPodList = (
-  args: WatchCoreV1NamespacedPodListApiArg,
+export function watchCoreV1NamespacedPodList(
+  args: NoWatch<WatchCoreV1NamespacedPodListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPodListApiResponse>
+export function watchCoreV1NamespacedPodList(
+  args: WatchCoreV1NamespacedPodListApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchCoreV1NamespacedPodListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedPodList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/pods`,
@@ -4179,10 +4586,17 @@ export const watchCoreV1NamespacedPodList = (
     options
   )
 }
-export const watchCoreV1NamespacedPod = (
-  args: WatchCoreV1NamespacedPodApiArg,
+export function watchCoreV1NamespacedPod(
+  args: NoWatch<WatchCoreV1NamespacedPodApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPodApiResponse>
+export function watchCoreV1NamespacedPod(
+  args: WatchCoreV1NamespacedPodApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchCoreV1NamespacedPodApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedPod(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/pods/${args.name}`,
@@ -4203,10 +4617,21 @@ export const watchCoreV1NamespacedPod = (
     options
   )
 }
-export const watchCoreV1NamespacedPodTemplateList = (
-  args: WatchCoreV1NamespacedPodTemplateListApiArg,
+export function watchCoreV1NamespacedPodTemplateList(
+  args: NoWatch<WatchCoreV1NamespacedPodTemplateListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPodTemplateListApiResponse>
+export function watchCoreV1NamespacedPodTemplateList(
+  args: WatchCoreV1NamespacedPodTemplateListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedPodTemplateListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedPodTemplateList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedPodTemplateListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/podtemplates`,
@@ -4227,10 +4652,18 @@ export const watchCoreV1NamespacedPodTemplateList = (
     options
   )
 }
-export const watchCoreV1NamespacedPodTemplate = (
-  args: WatchCoreV1NamespacedPodTemplateApiArg,
+export function watchCoreV1NamespacedPodTemplate(
+  args: NoWatch<WatchCoreV1NamespacedPodTemplateApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedPodTemplateApiResponse>
+export function watchCoreV1NamespacedPodTemplate(
+  args: WatchCoreV1NamespacedPodTemplateApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedPodTemplateApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedPodTemplate(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedPodTemplateApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/podtemplates/${args.name}`,
@@ -4251,10 +4684,21 @@ export const watchCoreV1NamespacedPodTemplate = (
     options
   )
 }
-export const watchCoreV1NamespacedReplicationControllerList = (
-  args: WatchCoreV1NamespacedReplicationControllerListApiArg,
+export function watchCoreV1NamespacedReplicationControllerList(
+  args: NoWatch<WatchCoreV1NamespacedReplicationControllerListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedReplicationControllerListApiResponse>
+export function watchCoreV1NamespacedReplicationControllerList(
+  args: WatchCoreV1NamespacedReplicationControllerListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedReplicationControllerListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedReplicationControllerList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedReplicationControllerListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/replicationcontrollers`,
@@ -4275,10 +4719,21 @@ export const watchCoreV1NamespacedReplicationControllerList = (
     options
   )
 }
-export const watchCoreV1NamespacedReplicationController = (
-  args: WatchCoreV1NamespacedReplicationControllerApiArg,
+export function watchCoreV1NamespacedReplicationController(
+  args: NoWatch<WatchCoreV1NamespacedReplicationControllerApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedReplicationControllerApiResponse>
+export function watchCoreV1NamespacedReplicationController(
+  args: WatchCoreV1NamespacedReplicationControllerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedReplicationControllerApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedReplicationController(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedReplicationControllerApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/replicationcontrollers/${args.name}`,
@@ -4299,10 +4754,21 @@ export const watchCoreV1NamespacedReplicationController = (
     options
   )
 }
-export const watchCoreV1NamespacedResourceQuotaList = (
-  args: WatchCoreV1NamespacedResourceQuotaListApiArg,
+export function watchCoreV1NamespacedResourceQuotaList(
+  args: NoWatch<WatchCoreV1NamespacedResourceQuotaListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedResourceQuotaListApiResponse>
+export function watchCoreV1NamespacedResourceQuotaList(
+  args: WatchCoreV1NamespacedResourceQuotaListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedResourceQuotaListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedResourceQuotaList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedResourceQuotaListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/resourcequotas`,
@@ -4323,10 +4789,21 @@ export const watchCoreV1NamespacedResourceQuotaList = (
     options
   )
 }
-export const watchCoreV1NamespacedResourceQuota = (
-  args: WatchCoreV1NamespacedResourceQuotaApiArg,
+export function watchCoreV1NamespacedResourceQuota(
+  args: NoWatch<WatchCoreV1NamespacedResourceQuotaApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedResourceQuotaApiResponse>
+export function watchCoreV1NamespacedResourceQuota(
+  args: WatchCoreV1NamespacedResourceQuotaApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedResourceQuotaApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedResourceQuota(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedResourceQuotaApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/resourcequotas/${args.name}`,
@@ -4347,10 +4824,18 @@ export const watchCoreV1NamespacedResourceQuota = (
     options
   )
 }
-export const watchCoreV1NamespacedSecretList = (
-  args: WatchCoreV1NamespacedSecretListApiArg,
+export function watchCoreV1NamespacedSecretList(
+  args: NoWatch<WatchCoreV1NamespacedSecretListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedSecretListApiResponse>
+export function watchCoreV1NamespacedSecretList(
+  args: WatchCoreV1NamespacedSecretListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedSecretListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedSecretList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedSecretListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/secrets`,
@@ -4371,10 +4856,17 @@ export const watchCoreV1NamespacedSecretList = (
     options
   )
 }
-export const watchCoreV1NamespacedSecret = (
-  args: WatchCoreV1NamespacedSecretApiArg,
+export function watchCoreV1NamespacedSecret(
+  args: NoWatch<WatchCoreV1NamespacedSecretApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedSecretApiResponse>
+export function watchCoreV1NamespacedSecret(
+  args: WatchCoreV1NamespacedSecretApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchCoreV1NamespacedSecretApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedSecret(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedSecretApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/secrets/${args.name}`,
@@ -4395,10 +4887,21 @@ export const watchCoreV1NamespacedSecret = (
     options
   )
 }
-export const watchCoreV1NamespacedServiceAccountList = (
-  args: WatchCoreV1NamespacedServiceAccountListApiArg,
+export function watchCoreV1NamespacedServiceAccountList(
+  args: NoWatch<WatchCoreV1NamespacedServiceAccountListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedServiceAccountListApiResponse>
+export function watchCoreV1NamespacedServiceAccountList(
+  args: WatchCoreV1NamespacedServiceAccountListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedServiceAccountListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedServiceAccountList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedServiceAccountListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/serviceaccounts`,
@@ -4419,10 +4922,21 @@ export const watchCoreV1NamespacedServiceAccountList = (
     options
   )
 }
-export const watchCoreV1NamespacedServiceAccount = (
-  args: WatchCoreV1NamespacedServiceAccountApiArg,
+export function watchCoreV1NamespacedServiceAccount(
+  args: NoWatch<WatchCoreV1NamespacedServiceAccountApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedServiceAccountApiResponse>
+export function watchCoreV1NamespacedServiceAccount(
+  args: WatchCoreV1NamespacedServiceAccountApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedServiceAccountApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedServiceAccount(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1NamespacedServiceAccountApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/serviceaccounts/${args.name}`,
@@ -4443,10 +4957,18 @@ export const watchCoreV1NamespacedServiceAccount = (
     options
   )
 }
-export const watchCoreV1NamespacedServiceList = (
-  args: WatchCoreV1NamespacedServiceListApiArg,
+export function watchCoreV1NamespacedServiceList(
+  args: NoWatch<WatchCoreV1NamespacedServiceListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedServiceListApiResponse>
+export function watchCoreV1NamespacedServiceList(
+  args: WatchCoreV1NamespacedServiceListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1NamespacedServiceListApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedServiceList(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedServiceListApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/services`,
@@ -4467,10 +4989,17 @@ export const watchCoreV1NamespacedServiceList = (
     options
   )
 }
-export const watchCoreV1NamespacedService = (
-  args: WatchCoreV1NamespacedServiceApiArg,
+export function watchCoreV1NamespacedService(
+  args: NoWatch<WatchCoreV1NamespacedServiceApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespacedServiceApiResponse>
+export function watchCoreV1NamespacedService(
+  args: WatchCoreV1NamespacedServiceApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchCoreV1NamespacedServiceApiResponse>
+): Promise<void>
+export function watchCoreV1NamespacedService(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespacedServiceApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args['namespace']}/services/${args.name}`,
@@ -4491,10 +5020,17 @@ export const watchCoreV1NamespacedService = (
     options
   )
 }
-export const watchCoreV1Namespace = (
-  args: WatchCoreV1NamespaceApiArg,
+export function watchCoreV1Namespace(
+  args: NoWatch<WatchCoreV1NamespaceApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NamespaceApiResponse>
+export function watchCoreV1Namespace(
+  args: WatchCoreV1NamespaceApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchCoreV1NamespaceApiResponse>
+): Promise<void>
+export function watchCoreV1Namespace(args: any, options: any): any {
   return apiClient<WatchCoreV1NamespaceApiResponse>(
     {
       path: `/api/v1/watch/namespaces/${args.name}`,
@@ -4515,10 +5051,17 @@ export const watchCoreV1Namespace = (
     options
   )
 }
-export const watchCoreV1NodeList = (
-  args: WatchCoreV1NodeListApiArg,
+export function watchCoreV1NodeList(
+  args: NoWatch<WatchCoreV1NodeListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NodeListApiResponse>
+export function watchCoreV1NodeList(
+  args: WatchCoreV1NodeListApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchCoreV1NodeListApiResponse>
+): Promise<void>
+export function watchCoreV1NodeList(args: any, options: any): any {
   return apiClient<WatchCoreV1NodeListApiResponse>(
     {
       path: `/api/v1/watch/nodes`,
@@ -4539,10 +5082,17 @@ export const watchCoreV1NodeList = (
     options
   )
 }
-export const watchCoreV1Node = (
-  args: WatchCoreV1NodeApiArg,
+export function watchCoreV1Node(
+  args: NoWatch<WatchCoreV1NodeApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1NodeApiResponse>
+export function watchCoreV1Node(
+  args: WatchCoreV1NodeApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchCoreV1NodeApiResponse>
+): Promise<void>
+export function watchCoreV1Node(args: any, options: any): any {
   return apiClient<WatchCoreV1NodeApiResponse>(
     {
       path: `/api/v1/watch/nodes/${args.name}`,
@@ -4563,10 +5113,21 @@ export const watchCoreV1Node = (
     options
   )
 }
-export const watchCoreV1PersistentVolumeClaimListForAllNamespaces = (
-  args: WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiArg,
+export function watchCoreV1PersistentVolumeClaimListForAllNamespaces(
+  args: NoWatch<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>
+export function watchCoreV1PersistentVolumeClaimListForAllNamespaces(
+  args: WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1PersistentVolumeClaimListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/persistentvolumeclaims`,
@@ -4587,10 +5148,18 @@ export const watchCoreV1PersistentVolumeClaimListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1PersistentVolumeList = (
-  args: WatchCoreV1PersistentVolumeListApiArg,
+export function watchCoreV1PersistentVolumeList(
+  args: NoWatch<WatchCoreV1PersistentVolumeListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PersistentVolumeListApiResponse>
+export function watchCoreV1PersistentVolumeList(
+  args: WatchCoreV1PersistentVolumeListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1PersistentVolumeListApiResponse>
+): Promise<void>
+export function watchCoreV1PersistentVolumeList(args: any, options: any): any {
   return apiClient<WatchCoreV1PersistentVolumeListApiResponse>(
     {
       path: `/api/v1/watch/persistentvolumes`,
@@ -4611,10 +5180,17 @@ export const watchCoreV1PersistentVolumeList = (
     options
   )
 }
-export const watchCoreV1PersistentVolume = (
-  args: WatchCoreV1PersistentVolumeApiArg,
+export function watchCoreV1PersistentVolume(
+  args: NoWatch<WatchCoreV1PersistentVolumeApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PersistentVolumeApiResponse>
+export function watchCoreV1PersistentVolume(
+  args: WatchCoreV1PersistentVolumeApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchCoreV1PersistentVolumeApiResponse>
+): Promise<void>
+export function watchCoreV1PersistentVolume(args: any, options: any): any {
   return apiClient<WatchCoreV1PersistentVolumeApiResponse>(
     {
       path: `/api/v1/watch/persistentvolumes/${args.name}`,
@@ -4635,10 +5211,21 @@ export const watchCoreV1PersistentVolume = (
     options
   )
 }
-export const watchCoreV1PodListForAllNamespaces = (
-  args: WatchCoreV1PodListForAllNamespacesApiArg,
+export function watchCoreV1PodListForAllNamespaces(
+  args: NoWatch<WatchCoreV1PodListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PodListForAllNamespacesApiResponse>
+export function watchCoreV1PodListForAllNamespaces(
+  args: WatchCoreV1PodListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1PodListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1PodListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1PodListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/pods`,
@@ -4659,10 +5246,21 @@ export const watchCoreV1PodListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1PodTemplateListForAllNamespaces = (
-  args: WatchCoreV1PodTemplateListForAllNamespacesApiArg,
+export function watchCoreV1PodTemplateListForAllNamespaces(
+  args: NoWatch<WatchCoreV1PodTemplateListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>
+export function watchCoreV1PodTemplateListForAllNamespaces(
+  args: WatchCoreV1PodTemplateListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1PodTemplateListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/podtemplates`,
@@ -4683,10 +5281,21 @@ export const watchCoreV1PodTemplateListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1ReplicationControllerListForAllNamespaces = (
-  args: WatchCoreV1ReplicationControllerListForAllNamespacesApiArg,
+export function watchCoreV1ReplicationControllerListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ReplicationControllerListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>
+export function watchCoreV1ReplicationControllerListForAllNamespaces(
+  args: WatchCoreV1ReplicationControllerListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1ReplicationControllerListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/replicationcontrollers`,
@@ -4707,10 +5316,21 @@ export const watchCoreV1ReplicationControllerListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1ResourceQuotaListForAllNamespaces = (
-  args: WatchCoreV1ResourceQuotaListForAllNamespacesApiArg,
+export function watchCoreV1ResourceQuotaListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ResourceQuotaListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>
+export function watchCoreV1ResourceQuotaListForAllNamespaces(
+  args: WatchCoreV1ResourceQuotaListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1ResourceQuotaListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/resourcequotas`,
@@ -4731,10 +5351,21 @@ export const watchCoreV1ResourceQuotaListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1SecretListForAllNamespaces = (
-  args: WatchCoreV1SecretListForAllNamespacesApiArg,
+export function watchCoreV1SecretListForAllNamespaces(
+  args: NoWatch<WatchCoreV1SecretListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1SecretListForAllNamespacesApiResponse>
+export function watchCoreV1SecretListForAllNamespaces(
+  args: WatchCoreV1SecretListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1SecretListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1SecretListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1SecretListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/secrets`,
@@ -4755,10 +5386,21 @@ export const watchCoreV1SecretListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1ServiceAccountListForAllNamespaces = (
-  args: WatchCoreV1ServiceAccountListForAllNamespacesApiArg,
+export function watchCoreV1ServiceAccountListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ServiceAccountListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>
+export function watchCoreV1ServiceAccountListForAllNamespaces(
+  args: WatchCoreV1ServiceAccountListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1ServiceAccountListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/serviceaccounts`,
@@ -4779,10 +5421,21 @@ export const watchCoreV1ServiceAccountListForAllNamespaces = (
     options
   )
 }
-export const watchCoreV1ServiceListForAllNamespaces = (
-  args: WatchCoreV1ServiceListForAllNamespacesApiArg,
+export function watchCoreV1ServiceListForAllNamespaces(
+  args: NoWatch<WatchCoreV1ServiceListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoreV1ServiceListForAllNamespacesApiResponse>
+export function watchCoreV1ServiceListForAllNamespaces(
+  args: WatchCoreV1ServiceListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoreV1ServiceListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoreV1ServiceListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoreV1ServiceListForAllNamespacesApiResponse>(
     {
       path: `/api/v1/watch/services`,
@@ -4823,7 +5476,7 @@ export type ListCoreV1ComponentStatusApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4857,7 +5510,7 @@ export type ReadCoreV1ComponentStatusApiResponse =
 export type ReadCoreV1ComponentStatusApiArg = {
   /** name of the ComponentStatus */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ListCoreV1ConfigMapForAllNamespacesApiResponse =
@@ -4877,7 +5530,7 @@ export type ListCoreV1ConfigMapForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4923,7 +5576,7 @@ export type ListCoreV1EndpointsForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4969,7 +5622,7 @@ export type ListCoreV1EventForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5015,7 +5668,7 @@ export type ListCoreV1LimitRangeForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5047,7 +5700,7 @@ export type ListCoreV1LimitRangeForAllNamespacesApiArg = {
 export type ListCoreV1NamespaceApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1NamespaceList
 export type ListCoreV1NamespaceApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5096,7 +5749,7 @@ export type CreateCoreV1NamespaceApiResponse =
   | /** status 201 Created */ IoK8SApiCoreV1Namespace
   | /** status 202 Accepted */ IoK8SApiCoreV1Namespace
 export type CreateCoreV1NamespaceApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5122,7 +5775,7 @@ export type CreateCoreV1NamespacedBindingApiArg = {
   fieldValidation?: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 } & {
   contentType?: string
@@ -5133,7 +5786,7 @@ export type ListCoreV1NamespacedConfigMapApiResponse =
 export type ListCoreV1NamespacedConfigMapApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5184,7 +5837,7 @@ export type CreateCoreV1NamespacedConfigMapApiResponse =
 export type CreateCoreV1NamespacedConfigMapApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5201,7 +5854,7 @@ export type DeleteCoreV1CollectionNamespacedConfigMapApiResponse =
 export type DeleteCoreV1CollectionNamespacedConfigMapApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -5258,7 +5911,7 @@ export type ReadCoreV1NamespacedConfigMapApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedConfigMapApiResponse =
@@ -5269,7 +5922,7 @@ export type ReplaceCoreV1NamespacedConfigMapApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5290,7 +5943,7 @@ export type DeleteCoreV1NamespacedConfigMapApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5312,7 +5965,7 @@ export type PatchCoreV1NamespacedConfigMapApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5345,7 +5998,7 @@ export type ListCoreV1NamespacedEndpointsApiResponse =
 export type ListCoreV1NamespacedEndpointsApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5396,7 +6049,7 @@ export type CreateCoreV1NamespacedEndpointsApiResponse =
 export type CreateCoreV1NamespacedEndpointsApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5413,7 +6066,7 @@ export type DeleteCoreV1CollectionNamespacedEndpointsApiResponse =
 export type DeleteCoreV1CollectionNamespacedEndpointsApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -5470,7 +6123,7 @@ export type ReadCoreV1NamespacedEndpointsApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedEndpointsApiResponse =
@@ -5481,7 +6134,7 @@ export type ReplaceCoreV1NamespacedEndpointsApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5502,7 +6155,7 @@ export type DeleteCoreV1NamespacedEndpointsApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5524,7 +6177,7 @@ export type PatchCoreV1NamespacedEndpointsApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5557,7 +6210,7 @@ export type ListCoreV1NamespacedEventApiResponse =
 export type ListCoreV1NamespacedEventApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5608,7 +6261,7 @@ export type CreateCoreV1NamespacedEventApiResponse =
 export type CreateCoreV1NamespacedEventApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5625,7 +6278,7 @@ export type DeleteCoreV1CollectionNamespacedEventApiResponse =
 export type DeleteCoreV1CollectionNamespacedEventApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -5682,7 +6335,7 @@ export type ReadCoreV1NamespacedEventApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedEventApiResponse =
@@ -5693,7 +6346,7 @@ export type ReplaceCoreV1NamespacedEventApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5714,7 +6367,7 @@ export type DeleteCoreV1NamespacedEventApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5736,7 +6389,7 @@ export type PatchCoreV1NamespacedEventApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5769,7 +6422,7 @@ export type ListCoreV1NamespacedLimitRangeApiResponse =
 export type ListCoreV1NamespacedLimitRangeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5820,7 +6473,7 @@ export type CreateCoreV1NamespacedLimitRangeApiResponse =
 export type CreateCoreV1NamespacedLimitRangeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5837,7 +6490,7 @@ export type DeleteCoreV1CollectionNamespacedLimitRangeApiResponse =
 export type DeleteCoreV1CollectionNamespacedLimitRangeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -5894,7 +6547,7 @@ export type ReadCoreV1NamespacedLimitRangeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedLimitRangeApiResponse =
@@ -5905,7 +6558,7 @@ export type ReplaceCoreV1NamespacedLimitRangeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5926,7 +6579,7 @@ export type DeleteCoreV1NamespacedLimitRangeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5948,7 +6601,7 @@ export type PatchCoreV1NamespacedLimitRangeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5981,7 +6634,7 @@ export type ListCoreV1NamespacedPersistentVolumeClaimApiResponse =
 export type ListCoreV1NamespacedPersistentVolumeClaimApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6032,7 +6685,7 @@ export type CreateCoreV1NamespacedPersistentVolumeClaimApiResponse =
 export type CreateCoreV1NamespacedPersistentVolumeClaimApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6049,7 +6702,7 @@ export type DeleteCoreV1CollectionNamespacedPersistentVolumeClaimApiResponse =
 export type DeleteCoreV1CollectionNamespacedPersistentVolumeClaimApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -6106,7 +6759,7 @@ export type ReadCoreV1NamespacedPersistentVolumeClaimApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedPersistentVolumeClaimApiResponse =
@@ -6118,7 +6771,7 @@ export type ReplaceCoreV1NamespacedPersistentVolumeClaimApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6139,7 +6792,7 @@ export type DeleteCoreV1NamespacedPersistentVolumeClaimApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6162,7 +6815,7 @@ export type PatchCoreV1NamespacedPersistentVolumeClaimApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6197,7 +6850,7 @@ export type ReadCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedPersistentVolumeClaimStatusApiResponse =
@@ -6209,7 +6862,7 @@ export type ReplaceCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6230,7 +6883,7 @@ export type PatchCoreV1NamespacedPersistentVolumeClaimStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6263,7 +6916,7 @@ export type ListCoreV1NamespacedPodApiResponse =
 export type ListCoreV1NamespacedPodApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6314,7 +6967,7 @@ export type CreateCoreV1NamespacedPodApiResponse =
 export type CreateCoreV1NamespacedPodApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6331,7 +6984,7 @@ export type DeleteCoreV1CollectionNamespacedPodApiResponse =
 export type DeleteCoreV1CollectionNamespacedPodApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -6388,7 +7041,7 @@ export type ReadCoreV1NamespacedPodApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedPodApiResponse =
@@ -6399,7 +7052,7 @@ export type ReplaceCoreV1NamespacedPodApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6419,7 +7072,7 @@ export type DeleteCoreV1NamespacedPodApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6441,7 +7094,7 @@ export type PatchCoreV1NamespacedPodApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6521,7 +7174,7 @@ export type CreateCoreV1NamespacedPodBindingApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 } & {
   contentType?: string
@@ -6534,7 +7187,7 @@ export type ReadCoreV1NamespacedPodEphemeralcontainersApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedPodEphemeralcontainersApiResponse =
@@ -6545,7 +7198,7 @@ export type ReplaceCoreV1NamespacedPodEphemeralcontainersApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6565,7 +7218,7 @@ export type PatchCoreV1NamespacedPodEphemeralcontainersApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6609,7 +7262,7 @@ export type CreateCoreV1NamespacedPodEvictionApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 } & {
   contentType?: string
@@ -6669,7 +7322,7 @@ export type ReadCoreV1NamespacedPodLogApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** Return previous terminated container logs. Defaults to false. */
   previous?: boolean
@@ -6861,7 +7514,7 @@ export type ReadCoreV1NamespacedPodStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedPodStatusApiResponse =
@@ -6872,7 +7525,7 @@ export type ReplaceCoreV1NamespacedPodStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6892,7 +7545,7 @@ export type PatchCoreV1NamespacedPodStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6925,7 +7578,7 @@ export type ListCoreV1NamespacedPodTemplateApiResponse =
 export type ListCoreV1NamespacedPodTemplateApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6976,7 +7629,7 @@ export type CreateCoreV1NamespacedPodTemplateApiResponse =
 export type CreateCoreV1NamespacedPodTemplateApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6993,7 +7646,7 @@ export type DeleteCoreV1CollectionNamespacedPodTemplateApiResponse =
 export type DeleteCoreV1CollectionNamespacedPodTemplateApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -7050,7 +7703,7 @@ export type ReadCoreV1NamespacedPodTemplateApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedPodTemplateApiResponse =
@@ -7062,7 +7715,7 @@ export type ReplaceCoreV1NamespacedPodTemplateApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7083,7 +7736,7 @@ export type DeleteCoreV1NamespacedPodTemplateApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7106,7 +7759,7 @@ export type PatchCoreV1NamespacedPodTemplateApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7139,7 +7792,7 @@ export type ListCoreV1NamespacedReplicationControllerApiResponse =
 export type ListCoreV1NamespacedReplicationControllerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -7190,7 +7843,7 @@ export type CreateCoreV1NamespacedReplicationControllerApiResponse =
 export type CreateCoreV1NamespacedReplicationControllerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7207,7 +7860,7 @@ export type DeleteCoreV1CollectionNamespacedReplicationControllerApiResponse =
 export type DeleteCoreV1CollectionNamespacedReplicationControllerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -7264,7 +7917,7 @@ export type ReadCoreV1NamespacedReplicationControllerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedReplicationControllerApiResponse =
@@ -7276,7 +7929,7 @@ export type ReplaceCoreV1NamespacedReplicationControllerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7297,7 +7950,7 @@ export type DeleteCoreV1NamespacedReplicationControllerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7320,7 +7973,7 @@ export type PatchCoreV1NamespacedReplicationControllerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7355,7 +8008,7 @@ export type ReadCoreV1NamespacedReplicationControllerScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedReplicationControllerScaleApiResponse =
@@ -7367,7 +8020,7 @@ export type ReplaceCoreV1NamespacedReplicationControllerScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7388,7 +8041,7 @@ export type PatchCoreV1NamespacedReplicationControllerScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7423,7 +8076,7 @@ export type ReadCoreV1NamespacedReplicationControllerStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedReplicationControllerStatusApiResponse =
@@ -7435,7 +8088,7 @@ export type ReplaceCoreV1NamespacedReplicationControllerStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7456,7 +8109,7 @@ export type PatchCoreV1NamespacedReplicationControllerStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7489,7 +8142,7 @@ export type ListCoreV1NamespacedResourceQuotaApiResponse =
 export type ListCoreV1NamespacedResourceQuotaApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -7540,7 +8193,7 @@ export type CreateCoreV1NamespacedResourceQuotaApiResponse =
 export type CreateCoreV1NamespacedResourceQuotaApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7557,7 +8210,7 @@ export type DeleteCoreV1CollectionNamespacedResourceQuotaApiResponse =
 export type DeleteCoreV1CollectionNamespacedResourceQuotaApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -7614,7 +8267,7 @@ export type ReadCoreV1NamespacedResourceQuotaApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedResourceQuotaApiResponse =
@@ -7626,7 +8279,7 @@ export type ReplaceCoreV1NamespacedResourceQuotaApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7647,7 +8300,7 @@ export type DeleteCoreV1NamespacedResourceQuotaApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7670,7 +8323,7 @@ export type PatchCoreV1NamespacedResourceQuotaApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7705,7 +8358,7 @@ export type ReadCoreV1NamespacedResourceQuotaStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedResourceQuotaStatusApiResponse =
@@ -7717,7 +8370,7 @@ export type ReplaceCoreV1NamespacedResourceQuotaStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7738,7 +8391,7 @@ export type PatchCoreV1NamespacedResourceQuotaStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7771,7 +8424,7 @@ export type ListCoreV1NamespacedSecretApiResponse =
 export type ListCoreV1NamespacedSecretApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -7822,7 +8475,7 @@ export type CreateCoreV1NamespacedSecretApiResponse =
 export type CreateCoreV1NamespacedSecretApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7839,7 +8492,7 @@ export type DeleteCoreV1CollectionNamespacedSecretApiResponse =
 export type DeleteCoreV1CollectionNamespacedSecretApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -7896,7 +8549,7 @@ export type ReadCoreV1NamespacedSecretApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedSecretApiResponse =
@@ -7907,7 +8560,7 @@ export type ReplaceCoreV1NamespacedSecretApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7928,7 +8581,7 @@ export type DeleteCoreV1NamespacedSecretApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7950,7 +8603,7 @@ export type PatchCoreV1NamespacedSecretApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7983,7 +8636,7 @@ export type ListCoreV1NamespacedServiceAccountApiResponse =
 export type ListCoreV1NamespacedServiceAccountApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -8034,7 +8687,7 @@ export type CreateCoreV1NamespacedServiceAccountApiResponse =
 export type CreateCoreV1NamespacedServiceAccountApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8051,7 +8704,7 @@ export type DeleteCoreV1CollectionNamespacedServiceAccountApiResponse =
 export type DeleteCoreV1CollectionNamespacedServiceAccountApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -8108,7 +8761,7 @@ export type ReadCoreV1NamespacedServiceAccountApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedServiceAccountApiResponse =
@@ -8120,7 +8773,7 @@ export type ReplaceCoreV1NamespacedServiceAccountApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8141,7 +8794,7 @@ export type DeleteCoreV1NamespacedServiceAccountApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8164,7 +8817,7 @@ export type PatchCoreV1NamespacedServiceAccountApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8208,7 +8861,7 @@ export type CreateCoreV1NamespacedServiceAccountTokenApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 } & {
   contentType?: string
@@ -8219,7 +8872,7 @@ export type ListCoreV1NamespacedServiceApiResponse =
 export type ListCoreV1NamespacedServiceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -8270,7 +8923,7 @@ export type CreateCoreV1NamespacedServiceApiResponse =
 export type CreateCoreV1NamespacedServiceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8287,7 +8940,7 @@ export type DeleteCoreV1CollectionNamespacedServiceApiResponse =
 export type DeleteCoreV1CollectionNamespacedServiceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -8344,7 +8997,7 @@ export type ReadCoreV1NamespacedServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedServiceApiResponse =
@@ -8355,7 +9008,7 @@ export type ReplaceCoreV1NamespacedServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8375,7 +9028,7 @@ export type DeleteCoreV1NamespacedServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8397,7 +9050,7 @@ export type PatchCoreV1NamespacedServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8586,7 +9239,7 @@ export type ReadCoreV1NamespacedServiceStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespacedServiceStatusApiResponse =
@@ -8597,7 +9250,7 @@ export type ReplaceCoreV1NamespacedServiceStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8617,7 +9270,7 @@ export type PatchCoreV1NamespacedServiceStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8650,7 +9303,7 @@ export type ReadCoreV1NamespaceApiResponse =
 export type ReadCoreV1NamespaceApiArg = {
   /** name of the Namespace */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespaceApiResponse =
@@ -8659,7 +9312,7 @@ export type ReplaceCoreV1NamespaceApiResponse =
 export type ReplaceCoreV1NamespaceApiArg = {
   /** name of the Namespace */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8678,7 +9331,7 @@ export type DeleteCoreV1NamespaceApiResponse =
 export type DeleteCoreV1NamespaceApiArg = {
   /** name of the Namespace */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8698,7 +9351,7 @@ export type PatchCoreV1NamespaceApiResponse =
 export type PatchCoreV1NamespaceApiArg = {
   /** name of the Namespace */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8738,7 +9391,7 @@ export type ReplaceCoreV1NamespaceFinalizeApiArg = {
   fieldValidation?: string
   /** name of the Namespace */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 } & {
   contentType?: string
@@ -8749,7 +9402,7 @@ export type ReadCoreV1NamespaceStatusApiResponse =
 export type ReadCoreV1NamespaceStatusApiArg = {
   /** name of the Namespace */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NamespaceStatusApiResponse =
@@ -8758,7 +9411,7 @@ export type ReplaceCoreV1NamespaceStatusApiResponse =
 export type ReplaceCoreV1NamespaceStatusApiArg = {
   /** name of the Namespace */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8776,7 +9429,7 @@ export type PatchCoreV1NamespaceStatusApiResponse =
 export type PatchCoreV1NamespaceStatusApiArg = {
   /** name of the Namespace */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8807,7 +9460,7 @@ export type PatchCoreV1NamespaceStatusApiArg = {
 export type ListCoreV1NodeApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1NodeList
 export type ListCoreV1NodeApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -8856,7 +9509,7 @@ export type CreateCoreV1NodeApiResponse =
   | /** status 201 Created */ IoK8SApiCoreV1Node
   | /** status 202 Accepted */ IoK8SApiCoreV1Node
 export type CreateCoreV1NodeApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8871,7 +9524,7 @@ export type CreateCoreV1NodeApiArg = {
 export type DeleteCoreV1CollectionNodeApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreV1CollectionNodeApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -8925,7 +9578,7 @@ export type ReadCoreV1NodeApiResponse = /** status 200 OK */ IoK8SApiCoreV1Node
 export type ReadCoreV1NodeApiArg = {
   /** name of the Node */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NodeApiResponse =
@@ -8934,7 +9587,7 @@ export type ReplaceCoreV1NodeApiResponse =
 export type ReplaceCoreV1NodeApiArg = {
   /** name of the Node */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8953,7 +9606,7 @@ export type DeleteCoreV1NodeApiResponse =
 export type DeleteCoreV1NodeApiArg = {
   /** name of the Node */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8973,7 +9626,7 @@ export type PatchCoreV1NodeApiResponse =
 export type PatchCoreV1NodeApiArg = {
   /** name of the Node */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9127,7 +9780,7 @@ export type ReadCoreV1NodeStatusApiResponse =
 export type ReadCoreV1NodeStatusApiArg = {
   /** name of the Node */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1NodeStatusApiResponse =
@@ -9136,7 +9789,7 @@ export type ReplaceCoreV1NodeStatusApiResponse =
 export type ReplaceCoreV1NodeStatusApiArg = {
   /** name of the Node */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9154,7 +9807,7 @@ export type PatchCoreV1NodeStatusApiResponse =
 export type PatchCoreV1NodeStatusApiArg = {
   /** name of the Node */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9199,7 +9852,7 @@ export type ListCoreV1PersistentVolumeClaimForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9231,7 +9884,7 @@ export type ListCoreV1PersistentVolumeClaimForAllNamespacesApiArg = {
 export type ListCoreV1PersistentVolumeApiResponse =
   /** status 200 OK */ IoK8SApiCoreV1PersistentVolumeList
 export type ListCoreV1PersistentVolumeApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -9280,7 +9933,7 @@ export type CreateCoreV1PersistentVolumeApiResponse =
   | /** status 201 Created */ IoK8SApiCoreV1PersistentVolume
   | /** status 202 Accepted */ IoK8SApiCoreV1PersistentVolume
 export type CreateCoreV1PersistentVolumeApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9295,7 +9948,7 @@ export type CreateCoreV1PersistentVolumeApiArg = {
 export type DeleteCoreV1CollectionPersistentVolumeApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteCoreV1CollectionPersistentVolumeApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -9350,7 +10003,7 @@ export type ReadCoreV1PersistentVolumeApiResponse =
 export type ReadCoreV1PersistentVolumeApiArg = {
   /** name of the PersistentVolume */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1PersistentVolumeApiResponse =
@@ -9360,7 +10013,7 @@ export type ReplaceCoreV1PersistentVolumeApiResponse =
 export type ReplaceCoreV1PersistentVolumeApiArg = {
   /** name of the PersistentVolume */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9379,7 +10032,7 @@ export type DeleteCoreV1PersistentVolumeApiResponse =
 export type DeleteCoreV1PersistentVolumeApiArg = {
   /** name of the PersistentVolume */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9400,7 +10053,7 @@ export type PatchCoreV1PersistentVolumeApiResponse =
 export type PatchCoreV1PersistentVolumeApiArg = {
   /** name of the PersistentVolume */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9433,7 +10086,7 @@ export type ReadCoreV1PersistentVolumeStatusApiResponse =
 export type ReadCoreV1PersistentVolumeStatusApiArg = {
   /** name of the PersistentVolume */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoreV1PersistentVolumeStatusApiResponse =
@@ -9443,7 +10096,7 @@ export type ReplaceCoreV1PersistentVolumeStatusApiResponse =
 export type ReplaceCoreV1PersistentVolumeStatusApiArg = {
   /** name of the PersistentVolume */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9462,7 +10115,7 @@ export type PatchCoreV1PersistentVolumeStatusApiResponse =
 export type PatchCoreV1PersistentVolumeStatusApiArg = {
   /** name of the PersistentVolume */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9507,7 +10160,7 @@ export type ListCoreV1PodForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9553,7 +10206,7 @@ export type ListCoreV1PodTemplateForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9599,7 +10252,7 @@ export type ListCoreV1ReplicationControllerForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9645,7 +10298,7 @@ export type ListCoreV1ResourceQuotaForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9691,7 +10344,7 @@ export type ListCoreV1SecretForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9737,7 +10390,7 @@ export type ListCoreV1ServiceAccountForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9783,7 +10436,7 @@ export type ListCoreV1ServiceForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9829,7 +10482,7 @@ export type WatchCoreV1ConfigMapListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9875,7 +10528,7 @@ export type WatchCoreV1EndpointsListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9921,7 +10574,7 @@ export type WatchCoreV1EventListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9967,7 +10620,7 @@ export type WatchCoreV1LimitRangeListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10013,7 +10666,7 @@ export type WatchCoreV1NamespaceListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10061,7 +10714,7 @@ export type WatchCoreV1NamespacedConfigMapListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10111,7 +10764,7 @@ export type WatchCoreV1NamespacedConfigMapApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10159,7 +10812,7 @@ export type WatchCoreV1NamespacedEndpointsListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10209,7 +10862,7 @@ export type WatchCoreV1NamespacedEndpointsApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10257,7 +10910,7 @@ export type WatchCoreV1NamespacedEventListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10307,7 +10960,7 @@ export type WatchCoreV1NamespacedEventApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10355,7 +11008,7 @@ export type WatchCoreV1NamespacedLimitRangeListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10405,7 +11058,7 @@ export type WatchCoreV1NamespacedLimitRangeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10453,7 +11106,7 @@ export type WatchCoreV1NamespacedPersistentVolumeClaimListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10503,7 +11156,7 @@ export type WatchCoreV1NamespacedPersistentVolumeClaimApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10551,7 +11204,7 @@ export type WatchCoreV1NamespacedPodListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10601,7 +11254,7 @@ export type WatchCoreV1NamespacedPodApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10649,7 +11302,7 @@ export type WatchCoreV1NamespacedPodTemplateListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10699,7 +11352,7 @@ export type WatchCoreV1NamespacedPodTemplateApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10747,7 +11400,7 @@ export type WatchCoreV1NamespacedReplicationControllerListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10797,7 +11450,7 @@ export type WatchCoreV1NamespacedReplicationControllerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10845,7 +11498,7 @@ export type WatchCoreV1NamespacedResourceQuotaListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10895,7 +11548,7 @@ export type WatchCoreV1NamespacedResourceQuotaApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10943,7 +11596,7 @@ export type WatchCoreV1NamespacedSecretListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10993,7 +11646,7 @@ export type WatchCoreV1NamespacedSecretApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11041,7 +11694,7 @@ export type WatchCoreV1NamespacedServiceAccountListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11091,7 +11744,7 @@ export type WatchCoreV1NamespacedServiceAccountApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11139,7 +11792,7 @@ export type WatchCoreV1NamespacedServiceListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11189,7 +11842,7 @@ export type WatchCoreV1NamespacedServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11237,7 +11890,7 @@ export type WatchCoreV1NamespaceApiArg = {
   limit?: number
   /** name of the Namespace */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11283,7 +11936,7 @@ export type WatchCoreV1NodeListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11331,7 +11984,7 @@ export type WatchCoreV1NodeApiArg = {
   limit?: number
   /** name of the Node */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11377,7 +12030,7 @@ export type WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11423,7 +12076,7 @@ export type WatchCoreV1PersistentVolumeListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11471,7 +12124,7 @@ export type WatchCoreV1PersistentVolumeApiArg = {
   limit?: number
   /** name of the PersistentVolume */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11517,7 +12170,7 @@ export type WatchCoreV1PodListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11563,7 +12216,7 @@ export type WatchCoreV1PodTemplateListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11609,7 +12262,7 @@ export type WatchCoreV1ReplicationControllerListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11655,7 +12308,7 @@ export type WatchCoreV1ResourceQuotaListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11701,7 +12354,7 @@ export type WatchCoreV1SecretListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11747,7 +12400,7 @@ export type WatchCoreV1ServiceAccountListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -11793,7 +12446,7 @@ export type WatchCoreV1ServiceListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -12163,11 +12816,7 @@ export type IoK8SApiCoreV1TypedObjectReference = {
   name: string
   namespace?: string | undefined
 }
-export type IoK8SApiCoreV1ResourceClaim = {
-  name: string
-}
-export type IoK8SApiCoreV1ResourceRequirements = {
-  claims?: IoK8SApiCoreV1ResourceClaim[] | undefined
+export type IoK8SApiCoreV1VolumeResourceRequirements = {
   limits?:
     | {
         [key: string]: IoK8SApimachineryPkgApiResourceQuantity
@@ -12198,9 +12847,10 @@ export type IoK8SApiCoreV1PersistentVolumeClaimSpec = {
   accessModes?: string[] | undefined
   dataSource?: IoK8SApiCoreV1TypedLocalObjectReference | undefined
   dataSourceRef?: IoK8SApiCoreV1TypedObjectReference | undefined
-  resources?: IoK8SApiCoreV1ResourceRequirements | undefined
+  resources?: IoK8SApiCoreV1VolumeResourceRequirements | undefined
   selector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
   storageClassName?: string | undefined
+  volumeAttributesClassName?: string | undefined
   volumeMode?: ('Block' | 'Filesystem') | undefined
   volumeName?: string | undefined
 }
@@ -12212,8 +12862,17 @@ export type IoK8SApiCoreV1PersistentVolumeClaimCondition = {
   status: string
   type: string
 }
+export type IoK8SApiCoreV1ModifyVolumeStatus = {
+  status: 'InProgress' | 'Infeasible' | 'Pending'
+  targetVolumeAttributesClassName?: string | undefined
+}
 export type IoK8SApiCoreV1PersistentVolumeClaimStatus = {
   accessModes?: string[] | undefined
+  allocatedResourceStatuses?:
+    | {
+        [key: string]: string
+      }
+    | undefined
   allocatedResources?:
     | {
         [key: string]: IoK8SApimachineryPkgApiResourceQuantity
@@ -12225,17 +12884,9 @@ export type IoK8SApiCoreV1PersistentVolumeClaimStatus = {
       }
     | undefined
   conditions?: IoK8SApiCoreV1PersistentVolumeClaimCondition[] | undefined
+  currentVolumeAttributesClassName?: string | undefined
+  modifyVolumeStatus?: IoK8SApiCoreV1ModifyVolumeStatus | undefined
   phase?: ('Bound' | 'Lost' | 'Pending') | undefined
-  resizeStatus?:
-    | (
-        | ''
-        | 'ControllerExpansionFailed'
-        | 'ControllerExpansionInProgress'
-        | 'NodeExpansionFailed'
-        | 'NodeExpansionInProgress'
-        | 'NodeExpansionPending'
-      )
-    | undefined
 }
 export type IoK8SApiCoreV1PersistentVolumeClaim = {
   apiVersion?: string | undefined
@@ -12276,6 +12927,8 @@ export type IoK8SApiCoreV1NodeAffinity = {
 }
 export type IoK8SApiCoreV1PodAffinityTerm = {
   labelSelector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
+  matchLabelKeys?: string[] | undefined
+  mismatchLabelKeys?: string[] | undefined
   namespaceSelector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
   namespaces?: string[] | undefined
   topologyKey: string
@@ -12363,6 +13016,9 @@ export type IoK8SApiCoreV1HttpGetAction = {
   port: IoK8SApimachineryPkgUtilIntstrIntOrString
   scheme?: ('HTTP' | 'HTTPS') | undefined
 }
+export type IoK8SApiCoreV1SleepAction = {
+  seconds: number
+}
 export type IoK8SApiCoreV1TcpSocketAction = {
   host?: string | undefined
   port: IoK8SApimachineryPkgUtilIntstrIntOrString
@@ -12370,6 +13026,7 @@ export type IoK8SApiCoreV1TcpSocketAction = {
 export type IoK8SApiCoreV1LifecycleHandler = {
   exec?: IoK8SApiCoreV1ExecAction | undefined
   httpGet?: IoK8SApiCoreV1HttpGetAction | undefined
+  sleep?: IoK8SApiCoreV1SleepAction | undefined
   tcpSocket?: IoK8SApiCoreV1TcpSocketAction | undefined
 }
 export type IoK8SApiCoreV1Lifecycle = {
@@ -12402,6 +13059,22 @@ export type IoK8SApiCoreV1ContainerPort = {
 export type IoK8SApiCoreV1ContainerResizePolicy = {
   resourceName: string
   restartPolicy: string
+}
+export type IoK8SApiCoreV1ResourceClaim = {
+  name: string
+}
+export type IoK8SApiCoreV1ResourceRequirements = {
+  claims?: IoK8SApiCoreV1ResourceClaim[] | undefined
+  limits?:
+    | {
+        [key: string]: IoK8SApimachineryPkgApiResourceQuantity
+      }
+    | undefined
+  requests?:
+    | {
+        [key: string]: IoK8SApimachineryPkgApiResourceQuantity
+      }
+    | undefined
 }
 export type IoK8SApiCoreV1Capabilities = {
   add?: string[] | undefined
@@ -12462,6 +13135,7 @@ export type IoK8SApiCoreV1Container = {
   readinessProbe?: IoK8SApiCoreV1Probe | undefined
   resizePolicy?: IoK8SApiCoreV1ContainerResizePolicy[] | undefined
   resources?: IoK8SApiCoreV1ResourceRequirements | undefined
+  restartPolicy?: string | undefined
   securityContext?: IoK8SApiCoreV1SecurityContext | undefined
   startupProbe?: IoK8SApiCoreV1Probe | undefined
   stdin?: boolean | undefined
@@ -12496,6 +13170,7 @@ export type IoK8SApiCoreV1EphemeralContainer = {
   readinessProbe?: IoK8SApiCoreV1Probe | undefined
   resizePolicy?: IoK8SApiCoreV1ContainerResizePolicy[] | undefined
   resources?: IoK8SApiCoreV1ResourceRequirements | undefined
+  restartPolicy?: string | undefined
   securityContext?: IoK8SApiCoreV1SecurityContext | undefined
   startupProbe?: IoK8SApiCoreV1Probe | undefined
   stdin?: boolean | undefined
@@ -12725,6 +13400,13 @@ export type IoK8SApiCoreV1PortworxVolumeSource = {
   readOnly?: boolean | undefined
   volumeID: string
 }
+export type IoK8SApiCoreV1ClusterTrustBundleProjection = {
+  labelSelector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
+  name?: string | undefined
+  optional?: boolean | undefined
+  path: string
+  signerName?: string | undefined
+}
 export type IoK8SApiCoreV1ConfigMapProjection = {
   items?: IoK8SApiCoreV1KeyToPath[] | undefined
   name?: string | undefined
@@ -12744,6 +13426,7 @@ export type IoK8SApiCoreV1ServiceAccountTokenProjection = {
   path: string
 }
 export type IoK8SApiCoreV1VolumeProjection = {
+  clusterTrustBundle?: IoK8SApiCoreV1ClusterTrustBundleProjection | undefined
   configMap?: IoK8SApiCoreV1ConfigMapProjection | undefined
   downwardAPI?: IoK8SApiCoreV1DownwardApiProjection | undefined
   secret?: IoK8SApiCoreV1SecretProjection | undefined
@@ -12939,14 +13622,22 @@ export type IoK8SApiCoreV1ContainerStatus = {
   started?: boolean | undefined
   state?: IoK8SApiCoreV1ContainerState | undefined
 }
+export type IoK8SApiCoreV1HostIp = {
+  ip?: string | undefined
+}
 export type IoK8SApiCoreV1PodIp = {
   ip?: string | undefined
+}
+export type IoK8SApiCoreV1PodResourceClaimStatus = {
+  name: string
+  resourceClaimName?: string | undefined
 }
 export type IoK8SApiCoreV1PodStatus = {
   conditions?: IoK8SApiCoreV1PodCondition[] | undefined
   containerStatuses?: IoK8SApiCoreV1ContainerStatus[] | undefined
   ephemeralContainerStatuses?: IoK8SApiCoreV1ContainerStatus[] | undefined
   hostIP?: string | undefined
+  hostIPs?: IoK8SApiCoreV1HostIp[] | undefined
   initContainerStatuses?: IoK8SApiCoreV1ContainerStatus[] | undefined
   message?: string | undefined
   nominatedNodeName?: string | undefined
@@ -12958,6 +13649,7 @@ export type IoK8SApiCoreV1PodStatus = {
   qosClass?: ('BestEffort' | 'Burstable' | 'Guaranteed') | undefined
   reason?: string | undefined
   resize?: string | undefined
+  resourceClaimStatuses?: IoK8SApiCoreV1PodResourceClaimStatus[] | undefined
   startTime?: IoK8SApimachineryPkgApisMetaV1Time | undefined
 }
 export type IoK8SApiCoreV1Pod = {
@@ -13217,6 +13909,7 @@ export type IoK8SApiCoreV1PortStatus = {
 export type IoK8SApiCoreV1LoadBalancerIngress = {
   hostname?: string | undefined
   ip?: string | undefined
+  ipMode?: string | undefined
   ports?: IoK8SApiCoreV1PortStatus[] | undefined
 }
 export type IoK8SApiCoreV1LoadBalancerStatus = {
@@ -13485,10 +14178,12 @@ export type IoK8SApiCoreV1PersistentVolumeSpec = {
   scaleIO?: IoK8SApiCoreV1ScaleIoPersistentVolumeSource | undefined
   storageClassName?: string | undefined
   storageos?: IoK8SApiCoreV1StorageOsPersistentVolumeSource | undefined
+  volumeAttributesClassName?: string | undefined
   volumeMode?: ('Block' | 'Filesystem') | undefined
   vsphereVolume?: IoK8SApiCoreV1VsphereVirtualDiskVolumeSource | undefined
 }
 export type IoK8SApiCoreV1PersistentVolumeStatus = {
+  lastPhaseTransitionTime?: IoK8SApimachineryPkgApisMetaV1Time | undefined
   message?: string | undefined
   phase?:
     | ('Available' | 'Bound' | 'Failed' | 'Pending' | 'Released')

@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getAutoscalingV2ApiResources = (
   args: GetAutoscalingV2ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,21 @@ export const getAutoscalingV2ApiResources = (
     options
   )
 }
-export const listAutoscalingV2HorizontalPodAutoscalerForAllNamespaces = (
-  args: ListAutoscalingV2HorizontalPodAutoscalerForAllNamespacesApiArg,
+export function listAutoscalingV2HorizontalPodAutoscalerForAllNamespaces(
+  args: NoWatch<ListAutoscalingV2HorizontalPodAutoscalerForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListAutoscalingV2HorizontalPodAutoscalerForAllNamespacesApiResponse>
+export function listAutoscalingV2HorizontalPodAutoscalerForAllNamespaces(
+  args: ListAutoscalingV2HorizontalPodAutoscalerForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAutoscalingV2HorizontalPodAutoscalerForAllNamespacesApiResponse>
+): Promise<void>
+export function listAutoscalingV2HorizontalPodAutoscalerForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAutoscalingV2HorizontalPodAutoscalerForAllNamespacesApiResponse>(
     {
       path: `/apis/autoscaling/v2/horizontalpodautoscalers`,
@@ -32,10 +46,21 @@ export const listAutoscalingV2HorizontalPodAutoscalerForAllNamespaces = (
     options
   )
 }
-export const listAutoscalingV2NamespacedHorizontalPodAutoscaler = (
-  args: ListAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg,
+export function listAutoscalingV2NamespacedHorizontalPodAutoscaler(
+  args: NoWatch<ListAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg>,
   options?: Options
-) => {
+): Promise<ListAutoscalingV2NamespacedHorizontalPodAutoscalerApiResponse>
+export function listAutoscalingV2NamespacedHorizontalPodAutoscaler(
+  args: ListAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAutoscalingV2NamespacedHorizontalPodAutoscalerApiResponse>
+): Promise<void>
+export function listAutoscalingV2NamespacedHorizontalPodAutoscaler(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAutoscalingV2NamespacedHorizontalPodAutoscalerApiResponse>(
     {
       path: `/apis/autoscaling/v2/namespaces/${args['namespace']}/horizontalpodautoscalers`,
@@ -232,10 +257,21 @@ export const patchAutoscalingV2NamespacedHorizontalPodAutoscalerStatus = (
     options
   )
 }
-export const watchAutoscalingV2HorizontalPodAutoscalerListForAllNamespaces = (
-  args: WatchAutoscalingV2HorizontalPodAutoscalerListForAllNamespacesApiArg,
+export function watchAutoscalingV2HorizontalPodAutoscalerListForAllNamespaces(
+  args: NoWatch<WatchAutoscalingV2HorizontalPodAutoscalerListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchAutoscalingV2HorizontalPodAutoscalerListForAllNamespacesApiResponse>
+export function watchAutoscalingV2HorizontalPodAutoscalerListForAllNamespaces(
+  args: WatchAutoscalingV2HorizontalPodAutoscalerListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAutoscalingV2HorizontalPodAutoscalerListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchAutoscalingV2HorizontalPodAutoscalerListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAutoscalingV2HorizontalPodAutoscalerListForAllNamespacesApiResponse>(
     {
       path: `/apis/autoscaling/v2/watch/horizontalpodautoscalers`,
@@ -256,10 +292,21 @@ export const watchAutoscalingV2HorizontalPodAutoscalerListForAllNamespaces = (
     options
   )
 }
-export const watchAutoscalingV2NamespacedHorizontalPodAutoscalerList = (
-  args: WatchAutoscalingV2NamespacedHorizontalPodAutoscalerListApiArg,
+export function watchAutoscalingV2NamespacedHorizontalPodAutoscalerList(
+  args: NoWatch<WatchAutoscalingV2NamespacedHorizontalPodAutoscalerListApiArg>,
   options?: Options
-) => {
+): Promise<WatchAutoscalingV2NamespacedHorizontalPodAutoscalerListApiResponse>
+export function watchAutoscalingV2NamespacedHorizontalPodAutoscalerList(
+  args: WatchAutoscalingV2NamespacedHorizontalPodAutoscalerListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAutoscalingV2NamespacedHorizontalPodAutoscalerListApiResponse>
+): Promise<void>
+export function watchAutoscalingV2NamespacedHorizontalPodAutoscalerList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAutoscalingV2NamespacedHorizontalPodAutoscalerListApiResponse>(
     {
       path: `/apis/autoscaling/v2/watch/namespaces/${args['namespace']}/horizontalpodautoscalers`,
@@ -280,10 +327,21 @@ export const watchAutoscalingV2NamespacedHorizontalPodAutoscalerList = (
     options
   )
 }
-export const watchAutoscalingV2NamespacedHorizontalPodAutoscaler = (
-  args: WatchAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg,
+export function watchAutoscalingV2NamespacedHorizontalPodAutoscaler(
+  args: NoWatch<WatchAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg>,
   options?: Options
-) => {
+): Promise<WatchAutoscalingV2NamespacedHorizontalPodAutoscalerApiResponse>
+export function watchAutoscalingV2NamespacedHorizontalPodAutoscaler(
+  args: WatchAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAutoscalingV2NamespacedHorizontalPodAutoscalerApiResponse>
+): Promise<void>
+export function watchAutoscalingV2NamespacedHorizontalPodAutoscaler(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAutoscalingV2NamespacedHorizontalPodAutoscalerApiResponse>(
     {
       path: `/apis/autoscaling/v2/watch/namespaces/${args['namespace']}/horizontalpodautoscalers/${args.name}`,
@@ -324,7 +382,7 @@ export type ListAutoscalingV2HorizontalPodAutoscalerForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -358,7 +416,7 @@ export type ListAutoscalingV2NamespacedHorizontalPodAutoscalerApiResponse =
 export type ListAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -409,7 +467,7 @@ export type CreateAutoscalingV2NamespacedHorizontalPodAutoscalerApiResponse =
 export type CreateAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -427,7 +485,7 @@ export type DeleteAutoscalingV2CollectionNamespacedHorizontalPodAutoscalerApiArg
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -484,7 +542,7 @@ export type ReadAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAutoscalingV2NamespacedHorizontalPodAutoscalerApiResponse =
@@ -496,7 +554,7 @@ export type ReplaceAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -517,7 +575,7 @@ export type DeleteAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -540,7 +598,7 @@ export type PatchAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -575,7 +633,7 @@ export type ReadAutoscalingV2NamespacedHorizontalPodAutoscalerStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAutoscalingV2NamespacedHorizontalPodAutoscalerStatusApiResponse =
@@ -588,7 +646,7 @@ export type ReplaceAutoscalingV2NamespacedHorizontalPodAutoscalerStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -609,7 +667,7 @@ export type PatchAutoscalingV2NamespacedHorizontalPodAutoscalerStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -655,7 +713,7 @@ export type WatchAutoscalingV2HorizontalPodAutoscalerListForAllNamespacesApiArg 
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -703,7 +761,7 @@ export type WatchAutoscalingV2NamespacedHorizontalPodAutoscalerListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -753,7 +811,7 @@ export type WatchAutoscalingV2NamespacedHorizontalPodAutoscalerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

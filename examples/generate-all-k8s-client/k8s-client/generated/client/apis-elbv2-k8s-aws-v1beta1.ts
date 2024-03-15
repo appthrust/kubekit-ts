@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listElbv2K8SAwsV1Beta1IngressClassParams = (
-  args: ListElbv2K8SAwsV1Beta1IngressClassParamsApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listElbv2K8SAwsV1Beta1IngressClassParams(
+  args: NoWatch<ListElbv2K8SAwsV1Beta1IngressClassParamsApiArg>,
   options?: Options
-) => {
+): Promise<ListElbv2K8SAwsV1Beta1IngressClassParamsApiResponse>
+export function listElbv2K8SAwsV1Beta1IngressClassParams(
+  args: ListElbv2K8SAwsV1Beta1IngressClassParamsApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListElbv2K8SAwsV1Beta1IngressClassParamsApiResponse>
+): Promise<void>
+export function listElbv2K8SAwsV1Beta1IngressClassParams(
+  args: any,
+  options: any
+): any {
   return apiClient<ListElbv2K8SAwsV1Beta1IngressClassParamsApiResponse>(
     {
       path: `/apis/elbv2.k8s.aws/v1beta1/ingressclassparams`,
@@ -43,10 +57,21 @@ export const createElbv2K8SAwsV1Beta1IngressClassParams = (
     options
   )
 }
-export const deleteElbv2K8SAwsV1Beta1CollectionIngressClassParams = (
-  args: DeleteElbv2K8SAwsV1Beta1CollectionIngressClassParamsApiArg,
+export function deleteElbv2K8SAwsV1Beta1CollectionIngressClassParams(
+  args: NoWatch<DeleteElbv2K8SAwsV1Beta1CollectionIngressClassParamsApiArg>,
   options?: Options
-) => {
+): Promise<DeleteElbv2K8SAwsV1Beta1CollectionIngressClassParamsApiResponse>
+export function deleteElbv2K8SAwsV1Beta1CollectionIngressClassParams(
+  args: DeleteElbv2K8SAwsV1Beta1CollectionIngressClassParamsApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteElbv2K8SAwsV1Beta1CollectionIngressClassParamsApiResponse>
+): Promise<void>
+export function deleteElbv2K8SAwsV1Beta1CollectionIngressClassParams(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteElbv2K8SAwsV1Beta1CollectionIngressClassParamsApiResponse>(
     {
       path: `/apis/elbv2.k8s.aws/v1beta1/ingressclassparams`,
@@ -142,10 +167,21 @@ export const patchElbv2K8SAwsV1Beta1IngressClassParams = (
     options
   )
 }
-export const listElbv2K8SAwsV1Beta1NamespacedTargetGroupBinding = (
-  args: ListElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg,
+export function listElbv2K8SAwsV1Beta1NamespacedTargetGroupBinding(
+  args: NoWatch<ListElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg>,
   options?: Options
-) => {
+): Promise<ListElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiResponse>
+export function listElbv2K8SAwsV1Beta1NamespacedTargetGroupBinding(
+  args: ListElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiResponse>
+): Promise<void>
+export function listElbv2K8SAwsV1Beta1NamespacedTargetGroupBinding(
+  args: any,
+  options: any
+): any {
   return apiClient<ListElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiResponse>(
     {
       path: `/apis/elbv2.k8s.aws/v1beta1/namespaces/${args['namespace']}/targetgroupbindings`,
@@ -186,10 +222,21 @@ export const createElbv2K8SAwsV1Beta1NamespacedTargetGroupBinding = (
     options
   )
 }
-export const deleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBinding = (
-  args: DeleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBindingApiArg,
+export function deleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBinding(
+  args: NoWatch<DeleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBindingApiArg>,
   options?: Options
-) => {
+): Promise<DeleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBindingApiResponse>
+export function deleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBinding(
+  args: DeleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBindingApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBindingApiResponse>
+): Promise<void>
+export function deleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBinding(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBindingApiResponse>(
     {
       path: `/apis/elbv2.k8s.aws/v1beta1/namespaces/${args['namespace']}/targetgroupbindings`,
@@ -338,10 +385,21 @@ export const patchElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatus = (
     options
   )
 }
-export const listElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespaces = (
-  args: ListElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespacesApiArg,
+export function listElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespaces(
+  args: NoWatch<ListElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespacesApiResponse>
+export function listElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespaces(
+  args: ListElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespacesApiResponse>
+): Promise<void>
+export function listElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespacesApiResponse>(
     {
       path: `/apis/elbv2.k8s.aws/v1beta1/targetgroupbindings`,
@@ -365,7 +423,7 @@ export const listElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespaces = (
 export type ListElbv2K8SAwsV1Beta1IngressClassParamsApiResponse =
   /** status 200 OK */ AwsK8SElbv2V1Beta1IngressClassParamsList
 export type ListElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -414,7 +472,7 @@ export type CreateElbv2K8SAwsV1Beta1IngressClassParamsApiResponse =
   | /** status 201 Created */ AwsK8SElbv2V1Beta1IngressClassParams
   | /** status 202 Accepted */ AwsK8SElbv2V1Beta1IngressClassParams
 export type CreateElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -435,7 +493,7 @@ export type CreateElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
 export type DeleteElbv2K8SAwsV1Beta1CollectionIngressClassParamsApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteElbv2K8SAwsV1Beta1CollectionIngressClassParamsApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -483,7 +541,7 @@ export type ReadElbv2K8SAwsV1Beta1IngressClassParamsApiResponse =
 export type ReadElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
   /** name of the IngressClassParams */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -497,7 +555,7 @@ export type ReplaceElbv2K8SAwsV1Beta1IngressClassParamsApiResponse =
 export type ReplaceElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
   /** name of the IngressClassParams */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -522,7 +580,7 @@ export type DeleteElbv2K8SAwsV1Beta1IngressClassParamsApiResponse =
 export type DeleteElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
   /** name of the IngressClassParams */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -547,7 +605,7 @@ export type PatchElbv2K8SAwsV1Beta1IngressClassParamsApiResponse =
 export type PatchElbv2K8SAwsV1Beta1IngressClassParamsApiArg = {
   /** name of the IngressClassParams */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -576,7 +634,7 @@ export type ListElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiResponse =
 export type ListElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -627,7 +685,7 @@ export type CreateElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiResponse =
 export type CreateElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -651,7 +709,7 @@ export type DeleteElbv2K8SAwsV1Beta1CollectionNamespacedTargetGroupBindingApiArg
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -701,7 +759,7 @@ export type ReadElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -717,7 +775,7 @@ export type ReplaceElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -744,7 +802,7 @@ export type DeleteElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -771,7 +829,7 @@ export type PatchElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -802,7 +860,7 @@ export type ReadElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -819,7 +877,7 @@ export type ReplaceElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -844,7 +902,7 @@ export type PatchElbv2K8SAwsV1Beta1NamespacedTargetGroupBindingStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -885,7 +943,7 @@ export type ListElbv2K8SAwsV1Beta1TargetGroupBindingForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

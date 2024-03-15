@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getNetworkingV1ApiResources = (
   args: GetNetworkingV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,17 @@ export const getNetworkingV1ApiResources = (
     options
   )
 }
-export const listNetworkingV1IngressClass = (
-  args: ListNetworkingV1IngressClassApiArg,
+export function listNetworkingV1IngressClass(
+  args: NoWatch<ListNetworkingV1IngressClassApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingV1IngressClassApiResponse>
+export function listNetworkingV1IngressClass(
+  args: ListNetworkingV1IngressClassApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListNetworkingV1IngressClassApiResponse>
+): Promise<void>
+export function listNetworkingV1IngressClass(args: any, options: any): any {
   return apiClient<ListNetworkingV1IngressClassApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/ingressclasses`,
@@ -155,10 +165,21 @@ export const patchNetworkingV1IngressClass = (
     options
   )
 }
-export const listNetworkingV1IngressForAllNamespaces = (
-  args: ListNetworkingV1IngressForAllNamespacesApiArg,
+export function listNetworkingV1IngressForAllNamespaces(
+  args: NoWatch<ListNetworkingV1IngressForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingV1IngressForAllNamespacesApiResponse>
+export function listNetworkingV1IngressForAllNamespaces(
+  args: ListNetworkingV1IngressForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingV1IngressForAllNamespacesApiResponse>
+): Promise<void>
+export function listNetworkingV1IngressForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingV1IngressForAllNamespacesApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/ingresses`,
@@ -179,10 +200,21 @@ export const listNetworkingV1IngressForAllNamespaces = (
     options
   )
 }
-export const listNetworkingV1NamespacedIngress = (
-  args: ListNetworkingV1NamespacedIngressApiArg,
+export function listNetworkingV1NamespacedIngress(
+  args: NoWatch<ListNetworkingV1NamespacedIngressApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingV1NamespacedIngressApiResponse>
+export function listNetworkingV1NamespacedIngress(
+  args: ListNetworkingV1NamespacedIngressApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingV1NamespacedIngressApiResponse>
+): Promise<void>
+export function listNetworkingV1NamespacedIngress(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingV1NamespacedIngressApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/namespaces/${args['namespace']}/ingresses`,
@@ -379,10 +411,21 @@ export const patchNetworkingV1NamespacedIngressStatus = (
     options
   )
 }
-export const listNetworkingV1NamespacedNetworkPolicy = (
-  args: ListNetworkingV1NamespacedNetworkPolicyApiArg,
+export function listNetworkingV1NamespacedNetworkPolicy(
+  args: NoWatch<ListNetworkingV1NamespacedNetworkPolicyApiArg>,
   options?: Options
-) => {
+): Promise<ListNetworkingV1NamespacedNetworkPolicyApiResponse>
+export function listNetworkingV1NamespacedNetworkPolicy(
+  args: ListNetworkingV1NamespacedNetworkPolicyApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingV1NamespacedNetworkPolicyApiResponse>
+): Promise<void>
+export function listNetworkingV1NamespacedNetworkPolicy(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingV1NamespacedNetworkPolicyApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/namespaces/${args['namespace']}/networkpolicies`,
@@ -526,63 +569,21 @@ export const patchNetworkingV1NamespacedNetworkPolicy = (
     options
   )
 }
-export const readNetworkingV1NamespacedNetworkPolicyStatus = (
-  args: ReadNetworkingV1NamespacedNetworkPolicyStatusApiArg,
+export function listNetworkingV1NetworkPolicyForAllNamespaces(
+  args: NoWatch<ListNetworkingV1NetworkPolicyForAllNamespacesApiArg>,
   options?: Options
-) => {
-  return apiClient<ReadNetworkingV1NamespacedNetworkPolicyStatusApiResponse>(
-    {
-      path: `/apis/networking.k8s.io/v1/namespaces/${args['namespace']}/networkpolicies/${args.name}/status`,
-      params: { pretty: args.pretty },
-    },
-    options
-  )
-}
-export const replaceNetworkingV1NamespacedNetworkPolicyStatus = (
-  args: ReplaceNetworkingV1NamespacedNetworkPolicyStatusApiArg,
-  options?: Options
-) => {
-  return apiClient<ReplaceNetworkingV1NamespacedNetworkPolicyStatusApiResponse>(
-    {
-      path: `/apis/networking.k8s.io/v1/namespaces/${args['namespace']}/networkpolicies/${args.name}/status`,
-      method: 'PUT',
-      body: args.body,
-      contentType: args.contentType,
-      params: {
-        pretty: args.pretty,
-        dryRun: args.dryRun,
-        fieldManager: args.fieldManager,
-        fieldValidation: args.fieldValidation,
-      },
-    },
-    options
-  )
-}
-export const patchNetworkingV1NamespacedNetworkPolicyStatus = (
-  args: PatchNetworkingV1NamespacedNetworkPolicyStatusApiArg,
-  options?: Options
-) => {
-  return apiClient<PatchNetworkingV1NamespacedNetworkPolicyStatusApiResponse>(
-    {
-      path: `/apis/networking.k8s.io/v1/namespaces/${args['namespace']}/networkpolicies/${args.name}/status`,
-      method: 'PATCH',
-      body: args.body,
-      contentType: args.contentType,
-      params: {
-        pretty: args.pretty,
-        dryRun: args.dryRun,
-        fieldManager: args.fieldManager,
-        fieldValidation: args.fieldValidation,
-        force: args.force,
-      },
-    },
-    options
-  )
-}
-export const listNetworkingV1NetworkPolicyForAllNamespaces = (
-  args: ListNetworkingV1NetworkPolicyForAllNamespacesApiArg,
-  options?: Options
-) => {
+): Promise<ListNetworkingV1NetworkPolicyForAllNamespacesApiResponse>
+export function listNetworkingV1NetworkPolicyForAllNamespaces(
+  args: ListNetworkingV1NetworkPolicyForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListNetworkingV1NetworkPolicyForAllNamespacesApiResponse>
+): Promise<void>
+export function listNetworkingV1NetworkPolicyForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListNetworkingV1NetworkPolicyForAllNamespacesApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/networkpolicies`,
@@ -603,10 +604,21 @@ export const listNetworkingV1NetworkPolicyForAllNamespaces = (
     options
   )
 }
-export const watchNetworkingV1IngressClassList = (
-  args: WatchNetworkingV1IngressClassListApiArg,
+export function watchNetworkingV1IngressClassList(
+  args: NoWatch<WatchNetworkingV1IngressClassListApiArg>,
   options?: Options
-) => {
+): Promise<WatchNetworkingV1IngressClassListApiResponse>
+export function watchNetworkingV1IngressClassList(
+  args: WatchNetworkingV1IngressClassListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchNetworkingV1IngressClassListApiResponse>
+): Promise<void>
+export function watchNetworkingV1IngressClassList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchNetworkingV1IngressClassListApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/watch/ingressclasses`,
@@ -627,10 +639,17 @@ export const watchNetworkingV1IngressClassList = (
     options
   )
 }
-export const watchNetworkingV1IngressClass = (
-  args: WatchNetworkingV1IngressClassApiArg,
+export function watchNetworkingV1IngressClass(
+  args: NoWatch<WatchNetworkingV1IngressClassApiArg>,
   options?: Options
-) => {
+): Promise<WatchNetworkingV1IngressClassApiResponse>
+export function watchNetworkingV1IngressClass(
+  args: WatchNetworkingV1IngressClassApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchNetworkingV1IngressClassApiResponse>
+): Promise<void>
+export function watchNetworkingV1IngressClass(args: any, options: any): any {
   return apiClient<WatchNetworkingV1IngressClassApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/watch/ingressclasses/${args.name}`,
@@ -651,10 +670,21 @@ export const watchNetworkingV1IngressClass = (
     options
   )
 }
-export const watchNetworkingV1IngressListForAllNamespaces = (
-  args: WatchNetworkingV1IngressListForAllNamespacesApiArg,
+export function watchNetworkingV1IngressListForAllNamespaces(
+  args: NoWatch<WatchNetworkingV1IngressListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchNetworkingV1IngressListForAllNamespacesApiResponse>
+export function watchNetworkingV1IngressListForAllNamespaces(
+  args: WatchNetworkingV1IngressListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchNetworkingV1IngressListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchNetworkingV1IngressListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchNetworkingV1IngressListForAllNamespacesApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/watch/ingresses`,
@@ -675,10 +705,21 @@ export const watchNetworkingV1IngressListForAllNamespaces = (
     options
   )
 }
-export const watchNetworkingV1NamespacedIngressList = (
-  args: WatchNetworkingV1NamespacedIngressListApiArg,
+export function watchNetworkingV1NamespacedIngressList(
+  args: NoWatch<WatchNetworkingV1NamespacedIngressListApiArg>,
   options?: Options
-) => {
+): Promise<WatchNetworkingV1NamespacedIngressListApiResponse>
+export function watchNetworkingV1NamespacedIngressList(
+  args: WatchNetworkingV1NamespacedIngressListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchNetworkingV1NamespacedIngressListApiResponse>
+): Promise<void>
+export function watchNetworkingV1NamespacedIngressList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchNetworkingV1NamespacedIngressListApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/watch/namespaces/${args['namespace']}/ingresses`,
@@ -699,10 +740,21 @@ export const watchNetworkingV1NamespacedIngressList = (
     options
   )
 }
-export const watchNetworkingV1NamespacedIngress = (
-  args: WatchNetworkingV1NamespacedIngressApiArg,
+export function watchNetworkingV1NamespacedIngress(
+  args: NoWatch<WatchNetworkingV1NamespacedIngressApiArg>,
   options?: Options
-) => {
+): Promise<WatchNetworkingV1NamespacedIngressApiResponse>
+export function watchNetworkingV1NamespacedIngress(
+  args: WatchNetworkingV1NamespacedIngressApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchNetworkingV1NamespacedIngressApiResponse>
+): Promise<void>
+export function watchNetworkingV1NamespacedIngress(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchNetworkingV1NamespacedIngressApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/watch/namespaces/${args['namespace']}/ingresses/${args.name}`,
@@ -723,10 +775,21 @@ export const watchNetworkingV1NamespacedIngress = (
     options
   )
 }
-export const watchNetworkingV1NamespacedNetworkPolicyList = (
-  args: WatchNetworkingV1NamespacedNetworkPolicyListApiArg,
+export function watchNetworkingV1NamespacedNetworkPolicyList(
+  args: NoWatch<WatchNetworkingV1NamespacedNetworkPolicyListApiArg>,
   options?: Options
-) => {
+): Promise<WatchNetworkingV1NamespacedNetworkPolicyListApiResponse>
+export function watchNetworkingV1NamespacedNetworkPolicyList(
+  args: WatchNetworkingV1NamespacedNetworkPolicyListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchNetworkingV1NamespacedNetworkPolicyListApiResponse>
+): Promise<void>
+export function watchNetworkingV1NamespacedNetworkPolicyList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchNetworkingV1NamespacedNetworkPolicyListApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/watch/namespaces/${args['namespace']}/networkpolicies`,
@@ -747,10 +810,21 @@ export const watchNetworkingV1NamespacedNetworkPolicyList = (
     options
   )
 }
-export const watchNetworkingV1NamespacedNetworkPolicy = (
-  args: WatchNetworkingV1NamespacedNetworkPolicyApiArg,
+export function watchNetworkingV1NamespacedNetworkPolicy(
+  args: NoWatch<WatchNetworkingV1NamespacedNetworkPolicyApiArg>,
   options?: Options
-) => {
+): Promise<WatchNetworkingV1NamespacedNetworkPolicyApiResponse>
+export function watchNetworkingV1NamespacedNetworkPolicy(
+  args: WatchNetworkingV1NamespacedNetworkPolicyApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchNetworkingV1NamespacedNetworkPolicyApiResponse>
+): Promise<void>
+export function watchNetworkingV1NamespacedNetworkPolicy(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchNetworkingV1NamespacedNetworkPolicyApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/watch/namespaces/${args['namespace']}/networkpolicies/${args.name}`,
@@ -771,10 +845,21 @@ export const watchNetworkingV1NamespacedNetworkPolicy = (
     options
   )
 }
-export const watchNetworkingV1NetworkPolicyListForAllNamespaces = (
-  args: WatchNetworkingV1NetworkPolicyListForAllNamespacesApiArg,
+export function watchNetworkingV1NetworkPolicyListForAllNamespaces(
+  args: NoWatch<WatchNetworkingV1NetworkPolicyListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchNetworkingV1NetworkPolicyListForAllNamespacesApiResponse>
+export function watchNetworkingV1NetworkPolicyListForAllNamespaces(
+  args: WatchNetworkingV1NetworkPolicyListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchNetworkingV1NetworkPolicyListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchNetworkingV1NetworkPolicyListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchNetworkingV1NetworkPolicyListForAllNamespacesApiResponse>(
     {
       path: `/apis/networking.k8s.io/v1/watch/networkpolicies`,
@@ -801,7 +886,7 @@ export type GetNetworkingV1ApiResourcesApiArg = void
 export type ListNetworkingV1IngressClassApiResponse =
   /** status 200 OK */ IoK8SApiNetworkingV1IngressClassList
 export type ListNetworkingV1IngressClassApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -850,7 +935,7 @@ export type CreateNetworkingV1IngressClassApiResponse =
   | /** status 201 Created */ IoK8SApiNetworkingV1IngressClass
   | /** status 202 Accepted */ IoK8SApiNetworkingV1IngressClass
 export type CreateNetworkingV1IngressClassApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -865,7 +950,7 @@ export type CreateNetworkingV1IngressClassApiArg = {
 export type DeleteNetworkingV1CollectionIngressClassApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNetworkingV1CollectionIngressClassApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -920,7 +1005,7 @@ export type ReadNetworkingV1IngressClassApiResponse =
 export type ReadNetworkingV1IngressClassApiArg = {
   /** name of the IngressClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceNetworkingV1IngressClassApiResponse =
@@ -930,7 +1015,7 @@ export type ReplaceNetworkingV1IngressClassApiResponse =
 export type ReplaceNetworkingV1IngressClassApiArg = {
   /** name of the IngressClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -949,7 +1034,7 @@ export type DeleteNetworkingV1IngressClassApiResponse =
 export type DeleteNetworkingV1IngressClassApiArg = {
   /** name of the IngressClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -970,7 +1055,7 @@ export type PatchNetworkingV1IngressClassApiResponse =
 export type PatchNetworkingV1IngressClassApiArg = {
   /** name of the IngressClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1015,7 +1100,7 @@ export type ListNetworkingV1IngressForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1049,7 +1134,7 @@ export type ListNetworkingV1NamespacedIngressApiResponse =
 export type ListNetworkingV1NamespacedIngressApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1100,7 +1185,7 @@ export type CreateNetworkingV1NamespacedIngressApiResponse =
 export type CreateNetworkingV1NamespacedIngressApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1117,7 +1202,7 @@ export type DeleteNetworkingV1CollectionNamespacedIngressApiResponse =
 export type DeleteNetworkingV1CollectionNamespacedIngressApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1174,7 +1259,7 @@ export type ReadNetworkingV1NamespacedIngressApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceNetworkingV1NamespacedIngressApiResponse =
@@ -1186,7 +1271,7 @@ export type ReplaceNetworkingV1NamespacedIngressApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1207,7 +1292,7 @@ export type DeleteNetworkingV1NamespacedIngressApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1230,7 +1315,7 @@ export type PatchNetworkingV1NamespacedIngressApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1265,7 +1350,7 @@ export type ReadNetworkingV1NamespacedIngressStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceNetworkingV1NamespacedIngressStatusApiResponse =
@@ -1277,7 +1362,7 @@ export type ReplaceNetworkingV1NamespacedIngressStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1298,7 +1383,7 @@ export type PatchNetworkingV1NamespacedIngressStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1331,7 +1416,7 @@ export type ListNetworkingV1NamespacedNetworkPolicyApiResponse =
 export type ListNetworkingV1NamespacedNetworkPolicyApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1382,7 +1467,7 @@ export type CreateNetworkingV1NamespacedNetworkPolicyApiResponse =
 export type CreateNetworkingV1NamespacedNetworkPolicyApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1399,7 +1484,7 @@ export type DeleteNetworkingV1CollectionNamespacedNetworkPolicyApiResponse =
 export type DeleteNetworkingV1CollectionNamespacedNetworkPolicyApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1456,7 +1541,7 @@ export type ReadNetworkingV1NamespacedNetworkPolicyApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceNetworkingV1NamespacedNetworkPolicyApiResponse =
@@ -1468,7 +1553,7 @@ export type ReplaceNetworkingV1NamespacedNetworkPolicyApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1489,7 +1574,7 @@ export type DeleteNetworkingV1NamespacedNetworkPolicyApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1512,75 +1597,7 @@ export type PatchNetworkingV1NamespacedNetworkPolicyApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
-  pretty?: string
-  /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
-  dryRun?: string
-  /** fieldManager is a name associated with the actor or entity that is making these changes. The value must be less than or 128 characters long, and only contain printable characters, as defined by https://golang.org/pkg/unicode/#IsPrint. This field is required for apply requests (application/apply-patch) but optional for non-apply patch types (JsonPatch, MergePatch, StrategicMergePatch). */
-  fieldManager?: string
-  /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
-  fieldValidation?: string
-  /** Force is going to "force" Apply requests. It means user will re-acquire conflicting fields owned by other people. Force flag must be unset for non-apply patch requests. */
-  force?: boolean
-} & (
-  | {
-      contentType: 'application/apply-patch+yaml'
-      body: IoK8SApiNetworkingV1NetworkPolicy
-    }
-  | {
-      contentType: 'application/json-patch+json'
-      body: JsonPatchOperations
-    }
-  | {
-      contentType: 'application/merge-patch+json'
-      body: IoK8SApiNetworkingV1NetworkPolicy
-    }
-  | {
-      contentType: 'application/strategic-merge-patch+json'
-      body: IoK8SApiNetworkingV1NetworkPolicy
-    }
-)
-export type ReadNetworkingV1NamespacedNetworkPolicyStatusApiResponse =
-  /** status 200 OK */ IoK8SApiNetworkingV1NetworkPolicy
-export type ReadNetworkingV1NamespacedNetworkPolicyStatusApiArg = {
-  /** name of the NetworkPolicy */
-  name: string
-  /** object name and auth scope, such as for teams and projects */
-  namespace: string
-  /** If 'true', then the output is pretty printed. */
-  pretty?: string
-}
-export type ReplaceNetworkingV1NamespacedNetworkPolicyStatusApiResponse =
-  /** status 200 OK */
-  | IoK8SApiNetworkingV1NetworkPolicy
-  | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
-export type ReplaceNetworkingV1NamespacedNetworkPolicyStatusApiArg = {
-  /** name of the NetworkPolicy */
-  name: string
-  /** object name and auth scope, such as for teams and projects */
-  namespace: string
-  /** If 'true', then the output is pretty printed. */
-  pretty?: string
-  /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
-  dryRun?: string
-  /** fieldManager is a name associated with the actor or entity that is making these changes. The value must be less than or 128 characters long, and only contain printable characters, as defined by https://golang.org/pkg/unicode/#IsPrint. */
-  fieldManager?: string
-  /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
-  fieldValidation?: string
-} & {
-  contentType?: string
-  body: IoK8SApiNetworkingV1NetworkPolicy
-}
-export type PatchNetworkingV1NamespacedNetworkPolicyStatusApiResponse =
-  /** status 200 OK */
-  | IoK8SApiNetworkingV1NetworkPolicy
-  | /** status 201 Created */ IoK8SApiNetworkingV1NetworkPolicy
-export type PatchNetworkingV1NamespacedNetworkPolicyStatusApiArg = {
-  /** name of the NetworkPolicy */
-  name: string
-  /** object name and auth scope, such as for teams and projects */
-  namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1625,7 +1642,7 @@ export type ListNetworkingV1NetworkPolicyForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1671,7 +1688,7 @@ export type WatchNetworkingV1IngressClassListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1719,7 +1736,7 @@ export type WatchNetworkingV1IngressClassApiArg = {
   limit?: number
   /** name of the IngressClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1765,7 +1782,7 @@ export type WatchNetworkingV1IngressListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1813,7 +1830,7 @@ export type WatchNetworkingV1NamespacedIngressListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1863,7 +1880,7 @@ export type WatchNetworkingV1NamespacedIngressApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1911,7 +1928,7 @@ export type WatchNetworkingV1NamespacedNetworkPolicyListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1961,7 +1978,7 @@ export type WatchNetworkingV1NamespacedNetworkPolicyApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2007,7 +2024,7 @@ export type WatchNetworkingV1NetworkPolicyListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2312,23 +2329,11 @@ export type IoK8SApiNetworkingV1NetworkPolicySpec = {
   podSelector: IoK8SApimachineryPkgApisMetaV1LabelSelector
   policyTypes?: string[] | undefined
 }
-export type IoK8SApimachineryPkgApisMetaV1Condition = {
-  lastTransitionTime: IoK8SApimachineryPkgApisMetaV1Time
-  message: string
-  observedGeneration?: number | undefined
-  reason: string
-  status: string
-  type: string
-}
-export type IoK8SApiNetworkingV1NetworkPolicyStatus = {
-  conditions?: IoK8SApimachineryPkgApisMetaV1Condition[] | undefined
-}
 export type IoK8SApiNetworkingV1NetworkPolicy = {
   apiVersion?: string | undefined
   kind?: string | undefined
   metadata?: IoK8SApimachineryPkgApisMetaV1ObjectMeta | undefined
   spec?: IoK8SApiNetworkingV1NetworkPolicySpec | undefined
-  status?: IoK8SApiNetworkingV1NetworkPolicyStatus | undefined
 }
 export type IoK8SApiNetworkingV1NetworkPolicyList = {
   apiVersion?: string | undefined

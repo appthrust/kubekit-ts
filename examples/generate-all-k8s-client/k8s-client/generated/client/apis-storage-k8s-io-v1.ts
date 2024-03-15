@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getStorageV1ApiResources = (
   args: GetStorageV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,17 @@ export const getStorageV1ApiResources = (
     options
   )
 }
-export const listStorageV1CsiDriver = (
-  args: ListStorageV1CsiDriverApiArg,
+export function listStorageV1CsiDriver(
+  args: NoWatch<ListStorageV1CsiDriverApiArg>,
   options?: Options
-) => {
+): Promise<ListStorageV1CsiDriverApiResponse>
+export function listStorageV1CsiDriver(
+  args: ListStorageV1CsiDriverApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListStorageV1CsiDriverApiResponse>
+): Promise<void>
+export function listStorageV1CsiDriver(args: any, options: any): any {
   return apiClient<ListStorageV1CsiDriverApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/csidrivers`,
@@ -155,10 +165,17 @@ export const patchStorageV1CsiDriver = (
     options
   )
 }
-export const listStorageV1CsiNode = (
-  args: ListStorageV1CsiNodeApiArg,
+export function listStorageV1CsiNode(
+  args: NoWatch<ListStorageV1CsiNodeApiArg>,
   options?: Options
-) => {
+): Promise<ListStorageV1CsiNodeApiResponse>
+export function listStorageV1CsiNode(
+  args: ListStorageV1CsiNodeApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListStorageV1CsiNodeApiResponse>
+): Promise<void>
+export function listStorageV1CsiNode(args: any, options: any): any {
   return apiClient<ListStorageV1CsiNodeApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/csinodes`,
@@ -302,10 +319,21 @@ export const patchStorageV1CsiNode = (
     options
   )
 }
-export const listStorageV1CsiStorageCapacityForAllNamespaces = (
-  args: ListStorageV1CsiStorageCapacityForAllNamespacesApiArg,
+export function listStorageV1CsiStorageCapacityForAllNamespaces(
+  args: NoWatch<ListStorageV1CsiStorageCapacityForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListStorageV1CsiStorageCapacityForAllNamespacesApiResponse>
+export function listStorageV1CsiStorageCapacityForAllNamespaces(
+  args: ListStorageV1CsiStorageCapacityForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListStorageV1CsiStorageCapacityForAllNamespacesApiResponse>
+): Promise<void>
+export function listStorageV1CsiStorageCapacityForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListStorageV1CsiStorageCapacityForAllNamespacesApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/csistoragecapacities`,
@@ -326,10 +354,21 @@ export const listStorageV1CsiStorageCapacityForAllNamespaces = (
     options
   )
 }
-export const listStorageV1NamespacedCsiStorageCapacity = (
-  args: ListStorageV1NamespacedCsiStorageCapacityApiArg,
+export function listStorageV1NamespacedCsiStorageCapacity(
+  args: NoWatch<ListStorageV1NamespacedCsiStorageCapacityApiArg>,
   options?: Options
-) => {
+): Promise<ListStorageV1NamespacedCsiStorageCapacityApiResponse>
+export function listStorageV1NamespacedCsiStorageCapacity(
+  args: ListStorageV1NamespacedCsiStorageCapacityApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListStorageV1NamespacedCsiStorageCapacityApiResponse>
+): Promise<void>
+export function listStorageV1NamespacedCsiStorageCapacity(
+  args: any,
+  options: any
+): any {
   return apiClient<ListStorageV1NamespacedCsiStorageCapacityApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/namespaces/${args['namespace']}/csistoragecapacities`,
@@ -473,10 +512,17 @@ export const patchStorageV1NamespacedCsiStorageCapacity = (
     options
   )
 }
-export const listStorageV1StorageClass = (
-  args: ListStorageV1StorageClassApiArg,
+export function listStorageV1StorageClass(
+  args: NoWatch<ListStorageV1StorageClassApiArg>,
   options?: Options
-) => {
+): Promise<ListStorageV1StorageClassApiResponse>
+export function listStorageV1StorageClass(
+  args: ListStorageV1StorageClassApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListStorageV1StorageClassApiResponse>
+): Promise<void>
+export function listStorageV1StorageClass(args: any, options: any): any {
   return apiClient<ListStorageV1StorageClassApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/storageclasses`,
@@ -620,10 +666,17 @@ export const patchStorageV1StorageClass = (
     options
   )
 }
-export const listStorageV1VolumeAttachment = (
-  args: ListStorageV1VolumeAttachmentApiArg,
+export function listStorageV1VolumeAttachment(
+  args: NoWatch<ListStorageV1VolumeAttachmentApiArg>,
   options?: Options
-) => {
+): Promise<ListStorageV1VolumeAttachmentApiResponse>
+export function listStorageV1VolumeAttachment(
+  args: ListStorageV1VolumeAttachmentApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListStorageV1VolumeAttachmentApiResponse>
+): Promise<void>
+export function listStorageV1VolumeAttachment(args: any, options: any): any {
   return apiClient<ListStorageV1VolumeAttachmentApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/volumeattachments`,
@@ -820,10 +873,17 @@ export const patchStorageV1VolumeAttachmentStatus = (
     options
   )
 }
-export const watchStorageV1CsiDriverList = (
-  args: WatchStorageV1CsiDriverListApiArg,
+export function watchStorageV1CsiDriverList(
+  args: NoWatch<WatchStorageV1CsiDriverListApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1CsiDriverListApiResponse>
+export function watchStorageV1CsiDriverList(
+  args: WatchStorageV1CsiDriverListApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchStorageV1CsiDriverListApiResponse>
+): Promise<void>
+export function watchStorageV1CsiDriverList(args: any, options: any): any {
   return apiClient<WatchStorageV1CsiDriverListApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/csidrivers`,
@@ -844,10 +904,17 @@ export const watchStorageV1CsiDriverList = (
     options
   )
 }
-export const watchStorageV1CsiDriver = (
-  args: WatchStorageV1CsiDriverApiArg,
+export function watchStorageV1CsiDriver(
+  args: NoWatch<WatchStorageV1CsiDriverApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1CsiDriverApiResponse>
+export function watchStorageV1CsiDriver(
+  args: WatchStorageV1CsiDriverApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchStorageV1CsiDriverApiResponse>
+): Promise<void>
+export function watchStorageV1CsiDriver(args: any, options: any): any {
   return apiClient<WatchStorageV1CsiDriverApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/csidrivers/${args.name}`,
@@ -868,10 +935,17 @@ export const watchStorageV1CsiDriver = (
     options
   )
 }
-export const watchStorageV1CsiNodeList = (
-  args: WatchStorageV1CsiNodeListApiArg,
+export function watchStorageV1CsiNodeList(
+  args: NoWatch<WatchStorageV1CsiNodeListApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1CsiNodeListApiResponse>
+export function watchStorageV1CsiNodeList(
+  args: WatchStorageV1CsiNodeListApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchStorageV1CsiNodeListApiResponse>
+): Promise<void>
+export function watchStorageV1CsiNodeList(args: any, options: any): any {
   return apiClient<WatchStorageV1CsiNodeListApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/csinodes`,
@@ -892,10 +966,17 @@ export const watchStorageV1CsiNodeList = (
     options
   )
 }
-export const watchStorageV1CsiNode = (
-  args: WatchStorageV1CsiNodeApiArg,
+export function watchStorageV1CsiNode(
+  args: NoWatch<WatchStorageV1CsiNodeApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1CsiNodeApiResponse>
+export function watchStorageV1CsiNode(
+  args: WatchStorageV1CsiNodeApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchStorageV1CsiNodeApiResponse>
+): Promise<void>
+export function watchStorageV1CsiNode(args: any, options: any): any {
   return apiClient<WatchStorageV1CsiNodeApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/csinodes/${args.name}`,
@@ -916,10 +997,21 @@ export const watchStorageV1CsiNode = (
     options
   )
 }
-export const watchStorageV1CsiStorageCapacityListForAllNamespaces = (
-  args: WatchStorageV1CsiStorageCapacityListForAllNamespacesApiArg,
+export function watchStorageV1CsiStorageCapacityListForAllNamespaces(
+  args: NoWatch<WatchStorageV1CsiStorageCapacityListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1CsiStorageCapacityListForAllNamespacesApiResponse>
+export function watchStorageV1CsiStorageCapacityListForAllNamespaces(
+  args: WatchStorageV1CsiStorageCapacityListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchStorageV1CsiStorageCapacityListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchStorageV1CsiStorageCapacityListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchStorageV1CsiStorageCapacityListForAllNamespacesApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/csistoragecapacities`,
@@ -940,10 +1032,21 @@ export const watchStorageV1CsiStorageCapacityListForAllNamespaces = (
     options
   )
 }
-export const watchStorageV1NamespacedCsiStorageCapacityList = (
-  args: WatchStorageV1NamespacedCsiStorageCapacityListApiArg,
+export function watchStorageV1NamespacedCsiStorageCapacityList(
+  args: NoWatch<WatchStorageV1NamespacedCsiStorageCapacityListApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1NamespacedCsiStorageCapacityListApiResponse>
+export function watchStorageV1NamespacedCsiStorageCapacityList(
+  args: WatchStorageV1NamespacedCsiStorageCapacityListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchStorageV1NamespacedCsiStorageCapacityListApiResponse>
+): Promise<void>
+export function watchStorageV1NamespacedCsiStorageCapacityList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchStorageV1NamespacedCsiStorageCapacityListApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/namespaces/${args['namespace']}/csistoragecapacities`,
@@ -964,10 +1067,21 @@ export const watchStorageV1NamespacedCsiStorageCapacityList = (
     options
   )
 }
-export const watchStorageV1NamespacedCsiStorageCapacity = (
-  args: WatchStorageV1NamespacedCsiStorageCapacityApiArg,
+export function watchStorageV1NamespacedCsiStorageCapacity(
+  args: NoWatch<WatchStorageV1NamespacedCsiStorageCapacityApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1NamespacedCsiStorageCapacityApiResponse>
+export function watchStorageV1NamespacedCsiStorageCapacity(
+  args: WatchStorageV1NamespacedCsiStorageCapacityApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchStorageV1NamespacedCsiStorageCapacityApiResponse>
+): Promise<void>
+export function watchStorageV1NamespacedCsiStorageCapacity(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchStorageV1NamespacedCsiStorageCapacityApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/namespaces/${args['namespace']}/csistoragecapacities/${args.name}`,
@@ -988,10 +1102,18 @@ export const watchStorageV1NamespacedCsiStorageCapacity = (
     options
   )
 }
-export const watchStorageV1StorageClassList = (
-  args: WatchStorageV1StorageClassListApiArg,
+export function watchStorageV1StorageClassList(
+  args: NoWatch<WatchStorageV1StorageClassListApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1StorageClassListApiResponse>
+export function watchStorageV1StorageClassList(
+  args: WatchStorageV1StorageClassListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchStorageV1StorageClassListApiResponse>
+): Promise<void>
+export function watchStorageV1StorageClassList(args: any, options: any): any {
   return apiClient<WatchStorageV1StorageClassListApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/storageclasses`,
@@ -1012,10 +1134,17 @@ export const watchStorageV1StorageClassList = (
     options
   )
 }
-export const watchStorageV1StorageClass = (
-  args: WatchStorageV1StorageClassApiArg,
+export function watchStorageV1StorageClass(
+  args: NoWatch<WatchStorageV1StorageClassApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1StorageClassApiResponse>
+export function watchStorageV1StorageClass(
+  args: WatchStorageV1StorageClassApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchStorageV1StorageClassApiResponse>
+): Promise<void>
+export function watchStorageV1StorageClass(args: any, options: any): any {
   return apiClient<WatchStorageV1StorageClassApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/storageclasses/${args.name}`,
@@ -1036,10 +1165,21 @@ export const watchStorageV1StorageClass = (
     options
   )
 }
-export const watchStorageV1VolumeAttachmentList = (
-  args: WatchStorageV1VolumeAttachmentListApiArg,
+export function watchStorageV1VolumeAttachmentList(
+  args: NoWatch<WatchStorageV1VolumeAttachmentListApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1VolumeAttachmentListApiResponse>
+export function watchStorageV1VolumeAttachmentList(
+  args: WatchStorageV1VolumeAttachmentListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchStorageV1VolumeAttachmentListApiResponse>
+): Promise<void>
+export function watchStorageV1VolumeAttachmentList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchStorageV1VolumeAttachmentListApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/volumeattachments`,
@@ -1060,10 +1200,18 @@ export const watchStorageV1VolumeAttachmentList = (
     options
   )
 }
-export const watchStorageV1VolumeAttachment = (
-  args: WatchStorageV1VolumeAttachmentApiArg,
+export function watchStorageV1VolumeAttachment(
+  args: NoWatch<WatchStorageV1VolumeAttachmentApiArg>,
   options?: Options
-) => {
+): Promise<WatchStorageV1VolumeAttachmentApiResponse>
+export function watchStorageV1VolumeAttachment(
+  args: WatchStorageV1VolumeAttachmentApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchStorageV1VolumeAttachmentApiResponse>
+): Promise<void>
+export function watchStorageV1VolumeAttachment(args: any, options: any): any {
   return apiClient<WatchStorageV1VolumeAttachmentApiResponse>(
     {
       path: `/apis/storage.k8s.io/v1/watch/volumeattachments/${args.name}`,
@@ -1090,7 +1238,7 @@ export type GetStorageV1ApiResourcesApiArg = void
 export type ListStorageV1CsiDriverApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1CsiDriverList
 export type ListStorageV1CsiDriverApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1139,7 +1287,7 @@ export type CreateStorageV1CsiDriverApiResponse =
   | /** status 201 Created */ IoK8SApiStorageV1CsiDriver
   | /** status 202 Accepted */ IoK8SApiStorageV1CsiDriver
 export type CreateStorageV1CsiDriverApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1154,7 +1302,7 @@ export type CreateStorageV1CsiDriverApiArg = {
 export type DeleteStorageV1CollectionCsiDriverApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteStorageV1CollectionCsiDriverApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1209,7 +1357,7 @@ export type ReadStorageV1CsiDriverApiResponse =
 export type ReadStorageV1CsiDriverApiArg = {
   /** name of the CSIDriver */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceStorageV1CsiDriverApiResponse =
@@ -1219,7 +1367,7 @@ export type ReplaceStorageV1CsiDriverApiResponse =
 export type ReplaceStorageV1CsiDriverApiArg = {
   /** name of the CSIDriver */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1238,7 +1386,7 @@ export type DeleteStorageV1CsiDriverApiResponse =
 export type DeleteStorageV1CsiDriverApiArg = {
   /** name of the CSIDriver */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1259,7 +1407,7 @@ export type PatchStorageV1CsiDriverApiResponse =
 export type PatchStorageV1CsiDriverApiArg = {
   /** name of the CSIDriver */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1290,7 +1438,7 @@ export type PatchStorageV1CsiDriverApiArg = {
 export type ListStorageV1CsiNodeApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1CsiNodeList
 export type ListStorageV1CsiNodeApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1339,7 +1487,7 @@ export type CreateStorageV1CsiNodeApiResponse =
   | /** status 201 Created */ IoK8SApiStorageV1CsiNode
   | /** status 202 Accepted */ IoK8SApiStorageV1CsiNode
 export type CreateStorageV1CsiNodeApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1354,7 +1502,7 @@ export type CreateStorageV1CsiNodeApiArg = {
 export type DeleteStorageV1CollectionCsiNodeApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteStorageV1CollectionCsiNodeApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1409,7 +1557,7 @@ export type ReadStorageV1CsiNodeApiResponse =
 export type ReadStorageV1CsiNodeApiArg = {
   /** name of the CSINode */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceStorageV1CsiNodeApiResponse =
@@ -1418,7 +1566,7 @@ export type ReplaceStorageV1CsiNodeApiResponse =
 export type ReplaceStorageV1CsiNodeApiArg = {
   /** name of the CSINode */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1436,7 +1584,7 @@ export type DeleteStorageV1CsiNodeApiResponse =
 export type DeleteStorageV1CsiNodeApiArg = {
   /** name of the CSINode */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1456,7 +1604,7 @@ export type PatchStorageV1CsiNodeApiResponse =
 export type PatchStorageV1CsiNodeApiArg = {
   /** name of the CSINode */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1501,7 +1649,7 @@ export type ListStorageV1CsiStorageCapacityForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1535,7 +1683,7 @@ export type ListStorageV1NamespacedCsiStorageCapacityApiResponse =
 export type ListStorageV1NamespacedCsiStorageCapacityApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1586,7 +1734,7 @@ export type CreateStorageV1NamespacedCsiStorageCapacityApiResponse =
 export type CreateStorageV1NamespacedCsiStorageCapacityApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1603,7 +1751,7 @@ export type DeleteStorageV1CollectionNamespacedCsiStorageCapacityApiResponse =
 export type DeleteStorageV1CollectionNamespacedCsiStorageCapacityApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1660,7 +1808,7 @@ export type ReadStorageV1NamespacedCsiStorageCapacityApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceStorageV1NamespacedCsiStorageCapacityApiResponse =
@@ -1672,7 +1820,7 @@ export type ReplaceStorageV1NamespacedCsiStorageCapacityApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1693,7 +1841,7 @@ export type DeleteStorageV1NamespacedCsiStorageCapacityApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1716,7 +1864,7 @@ export type PatchStorageV1NamespacedCsiStorageCapacityApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1747,7 +1895,7 @@ export type PatchStorageV1NamespacedCsiStorageCapacityApiArg = {
 export type ListStorageV1StorageClassApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1StorageClassList
 export type ListStorageV1StorageClassApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1796,7 +1944,7 @@ export type CreateStorageV1StorageClassApiResponse =
   | /** status 201 Created */ IoK8SApiStorageV1StorageClass
   | /** status 202 Accepted */ IoK8SApiStorageV1StorageClass
 export type CreateStorageV1StorageClassApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1811,7 +1959,7 @@ export type CreateStorageV1StorageClassApiArg = {
 export type DeleteStorageV1CollectionStorageClassApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteStorageV1CollectionStorageClassApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1866,7 +2014,7 @@ export type ReadStorageV1StorageClassApiResponse =
 export type ReadStorageV1StorageClassApiArg = {
   /** name of the StorageClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceStorageV1StorageClassApiResponse =
@@ -1876,7 +2024,7 @@ export type ReplaceStorageV1StorageClassApiResponse =
 export type ReplaceStorageV1StorageClassApiArg = {
   /** name of the StorageClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1895,7 +2043,7 @@ export type DeleteStorageV1StorageClassApiResponse =
 export type DeleteStorageV1StorageClassApiArg = {
   /** name of the StorageClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1916,7 +2064,7 @@ export type PatchStorageV1StorageClassApiResponse =
 export type PatchStorageV1StorageClassApiArg = {
   /** name of the StorageClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1947,7 +2095,7 @@ export type PatchStorageV1StorageClassApiArg = {
 export type ListStorageV1VolumeAttachmentApiResponse =
   /** status 200 OK */ IoK8SApiStorageV1VolumeAttachmentList
 export type ListStorageV1VolumeAttachmentApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1996,7 +2144,7 @@ export type CreateStorageV1VolumeAttachmentApiResponse =
   | /** status 201 Created */ IoK8SApiStorageV1VolumeAttachment
   | /** status 202 Accepted */ IoK8SApiStorageV1VolumeAttachment
 export type CreateStorageV1VolumeAttachmentApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2011,7 +2159,7 @@ export type CreateStorageV1VolumeAttachmentApiArg = {
 export type DeleteStorageV1CollectionVolumeAttachmentApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteStorageV1CollectionVolumeAttachmentApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -2066,7 +2214,7 @@ export type ReadStorageV1VolumeAttachmentApiResponse =
 export type ReadStorageV1VolumeAttachmentApiArg = {
   /** name of the VolumeAttachment */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceStorageV1VolumeAttachmentApiResponse =
@@ -2076,7 +2224,7 @@ export type ReplaceStorageV1VolumeAttachmentApiResponse =
 export type ReplaceStorageV1VolumeAttachmentApiArg = {
   /** name of the VolumeAttachment */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2095,7 +2243,7 @@ export type DeleteStorageV1VolumeAttachmentApiResponse =
 export type DeleteStorageV1VolumeAttachmentApiArg = {
   /** name of the VolumeAttachment */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2116,7 +2264,7 @@ export type PatchStorageV1VolumeAttachmentApiResponse =
 export type PatchStorageV1VolumeAttachmentApiArg = {
   /** name of the VolumeAttachment */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2149,7 +2297,7 @@ export type ReadStorageV1VolumeAttachmentStatusApiResponse =
 export type ReadStorageV1VolumeAttachmentStatusApiArg = {
   /** name of the VolumeAttachment */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceStorageV1VolumeAttachmentStatusApiResponse =
@@ -2159,7 +2307,7 @@ export type ReplaceStorageV1VolumeAttachmentStatusApiResponse =
 export type ReplaceStorageV1VolumeAttachmentStatusApiArg = {
   /** name of the VolumeAttachment */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2178,7 +2326,7 @@ export type PatchStorageV1VolumeAttachmentStatusApiResponse =
 export type PatchStorageV1VolumeAttachmentStatusApiArg = {
   /** name of the VolumeAttachment */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2223,7 +2371,7 @@ export type WatchStorageV1CsiDriverListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2271,7 +2419,7 @@ export type WatchStorageV1CsiDriverApiArg = {
   limit?: number
   /** name of the CSIDriver */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2317,7 +2465,7 @@ export type WatchStorageV1CsiNodeListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2365,7 +2513,7 @@ export type WatchStorageV1CsiNodeApiArg = {
   limit?: number
   /** name of the CSINode */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2411,7 +2559,7 @@ export type WatchStorageV1CsiStorageCapacityListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2459,7 +2607,7 @@ export type WatchStorageV1NamespacedCsiStorageCapacityListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2509,7 +2657,7 @@ export type WatchStorageV1NamespacedCsiStorageCapacityApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2555,7 +2703,7 @@ export type WatchStorageV1StorageClassListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2603,7 +2751,7 @@ export type WatchStorageV1StorageClassApiArg = {
   limit?: number
   /** name of the StorageClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2649,7 +2797,7 @@ export type WatchStorageV1VolumeAttachmentListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2697,7 +2845,7 @@ export type WatchStorageV1VolumeAttachmentApiArg = {
   limit?: number
   /** name of the VolumeAttachment */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3217,6 +3365,7 @@ export type IoK8SApiCoreV1PersistentVolumeSpec = {
   scaleIO?: IoK8SApiCoreV1ScaleIoPersistentVolumeSource | undefined
   storageClassName?: string | undefined
   storageos?: IoK8SApiCoreV1StorageOsPersistentVolumeSource | undefined
+  volumeAttributesClassName?: string | undefined
   volumeMode?: ('Block' | 'Filesystem') | undefined
   vsphereVolume?: IoK8SApiCoreV1VsphereVirtualDiskVolumeSource | undefined
 }

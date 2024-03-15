@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getAppsV1ApiResources = (
   args: GetAppsV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,21 @@ export const getAppsV1ApiResources = (
     options
   )
 }
-export const listAppsV1ControllerRevisionForAllNamespaces = (
-  args: ListAppsV1ControllerRevisionForAllNamespacesApiArg,
+export function listAppsV1ControllerRevisionForAllNamespaces(
+  args: NoWatch<ListAppsV1ControllerRevisionForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListAppsV1ControllerRevisionForAllNamespacesApiResponse>
+export function listAppsV1ControllerRevisionForAllNamespaces(
+  args: ListAppsV1ControllerRevisionForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAppsV1ControllerRevisionForAllNamespacesApiResponse>
+): Promise<void>
+export function listAppsV1ControllerRevisionForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAppsV1ControllerRevisionForAllNamespacesApiResponse>(
     {
       path: `/apis/apps/v1/controllerrevisions`,
@@ -32,10 +46,21 @@ export const listAppsV1ControllerRevisionForAllNamespaces = (
     options
   )
 }
-export const listAppsV1DaemonSetForAllNamespaces = (
-  args: ListAppsV1DaemonSetForAllNamespacesApiArg,
+export function listAppsV1DaemonSetForAllNamespaces(
+  args: NoWatch<ListAppsV1DaemonSetForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListAppsV1DaemonSetForAllNamespacesApiResponse>
+export function listAppsV1DaemonSetForAllNamespaces(
+  args: ListAppsV1DaemonSetForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAppsV1DaemonSetForAllNamespacesApiResponse>
+): Promise<void>
+export function listAppsV1DaemonSetForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAppsV1DaemonSetForAllNamespacesApiResponse>(
     {
       path: `/apis/apps/v1/daemonsets`,
@@ -56,10 +81,21 @@ export const listAppsV1DaemonSetForAllNamespaces = (
     options
   )
 }
-export const listAppsV1DeploymentForAllNamespaces = (
-  args: ListAppsV1DeploymentForAllNamespacesApiArg,
+export function listAppsV1DeploymentForAllNamespaces(
+  args: NoWatch<ListAppsV1DeploymentForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListAppsV1DeploymentForAllNamespacesApiResponse>
+export function listAppsV1DeploymentForAllNamespaces(
+  args: ListAppsV1DeploymentForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAppsV1DeploymentForAllNamespacesApiResponse>
+): Promise<void>
+export function listAppsV1DeploymentForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAppsV1DeploymentForAllNamespacesApiResponse>(
     {
       path: `/apis/apps/v1/deployments`,
@@ -80,10 +116,21 @@ export const listAppsV1DeploymentForAllNamespaces = (
     options
   )
 }
-export const listAppsV1NamespacedControllerRevision = (
-  args: ListAppsV1NamespacedControllerRevisionApiArg,
+export function listAppsV1NamespacedControllerRevision(
+  args: NoWatch<ListAppsV1NamespacedControllerRevisionApiArg>,
   options?: Options
-) => {
+): Promise<ListAppsV1NamespacedControllerRevisionApiResponse>
+export function listAppsV1NamespacedControllerRevision(
+  args: ListAppsV1NamespacedControllerRevisionApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAppsV1NamespacedControllerRevisionApiResponse>
+): Promise<void>
+export function listAppsV1NamespacedControllerRevision(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAppsV1NamespacedControllerRevisionApiResponse>(
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/controllerrevisions`,
@@ -227,10 +274,17 @@ export const patchAppsV1NamespacedControllerRevision = (
     options
   )
 }
-export const listAppsV1NamespacedDaemonSet = (
-  args: ListAppsV1NamespacedDaemonSetApiArg,
+export function listAppsV1NamespacedDaemonSet(
+  args: NoWatch<ListAppsV1NamespacedDaemonSetApiArg>,
   options?: Options
-) => {
+): Promise<ListAppsV1NamespacedDaemonSetApiResponse>
+export function listAppsV1NamespacedDaemonSet(
+  args: ListAppsV1NamespacedDaemonSetApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListAppsV1NamespacedDaemonSetApiResponse>
+): Promise<void>
+export function listAppsV1NamespacedDaemonSet(args: any, options: any): any {
   return apiClient<ListAppsV1NamespacedDaemonSetApiResponse>(
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/daemonsets`,
@@ -427,10 +481,18 @@ export const patchAppsV1NamespacedDaemonSetStatus = (
     options
   )
 }
-export const listAppsV1NamespacedDeployment = (
-  args: ListAppsV1NamespacedDeploymentApiArg,
+export function listAppsV1NamespacedDeployment(
+  args: NoWatch<ListAppsV1NamespacedDeploymentApiArg>,
   options?: Options
-) => {
+): Promise<ListAppsV1NamespacedDeploymentApiResponse>
+export function listAppsV1NamespacedDeployment(
+  args: ListAppsV1NamespacedDeploymentApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAppsV1NamespacedDeploymentApiResponse>
+): Promise<void>
+export function listAppsV1NamespacedDeployment(args: any, options: any): any {
   return apiClient<ListAppsV1NamespacedDeploymentApiResponse>(
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/deployments`,
@@ -680,10 +742,18 @@ export const patchAppsV1NamespacedDeploymentStatus = (
     options
   )
 }
-export const listAppsV1NamespacedReplicaSet = (
-  args: ListAppsV1NamespacedReplicaSetApiArg,
+export function listAppsV1NamespacedReplicaSet(
+  args: NoWatch<ListAppsV1NamespacedReplicaSetApiArg>,
   options?: Options
-) => {
+): Promise<ListAppsV1NamespacedReplicaSetApiResponse>
+export function listAppsV1NamespacedReplicaSet(
+  args: ListAppsV1NamespacedReplicaSetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAppsV1NamespacedReplicaSetApiResponse>
+): Promise<void>
+export function listAppsV1NamespacedReplicaSet(args: any, options: any): any {
   return apiClient<ListAppsV1NamespacedReplicaSetApiResponse>(
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/replicasets`,
@@ -933,10 +1003,18 @@ export const patchAppsV1NamespacedReplicaSetStatus = (
     options
   )
 }
-export const listAppsV1NamespacedStatefulSet = (
-  args: ListAppsV1NamespacedStatefulSetApiArg,
+export function listAppsV1NamespacedStatefulSet(
+  args: NoWatch<ListAppsV1NamespacedStatefulSetApiArg>,
   options?: Options
-) => {
+): Promise<ListAppsV1NamespacedStatefulSetApiResponse>
+export function listAppsV1NamespacedStatefulSet(
+  args: ListAppsV1NamespacedStatefulSetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAppsV1NamespacedStatefulSetApiResponse>
+): Promise<void>
+export function listAppsV1NamespacedStatefulSet(args: any, options: any): any {
   return apiClient<ListAppsV1NamespacedStatefulSetApiResponse>(
     {
       path: `/apis/apps/v1/namespaces/${args['namespace']}/statefulsets`,
@@ -1186,10 +1264,21 @@ export const patchAppsV1NamespacedStatefulSetStatus = (
     options
   )
 }
-export const listAppsV1ReplicaSetForAllNamespaces = (
-  args: ListAppsV1ReplicaSetForAllNamespacesApiArg,
+export function listAppsV1ReplicaSetForAllNamespaces(
+  args: NoWatch<ListAppsV1ReplicaSetForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListAppsV1ReplicaSetForAllNamespacesApiResponse>
+export function listAppsV1ReplicaSetForAllNamespaces(
+  args: ListAppsV1ReplicaSetForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAppsV1ReplicaSetForAllNamespacesApiResponse>
+): Promise<void>
+export function listAppsV1ReplicaSetForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAppsV1ReplicaSetForAllNamespacesApiResponse>(
     {
       path: `/apis/apps/v1/replicasets`,
@@ -1210,10 +1299,21 @@ export const listAppsV1ReplicaSetForAllNamespaces = (
     options
   )
 }
-export const listAppsV1StatefulSetForAllNamespaces = (
-  args: ListAppsV1StatefulSetForAllNamespacesApiArg,
+export function listAppsV1StatefulSetForAllNamespaces(
+  args: NoWatch<ListAppsV1StatefulSetForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListAppsV1StatefulSetForAllNamespacesApiResponse>
+export function listAppsV1StatefulSetForAllNamespaces(
+  args: ListAppsV1StatefulSetForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAppsV1StatefulSetForAllNamespacesApiResponse>
+): Promise<void>
+export function listAppsV1StatefulSetForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAppsV1StatefulSetForAllNamespacesApiResponse>(
     {
       path: `/apis/apps/v1/statefulsets`,
@@ -1234,10 +1334,21 @@ export const listAppsV1StatefulSetForAllNamespaces = (
     options
   )
 }
-export const watchAppsV1ControllerRevisionListForAllNamespaces = (
-  args: WatchAppsV1ControllerRevisionListForAllNamespacesApiArg,
+export function watchAppsV1ControllerRevisionListForAllNamespaces(
+  args: NoWatch<WatchAppsV1ControllerRevisionListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1ControllerRevisionListForAllNamespacesApiResponse>
+export function watchAppsV1ControllerRevisionListForAllNamespaces(
+  args: WatchAppsV1ControllerRevisionListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1ControllerRevisionListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchAppsV1ControllerRevisionListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1ControllerRevisionListForAllNamespacesApiResponse>(
     {
       path: `/apis/apps/v1/watch/controllerrevisions`,
@@ -1258,10 +1369,21 @@ export const watchAppsV1ControllerRevisionListForAllNamespaces = (
     options
   )
 }
-export const watchAppsV1DaemonSetListForAllNamespaces = (
-  args: WatchAppsV1DaemonSetListForAllNamespacesApiArg,
+export function watchAppsV1DaemonSetListForAllNamespaces(
+  args: NoWatch<WatchAppsV1DaemonSetListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1DaemonSetListForAllNamespacesApiResponse>
+export function watchAppsV1DaemonSetListForAllNamespaces(
+  args: WatchAppsV1DaemonSetListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1DaemonSetListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchAppsV1DaemonSetListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1DaemonSetListForAllNamespacesApiResponse>(
     {
       path: `/apis/apps/v1/watch/daemonsets`,
@@ -1282,10 +1404,21 @@ export const watchAppsV1DaemonSetListForAllNamespaces = (
     options
   )
 }
-export const watchAppsV1DeploymentListForAllNamespaces = (
-  args: WatchAppsV1DeploymentListForAllNamespacesApiArg,
+export function watchAppsV1DeploymentListForAllNamespaces(
+  args: NoWatch<WatchAppsV1DeploymentListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1DeploymentListForAllNamespacesApiResponse>
+export function watchAppsV1DeploymentListForAllNamespaces(
+  args: WatchAppsV1DeploymentListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1DeploymentListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchAppsV1DeploymentListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1DeploymentListForAllNamespacesApiResponse>(
     {
       path: `/apis/apps/v1/watch/deployments`,
@@ -1306,10 +1439,21 @@ export const watchAppsV1DeploymentListForAllNamespaces = (
     options
   )
 }
-export const watchAppsV1NamespacedControllerRevisionList = (
-  args: WatchAppsV1NamespacedControllerRevisionListApiArg,
+export function watchAppsV1NamespacedControllerRevisionList(
+  args: NoWatch<WatchAppsV1NamespacedControllerRevisionListApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1NamespacedControllerRevisionListApiResponse>
+export function watchAppsV1NamespacedControllerRevisionList(
+  args: WatchAppsV1NamespacedControllerRevisionListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1NamespacedControllerRevisionListApiResponse>
+): Promise<void>
+export function watchAppsV1NamespacedControllerRevisionList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1NamespacedControllerRevisionListApiResponse>(
     {
       path: `/apis/apps/v1/watch/namespaces/${args['namespace']}/controllerrevisions`,
@@ -1330,10 +1474,21 @@ export const watchAppsV1NamespacedControllerRevisionList = (
     options
   )
 }
-export const watchAppsV1NamespacedControllerRevision = (
-  args: WatchAppsV1NamespacedControllerRevisionApiArg,
+export function watchAppsV1NamespacedControllerRevision(
+  args: NoWatch<WatchAppsV1NamespacedControllerRevisionApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1NamespacedControllerRevisionApiResponse>
+export function watchAppsV1NamespacedControllerRevision(
+  args: WatchAppsV1NamespacedControllerRevisionApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1NamespacedControllerRevisionApiResponse>
+): Promise<void>
+export function watchAppsV1NamespacedControllerRevision(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1NamespacedControllerRevisionApiResponse>(
     {
       path: `/apis/apps/v1/watch/namespaces/${args['namespace']}/controllerrevisions/${args.name}`,
@@ -1354,10 +1509,21 @@ export const watchAppsV1NamespacedControllerRevision = (
     options
   )
 }
-export const watchAppsV1NamespacedDaemonSetList = (
-  args: WatchAppsV1NamespacedDaemonSetListApiArg,
+export function watchAppsV1NamespacedDaemonSetList(
+  args: NoWatch<WatchAppsV1NamespacedDaemonSetListApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1NamespacedDaemonSetListApiResponse>
+export function watchAppsV1NamespacedDaemonSetList(
+  args: WatchAppsV1NamespacedDaemonSetListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1NamespacedDaemonSetListApiResponse>
+): Promise<void>
+export function watchAppsV1NamespacedDaemonSetList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1NamespacedDaemonSetListApiResponse>(
     {
       path: `/apis/apps/v1/watch/namespaces/${args['namespace']}/daemonsets`,
@@ -1378,10 +1544,18 @@ export const watchAppsV1NamespacedDaemonSetList = (
     options
   )
 }
-export const watchAppsV1NamespacedDaemonSet = (
-  args: WatchAppsV1NamespacedDaemonSetApiArg,
+export function watchAppsV1NamespacedDaemonSet(
+  args: NoWatch<WatchAppsV1NamespacedDaemonSetApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1NamespacedDaemonSetApiResponse>
+export function watchAppsV1NamespacedDaemonSet(
+  args: WatchAppsV1NamespacedDaemonSetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1NamespacedDaemonSetApiResponse>
+): Promise<void>
+export function watchAppsV1NamespacedDaemonSet(args: any, options: any): any {
   return apiClient<WatchAppsV1NamespacedDaemonSetApiResponse>(
     {
       path: `/apis/apps/v1/watch/namespaces/${args['namespace']}/daemonsets/${args.name}`,
@@ -1402,10 +1576,21 @@ export const watchAppsV1NamespacedDaemonSet = (
     options
   )
 }
-export const watchAppsV1NamespacedDeploymentList = (
-  args: WatchAppsV1NamespacedDeploymentListApiArg,
+export function watchAppsV1NamespacedDeploymentList(
+  args: NoWatch<WatchAppsV1NamespacedDeploymentListApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1NamespacedDeploymentListApiResponse>
+export function watchAppsV1NamespacedDeploymentList(
+  args: WatchAppsV1NamespacedDeploymentListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1NamespacedDeploymentListApiResponse>
+): Promise<void>
+export function watchAppsV1NamespacedDeploymentList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1NamespacedDeploymentListApiResponse>(
     {
       path: `/apis/apps/v1/watch/namespaces/${args['namespace']}/deployments`,
@@ -1426,10 +1611,18 @@ export const watchAppsV1NamespacedDeploymentList = (
     options
   )
 }
-export const watchAppsV1NamespacedDeployment = (
-  args: WatchAppsV1NamespacedDeploymentApiArg,
+export function watchAppsV1NamespacedDeployment(
+  args: NoWatch<WatchAppsV1NamespacedDeploymentApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1NamespacedDeploymentApiResponse>
+export function watchAppsV1NamespacedDeployment(
+  args: WatchAppsV1NamespacedDeploymentApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1NamespacedDeploymentApiResponse>
+): Promise<void>
+export function watchAppsV1NamespacedDeployment(args: any, options: any): any {
   return apiClient<WatchAppsV1NamespacedDeploymentApiResponse>(
     {
       path: `/apis/apps/v1/watch/namespaces/${args['namespace']}/deployments/${args.name}`,
@@ -1450,10 +1643,21 @@ export const watchAppsV1NamespacedDeployment = (
     options
   )
 }
-export const watchAppsV1NamespacedReplicaSetList = (
-  args: WatchAppsV1NamespacedReplicaSetListApiArg,
+export function watchAppsV1NamespacedReplicaSetList(
+  args: NoWatch<WatchAppsV1NamespacedReplicaSetListApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1NamespacedReplicaSetListApiResponse>
+export function watchAppsV1NamespacedReplicaSetList(
+  args: WatchAppsV1NamespacedReplicaSetListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1NamespacedReplicaSetListApiResponse>
+): Promise<void>
+export function watchAppsV1NamespacedReplicaSetList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1NamespacedReplicaSetListApiResponse>(
     {
       path: `/apis/apps/v1/watch/namespaces/${args['namespace']}/replicasets`,
@@ -1474,10 +1678,18 @@ export const watchAppsV1NamespacedReplicaSetList = (
     options
   )
 }
-export const watchAppsV1NamespacedReplicaSet = (
-  args: WatchAppsV1NamespacedReplicaSetApiArg,
+export function watchAppsV1NamespacedReplicaSet(
+  args: NoWatch<WatchAppsV1NamespacedReplicaSetApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1NamespacedReplicaSetApiResponse>
+export function watchAppsV1NamespacedReplicaSet(
+  args: WatchAppsV1NamespacedReplicaSetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1NamespacedReplicaSetApiResponse>
+): Promise<void>
+export function watchAppsV1NamespacedReplicaSet(args: any, options: any): any {
   return apiClient<WatchAppsV1NamespacedReplicaSetApiResponse>(
     {
       path: `/apis/apps/v1/watch/namespaces/${args['namespace']}/replicasets/${args.name}`,
@@ -1498,10 +1710,21 @@ export const watchAppsV1NamespacedReplicaSet = (
     options
   )
 }
-export const watchAppsV1NamespacedStatefulSetList = (
-  args: WatchAppsV1NamespacedStatefulSetListApiArg,
+export function watchAppsV1NamespacedStatefulSetList(
+  args: NoWatch<WatchAppsV1NamespacedStatefulSetListApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1NamespacedStatefulSetListApiResponse>
+export function watchAppsV1NamespacedStatefulSetList(
+  args: WatchAppsV1NamespacedStatefulSetListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1NamespacedStatefulSetListApiResponse>
+): Promise<void>
+export function watchAppsV1NamespacedStatefulSetList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1NamespacedStatefulSetListApiResponse>(
     {
       path: `/apis/apps/v1/watch/namespaces/${args['namespace']}/statefulsets`,
@@ -1522,10 +1745,18 @@ export const watchAppsV1NamespacedStatefulSetList = (
     options
   )
 }
-export const watchAppsV1NamespacedStatefulSet = (
-  args: WatchAppsV1NamespacedStatefulSetApiArg,
+export function watchAppsV1NamespacedStatefulSet(
+  args: NoWatch<WatchAppsV1NamespacedStatefulSetApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1NamespacedStatefulSetApiResponse>
+export function watchAppsV1NamespacedStatefulSet(
+  args: WatchAppsV1NamespacedStatefulSetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1NamespacedStatefulSetApiResponse>
+): Promise<void>
+export function watchAppsV1NamespacedStatefulSet(args: any, options: any): any {
   return apiClient<WatchAppsV1NamespacedStatefulSetApiResponse>(
     {
       path: `/apis/apps/v1/watch/namespaces/${args['namespace']}/statefulsets/${args.name}`,
@@ -1546,10 +1777,21 @@ export const watchAppsV1NamespacedStatefulSet = (
     options
   )
 }
-export const watchAppsV1ReplicaSetListForAllNamespaces = (
-  args: WatchAppsV1ReplicaSetListForAllNamespacesApiArg,
+export function watchAppsV1ReplicaSetListForAllNamespaces(
+  args: NoWatch<WatchAppsV1ReplicaSetListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1ReplicaSetListForAllNamespacesApiResponse>
+export function watchAppsV1ReplicaSetListForAllNamespaces(
+  args: WatchAppsV1ReplicaSetListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1ReplicaSetListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchAppsV1ReplicaSetListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1ReplicaSetListForAllNamespacesApiResponse>(
     {
       path: `/apis/apps/v1/watch/replicasets`,
@@ -1570,10 +1812,21 @@ export const watchAppsV1ReplicaSetListForAllNamespaces = (
     options
   )
 }
-export const watchAppsV1StatefulSetListForAllNamespaces = (
-  args: WatchAppsV1StatefulSetListForAllNamespacesApiArg,
+export function watchAppsV1StatefulSetListForAllNamespaces(
+  args: NoWatch<WatchAppsV1StatefulSetListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchAppsV1StatefulSetListForAllNamespacesApiResponse>
+export function watchAppsV1StatefulSetListForAllNamespaces(
+  args: WatchAppsV1StatefulSetListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchAppsV1StatefulSetListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchAppsV1StatefulSetListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchAppsV1StatefulSetListForAllNamespacesApiResponse>(
     {
       path: `/apis/apps/v1/watch/statefulsets`,
@@ -1614,7 +1867,7 @@ export type ListAppsV1ControllerRevisionForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1660,7 +1913,7 @@ export type ListAppsV1DaemonSetForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1706,7 +1959,7 @@ export type ListAppsV1DeploymentForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1740,7 +1993,7 @@ export type ListAppsV1NamespacedControllerRevisionApiResponse =
 export type ListAppsV1NamespacedControllerRevisionApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1791,7 +2044,7 @@ export type CreateAppsV1NamespacedControllerRevisionApiResponse =
 export type CreateAppsV1NamespacedControllerRevisionApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1808,7 +2061,7 @@ export type DeleteAppsV1CollectionNamespacedControllerRevisionApiResponse =
 export type DeleteAppsV1CollectionNamespacedControllerRevisionApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1865,7 +2118,7 @@ export type ReadAppsV1NamespacedControllerRevisionApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedControllerRevisionApiResponse =
@@ -1877,7 +2130,7 @@ export type ReplaceAppsV1NamespacedControllerRevisionApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1898,7 +2151,7 @@ export type DeleteAppsV1NamespacedControllerRevisionApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1921,7 +2174,7 @@ export type PatchAppsV1NamespacedControllerRevisionApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1954,7 +2207,7 @@ export type ListAppsV1NamespacedDaemonSetApiResponse =
 export type ListAppsV1NamespacedDaemonSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2005,7 +2258,7 @@ export type CreateAppsV1NamespacedDaemonSetApiResponse =
 export type CreateAppsV1NamespacedDaemonSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2022,7 +2275,7 @@ export type DeleteAppsV1CollectionNamespacedDaemonSetApiResponse =
 export type DeleteAppsV1CollectionNamespacedDaemonSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -2079,7 +2332,7 @@ export type ReadAppsV1NamespacedDaemonSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedDaemonSetApiResponse =
@@ -2090,7 +2343,7 @@ export type ReplaceAppsV1NamespacedDaemonSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2111,7 +2364,7 @@ export type DeleteAppsV1NamespacedDaemonSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2133,7 +2386,7 @@ export type PatchAppsV1NamespacedDaemonSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2168,7 +2421,7 @@ export type ReadAppsV1NamespacedDaemonSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedDaemonSetStatusApiResponse =
@@ -2179,7 +2432,7 @@ export type ReplaceAppsV1NamespacedDaemonSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2199,7 +2452,7 @@ export type PatchAppsV1NamespacedDaemonSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2232,7 +2485,7 @@ export type ListAppsV1NamespacedDeploymentApiResponse =
 export type ListAppsV1NamespacedDeploymentApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2283,7 +2536,7 @@ export type CreateAppsV1NamespacedDeploymentApiResponse =
 export type CreateAppsV1NamespacedDeploymentApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2300,7 +2553,7 @@ export type DeleteAppsV1CollectionNamespacedDeploymentApiResponse =
 export type DeleteAppsV1CollectionNamespacedDeploymentApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -2357,7 +2610,7 @@ export type ReadAppsV1NamespacedDeploymentApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedDeploymentApiResponse =
@@ -2368,7 +2621,7 @@ export type ReplaceAppsV1NamespacedDeploymentApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2389,7 +2642,7 @@ export type DeleteAppsV1NamespacedDeploymentApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2411,7 +2664,7 @@ export type PatchAppsV1NamespacedDeploymentApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2446,7 +2699,7 @@ export type ReadAppsV1NamespacedDeploymentScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedDeploymentScaleApiResponse =
@@ -2458,7 +2711,7 @@ export type ReplaceAppsV1NamespacedDeploymentScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2479,7 +2732,7 @@ export type PatchAppsV1NamespacedDeploymentScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2514,7 +2767,7 @@ export type ReadAppsV1NamespacedDeploymentStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedDeploymentStatusApiResponse =
@@ -2525,7 +2778,7 @@ export type ReplaceAppsV1NamespacedDeploymentStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2545,7 +2798,7 @@ export type PatchAppsV1NamespacedDeploymentStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2578,7 +2831,7 @@ export type ListAppsV1NamespacedReplicaSetApiResponse =
 export type ListAppsV1NamespacedReplicaSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2629,7 +2882,7 @@ export type CreateAppsV1NamespacedReplicaSetApiResponse =
 export type CreateAppsV1NamespacedReplicaSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2646,7 +2899,7 @@ export type DeleteAppsV1CollectionNamespacedReplicaSetApiResponse =
 export type DeleteAppsV1CollectionNamespacedReplicaSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -2703,7 +2956,7 @@ export type ReadAppsV1NamespacedReplicaSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedReplicaSetApiResponse =
@@ -2714,7 +2967,7 @@ export type ReplaceAppsV1NamespacedReplicaSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2735,7 +2988,7 @@ export type DeleteAppsV1NamespacedReplicaSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2757,7 +3010,7 @@ export type PatchAppsV1NamespacedReplicaSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2792,7 +3045,7 @@ export type ReadAppsV1NamespacedReplicaSetScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedReplicaSetScaleApiResponse =
@@ -2804,7 +3057,7 @@ export type ReplaceAppsV1NamespacedReplicaSetScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2825,7 +3078,7 @@ export type PatchAppsV1NamespacedReplicaSetScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2860,7 +3113,7 @@ export type ReadAppsV1NamespacedReplicaSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedReplicaSetStatusApiResponse =
@@ -2871,7 +3124,7 @@ export type ReplaceAppsV1NamespacedReplicaSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2891,7 +3144,7 @@ export type PatchAppsV1NamespacedReplicaSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2924,7 +3177,7 @@ export type ListAppsV1NamespacedStatefulSetApiResponse =
 export type ListAppsV1NamespacedStatefulSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2975,7 +3228,7 @@ export type CreateAppsV1NamespacedStatefulSetApiResponse =
 export type CreateAppsV1NamespacedStatefulSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2992,7 +3245,7 @@ export type DeleteAppsV1CollectionNamespacedStatefulSetApiResponse =
 export type DeleteAppsV1CollectionNamespacedStatefulSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -3049,7 +3302,7 @@ export type ReadAppsV1NamespacedStatefulSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedStatefulSetApiResponse =
@@ -3061,7 +3314,7 @@ export type ReplaceAppsV1NamespacedStatefulSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3082,7 +3335,7 @@ export type DeleteAppsV1NamespacedStatefulSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3105,7 +3358,7 @@ export type PatchAppsV1NamespacedStatefulSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3140,7 +3393,7 @@ export type ReadAppsV1NamespacedStatefulSetScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedStatefulSetScaleApiResponse =
@@ -3152,7 +3405,7 @@ export type ReplaceAppsV1NamespacedStatefulSetScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3173,7 +3426,7 @@ export type PatchAppsV1NamespacedStatefulSetScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3208,7 +3461,7 @@ export type ReadAppsV1NamespacedStatefulSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceAppsV1NamespacedStatefulSetStatusApiResponse =
@@ -3220,7 +3473,7 @@ export type ReplaceAppsV1NamespacedStatefulSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3241,7 +3494,7 @@ export type PatchAppsV1NamespacedStatefulSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3286,7 +3539,7 @@ export type ListAppsV1ReplicaSetForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3332,7 +3585,7 @@ export type ListAppsV1StatefulSetForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3378,7 +3631,7 @@ export type WatchAppsV1ControllerRevisionListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3424,7 +3677,7 @@ export type WatchAppsV1DaemonSetListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3470,7 +3723,7 @@ export type WatchAppsV1DeploymentListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3518,7 +3771,7 @@ export type WatchAppsV1NamespacedControllerRevisionListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3568,7 +3821,7 @@ export type WatchAppsV1NamespacedControllerRevisionApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3616,7 +3869,7 @@ export type WatchAppsV1NamespacedDaemonSetListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3666,7 +3919,7 @@ export type WatchAppsV1NamespacedDaemonSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3714,7 +3967,7 @@ export type WatchAppsV1NamespacedDeploymentListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3764,7 +4017,7 @@ export type WatchAppsV1NamespacedDeploymentApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3812,7 +4065,7 @@ export type WatchAppsV1NamespacedReplicaSetListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3862,7 +4115,7 @@ export type WatchAppsV1NamespacedReplicaSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3910,7 +4163,7 @@ export type WatchAppsV1NamespacedStatefulSetListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3960,7 +4213,7 @@ export type WatchAppsV1NamespacedStatefulSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4006,7 +4259,7 @@ export type WatchAppsV1ReplicaSetListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4052,7 +4305,7 @@ export type WatchAppsV1StatefulSetListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4204,6 +4457,8 @@ export type IoK8SApiCoreV1NodeAffinity = {
 }
 export type IoK8SApiCoreV1PodAffinityTerm = {
   labelSelector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
+  matchLabelKeys?: string[] | undefined
+  mismatchLabelKeys?: string[] | undefined
   namespaceSelector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
   namespaces?: string[] | undefined
   topologyKey: string
@@ -4292,6 +4547,9 @@ export type IoK8SApiCoreV1HttpGetAction = {
   port: IoK8SApimachineryPkgUtilIntstrIntOrString
   scheme?: ('HTTP' | 'HTTPS') | undefined
 }
+export type IoK8SApiCoreV1SleepAction = {
+  seconds: number
+}
 export type IoK8SApiCoreV1TcpSocketAction = {
   host?: string | undefined
   port: IoK8SApimachineryPkgUtilIntstrIntOrString
@@ -4299,6 +4557,7 @@ export type IoK8SApiCoreV1TcpSocketAction = {
 export type IoK8SApiCoreV1LifecycleHandler = {
   exec?: IoK8SApiCoreV1ExecAction | undefined
   httpGet?: IoK8SApiCoreV1HttpGetAction | undefined
+  sleep?: IoK8SApiCoreV1SleepAction | undefined
   tcpSocket?: IoK8SApiCoreV1TcpSocketAction | undefined
 }
 export type IoK8SApiCoreV1Lifecycle = {
@@ -4407,6 +4666,7 @@ export type IoK8SApiCoreV1Container = {
   readinessProbe?: IoK8SApiCoreV1Probe | undefined
   resizePolicy?: IoK8SApiCoreV1ContainerResizePolicy[] | undefined
   resources?: IoK8SApiCoreV1ResourceRequirements | undefined
+  restartPolicy?: string | undefined
   securityContext?: IoK8SApiCoreV1SecurityContext | undefined
   startupProbe?: IoK8SApiCoreV1Probe | undefined
   stdin?: boolean | undefined
@@ -4441,6 +4701,7 @@ export type IoK8SApiCoreV1EphemeralContainer = {
   readinessProbe?: IoK8SApiCoreV1Probe | undefined
   resizePolicy?: IoK8SApiCoreV1ContainerResizePolicy[] | undefined
   resources?: IoK8SApiCoreV1ResourceRequirements | undefined
+  restartPolicy?: string | undefined
   securityContext?: IoK8SApiCoreV1SecurityContext | undefined
   startupProbe?: IoK8SApiCoreV1Probe | undefined
   stdin?: boolean | undefined
@@ -4590,13 +4851,26 @@ export type IoK8SApiCoreV1TypedObjectReference = {
   name: string
   namespace?: string | undefined
 }
+export type IoK8SApiCoreV1VolumeResourceRequirements = {
+  limits?:
+    | {
+        [key: string]: IoK8SApimachineryPkgApiResourceQuantity
+      }
+    | undefined
+  requests?:
+    | {
+        [key: string]: IoK8SApimachineryPkgApiResourceQuantity
+      }
+    | undefined
+}
 export type IoK8SApiCoreV1PersistentVolumeClaimSpec = {
   accessModes?: string[] | undefined
   dataSource?: IoK8SApiCoreV1TypedLocalObjectReference | undefined
   dataSourceRef?: IoK8SApiCoreV1TypedObjectReference | undefined
-  resources?: IoK8SApiCoreV1ResourceRequirements | undefined
+  resources?: IoK8SApiCoreV1VolumeResourceRequirements | undefined
   selector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
   storageClassName?: string | undefined
+  volumeAttributesClassName?: string | undefined
   volumeMode?: ('Block' | 'Filesystem') | undefined
   volumeName?: string | undefined
 }
@@ -4691,6 +4965,13 @@ export type IoK8SApiCoreV1PortworxVolumeSource = {
   readOnly?: boolean | undefined
   volumeID: string
 }
+export type IoK8SApiCoreV1ClusterTrustBundleProjection = {
+  labelSelector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
+  name?: string | undefined
+  optional?: boolean | undefined
+  path: string
+  signerName?: string | undefined
+}
 export type IoK8SApiCoreV1ConfigMapProjection = {
   items?: IoK8SApiCoreV1KeyToPath[] | undefined
   name?: string | undefined
@@ -4710,6 +4991,7 @@ export type IoK8SApiCoreV1ServiceAccountTokenProjection = {
   path: string
 }
 export type IoK8SApiCoreV1VolumeProjection = {
+  clusterTrustBundle?: IoK8SApiCoreV1ClusterTrustBundleProjection | undefined
   configMap?: IoK8SApiCoreV1ConfigMapProjection | undefined
   downwardAPI?: IoK8SApiCoreV1DownwardApiProjection | undefined
   secret?: IoK8SApiCoreV1SecretProjection | undefined
@@ -5103,8 +5385,17 @@ export type IoK8SApiCoreV1PersistentVolumeClaimCondition = {
   status: string
   type: string
 }
+export type IoK8SApiCoreV1ModifyVolumeStatus = {
+  status: 'InProgress' | 'Infeasible' | 'Pending'
+  targetVolumeAttributesClassName?: string | undefined
+}
 export type IoK8SApiCoreV1PersistentVolumeClaimStatus = {
   accessModes?: string[] | undefined
+  allocatedResourceStatuses?:
+    | {
+        [key: string]: string
+      }
+    | undefined
   allocatedResources?:
     | {
         [key: string]: IoK8SApimachineryPkgApiResourceQuantity
@@ -5116,17 +5407,9 @@ export type IoK8SApiCoreV1PersistentVolumeClaimStatus = {
       }
     | undefined
   conditions?: IoK8SApiCoreV1PersistentVolumeClaimCondition[] | undefined
+  currentVolumeAttributesClassName?: string | undefined
+  modifyVolumeStatus?: IoK8SApiCoreV1ModifyVolumeStatus | undefined
   phase?: ('Bound' | 'Lost' | 'Pending') | undefined
-  resizeStatus?:
-    | (
-        | ''
-        | 'ControllerExpansionFailed'
-        | 'ControllerExpansionInProgress'
-        | 'NodeExpansionFailed'
-        | 'NodeExpansionInProgress'
-        | 'NodeExpansionPending'
-      )
-    | undefined
 }
 export type IoK8SApiCoreV1PersistentVolumeClaim = {
   apiVersion?: string | undefined

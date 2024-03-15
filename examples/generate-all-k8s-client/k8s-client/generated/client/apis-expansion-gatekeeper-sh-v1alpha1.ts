@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listExpansionGatekeeperShV1Alpha1ExpansionTemplate = (
-  args: ListExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listExpansionGatekeeperShV1Alpha1ExpansionTemplate(
+  args: NoWatch<ListExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg>,
   options?: Options
-) => {
+): Promise<ListExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse>
+export function listExpansionGatekeeperShV1Alpha1ExpansionTemplate(
+  args: ListExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse>
+): Promise<void>
+export function listExpansionGatekeeperShV1Alpha1ExpansionTemplate(
+  args: any,
+  options: any
+): any {
   return apiClient<ListExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse>(
     {
       path: `/apis/expansion.gatekeeper.sh/v1alpha1/expansiontemplate`,
@@ -43,10 +57,21 @@ export const createExpansionGatekeeperShV1Alpha1ExpansionTemplate = (
     options
   )
 }
-export const deleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplate = (
-  args: DeleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplateApiArg,
+export function deleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplate(
+  args: NoWatch<DeleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplateApiArg>,
   options?: Options
-) => {
+): Promise<DeleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplateApiResponse>
+export function deleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplate(
+  args: DeleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplateApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplateApiResponse>
+): Promise<void>
+export function deleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplate(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplateApiResponse>(
     {
       path: `/apis/expansion.gatekeeper.sh/v1alpha1/expansiontemplate`,
@@ -145,7 +170,7 @@ export const patchExpansionGatekeeperShV1Alpha1ExpansionTemplate = (
 export type ListExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
   /** status 200 OK */ ShGatekeeperExpansionV1Alpha1ExpansionTemplateList
 export type ListExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -194,7 +219,7 @@ export type CreateExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
   | /** status 201 Created */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
   | /** status 202 Accepted */ ShGatekeeperExpansionV1Alpha1ExpansionTemplate
 export type CreateExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -216,7 +241,7 @@ export type DeleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplateApiRes
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteExpansionGatekeeperShV1Alpha1CollectionExpansionTemplateApiArg =
   {
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -264,7 +289,7 @@ export type ReadExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
 export type ReadExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
   /** name of the ExpansionTemplate */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -278,7 +303,7 @@ export type ReplaceExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
 export type ReplaceExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
   /** name of the ExpansionTemplate */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -303,7 +328,7 @@ export type DeleteExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
 export type DeleteExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
   /** name of the ExpansionTemplate */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -328,7 +353,7 @@ export type PatchExpansionGatekeeperShV1Alpha1ExpansionTemplateApiResponse =
 export type PatchExpansionGatekeeperShV1Alpha1ExpansionTemplateApiArg = {
   /** name of the ExpansionTemplate */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

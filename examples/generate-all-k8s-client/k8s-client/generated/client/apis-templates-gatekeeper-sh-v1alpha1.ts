@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listTemplatesGatekeeperShV1Alpha1ConstraintTemplate = (
-  args: ListTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listTemplatesGatekeeperShV1Alpha1ConstraintTemplate(
+  args: NoWatch<ListTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg>,
   options?: Options
-) => {
+): Promise<ListTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse>
+export function listTemplatesGatekeeperShV1Alpha1ConstraintTemplate(
+  args: ListTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse>
+): Promise<void>
+export function listTemplatesGatekeeperShV1Alpha1ConstraintTemplate(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse>(
     {
       path: `/apis/templates.gatekeeper.sh/v1alpha1/constrainttemplates`,
@@ -43,10 +57,21 @@ export const createTemplatesGatekeeperShV1Alpha1ConstraintTemplate = (
     options
   )
 }
-export const deleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplate = (
-  args: DeleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplateApiArg,
+export function deleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplate(
+  args: NoWatch<DeleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplateApiArg>,
   options?: Options
-) => {
+): Promise<DeleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplateApiResponse>
+export function deleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplate(
+  args: DeleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplateApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplateApiResponse>
+): Promise<void>
+export function deleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplate(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplateApiResponse>(
     {
       path: `/apis/templates.gatekeeper.sh/v1alpha1/constrainttemplates`,
@@ -198,7 +223,7 @@ export const patchTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatus = (
 export type ListTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse =
   /** status 200 OK */ ShGatekeeperTemplatesV1Alpha1ConstraintTemplateList
 export type ListTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -247,7 +272,7 @@ export type CreateTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse =
   | /** status 201 Created */ ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
   | /** status 202 Accepted */ ShGatekeeperTemplatesV1Alpha1ConstraintTemplate
 export type CreateTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -269,7 +294,7 @@ export type DeleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplateApiRe
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteTemplatesGatekeeperShV1Alpha1CollectionConstraintTemplateApiArg =
   {
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -317,7 +342,7 @@ export type ReadTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse =
 export type ReadTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
   /** name of the ConstraintTemplate */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -331,7 +356,7 @@ export type ReplaceTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse =
 export type ReplaceTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
   /** name of the ConstraintTemplate */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -356,7 +381,7 @@ export type DeleteTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse =
 export type DeleteTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
   /** name of the ConstraintTemplate */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -381,7 +406,7 @@ export type PatchTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiResponse =
 export type PatchTemplatesGatekeeperShV1Alpha1ConstraintTemplateApiArg = {
   /** name of the ConstraintTemplate */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -410,7 +435,7 @@ export type ReadTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiResponse
 export type ReadTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiArg = {
   /** name of the ConstraintTemplate */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -425,7 +450,7 @@ export type ReplaceTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiArg =
   {
     /** name of the ConstraintTemplate */
     name: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -448,7 +473,7 @@ export type PatchTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiRespons
 export type PatchTemplatesGatekeeperShV1Alpha1ConstraintTemplateStatusApiArg = {
   /** name of the ConstraintTemplate */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

@@ -1,33 +1,57 @@
-import { apiClient, type Options } from '../../client'
-export const listMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespaces =
-  (
-    args: ListMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespacesApiArg,
-    options?: Options
-  ) => {
-    return apiClient<ListMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespacesApiResponse>(
-      {
-        path: `/apis/monitoring.coreos.com/v1alpha1/alertmanagerconfigs`,
-        params: {
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          pretty: args.pretty,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
-      },
-      options
-    )
-  }
-export const listMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfig = (
-  args: ListMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespaces(
+  args: NoWatch<ListMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespacesApiResponse>
+export function listMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespaces(
+  args: ListMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespacesApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespaces(
+  args: any,
+  options: any
+): any {
+  return apiClient<ListMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespacesApiResponse>(
+    {
+      path: `/apis/monitoring.coreos.com/v1alpha1/alertmanagerconfigs`,
+      params: {
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        pretty: args.pretty,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
+      },
+    },
+    options
+  )
+}
+export function listMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfig(
+  args: NoWatch<ListMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg>,
+  options?: Options
+): Promise<ListMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiResponse>
+export function listMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfig(
+  args: ListMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfig(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1alpha1/namespaces/${args['namespace']}/alertmanagerconfigs`,
@@ -68,32 +92,42 @@ export const createMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfig = (
     options
   )
 }
-export const deleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfig =
-  (
-    args: DeleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfigApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfigApiResponse>(
-      {
-        path: `/apis/monitoring.coreos.com/v1alpha1/namespaces/${args['namespace']}/alertmanagerconfigs`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfig(
+  args: NoWatch<DeleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfigApiArg>,
+  options?: Options
+): Promise<DeleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfigApiResponse>
+export function deleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfig(
+  args: DeleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfigApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfigApiResponse>
+): Promise<void>
+export function deleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfig(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerConfigApiResponse>(
+    {
+      path: `/apis/monitoring.coreos.com/v1alpha1/namespaces/${args['namespace']}/alertmanagerconfigs`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfig = (
   args: ReadMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg,
   options?: Options
@@ -186,7 +220,7 @@ export type ListMonitoringCoreosComV1Alpha1AlertmanagerConfigForAllNamespacesApi
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -221,7 +255,7 @@ export type ListMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -273,7 +307,7 @@ export type CreateMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -297,7 +331,7 @@ export type DeleteMonitoringCoreosComV1Alpha1CollectionNamespacedAlertmanagerCon
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -348,7 +382,7 @@ export type ReadMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -365,7 +399,7 @@ export type ReplaceMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -393,7 +427,7 @@ export type DeleteMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg 
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -421,7 +455,7 @@ export type PatchMonitoringCoreosComV1Alpha1NamespacedAlertmanagerConfigApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string

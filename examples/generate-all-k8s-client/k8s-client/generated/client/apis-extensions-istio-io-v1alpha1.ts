@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listExtensionsIstioIoV1Alpha1NamespacedWasmPlugin = (
-  args: ListExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listExtensionsIstioIoV1Alpha1NamespacedWasmPlugin(
+  args: NoWatch<ListExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg>,
   options?: Options
-) => {
+): Promise<ListExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiResponse>
+export function listExtensionsIstioIoV1Alpha1NamespacedWasmPlugin(
+  args: ListExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiResponse>
+): Promise<void>
+export function listExtensionsIstioIoV1Alpha1NamespacedWasmPlugin(
+  args: any,
+  options: any
+): any {
   return apiClient<ListExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiResponse>(
     {
       path: `/apis/extensions.istio.io/v1alpha1/namespaces/${args['namespace']}/wasmplugins`,
@@ -43,10 +57,21 @@ export const createExtensionsIstioIoV1Alpha1NamespacedWasmPlugin = (
     options
   )
 }
-export const deleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPlugin = (
-  args: DeleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPluginApiArg,
+export function deleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPlugin(
+  args: NoWatch<DeleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPluginApiArg>,
   options?: Options
-) => {
+): Promise<DeleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPluginApiResponse>
+export function deleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPlugin(
+  args: DeleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPluginApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPluginApiResponse>
+): Promise<void>
+export function deleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPlugin(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPluginApiResponse>(
     {
       path: `/apis/extensions.istio.io/v1alpha1/namespaces/${args['namespace']}/wasmplugins`,
@@ -195,10 +220,21 @@ export const patchExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatus = (
     options
   )
 }
-export const listExtensionsIstioIoV1Alpha1WasmPluginForAllNamespaces = (
-  args: ListExtensionsIstioIoV1Alpha1WasmPluginForAllNamespacesApiArg,
+export function listExtensionsIstioIoV1Alpha1WasmPluginForAllNamespaces(
+  args: NoWatch<ListExtensionsIstioIoV1Alpha1WasmPluginForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListExtensionsIstioIoV1Alpha1WasmPluginForAllNamespacesApiResponse>
+export function listExtensionsIstioIoV1Alpha1WasmPluginForAllNamespaces(
+  args: ListExtensionsIstioIoV1Alpha1WasmPluginForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListExtensionsIstioIoV1Alpha1WasmPluginForAllNamespacesApiResponse>
+): Promise<void>
+export function listExtensionsIstioIoV1Alpha1WasmPluginForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListExtensionsIstioIoV1Alpha1WasmPluginForAllNamespacesApiResponse>(
     {
       path: `/apis/extensions.istio.io/v1alpha1/wasmplugins`,
@@ -224,7 +260,7 @@ export type ListExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiResponse =
 export type ListExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -275,7 +311,7 @@ export type CreateExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiResponse =
 export type CreateExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -299,7 +335,7 @@ export type DeleteExtensionsIstioIoV1Alpha1CollectionNamespacedWasmPluginApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -349,7 +385,7 @@ export type ReadExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -365,7 +401,7 @@ export type ReplaceExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -392,7 +428,7 @@ export type DeleteExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -419,7 +455,7 @@ export type PatchExtensionsIstioIoV1Alpha1NamespacedWasmPluginApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -450,7 +486,7 @@ export type ReadExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -466,7 +502,7 @@ export type ReplaceExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -491,7 +527,7 @@ export type PatchExtensionsIstioIoV1Alpha1NamespacedWasmPluginStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -532,7 +568,7 @@ export type ListExtensionsIstioIoV1Alpha1WasmPluginForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

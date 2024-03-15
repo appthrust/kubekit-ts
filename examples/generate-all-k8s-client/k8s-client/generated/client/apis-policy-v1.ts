@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getPolicyV1ApiResources = (
   args: GetPolicyV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,21 @@ export const getPolicyV1ApiResources = (
     options
   )
 }
-export const listPolicyV1NamespacedPodDisruptionBudget = (
-  args: ListPolicyV1NamespacedPodDisruptionBudgetApiArg,
+export function listPolicyV1NamespacedPodDisruptionBudget(
+  args: NoWatch<ListPolicyV1NamespacedPodDisruptionBudgetApiArg>,
   options?: Options
-) => {
+): Promise<ListPolicyV1NamespacedPodDisruptionBudgetApiResponse>
+export function listPolicyV1NamespacedPodDisruptionBudget(
+  args: ListPolicyV1NamespacedPodDisruptionBudgetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListPolicyV1NamespacedPodDisruptionBudgetApiResponse>
+): Promise<void>
+export function listPolicyV1NamespacedPodDisruptionBudget(
+  args: any,
+  options: any
+): any {
   return apiClient<ListPolicyV1NamespacedPodDisruptionBudgetApiResponse>(
     {
       path: `/apis/policy/v1/namespaces/${args['namespace']}/poddisruptionbudgets`,
@@ -208,10 +222,21 @@ export const patchPolicyV1NamespacedPodDisruptionBudgetStatus = (
     options
   )
 }
-export const listPolicyV1PodDisruptionBudgetForAllNamespaces = (
-  args: ListPolicyV1PodDisruptionBudgetForAllNamespacesApiArg,
+export function listPolicyV1PodDisruptionBudgetForAllNamespaces(
+  args: NoWatch<ListPolicyV1PodDisruptionBudgetForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListPolicyV1PodDisruptionBudgetForAllNamespacesApiResponse>
+export function listPolicyV1PodDisruptionBudgetForAllNamespaces(
+  args: ListPolicyV1PodDisruptionBudgetForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListPolicyV1PodDisruptionBudgetForAllNamespacesApiResponse>
+): Promise<void>
+export function listPolicyV1PodDisruptionBudgetForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListPolicyV1PodDisruptionBudgetForAllNamespacesApiResponse>(
     {
       path: `/apis/policy/v1/poddisruptionbudgets`,
@@ -232,10 +257,21 @@ export const listPolicyV1PodDisruptionBudgetForAllNamespaces = (
     options
   )
 }
-export const watchPolicyV1NamespacedPodDisruptionBudgetList = (
-  args: WatchPolicyV1NamespacedPodDisruptionBudgetListApiArg,
+export function watchPolicyV1NamespacedPodDisruptionBudgetList(
+  args: NoWatch<WatchPolicyV1NamespacedPodDisruptionBudgetListApiArg>,
   options?: Options
-) => {
+): Promise<WatchPolicyV1NamespacedPodDisruptionBudgetListApiResponse>
+export function watchPolicyV1NamespacedPodDisruptionBudgetList(
+  args: WatchPolicyV1NamespacedPodDisruptionBudgetListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchPolicyV1NamespacedPodDisruptionBudgetListApiResponse>
+): Promise<void>
+export function watchPolicyV1NamespacedPodDisruptionBudgetList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchPolicyV1NamespacedPodDisruptionBudgetListApiResponse>(
     {
       path: `/apis/policy/v1/watch/namespaces/${args['namespace']}/poddisruptionbudgets`,
@@ -256,10 +292,21 @@ export const watchPolicyV1NamespacedPodDisruptionBudgetList = (
     options
   )
 }
-export const watchPolicyV1NamespacedPodDisruptionBudget = (
-  args: WatchPolicyV1NamespacedPodDisruptionBudgetApiArg,
+export function watchPolicyV1NamespacedPodDisruptionBudget(
+  args: NoWatch<WatchPolicyV1NamespacedPodDisruptionBudgetApiArg>,
   options?: Options
-) => {
+): Promise<WatchPolicyV1NamespacedPodDisruptionBudgetApiResponse>
+export function watchPolicyV1NamespacedPodDisruptionBudget(
+  args: WatchPolicyV1NamespacedPodDisruptionBudgetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchPolicyV1NamespacedPodDisruptionBudgetApiResponse>
+): Promise<void>
+export function watchPolicyV1NamespacedPodDisruptionBudget(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchPolicyV1NamespacedPodDisruptionBudgetApiResponse>(
     {
       path: `/apis/policy/v1/watch/namespaces/${args['namespace']}/poddisruptionbudgets/${args.name}`,
@@ -280,10 +327,21 @@ export const watchPolicyV1NamespacedPodDisruptionBudget = (
     options
   )
 }
-export const watchPolicyV1PodDisruptionBudgetListForAllNamespaces = (
-  args: WatchPolicyV1PodDisruptionBudgetListForAllNamespacesApiArg,
+export function watchPolicyV1PodDisruptionBudgetListForAllNamespaces(
+  args: NoWatch<WatchPolicyV1PodDisruptionBudgetListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchPolicyV1PodDisruptionBudgetListForAllNamespacesApiResponse>
+export function watchPolicyV1PodDisruptionBudgetListForAllNamespaces(
+  args: WatchPolicyV1PodDisruptionBudgetListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchPolicyV1PodDisruptionBudgetListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchPolicyV1PodDisruptionBudgetListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchPolicyV1PodDisruptionBudgetListForAllNamespacesApiResponse>(
     {
       path: `/apis/policy/v1/watch/poddisruptionbudgets`,
@@ -312,7 +370,7 @@ export type ListPolicyV1NamespacedPodDisruptionBudgetApiResponse =
 export type ListPolicyV1NamespacedPodDisruptionBudgetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -363,7 +421,7 @@ export type CreatePolicyV1NamespacedPodDisruptionBudgetApiResponse =
 export type CreatePolicyV1NamespacedPodDisruptionBudgetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -380,7 +438,7 @@ export type DeletePolicyV1CollectionNamespacedPodDisruptionBudgetApiResponse =
 export type DeletePolicyV1CollectionNamespacedPodDisruptionBudgetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -437,7 +495,7 @@ export type ReadPolicyV1NamespacedPodDisruptionBudgetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplacePolicyV1NamespacedPodDisruptionBudgetApiResponse =
@@ -449,7 +507,7 @@ export type ReplacePolicyV1NamespacedPodDisruptionBudgetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -470,7 +528,7 @@ export type DeletePolicyV1NamespacedPodDisruptionBudgetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -493,7 +551,7 @@ export type PatchPolicyV1NamespacedPodDisruptionBudgetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -528,7 +586,7 @@ export type ReadPolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplacePolicyV1NamespacedPodDisruptionBudgetStatusApiResponse =
@@ -540,7 +598,7 @@ export type ReplacePolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -561,7 +619,7 @@ export type PatchPolicyV1NamespacedPodDisruptionBudgetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -606,7 +664,7 @@ export type ListPolicyV1PodDisruptionBudgetForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -654,7 +712,7 @@ export type WatchPolicyV1NamespacedPodDisruptionBudgetListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -704,7 +762,7 @@ export type WatchPolicyV1NamespacedPodDisruptionBudgetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -750,7 +808,7 @@ export type WatchPolicyV1PodDisruptionBudgetListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

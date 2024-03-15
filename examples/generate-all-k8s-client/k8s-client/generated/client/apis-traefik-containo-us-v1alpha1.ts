@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listTraefikContainoUsV1Alpha1IngressRouteForAllNamespaces = (
-  args: ListTraefikContainoUsV1Alpha1IngressRouteForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listTraefikContainoUsV1Alpha1IngressRouteForAllNamespaces(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1IngressRouteForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1IngressRouteForAllNamespacesApiResponse>
+export function listTraefikContainoUsV1Alpha1IngressRouteForAllNamespaces(
+  args: ListTraefikContainoUsV1Alpha1IngressRouteForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1IngressRouteForAllNamespacesApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1IngressRouteForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1IngressRouteForAllNamespacesApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/ingressroutes`,
@@ -23,10 +37,21 @@ export const listTraefikContainoUsV1Alpha1IngressRouteForAllNamespaces = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespaces = (
-  args: ListTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespacesApiArg,
+export function listTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespaces(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespacesApiResponse>
+export function listTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespaces(
+  args: ListTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespacesApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespacesApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/ingressroutetcps`,
@@ -47,10 +72,21 @@ export const listTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespaces = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespaces = (
-  args: ListTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespacesApiArg,
+export function listTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespaces(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespacesApiResponse>
+export function listTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespaces(
+  args: ListTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespacesApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespacesApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/ingressrouteudps`,
@@ -71,10 +107,21 @@ export const listTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespaces = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1MiddlewareForAllNamespaces = (
-  args: ListTraefikContainoUsV1Alpha1MiddlewareForAllNamespacesApiArg,
+export function listTraefikContainoUsV1Alpha1MiddlewareForAllNamespaces(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1MiddlewareForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1MiddlewareForAllNamespacesApiResponse>
+export function listTraefikContainoUsV1Alpha1MiddlewareForAllNamespaces(
+  args: ListTraefikContainoUsV1Alpha1MiddlewareForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1MiddlewareForAllNamespacesApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1MiddlewareForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1MiddlewareForAllNamespacesApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/middlewares`,
@@ -95,10 +142,21 @@ export const listTraefikContainoUsV1Alpha1MiddlewareForAllNamespaces = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespaces = (
-  args: ListTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespacesApiArg,
+export function listTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespaces(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespacesApiResponse>
+export function listTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespaces(
+  args: ListTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespacesApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespacesApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/middlewaretcps`,
@@ -119,10 +177,21 @@ export const listTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespaces = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1NamespacedIngressRoute = (
-  args: ListTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg,
+export function listTraefikContainoUsV1Alpha1NamespacedIngressRoute(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteApiResponse>
+export function listTraefikContainoUsV1Alpha1NamespacedIngressRoute(
+  args: ListTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1NamespacedIngressRoute(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutes`,
@@ -163,10 +232,21 @@ export const createTraefikContainoUsV1Alpha1NamespacedIngressRoute = (
     options
   )
 }
-export const deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRoute = (
-  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteApiArg,
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRoute(
+  args: NoWatch<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteApiArg>,
   options?: Options
-) => {
+): Promise<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteApiResponse>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRoute(
+  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteApiResponse>
+): Promise<void>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRoute(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutes`,
@@ -262,10 +342,21 @@ export const patchTraefikContainoUsV1Alpha1NamespacedIngressRoute = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp = (
-  args: ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg,
+export function listTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse>
+export function listTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp(
+  args: ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutetcps`,
@@ -306,32 +397,42 @@ export const createTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp = (
     options
   )
 }
-export const deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcp =
-  (
-    args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcpApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcpApiResponse>(
-      {
-        path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutetcps`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcp(
+  args: NoWatch<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcpApiArg>,
+  options?: Options
+): Promise<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcpApiResponse>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcp(
+  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcpApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcpApiResponse>
+): Promise<void>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcp(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcpApiResponse>(
+    {
+      path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressroutetcps`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp = (
   args: ReadTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg,
   options?: Options
@@ -406,10 +507,21 @@ export const patchTraefikContainoUsV1Alpha1NamespacedIngressRouteTcp = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp = (
-  args: ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg,
+export function listTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse>
+export function listTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp(
+  args: ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressrouteudps`,
@@ -450,32 +562,42 @@ export const createTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp = (
     options
   )
 }
-export const deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdp =
-  (
-    args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdpApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdpApiResponse>(
-      {
-        path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressrouteudps`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdp(
+  args: NoWatch<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdpApiArg>,
+  options?: Options
+): Promise<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdpApiResponse>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdp(
+  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdpApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdpApiResponse>
+): Promise<void>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdp(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdpApiResponse>(
+    {
+      path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/ingressrouteudps`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp = (
   args: ReadTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg,
   options?: Options
@@ -550,10 +672,21 @@ export const patchTraefikContainoUsV1Alpha1NamespacedIngressRouteUdp = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1NamespacedMiddleware = (
-  args: ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg,
+export function listTraefikContainoUsV1Alpha1NamespacedMiddleware(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse>
+export function listTraefikContainoUsV1Alpha1NamespacedMiddleware(
+  args: ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1NamespacedMiddleware(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewares`,
@@ -594,10 +727,21 @@ export const createTraefikContainoUsV1Alpha1NamespacedMiddleware = (
     options
   )
 }
-export const deleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddleware = (
-  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareApiArg,
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddleware(
+  args: NoWatch<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareApiArg>,
   options?: Options
-) => {
+): Promise<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareApiResponse>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddleware(
+  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareApiResponse>
+): Promise<void>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddleware(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewares`,
@@ -693,10 +837,21 @@ export const patchTraefikContainoUsV1Alpha1NamespacedMiddleware = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp = (
-  args: ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg,
+export function listTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse>
+export function listTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp(
+  args: ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewaretcps`,
@@ -737,32 +892,42 @@ export const createTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp = (
     options
   )
 }
-export const deleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcp =
-  (
-    args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcpApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcpApiResponse>(
-      {
-        path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewaretcps`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcp(
+  args: NoWatch<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcpApiArg>,
+  options?: Options
+): Promise<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcpApiResponse>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcp(
+  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcpApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcpApiResponse>
+): Promise<void>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcp(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcpApiResponse>(
+    {
+      path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/middlewaretcps`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp = (
   args: ReadTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg,
   options?: Options
@@ -837,10 +1002,21 @@ export const patchTraefikContainoUsV1Alpha1NamespacedMiddlewareTcp = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1NamespacedServersTransport = (
-  args: ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg,
+export function listTraefikContainoUsV1Alpha1NamespacedServersTransport(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse>
+export function listTraefikContainoUsV1Alpha1NamespacedServersTransport(
+  args: ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1NamespacedServersTransport(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/serverstransports`,
@@ -881,32 +1057,42 @@ export const createTraefikContainoUsV1Alpha1NamespacedServersTransport = (
     options
   )
 }
-export const deleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransport =
-  (
-    args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransportApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransportApiResponse>(
-      {
-        path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/serverstransports`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransport(
+  args: NoWatch<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransportApiArg>,
+  options?: Options
+): Promise<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransportApiResponse>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransport(
+  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransportApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransportApiResponse>
+): Promise<void>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransport(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransportApiResponse>(
+    {
+      path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/serverstransports`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readTraefikContainoUsV1Alpha1NamespacedServersTransport = (
   args: ReadTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg,
   options?: Options
@@ -981,10 +1167,21 @@ export const patchTraefikContainoUsV1Alpha1NamespacedServersTransport = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1NamespacedTlsOption = (
-  args: ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg,
+export function listTraefikContainoUsV1Alpha1NamespacedTlsOption(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse>
+export function listTraefikContainoUsV1Alpha1NamespacedTlsOption(
+  args: ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1NamespacedTlsOption(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsoptions`,
@@ -1025,10 +1222,21 @@ export const createTraefikContainoUsV1Alpha1NamespacedTlsOption = (
     options
   )
 }
-export const deleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOption = (
-  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOptionApiArg,
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOption(
+  args: NoWatch<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOptionApiArg>,
   options?: Options
-) => {
+): Promise<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOptionApiResponse>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOption(
+  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOptionApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOptionApiResponse>
+): Promise<void>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOption(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOptionApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsoptions`,
@@ -1124,10 +1332,21 @@ export const patchTraefikContainoUsV1Alpha1NamespacedTlsOption = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1NamespacedTlsStore = (
-  args: ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg,
+export function listTraefikContainoUsV1Alpha1NamespacedTlsStore(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse>
+export function listTraefikContainoUsV1Alpha1NamespacedTlsStore(
+  args: ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1NamespacedTlsStore(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsstores`,
@@ -1168,10 +1387,21 @@ export const createTraefikContainoUsV1Alpha1NamespacedTlsStore = (
     options
   )
 }
-export const deleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStore = (
-  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStoreApiArg,
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStore(
+  args: NoWatch<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStoreApiArg>,
   options?: Options
-) => {
+): Promise<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStoreApiResponse>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStore(
+  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStoreApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStoreApiResponse>
+): Promise<void>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStore(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStoreApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/tlsstores`,
@@ -1267,10 +1497,21 @@ export const patchTraefikContainoUsV1Alpha1NamespacedTlsStore = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1NamespacedTraefikService = (
-  args: ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg,
+export function listTraefikContainoUsV1Alpha1NamespacedTraefikService(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse>
+export function listTraefikContainoUsV1Alpha1NamespacedTraefikService(
+  args: ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1NamespacedTraefikService(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/traefikservices`,
@@ -1311,32 +1552,42 @@ export const createTraefikContainoUsV1Alpha1NamespacedTraefikService = (
     options
   )
 }
-export const deleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikService =
-  (
-    args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikServiceApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikServiceApiResponse>(
-      {
-        path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/traefikservices`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikService(
+  args: NoWatch<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikServiceApiArg>,
+  options?: Options
+): Promise<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikServiceApiResponse>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikService(
+  args: DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikServiceApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikServiceApiResponse>
+): Promise<void>
+export function deleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikService(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikServiceApiResponse>(
+    {
+      path: `/apis/traefik.containo.us/v1alpha1/namespaces/${args['namespace']}/traefikservices`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readTraefikContainoUsV1Alpha1NamespacedTraefikService = (
   args: ReadTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg,
   options?: Options
@@ -1411,10 +1662,21 @@ export const patchTraefikContainoUsV1Alpha1NamespacedTraefikService = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1ServersTransportForAllNamespaces = (
-  args: ListTraefikContainoUsV1Alpha1ServersTransportForAllNamespacesApiArg,
+export function listTraefikContainoUsV1Alpha1ServersTransportForAllNamespaces(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1ServersTransportForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1ServersTransportForAllNamespacesApiResponse>
+export function listTraefikContainoUsV1Alpha1ServersTransportForAllNamespaces(
+  args: ListTraefikContainoUsV1Alpha1ServersTransportForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1ServersTransportForAllNamespacesApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1ServersTransportForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1ServersTransportForAllNamespacesApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/serverstransports`,
@@ -1435,10 +1697,21 @@ export const listTraefikContainoUsV1Alpha1ServersTransportForAllNamespaces = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1TlsOptionForAllNamespaces = (
-  args: ListTraefikContainoUsV1Alpha1TlsOptionForAllNamespacesApiArg,
+export function listTraefikContainoUsV1Alpha1TlsOptionForAllNamespaces(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1TlsOptionForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1TlsOptionForAllNamespacesApiResponse>
+export function listTraefikContainoUsV1Alpha1TlsOptionForAllNamespaces(
+  args: ListTraefikContainoUsV1Alpha1TlsOptionForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1TlsOptionForAllNamespacesApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1TlsOptionForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1TlsOptionForAllNamespacesApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/tlsoptions`,
@@ -1459,10 +1732,21 @@ export const listTraefikContainoUsV1Alpha1TlsOptionForAllNamespaces = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1TlsStoreForAllNamespaces = (
-  args: ListTraefikContainoUsV1Alpha1TlsStoreForAllNamespacesApiArg,
+export function listTraefikContainoUsV1Alpha1TlsStoreForAllNamespaces(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1TlsStoreForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1TlsStoreForAllNamespacesApiResponse>
+export function listTraefikContainoUsV1Alpha1TlsStoreForAllNamespaces(
+  args: ListTraefikContainoUsV1Alpha1TlsStoreForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1TlsStoreForAllNamespacesApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1TlsStoreForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1TlsStoreForAllNamespacesApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/tlsstores`,
@@ -1483,10 +1767,21 @@ export const listTraefikContainoUsV1Alpha1TlsStoreForAllNamespaces = (
     options
   )
 }
-export const listTraefikContainoUsV1Alpha1TraefikServiceForAllNamespaces = (
-  args: ListTraefikContainoUsV1Alpha1TraefikServiceForAllNamespacesApiArg,
+export function listTraefikContainoUsV1Alpha1TraefikServiceForAllNamespaces(
+  args: NoWatch<ListTraefikContainoUsV1Alpha1TraefikServiceForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListTraefikContainoUsV1Alpha1TraefikServiceForAllNamespacesApiResponse>
+export function listTraefikContainoUsV1Alpha1TraefikServiceForAllNamespaces(
+  args: ListTraefikContainoUsV1Alpha1TraefikServiceForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTraefikContainoUsV1Alpha1TraefikServiceForAllNamespacesApiResponse>
+): Promise<void>
+export function listTraefikContainoUsV1Alpha1TraefikServiceForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTraefikContainoUsV1Alpha1TraefikServiceForAllNamespacesApiResponse>(
     {
       path: `/apis/traefik.containo.us/v1alpha1/traefikservices`,
@@ -1524,7 +1819,7 @@ export type ListTraefikContainoUsV1Alpha1IngressRouteForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1571,7 +1866,7 @@ export type ListTraefikContainoUsV1Alpha1IngressRouteTcpForAllNamespacesApiArg =
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1618,7 +1913,7 @@ export type ListTraefikContainoUsV1Alpha1IngressRouteUdpForAllNamespacesApiArg =
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1664,7 +1959,7 @@ export type ListTraefikContainoUsV1Alpha1MiddlewareForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1710,7 +2005,7 @@ export type ListTraefikContainoUsV1Alpha1MiddlewareTcpForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1744,7 +2039,7 @@ export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteApiResponse =
 export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1795,7 +2090,7 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteApiResponse =
 export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1819,7 +2114,7 @@ export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteApiAr
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -1869,7 +2164,7 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1885,7 +2180,7 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1912,7 +2207,7 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1939,7 +2234,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1968,7 +2263,7 @@ export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse =
 export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2019,7 +2314,7 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiResponse 
 export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2043,7 +2338,7 @@ export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteTcpAp
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -2093,7 +2388,7 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2109,7 +2404,7 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2136,7 +2431,7 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2163,7 +2458,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteTcpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2192,7 +2487,7 @@ export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse =
 export type ListTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2243,7 +2538,7 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiResponse 
 export type CreateTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2267,7 +2562,7 @@ export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedIngressRouteUdpAp
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -2317,7 +2612,7 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2333,7 +2628,7 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2360,7 +2655,7 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2387,7 +2682,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedIngressRouteUdpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2416,7 +2711,7 @@ export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse =
 export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2467,7 +2762,7 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedMiddlewareApiResponse =
 export type CreateTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2491,7 +2786,7 @@ export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -2541,7 +2836,7 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2557,7 +2852,7 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2584,7 +2879,7 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2611,7 +2906,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2640,7 +2935,7 @@ export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse =
 export type ListTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2691,7 +2986,7 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiResponse =
 export type CreateTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2715,7 +3010,7 @@ export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedMiddlewareTcpApiA
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -2765,7 +3060,7 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2781,7 +3076,7 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2808,7 +3103,7 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2835,7 +3130,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedMiddlewareTcpApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2864,7 +3159,7 @@ export type ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse =
 export type ListTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2915,7 +3210,7 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedServersTransportApiResponse
 export type CreateTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2939,7 +3234,7 @@ export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedServersTransportA
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -2989,7 +3284,7 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3005,7 +3300,7 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3032,7 +3327,7 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3059,7 +3354,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedServersTransportApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3088,7 +3383,7 @@ export type ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse =
 export type ListTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3139,7 +3434,7 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedTlsOptionApiResponse =
 export type CreateTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3163,7 +3458,7 @@ export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsOptionApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -3213,7 +3508,7 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3229,7 +3524,7 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3256,7 +3551,7 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3283,7 +3578,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTlsOptionApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3312,7 +3607,7 @@ export type ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse =
 export type ListTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3363,7 +3658,7 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedTlsStoreApiResponse =
 export type CreateTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3387,7 +3682,7 @@ export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTlsStoreApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -3437,7 +3732,7 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3453,7 +3748,7 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3480,7 +3775,7 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3507,7 +3802,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTlsStoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3536,7 +3831,7 @@ export type ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse =
 export type ListTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3587,7 +3882,7 @@ export type CreateTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiResponse =
 export type CreateTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3611,7 +3906,7 @@ export type DeleteTraefikContainoUsV1Alpha1CollectionNamespacedTraefikServiceApi
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -3661,7 +3956,7 @@ export type ReadTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3677,7 +3972,7 @@ export type ReplaceTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3704,7 +3999,7 @@ export type DeleteTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3731,7 +4026,7 @@ export type PatchTraefikContainoUsV1Alpha1NamespacedTraefikServiceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3773,7 +4068,7 @@ export type ListTraefikContainoUsV1Alpha1ServersTransportForAllNamespacesApiArg 
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3819,7 +4114,7 @@ export type ListTraefikContainoUsV1Alpha1TlsOptionForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3865,7 +4160,7 @@ export type ListTraefikContainoUsV1Alpha1TlsStoreForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3912,7 +4207,7 @@ export type ListTraefikContainoUsV1Alpha1TraefikServiceForAllNamespacesApiArg =
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

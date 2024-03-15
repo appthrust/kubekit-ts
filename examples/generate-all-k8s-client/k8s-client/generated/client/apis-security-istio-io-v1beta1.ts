@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespaces = (
-  args: ListSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespaces(
+  args: NoWatch<ListSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespacesApiResponse>
+export function listSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespaces(
+  args: ListSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespacesApiResponse>
+): Promise<void>
+export function listSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespacesApiResponse>(
     {
       path: `/apis/security.istio.io/v1beta1/authorizationpolicies`,
@@ -23,10 +37,21 @@ export const listSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespaces = (
     options
   )
 }
-export const listSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy = (
-  args: ListSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg,
+export function listSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy(
+  args: NoWatch<ListSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg>,
   options?: Options
-) => {
+): Promise<ListSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiResponse>
+export function listSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy(
+  args: ListSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiResponse>
+): Promise<void>
+export function listSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy(
+  args: any,
+  options: any
+): any {
   return apiClient<ListSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiResponse>(
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies`,
@@ -67,32 +92,42 @@ export const createSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy = (
     options
   )
 }
-export const deleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicy =
-  (
-    args: DeleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicyApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicyApiResponse>(
-      {
-        path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicy(
+  args: NoWatch<DeleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicyApiArg>,
+  options?: Options
+): Promise<DeleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicyApiResponse>
+export function deleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicy(
+  args: DeleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicyApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicyApiResponse>
+): Promise<void>
+export function deleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicy(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicyApiResponse>(
+    {
+      path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/authorizationpolicies`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readSecurityIstioIoV1Beta1NamespacedAuthorizationPolicy = (
   args: ReadSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg,
   options?: Options
@@ -221,10 +256,21 @@ export const patchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatus = (
     options
   )
 }
-export const listSecurityIstioIoV1Beta1NamespacedPeerAuthentication = (
-  args: ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg,
+export function listSecurityIstioIoV1Beta1NamespacedPeerAuthentication(
+  args: NoWatch<ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg>,
   options?: Options
-) => {
+): Promise<ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse>
+export function listSecurityIstioIoV1Beta1NamespacedPeerAuthentication(
+  args: ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse>
+): Promise<void>
+export function listSecurityIstioIoV1Beta1NamespacedPeerAuthentication(
+  args: any,
+  options: any
+): any {
   return apiClient<ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse>(
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications`,
@@ -265,32 +311,42 @@ export const createSecurityIstioIoV1Beta1NamespacedPeerAuthentication = (
     options
   )
 }
-export const deleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthentication =
-  (
-    args: DeleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthenticationApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthenticationApiResponse>(
-      {
-        path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthentication(
+  args: NoWatch<DeleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthenticationApiArg>,
+  options?: Options
+): Promise<DeleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthenticationApiResponse>
+export function deleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthentication(
+  args: DeleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthenticationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthenticationApiResponse>
+): Promise<void>
+export function deleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthentication(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthenticationApiResponse>(
+    {
+      path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/peerauthentications`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readSecurityIstioIoV1Beta1NamespacedPeerAuthentication = (
   args: ReadSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg,
   options?: Options
@@ -418,10 +474,21 @@ export const patchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatus = (
     options
   )
 }
-export const listSecurityIstioIoV1Beta1NamespacedRequestAuthentication = (
-  args: ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg,
+export function listSecurityIstioIoV1Beta1NamespacedRequestAuthentication(
+  args: NoWatch<ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg>,
   options?: Options
-) => {
+): Promise<ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse>
+export function listSecurityIstioIoV1Beta1NamespacedRequestAuthentication(
+  args: ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse>
+): Promise<void>
+export function listSecurityIstioIoV1Beta1NamespacedRequestAuthentication(
+  args: any,
+  options: any
+): any {
   return apiClient<ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse>(
     {
       path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications`,
@@ -462,32 +529,42 @@ export const createSecurityIstioIoV1Beta1NamespacedRequestAuthentication = (
     options
   )
 }
-export const deleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthentication =
-  (
-    args: DeleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthenticationApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthenticationApiResponse>(
-      {
-        path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthentication(
+  args: NoWatch<DeleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthenticationApiArg>,
+  options?: Options
+): Promise<DeleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthenticationApiResponse>
+export function deleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthentication(
+  args: DeleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthenticationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthenticationApiResponse>
+): Promise<void>
+export function deleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthentication(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthenticationApiResponse>(
+    {
+      path: `/apis/security.istio.io/v1beta1/namespaces/${args['namespace']}/requestauthentications`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readSecurityIstioIoV1Beta1NamespacedRequestAuthentication = (
   args: ReadSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg,
   options?: Options
@@ -617,10 +694,21 @@ export const patchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatus =
       options
     )
   }
-export const listSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespaces = (
-  args: ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiArg,
+export function listSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespaces(
+  args: NoWatch<ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiResponse>
+export function listSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespaces(
+  args: ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiResponse>
+): Promise<void>
+export function listSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiResponse>(
     {
       path: `/apis/security.istio.io/v1beta1/peerauthentications`,
@@ -641,10 +729,21 @@ export const listSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespaces = (
     options
   )
 }
-export const listSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespaces = (
-  args: ListSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespacesApiArg,
+export function listSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespaces(
+  args: NoWatch<ListSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespacesApiResponse>
+export function listSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespaces(
+  args: ListSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespacesApiResponse>
+): Promise<void>
+export function listSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespacesApiResponse>(
     {
       path: `/apis/security.istio.io/v1beta1/requestauthentications`,
@@ -683,7 +782,7 @@ export type ListSecurityIstioIoV1Beta1AuthorizationPolicyForAllNamespacesApiArg 
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -717,7 +816,7 @@ export type ListSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiResponse =
 export type ListSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -768,7 +867,7 @@ export type CreateSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiResponse
 export type CreateSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -792,7 +891,7 @@ export type DeleteSecurityIstioIoV1Beta1CollectionNamespacedAuthorizationPolicyA
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -842,7 +941,7 @@ export type ReadSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -858,7 +957,7 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -885,7 +984,7 @@ export type DeleteSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -912,7 +1011,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -944,7 +1043,7 @@ export type ReadSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiArg 
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -961,7 +1060,7 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiA
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -987,7 +1086,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedAuthorizationPolicyStatusApiArg
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1016,7 +1115,7 @@ export type ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse =
 export type ListSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1067,7 +1166,7 @@ export type CreateSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiResponse 
 export type CreateSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1091,7 +1190,7 @@ export type DeleteSecurityIstioIoV1Beta1CollectionNamespacedPeerAuthenticationAp
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -1141,7 +1240,7 @@ export type ReadSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1157,7 +1256,7 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1184,7 +1283,7 @@ export type DeleteSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1211,7 +1310,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1243,7 +1342,7 @@ export type ReadSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1260,7 +1359,7 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiAr
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1286,7 +1385,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedPeerAuthenticationStatusApiArg 
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1315,7 +1414,7 @@ export type ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiResponse
 export type ListSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1367,7 +1466,7 @@ export type CreateSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1391,7 +1490,7 @@ export type DeleteSecurityIstioIoV1Beta1CollectionNamespacedRequestAuthenticatio
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -1441,7 +1540,7 @@ export type ReadSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1458,7 +1557,7 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1486,7 +1585,7 @@ export type DeleteSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1513,7 +1612,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1545,7 +1644,7 @@ export type ReadSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiAr
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1562,7 +1661,7 @@ export type ReplaceSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusAp
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1588,7 +1687,7 @@ export type PatchSecurityIstioIoV1Beta1NamespacedRequestAuthenticationStatusApiA
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1630,7 +1729,7 @@ export type ListSecurityIstioIoV1Beta1PeerAuthenticationForAllNamespacesApiArg =
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1677,7 +1776,7 @@ export type ListSecurityIstioIoV1Beta1RequestAuthenticationForAllNamespacesApiAr
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

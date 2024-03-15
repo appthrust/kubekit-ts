@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listMonitoringCoreosComV1AlertmanagerForAllNamespaces = (
-  args: ListMonitoringCoreosComV1AlertmanagerForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listMonitoringCoreosComV1AlertmanagerForAllNamespaces(
+  args: NoWatch<ListMonitoringCoreosComV1AlertmanagerForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1AlertmanagerForAllNamespacesApiResponse>
+export function listMonitoringCoreosComV1AlertmanagerForAllNamespaces(
+  args: ListMonitoringCoreosComV1AlertmanagerForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1AlertmanagerForAllNamespacesApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1AlertmanagerForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1AlertmanagerForAllNamespacesApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/alertmanagers`,
@@ -23,10 +37,21 @@ export const listMonitoringCoreosComV1AlertmanagerForAllNamespaces = (
     options
   )
 }
-export const listMonitoringCoreosComV1NamespacedAlertmanager = (
-  args: ListMonitoringCoreosComV1NamespacedAlertmanagerApiArg,
+export function listMonitoringCoreosComV1NamespacedAlertmanager(
+  args: NoWatch<ListMonitoringCoreosComV1NamespacedAlertmanagerApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1NamespacedAlertmanagerApiResponse>
+export function listMonitoringCoreosComV1NamespacedAlertmanager(
+  args: ListMonitoringCoreosComV1NamespacedAlertmanagerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1NamespacedAlertmanagerApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1NamespacedAlertmanager(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1NamespacedAlertmanagerApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/alertmanagers`,
@@ -67,10 +92,21 @@ export const createMonitoringCoreosComV1NamespacedAlertmanager = (
     options
   )
 }
-export const deleteMonitoringCoreosComV1CollectionNamespacedAlertmanager = (
-  args: DeleteMonitoringCoreosComV1CollectionNamespacedAlertmanagerApiArg,
+export function deleteMonitoringCoreosComV1CollectionNamespacedAlertmanager(
+  args: NoWatch<DeleteMonitoringCoreosComV1CollectionNamespacedAlertmanagerApiArg>,
   options?: Options
-) => {
+): Promise<DeleteMonitoringCoreosComV1CollectionNamespacedAlertmanagerApiResponse>
+export function deleteMonitoringCoreosComV1CollectionNamespacedAlertmanager(
+  args: DeleteMonitoringCoreosComV1CollectionNamespacedAlertmanagerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMonitoringCoreosComV1CollectionNamespacedAlertmanagerApiResponse>
+): Promise<void>
+export function deleteMonitoringCoreosComV1CollectionNamespacedAlertmanager(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteMonitoringCoreosComV1CollectionNamespacedAlertmanagerApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/alertmanagers`,
@@ -166,10 +202,21 @@ export const patchMonitoringCoreosComV1NamespacedAlertmanager = (
     options
   )
 }
-export const listMonitoringCoreosComV1NamespacedPodMonitor = (
-  args: ListMonitoringCoreosComV1NamespacedPodMonitorApiArg,
+export function listMonitoringCoreosComV1NamespacedPodMonitor(
+  args: NoWatch<ListMonitoringCoreosComV1NamespacedPodMonitorApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1NamespacedPodMonitorApiResponse>
+export function listMonitoringCoreosComV1NamespacedPodMonitor(
+  args: ListMonitoringCoreosComV1NamespacedPodMonitorApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1NamespacedPodMonitorApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1NamespacedPodMonitor(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1NamespacedPodMonitorApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/podmonitors`,
@@ -210,10 +257,21 @@ export const createMonitoringCoreosComV1NamespacedPodMonitor = (
     options
   )
 }
-export const deleteMonitoringCoreosComV1CollectionNamespacedPodMonitor = (
-  args: DeleteMonitoringCoreosComV1CollectionNamespacedPodMonitorApiArg,
+export function deleteMonitoringCoreosComV1CollectionNamespacedPodMonitor(
+  args: NoWatch<DeleteMonitoringCoreosComV1CollectionNamespacedPodMonitorApiArg>,
   options?: Options
-) => {
+): Promise<DeleteMonitoringCoreosComV1CollectionNamespacedPodMonitorApiResponse>
+export function deleteMonitoringCoreosComV1CollectionNamespacedPodMonitor(
+  args: DeleteMonitoringCoreosComV1CollectionNamespacedPodMonitorApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMonitoringCoreosComV1CollectionNamespacedPodMonitorApiResponse>
+): Promise<void>
+export function deleteMonitoringCoreosComV1CollectionNamespacedPodMonitor(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteMonitoringCoreosComV1CollectionNamespacedPodMonitorApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/podmonitors`,
@@ -309,10 +367,21 @@ export const patchMonitoringCoreosComV1NamespacedPodMonitor = (
     options
   )
 }
-export const listMonitoringCoreosComV1NamespacedProbe = (
-  args: ListMonitoringCoreosComV1NamespacedProbeApiArg,
+export function listMonitoringCoreosComV1NamespacedProbe(
+  args: NoWatch<ListMonitoringCoreosComV1NamespacedProbeApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1NamespacedProbeApiResponse>
+export function listMonitoringCoreosComV1NamespacedProbe(
+  args: ListMonitoringCoreosComV1NamespacedProbeApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1NamespacedProbeApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1NamespacedProbe(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1NamespacedProbeApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/probes`,
@@ -353,10 +422,21 @@ export const createMonitoringCoreosComV1NamespacedProbe = (
     options
   )
 }
-export const deleteMonitoringCoreosComV1CollectionNamespacedProbe = (
-  args: DeleteMonitoringCoreosComV1CollectionNamespacedProbeApiArg,
+export function deleteMonitoringCoreosComV1CollectionNamespacedProbe(
+  args: NoWatch<DeleteMonitoringCoreosComV1CollectionNamespacedProbeApiArg>,
   options?: Options
-) => {
+): Promise<DeleteMonitoringCoreosComV1CollectionNamespacedProbeApiResponse>
+export function deleteMonitoringCoreosComV1CollectionNamespacedProbe(
+  args: DeleteMonitoringCoreosComV1CollectionNamespacedProbeApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMonitoringCoreosComV1CollectionNamespacedProbeApiResponse>
+): Promise<void>
+export function deleteMonitoringCoreosComV1CollectionNamespacedProbe(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteMonitoringCoreosComV1CollectionNamespacedProbeApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/probes`,
@@ -452,10 +532,21 @@ export const patchMonitoringCoreosComV1NamespacedProbe = (
     options
   )
 }
-export const listMonitoringCoreosComV1NamespacedPrometheus = (
-  args: ListMonitoringCoreosComV1NamespacedPrometheusApiArg,
+export function listMonitoringCoreosComV1NamespacedPrometheus(
+  args: NoWatch<ListMonitoringCoreosComV1NamespacedPrometheusApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1NamespacedPrometheusApiResponse>
+export function listMonitoringCoreosComV1NamespacedPrometheus(
+  args: ListMonitoringCoreosComV1NamespacedPrometheusApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1NamespacedPrometheusApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1NamespacedPrometheus(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1NamespacedPrometheusApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheuses`,
@@ -496,10 +587,21 @@ export const createMonitoringCoreosComV1NamespacedPrometheus = (
     options
   )
 }
-export const deleteMonitoringCoreosComV1CollectionNamespacedPrometheus = (
-  args: DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusApiArg,
+export function deleteMonitoringCoreosComV1CollectionNamespacedPrometheus(
+  args: NoWatch<DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusApiArg>,
   options?: Options
-) => {
+): Promise<DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusApiResponse>
+export function deleteMonitoringCoreosComV1CollectionNamespacedPrometheus(
+  args: DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusApiResponse>
+): Promise<void>
+export function deleteMonitoringCoreosComV1CollectionNamespacedPrometheus(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheuses`,
@@ -648,10 +750,21 @@ export const patchMonitoringCoreosComV1NamespacedPrometheusStatus = (
     options
   )
 }
-export const listMonitoringCoreosComV1NamespacedPrometheusRule = (
-  args: ListMonitoringCoreosComV1NamespacedPrometheusRuleApiArg,
+export function listMonitoringCoreosComV1NamespacedPrometheusRule(
+  args: NoWatch<ListMonitoringCoreosComV1NamespacedPrometheusRuleApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse>
+export function listMonitoringCoreosComV1NamespacedPrometheusRule(
+  args: ListMonitoringCoreosComV1NamespacedPrometheusRuleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1NamespacedPrometheusRule(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheusrules`,
@@ -692,10 +805,21 @@ export const createMonitoringCoreosComV1NamespacedPrometheusRule = (
     options
   )
 }
-export const deleteMonitoringCoreosComV1CollectionNamespacedPrometheusRule = (
-  args: DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusRuleApiArg,
+export function deleteMonitoringCoreosComV1CollectionNamespacedPrometheusRule(
+  args: NoWatch<DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusRuleApiArg>,
   options?: Options
-) => {
+): Promise<DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusRuleApiResponse>
+export function deleteMonitoringCoreosComV1CollectionNamespacedPrometheusRule(
+  args: DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusRuleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusRuleApiResponse>
+): Promise<void>
+export function deleteMonitoringCoreosComV1CollectionNamespacedPrometheusRule(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusRuleApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/prometheusrules`,
@@ -791,10 +915,21 @@ export const patchMonitoringCoreosComV1NamespacedPrometheusRule = (
     options
   )
 }
-export const listMonitoringCoreosComV1NamespacedServiceMonitor = (
-  args: ListMonitoringCoreosComV1NamespacedServiceMonitorApiArg,
+export function listMonitoringCoreosComV1NamespacedServiceMonitor(
+  args: NoWatch<ListMonitoringCoreosComV1NamespacedServiceMonitorApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1NamespacedServiceMonitorApiResponse>
+export function listMonitoringCoreosComV1NamespacedServiceMonitor(
+  args: ListMonitoringCoreosComV1NamespacedServiceMonitorApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1NamespacedServiceMonitorApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1NamespacedServiceMonitor(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1NamespacedServiceMonitorApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/servicemonitors`,
@@ -835,10 +970,21 @@ export const createMonitoringCoreosComV1NamespacedServiceMonitor = (
     options
   )
 }
-export const deleteMonitoringCoreosComV1CollectionNamespacedServiceMonitor = (
-  args: DeleteMonitoringCoreosComV1CollectionNamespacedServiceMonitorApiArg,
+export function deleteMonitoringCoreosComV1CollectionNamespacedServiceMonitor(
+  args: NoWatch<DeleteMonitoringCoreosComV1CollectionNamespacedServiceMonitorApiArg>,
   options?: Options
-) => {
+): Promise<DeleteMonitoringCoreosComV1CollectionNamespacedServiceMonitorApiResponse>
+export function deleteMonitoringCoreosComV1CollectionNamespacedServiceMonitor(
+  args: DeleteMonitoringCoreosComV1CollectionNamespacedServiceMonitorApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMonitoringCoreosComV1CollectionNamespacedServiceMonitorApiResponse>
+): Promise<void>
+export function deleteMonitoringCoreosComV1CollectionNamespacedServiceMonitor(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteMonitoringCoreosComV1CollectionNamespacedServiceMonitorApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/servicemonitors`,
@@ -934,10 +1080,21 @@ export const patchMonitoringCoreosComV1NamespacedServiceMonitor = (
     options
   )
 }
-export const listMonitoringCoreosComV1NamespacedThanosRuler = (
-  args: ListMonitoringCoreosComV1NamespacedThanosRulerApiArg,
+export function listMonitoringCoreosComV1NamespacedThanosRuler(
+  args: NoWatch<ListMonitoringCoreosComV1NamespacedThanosRulerApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1NamespacedThanosRulerApiResponse>
+export function listMonitoringCoreosComV1NamespacedThanosRuler(
+  args: ListMonitoringCoreosComV1NamespacedThanosRulerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1NamespacedThanosRulerApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1NamespacedThanosRuler(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1NamespacedThanosRulerApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/thanosrulers`,
@@ -978,10 +1135,21 @@ export const createMonitoringCoreosComV1NamespacedThanosRuler = (
     options
   )
 }
-export const deleteMonitoringCoreosComV1CollectionNamespacedThanosRuler = (
-  args: DeleteMonitoringCoreosComV1CollectionNamespacedThanosRulerApiArg,
+export function deleteMonitoringCoreosComV1CollectionNamespacedThanosRuler(
+  args: NoWatch<DeleteMonitoringCoreosComV1CollectionNamespacedThanosRulerApiArg>,
   options?: Options
-) => {
+): Promise<DeleteMonitoringCoreosComV1CollectionNamespacedThanosRulerApiResponse>
+export function deleteMonitoringCoreosComV1CollectionNamespacedThanosRuler(
+  args: DeleteMonitoringCoreosComV1CollectionNamespacedThanosRulerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMonitoringCoreosComV1CollectionNamespacedThanosRulerApiResponse>
+): Promise<void>
+export function deleteMonitoringCoreosComV1CollectionNamespacedThanosRuler(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteMonitoringCoreosComV1CollectionNamespacedThanosRulerApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/namespaces/${args['namespace']}/thanosrulers`,
@@ -1077,10 +1245,21 @@ export const patchMonitoringCoreosComV1NamespacedThanosRuler = (
     options
   )
 }
-export const listMonitoringCoreosComV1PodMonitorForAllNamespaces = (
-  args: ListMonitoringCoreosComV1PodMonitorForAllNamespacesApiArg,
+export function listMonitoringCoreosComV1PodMonitorForAllNamespaces(
+  args: NoWatch<ListMonitoringCoreosComV1PodMonitorForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1PodMonitorForAllNamespacesApiResponse>
+export function listMonitoringCoreosComV1PodMonitorForAllNamespaces(
+  args: ListMonitoringCoreosComV1PodMonitorForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1PodMonitorForAllNamespacesApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1PodMonitorForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1PodMonitorForAllNamespacesApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/podmonitors`,
@@ -1101,10 +1280,21 @@ export const listMonitoringCoreosComV1PodMonitorForAllNamespaces = (
     options
   )
 }
-export const listMonitoringCoreosComV1ProbeForAllNamespaces = (
-  args: ListMonitoringCoreosComV1ProbeForAllNamespacesApiArg,
+export function listMonitoringCoreosComV1ProbeForAllNamespaces(
+  args: NoWatch<ListMonitoringCoreosComV1ProbeForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1ProbeForAllNamespacesApiResponse>
+export function listMonitoringCoreosComV1ProbeForAllNamespaces(
+  args: ListMonitoringCoreosComV1ProbeForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1ProbeForAllNamespacesApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1ProbeForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1ProbeForAllNamespacesApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/probes`,
@@ -1125,10 +1315,21 @@ export const listMonitoringCoreosComV1ProbeForAllNamespaces = (
     options
   )
 }
-export const listMonitoringCoreosComV1PrometheusForAllNamespaces = (
-  args: ListMonitoringCoreosComV1PrometheusForAllNamespacesApiArg,
+export function listMonitoringCoreosComV1PrometheusForAllNamespaces(
+  args: NoWatch<ListMonitoringCoreosComV1PrometheusForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1PrometheusForAllNamespacesApiResponse>
+export function listMonitoringCoreosComV1PrometheusForAllNamespaces(
+  args: ListMonitoringCoreosComV1PrometheusForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1PrometheusForAllNamespacesApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1PrometheusForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1PrometheusForAllNamespacesApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/prometheuses`,
@@ -1149,10 +1350,21 @@ export const listMonitoringCoreosComV1PrometheusForAllNamespaces = (
     options
   )
 }
-export const listMonitoringCoreosComV1PrometheusRuleForAllNamespaces = (
-  args: ListMonitoringCoreosComV1PrometheusRuleForAllNamespacesApiArg,
+export function listMonitoringCoreosComV1PrometheusRuleForAllNamespaces(
+  args: NoWatch<ListMonitoringCoreosComV1PrometheusRuleForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1PrometheusRuleForAllNamespacesApiResponse>
+export function listMonitoringCoreosComV1PrometheusRuleForAllNamespaces(
+  args: ListMonitoringCoreosComV1PrometheusRuleForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1PrometheusRuleForAllNamespacesApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1PrometheusRuleForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1PrometheusRuleForAllNamespacesApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/prometheusrules`,
@@ -1173,10 +1385,21 @@ export const listMonitoringCoreosComV1PrometheusRuleForAllNamespaces = (
     options
   )
 }
-export const listMonitoringCoreosComV1ServiceMonitorForAllNamespaces = (
-  args: ListMonitoringCoreosComV1ServiceMonitorForAllNamespacesApiArg,
+export function listMonitoringCoreosComV1ServiceMonitorForAllNamespaces(
+  args: NoWatch<ListMonitoringCoreosComV1ServiceMonitorForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1ServiceMonitorForAllNamespacesApiResponse>
+export function listMonitoringCoreosComV1ServiceMonitorForAllNamespaces(
+  args: ListMonitoringCoreosComV1ServiceMonitorForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1ServiceMonitorForAllNamespacesApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1ServiceMonitorForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1ServiceMonitorForAllNamespacesApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/servicemonitors`,
@@ -1197,10 +1420,21 @@ export const listMonitoringCoreosComV1ServiceMonitorForAllNamespaces = (
     options
   )
 }
-export const listMonitoringCoreosComV1ThanosRulerForAllNamespaces = (
-  args: ListMonitoringCoreosComV1ThanosRulerForAllNamespacesApiArg,
+export function listMonitoringCoreosComV1ThanosRulerForAllNamespaces(
+  args: NoWatch<ListMonitoringCoreosComV1ThanosRulerForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListMonitoringCoreosComV1ThanosRulerForAllNamespacesApiResponse>
+export function listMonitoringCoreosComV1ThanosRulerForAllNamespaces(
+  args: ListMonitoringCoreosComV1ThanosRulerForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMonitoringCoreosComV1ThanosRulerForAllNamespacesApiResponse>
+): Promise<void>
+export function listMonitoringCoreosComV1ThanosRulerForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMonitoringCoreosComV1ThanosRulerForAllNamespacesApiResponse>(
     {
       path: `/apis/monitoring.coreos.com/v1/thanosrulers`,
@@ -1238,7 +1472,7 @@ export type ListMonitoringCoreosComV1AlertmanagerForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1272,7 +1506,7 @@ export type ListMonitoringCoreosComV1NamespacedAlertmanagerApiResponse =
 export type ListMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1323,7 +1557,7 @@ export type CreateMonitoringCoreosComV1NamespacedAlertmanagerApiResponse =
 export type CreateMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1347,7 +1581,7 @@ export type DeleteMonitoringCoreosComV1CollectionNamespacedAlertmanagerApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -1397,7 +1631,7 @@ export type ReadMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1413,7 +1647,7 @@ export type ReplaceMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1440,7 +1674,7 @@ export type DeleteMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1467,7 +1701,7 @@ export type PatchMonitoringCoreosComV1NamespacedAlertmanagerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1496,7 +1730,7 @@ export type ListMonitoringCoreosComV1NamespacedPodMonitorApiResponse =
 export type ListMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1547,7 +1781,7 @@ export type CreateMonitoringCoreosComV1NamespacedPodMonitorApiResponse =
 export type CreateMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1570,7 +1804,7 @@ export type DeleteMonitoringCoreosComV1CollectionNamespacedPodMonitorApiResponse
 export type DeleteMonitoringCoreosComV1CollectionNamespacedPodMonitorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1620,7 +1854,7 @@ export type ReadMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1636,7 +1870,7 @@ export type ReplaceMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1663,7 +1897,7 @@ export type DeleteMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1690,7 +1924,7 @@ export type PatchMonitoringCoreosComV1NamespacedPodMonitorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1719,7 +1953,7 @@ export type ListMonitoringCoreosComV1NamespacedProbeApiResponse =
 export type ListMonitoringCoreosComV1NamespacedProbeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1770,7 +2004,7 @@ export type CreateMonitoringCoreosComV1NamespacedProbeApiResponse =
 export type CreateMonitoringCoreosComV1NamespacedProbeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1793,7 +2027,7 @@ export type DeleteMonitoringCoreosComV1CollectionNamespacedProbeApiResponse =
 export type DeleteMonitoringCoreosComV1CollectionNamespacedProbeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1843,7 +2077,7 @@ export type ReadMonitoringCoreosComV1NamespacedProbeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1859,7 +2093,7 @@ export type ReplaceMonitoringCoreosComV1NamespacedProbeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1886,7 +2120,7 @@ export type DeleteMonitoringCoreosComV1NamespacedProbeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1913,7 +2147,7 @@ export type PatchMonitoringCoreosComV1NamespacedProbeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1942,7 +2176,7 @@ export type ListMonitoringCoreosComV1NamespacedPrometheusApiResponse =
 export type ListMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1993,7 +2227,7 @@ export type CreateMonitoringCoreosComV1NamespacedPrometheusApiResponse =
 export type CreateMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2016,7 +2250,7 @@ export type DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusApiResponse
 export type DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2066,7 +2300,7 @@ export type ReadMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2082,7 +2316,7 @@ export type ReplaceMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2109,7 +2343,7 @@ export type DeleteMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2136,7 +2370,7 @@ export type PatchMonitoringCoreosComV1NamespacedPrometheusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2167,7 +2401,7 @@ export type ReadMonitoringCoreosComV1NamespacedPrometheusStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2183,7 +2417,7 @@ export type ReplaceMonitoringCoreosComV1NamespacedPrometheusStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2208,7 +2442,7 @@ export type PatchMonitoringCoreosComV1NamespacedPrometheusStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2237,7 +2471,7 @@ export type ListMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse =
 export type ListMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2288,7 +2522,7 @@ export type CreateMonitoringCoreosComV1NamespacedPrometheusRuleApiResponse =
 export type CreateMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2312,7 +2546,7 @@ export type DeleteMonitoringCoreosComV1CollectionNamespacedPrometheusRuleApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -2362,7 +2596,7 @@ export type ReadMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2378,7 +2612,7 @@ export type ReplaceMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2405,7 +2639,7 @@ export type DeleteMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2432,7 +2666,7 @@ export type PatchMonitoringCoreosComV1NamespacedPrometheusRuleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2461,7 +2695,7 @@ export type ListMonitoringCoreosComV1NamespacedServiceMonitorApiResponse =
 export type ListMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2512,7 +2746,7 @@ export type CreateMonitoringCoreosComV1NamespacedServiceMonitorApiResponse =
 export type CreateMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2536,7 +2770,7 @@ export type DeleteMonitoringCoreosComV1CollectionNamespacedServiceMonitorApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -2586,7 +2820,7 @@ export type ReadMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2602,7 +2836,7 @@ export type ReplaceMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2629,7 +2863,7 @@ export type DeleteMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2656,7 +2890,7 @@ export type PatchMonitoringCoreosComV1NamespacedServiceMonitorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2685,7 +2919,7 @@ export type ListMonitoringCoreosComV1NamespacedThanosRulerApiResponse =
 export type ListMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2736,7 +2970,7 @@ export type CreateMonitoringCoreosComV1NamespacedThanosRulerApiResponse =
 export type CreateMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2759,7 +2993,7 @@ export type DeleteMonitoringCoreosComV1CollectionNamespacedThanosRulerApiRespons
 export type DeleteMonitoringCoreosComV1CollectionNamespacedThanosRulerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2809,7 +3043,7 @@ export type ReadMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2825,7 +3059,7 @@ export type ReplaceMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2852,7 +3086,7 @@ export type DeleteMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2879,7 +3113,7 @@ export type PatchMonitoringCoreosComV1NamespacedThanosRulerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2920,7 +3154,7 @@ export type ListMonitoringCoreosComV1PodMonitorForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2966,7 +3200,7 @@ export type ListMonitoringCoreosComV1ProbeForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3012,7 +3246,7 @@ export type ListMonitoringCoreosComV1PrometheusForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3058,7 +3292,7 @@ export type ListMonitoringCoreosComV1PrometheusRuleForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3104,7 +3338,7 @@ export type ListMonitoringCoreosComV1ServiceMonitorForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3150,7 +3384,7 @@ export type ListMonitoringCoreosComV1ThanosRulerForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

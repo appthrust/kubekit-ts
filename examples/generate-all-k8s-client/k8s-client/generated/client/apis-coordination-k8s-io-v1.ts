@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getCoordinationV1ApiResources = (
   args: GetCoordinationV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,21 @@ export const getCoordinationV1ApiResources = (
     options
   )
 }
-export const listCoordinationV1LeaseForAllNamespaces = (
-  args: ListCoordinationV1LeaseForAllNamespacesApiArg,
+export function listCoordinationV1LeaseForAllNamespaces(
+  args: NoWatch<ListCoordinationV1LeaseForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoordinationV1LeaseForAllNamespacesApiResponse>
+export function listCoordinationV1LeaseForAllNamespaces(
+  args: ListCoordinationV1LeaseForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoordinationV1LeaseForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoordinationV1LeaseForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoordinationV1LeaseForAllNamespacesApiResponse>(
     {
       path: `/apis/coordination.k8s.io/v1/leases`,
@@ -32,10 +46,21 @@ export const listCoordinationV1LeaseForAllNamespaces = (
     options
   )
 }
-export const listCoordinationV1NamespacedLease = (
-  args: ListCoordinationV1NamespacedLeaseApiArg,
+export function listCoordinationV1NamespacedLease(
+  args: NoWatch<ListCoordinationV1NamespacedLeaseApiArg>,
   options?: Options
-) => {
+): Promise<ListCoordinationV1NamespacedLeaseApiResponse>
+export function listCoordinationV1NamespacedLease(
+  args: ListCoordinationV1NamespacedLeaseApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoordinationV1NamespacedLeaseApiResponse>
+): Promise<void>
+export function listCoordinationV1NamespacedLease(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoordinationV1NamespacedLeaseApiResponse>(
     {
       path: `/apis/coordination.k8s.io/v1/namespaces/${args['namespace']}/leases`,
@@ -179,10 +204,21 @@ export const patchCoordinationV1NamespacedLease = (
     options
   )
 }
-export const watchCoordinationV1LeaseListForAllNamespaces = (
-  args: WatchCoordinationV1LeaseListForAllNamespacesApiArg,
+export function watchCoordinationV1LeaseListForAllNamespaces(
+  args: NoWatch<WatchCoordinationV1LeaseListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoordinationV1LeaseListForAllNamespacesApiResponse>
+export function watchCoordinationV1LeaseListForAllNamespaces(
+  args: WatchCoordinationV1LeaseListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoordinationV1LeaseListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchCoordinationV1LeaseListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoordinationV1LeaseListForAllNamespacesApiResponse>(
     {
       path: `/apis/coordination.k8s.io/v1/watch/leases`,
@@ -203,10 +239,21 @@ export const watchCoordinationV1LeaseListForAllNamespaces = (
     options
   )
 }
-export const watchCoordinationV1NamespacedLeaseList = (
-  args: WatchCoordinationV1NamespacedLeaseListApiArg,
+export function watchCoordinationV1NamespacedLeaseList(
+  args: NoWatch<WatchCoordinationV1NamespacedLeaseListApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoordinationV1NamespacedLeaseListApiResponse>
+export function watchCoordinationV1NamespacedLeaseList(
+  args: WatchCoordinationV1NamespacedLeaseListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoordinationV1NamespacedLeaseListApiResponse>
+): Promise<void>
+export function watchCoordinationV1NamespacedLeaseList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoordinationV1NamespacedLeaseListApiResponse>(
     {
       path: `/apis/coordination.k8s.io/v1/watch/namespaces/${args['namespace']}/leases`,
@@ -227,10 +274,21 @@ export const watchCoordinationV1NamespacedLeaseList = (
     options
   )
 }
-export const watchCoordinationV1NamespacedLease = (
-  args: WatchCoordinationV1NamespacedLeaseApiArg,
+export function watchCoordinationV1NamespacedLease(
+  args: NoWatch<WatchCoordinationV1NamespacedLeaseApiArg>,
   options?: Options
-) => {
+): Promise<WatchCoordinationV1NamespacedLeaseApiResponse>
+export function watchCoordinationV1NamespacedLease(
+  args: WatchCoordinationV1NamespacedLeaseApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchCoordinationV1NamespacedLeaseApiResponse>
+): Promise<void>
+export function watchCoordinationV1NamespacedLease(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchCoordinationV1NamespacedLeaseApiResponse>(
     {
       path: `/apis/coordination.k8s.io/v1/watch/namespaces/${args['namespace']}/leases/${args.name}`,
@@ -271,7 +329,7 @@ export type ListCoordinationV1LeaseForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -305,7 +363,7 @@ export type ListCoordinationV1NamespacedLeaseApiResponse =
 export type ListCoordinationV1NamespacedLeaseApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -356,7 +414,7 @@ export type CreateCoordinationV1NamespacedLeaseApiResponse =
 export type CreateCoordinationV1NamespacedLeaseApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -373,7 +431,7 @@ export type DeleteCoordinationV1CollectionNamespacedLeaseApiResponse =
 export type DeleteCoordinationV1CollectionNamespacedLeaseApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -430,7 +488,7 @@ export type ReadCoordinationV1NamespacedLeaseApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceCoordinationV1NamespacedLeaseApiResponse =
@@ -442,7 +500,7 @@ export type ReplaceCoordinationV1NamespacedLeaseApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -463,7 +521,7 @@ export type DeleteCoordinationV1NamespacedLeaseApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -486,7 +544,7 @@ export type PatchCoordinationV1NamespacedLeaseApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -531,7 +589,7 @@ export type WatchCoordinationV1LeaseListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -579,7 +637,7 @@ export type WatchCoordinationV1NamespacedLeaseListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -629,7 +687,7 @@ export type WatchCoordinationV1NamespacedLeaseApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

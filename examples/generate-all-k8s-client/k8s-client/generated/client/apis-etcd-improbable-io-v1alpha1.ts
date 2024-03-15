@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespaces = (
-  args: ListEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespaces(
+  args: NoWatch<ListEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespacesApiResponse>
+export function listEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespaces(
+  args: ListEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespacesApiResponse>
+): Promise<void>
+export function listEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespacesApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/etcdbackups`,
@@ -23,10 +37,21 @@ export const listEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespaces = (
     options
   )
 }
-export const listEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespaces = (
-  args: ListEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespacesApiArg,
+export function listEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespaces(
+  args: NoWatch<ListEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespacesApiResponse>
+export function listEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespaces(
+  args: ListEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespacesApiResponse>
+): Promise<void>
+export function listEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespacesApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/etcdbackupschedules`,
@@ -47,10 +72,21 @@ export const listEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespaces = (
     options
   )
 }
-export const listEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespaces = (
-  args: ListEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespacesApiArg,
+export function listEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespaces(
+  args: NoWatch<ListEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespacesApiResponse>
+export function listEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespaces(
+  args: ListEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespacesApiResponse>
+): Promise<void>
+export function listEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespacesApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/etcdclusters`,
@@ -71,10 +107,21 @@ export const listEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespaces = (
     options
   )
 }
-export const listEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespaces = (
-  args: ListEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespacesApiArg,
+export function listEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespaces(
+  args: NoWatch<ListEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespacesApiResponse>
+export function listEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespaces(
+  args: ListEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespacesApiResponse>
+): Promise<void>
+export function listEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespacesApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/etcdpeers`,
@@ -95,10 +142,21 @@ export const listEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespaces = (
     options
   )
 }
-export const listEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespaces = (
-  args: ListEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespacesApiArg,
+export function listEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespaces(
+  args: NoWatch<ListEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespacesApiResponse>
+export function listEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespaces(
+  args: ListEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespacesApiResponse>
+): Promise<void>
+export function listEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespacesApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/etcdrestores`,
@@ -119,10 +177,21 @@ export const listEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespaces = (
     options
   )
 }
-export const listEtcdImprobableIoV1Alpha1NamespacedEtcdBackup = (
-  args: ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg,
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdBackup(
+  args: NoWatch<ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg>,
   options?: Options
-) => {
+): Promise<ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse>
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdBackup(
+  args: ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse>
+): Promise<void>
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdBackup(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackups`,
@@ -163,10 +232,21 @@ export const createEtcdImprobableIoV1Alpha1NamespacedEtcdBackup = (
     options
   )
 }
-export const deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackup = (
-  args: DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupApiArg,
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackup(
+  args: NoWatch<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupApiArg>,
   options?: Options
-) => {
+): Promise<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupApiResponse>
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackup(
+  args: DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupApiResponse>
+): Promise<void>
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackup(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackups`,
@@ -315,10 +395,21 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatus = (
     options
   )
 }
-export const listEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule = (
-  args: ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg,
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule(
+  args: NoWatch<ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg>,
   options?: Options
-) => {
+): Promise<ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse>
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule(
+  args: ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse>
+): Promise<void>
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackupschedules`,
@@ -359,32 +450,42 @@ export const createEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule = (
     options
   )
 }
-export const deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupSchedule =
-  (
-    args: DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupScheduleApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupScheduleApiResponse>(
-      {
-        path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackupschedules`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupSchedule(
+  args: NoWatch<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupScheduleApiArg>,
+  options?: Options
+): Promise<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupScheduleApiResponse>
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupSchedule(
+  args: DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupScheduleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupScheduleApiResponse>
+): Promise<void>
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupSchedule(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupScheduleApiResponse>(
+    {
+      path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdbackupschedules`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule = (
   args: ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg,
   options?: Options
@@ -459,10 +560,21 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupSchedule = (
     options
   )
 }
-export const listEtcdImprobableIoV1Alpha1NamespacedEtcdCluster = (
-  args: ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg,
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdCluster(
+  args: NoWatch<ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg>,
   options?: Options
-) => {
+): Promise<ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse>
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdCluster(
+  args: ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse>
+): Promise<void>
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdCluster(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters`,
@@ -503,10 +615,21 @@ export const createEtcdImprobableIoV1Alpha1NamespacedEtcdCluster = (
     options
   )
 }
-export const deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdCluster = (
-  args: DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdClusterApiArg,
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdCluster(
+  args: NoWatch<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdClusterApiArg>,
   options?: Options
-) => {
+): Promise<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdClusterApiResponse>
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdCluster(
+  args: DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdClusterApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdClusterApiResponse>
+): Promise<void>
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdCluster(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdClusterApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdclusters`,
@@ -708,10 +831,21 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatus = (
     options
   )
 }
-export const listEtcdImprobableIoV1Alpha1NamespacedEtcdPeer = (
-  args: ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg,
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdPeer(
+  args: NoWatch<ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg>,
   options?: Options
-) => {
+): Promise<ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse>
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdPeer(
+  args: ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse>
+): Promise<void>
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdPeer(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdpeers`,
@@ -752,10 +886,21 @@ export const createEtcdImprobableIoV1Alpha1NamespacedEtcdPeer = (
     options
   )
 }
-export const deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeer = (
-  args: DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeerApiArg,
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeer(
+  args: NoWatch<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeerApiArg>,
   options?: Options
-) => {
+): Promise<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeerApiResponse>
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeer(
+  args: DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeerApiResponse>
+): Promise<void>
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeer(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeerApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdpeers`,
@@ -904,10 +1049,21 @@ export const patchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatus = (
     options
   )
 }
-export const listEtcdImprobableIoV1Alpha1NamespacedEtcdRestore = (
-  args: ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg,
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdRestore(
+  args: NoWatch<ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg>,
   options?: Options
-) => {
+): Promise<ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse>
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdRestore(
+  args: ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse>
+): Promise<void>
+export function listEtcdImprobableIoV1Alpha1NamespacedEtcdRestore(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdrestores`,
@@ -948,10 +1104,21 @@ export const createEtcdImprobableIoV1Alpha1NamespacedEtcdRestore = (
     options
   )
 }
-export const deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestore = (
-  args: DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestoreApiArg,
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestore(
+  args: NoWatch<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestoreApiArg>,
   options?: Options
-) => {
+): Promise<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestoreApiResponse>
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestore(
+  args: DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestoreApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestoreApiResponse>
+): Promise<void>
+export function deleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestore(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestoreApiResponse>(
     {
       path: `/apis/etcd.improbable.io/v1alpha1/namespaces/${args['namespace']}/etcdrestores`,
@@ -1117,7 +1284,7 @@ export type ListEtcdImprobableIoV1Alpha1EtcdBackupForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1164,7 +1331,7 @@ export type ListEtcdImprobableIoV1Alpha1EtcdBackupScheduleForAllNamespacesApiArg
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1210,7 +1377,7 @@ export type ListEtcdImprobableIoV1Alpha1EtcdClusterForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1256,7 +1423,7 @@ export type ListEtcdImprobableIoV1Alpha1EtcdPeerForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1302,7 +1469,7 @@ export type ListEtcdImprobableIoV1Alpha1EtcdRestoreForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1336,7 +1503,7 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse =
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1387,7 +1554,7 @@ export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiResponse =
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1411,7 +1578,7 @@ export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -1461,7 +1628,7 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1477,7 +1644,7 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1504,7 +1671,7 @@ export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1531,7 +1698,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1562,7 +1729,7 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1578,7 +1745,7 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1603,7 +1770,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1632,7 +1799,7 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiResponse 
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1683,7 +1850,7 @@ export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiRespons
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1707,7 +1874,7 @@ export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdBackupSchedule
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -1757,7 +1924,7 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1774,7 +1941,7 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1801,7 +1968,7 @@ export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1828,7 +1995,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdBackupScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1857,7 +2024,7 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1908,7 +2075,7 @@ export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiResponse =
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1932,7 +2099,7 @@ export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdClusterApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -1982,7 +2149,7 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1998,7 +2165,7 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2025,7 +2192,7 @@ export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2052,7 +2219,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2083,7 +2250,7 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2099,7 +2266,7 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2124,7 +2291,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2155,7 +2322,7 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2171,7 +2338,7 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2196,7 +2363,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdClusterStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2225,7 +2392,7 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2276,7 +2443,7 @@ export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiResponse =
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2299,7 +2466,7 @@ export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeerApiRespons
 export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdPeerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2349,7 +2516,7 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2365,7 +2532,7 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2392,7 +2559,7 @@ export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2419,7 +2586,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2450,7 +2617,7 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2466,7 +2633,7 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2491,7 +2658,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdPeerStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2520,7 +2687,7 @@ export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
 export type ListEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2571,7 +2738,7 @@ export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiResponse =
 export type CreateEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2595,7 +2762,7 @@ export type DeleteEtcdImprobableIoV1Alpha1CollectionNamespacedEtcdRestoreApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -2645,7 +2812,7 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2661,7 +2828,7 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2688,7 +2855,7 @@ export type DeleteEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2715,7 +2882,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2746,7 +2913,7 @@ export type ReadEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2762,7 +2929,7 @@ export type ReplaceEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2787,7 +2954,7 @@ export type PatchEtcdImprobableIoV1Alpha1NamespacedEtcdRestoreStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

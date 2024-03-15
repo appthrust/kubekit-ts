@@ -1,10 +1,33 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getAuthenticationV1ApiResources = (
   args: GetAuthenticationV1ApiResourcesApiArg,
   options?: Options
 ) => {
   return apiClient<GetAuthenticationV1ApiResourcesApiResponse>(
     { path: `/apis/authentication.k8s.io/v1/` },
+    options
+  )
+}
+export const createAuthenticationV1SelfSubjectReview = (
+  args: CreateAuthenticationV1SelfSubjectReviewApiArg,
+  options?: Options
+) => {
+  return apiClient<CreateAuthenticationV1SelfSubjectReviewApiResponse>(
+    {
+      path: `/apis/authentication.k8s.io/v1/selfsubjectreviews`,
+      method: 'POST',
+      body: args.body,
+      contentType: args.contentType,
+      params: {
+        dryRun: args.dryRun,
+        fieldManager: args.fieldManager,
+        fieldValidation: args.fieldValidation,
+        pretty: args.pretty,
+      },
+    },
     options
   )
 }
@@ -31,6 +54,24 @@ export const createAuthenticationV1TokenReview = (
 export type GetAuthenticationV1ApiResourcesApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1ApiResourceList
 export type GetAuthenticationV1ApiResourcesApiArg = void
+export type CreateAuthenticationV1SelfSubjectReviewApiResponse =
+  /** status 200 OK */
+  | IoK8SApiAuthenticationV1SelfSubjectReview
+  | /** status 201 Created */ IoK8SApiAuthenticationV1SelfSubjectReview
+  | /** status 202 Accepted */ IoK8SApiAuthenticationV1SelfSubjectReview
+export type CreateAuthenticationV1SelfSubjectReviewApiArg = {
+  /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
+  dryRun?: string
+  /** fieldManager is a name associated with the actor or entity that is making these changes. The value must be less than or 128 characters long, and only contain printable characters, as defined by https://golang.org/pkg/unicode/#IsPrint. */
+  fieldManager?: string
+  /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
+  fieldValidation?: string
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
+  pretty?: string
+} & {
+  contentType?: string
+  body: IoK8SApiAuthenticationV1SelfSubjectReview
+}
 export type CreateAuthenticationV1TokenReviewApiResponse =
   /** status 200 OK */
   | IoK8SApiAuthenticationV1TokenReview
@@ -43,7 +84,7 @@ export type CreateAuthenticationV1TokenReviewApiArg = {
   fieldManager?: string
   /** fieldValidation instructs the server on how to handle objects in the request (POST/PUT/PATCH) containing unknown or duplicate fields. Valid values are: - Ignore: This will ignore any unknown fields that are silently dropped from the object, and will ignore all but the last duplicate field that the decoder encounters. This is the default behavior prior to v1.23. - Warn: This will send a warning via the standard warning response header for each unknown field that is dropped from the object, and for each duplicate field that is encountered. The request will still succeed if there are no other errors, and will only persist the last of any duplicate fields. This is the default in v1.23+ - Strict: This will fail the request with a BadRequest error if any unknown fields would be dropped from the object, or if any duplicate fields are present. The error returned from the server will contain all unknown and duplicate fields encountered. */
   fieldValidation?: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 } & {
   contentType?: string
@@ -111,10 +152,6 @@ export type IoK8SApimachineryPkgApisMetaV1ObjectMeta = {
   selfLink?: string | undefined
   uid?: string | undefined
 }
-export type IoK8SApiAuthenticationV1TokenReviewSpec = {
-  audiences?: string[] | undefined
-  token?: string | undefined
-}
 export type IoK8SApiAuthenticationV1UserInfo = {
   extra?:
     | {
@@ -124,6 +161,19 @@ export type IoK8SApiAuthenticationV1UserInfo = {
   groups?: string[] | undefined
   uid?: string | undefined
   username?: string | undefined
+}
+export type IoK8SApiAuthenticationV1SelfSubjectReviewStatus = {
+  userInfo?: IoK8SApiAuthenticationV1UserInfo | undefined
+}
+export type IoK8SApiAuthenticationV1SelfSubjectReview = {
+  apiVersion?: string | undefined
+  kind?: string | undefined
+  metadata?: IoK8SApimachineryPkgApisMetaV1ObjectMeta | undefined
+  status?: IoK8SApiAuthenticationV1SelfSubjectReviewStatus | undefined
+}
+export type IoK8SApiAuthenticationV1TokenReviewSpec = {
+  audiences?: string[] | undefined
+  token?: string | undefined
 }
 export type IoK8SApiAuthenticationV1TokenReviewStatus = {
   audiences?: string[] | undefined

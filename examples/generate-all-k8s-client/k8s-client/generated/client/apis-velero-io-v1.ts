@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listVeleroIoV1BackupForAllNamespaces = (
-  args: ListVeleroIoV1BackupForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listVeleroIoV1BackupForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1BackupForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1BackupForAllNamespacesApiResponse>
+export function listVeleroIoV1BackupForAllNamespaces(
+  args: ListVeleroIoV1BackupForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1BackupForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1BackupForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1BackupForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/backups`,
@@ -23,10 +37,21 @@ export const listVeleroIoV1BackupForAllNamespaces = (
     options
   )
 }
-export const listVeleroIoV1BackupStorageLocationForAllNamespaces = (
-  args: ListVeleroIoV1BackupStorageLocationForAllNamespacesApiArg,
+export function listVeleroIoV1BackupStorageLocationForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1BackupStorageLocationForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1BackupStorageLocationForAllNamespacesApiResponse>
+export function listVeleroIoV1BackupStorageLocationForAllNamespaces(
+  args: ListVeleroIoV1BackupStorageLocationForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1BackupStorageLocationForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1BackupStorageLocationForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1BackupStorageLocationForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/backupstoragelocations`,
@@ -47,10 +72,21 @@ export const listVeleroIoV1BackupStorageLocationForAllNamespaces = (
     options
   )
 }
-export const listVeleroIoV1DeleteBackupRequestForAllNamespaces = (
-  args: ListVeleroIoV1DeleteBackupRequestForAllNamespacesApiArg,
+export function listVeleroIoV1DeleteBackupRequestForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1DeleteBackupRequestForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1DeleteBackupRequestForAllNamespacesApiResponse>
+export function listVeleroIoV1DeleteBackupRequestForAllNamespaces(
+  args: ListVeleroIoV1DeleteBackupRequestForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1DeleteBackupRequestForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1DeleteBackupRequestForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1DeleteBackupRequestForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/deletebackuprequests`,
@@ -71,10 +107,21 @@ export const listVeleroIoV1DeleteBackupRequestForAllNamespaces = (
     options
   )
 }
-export const listVeleroIoV1DownloadRequestForAllNamespaces = (
-  args: ListVeleroIoV1DownloadRequestForAllNamespacesApiArg,
+export function listVeleroIoV1DownloadRequestForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1DownloadRequestForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1DownloadRequestForAllNamespacesApiResponse>
+export function listVeleroIoV1DownloadRequestForAllNamespaces(
+  args: ListVeleroIoV1DownloadRequestForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1DownloadRequestForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1DownloadRequestForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1DownloadRequestForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/downloadrequests`,
@@ -95,10 +142,18 @@ export const listVeleroIoV1DownloadRequestForAllNamespaces = (
     options
   )
 }
-export const listVeleroIoV1NamespacedBackup = (
-  args: ListVeleroIoV1NamespacedBackupApiArg,
+export function listVeleroIoV1NamespacedBackup(
+  args: NoWatch<ListVeleroIoV1NamespacedBackupApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedBackupApiResponse>
+export function listVeleroIoV1NamespacedBackup(
+  args: ListVeleroIoV1NamespacedBackupApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedBackupApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedBackup(args: any, options: any): any {
   return apiClient<ListVeleroIoV1NamespacedBackupApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backups`,
@@ -139,10 +194,21 @@ export const createVeleroIoV1NamespacedBackup = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedBackup = (
-  args: DeleteVeleroIoV1CollectionNamespacedBackupApiArg,
+export function deleteVeleroIoV1CollectionNamespacedBackup(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedBackupApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedBackupApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedBackup(
+  args: DeleteVeleroIoV1CollectionNamespacedBackupApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedBackupApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedBackup(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedBackupApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backups`,
@@ -238,10 +304,21 @@ export const patchVeleroIoV1NamespacedBackup = (
     options
   )
 }
-export const listVeleroIoV1NamespacedBackupStorageLocation = (
-  args: ListVeleroIoV1NamespacedBackupStorageLocationApiArg,
+export function listVeleroIoV1NamespacedBackupStorageLocation(
+  args: NoWatch<ListVeleroIoV1NamespacedBackupStorageLocationApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedBackupStorageLocationApiResponse>
+export function listVeleroIoV1NamespacedBackupStorageLocation(
+  args: ListVeleroIoV1NamespacedBackupStorageLocationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedBackupStorageLocationApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedBackupStorageLocation(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1NamespacedBackupStorageLocationApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backupstoragelocations`,
@@ -282,10 +359,21 @@ export const createVeleroIoV1NamespacedBackupStorageLocation = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedBackupStorageLocation = (
-  args: DeleteVeleroIoV1CollectionNamespacedBackupStorageLocationApiArg,
+export function deleteVeleroIoV1CollectionNamespacedBackupStorageLocation(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedBackupStorageLocationApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedBackupStorageLocationApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedBackupStorageLocation(
+  args: DeleteVeleroIoV1CollectionNamespacedBackupStorageLocationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedBackupStorageLocationApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedBackupStorageLocation(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedBackupStorageLocationApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/backupstoragelocations`,
@@ -381,10 +469,21 @@ export const patchVeleroIoV1NamespacedBackupStorageLocation = (
     options
   )
 }
-export const listVeleroIoV1NamespacedDeleteBackupRequest = (
-  args: ListVeleroIoV1NamespacedDeleteBackupRequestApiArg,
+export function listVeleroIoV1NamespacedDeleteBackupRequest(
+  args: NoWatch<ListVeleroIoV1NamespacedDeleteBackupRequestApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedDeleteBackupRequestApiResponse>
+export function listVeleroIoV1NamespacedDeleteBackupRequest(
+  args: ListVeleroIoV1NamespacedDeleteBackupRequestApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedDeleteBackupRequestApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedDeleteBackupRequest(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1NamespacedDeleteBackupRequestApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/deletebackuprequests`,
@@ -425,10 +524,21 @@ export const createVeleroIoV1NamespacedDeleteBackupRequest = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedDeleteBackupRequest = (
-  args: DeleteVeleroIoV1CollectionNamespacedDeleteBackupRequestApiArg,
+export function deleteVeleroIoV1CollectionNamespacedDeleteBackupRequest(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedDeleteBackupRequestApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedDeleteBackupRequestApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedDeleteBackupRequest(
+  args: DeleteVeleroIoV1CollectionNamespacedDeleteBackupRequestApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedDeleteBackupRequestApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedDeleteBackupRequest(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedDeleteBackupRequestApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/deletebackuprequests`,
@@ -524,10 +634,21 @@ export const patchVeleroIoV1NamespacedDeleteBackupRequest = (
     options
   )
 }
-export const listVeleroIoV1NamespacedDownloadRequest = (
-  args: ListVeleroIoV1NamespacedDownloadRequestApiArg,
+export function listVeleroIoV1NamespacedDownloadRequest(
+  args: NoWatch<ListVeleroIoV1NamespacedDownloadRequestApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedDownloadRequestApiResponse>
+export function listVeleroIoV1NamespacedDownloadRequest(
+  args: ListVeleroIoV1NamespacedDownloadRequestApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedDownloadRequestApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedDownloadRequest(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1NamespacedDownloadRequestApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/downloadrequests`,
@@ -568,10 +689,21 @@ export const createVeleroIoV1NamespacedDownloadRequest = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedDownloadRequest = (
-  args: DeleteVeleroIoV1CollectionNamespacedDownloadRequestApiArg,
+export function deleteVeleroIoV1CollectionNamespacedDownloadRequest(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedDownloadRequestApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedDownloadRequestApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedDownloadRequest(
+  args: DeleteVeleroIoV1CollectionNamespacedDownloadRequestApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedDownloadRequestApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedDownloadRequest(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedDownloadRequestApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/downloadrequests`,
@@ -667,10 +799,21 @@ export const patchVeleroIoV1NamespacedDownloadRequest = (
     options
   )
 }
-export const listVeleroIoV1NamespacedPodVolumeBackup = (
-  args: ListVeleroIoV1NamespacedPodVolumeBackupApiArg,
+export function listVeleroIoV1NamespacedPodVolumeBackup(
+  args: NoWatch<ListVeleroIoV1NamespacedPodVolumeBackupApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedPodVolumeBackupApiResponse>
+export function listVeleroIoV1NamespacedPodVolumeBackup(
+  args: ListVeleroIoV1NamespacedPodVolumeBackupApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedPodVolumeBackupApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedPodVolumeBackup(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1NamespacedPodVolumeBackupApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumebackups`,
@@ -711,10 +854,21 @@ export const createVeleroIoV1NamespacedPodVolumeBackup = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedPodVolumeBackup = (
-  args: DeleteVeleroIoV1CollectionNamespacedPodVolumeBackupApiArg,
+export function deleteVeleroIoV1CollectionNamespacedPodVolumeBackup(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedPodVolumeBackupApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedPodVolumeBackupApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedPodVolumeBackup(
+  args: DeleteVeleroIoV1CollectionNamespacedPodVolumeBackupApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedPodVolumeBackupApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedPodVolumeBackup(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedPodVolumeBackupApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumebackups`,
@@ -810,10 +964,21 @@ export const patchVeleroIoV1NamespacedPodVolumeBackup = (
     options
   )
 }
-export const listVeleroIoV1NamespacedPodVolumeRestore = (
-  args: ListVeleroIoV1NamespacedPodVolumeRestoreApiArg,
+export function listVeleroIoV1NamespacedPodVolumeRestore(
+  args: NoWatch<ListVeleroIoV1NamespacedPodVolumeRestoreApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedPodVolumeRestoreApiResponse>
+export function listVeleroIoV1NamespacedPodVolumeRestore(
+  args: ListVeleroIoV1NamespacedPodVolumeRestoreApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedPodVolumeRestoreApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedPodVolumeRestore(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1NamespacedPodVolumeRestoreApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumerestores`,
@@ -854,10 +1019,21 @@ export const createVeleroIoV1NamespacedPodVolumeRestore = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedPodVolumeRestore = (
-  args: DeleteVeleroIoV1CollectionNamespacedPodVolumeRestoreApiArg,
+export function deleteVeleroIoV1CollectionNamespacedPodVolumeRestore(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedPodVolumeRestoreApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedPodVolumeRestoreApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedPodVolumeRestore(
+  args: DeleteVeleroIoV1CollectionNamespacedPodVolumeRestoreApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedPodVolumeRestoreApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedPodVolumeRestore(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedPodVolumeRestoreApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/podvolumerestores`,
@@ -953,10 +1129,21 @@ export const patchVeleroIoV1NamespacedPodVolumeRestore = (
     options
   )
 }
-export const listVeleroIoV1NamespacedResticRepository = (
-  args: ListVeleroIoV1NamespacedResticRepositoryApiArg,
+export function listVeleroIoV1NamespacedResticRepository(
+  args: NoWatch<ListVeleroIoV1NamespacedResticRepositoryApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedResticRepositoryApiResponse>
+export function listVeleroIoV1NamespacedResticRepository(
+  args: ListVeleroIoV1NamespacedResticRepositoryApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedResticRepositoryApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedResticRepository(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1NamespacedResticRepositoryApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/resticrepositories`,
@@ -997,10 +1184,21 @@ export const createVeleroIoV1NamespacedResticRepository = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedResticRepository = (
-  args: DeleteVeleroIoV1CollectionNamespacedResticRepositoryApiArg,
+export function deleteVeleroIoV1CollectionNamespacedResticRepository(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedResticRepositoryApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedResticRepositoryApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedResticRepository(
+  args: DeleteVeleroIoV1CollectionNamespacedResticRepositoryApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedResticRepositoryApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedResticRepository(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedResticRepositoryApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/resticrepositories`,
@@ -1096,10 +1294,18 @@ export const patchVeleroIoV1NamespacedResticRepository = (
     options
   )
 }
-export const listVeleroIoV1NamespacedRestore = (
-  args: ListVeleroIoV1NamespacedRestoreApiArg,
+export function listVeleroIoV1NamespacedRestore(
+  args: NoWatch<ListVeleroIoV1NamespacedRestoreApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedRestoreApiResponse>
+export function listVeleroIoV1NamespacedRestore(
+  args: ListVeleroIoV1NamespacedRestoreApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedRestoreApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedRestore(args: any, options: any): any {
   return apiClient<ListVeleroIoV1NamespacedRestoreApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/restores`,
@@ -1140,10 +1346,21 @@ export const createVeleroIoV1NamespacedRestore = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedRestore = (
-  args: DeleteVeleroIoV1CollectionNamespacedRestoreApiArg,
+export function deleteVeleroIoV1CollectionNamespacedRestore(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedRestoreApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedRestoreApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedRestore(
+  args: DeleteVeleroIoV1CollectionNamespacedRestoreApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedRestoreApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedRestore(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedRestoreApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/restores`,
@@ -1239,10 +1456,18 @@ export const patchVeleroIoV1NamespacedRestore = (
     options
   )
 }
-export const listVeleroIoV1NamespacedSchedule = (
-  args: ListVeleroIoV1NamespacedScheduleApiArg,
+export function listVeleroIoV1NamespacedSchedule(
+  args: NoWatch<ListVeleroIoV1NamespacedScheduleApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedScheduleApiResponse>
+export function listVeleroIoV1NamespacedSchedule(
+  args: ListVeleroIoV1NamespacedScheduleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedScheduleApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedSchedule(args: any, options: any): any {
   return apiClient<ListVeleroIoV1NamespacedScheduleApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/schedules`,
@@ -1283,10 +1508,21 @@ export const createVeleroIoV1NamespacedSchedule = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedSchedule = (
-  args: DeleteVeleroIoV1CollectionNamespacedScheduleApiArg,
+export function deleteVeleroIoV1CollectionNamespacedSchedule(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedScheduleApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedScheduleApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedSchedule(
+  args: DeleteVeleroIoV1CollectionNamespacedScheduleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedScheduleApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedSchedule(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedScheduleApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/schedules`,
@@ -1382,10 +1618,21 @@ export const patchVeleroIoV1NamespacedSchedule = (
     options
   )
 }
-export const listVeleroIoV1NamespacedServerStatusRequest = (
-  args: ListVeleroIoV1NamespacedServerStatusRequestApiArg,
+export function listVeleroIoV1NamespacedServerStatusRequest(
+  args: NoWatch<ListVeleroIoV1NamespacedServerStatusRequestApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedServerStatusRequestApiResponse>
+export function listVeleroIoV1NamespacedServerStatusRequest(
+  args: ListVeleroIoV1NamespacedServerStatusRequestApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedServerStatusRequestApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedServerStatusRequest(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1NamespacedServerStatusRequestApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/serverstatusrequests`,
@@ -1426,10 +1673,21 @@ export const createVeleroIoV1NamespacedServerStatusRequest = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedServerStatusRequest = (
-  args: DeleteVeleroIoV1CollectionNamespacedServerStatusRequestApiArg,
+export function deleteVeleroIoV1CollectionNamespacedServerStatusRequest(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedServerStatusRequestApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedServerStatusRequestApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedServerStatusRequest(
+  args: DeleteVeleroIoV1CollectionNamespacedServerStatusRequestApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedServerStatusRequestApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedServerStatusRequest(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedServerStatusRequestApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/serverstatusrequests`,
@@ -1525,10 +1783,21 @@ export const patchVeleroIoV1NamespacedServerStatusRequest = (
     options
   )
 }
-export const listVeleroIoV1NamespacedVolumeSnapshotLocation = (
-  args: ListVeleroIoV1NamespacedVolumeSnapshotLocationApiArg,
+export function listVeleroIoV1NamespacedVolumeSnapshotLocation(
+  args: NoWatch<ListVeleroIoV1NamespacedVolumeSnapshotLocationApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse>
+export function listVeleroIoV1NamespacedVolumeSnapshotLocation(
+  args: ListVeleroIoV1NamespacedVolumeSnapshotLocationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse>
+): Promise<void>
+export function listVeleroIoV1NamespacedVolumeSnapshotLocation(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/volumesnapshotlocations`,
@@ -1569,10 +1838,21 @@ export const createVeleroIoV1NamespacedVolumeSnapshotLocation = (
     options
   )
 }
-export const deleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocation = (
-  args: DeleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocationApiArg,
+export function deleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocation(
+  args: NoWatch<DeleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocationApiArg>,
   options?: Options
-) => {
+): Promise<DeleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocationApiResponse>
+export function deleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocation(
+  args: DeleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocationApiResponse>
+): Promise<void>
+export function deleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocation(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocationApiResponse>(
     {
       path: `/apis/velero.io/v1/namespaces/${args['namespace']}/volumesnapshotlocations`,
@@ -1668,10 +1948,21 @@ export const patchVeleroIoV1NamespacedVolumeSnapshotLocation = (
     options
   )
 }
-export const listVeleroIoV1PodVolumeBackupForAllNamespaces = (
-  args: ListVeleroIoV1PodVolumeBackupForAllNamespacesApiArg,
+export function listVeleroIoV1PodVolumeBackupForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1PodVolumeBackupForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1PodVolumeBackupForAllNamespacesApiResponse>
+export function listVeleroIoV1PodVolumeBackupForAllNamespaces(
+  args: ListVeleroIoV1PodVolumeBackupForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1PodVolumeBackupForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1PodVolumeBackupForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1PodVolumeBackupForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/podvolumebackups`,
@@ -1692,10 +1983,21 @@ export const listVeleroIoV1PodVolumeBackupForAllNamespaces = (
     options
   )
 }
-export const listVeleroIoV1PodVolumeRestoreForAllNamespaces = (
-  args: ListVeleroIoV1PodVolumeRestoreForAllNamespacesApiArg,
+export function listVeleroIoV1PodVolumeRestoreForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1PodVolumeRestoreForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1PodVolumeRestoreForAllNamespacesApiResponse>
+export function listVeleroIoV1PodVolumeRestoreForAllNamespaces(
+  args: ListVeleroIoV1PodVolumeRestoreForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1PodVolumeRestoreForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1PodVolumeRestoreForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1PodVolumeRestoreForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/podvolumerestores`,
@@ -1716,10 +2018,21 @@ export const listVeleroIoV1PodVolumeRestoreForAllNamespaces = (
     options
   )
 }
-export const listVeleroIoV1ResticRepositoryForAllNamespaces = (
-  args: ListVeleroIoV1ResticRepositoryForAllNamespacesApiArg,
+export function listVeleroIoV1ResticRepositoryForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1ResticRepositoryForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1ResticRepositoryForAllNamespacesApiResponse>
+export function listVeleroIoV1ResticRepositoryForAllNamespaces(
+  args: ListVeleroIoV1ResticRepositoryForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1ResticRepositoryForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1ResticRepositoryForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1ResticRepositoryForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/resticrepositories`,
@@ -1740,10 +2053,21 @@ export const listVeleroIoV1ResticRepositoryForAllNamespaces = (
     options
   )
 }
-export const listVeleroIoV1RestoreForAllNamespaces = (
-  args: ListVeleroIoV1RestoreForAllNamespacesApiArg,
+export function listVeleroIoV1RestoreForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1RestoreForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1RestoreForAllNamespacesApiResponse>
+export function listVeleroIoV1RestoreForAllNamespaces(
+  args: ListVeleroIoV1RestoreForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1RestoreForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1RestoreForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1RestoreForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/restores`,
@@ -1764,10 +2088,21 @@ export const listVeleroIoV1RestoreForAllNamespaces = (
     options
   )
 }
-export const listVeleroIoV1ScheduleForAllNamespaces = (
-  args: ListVeleroIoV1ScheduleForAllNamespacesApiArg,
+export function listVeleroIoV1ScheduleForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1ScheduleForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1ScheduleForAllNamespacesApiResponse>
+export function listVeleroIoV1ScheduleForAllNamespaces(
+  args: ListVeleroIoV1ScheduleForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1ScheduleForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1ScheduleForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1ScheduleForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/schedules`,
@@ -1788,10 +2123,21 @@ export const listVeleroIoV1ScheduleForAllNamespaces = (
     options
   )
 }
-export const listVeleroIoV1ServerStatusRequestForAllNamespaces = (
-  args: ListVeleroIoV1ServerStatusRequestForAllNamespacesApiArg,
+export function listVeleroIoV1ServerStatusRequestForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1ServerStatusRequestForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1ServerStatusRequestForAllNamespacesApiResponse>
+export function listVeleroIoV1ServerStatusRequestForAllNamespaces(
+  args: ListVeleroIoV1ServerStatusRequestForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1ServerStatusRequestForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1ServerStatusRequestForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1ServerStatusRequestForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/serverstatusrequests`,
@@ -1812,10 +2158,21 @@ export const listVeleroIoV1ServerStatusRequestForAllNamespaces = (
     options
   )
 }
-export const listVeleroIoV1VolumeSnapshotLocationForAllNamespaces = (
-  args: ListVeleroIoV1VolumeSnapshotLocationForAllNamespacesApiArg,
+export function listVeleroIoV1VolumeSnapshotLocationForAllNamespaces(
+  args: NoWatch<ListVeleroIoV1VolumeSnapshotLocationForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListVeleroIoV1VolumeSnapshotLocationForAllNamespacesApiResponse>
+export function listVeleroIoV1VolumeSnapshotLocationForAllNamespaces(
+  args: ListVeleroIoV1VolumeSnapshotLocationForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListVeleroIoV1VolumeSnapshotLocationForAllNamespacesApiResponse>
+): Promise<void>
+export function listVeleroIoV1VolumeSnapshotLocationForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListVeleroIoV1VolumeSnapshotLocationForAllNamespacesApiResponse>(
     {
       path: `/apis/velero.io/v1/volumesnapshotlocations`,
@@ -1853,7 +2210,7 @@ export type ListVeleroIoV1BackupForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1899,7 +2256,7 @@ export type ListVeleroIoV1BackupStorageLocationForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1945,7 +2302,7 @@ export type ListVeleroIoV1DeleteBackupRequestForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1991,7 +2348,7 @@ export type ListVeleroIoV1DownloadRequestForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2025,7 +2382,7 @@ export type ListVeleroIoV1NamespacedBackupApiResponse =
 export type ListVeleroIoV1NamespacedBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2076,7 +2433,7 @@ export type CreateVeleroIoV1NamespacedBackupApiResponse =
 export type CreateVeleroIoV1NamespacedBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2099,7 +2456,7 @@ export type DeleteVeleroIoV1CollectionNamespacedBackupApiResponse =
 export type DeleteVeleroIoV1CollectionNamespacedBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2149,7 +2506,7 @@ export type ReadVeleroIoV1NamespacedBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2164,7 +2521,7 @@ export type ReplaceVeleroIoV1NamespacedBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2191,7 +2548,7 @@ export type DeleteVeleroIoV1NamespacedBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2218,7 +2575,7 @@ export type PatchVeleroIoV1NamespacedBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2247,7 +2604,7 @@ export type ListVeleroIoV1NamespacedBackupStorageLocationApiResponse =
 export type ListVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2298,7 +2655,7 @@ export type CreateVeleroIoV1NamespacedBackupStorageLocationApiResponse =
 export type CreateVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2321,7 +2678,7 @@ export type DeleteVeleroIoV1CollectionNamespacedBackupStorageLocationApiResponse
 export type DeleteVeleroIoV1CollectionNamespacedBackupStorageLocationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2371,7 +2728,7 @@ export type ReadVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2387,7 +2744,7 @@ export type ReplaceVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2414,7 +2771,7 @@ export type DeleteVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2441,7 +2798,7 @@ export type PatchVeleroIoV1NamespacedBackupStorageLocationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2470,7 +2827,7 @@ export type ListVeleroIoV1NamespacedDeleteBackupRequestApiResponse =
 export type ListVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2521,7 +2878,7 @@ export type CreateVeleroIoV1NamespacedDeleteBackupRequestApiResponse =
 export type CreateVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2544,7 +2901,7 @@ export type DeleteVeleroIoV1CollectionNamespacedDeleteBackupRequestApiResponse =
 export type DeleteVeleroIoV1CollectionNamespacedDeleteBackupRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2594,7 +2951,7 @@ export type ReadVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2610,7 +2967,7 @@ export type ReplaceVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2637,7 +2994,7 @@ export type DeleteVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2664,7 +3021,7 @@ export type PatchVeleroIoV1NamespacedDeleteBackupRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2693,7 +3050,7 @@ export type ListVeleroIoV1NamespacedDownloadRequestApiResponse =
 export type ListVeleroIoV1NamespacedDownloadRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2744,7 +3101,7 @@ export type CreateVeleroIoV1NamespacedDownloadRequestApiResponse =
 export type CreateVeleroIoV1NamespacedDownloadRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2767,7 +3124,7 @@ export type DeleteVeleroIoV1CollectionNamespacedDownloadRequestApiResponse =
 export type DeleteVeleroIoV1CollectionNamespacedDownloadRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2817,7 +3174,7 @@ export type ReadVeleroIoV1NamespacedDownloadRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2833,7 +3190,7 @@ export type ReplaceVeleroIoV1NamespacedDownloadRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2860,7 +3217,7 @@ export type DeleteVeleroIoV1NamespacedDownloadRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2887,7 +3244,7 @@ export type PatchVeleroIoV1NamespacedDownloadRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2916,7 +3273,7 @@ export type ListVeleroIoV1NamespacedPodVolumeBackupApiResponse =
 export type ListVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2967,7 +3324,7 @@ export type CreateVeleroIoV1NamespacedPodVolumeBackupApiResponse =
 export type CreateVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2990,7 +3347,7 @@ export type DeleteVeleroIoV1CollectionNamespacedPodVolumeBackupApiResponse =
 export type DeleteVeleroIoV1CollectionNamespacedPodVolumeBackupApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3040,7 +3397,7 @@ export type ReadVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3056,7 +3413,7 @@ export type ReplaceVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3083,7 +3440,7 @@ export type DeleteVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3110,7 +3467,7 @@ export type PatchVeleroIoV1NamespacedPodVolumeBackupApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3139,7 +3496,7 @@ export type ListVeleroIoV1NamespacedPodVolumeRestoreApiResponse =
 export type ListVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3190,7 +3547,7 @@ export type CreateVeleroIoV1NamespacedPodVolumeRestoreApiResponse =
 export type CreateVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3213,7 +3570,7 @@ export type DeleteVeleroIoV1CollectionNamespacedPodVolumeRestoreApiResponse =
 export type DeleteVeleroIoV1CollectionNamespacedPodVolumeRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3263,7 +3620,7 @@ export type ReadVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3279,7 +3636,7 @@ export type ReplaceVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3306,7 +3663,7 @@ export type DeleteVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3333,7 +3690,7 @@ export type PatchVeleroIoV1NamespacedPodVolumeRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3362,7 +3719,7 @@ export type ListVeleroIoV1NamespacedResticRepositoryApiResponse =
 export type ListVeleroIoV1NamespacedResticRepositoryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3413,7 +3770,7 @@ export type CreateVeleroIoV1NamespacedResticRepositoryApiResponse =
 export type CreateVeleroIoV1NamespacedResticRepositoryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3436,7 +3793,7 @@ export type DeleteVeleroIoV1CollectionNamespacedResticRepositoryApiResponse =
 export type DeleteVeleroIoV1CollectionNamespacedResticRepositoryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3486,7 +3843,7 @@ export type ReadVeleroIoV1NamespacedResticRepositoryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3502,7 +3859,7 @@ export type ReplaceVeleroIoV1NamespacedResticRepositoryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3529,7 +3886,7 @@ export type DeleteVeleroIoV1NamespacedResticRepositoryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3556,7 +3913,7 @@ export type PatchVeleroIoV1NamespacedResticRepositoryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3585,7 +3942,7 @@ export type ListVeleroIoV1NamespacedRestoreApiResponse =
 export type ListVeleroIoV1NamespacedRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3636,7 +3993,7 @@ export type CreateVeleroIoV1NamespacedRestoreApiResponse =
 export type CreateVeleroIoV1NamespacedRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3659,7 +4016,7 @@ export type DeleteVeleroIoV1CollectionNamespacedRestoreApiResponse =
 export type DeleteVeleroIoV1CollectionNamespacedRestoreApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3709,7 +4066,7 @@ export type ReadVeleroIoV1NamespacedRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3724,7 +4081,7 @@ export type ReplaceVeleroIoV1NamespacedRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3751,7 +4108,7 @@ export type DeleteVeleroIoV1NamespacedRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3778,7 +4135,7 @@ export type PatchVeleroIoV1NamespacedRestoreApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3807,7 +4164,7 @@ export type ListVeleroIoV1NamespacedScheduleApiResponse =
 export type ListVeleroIoV1NamespacedScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3858,7 +4215,7 @@ export type CreateVeleroIoV1NamespacedScheduleApiResponse =
 export type CreateVeleroIoV1NamespacedScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3881,7 +4238,7 @@ export type DeleteVeleroIoV1CollectionNamespacedScheduleApiResponse =
 export type DeleteVeleroIoV1CollectionNamespacedScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3931,7 +4288,7 @@ export type ReadVeleroIoV1NamespacedScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3946,7 +4303,7 @@ export type ReplaceVeleroIoV1NamespacedScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3973,7 +4330,7 @@ export type DeleteVeleroIoV1NamespacedScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4000,7 +4357,7 @@ export type PatchVeleroIoV1NamespacedScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4029,7 +4386,7 @@ export type ListVeleroIoV1NamespacedServerStatusRequestApiResponse =
 export type ListVeleroIoV1NamespacedServerStatusRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4080,7 +4437,7 @@ export type CreateVeleroIoV1NamespacedServerStatusRequestApiResponse =
 export type CreateVeleroIoV1NamespacedServerStatusRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4103,7 +4460,7 @@ export type DeleteVeleroIoV1CollectionNamespacedServerStatusRequestApiResponse =
 export type DeleteVeleroIoV1CollectionNamespacedServerStatusRequestApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4153,7 +4510,7 @@ export type ReadVeleroIoV1NamespacedServerStatusRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4169,7 +4526,7 @@ export type ReplaceVeleroIoV1NamespacedServerStatusRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4196,7 +4553,7 @@ export type DeleteVeleroIoV1NamespacedServerStatusRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4223,7 +4580,7 @@ export type PatchVeleroIoV1NamespacedServerStatusRequestApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4252,7 +4609,7 @@ export type ListVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse =
 export type ListVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4303,7 +4660,7 @@ export type CreateVeleroIoV1NamespacedVolumeSnapshotLocationApiResponse =
 export type CreateVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4326,7 +4683,7 @@ export type DeleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocationApiRespons
 export type DeleteVeleroIoV1CollectionNamespacedVolumeSnapshotLocationApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4376,7 +4733,7 @@ export type ReadVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4392,7 +4749,7 @@ export type ReplaceVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4419,7 +4776,7 @@ export type DeleteVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4446,7 +4803,7 @@ export type PatchVeleroIoV1NamespacedVolumeSnapshotLocationApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4487,7 +4844,7 @@ export type ListVeleroIoV1PodVolumeBackupForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4533,7 +4890,7 @@ export type ListVeleroIoV1PodVolumeRestoreForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4579,7 +4936,7 @@ export type ListVeleroIoV1ResticRepositoryForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4625,7 +4982,7 @@ export type ListVeleroIoV1RestoreForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4671,7 +5028,7 @@ export type ListVeleroIoV1ScheduleForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4717,7 +5074,7 @@ export type ListVeleroIoV1ServerStatusRequestForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4763,7 +5120,7 @@ export type ListVeleroIoV1VolumeSnapshotLocationForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

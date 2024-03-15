@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespaces = (
-  args: ListKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespaces(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespacesApiResponse>
+export function listKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespaces(
+  args: ListKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespacesApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespacesApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/kafkabridges`,
@@ -23,10 +37,21 @@ export const listKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespaces = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespaces = (
-  args: ListKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespacesApiArg,
+export function listKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespaces(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespacesApiResponse>
+export function listKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespaces(
+  args: ListKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespacesApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespacesApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/kafkaconnectors`,
@@ -47,10 +72,21 @@ export const listKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespaces = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2KafkaConnectForAllNamespaces = (
-  args: ListKafkaStrimziIoV1Beta2KafkaConnectForAllNamespacesApiArg,
+export function listKafkaStrimziIoV1Beta2KafkaConnectForAllNamespaces(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2KafkaConnectForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2KafkaConnectForAllNamespacesApiResponse>
+export function listKafkaStrimziIoV1Beta2KafkaConnectForAllNamespaces(
+  args: ListKafkaStrimziIoV1Beta2KafkaConnectForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2KafkaConnectForAllNamespacesApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2KafkaConnectForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2KafkaConnectForAllNamespacesApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/kafkaconnects`,
@@ -71,10 +107,21 @@ export const listKafkaStrimziIoV1Beta2KafkaConnectForAllNamespaces = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespaces = (
-  args: ListKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespacesApiArg,
+export function listKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespaces(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespacesApiResponse>
+export function listKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespaces(
+  args: ListKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespacesApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespacesApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/kafkamirrormaker2s`,
@@ -95,10 +142,21 @@ export const listKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespaces = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespaces = (
-  args: ListKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespacesApiArg,
+export function listKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespaces(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespacesApiResponse>
+export function listKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespaces(
+  args: ListKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespacesApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespacesApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/kafkamirrormakers`,
@@ -119,10 +177,21 @@ export const listKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespaces = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespaces = (
-  args: ListKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespacesApiArg,
+export function listKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespaces(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespacesApiResponse>
+export function listKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespaces(
+  args: ListKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespacesApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespacesApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/kafkarebalances`,
@@ -143,10 +212,21 @@ export const listKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespaces = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2KafkaForAllNamespaces = (
-  args: ListKafkaStrimziIoV1Beta2KafkaForAllNamespacesApiArg,
+export function listKafkaStrimziIoV1Beta2KafkaForAllNamespaces(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2KafkaForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2KafkaForAllNamespacesApiResponse>
+export function listKafkaStrimziIoV1Beta2KafkaForAllNamespaces(
+  args: ListKafkaStrimziIoV1Beta2KafkaForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2KafkaForAllNamespacesApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2KafkaForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2KafkaForAllNamespacesApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/kafkas`,
@@ -167,10 +247,21 @@ export const listKafkaStrimziIoV1Beta2KafkaForAllNamespaces = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2KafkaTopicForAllNamespaces = (
-  args: ListKafkaStrimziIoV1Beta2KafkaTopicForAllNamespacesApiArg,
+export function listKafkaStrimziIoV1Beta2KafkaTopicForAllNamespaces(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2KafkaTopicForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2KafkaTopicForAllNamespacesApiResponse>
+export function listKafkaStrimziIoV1Beta2KafkaTopicForAllNamespaces(
+  args: ListKafkaStrimziIoV1Beta2KafkaTopicForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2KafkaTopicForAllNamespacesApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2KafkaTopicForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2KafkaTopicForAllNamespacesApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/kafkatopics`,
@@ -191,10 +282,21 @@ export const listKafkaStrimziIoV1Beta2KafkaTopicForAllNamespaces = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2KafkaUserForAllNamespaces = (
-  args: ListKafkaStrimziIoV1Beta2KafkaUserForAllNamespacesApiArg,
+export function listKafkaStrimziIoV1Beta2KafkaUserForAllNamespaces(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2KafkaUserForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2KafkaUserForAllNamespacesApiResponse>
+export function listKafkaStrimziIoV1Beta2KafkaUserForAllNamespaces(
+  args: ListKafkaStrimziIoV1Beta2KafkaUserForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2KafkaUserForAllNamespacesApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2KafkaUserForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2KafkaUserForAllNamespacesApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/kafkausers`,
@@ -215,10 +317,21 @@ export const listKafkaStrimziIoV1Beta2KafkaUserForAllNamespaces = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2NamespacedKafkaBridge = (
-  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg,
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaBridge(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiResponse>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaBridge(
+  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaBridge(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges`,
@@ -259,10 +372,21 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaBridge = (
     options
   )
 }
-export const deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridge = (
-  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridgeApiArg,
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridge(
+  args: NoWatch<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridgeApiArg>,
   options?: Options
-) => {
+): Promise<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridgeApiResponse>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridge(
+  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridgeApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridgeApiResponse>
+): Promise<void>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridge(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridgeApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkabridges`,
@@ -464,10 +588,21 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatus = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2NamespacedKafkaConnector = (
-  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg,
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaConnector(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaConnector(
+  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaConnector(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors`,
@@ -508,10 +643,21 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaConnector = (
     options
   )
 }
-export const deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnector = (
-  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectorApiArg,
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnector(
+  args: NoWatch<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectorApiArg>,
   options?: Options
-) => {
+): Promise<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectorApiResponse>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnector(
+  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectorApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectorApiResponse>
+): Promise<void>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnector(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectorApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnectors`,
@@ -713,10 +859,21 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatus = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2NamespacedKafkaConnect = (
-  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg,
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaConnect(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaConnect(
+  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaConnect(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects`,
@@ -757,10 +914,21 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaConnect = (
     options
   )
 }
-export const deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnect = (
-  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectApiArg,
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnect(
+  args: NoWatch<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectApiArg>,
   options?: Options
-) => {
+): Promise<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectApiResponse>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnect(
+  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectApiResponse>
+): Promise<void>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnect(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkaconnects`,
@@ -962,10 +1130,21 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatus = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2 = (
-  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg,
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2(
+  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s`,
@@ -1006,32 +1185,42 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2 = (
     options
   )
 }
-export const deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2 =
-  (
-    args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2ApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2ApiResponse>(
-      {
-        path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2(
+  args: NoWatch<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2ApiArg>,
+  options?: Options
+): Promise<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2ApiResponse>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2(
+  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2ApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2ApiResponse>
+): Promise<void>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2ApiResponse>(
+    {
+      path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormaker2s`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2 = (
   args: ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg,
   options?: Options
@@ -1212,10 +1401,21 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2Status = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker = (
-  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg,
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker(
+  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers`,
@@ -1256,10 +1456,21 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker = (
     options
   )
 }
-export const deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker = (
-  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMakerApiArg,
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker(
+  args: NoWatch<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMakerApiArg>,
   options?: Options
-) => {
+): Promise<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMakerApiResponse>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker(
+  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMakerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMakerApiResponse>
+): Promise<void>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMakerApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkamirrormakers`,
@@ -1461,10 +1672,21 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatus = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2NamespacedKafkaRebalance = (
-  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg,
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaRebalance(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaRebalance(
+  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaRebalance(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkarebalances`,
@@ -1505,10 +1727,21 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaRebalance = (
     options
   )
 }
-export const deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalance = (
-  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalanceApiArg,
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalance(
+  args: NoWatch<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalanceApiArg>,
   options?: Options
-) => {
+): Promise<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalanceApiResponse>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalance(
+  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalanceApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalanceApiResponse>
+): Promise<void>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalance(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalanceApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkarebalances`,
@@ -1657,10 +1890,21 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatus = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2NamespacedKafka = (
-  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaApiArg,
+export function listKafkaStrimziIoV1Beta2NamespacedKafka(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2NamespacedKafkaApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse>
+export function listKafkaStrimziIoV1Beta2NamespacedKafka(
+  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2NamespacedKafka(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkas`,
@@ -1701,10 +1945,21 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafka = (
     options
   )
 }
-export const deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafka = (
-  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaApiArg,
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafka(
+  args: NoWatch<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaApiArg>,
   options?: Options
-) => {
+): Promise<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaApiResponse>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafka(
+  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaApiResponse>
+): Promise<void>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafka(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkas`,
@@ -1853,10 +2108,21 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaStatus = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2NamespacedKafkaTopic = (
-  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg,
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaTopic(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaTopic(
+  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaTopic(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkatopics`,
@@ -1897,10 +2163,21 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaTopic = (
     options
   )
 }
-export const deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopic = (
-  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopicApiArg,
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopic(
+  args: NoWatch<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopicApiArg>,
   options?: Options
-) => {
+): Promise<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopicApiResponse>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopic(
+  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopicApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopicApiResponse>
+): Promise<void>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopic(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopicApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkatopics`,
@@ -2049,10 +2326,21 @@ export const patchKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatus = (
     options
   )
 }
-export const listKafkaStrimziIoV1Beta2NamespacedKafkaUser = (
-  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg,
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaUser(
+  args: NoWatch<ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg>,
   options?: Options
-) => {
+): Promise<ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaUser(
+  args: ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse>
+): Promise<void>
+export function listKafkaStrimziIoV1Beta2NamespacedKafkaUser(
+  args: any,
+  options: any
+): any {
   return apiClient<ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkausers`,
@@ -2093,10 +2381,21 @@ export const createKafkaStrimziIoV1Beta2NamespacedKafkaUser = (
     options
   )
 }
-export const deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUser = (
-  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUserApiArg,
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUser(
+  args: NoWatch<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUserApiArg>,
   options?: Options
-) => {
+): Promise<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUserApiResponse>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUser(
+  args: DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUserApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUserApiResponse>
+): Promise<void>
+export function deleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUser(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUserApiResponse>(
     {
       path: `/apis/kafka.strimzi.io/v1beta2/namespaces/${args['namespace']}/kafkausers`,
@@ -2262,7 +2561,7 @@ export type ListKafkaStrimziIoV1Beta2KafkaBridgeForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2308,7 +2607,7 @@ export type ListKafkaStrimziIoV1Beta2KafkaConnectorForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2354,7 +2653,7 @@ export type ListKafkaStrimziIoV1Beta2KafkaConnectForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2400,7 +2699,7 @@ export type ListKafkaStrimziIoV1Beta2KafkaMirrorMaker2ForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2446,7 +2745,7 @@ export type ListKafkaStrimziIoV1Beta2KafkaMirrorMakerForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2492,7 +2791,7 @@ export type ListKafkaStrimziIoV1Beta2KafkaRebalanceForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2538,7 +2837,7 @@ export type ListKafkaStrimziIoV1Beta2KafkaForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2584,7 +2883,7 @@ export type ListKafkaStrimziIoV1Beta2KafkaTopicForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2630,7 +2929,7 @@ export type ListKafkaStrimziIoV1Beta2KafkaUserForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2664,7 +2963,7 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiResponse =
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2715,7 +3014,7 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiResponse =
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2738,7 +3037,7 @@ export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridgeApiRespons
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaBridgeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -2788,7 +3087,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2804,7 +3103,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2831,7 +3130,7 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2858,7 +3157,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2889,7 +3188,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2905,7 +3204,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2930,7 +3229,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -2961,7 +3260,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2977,7 +3276,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3002,7 +3301,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaBridgeStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3031,7 +3330,7 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse =
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3082,7 +3381,7 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiResponse =
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3106,7 +3405,7 @@ export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectorApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -3156,7 +3455,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3172,7 +3471,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3199,7 +3498,7 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3226,7 +3525,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3257,7 +3556,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3273,7 +3572,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3298,7 +3597,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3329,7 +3628,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3345,7 +3644,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3370,7 +3669,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectorStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3399,7 +3698,7 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse =
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3450,7 +3749,7 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiResponse =
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3474,7 +3773,7 @@ export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaConnectApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -3524,7 +3823,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3540,7 +3839,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3567,7 +3866,7 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3594,7 +3893,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3625,7 +3924,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3641,7 +3940,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3666,7 +3965,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3697,7 +3996,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3713,7 +4012,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3738,7 +4037,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaConnectStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3767,7 +4066,7 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse =
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -3818,7 +4117,7 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiResponse =
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3842,7 +4141,7 @@ export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMaker2ApiA
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -3892,7 +4191,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -3908,7 +4207,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3935,7 +4234,7 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3962,7 +4261,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -3993,7 +4292,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4010,7 +4309,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -4035,7 +4334,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2ScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4066,7 +4365,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4083,7 +4382,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg 
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -4109,7 +4408,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMaker2StatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -4138,7 +4437,7 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse =
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4189,7 +4488,7 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiResponse =
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4213,7 +4512,7 @@ export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaMirrorMakerApiAr
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -4263,7 +4562,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4279,7 +4578,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4306,7 +4605,7 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4333,7 +4632,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4364,7 +4663,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4381,7 +4680,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -4406,7 +4705,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerScaleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4437,7 +4736,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4454,7 +4753,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -4479,7 +4778,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaMirrorMakerStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4508,7 +4807,7 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse =
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4559,7 +4858,7 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiResponse =
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4583,7 +4882,7 @@ export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaRebalanceApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -4633,7 +4932,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4649,7 +4948,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4676,7 +4975,7 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4703,7 +5002,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4734,7 +5033,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4750,7 +5049,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4775,7 +5074,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaRebalanceStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4804,7 +5103,7 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse =
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4855,7 +5154,7 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaApiResponse =
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4878,7 +5177,7 @@ export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaApiResponse =
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4928,7 +5227,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4944,7 +5243,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4971,7 +5270,7 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4998,7 +5297,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5029,7 +5328,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5045,7 +5344,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5070,7 +5369,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5099,7 +5398,7 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse =
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5150,7 +5449,7 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiResponse =
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5173,7 +5472,7 @@ export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopicApiResponse
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaTopicApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5223,7 +5522,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5239,7 +5538,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5266,7 +5565,7 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5293,7 +5592,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5324,7 +5623,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5340,7 +5639,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5365,7 +5664,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaTopicStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5394,7 +5693,7 @@ export type ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse =
 export type ListKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5445,7 +5744,7 @@ export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaUserApiResponse =
 export type CreateKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5468,7 +5767,7 @@ export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUserApiResponse 
 export type DeleteKafkaStrimziIoV1Beta2CollectionNamespacedKafkaUserApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5518,7 +5817,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5534,7 +5833,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5561,7 +5860,7 @@ export type DeleteKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5588,7 +5887,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5619,7 +5918,7 @@ export type ReadKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5635,7 +5934,7 @@ export type ReplaceKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5660,7 +5959,7 @@ export type PatchKafkaStrimziIoV1Beta2NamespacedKafkaUserStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

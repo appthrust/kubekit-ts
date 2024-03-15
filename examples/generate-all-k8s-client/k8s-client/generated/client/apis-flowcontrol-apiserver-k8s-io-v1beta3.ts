@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getFlowcontrolApiserverV1Beta3ApiResources = (
   args: GetFlowcontrolApiserverV1Beta3ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,21 @@ export const getFlowcontrolApiserverV1Beta3ApiResources = (
     options
   )
 }
-export const listFlowcontrolApiserverV1Beta3FlowSchema = (
-  args: ListFlowcontrolApiserverV1Beta3FlowSchemaApiArg,
+export function listFlowcontrolApiserverV1Beta3FlowSchema(
+  args: NoWatch<ListFlowcontrolApiserverV1Beta3FlowSchemaApiArg>,
   options?: Options
-) => {
+): Promise<ListFlowcontrolApiserverV1Beta3FlowSchemaApiResponse>
+export function listFlowcontrolApiserverV1Beta3FlowSchema(
+  args: ListFlowcontrolApiserverV1Beta3FlowSchemaApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListFlowcontrolApiserverV1Beta3FlowSchemaApiResponse>
+): Promise<void>
+export function listFlowcontrolApiserverV1Beta3FlowSchema(
+  args: any,
+  options: any
+): any {
   return apiClient<ListFlowcontrolApiserverV1Beta3FlowSchemaApiResponse>(
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/flowschemas`,
@@ -208,10 +222,21 @@ export const patchFlowcontrolApiserverV1Beta3FlowSchemaStatus = (
     options
   )
 }
-export const listFlowcontrolApiserverV1Beta3PriorityLevelConfiguration = (
-  args: ListFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg,
+export function listFlowcontrolApiserverV1Beta3PriorityLevelConfiguration(
+  args: NoWatch<ListFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg>,
   options?: Options
-) => {
+): Promise<ListFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse>
+export function listFlowcontrolApiserverV1Beta3PriorityLevelConfiguration(
+  args: ListFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse>
+): Promise<void>
+export function listFlowcontrolApiserverV1Beta3PriorityLevelConfiguration(
+  args: any,
+  options: any
+): any {
   return apiClient<ListFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse>(
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/prioritylevelconfigurations`,
@@ -411,10 +436,21 @@ export const patchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatus =
       options
     )
   }
-export const watchFlowcontrolApiserverV1Beta3FlowSchemaList = (
-  args: WatchFlowcontrolApiserverV1Beta3FlowSchemaListApiArg,
+export function watchFlowcontrolApiserverV1Beta3FlowSchemaList(
+  args: NoWatch<WatchFlowcontrolApiserverV1Beta3FlowSchemaListApiArg>,
   options?: Options
-) => {
+): Promise<WatchFlowcontrolApiserverV1Beta3FlowSchemaListApiResponse>
+export function watchFlowcontrolApiserverV1Beta3FlowSchemaList(
+  args: WatchFlowcontrolApiserverV1Beta3FlowSchemaListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchFlowcontrolApiserverV1Beta3FlowSchemaListApiResponse>
+): Promise<void>
+export function watchFlowcontrolApiserverV1Beta3FlowSchemaList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchFlowcontrolApiserverV1Beta3FlowSchemaListApiResponse>(
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/watch/flowschemas`,
@@ -435,10 +471,21 @@ export const watchFlowcontrolApiserverV1Beta3FlowSchemaList = (
     options
   )
 }
-export const watchFlowcontrolApiserverV1Beta3FlowSchema = (
-  args: WatchFlowcontrolApiserverV1Beta3FlowSchemaApiArg,
+export function watchFlowcontrolApiserverV1Beta3FlowSchema(
+  args: NoWatch<WatchFlowcontrolApiserverV1Beta3FlowSchemaApiArg>,
   options?: Options
-) => {
+): Promise<WatchFlowcontrolApiserverV1Beta3FlowSchemaApiResponse>
+export function watchFlowcontrolApiserverV1Beta3FlowSchema(
+  args: WatchFlowcontrolApiserverV1Beta3FlowSchemaApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchFlowcontrolApiserverV1Beta3FlowSchemaApiResponse>
+): Promise<void>
+export function watchFlowcontrolApiserverV1Beta3FlowSchema(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchFlowcontrolApiserverV1Beta3FlowSchemaApiResponse>(
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/watch/flowschemas/${args.name}`,
@@ -459,10 +506,21 @@ export const watchFlowcontrolApiserverV1Beta3FlowSchema = (
     options
   )
 }
-export const watchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationList = (
-  args: WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationListApiArg,
+export function watchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationList(
+  args: NoWatch<WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationListApiArg>,
   options?: Options
-) => {
+): Promise<WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationListApiResponse>
+export function watchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationList(
+  args: WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationListApiResponse>
+): Promise<void>
+export function watchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationListApiResponse>(
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/watch/prioritylevelconfigurations`,
@@ -483,10 +541,21 @@ export const watchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationList = (
     options
   )
 }
-export const watchFlowcontrolApiserverV1Beta3PriorityLevelConfiguration = (
-  args: WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg,
+export function watchFlowcontrolApiserverV1Beta3PriorityLevelConfiguration(
+  args: NoWatch<WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg>,
   options?: Options
-) => {
+): Promise<WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse>
+export function watchFlowcontrolApiserverV1Beta3PriorityLevelConfiguration(
+  args: WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse>
+): Promise<void>
+export function watchFlowcontrolApiserverV1Beta3PriorityLevelConfiguration(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse>(
     {
       path: `/apis/flowcontrol.apiserver.k8s.io/v1beta3/watch/prioritylevelconfigurations/${args.name}`,
@@ -513,7 +582,7 @@ export type GetFlowcontrolApiserverV1Beta3ApiResourcesApiArg = void
 export type ListFlowcontrolApiserverV1Beta3FlowSchemaApiResponse =
   /** status 200 OK */ IoK8SApiFlowcontrolV1Beta3FlowSchemaList
 export type ListFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -562,7 +631,7 @@ export type CreateFlowcontrolApiserverV1Beta3FlowSchemaApiResponse =
   | /** status 201 Created */ IoK8SApiFlowcontrolV1Beta3FlowSchema
   | /** status 202 Accepted */ IoK8SApiFlowcontrolV1Beta3FlowSchema
 export type CreateFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -577,7 +646,7 @@ export type CreateFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
 export type DeleteFlowcontrolApiserverV1Beta3CollectionFlowSchemaApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteFlowcontrolApiserverV1Beta3CollectionFlowSchemaApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -632,7 +701,7 @@ export type ReadFlowcontrolApiserverV1Beta3FlowSchemaApiResponse =
 export type ReadFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
   /** name of the FlowSchema */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceFlowcontrolApiserverV1Beta3FlowSchemaApiResponse =
@@ -642,7 +711,7 @@ export type ReplaceFlowcontrolApiserverV1Beta3FlowSchemaApiResponse =
 export type ReplaceFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
   /** name of the FlowSchema */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -661,7 +730,7 @@ export type DeleteFlowcontrolApiserverV1Beta3FlowSchemaApiResponse =
 export type DeleteFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
   /** name of the FlowSchema */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -682,7 +751,7 @@ export type PatchFlowcontrolApiserverV1Beta3FlowSchemaApiResponse =
 export type PatchFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
   /** name of the FlowSchema */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -715,7 +784,7 @@ export type ReadFlowcontrolApiserverV1Beta3FlowSchemaStatusApiResponse =
 export type ReadFlowcontrolApiserverV1Beta3FlowSchemaStatusApiArg = {
   /** name of the FlowSchema */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceFlowcontrolApiserverV1Beta3FlowSchemaStatusApiResponse =
@@ -725,7 +794,7 @@ export type ReplaceFlowcontrolApiserverV1Beta3FlowSchemaStatusApiResponse =
 export type ReplaceFlowcontrolApiserverV1Beta3FlowSchemaStatusApiArg = {
   /** name of the FlowSchema */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -744,7 +813,7 @@ export type PatchFlowcontrolApiserverV1Beta3FlowSchemaStatusApiResponse =
 export type PatchFlowcontrolApiserverV1Beta3FlowSchemaStatusApiArg = {
   /** name of the FlowSchema */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -775,7 +844,7 @@ export type PatchFlowcontrolApiserverV1Beta3FlowSchemaStatusApiArg = {
 export type ListFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse =
   /** status 200 OK */ IoK8SApiFlowcontrolV1Beta3PriorityLevelConfigurationList
 export type ListFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -825,7 +894,7 @@ export type CreateFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiRespon
   | /** status 202 Accepted */ IoK8SApiFlowcontrolV1Beta3PriorityLevelConfiguration
 export type CreateFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg =
   {
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -841,7 +910,7 @@ export type DeleteFlowcontrolApiserverV1Beta3CollectionPriorityLevelConfiguratio
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteFlowcontrolApiserverV1Beta3CollectionPriorityLevelConfigurationApiArg =
   {
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -896,7 +965,7 @@ export type ReadFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse
 export type ReadFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg = {
   /** name of the PriorityLevelConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiResponse =
@@ -907,7 +976,7 @@ export type ReplaceFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg =
   {
     /** name of the PriorityLevelConfiguration */
     name: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -927,7 +996,7 @@ export type DeleteFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg =
   {
     /** name of the PriorityLevelConfiguration */
     name: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -948,7 +1017,7 @@ export type PatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiRespons
 export type PatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg = {
   /** name of the PriorityLevelConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -982,7 +1051,7 @@ export type ReadFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatusApiAr
   {
     /** name of the PriorityLevelConfiguration */
     name: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
   }
 export type ReplaceFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatusApiResponse =
@@ -993,7 +1062,7 @@ export type ReplaceFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatusAp
   {
     /** name of the PriorityLevelConfiguration */
     name: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1013,7 +1082,7 @@ export type PatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationStatusApiA
   {
     /** name of the PriorityLevelConfiguration */
     name: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1058,7 +1127,7 @@ export type WatchFlowcontrolApiserverV1Beta3FlowSchemaListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1106,7 +1175,7 @@ export type WatchFlowcontrolApiserverV1Beta3FlowSchemaApiArg = {
   limit?: number
   /** name of the FlowSchema */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1153,7 +1222,7 @@ export type WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationListApiArg
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1201,7 +1270,7 @@ export type WatchFlowcontrolApiserverV1Beta3PriorityLevelConfigurationApiArg = {
   limit?: number
   /** name of the PriorityLevelConfiguration */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1442,6 +1511,10 @@ export type JsonPatchOperation =
   | CopyOperation
   | TestOperation
 export type JsonPatchOperations = JsonPatchOperation[]
+export type IoK8SApiFlowcontrolV1Beta3ExemptPriorityLevelConfiguration = {
+  lendablePercent?: number | undefined
+  nominalConcurrencyShares?: number | undefined
+}
 export type IoK8SApiFlowcontrolV1Beta3QueuingConfiguration = {
   handSize?: number | undefined
   queueLengthLimit?: number | undefined
@@ -1458,6 +1531,9 @@ export type IoK8SApiFlowcontrolV1Beta3LimitedPriorityLevelConfiguration = {
   nominalConcurrencyShares?: number | undefined
 }
 export type IoK8SApiFlowcontrolV1Beta3PriorityLevelConfigurationSpec = {
+  exempt?:
+    | IoK8SApiFlowcontrolV1Beta3ExemptPriorityLevelConfiguration
+    | undefined
   limited?:
     | IoK8SApiFlowcontrolV1Beta3LimitedPriorityLevelConfiguration
     | undefined

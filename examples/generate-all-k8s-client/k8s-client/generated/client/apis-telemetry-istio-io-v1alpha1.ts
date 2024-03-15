@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listTelemetryIstioIoV1Alpha1NamespacedTelemetry = (
-  args: ListTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listTelemetryIstioIoV1Alpha1NamespacedTelemetry(
+  args: NoWatch<ListTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg>,
   options?: Options
-) => {
+): Promise<ListTelemetryIstioIoV1Alpha1NamespacedTelemetryApiResponse>
+export function listTelemetryIstioIoV1Alpha1NamespacedTelemetry(
+  args: ListTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTelemetryIstioIoV1Alpha1NamespacedTelemetryApiResponse>
+): Promise<void>
+export function listTelemetryIstioIoV1Alpha1NamespacedTelemetry(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTelemetryIstioIoV1Alpha1NamespacedTelemetryApiResponse>(
     {
       path: `/apis/telemetry.istio.io/v1alpha1/namespaces/${args['namespace']}/telemetries`,
@@ -43,10 +57,21 @@ export const createTelemetryIstioIoV1Alpha1NamespacedTelemetry = (
     options
   )
 }
-export const deleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetry = (
-  args: DeleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetryApiArg,
+export function deleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetry(
+  args: NoWatch<DeleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetryApiArg>,
   options?: Options
-) => {
+): Promise<DeleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetryApiResponse>
+export function deleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetry(
+  args: DeleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetryApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetryApiResponse>
+): Promise<void>
+export function deleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetry(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetryApiResponse>(
     {
       path: `/apis/telemetry.istio.io/v1alpha1/namespaces/${args['namespace']}/telemetries`,
@@ -195,10 +220,21 @@ export const patchTelemetryIstioIoV1Alpha1NamespacedTelemetryStatus = (
     options
   )
 }
-export const listTelemetryIstioIoV1Alpha1TelemetryForAllNamespaces = (
-  args: ListTelemetryIstioIoV1Alpha1TelemetryForAllNamespacesApiArg,
+export function listTelemetryIstioIoV1Alpha1TelemetryForAllNamespaces(
+  args: NoWatch<ListTelemetryIstioIoV1Alpha1TelemetryForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListTelemetryIstioIoV1Alpha1TelemetryForAllNamespacesApiResponse>
+export function listTelemetryIstioIoV1Alpha1TelemetryForAllNamespaces(
+  args: ListTelemetryIstioIoV1Alpha1TelemetryForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListTelemetryIstioIoV1Alpha1TelemetryForAllNamespacesApiResponse>
+): Promise<void>
+export function listTelemetryIstioIoV1Alpha1TelemetryForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListTelemetryIstioIoV1Alpha1TelemetryForAllNamespacesApiResponse>(
     {
       path: `/apis/telemetry.istio.io/v1alpha1/telemetries`,
@@ -224,7 +260,7 @@ export type ListTelemetryIstioIoV1Alpha1NamespacedTelemetryApiResponse =
 export type ListTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -275,7 +311,7 @@ export type CreateTelemetryIstioIoV1Alpha1NamespacedTelemetryApiResponse =
 export type CreateTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -299,7 +335,7 @@ export type DeleteTelemetryIstioIoV1Alpha1CollectionNamespacedTelemetryApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -349,7 +385,7 @@ export type ReadTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -365,7 +401,7 @@ export type ReplaceTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -392,7 +428,7 @@ export type DeleteTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -419,7 +455,7 @@ export type PatchTelemetryIstioIoV1Alpha1NamespacedTelemetryApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -450,7 +486,7 @@ export type ReadTelemetryIstioIoV1Alpha1NamespacedTelemetryStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -466,7 +502,7 @@ export type ReplaceTelemetryIstioIoV1Alpha1NamespacedTelemetryStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -491,7 +527,7 @@ export type PatchTelemetryIstioIoV1Alpha1NamespacedTelemetryStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -532,7 +568,7 @@ export type ListTelemetryIstioIoV1Alpha1TelemetryForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

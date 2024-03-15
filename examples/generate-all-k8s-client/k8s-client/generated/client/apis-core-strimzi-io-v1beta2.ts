@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listCoreStrimziIoV1Beta2NamespacedStrimziPodSet = (
-  args: ListCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listCoreStrimziIoV1Beta2NamespacedStrimziPodSet(
+  args: NoWatch<ListCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse>
+export function listCoreStrimziIoV1Beta2NamespacedStrimziPodSet(
+  args: ListCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse>
+): Promise<void>
+export function listCoreStrimziIoV1Beta2NamespacedStrimziPodSet(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse>(
     {
       path: `/apis/core.strimzi.io/v1beta2/namespaces/${args['namespace']}/strimzipodsets`,
@@ -43,10 +57,21 @@ export const createCoreStrimziIoV1Beta2NamespacedStrimziPodSet = (
     options
   )
 }
-export const deleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSet = (
-  args: DeleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSetApiArg,
+export function deleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSet(
+  args: NoWatch<DeleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSetApiArg>,
   options?: Options
-) => {
+): Promise<DeleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSetApiResponse>
+export function deleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSet(
+  args: DeleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSetApiResponse>
+): Promise<void>
+export function deleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSet(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSetApiResponse>(
     {
       path: `/apis/core.strimzi.io/v1beta2/namespaces/${args['namespace']}/strimzipodsets`,
@@ -195,10 +220,21 @@ export const patchCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatus = (
     options
   )
 }
-export const listCoreStrimziIoV1Beta2StrimziPodSetForAllNamespaces = (
-  args: ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiArg,
+export function listCoreStrimziIoV1Beta2StrimziPodSetForAllNamespaces(
+  args: NoWatch<ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiResponse>
+export function listCoreStrimziIoV1Beta2StrimziPodSetForAllNamespaces(
+  args: ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiResponse>
+): Promise<void>
+export function listCoreStrimziIoV1Beta2StrimziPodSetForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiResponse>(
     {
       path: `/apis/core.strimzi.io/v1beta2/strimzipodsets`,
@@ -224,7 +260,7 @@ export type ListCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse =
 export type ListCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -275,7 +311,7 @@ export type CreateCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiResponse =
 export type CreateCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -299,7 +335,7 @@ export type DeleteCoreStrimziIoV1Beta2CollectionNamespacedStrimziPodSetApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -349,7 +385,7 @@ export type ReadCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -365,7 +401,7 @@ export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -392,7 +428,7 @@ export type DeleteCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -419,7 +455,7 @@ export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -450,7 +486,7 @@ export type ReadCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -466,7 +502,7 @@ export type ReplaceCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -491,7 +527,7 @@ export type PatchCoreStrimziIoV1Beta2NamespacedStrimziPodSetStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -532,7 +568,7 @@ export type ListCoreStrimziIoV1Beta2StrimziPodSetForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

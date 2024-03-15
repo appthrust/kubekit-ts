@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getEventsV1ApiResources = (
   args: GetEventsV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,21 @@ export const getEventsV1ApiResources = (
     options
   )
 }
-export const listEventsV1EventForAllNamespaces = (
-  args: ListEventsV1EventForAllNamespacesApiArg,
+export function listEventsV1EventForAllNamespaces(
+  args: NoWatch<ListEventsV1EventForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListEventsV1EventForAllNamespacesApiResponse>
+export function listEventsV1EventForAllNamespaces(
+  args: ListEventsV1EventForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListEventsV1EventForAllNamespacesApiResponse>
+): Promise<void>
+export function listEventsV1EventForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListEventsV1EventForAllNamespacesApiResponse>(
     {
       path: `/apis/events.k8s.io/v1/events`,
@@ -32,10 +46,17 @@ export const listEventsV1EventForAllNamespaces = (
     options
   )
 }
-export const listEventsV1NamespacedEvent = (
-  args: ListEventsV1NamespacedEventApiArg,
+export function listEventsV1NamespacedEvent(
+  args: NoWatch<ListEventsV1NamespacedEventApiArg>,
   options?: Options
-) => {
+): Promise<ListEventsV1NamespacedEventApiResponse>
+export function listEventsV1NamespacedEvent(
+  args: ListEventsV1NamespacedEventApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListEventsV1NamespacedEventApiResponse>
+): Promise<void>
+export function listEventsV1NamespacedEvent(args: any, options: any): any {
   return apiClient<ListEventsV1NamespacedEventApiResponse>(
     {
       path: `/apis/events.k8s.io/v1/namespaces/${args['namespace']}/events`,
@@ -179,10 +200,21 @@ export const patchEventsV1NamespacedEvent = (
     options
   )
 }
-export const watchEventsV1EventListForAllNamespaces = (
-  args: WatchEventsV1EventListForAllNamespacesApiArg,
+export function watchEventsV1EventListForAllNamespaces(
+  args: NoWatch<WatchEventsV1EventListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchEventsV1EventListForAllNamespacesApiResponse>
+export function watchEventsV1EventListForAllNamespaces(
+  args: WatchEventsV1EventListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchEventsV1EventListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchEventsV1EventListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchEventsV1EventListForAllNamespacesApiResponse>(
     {
       path: `/apis/events.k8s.io/v1/watch/events`,
@@ -203,10 +235,18 @@ export const watchEventsV1EventListForAllNamespaces = (
     options
   )
 }
-export const watchEventsV1NamespacedEventList = (
-  args: WatchEventsV1NamespacedEventListApiArg,
+export function watchEventsV1NamespacedEventList(
+  args: NoWatch<WatchEventsV1NamespacedEventListApiArg>,
   options?: Options
-) => {
+): Promise<WatchEventsV1NamespacedEventListApiResponse>
+export function watchEventsV1NamespacedEventList(
+  args: WatchEventsV1NamespacedEventListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchEventsV1NamespacedEventListApiResponse>
+): Promise<void>
+export function watchEventsV1NamespacedEventList(args: any, options: any): any {
   return apiClient<WatchEventsV1NamespacedEventListApiResponse>(
     {
       path: `/apis/events.k8s.io/v1/watch/namespaces/${args['namespace']}/events`,
@@ -227,10 +267,17 @@ export const watchEventsV1NamespacedEventList = (
     options
   )
 }
-export const watchEventsV1NamespacedEvent = (
-  args: WatchEventsV1NamespacedEventApiArg,
+export function watchEventsV1NamespacedEvent(
+  args: NoWatch<WatchEventsV1NamespacedEventApiArg>,
   options?: Options
-) => {
+): Promise<WatchEventsV1NamespacedEventApiResponse>
+export function watchEventsV1NamespacedEvent(
+  args: WatchEventsV1NamespacedEventApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchEventsV1NamespacedEventApiResponse>
+): Promise<void>
+export function watchEventsV1NamespacedEvent(args: any, options: any): any {
   return apiClient<WatchEventsV1NamespacedEventApiResponse>(
     {
       path: `/apis/events.k8s.io/v1/watch/namespaces/${args['namespace']}/events/${args.name}`,
@@ -271,7 +318,7 @@ export type ListEventsV1EventForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -305,7 +352,7 @@ export type ListEventsV1NamespacedEventApiResponse =
 export type ListEventsV1NamespacedEventApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -356,7 +403,7 @@ export type CreateEventsV1NamespacedEventApiResponse =
 export type CreateEventsV1NamespacedEventApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -373,7 +420,7 @@ export type DeleteEventsV1CollectionNamespacedEventApiResponse =
 export type DeleteEventsV1CollectionNamespacedEventApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -430,7 +477,7 @@ export type ReadEventsV1NamespacedEventApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceEventsV1NamespacedEventApiResponse =
@@ -441,7 +488,7 @@ export type ReplaceEventsV1NamespacedEventApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -462,7 +509,7 @@ export type DeleteEventsV1NamespacedEventApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -484,7 +531,7 @@ export type PatchEventsV1NamespacedEventApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -529,7 +576,7 @@ export type WatchEventsV1EventListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -577,7 +624,7 @@ export type WatchEventsV1NamespacedEventListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -627,7 +674,7 @@ export type WatchEventsV1NamespacedEventApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

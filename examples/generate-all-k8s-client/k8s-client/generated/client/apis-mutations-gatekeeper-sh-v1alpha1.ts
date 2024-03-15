@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listMutationsGatekeeperShV1Alpha1Assign = (
-  args: ListMutationsGatekeeperShV1Alpha1AssignApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listMutationsGatekeeperShV1Alpha1Assign(
+  args: NoWatch<ListMutationsGatekeeperShV1Alpha1AssignApiArg>,
   options?: Options
-) => {
+): Promise<ListMutationsGatekeeperShV1Alpha1AssignApiResponse>
+export function listMutationsGatekeeperShV1Alpha1Assign(
+  args: ListMutationsGatekeeperShV1Alpha1AssignApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMutationsGatekeeperShV1Alpha1AssignApiResponse>
+): Promise<void>
+export function listMutationsGatekeeperShV1Alpha1Assign(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMutationsGatekeeperShV1Alpha1AssignApiResponse>(
     {
       path: `/apis/mutations.gatekeeper.sh/v1alpha1/assign`,
@@ -43,10 +57,21 @@ export const createMutationsGatekeeperShV1Alpha1Assign = (
     options
   )
 }
-export const deleteMutationsGatekeeperShV1Alpha1CollectionAssign = (
-  args: DeleteMutationsGatekeeperShV1Alpha1CollectionAssignApiArg,
+export function deleteMutationsGatekeeperShV1Alpha1CollectionAssign(
+  args: NoWatch<DeleteMutationsGatekeeperShV1Alpha1CollectionAssignApiArg>,
   options?: Options
-) => {
+): Promise<DeleteMutationsGatekeeperShV1Alpha1CollectionAssignApiResponse>
+export function deleteMutationsGatekeeperShV1Alpha1CollectionAssign(
+  args: DeleteMutationsGatekeeperShV1Alpha1CollectionAssignApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMutationsGatekeeperShV1Alpha1CollectionAssignApiResponse>
+): Promise<void>
+export function deleteMutationsGatekeeperShV1Alpha1CollectionAssign(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteMutationsGatekeeperShV1Alpha1CollectionAssignApiResponse>(
     {
       path: `/apis/mutations.gatekeeper.sh/v1alpha1/assign`,
@@ -195,10 +220,21 @@ export const patchMutationsGatekeeperShV1Alpha1AssignStatus = (
     options
   )
 }
-export const listMutationsGatekeeperShV1Alpha1AssignMetadata = (
-  args: ListMutationsGatekeeperShV1Alpha1AssignMetadataApiArg,
+export function listMutationsGatekeeperShV1Alpha1AssignMetadata(
+  args: NoWatch<ListMutationsGatekeeperShV1Alpha1AssignMetadataApiArg>,
   options?: Options
-) => {
+): Promise<ListMutationsGatekeeperShV1Alpha1AssignMetadataApiResponse>
+export function listMutationsGatekeeperShV1Alpha1AssignMetadata(
+  args: ListMutationsGatekeeperShV1Alpha1AssignMetadataApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMutationsGatekeeperShV1Alpha1AssignMetadataApiResponse>
+): Promise<void>
+export function listMutationsGatekeeperShV1Alpha1AssignMetadata(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMutationsGatekeeperShV1Alpha1AssignMetadataApiResponse>(
     {
       path: `/apis/mutations.gatekeeper.sh/v1alpha1/assignmetadata`,
@@ -239,10 +275,21 @@ export const createMutationsGatekeeperShV1Alpha1AssignMetadata = (
     options
   )
 }
-export const deleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadata = (
-  args: DeleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadataApiArg,
+export function deleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadata(
+  args: NoWatch<DeleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadataApiArg>,
   options?: Options
-) => {
+): Promise<DeleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadataApiResponse>
+export function deleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadata(
+  args: DeleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadataApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadataApiResponse>
+): Promise<void>
+export function deleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadata(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadataApiResponse>(
     {
       path: `/apis/mutations.gatekeeper.sh/v1alpha1/assignmetadata`,
@@ -391,10 +438,21 @@ export const patchMutationsGatekeeperShV1Alpha1AssignMetadataStatus = (
     options
   )
 }
-export const listMutationsGatekeeperShV1Alpha1ModifySet = (
-  args: ListMutationsGatekeeperShV1Alpha1ModifySetApiArg,
+export function listMutationsGatekeeperShV1Alpha1ModifySet(
+  args: NoWatch<ListMutationsGatekeeperShV1Alpha1ModifySetApiArg>,
   options?: Options
-) => {
+): Promise<ListMutationsGatekeeperShV1Alpha1ModifySetApiResponse>
+export function listMutationsGatekeeperShV1Alpha1ModifySet(
+  args: ListMutationsGatekeeperShV1Alpha1ModifySetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListMutationsGatekeeperShV1Alpha1ModifySetApiResponse>
+): Promise<void>
+export function listMutationsGatekeeperShV1Alpha1ModifySet(
+  args: any,
+  options: any
+): any {
   return apiClient<ListMutationsGatekeeperShV1Alpha1ModifySetApiResponse>(
     {
       path: `/apis/mutations.gatekeeper.sh/v1alpha1/modifyset`,
@@ -435,10 +493,21 @@ export const createMutationsGatekeeperShV1Alpha1ModifySet = (
     options
   )
 }
-export const deleteMutationsGatekeeperShV1Alpha1CollectionModifySet = (
-  args: DeleteMutationsGatekeeperShV1Alpha1CollectionModifySetApiArg,
+export function deleteMutationsGatekeeperShV1Alpha1CollectionModifySet(
+  args: NoWatch<DeleteMutationsGatekeeperShV1Alpha1CollectionModifySetApiArg>,
   options?: Options
-) => {
+): Promise<DeleteMutationsGatekeeperShV1Alpha1CollectionModifySetApiResponse>
+export function deleteMutationsGatekeeperShV1Alpha1CollectionModifySet(
+  args: DeleteMutationsGatekeeperShV1Alpha1CollectionModifySetApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteMutationsGatekeeperShV1Alpha1CollectionModifySetApiResponse>
+): Promise<void>
+export function deleteMutationsGatekeeperShV1Alpha1CollectionModifySet(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteMutationsGatekeeperShV1Alpha1CollectionModifySetApiResponse>(
     {
       path: `/apis/mutations.gatekeeper.sh/v1alpha1/modifyset`,
@@ -590,7 +659,7 @@ export const patchMutationsGatekeeperShV1Alpha1ModifySetStatus = (
 export type ListMutationsGatekeeperShV1Alpha1AssignApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1Alpha1AssignList
 export type ListMutationsGatekeeperShV1Alpha1AssignApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -639,7 +708,7 @@ export type CreateMutationsGatekeeperShV1Alpha1AssignApiResponse =
   | /** status 201 Created */ ShGatekeeperMutationsV1Alpha1Assign
   | /** status 202 Accepted */ ShGatekeeperMutationsV1Alpha1Assign
 export type CreateMutationsGatekeeperShV1Alpha1AssignApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -660,7 +729,7 @@ export type CreateMutationsGatekeeperShV1Alpha1AssignApiArg = {
 export type DeleteMutationsGatekeeperShV1Alpha1CollectionAssignApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1Alpha1CollectionAssignApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -708,7 +777,7 @@ export type ReadMutationsGatekeeperShV1Alpha1AssignApiResponse =
 export type ReadMutationsGatekeeperShV1Alpha1AssignApiArg = {
   /** name of the Assign */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -722,7 +791,7 @@ export type ReplaceMutationsGatekeeperShV1Alpha1AssignApiResponse =
 export type ReplaceMutationsGatekeeperShV1Alpha1AssignApiArg = {
   /** name of the Assign */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -747,7 +816,7 @@ export type DeleteMutationsGatekeeperShV1Alpha1AssignApiResponse =
 export type DeleteMutationsGatekeeperShV1Alpha1AssignApiArg = {
   /** name of the Assign */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -772,7 +841,7 @@ export type PatchMutationsGatekeeperShV1Alpha1AssignApiResponse =
 export type PatchMutationsGatekeeperShV1Alpha1AssignApiArg = {
   /** name of the Assign */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -801,7 +870,7 @@ export type ReadMutationsGatekeeperShV1Alpha1AssignStatusApiResponse =
 export type ReadMutationsGatekeeperShV1Alpha1AssignStatusApiArg = {
   /** name of the Assign */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -815,7 +884,7 @@ export type ReplaceMutationsGatekeeperShV1Alpha1AssignStatusApiResponse =
 export type ReplaceMutationsGatekeeperShV1Alpha1AssignStatusApiArg = {
   /** name of the Assign */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -838,7 +907,7 @@ export type PatchMutationsGatekeeperShV1Alpha1AssignStatusApiResponse =
 export type PatchMutationsGatekeeperShV1Alpha1AssignStatusApiArg = {
   /** name of the Assign */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -865,7 +934,7 @@ export type PatchMutationsGatekeeperShV1Alpha1AssignStatusApiArg = {
 export type ListMutationsGatekeeperShV1Alpha1AssignMetadataApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1Alpha1AssignMetadataList
 export type ListMutationsGatekeeperShV1Alpha1AssignMetadataApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -914,7 +983,7 @@ export type CreateMutationsGatekeeperShV1Alpha1AssignMetadataApiResponse =
   | /** status 201 Created */ ShGatekeeperMutationsV1Alpha1AssignMetadata
   | /** status 202 Accepted */ ShGatekeeperMutationsV1Alpha1AssignMetadata
 export type CreateMutationsGatekeeperShV1Alpha1AssignMetadataApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -936,7 +1005,7 @@ export type DeleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadataApiRespon
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1Alpha1CollectionAssignMetadataApiArg =
   {
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -984,7 +1053,7 @@ export type ReadMutationsGatekeeperShV1Alpha1AssignMetadataApiResponse =
 export type ReadMutationsGatekeeperShV1Alpha1AssignMetadataApiArg = {
   /** name of the AssignMetadata */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -998,7 +1067,7 @@ export type ReplaceMutationsGatekeeperShV1Alpha1AssignMetadataApiResponse =
 export type ReplaceMutationsGatekeeperShV1Alpha1AssignMetadataApiArg = {
   /** name of the AssignMetadata */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1023,7 +1092,7 @@ export type DeleteMutationsGatekeeperShV1Alpha1AssignMetadataApiResponse =
 export type DeleteMutationsGatekeeperShV1Alpha1AssignMetadataApiArg = {
   /** name of the AssignMetadata */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1048,7 +1117,7 @@ export type PatchMutationsGatekeeperShV1Alpha1AssignMetadataApiResponse =
 export type PatchMutationsGatekeeperShV1Alpha1AssignMetadataApiArg = {
   /** name of the AssignMetadata */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1077,7 +1146,7 @@ export type ReadMutationsGatekeeperShV1Alpha1AssignMetadataStatusApiResponse =
 export type ReadMutationsGatekeeperShV1Alpha1AssignMetadataStatusApiArg = {
   /** name of the AssignMetadata */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1091,7 +1160,7 @@ export type ReplaceMutationsGatekeeperShV1Alpha1AssignMetadataStatusApiResponse 
 export type ReplaceMutationsGatekeeperShV1Alpha1AssignMetadataStatusApiArg = {
   /** name of the AssignMetadata */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1114,7 +1183,7 @@ export type PatchMutationsGatekeeperShV1Alpha1AssignMetadataStatusApiResponse =
 export type PatchMutationsGatekeeperShV1Alpha1AssignMetadataStatusApiArg = {
   /** name of the AssignMetadata */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1141,7 +1210,7 @@ export type PatchMutationsGatekeeperShV1Alpha1AssignMetadataStatusApiArg = {
 export type ListMutationsGatekeeperShV1Alpha1ModifySetApiResponse =
   /** status 200 OK */ ShGatekeeperMutationsV1Alpha1ModifySetList
 export type ListMutationsGatekeeperShV1Alpha1ModifySetApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1190,7 +1259,7 @@ export type CreateMutationsGatekeeperShV1Alpha1ModifySetApiResponse =
   | /** status 201 Created */ ShGatekeeperMutationsV1Alpha1ModifySet
   | /** status 202 Accepted */ ShGatekeeperMutationsV1Alpha1ModifySet
 export type CreateMutationsGatekeeperShV1Alpha1ModifySetApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1211,7 +1280,7 @@ export type CreateMutationsGatekeeperShV1Alpha1ModifySetApiArg = {
 export type DeleteMutationsGatekeeperShV1Alpha1CollectionModifySetApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteMutationsGatekeeperShV1Alpha1CollectionModifySetApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1259,7 +1328,7 @@ export type ReadMutationsGatekeeperShV1Alpha1ModifySetApiResponse =
 export type ReadMutationsGatekeeperShV1Alpha1ModifySetApiArg = {
   /** name of the ModifySet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1273,7 +1342,7 @@ export type ReplaceMutationsGatekeeperShV1Alpha1ModifySetApiResponse =
 export type ReplaceMutationsGatekeeperShV1Alpha1ModifySetApiArg = {
   /** name of the ModifySet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1298,7 +1367,7 @@ export type DeleteMutationsGatekeeperShV1Alpha1ModifySetApiResponse =
 export type DeleteMutationsGatekeeperShV1Alpha1ModifySetApiArg = {
   /** name of the ModifySet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1323,7 +1392,7 @@ export type PatchMutationsGatekeeperShV1Alpha1ModifySetApiResponse =
 export type PatchMutationsGatekeeperShV1Alpha1ModifySetApiArg = {
   /** name of the ModifySet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1352,7 +1421,7 @@ export type ReadMutationsGatekeeperShV1Alpha1ModifySetStatusApiResponse =
 export type ReadMutationsGatekeeperShV1Alpha1ModifySetStatusApiArg = {
   /** name of the ModifySet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1366,7 +1435,7 @@ export type ReplaceMutationsGatekeeperShV1Alpha1ModifySetStatusApiResponse =
 export type ReplaceMutationsGatekeeperShV1Alpha1ModifySetStatusApiArg = {
   /** name of the ModifySet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1389,7 +1458,7 @@ export type PatchMutationsGatekeeperShV1Alpha1ModifySetStatusApiResponse =
 export type PatchMutationsGatekeeperShV1Alpha1ModifySetStatusApiArg = {
   /** name of the ModifySet */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

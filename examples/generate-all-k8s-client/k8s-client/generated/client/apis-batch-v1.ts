@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getBatchV1ApiResources = (
   args: GetBatchV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,21 @@ export const getBatchV1ApiResources = (
     options
   )
 }
-export const listBatchV1CronJobForAllNamespaces = (
-  args: ListBatchV1CronJobForAllNamespacesApiArg,
+export function listBatchV1CronJobForAllNamespaces(
+  args: NoWatch<ListBatchV1CronJobForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListBatchV1CronJobForAllNamespacesApiResponse>
+export function listBatchV1CronJobForAllNamespaces(
+  args: ListBatchV1CronJobForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListBatchV1CronJobForAllNamespacesApiResponse>
+): Promise<void>
+export function listBatchV1CronJobForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListBatchV1CronJobForAllNamespacesApiResponse>(
     {
       path: `/apis/batch/v1/cronjobs`,
@@ -32,10 +46,18 @@ export const listBatchV1CronJobForAllNamespaces = (
     options
   )
 }
-export const listBatchV1JobForAllNamespaces = (
-  args: ListBatchV1JobForAllNamespacesApiArg,
+export function listBatchV1JobForAllNamespaces(
+  args: NoWatch<ListBatchV1JobForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListBatchV1JobForAllNamespacesApiResponse>
+export function listBatchV1JobForAllNamespaces(
+  args: ListBatchV1JobForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListBatchV1JobForAllNamespacesApiResponse>
+): Promise<void>
+export function listBatchV1JobForAllNamespaces(args: any, options: any): any {
   return apiClient<ListBatchV1JobForAllNamespacesApiResponse>(
     {
       path: `/apis/batch/v1/jobs`,
@@ -56,10 +78,17 @@ export const listBatchV1JobForAllNamespaces = (
     options
   )
 }
-export const listBatchV1NamespacedCronJob = (
-  args: ListBatchV1NamespacedCronJobApiArg,
+export function listBatchV1NamespacedCronJob(
+  args: NoWatch<ListBatchV1NamespacedCronJobApiArg>,
   options?: Options
-) => {
+): Promise<ListBatchV1NamespacedCronJobApiResponse>
+export function listBatchV1NamespacedCronJob(
+  args: ListBatchV1NamespacedCronJobApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListBatchV1NamespacedCronJobApiResponse>
+): Promise<void>
+export function listBatchV1NamespacedCronJob(args: any, options: any): any {
   return apiClient<ListBatchV1NamespacedCronJobApiResponse>(
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/cronjobs`,
@@ -256,10 +285,17 @@ export const patchBatchV1NamespacedCronJobStatus = (
     options
   )
 }
-export const listBatchV1NamespacedJob = (
-  args: ListBatchV1NamespacedJobApiArg,
+export function listBatchV1NamespacedJob(
+  args: NoWatch<ListBatchV1NamespacedJobApiArg>,
   options?: Options
-) => {
+): Promise<ListBatchV1NamespacedJobApiResponse>
+export function listBatchV1NamespacedJob(
+  args: ListBatchV1NamespacedJobApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListBatchV1NamespacedJobApiResponse>
+): Promise<void>
+export function listBatchV1NamespacedJob(args: any, options: any): any {
   return apiClient<ListBatchV1NamespacedJobApiResponse>(
     {
       path: `/apis/batch/v1/namespaces/${args['namespace']}/jobs`,
@@ -456,10 +492,21 @@ export const patchBatchV1NamespacedJobStatus = (
     options
   )
 }
-export const watchBatchV1CronJobListForAllNamespaces = (
-  args: WatchBatchV1CronJobListForAllNamespacesApiArg,
+export function watchBatchV1CronJobListForAllNamespaces(
+  args: NoWatch<WatchBatchV1CronJobListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchBatchV1CronJobListForAllNamespacesApiResponse>
+export function watchBatchV1CronJobListForAllNamespaces(
+  args: WatchBatchV1CronJobListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchBatchV1CronJobListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchBatchV1CronJobListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchBatchV1CronJobListForAllNamespacesApiResponse>(
     {
       path: `/apis/batch/v1/watch/cronjobs`,
@@ -480,10 +527,21 @@ export const watchBatchV1CronJobListForAllNamespaces = (
     options
   )
 }
-export const watchBatchV1JobListForAllNamespaces = (
-  args: WatchBatchV1JobListForAllNamespacesApiArg,
+export function watchBatchV1JobListForAllNamespaces(
+  args: NoWatch<WatchBatchV1JobListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchBatchV1JobListForAllNamespacesApiResponse>
+export function watchBatchV1JobListForAllNamespaces(
+  args: WatchBatchV1JobListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchBatchV1JobListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchBatchV1JobListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchBatchV1JobListForAllNamespacesApiResponse>(
     {
       path: `/apis/batch/v1/watch/jobs`,
@@ -504,10 +562,21 @@ export const watchBatchV1JobListForAllNamespaces = (
     options
   )
 }
-export const watchBatchV1NamespacedCronJobList = (
-  args: WatchBatchV1NamespacedCronJobListApiArg,
+export function watchBatchV1NamespacedCronJobList(
+  args: NoWatch<WatchBatchV1NamespacedCronJobListApiArg>,
   options?: Options
-) => {
+): Promise<WatchBatchV1NamespacedCronJobListApiResponse>
+export function watchBatchV1NamespacedCronJobList(
+  args: WatchBatchV1NamespacedCronJobListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchBatchV1NamespacedCronJobListApiResponse>
+): Promise<void>
+export function watchBatchV1NamespacedCronJobList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchBatchV1NamespacedCronJobListApiResponse>(
     {
       path: `/apis/batch/v1/watch/namespaces/${args['namespace']}/cronjobs`,
@@ -528,10 +597,17 @@ export const watchBatchV1NamespacedCronJobList = (
     options
   )
 }
-export const watchBatchV1NamespacedCronJob = (
-  args: WatchBatchV1NamespacedCronJobApiArg,
+export function watchBatchV1NamespacedCronJob(
+  args: NoWatch<WatchBatchV1NamespacedCronJobApiArg>,
   options?: Options
-) => {
+): Promise<WatchBatchV1NamespacedCronJobApiResponse>
+export function watchBatchV1NamespacedCronJob(
+  args: WatchBatchV1NamespacedCronJobApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchBatchV1NamespacedCronJobApiResponse>
+): Promise<void>
+export function watchBatchV1NamespacedCronJob(args: any, options: any): any {
   return apiClient<WatchBatchV1NamespacedCronJobApiResponse>(
     {
       path: `/apis/batch/v1/watch/namespaces/${args['namespace']}/cronjobs/${args.name}`,
@@ -552,10 +628,17 @@ export const watchBatchV1NamespacedCronJob = (
     options
   )
 }
-export const watchBatchV1NamespacedJobList = (
-  args: WatchBatchV1NamespacedJobListApiArg,
+export function watchBatchV1NamespacedJobList(
+  args: NoWatch<WatchBatchV1NamespacedJobListApiArg>,
   options?: Options
-) => {
+): Promise<WatchBatchV1NamespacedJobListApiResponse>
+export function watchBatchV1NamespacedJobList(
+  args: WatchBatchV1NamespacedJobListApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchBatchV1NamespacedJobListApiResponse>
+): Promise<void>
+export function watchBatchV1NamespacedJobList(args: any, options: any): any {
   return apiClient<WatchBatchV1NamespacedJobListApiResponse>(
     {
       path: `/apis/batch/v1/watch/namespaces/${args['namespace']}/jobs`,
@@ -576,10 +659,17 @@ export const watchBatchV1NamespacedJobList = (
     options
   )
 }
-export const watchBatchV1NamespacedJob = (
-  args: WatchBatchV1NamespacedJobApiArg,
+export function watchBatchV1NamespacedJob(
+  args: NoWatch<WatchBatchV1NamespacedJobApiArg>,
   options?: Options
-) => {
+): Promise<WatchBatchV1NamespacedJobApiResponse>
+export function watchBatchV1NamespacedJob(
+  args: WatchBatchV1NamespacedJobApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchBatchV1NamespacedJobApiResponse>
+): Promise<void>
+export function watchBatchV1NamespacedJob(args: any, options: any): any {
   return apiClient<WatchBatchV1NamespacedJobApiResponse>(
     {
       path: `/apis/batch/v1/watch/namespaces/${args['namespace']}/jobs/${args.name}`,
@@ -620,7 +710,7 @@ export type ListBatchV1CronJobForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -666,7 +756,7 @@ export type ListBatchV1JobForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -700,7 +790,7 @@ export type ListBatchV1NamespacedCronJobApiResponse =
 export type ListBatchV1NamespacedCronJobApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -751,7 +841,7 @@ export type CreateBatchV1NamespacedCronJobApiResponse =
 export type CreateBatchV1NamespacedCronJobApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -768,7 +858,7 @@ export type DeleteBatchV1CollectionNamespacedCronJobApiResponse =
 export type DeleteBatchV1CollectionNamespacedCronJobApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -825,7 +915,7 @@ export type ReadBatchV1NamespacedCronJobApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceBatchV1NamespacedCronJobApiResponse =
@@ -836,7 +926,7 @@ export type ReplaceBatchV1NamespacedCronJobApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -857,7 +947,7 @@ export type DeleteBatchV1NamespacedCronJobApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -879,7 +969,7 @@ export type PatchBatchV1NamespacedCronJobApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -914,7 +1004,7 @@ export type ReadBatchV1NamespacedCronJobStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceBatchV1NamespacedCronJobStatusApiResponse =
@@ -925,7 +1015,7 @@ export type ReplaceBatchV1NamespacedCronJobStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -945,7 +1035,7 @@ export type PatchBatchV1NamespacedCronJobStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -978,7 +1068,7 @@ export type ListBatchV1NamespacedJobApiResponse =
 export type ListBatchV1NamespacedJobApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1029,7 +1119,7 @@ export type CreateBatchV1NamespacedJobApiResponse =
 export type CreateBatchV1NamespacedJobApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1046,7 +1136,7 @@ export type DeleteBatchV1CollectionNamespacedJobApiResponse =
 export type DeleteBatchV1CollectionNamespacedJobApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1103,7 +1193,7 @@ export type ReadBatchV1NamespacedJobApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceBatchV1NamespacedJobApiResponse =
@@ -1114,7 +1204,7 @@ export type ReplaceBatchV1NamespacedJobApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1135,7 +1225,7 @@ export type DeleteBatchV1NamespacedJobApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1157,7 +1247,7 @@ export type PatchBatchV1NamespacedJobApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1192,7 +1282,7 @@ export type ReadBatchV1NamespacedJobStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceBatchV1NamespacedJobStatusApiResponse =
@@ -1203,7 +1293,7 @@ export type ReplaceBatchV1NamespacedJobStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1223,7 +1313,7 @@ export type PatchBatchV1NamespacedJobStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1268,7 +1358,7 @@ export type WatchBatchV1CronJobListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1314,7 +1404,7 @@ export type WatchBatchV1JobListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1362,7 +1452,7 @@ export type WatchBatchV1NamespacedCronJobListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1412,7 +1502,7 @@ export type WatchBatchV1NamespacedCronJobApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1460,7 +1550,7 @@ export type WatchBatchV1NamespacedJobListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1510,7 +1600,7 @@ export type WatchBatchV1NamespacedJobApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1611,11 +1701,13 @@ export type IoK8SApiBatchV1PodFailurePolicyOnPodConditionsPattern = {
   type: string
 }
 export type IoK8SApiBatchV1PodFailurePolicyRule = {
-  action: 'Count' | 'FailJob' | 'Ignore'
+  action: 'Count' | 'FailIndex' | 'FailJob' | 'Ignore'
   onExitCodes?:
     | IoK8SApiBatchV1PodFailurePolicyOnExitCodesRequirement
     | undefined
-  onPodConditions: IoK8SApiBatchV1PodFailurePolicyOnPodConditionsPattern[]
+  onPodConditions?:
+    | IoK8SApiBatchV1PodFailurePolicyOnPodConditionsPattern[]
+    | undefined
 }
 export type IoK8SApiBatchV1PodFailurePolicy = {
   rules: IoK8SApiBatchV1PodFailurePolicyRule[]
@@ -1661,6 +1753,8 @@ export type IoK8SApiCoreV1NodeAffinity = {
 }
 export type IoK8SApiCoreV1PodAffinityTerm = {
   labelSelector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
+  matchLabelKeys?: string[] | undefined
+  mismatchLabelKeys?: string[] | undefined
   namespaceSelector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
   namespaces?: string[] | undefined
   topologyKey: string
@@ -1749,6 +1843,9 @@ export type IoK8SApiCoreV1HttpGetAction = {
   port: IoK8SApimachineryPkgUtilIntstrIntOrString
   scheme?: ('HTTP' | 'HTTPS') | undefined
 }
+export type IoK8SApiCoreV1SleepAction = {
+  seconds: number
+}
 export type IoK8SApiCoreV1TcpSocketAction = {
   host?: string | undefined
   port: IoK8SApimachineryPkgUtilIntstrIntOrString
@@ -1756,6 +1853,7 @@ export type IoK8SApiCoreV1TcpSocketAction = {
 export type IoK8SApiCoreV1LifecycleHandler = {
   exec?: IoK8SApiCoreV1ExecAction | undefined
   httpGet?: IoK8SApiCoreV1HttpGetAction | undefined
+  sleep?: IoK8SApiCoreV1SleepAction | undefined
   tcpSocket?: IoK8SApiCoreV1TcpSocketAction | undefined
 }
 export type IoK8SApiCoreV1Lifecycle = {
@@ -1864,6 +1962,7 @@ export type IoK8SApiCoreV1Container = {
   readinessProbe?: IoK8SApiCoreV1Probe | undefined
   resizePolicy?: IoK8SApiCoreV1ContainerResizePolicy[] | undefined
   resources?: IoK8SApiCoreV1ResourceRequirements | undefined
+  restartPolicy?: string | undefined
   securityContext?: IoK8SApiCoreV1SecurityContext | undefined
   startupProbe?: IoK8SApiCoreV1Probe | undefined
   stdin?: boolean | undefined
@@ -1898,6 +1997,7 @@ export type IoK8SApiCoreV1EphemeralContainer = {
   readinessProbe?: IoK8SApiCoreV1Probe | undefined
   resizePolicy?: IoK8SApiCoreV1ContainerResizePolicy[] | undefined
   resources?: IoK8SApiCoreV1ResourceRequirements | undefined
+  restartPolicy?: string | undefined
   securityContext?: IoK8SApiCoreV1SecurityContext | undefined
   startupProbe?: IoK8SApiCoreV1Probe | undefined
   stdin?: boolean | undefined
@@ -2047,13 +2147,26 @@ export type IoK8SApiCoreV1TypedObjectReference = {
   name: string
   namespace?: string | undefined
 }
+export type IoK8SApiCoreV1VolumeResourceRequirements = {
+  limits?:
+    | {
+        [key: string]: IoK8SApimachineryPkgApiResourceQuantity
+      }
+    | undefined
+  requests?:
+    | {
+        [key: string]: IoK8SApimachineryPkgApiResourceQuantity
+      }
+    | undefined
+}
 export type IoK8SApiCoreV1PersistentVolumeClaimSpec = {
   accessModes?: string[] | undefined
   dataSource?: IoK8SApiCoreV1TypedLocalObjectReference | undefined
   dataSourceRef?: IoK8SApiCoreV1TypedObjectReference | undefined
-  resources?: IoK8SApiCoreV1ResourceRequirements | undefined
+  resources?: IoK8SApiCoreV1VolumeResourceRequirements | undefined
   selector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
   storageClassName?: string | undefined
+  volumeAttributesClassName?: string | undefined
   volumeMode?: ('Block' | 'Filesystem') | undefined
   volumeName?: string | undefined
 }
@@ -2148,6 +2261,13 @@ export type IoK8SApiCoreV1PortworxVolumeSource = {
   readOnly?: boolean | undefined
   volumeID: string
 }
+export type IoK8SApiCoreV1ClusterTrustBundleProjection = {
+  labelSelector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
+  name?: string | undefined
+  optional?: boolean | undefined
+  path: string
+  signerName?: string | undefined
+}
 export type IoK8SApiCoreV1ConfigMapProjection = {
   items?: IoK8SApiCoreV1KeyToPath[] | undefined
   name?: string | undefined
@@ -2167,6 +2287,7 @@ export type IoK8SApiCoreV1ServiceAccountTokenProjection = {
   path: string
 }
 export type IoK8SApiCoreV1VolumeProjection = {
+  clusterTrustBundle?: IoK8SApiCoreV1ClusterTrustBundleProjection | undefined
   configMap?: IoK8SApiCoreV1ConfigMapProjection | undefined
   downwardAPI?: IoK8SApiCoreV1DownwardApiProjection | undefined
   secret?: IoK8SApiCoreV1SecretProjection | undefined
@@ -2323,11 +2444,14 @@ export type IoK8SApiCoreV1PodTemplateSpec = {
 export type IoK8SApiBatchV1JobSpec = {
   activeDeadlineSeconds?: number | undefined
   backoffLimit?: number | undefined
+  backoffLimitPerIndex?: number | undefined
   completionMode?: ('Indexed' | 'NonIndexed') | undefined
   completions?: number | undefined
   manualSelector?: boolean | undefined
+  maxFailedIndexes?: number | undefined
   parallelism?: number | undefined
   podFailurePolicy?: IoK8SApiBatchV1PodFailurePolicy | undefined
+  podReplacementPolicy?: ('Failed' | 'TerminatingOrFailed') | undefined
   selector?: IoK8SApimachineryPkgApisMetaV1LabelSelector | undefined
   suspend?: boolean | undefined
   template: IoK8SApiCoreV1PodTemplateSpec
@@ -2398,9 +2522,11 @@ export type IoK8SApiBatchV1JobStatus = {
   completionTime?: IoK8SApimachineryPkgApisMetaV1Time | undefined
   conditions?: IoK8SApiBatchV1JobCondition[] | undefined
   failed?: number | undefined
+  failedIndexes?: string | undefined
   ready?: number | undefined
   startTime?: IoK8SApimachineryPkgApisMetaV1Time | undefined
   succeeded?: number | undefined
+  terminating?: number | undefined
   uncountedTerminatedPods?: IoK8SApiBatchV1UncountedTerminatedPods | undefined
 }
 export type IoK8SApiBatchV1Job = {

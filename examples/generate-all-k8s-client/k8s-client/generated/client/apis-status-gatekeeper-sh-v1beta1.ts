@@ -1,58 +1,92 @@
-import { apiClient, type Options } from '../../client'
-export const listStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespaces =
-  (
-    args: ListStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespacesApiArg,
-    options?: Options
-  ) => {
-    return apiClient<ListStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespacesApiResponse>(
-      {
-        path: `/apis/status.gatekeeper.sh/v1beta1/constraintpodstatuses`,
-        params: {
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          pretty: args.pretty,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
-      },
-      options
-    )
-  }
-export const listStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespaces =
-  (
-    args: ListStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespacesApiArg,
-    options?: Options
-  ) => {
-    return apiClient<ListStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespacesApiResponse>(
-      {
-        path: `/apis/status.gatekeeper.sh/v1beta1/constrainttemplatepodstatuses`,
-        params: {
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          pretty: args.pretty,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
-      },
-      options
-    )
-  }
-export const listStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespaces = (
-  args: ListStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespaces(
+  args: NoWatch<ListStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespacesApiResponse>
+export function listStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespaces(
+  args: ListStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespacesApiResponse>
+): Promise<void>
+export function listStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespaces(
+  args: any,
+  options: any
+): any {
+  return apiClient<ListStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespacesApiResponse>(
+    {
+      path: `/apis/status.gatekeeper.sh/v1beta1/constraintpodstatuses`,
+      params: {
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        pretty: args.pretty,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
+      },
+    },
+    options
+  )
+}
+export function listStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespaces(
+  args: NoWatch<ListStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespacesApiArg>,
+  options?: Options
+): Promise<ListStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespacesApiResponse>
+export function listStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespaces(
+  args: ListStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespacesApiResponse>
+): Promise<void>
+export function listStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespaces(
+  args: any,
+  options: any
+): any {
+  return apiClient<ListStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamespacesApiResponse>(
+    {
+      path: `/apis/status.gatekeeper.sh/v1beta1/constrainttemplatepodstatuses`,
+      params: {
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        pretty: args.pretty,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
+      },
+    },
+    options
+  )
+}
+export function listStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespaces(
+  args: NoWatch<ListStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespacesApiArg>,
+  options?: Options
+): Promise<ListStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespacesApiResponse>
+export function listStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespaces(
+  args: ListStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespacesApiResponse>
+): Promise<void>
+export function listStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespacesApiResponse>(
     {
       path: `/apis/status.gatekeeper.sh/v1beta1/mutatorpodstatuses`,
@@ -73,10 +107,21 @@ export const listStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespaces = (
     options
   )
 }
-export const listStatusGatekeeperShV1Beta1NamespacedConstraintPodStatus = (
-  args: ListStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg,
+export function listStatusGatekeeperShV1Beta1NamespacedConstraintPodStatus(
+  args: NoWatch<ListStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg>,
   options?: Options
-) => {
+): Promise<ListStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiResponse>
+export function listStatusGatekeeperShV1Beta1NamespacedConstraintPodStatus(
+  args: ListStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiResponse>
+): Promise<void>
+export function listStatusGatekeeperShV1Beta1NamespacedConstraintPodStatus(
+  args: any,
+  options: any
+): any {
   return apiClient<ListStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiResponse>(
     {
       path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/constraintpodstatuses`,
@@ -117,32 +162,42 @@ export const createStatusGatekeeperShV1Beta1NamespacedConstraintPodStatus = (
     options
   )
 }
-export const deleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatus =
-  (
-    args: DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatusApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatusApiResponse>(
-      {
-        path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/constraintpodstatuses`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatus(
+  args: NoWatch<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatusApiArg>,
+  options?: Options
+): Promise<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatusApiResponse>
+export function deleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatus(
+  args: DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatusApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatusApiResponse>
+): Promise<void>
+export function deleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatus(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStatusApiResponse>(
+    {
+      path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/constraintpodstatuses`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readStatusGatekeeperShV1Beta1NamespacedConstraintPodStatus = (
   args: ReadStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg,
   options?: Options
@@ -217,31 +272,41 @@ export const patchStatusGatekeeperShV1Beta1NamespacedConstraintPodStatus = (
     options
   )
 }
-export const listStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatus =
-  (
-    args: ListStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiArg,
-    options?: Options
-  ) => {
-    return apiClient<ListStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiResponse>(
-      {
-        path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/constrainttemplatepodstatuses`,
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function listStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatus(
+  args: NoWatch<ListStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiArg>,
+  options?: Options
+): Promise<ListStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiResponse>
+export function listStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatus(
+  args: ListStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiResponse>
+): Promise<void>
+export function listStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatus(
+  args: any,
+  options: any
+): any {
+  return apiClient<ListStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiResponse>(
+    {
+      path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/constrainttemplatepodstatuses`,
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const createStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatus =
   (
     args: CreateStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiArg,
@@ -263,32 +328,42 @@ export const createStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatu
       options
     )
   }
-export const deleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatus =
-  (
-    args: DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatusApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatusApiResponse>(
-      {
-        path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/constrainttemplatepodstatuses`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatus(
+  args: NoWatch<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatusApiArg>,
+  options?: Options
+): Promise<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatusApiResponse>
+export function deleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatus(
+  args: DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatusApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatusApiResponse>
+): Promise<void>
+export function deleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatus(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplatePodStatusApiResponse>(
+    {
+      path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/constrainttemplatepodstatuses`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatus =
   (
     args: ReadStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusApiArg,
@@ -367,10 +442,21 @@ export const patchStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatus
       options
     )
   }
-export const listStatusGatekeeperShV1Beta1NamespacedMutatorPodStatus = (
-  args: ListStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg,
+export function listStatusGatekeeperShV1Beta1NamespacedMutatorPodStatus(
+  args: NoWatch<ListStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg>,
   options?: Options
-) => {
+): Promise<ListStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiResponse>
+export function listStatusGatekeeperShV1Beta1NamespacedMutatorPodStatus(
+  args: ListStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiResponse>
+): Promise<void>
+export function listStatusGatekeeperShV1Beta1NamespacedMutatorPodStatus(
+  args: any,
+  options: any
+): any {
   return apiClient<ListStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiResponse>(
     {
       path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/mutatorpodstatuses`,
@@ -411,32 +497,42 @@ export const createStatusGatekeeperShV1Beta1NamespacedMutatorPodStatus = (
     options
   )
 }
-export const deleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatus =
-  (
-    args: DeleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatusApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatusApiResponse>(
-      {
-        path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/mutatorpodstatuses`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatus(
+  args: NoWatch<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatusApiArg>,
+  options?: Options
+): Promise<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatusApiResponse>
+export function deleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatus(
+  args: DeleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatusApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatusApiResponse>
+): Promise<void>
+export function deleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatus(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatusApiResponse>(
+    {
+      path: `/apis/status.gatekeeper.sh/v1beta1/namespaces/${args['namespace']}/mutatorpodstatuses`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readStatusGatekeeperShV1Beta1NamespacedMutatorPodStatus = (
   args: ReadStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg,
   options?: Options
@@ -529,7 +625,7 @@ export type ListStatusGatekeeperShV1Beta1ConstraintPodStatusForAllNamespacesApiA
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -576,7 +672,7 @@ export type ListStatusGatekeeperShV1Beta1ConstraintTemplatePodStatusForAllNamesp
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -623,7 +719,7 @@ export type ListStatusGatekeeperShV1Beta1MutatorPodStatusForAllNamespacesApiArg 
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -657,7 +753,7 @@ export type ListStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiRespons
 export type ListStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -709,7 +805,7 @@ export type CreateStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -733,7 +829,7 @@ export type DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintPodStat
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -783,7 +879,7 @@ export type ReadStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -800,7 +896,7 @@ export type ReplaceStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg 
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -828,7 +924,7 @@ export type DeleteStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -856,7 +952,7 @@ export type PatchStatusGatekeeperShV1Beta1NamespacedConstraintPodStatusApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -886,7 +982,7 @@ export type ListStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusAp
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -938,7 +1034,7 @@ export type CreateStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatus
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -962,7 +1058,7 @@ export type DeleteStatusGatekeeperShV1Beta1CollectionNamespacedConstraintTemplat
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -1013,7 +1109,7 @@ export type ReadStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusAp
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1030,7 +1126,7 @@ export type ReplaceStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatu
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1058,7 +1154,7 @@ export type DeleteStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatus
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1086,7 +1182,7 @@ export type PatchStatusGatekeeperShV1Beta1NamespacedConstraintTemplatePodStatusA
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -1115,7 +1211,7 @@ export type ListStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiResponse =
 export type ListStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1166,7 +1262,7 @@ export type CreateStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiResponse
 export type CreateStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1190,7 +1286,7 @@ export type DeleteStatusGatekeeperShV1Beta1CollectionNamespacedMutatorPodStatusA
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -1240,7 +1336,7 @@ export type ReadStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1256,7 +1352,7 @@ export type ReplaceStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1283,7 +1379,7 @@ export type DeleteStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1310,7 +1406,7 @@ export type PatchStatusGatekeeperShV1Beta1NamespacedMutatorPodStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string

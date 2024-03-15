@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getDiscoveryV1ApiResources = (
   args: GetDiscoveryV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,21 @@ export const getDiscoveryV1ApiResources = (
     options
   )
 }
-export const listDiscoveryV1EndpointSliceForAllNamespaces = (
-  args: ListDiscoveryV1EndpointSliceForAllNamespacesApiArg,
+export function listDiscoveryV1EndpointSliceForAllNamespaces(
+  args: NoWatch<ListDiscoveryV1EndpointSliceForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListDiscoveryV1EndpointSliceForAllNamespacesApiResponse>
+export function listDiscoveryV1EndpointSliceForAllNamespaces(
+  args: ListDiscoveryV1EndpointSliceForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListDiscoveryV1EndpointSliceForAllNamespacesApiResponse>
+): Promise<void>
+export function listDiscoveryV1EndpointSliceForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListDiscoveryV1EndpointSliceForAllNamespacesApiResponse>(
     {
       path: `/apis/discovery.k8s.io/v1/endpointslices`,
@@ -32,10 +46,21 @@ export const listDiscoveryV1EndpointSliceForAllNamespaces = (
     options
   )
 }
-export const listDiscoveryV1NamespacedEndpointSlice = (
-  args: ListDiscoveryV1NamespacedEndpointSliceApiArg,
+export function listDiscoveryV1NamespacedEndpointSlice(
+  args: NoWatch<ListDiscoveryV1NamespacedEndpointSliceApiArg>,
   options?: Options
-) => {
+): Promise<ListDiscoveryV1NamespacedEndpointSliceApiResponse>
+export function listDiscoveryV1NamespacedEndpointSlice(
+  args: ListDiscoveryV1NamespacedEndpointSliceApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListDiscoveryV1NamespacedEndpointSliceApiResponse>
+): Promise<void>
+export function listDiscoveryV1NamespacedEndpointSlice(
+  args: any,
+  options: any
+): any {
   return apiClient<ListDiscoveryV1NamespacedEndpointSliceApiResponse>(
     {
       path: `/apis/discovery.k8s.io/v1/namespaces/${args['namespace']}/endpointslices`,
@@ -179,10 +204,21 @@ export const patchDiscoveryV1NamespacedEndpointSlice = (
     options
   )
 }
-export const watchDiscoveryV1EndpointSliceListForAllNamespaces = (
-  args: WatchDiscoveryV1EndpointSliceListForAllNamespacesApiArg,
+export function watchDiscoveryV1EndpointSliceListForAllNamespaces(
+  args: NoWatch<WatchDiscoveryV1EndpointSliceListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchDiscoveryV1EndpointSliceListForAllNamespacesApiResponse>
+export function watchDiscoveryV1EndpointSliceListForAllNamespaces(
+  args: WatchDiscoveryV1EndpointSliceListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchDiscoveryV1EndpointSliceListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchDiscoveryV1EndpointSliceListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchDiscoveryV1EndpointSliceListForAllNamespacesApiResponse>(
     {
       path: `/apis/discovery.k8s.io/v1/watch/endpointslices`,
@@ -203,10 +239,21 @@ export const watchDiscoveryV1EndpointSliceListForAllNamespaces = (
     options
   )
 }
-export const watchDiscoveryV1NamespacedEndpointSliceList = (
-  args: WatchDiscoveryV1NamespacedEndpointSliceListApiArg,
+export function watchDiscoveryV1NamespacedEndpointSliceList(
+  args: NoWatch<WatchDiscoveryV1NamespacedEndpointSliceListApiArg>,
   options?: Options
-) => {
+): Promise<WatchDiscoveryV1NamespacedEndpointSliceListApiResponse>
+export function watchDiscoveryV1NamespacedEndpointSliceList(
+  args: WatchDiscoveryV1NamespacedEndpointSliceListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchDiscoveryV1NamespacedEndpointSliceListApiResponse>
+): Promise<void>
+export function watchDiscoveryV1NamespacedEndpointSliceList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchDiscoveryV1NamespacedEndpointSliceListApiResponse>(
     {
       path: `/apis/discovery.k8s.io/v1/watch/namespaces/${args['namespace']}/endpointslices`,
@@ -227,10 +274,21 @@ export const watchDiscoveryV1NamespacedEndpointSliceList = (
     options
   )
 }
-export const watchDiscoveryV1NamespacedEndpointSlice = (
-  args: WatchDiscoveryV1NamespacedEndpointSliceApiArg,
+export function watchDiscoveryV1NamespacedEndpointSlice(
+  args: NoWatch<WatchDiscoveryV1NamespacedEndpointSliceApiArg>,
   options?: Options
-) => {
+): Promise<WatchDiscoveryV1NamespacedEndpointSliceApiResponse>
+export function watchDiscoveryV1NamespacedEndpointSlice(
+  args: WatchDiscoveryV1NamespacedEndpointSliceApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchDiscoveryV1NamespacedEndpointSliceApiResponse>
+): Promise<void>
+export function watchDiscoveryV1NamespacedEndpointSlice(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchDiscoveryV1NamespacedEndpointSliceApiResponse>(
     {
       path: `/apis/discovery.k8s.io/v1/watch/namespaces/${args['namespace']}/endpointslices/${args.name}`,
@@ -271,7 +329,7 @@ export type ListDiscoveryV1EndpointSliceForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -305,7 +363,7 @@ export type ListDiscoveryV1NamespacedEndpointSliceApiResponse =
 export type ListDiscoveryV1NamespacedEndpointSliceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -356,7 +414,7 @@ export type CreateDiscoveryV1NamespacedEndpointSliceApiResponse =
 export type CreateDiscoveryV1NamespacedEndpointSliceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -373,7 +431,7 @@ export type DeleteDiscoveryV1CollectionNamespacedEndpointSliceApiResponse =
 export type DeleteDiscoveryV1CollectionNamespacedEndpointSliceApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -430,7 +488,7 @@ export type ReadDiscoveryV1NamespacedEndpointSliceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceDiscoveryV1NamespacedEndpointSliceApiResponse =
@@ -442,7 +500,7 @@ export type ReplaceDiscoveryV1NamespacedEndpointSliceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -463,7 +521,7 @@ export type DeleteDiscoveryV1NamespacedEndpointSliceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -486,7 +544,7 @@ export type PatchDiscoveryV1NamespacedEndpointSliceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -531,7 +589,7 @@ export type WatchDiscoveryV1EndpointSliceListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -579,7 +637,7 @@ export type WatchDiscoveryV1NamespacedEndpointSliceListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -629,7 +687,7 @@ export type WatchDiscoveryV1NamespacedEndpointSliceApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

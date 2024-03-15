@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listChaosMeshOrgV1Alpha1AwsChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1AwsChaosForAllNamespacesApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listChaosMeshOrgV1Alpha1AwsChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1AwsChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1AwsChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1AwsChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1AwsChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1AwsChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1AwsChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1AwsChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/awschaos`,
@@ -23,10 +37,21 @@ export const listChaosMeshOrgV1Alpha1AwsChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1AzureChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1AzureChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1AzureChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1AzureChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1AzureChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1AzureChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1AzureChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1AzureChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1AzureChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1AzureChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/azurechaos`,
@@ -47,10 +72,21 @@ export const listChaosMeshOrgV1Alpha1AzureChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1BlockChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1BlockChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1BlockChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1BlockChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1BlockChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1BlockChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1BlockChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1BlockChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1BlockChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1BlockChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/blockchaos`,
@@ -71,10 +107,21 @@ export const listChaosMeshOrgV1Alpha1BlockChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1DnsChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1DnsChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1DnsChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1DnsChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1DnsChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1DnsChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1DnsChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1DnsChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1DnsChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1DnsChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/dnschaos`,
@@ -95,10 +142,21 @@ export const listChaosMeshOrgV1Alpha1DnsChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1GcpChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1GcpChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1GcpChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1GcpChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1GcpChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1GcpChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1GcpChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1GcpChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1GcpChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1GcpChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/gcpchaos`,
@@ -119,10 +177,21 @@ export const listChaosMeshOrgV1Alpha1GcpChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1HttpChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1HttpChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1HttpChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1HttpChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1HttpChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1HttpChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1HttpChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1HttpChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1HttpChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1HttpChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/httpchaos`,
@@ -143,10 +212,21 @@ export const listChaosMeshOrgV1Alpha1HttpChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1IoChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1IoChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1IoChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1IoChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1IoChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1IoChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1IoChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1IoChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1IoChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1IoChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/iochaos`,
@@ -167,10 +247,21 @@ export const listChaosMeshOrgV1Alpha1IoChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1JvmChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1JvmChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1JvmChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1JvmChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1JvmChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1JvmChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1JvmChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1JvmChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1JvmChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1JvmChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/jvmchaos`,
@@ -191,10 +282,21 @@ export const listChaosMeshOrgV1Alpha1JvmChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1KernelChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1KernelChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1KernelChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1KernelChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1KernelChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1KernelChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1KernelChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1KernelChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1KernelChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1KernelChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/kernelchaos`,
@@ -215,10 +317,21 @@ export const listChaosMeshOrgV1Alpha1KernelChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedAwsChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedAwsChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedAwsChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedAwsChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedAwsChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedAwsChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedAwsChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/awschaos`,
@@ -259,10 +372,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedAwsChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/awschaos`,
@@ -358,10 +482,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedAwsChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedAzureChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedAzureChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedAzureChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedAzureChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/azurechaos`,
@@ -402,10 +537,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedAzureChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/azurechaos`,
@@ -501,10 +647,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedAzureChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedBlockChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedBlockChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedBlockChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedBlockChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/blockchaos`,
@@ -545,10 +702,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedBlockChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/blockchaos`,
@@ -644,10 +812,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedBlockChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedDnsChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedDnsChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedDnsChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedDnsChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/dnschaos`,
@@ -688,10 +867,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedDnsChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/dnschaos`,
@@ -787,10 +977,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedDnsChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedGcpChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedGcpChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedGcpChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedGcpChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/gcpchaos`,
@@ -831,10 +1032,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedGcpChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/gcpchaos`,
@@ -930,10 +1142,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedGcpChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedHttpChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedHttpChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedHttpChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedHttpChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/httpchaos`,
@@ -974,10 +1197,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedHttpChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/httpchaos`,
@@ -1073,10 +1307,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedHttpChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedIoChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedIoChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedIoChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedIoChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/iochaos`,
@@ -1117,10 +1362,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedIoChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/iochaos`,
@@ -1216,10 +1472,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedIoChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedJvmChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedJvmChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedJvmChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedJvmChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/jvmchaos`,
@@ -1260,10 +1527,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedJvmChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/jvmchaos`,
@@ -1359,10 +1637,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedJvmChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedKernelChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedKernelChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedKernelChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedKernelChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/kernelchaos`,
@@ -1403,10 +1692,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedKernelChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/kernelchaos`,
@@ -1502,10 +1802,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedKernelChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedNetworkChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedNetworkChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedNetworkChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedNetworkChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/networkchaos`,
@@ -1546,10 +1857,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedNetworkChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/networkchaos`,
@@ -1645,10 +1967,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedNetworkChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachinechaos`,
@@ -1689,32 +2022,42 @@ export const createChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaos =
-  (
-    args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaosApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaosApiResponse>(
-      {
-        path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachinechaos`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaosApiArg>,
+  options?: Options
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaos(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaosApiResponse>(
+    {
+      path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachinechaos`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos = (
   args: ReadChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg,
   options?: Options
@@ -1789,10 +2132,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedPhysicalMachine = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedPhysicalMachine(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedPhysicalMachine(
+  args: ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedPhysicalMachine(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachines`,
@@ -1833,10 +2187,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedPhysicalMachine = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachine = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachine(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachine(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachine(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/physicalmachines`,
@@ -1932,10 +2297,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPhysicalMachine = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedPodChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedPodChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedPodChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedPodChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podchaos`,
@@ -1976,10 +2352,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedPodChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podchaos`,
@@ -2075,10 +2462,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedPodHttpChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedPodHttpChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedPodHttpChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedPodHttpChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podhttpchaos`,
@@ -2119,10 +2517,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedPodHttpChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podhttpchaos`,
@@ -2271,10 +2680,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatus = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedPodIoChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedPodIoChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedPodIoChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedPodIoChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podiochaos`,
@@ -2315,10 +2735,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedPodIoChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podiochaos`,
@@ -2467,10 +2898,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatus = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedPodNetworkChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedPodNetworkChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedPodNetworkChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedPodNetworkChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podnetworkchaos`,
@@ -2511,10 +2953,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedPodNetworkChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/podnetworkchaos`,
@@ -2663,10 +3116,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatus = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedSchedule = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedScheduleApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedSchedule(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedScheduleApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedSchedule(
+  args: ListChaosMeshOrgV1Alpha1NamespacedScheduleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedSchedule(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/schedules`,
@@ -2707,10 +3171,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedSchedule = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedSchedule = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedScheduleApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedSchedule(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedScheduleApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedScheduleApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedSchedule(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedScheduleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedScheduleApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedSchedule(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedScheduleApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/schedules`,
@@ -2806,10 +3281,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedSchedule = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedStatusCheck = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedStatusCheck(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedStatusCheck(
+  args: ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedStatusCheck(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/statuschecks`,
@@ -2850,10 +3336,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedStatusCheck = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheck = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheckApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheck(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheckApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheckApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheck(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheckApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheckApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheck(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheckApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/statuschecks`,
@@ -3002,10 +3499,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedStatusCheckStatus = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedStressChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedStressChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedStressChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedStressChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/stresschaos`,
@@ -3046,10 +3554,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedStressChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/stresschaos`,
@@ -3145,10 +3664,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedStressChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedTimeChaos = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedTimeChaos(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedTimeChaos(
+  args: ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedTimeChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/timechaos`,
@@ -3189,10 +3719,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedTimeChaos = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaos = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaosApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaos(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaosApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaosApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaos(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaosApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaosApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaos(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaosApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/timechaos`,
@@ -3288,10 +3829,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedTimeChaos = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedWorkflowNode = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedWorkflowNode(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedWorkflowNode(
+  args: ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedWorkflowNode(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflownodes`,
@@ -3332,10 +3884,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedWorkflowNode = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNode = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNodeApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNode(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNodeApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNodeApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNode(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNodeApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNodeApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNode(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNodeApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflownodes`,
@@ -3484,10 +4047,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatus = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NamespacedWorkflow = (
-  args: ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg,
+export function listChaosMeshOrgV1Alpha1NamespacedWorkflow(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse>
+export function listChaosMeshOrgV1Alpha1NamespacedWorkflow(
+  args: ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NamespacedWorkflow(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflows`,
@@ -3528,10 +4102,21 @@ export const createChaosMeshOrgV1Alpha1NamespacedWorkflow = (
     options
   )
 }
-export const deleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflow = (
-  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowApiArg,
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflow(
+  args: NoWatch<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowApiArg>,
   options?: Options
-) => {
+): Promise<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowApiResponse>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflow(
+  args: DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowApiResponse>
+): Promise<void>
+export function deleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflow(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/namespaces/${args['namespace']}/workflows`,
@@ -3680,10 +4265,21 @@ export const patchChaosMeshOrgV1Alpha1NamespacedWorkflowStatus = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1NetworkChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1NetworkChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1NetworkChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1NetworkChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1NetworkChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1NetworkChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1NetworkChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1NetworkChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1NetworkChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1NetworkChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/networkchaos`,
@@ -3704,10 +4300,21 @@ export const listChaosMeshOrgV1Alpha1NetworkChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/physicalmachinechaos`,
@@ -3728,10 +4335,21 @@ export const listChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/physicalmachines`,
@@ -3752,10 +4370,21 @@ export const listChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1PodChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1PodChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1PodChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1PodChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1PodChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1PodChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1PodChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1PodChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1PodChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1PodChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/podchaos`,
@@ -3776,10 +4405,21 @@ export const listChaosMeshOrgV1Alpha1PodChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/podhttpchaos`,
@@ -3800,10 +4440,21 @@ export const listChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1PodIoChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1PodIoChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1PodIoChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1PodIoChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1PodIoChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1PodIoChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1PodIoChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1PodIoChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1PodIoChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1PodIoChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/podiochaos`,
@@ -3824,10 +4475,21 @@ export const listChaosMeshOrgV1Alpha1PodIoChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/podnetworkchaos`,
@@ -3848,10 +4510,21 @@ export const listChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1ScheduleForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1ScheduleForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1ScheduleForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1ScheduleForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1ScheduleForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1ScheduleForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1ScheduleForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1ScheduleForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1ScheduleForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1ScheduleForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/schedules`,
@@ -3872,10 +4545,21 @@ export const listChaosMeshOrgV1Alpha1ScheduleForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1StatusCheckForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1StatusCheckForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1StatusCheckForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1StatusCheckForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1StatusCheckForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1StatusCheckForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1StatusCheckForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1StatusCheckForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1StatusCheckForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1StatusCheckForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/statuschecks`,
@@ -3896,10 +4580,21 @@ export const listChaosMeshOrgV1Alpha1StatusCheckForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1StressChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1StressChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1StressChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1StressChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1StressChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1StressChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1StressChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1StressChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1StressChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1StressChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/stresschaos`,
@@ -3920,10 +4615,21 @@ export const listChaosMeshOrgV1Alpha1StressChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1TimeChaosForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1TimeChaosForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1TimeChaosForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1TimeChaosForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1TimeChaosForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1TimeChaosForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1TimeChaosForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1TimeChaosForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1TimeChaosForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1TimeChaosForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/timechaos`,
@@ -3944,10 +4650,21 @@ export const listChaosMeshOrgV1Alpha1TimeChaosForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/workflownodes`,
@@ -3968,10 +4685,21 @@ export const listChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespaces = (
     options
   )
 }
-export const listChaosMeshOrgV1Alpha1WorkflowForAllNamespaces = (
-  args: ListChaosMeshOrgV1Alpha1WorkflowForAllNamespacesApiArg,
+export function listChaosMeshOrgV1Alpha1WorkflowForAllNamespaces(
+  args: NoWatch<ListChaosMeshOrgV1Alpha1WorkflowForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListChaosMeshOrgV1Alpha1WorkflowForAllNamespacesApiResponse>
+export function listChaosMeshOrgV1Alpha1WorkflowForAllNamespaces(
+  args: ListChaosMeshOrgV1Alpha1WorkflowForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListChaosMeshOrgV1Alpha1WorkflowForAllNamespacesApiResponse>
+): Promise<void>
+export function listChaosMeshOrgV1Alpha1WorkflowForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListChaosMeshOrgV1Alpha1WorkflowForAllNamespacesApiResponse>(
     {
       path: `/apis/chaos-mesh.org/v1alpha1/workflows`,
@@ -4009,7 +4737,7 @@ export type ListChaosMeshOrgV1Alpha1AwsChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4055,7 +4783,7 @@ export type ListChaosMeshOrgV1Alpha1AzureChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4101,7 +4829,7 @@ export type ListChaosMeshOrgV1Alpha1BlockChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4147,7 +4875,7 @@ export type ListChaosMeshOrgV1Alpha1DnsChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4193,7 +4921,7 @@ export type ListChaosMeshOrgV1Alpha1GcpChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4239,7 +4967,7 @@ export type ListChaosMeshOrgV1Alpha1HttpChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4285,7 +5013,7 @@ export type ListChaosMeshOrgV1Alpha1IoChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4331,7 +5059,7 @@ export type ListChaosMeshOrgV1Alpha1JvmChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4377,7 +5105,7 @@ export type ListChaosMeshOrgV1Alpha1KernelChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4411,7 +5139,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedAwsChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4462,7 +5190,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedAwsChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4485,7 +5213,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaosApiResponse =
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAwsChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4535,7 +5263,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4551,7 +5279,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4578,7 +5306,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4605,7 +5333,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedAwsChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4634,7 +5362,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4685,7 +5413,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedAzureChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4708,7 +5436,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaosApiResponse 
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedAzureChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4758,7 +5486,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4774,7 +5502,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4801,7 +5529,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4828,7 +5556,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedAzureChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4857,7 +5585,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4908,7 +5636,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedBlockChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -4931,7 +5659,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaosApiResponse 
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedBlockChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -4981,7 +5709,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -4997,7 +5725,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5024,7 +5752,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5051,7 +5779,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedBlockChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5080,7 +5808,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5131,7 +5859,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedDnsChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5154,7 +5882,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaosApiResponse =
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedDnsChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5204,7 +5932,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5220,7 +5948,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5247,7 +5975,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5274,7 +6002,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedDnsChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5303,7 +6031,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5354,7 +6082,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedGcpChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5377,7 +6105,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaosApiResponse =
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedGcpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5427,7 +6155,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5443,7 +6171,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5470,7 +6198,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5497,7 +6225,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedGcpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5526,7 +6254,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5577,7 +6305,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedHttpChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5600,7 +6328,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaosApiResponse =
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedHttpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5650,7 +6378,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5666,7 +6394,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5693,7 +6421,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5720,7 +6448,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedHttpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5749,7 +6477,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5800,7 +6528,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedIoChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5823,7 +6551,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaosApiResponse =
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedIoChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -5873,7 +6601,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -5889,7 +6617,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5916,7 +6644,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5943,7 +6671,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedIoChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -5972,7 +6700,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6023,7 +6751,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedJvmChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6046,7 +6774,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaosApiResponse =
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedJvmChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6096,7 +6824,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -6112,7 +6840,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6139,7 +6867,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6166,7 +6894,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedJvmChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6195,7 +6923,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6246,7 +6974,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedKernelChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6269,7 +6997,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaosApiResponse
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedKernelChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6319,7 +7047,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -6335,7 +7063,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6362,7 +7090,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6389,7 +7117,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedKernelChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6418,7 +7146,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6469,7 +7197,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6492,7 +7220,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaosApiRespons
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedNetworkChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6542,7 +7270,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -6558,7 +7286,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6585,7 +7313,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6612,7 +7340,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedNetworkChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6641,7 +7369,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6692,7 +7420,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiResponse 
 export type CreateChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6716,7 +7444,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineChaosAp
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -6766,7 +7494,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -6782,7 +7510,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6809,7 +7537,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6836,7 +7564,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6865,7 +7593,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -6916,7 +7644,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -6940,7 +7668,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPhysicalMachineApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -6990,7 +7718,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -7006,7 +7734,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7033,7 +7761,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7060,7 +7788,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPhysicalMachineApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7089,7 +7817,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -7140,7 +7868,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPodChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7163,7 +7891,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaosApiResponse =
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -7213,7 +7941,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -7229,7 +7957,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7256,7 +7984,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7283,7 +8011,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7312,7 +8040,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -7363,7 +8091,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7386,7 +8114,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaosApiRespons
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodHttpChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -7436,7 +8164,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -7452,7 +8180,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7479,7 +8207,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7506,7 +8234,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7537,7 +8265,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -7553,7 +8281,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7578,7 +8306,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodHttpChaosStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7607,7 +8335,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -7658,7 +8386,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7681,7 +8409,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaosApiResponse 
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodIoChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -7731,7 +8459,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -7747,7 +8475,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7774,7 +8502,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7801,7 +8529,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7832,7 +8560,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -7848,7 +8576,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7873,7 +8601,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodIoChaosStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7902,7 +8630,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -7953,7 +8681,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -7977,7 +8705,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedPodNetworkChaosApiArg 
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -8027,7 +8755,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -8043,7 +8771,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8070,7 +8798,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8097,7 +8825,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8128,7 +8856,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -8144,7 +8872,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8169,7 +8897,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedPodNetworkChaosStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8198,7 +8926,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -8249,7 +8977,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedScheduleApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8272,7 +9000,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedScheduleApiResponse =
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedScheduleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -8322,7 +9050,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -8338,7 +9066,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8365,7 +9093,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8392,7 +9120,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedScheduleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8421,7 +9149,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -8472,7 +9200,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedStatusCheckApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8495,7 +9223,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheckApiResponse
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStatusCheckApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -8545,7 +9273,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -8561,7 +9289,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8588,7 +9316,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8615,7 +9343,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8646,7 +9374,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -8662,7 +9390,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8687,7 +9415,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStatusCheckStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8716,7 +9444,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -8767,7 +9495,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedStressChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8790,7 +9518,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaosApiResponse
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedStressChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -8840,7 +9568,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -8856,7 +9584,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8883,7 +9611,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8910,7 +9638,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedStressChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -8939,7 +9667,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -8990,7 +9718,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedTimeChaosApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9013,7 +9741,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaosApiResponse =
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedTimeChaosApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -9063,7 +9791,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9079,7 +9807,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9106,7 +9834,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9133,7 +9861,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedTimeChaosApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9162,7 +9890,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -9213,7 +9941,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9236,7 +9964,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNodeApiRespons
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowNodeApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -9286,7 +10014,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9302,7 +10030,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9329,7 +10057,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9356,7 +10084,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9387,7 +10115,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9403,7 +10131,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9428,7 +10156,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowNodeStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9457,7 +10185,7 @@ export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse =
 export type ListChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -9508,7 +10236,7 @@ export type CreateChaosMeshOrgV1Alpha1NamespacedWorkflowApiResponse =
 export type CreateChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9531,7 +10259,7 @@ export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowApiResponse =
 export type DeleteChaosMeshOrgV1Alpha1CollectionNamespacedWorkflowApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -9581,7 +10309,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9597,7 +10325,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9624,7 +10352,7 @@ export type DeleteChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9651,7 +10379,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9682,7 +10410,7 @@ export type ReadChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9698,7 +10426,7 @@ export type ReplaceChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9723,7 +10451,7 @@ export type PatchChaosMeshOrgV1Alpha1NamespacedWorkflowStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -9764,7 +10492,7 @@ export type ListChaosMeshOrgV1Alpha1NetworkChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9811,7 +10539,7 @@ export type ListChaosMeshOrgV1Alpha1PhysicalMachineChaosForAllNamespacesApiArg =
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9857,7 +10585,7 @@ export type ListChaosMeshOrgV1Alpha1PhysicalMachineForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9903,7 +10631,7 @@ export type ListChaosMeshOrgV1Alpha1PodChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9949,7 +10677,7 @@ export type ListChaosMeshOrgV1Alpha1PodHttpChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -9995,7 +10723,7 @@ export type ListChaosMeshOrgV1Alpha1PodIoChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10041,7 +10769,7 @@ export type ListChaosMeshOrgV1Alpha1PodNetworkChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10087,7 +10815,7 @@ export type ListChaosMeshOrgV1Alpha1ScheduleForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10133,7 +10861,7 @@ export type ListChaosMeshOrgV1Alpha1StatusCheckForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10179,7 +10907,7 @@ export type ListChaosMeshOrgV1Alpha1StressChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10225,7 +10953,7 @@ export type ListChaosMeshOrgV1Alpha1TimeChaosForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10271,7 +10999,7 @@ export type ListChaosMeshOrgV1Alpha1WorkflowNodeForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -10317,7 +11045,7 @@ export type ListChaosMeshOrgV1Alpha1WorkflowForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

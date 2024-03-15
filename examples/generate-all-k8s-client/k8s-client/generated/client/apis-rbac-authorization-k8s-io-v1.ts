@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getRbacAuthorizationV1ApiResources = (
   args: GetRbacAuthorizationV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,21 @@ export const getRbacAuthorizationV1ApiResources = (
     options
   )
 }
-export const listRbacAuthorizationV1ClusterRoleBinding = (
-  args: ListRbacAuthorizationV1ClusterRoleBindingApiArg,
+export function listRbacAuthorizationV1ClusterRoleBinding(
+  args: NoWatch<ListRbacAuthorizationV1ClusterRoleBindingApiArg>,
   options?: Options
-) => {
+): Promise<ListRbacAuthorizationV1ClusterRoleBindingApiResponse>
+export function listRbacAuthorizationV1ClusterRoleBinding(
+  args: ListRbacAuthorizationV1ClusterRoleBindingApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListRbacAuthorizationV1ClusterRoleBindingApiResponse>
+): Promise<void>
+export function listRbacAuthorizationV1ClusterRoleBinding(
+  args: any,
+  options: any
+): any {
   return apiClient<ListRbacAuthorizationV1ClusterRoleBindingApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterrolebindings`,
@@ -155,10 +169,21 @@ export const patchRbacAuthorizationV1ClusterRoleBinding = (
     options
   )
 }
-export const listRbacAuthorizationV1ClusterRole = (
-  args: ListRbacAuthorizationV1ClusterRoleApiArg,
+export function listRbacAuthorizationV1ClusterRole(
+  args: NoWatch<ListRbacAuthorizationV1ClusterRoleApiArg>,
   options?: Options
-) => {
+): Promise<ListRbacAuthorizationV1ClusterRoleApiResponse>
+export function listRbacAuthorizationV1ClusterRole(
+  args: ListRbacAuthorizationV1ClusterRoleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListRbacAuthorizationV1ClusterRoleApiResponse>
+): Promise<void>
+export function listRbacAuthorizationV1ClusterRole(
+  args: any,
+  options: any
+): any {
   return apiClient<ListRbacAuthorizationV1ClusterRoleApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/clusterroles`,
@@ -302,10 +327,21 @@ export const patchRbacAuthorizationV1ClusterRole = (
     options
   )
 }
-export const listRbacAuthorizationV1NamespacedRoleBinding = (
-  args: ListRbacAuthorizationV1NamespacedRoleBindingApiArg,
+export function listRbacAuthorizationV1NamespacedRoleBinding(
+  args: NoWatch<ListRbacAuthorizationV1NamespacedRoleBindingApiArg>,
   options?: Options
-) => {
+): Promise<ListRbacAuthorizationV1NamespacedRoleBindingApiResponse>
+export function listRbacAuthorizationV1NamespacedRoleBinding(
+  args: ListRbacAuthorizationV1NamespacedRoleBindingApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListRbacAuthorizationV1NamespacedRoleBindingApiResponse>
+): Promise<void>
+export function listRbacAuthorizationV1NamespacedRoleBinding(
+  args: any,
+  options: any
+): any {
   return apiClient<ListRbacAuthorizationV1NamespacedRoleBindingApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/rolebindings`,
@@ -449,10 +485,21 @@ export const patchRbacAuthorizationV1NamespacedRoleBinding = (
     options
   )
 }
-export const listRbacAuthorizationV1NamespacedRole = (
-  args: ListRbacAuthorizationV1NamespacedRoleApiArg,
+export function listRbacAuthorizationV1NamespacedRole(
+  args: NoWatch<ListRbacAuthorizationV1NamespacedRoleApiArg>,
   options?: Options
-) => {
+): Promise<ListRbacAuthorizationV1NamespacedRoleApiResponse>
+export function listRbacAuthorizationV1NamespacedRole(
+  args: ListRbacAuthorizationV1NamespacedRoleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListRbacAuthorizationV1NamespacedRoleApiResponse>
+): Promise<void>
+export function listRbacAuthorizationV1NamespacedRole(
+  args: any,
+  options: any
+): any {
   return apiClient<ListRbacAuthorizationV1NamespacedRoleApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/roles`,
@@ -596,10 +643,21 @@ export const patchRbacAuthorizationV1NamespacedRole = (
     options
   )
 }
-export const listRbacAuthorizationV1RoleBindingForAllNamespaces = (
-  args: ListRbacAuthorizationV1RoleBindingForAllNamespacesApiArg,
+export function listRbacAuthorizationV1RoleBindingForAllNamespaces(
+  args: NoWatch<ListRbacAuthorizationV1RoleBindingForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListRbacAuthorizationV1RoleBindingForAllNamespacesApiResponse>
+export function listRbacAuthorizationV1RoleBindingForAllNamespaces(
+  args: ListRbacAuthorizationV1RoleBindingForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListRbacAuthorizationV1RoleBindingForAllNamespacesApiResponse>
+): Promise<void>
+export function listRbacAuthorizationV1RoleBindingForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListRbacAuthorizationV1RoleBindingForAllNamespacesApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/rolebindings`,
@@ -620,10 +678,21 @@ export const listRbacAuthorizationV1RoleBindingForAllNamespaces = (
     options
   )
 }
-export const listRbacAuthorizationV1RoleForAllNamespaces = (
-  args: ListRbacAuthorizationV1RoleForAllNamespacesApiArg,
+export function listRbacAuthorizationV1RoleForAllNamespaces(
+  args: NoWatch<ListRbacAuthorizationV1RoleForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListRbacAuthorizationV1RoleForAllNamespacesApiResponse>
+export function listRbacAuthorizationV1RoleForAllNamespaces(
+  args: ListRbacAuthorizationV1RoleForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListRbacAuthorizationV1RoleForAllNamespacesApiResponse>
+): Promise<void>
+export function listRbacAuthorizationV1RoleForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListRbacAuthorizationV1RoleForAllNamespacesApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/roles`,
@@ -644,10 +713,21 @@ export const listRbacAuthorizationV1RoleForAllNamespaces = (
     options
   )
 }
-export const watchRbacAuthorizationV1ClusterRoleBindingList = (
-  args: WatchRbacAuthorizationV1ClusterRoleBindingListApiArg,
+export function watchRbacAuthorizationV1ClusterRoleBindingList(
+  args: NoWatch<WatchRbacAuthorizationV1ClusterRoleBindingListApiArg>,
   options?: Options
-) => {
+): Promise<WatchRbacAuthorizationV1ClusterRoleBindingListApiResponse>
+export function watchRbacAuthorizationV1ClusterRoleBindingList(
+  args: WatchRbacAuthorizationV1ClusterRoleBindingListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchRbacAuthorizationV1ClusterRoleBindingListApiResponse>
+): Promise<void>
+export function watchRbacAuthorizationV1ClusterRoleBindingList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchRbacAuthorizationV1ClusterRoleBindingListApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/watch/clusterrolebindings`,
@@ -668,10 +748,21 @@ export const watchRbacAuthorizationV1ClusterRoleBindingList = (
     options
   )
 }
-export const watchRbacAuthorizationV1ClusterRoleBinding = (
-  args: WatchRbacAuthorizationV1ClusterRoleBindingApiArg,
+export function watchRbacAuthorizationV1ClusterRoleBinding(
+  args: NoWatch<WatchRbacAuthorizationV1ClusterRoleBindingApiArg>,
   options?: Options
-) => {
+): Promise<WatchRbacAuthorizationV1ClusterRoleBindingApiResponse>
+export function watchRbacAuthorizationV1ClusterRoleBinding(
+  args: WatchRbacAuthorizationV1ClusterRoleBindingApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchRbacAuthorizationV1ClusterRoleBindingApiResponse>
+): Promise<void>
+export function watchRbacAuthorizationV1ClusterRoleBinding(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchRbacAuthorizationV1ClusterRoleBindingApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/watch/clusterrolebindings/${args.name}`,
@@ -692,10 +783,21 @@ export const watchRbacAuthorizationV1ClusterRoleBinding = (
     options
   )
 }
-export const watchRbacAuthorizationV1ClusterRoleList = (
-  args: WatchRbacAuthorizationV1ClusterRoleListApiArg,
+export function watchRbacAuthorizationV1ClusterRoleList(
+  args: NoWatch<WatchRbacAuthorizationV1ClusterRoleListApiArg>,
   options?: Options
-) => {
+): Promise<WatchRbacAuthorizationV1ClusterRoleListApiResponse>
+export function watchRbacAuthorizationV1ClusterRoleList(
+  args: WatchRbacAuthorizationV1ClusterRoleListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchRbacAuthorizationV1ClusterRoleListApiResponse>
+): Promise<void>
+export function watchRbacAuthorizationV1ClusterRoleList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchRbacAuthorizationV1ClusterRoleListApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/watch/clusterroles`,
@@ -716,10 +818,21 @@ export const watchRbacAuthorizationV1ClusterRoleList = (
     options
   )
 }
-export const watchRbacAuthorizationV1ClusterRole = (
-  args: WatchRbacAuthorizationV1ClusterRoleApiArg,
+export function watchRbacAuthorizationV1ClusterRole(
+  args: NoWatch<WatchRbacAuthorizationV1ClusterRoleApiArg>,
   options?: Options
-) => {
+): Promise<WatchRbacAuthorizationV1ClusterRoleApiResponse>
+export function watchRbacAuthorizationV1ClusterRole(
+  args: WatchRbacAuthorizationV1ClusterRoleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchRbacAuthorizationV1ClusterRoleApiResponse>
+): Promise<void>
+export function watchRbacAuthorizationV1ClusterRole(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchRbacAuthorizationV1ClusterRoleApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/watch/clusterroles/${args.name}`,
@@ -740,10 +853,21 @@ export const watchRbacAuthorizationV1ClusterRole = (
     options
   )
 }
-export const watchRbacAuthorizationV1NamespacedRoleBindingList = (
-  args: WatchRbacAuthorizationV1NamespacedRoleBindingListApiArg,
+export function watchRbacAuthorizationV1NamespacedRoleBindingList(
+  args: NoWatch<WatchRbacAuthorizationV1NamespacedRoleBindingListApiArg>,
   options?: Options
-) => {
+): Promise<WatchRbacAuthorizationV1NamespacedRoleBindingListApiResponse>
+export function watchRbacAuthorizationV1NamespacedRoleBindingList(
+  args: WatchRbacAuthorizationV1NamespacedRoleBindingListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchRbacAuthorizationV1NamespacedRoleBindingListApiResponse>
+): Promise<void>
+export function watchRbacAuthorizationV1NamespacedRoleBindingList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchRbacAuthorizationV1NamespacedRoleBindingListApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/watch/namespaces/${args['namespace']}/rolebindings`,
@@ -764,10 +888,21 @@ export const watchRbacAuthorizationV1NamespacedRoleBindingList = (
     options
   )
 }
-export const watchRbacAuthorizationV1NamespacedRoleBinding = (
-  args: WatchRbacAuthorizationV1NamespacedRoleBindingApiArg,
+export function watchRbacAuthorizationV1NamespacedRoleBinding(
+  args: NoWatch<WatchRbacAuthorizationV1NamespacedRoleBindingApiArg>,
   options?: Options
-) => {
+): Promise<WatchRbacAuthorizationV1NamespacedRoleBindingApiResponse>
+export function watchRbacAuthorizationV1NamespacedRoleBinding(
+  args: WatchRbacAuthorizationV1NamespacedRoleBindingApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchRbacAuthorizationV1NamespacedRoleBindingApiResponse>
+): Promise<void>
+export function watchRbacAuthorizationV1NamespacedRoleBinding(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchRbacAuthorizationV1NamespacedRoleBindingApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/watch/namespaces/${args['namespace']}/rolebindings/${args.name}`,
@@ -788,10 +923,21 @@ export const watchRbacAuthorizationV1NamespacedRoleBinding = (
     options
   )
 }
-export const watchRbacAuthorizationV1NamespacedRoleList = (
-  args: WatchRbacAuthorizationV1NamespacedRoleListApiArg,
+export function watchRbacAuthorizationV1NamespacedRoleList(
+  args: NoWatch<WatchRbacAuthorizationV1NamespacedRoleListApiArg>,
   options?: Options
-) => {
+): Promise<WatchRbacAuthorizationV1NamespacedRoleListApiResponse>
+export function watchRbacAuthorizationV1NamespacedRoleList(
+  args: WatchRbacAuthorizationV1NamespacedRoleListApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchRbacAuthorizationV1NamespacedRoleListApiResponse>
+): Promise<void>
+export function watchRbacAuthorizationV1NamespacedRoleList(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchRbacAuthorizationV1NamespacedRoleListApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/watch/namespaces/${args['namespace']}/roles`,
@@ -812,10 +958,21 @@ export const watchRbacAuthorizationV1NamespacedRoleList = (
     options
   )
 }
-export const watchRbacAuthorizationV1NamespacedRole = (
-  args: WatchRbacAuthorizationV1NamespacedRoleApiArg,
+export function watchRbacAuthorizationV1NamespacedRole(
+  args: NoWatch<WatchRbacAuthorizationV1NamespacedRoleApiArg>,
   options?: Options
-) => {
+): Promise<WatchRbacAuthorizationV1NamespacedRoleApiResponse>
+export function watchRbacAuthorizationV1NamespacedRole(
+  args: WatchRbacAuthorizationV1NamespacedRoleApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchRbacAuthorizationV1NamespacedRoleApiResponse>
+): Promise<void>
+export function watchRbacAuthorizationV1NamespacedRole(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchRbacAuthorizationV1NamespacedRoleApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/watch/namespaces/${args['namespace']}/roles/${args.name}`,
@@ -836,10 +993,21 @@ export const watchRbacAuthorizationV1NamespacedRole = (
     options
   )
 }
-export const watchRbacAuthorizationV1RoleBindingListForAllNamespaces = (
-  args: WatchRbacAuthorizationV1RoleBindingListForAllNamespacesApiArg,
+export function watchRbacAuthorizationV1RoleBindingListForAllNamespaces(
+  args: NoWatch<WatchRbacAuthorizationV1RoleBindingListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchRbacAuthorizationV1RoleBindingListForAllNamespacesApiResponse>
+export function watchRbacAuthorizationV1RoleBindingListForAllNamespaces(
+  args: WatchRbacAuthorizationV1RoleBindingListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchRbacAuthorizationV1RoleBindingListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchRbacAuthorizationV1RoleBindingListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchRbacAuthorizationV1RoleBindingListForAllNamespacesApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/watch/rolebindings`,
@@ -860,10 +1028,21 @@ export const watchRbacAuthorizationV1RoleBindingListForAllNamespaces = (
     options
   )
 }
-export const watchRbacAuthorizationV1RoleListForAllNamespaces = (
-  args: WatchRbacAuthorizationV1RoleListForAllNamespacesApiArg,
+export function watchRbacAuthorizationV1RoleListForAllNamespaces(
+  args: NoWatch<WatchRbacAuthorizationV1RoleListForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<WatchRbacAuthorizationV1RoleListForAllNamespacesApiResponse>
+export function watchRbacAuthorizationV1RoleListForAllNamespaces(
+  args: WatchRbacAuthorizationV1RoleListForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<WatchRbacAuthorizationV1RoleListForAllNamespacesApiResponse>
+): Promise<void>
+export function watchRbacAuthorizationV1RoleListForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<WatchRbacAuthorizationV1RoleListForAllNamespacesApiResponse>(
     {
       path: `/apis/rbac.authorization.k8s.io/v1/watch/roles`,
@@ -890,7 +1069,7 @@ export type GetRbacAuthorizationV1ApiResourcesApiArg = void
 export type ListRbacAuthorizationV1ClusterRoleBindingApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1ClusterRoleBindingList
 export type ListRbacAuthorizationV1ClusterRoleBindingApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -939,7 +1118,7 @@ export type CreateRbacAuthorizationV1ClusterRoleBindingApiResponse =
   | /** status 201 Created */ IoK8SApiRbacV1ClusterRoleBinding
   | /** status 202 Accepted */ IoK8SApiRbacV1ClusterRoleBinding
 export type CreateRbacAuthorizationV1ClusterRoleBindingApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -954,7 +1133,7 @@ export type CreateRbacAuthorizationV1ClusterRoleBindingApiArg = {
 export type DeleteRbacAuthorizationV1CollectionClusterRoleBindingApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteRbacAuthorizationV1CollectionClusterRoleBindingApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1009,7 +1188,7 @@ export type ReadRbacAuthorizationV1ClusterRoleBindingApiResponse =
 export type ReadRbacAuthorizationV1ClusterRoleBindingApiArg = {
   /** name of the ClusterRoleBinding */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceRbacAuthorizationV1ClusterRoleBindingApiResponse =
@@ -1019,7 +1198,7 @@ export type ReplaceRbacAuthorizationV1ClusterRoleBindingApiResponse =
 export type ReplaceRbacAuthorizationV1ClusterRoleBindingApiArg = {
   /** name of the ClusterRoleBinding */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1038,7 +1217,7 @@ export type DeleteRbacAuthorizationV1ClusterRoleBindingApiResponse =
 export type DeleteRbacAuthorizationV1ClusterRoleBindingApiArg = {
   /** name of the ClusterRoleBinding */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1059,7 +1238,7 @@ export type PatchRbacAuthorizationV1ClusterRoleBindingApiResponse =
 export type PatchRbacAuthorizationV1ClusterRoleBindingApiArg = {
   /** name of the ClusterRoleBinding */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1090,7 +1269,7 @@ export type PatchRbacAuthorizationV1ClusterRoleBindingApiArg = {
 export type ListRbacAuthorizationV1ClusterRoleApiResponse =
   /** status 200 OK */ IoK8SApiRbacV1ClusterRoleList
 export type ListRbacAuthorizationV1ClusterRoleApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1139,7 +1318,7 @@ export type CreateRbacAuthorizationV1ClusterRoleApiResponse =
   | /** status 201 Created */ IoK8SApiRbacV1ClusterRole
   | /** status 202 Accepted */ IoK8SApiRbacV1ClusterRole
 export type CreateRbacAuthorizationV1ClusterRoleApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1154,7 +1333,7 @@ export type CreateRbacAuthorizationV1ClusterRoleApiArg = {
 export type DeleteRbacAuthorizationV1CollectionClusterRoleApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteRbacAuthorizationV1CollectionClusterRoleApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1209,7 +1388,7 @@ export type ReadRbacAuthorizationV1ClusterRoleApiResponse =
 export type ReadRbacAuthorizationV1ClusterRoleApiArg = {
   /** name of the ClusterRole */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceRbacAuthorizationV1ClusterRoleApiResponse =
@@ -1219,7 +1398,7 @@ export type ReplaceRbacAuthorizationV1ClusterRoleApiResponse =
 export type ReplaceRbacAuthorizationV1ClusterRoleApiArg = {
   /** name of the ClusterRole */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1238,7 +1417,7 @@ export type DeleteRbacAuthorizationV1ClusterRoleApiResponse =
 export type DeleteRbacAuthorizationV1ClusterRoleApiArg = {
   /** name of the ClusterRole */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1259,7 +1438,7 @@ export type PatchRbacAuthorizationV1ClusterRoleApiResponse =
 export type PatchRbacAuthorizationV1ClusterRoleApiArg = {
   /** name of the ClusterRole */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1292,7 +1471,7 @@ export type ListRbacAuthorizationV1NamespacedRoleBindingApiResponse =
 export type ListRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1343,7 +1522,7 @@ export type CreateRbacAuthorizationV1NamespacedRoleBindingApiResponse =
 export type CreateRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1360,7 +1539,7 @@ export type DeleteRbacAuthorizationV1CollectionNamespacedRoleBindingApiResponse 
 export type DeleteRbacAuthorizationV1CollectionNamespacedRoleBindingApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1417,7 +1596,7 @@ export type ReadRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceRbacAuthorizationV1NamespacedRoleBindingApiResponse =
@@ -1429,7 +1608,7 @@ export type ReplaceRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1450,7 +1629,7 @@ export type DeleteRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1473,7 +1652,7 @@ export type PatchRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1506,7 +1685,7 @@ export type ListRbacAuthorizationV1NamespacedRoleApiResponse =
 export type ListRbacAuthorizationV1NamespacedRoleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -1557,7 +1736,7 @@ export type CreateRbacAuthorizationV1NamespacedRoleApiResponse =
 export type CreateRbacAuthorizationV1NamespacedRoleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1574,7 +1753,7 @@ export type DeleteRbacAuthorizationV1CollectionNamespacedRoleApiResponse =
 export type DeleteRbacAuthorizationV1CollectionNamespacedRoleApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -1631,7 +1810,7 @@ export type ReadRbacAuthorizationV1NamespacedRoleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceRbacAuthorizationV1NamespacedRoleApiResponse =
@@ -1642,7 +1821,7 @@ export type ReplaceRbacAuthorizationV1NamespacedRoleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1663,7 +1842,7 @@ export type DeleteRbacAuthorizationV1NamespacedRoleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1685,7 +1864,7 @@ export type PatchRbacAuthorizationV1NamespacedRoleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -1730,7 +1909,7 @@ export type ListRbacAuthorizationV1RoleBindingForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1776,7 +1955,7 @@ export type ListRbacAuthorizationV1RoleForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1822,7 +2001,7 @@ export type WatchRbacAuthorizationV1ClusterRoleBindingListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1870,7 +2049,7 @@ export type WatchRbacAuthorizationV1ClusterRoleBindingApiArg = {
   limit?: number
   /** name of the ClusterRoleBinding */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1916,7 +2095,7 @@ export type WatchRbacAuthorizationV1ClusterRoleListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -1964,7 +2143,7 @@ export type WatchRbacAuthorizationV1ClusterRoleApiArg = {
   limit?: number
   /** name of the ClusterRole */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2012,7 +2191,7 @@ export type WatchRbacAuthorizationV1NamespacedRoleBindingListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2062,7 +2241,7 @@ export type WatchRbacAuthorizationV1NamespacedRoleBindingApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2110,7 +2289,7 @@ export type WatchRbacAuthorizationV1NamespacedRoleListApiArg = {
   limit?: number
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2160,7 +2339,7 @@ export type WatchRbacAuthorizationV1NamespacedRoleApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2206,7 +2385,7 @@ export type WatchRbacAuthorizationV1RoleBindingListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -2252,7 +2431,7 @@ export type WatchRbacAuthorizationV1RoleListForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listAutoscalingV1NamespacedVerticalPodAutoscalerCheckpoint = (
-  args: ListAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listAutoscalingV1NamespacedVerticalPodAutoscalerCheckpoint(
+  args: NoWatch<ListAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg>,
   options?: Options
-) => {
+): Promise<ListAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiResponse>
+export function listAutoscalingV1NamespacedVerticalPodAutoscalerCheckpoint(
+  args: ListAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiResponse>
+): Promise<void>
+export function listAutoscalingV1NamespacedVerticalPodAutoscalerCheckpoint(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiResponse>(
     {
       path: `/apis/autoscaling.k8s.io/v1/namespaces/${args['namespace']}/verticalpodautoscalercheckpoints`,
@@ -43,32 +57,42 @@ export const createAutoscalingV1NamespacedVerticalPodAutoscalerCheckpoint = (
     options
   )
 }
-export const deleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpoint =
-  (
-    args: DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpointApiArg,
-    options?: Options
-  ) => {
-    return apiClient<DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpointApiResponse>(
-      {
-        path: `/apis/autoscaling.k8s.io/v1/namespaces/${args['namespace']}/verticalpodautoscalercheckpoints`,
-        method: 'DELETE',
-        params: {
-          pretty: args.pretty,
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
+export function deleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpoint(
+  args: NoWatch<DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpointApiArg>,
+  options?: Options
+): Promise<DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpointApiResponse>
+export function deleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpoint(
+  args: DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpointApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpointApiResponse>
+): Promise<void>
+export function deleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpoint(
+  args: any,
+  options: any
+): any {
+  return apiClient<DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpointApiResponse>(
+    {
+      path: `/apis/autoscaling.k8s.io/v1/namespaces/${args['namespace']}/verticalpodautoscalercheckpoints`,
+      method: 'DELETE',
+      params: {
+        pretty: args.pretty,
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
       },
-      options
-    )
-  }
+    },
+    options
+  )
+}
 export const readAutoscalingV1NamespacedVerticalPodAutoscalerCheckpoint = (
   args: ReadAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg,
   options?: Options
@@ -143,10 +167,21 @@ export const patchAutoscalingV1NamespacedVerticalPodAutoscalerCheckpoint = (
     options
   )
 }
-export const listAutoscalingV1NamespacedVerticalPodAutoscaler = (
-  args: ListAutoscalingV1NamespacedVerticalPodAutoscalerApiArg,
+export function listAutoscalingV1NamespacedVerticalPodAutoscaler(
+  args: NoWatch<ListAutoscalingV1NamespacedVerticalPodAutoscalerApiArg>,
   options?: Options
-) => {
+): Promise<ListAutoscalingV1NamespacedVerticalPodAutoscalerApiResponse>
+export function listAutoscalingV1NamespacedVerticalPodAutoscaler(
+  args: ListAutoscalingV1NamespacedVerticalPodAutoscalerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAutoscalingV1NamespacedVerticalPodAutoscalerApiResponse>
+): Promise<void>
+export function listAutoscalingV1NamespacedVerticalPodAutoscaler(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAutoscalingV1NamespacedVerticalPodAutoscalerApiResponse>(
     {
       path: `/apis/autoscaling.k8s.io/v1/namespaces/${args['namespace']}/verticalpodautoscalers`,
@@ -187,10 +222,21 @@ export const createAutoscalingV1NamespacedVerticalPodAutoscaler = (
     options
   )
 }
-export const deleteAutoscalingV1CollectionNamespacedVerticalPodAutoscaler = (
-  args: DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerApiArg,
+export function deleteAutoscalingV1CollectionNamespacedVerticalPodAutoscaler(
+  args: NoWatch<DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerApiArg>,
   options?: Options
-) => {
+): Promise<DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerApiResponse>
+export function deleteAutoscalingV1CollectionNamespacedVerticalPodAutoscaler(
+  args: DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerApiResponse>
+): Promise<void>
+export function deleteAutoscalingV1CollectionNamespacedVerticalPodAutoscaler(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerApiResponse>(
     {
       path: `/apis/autoscaling.k8s.io/v1/namespaces/${args['namespace']}/verticalpodautoscalers`,
@@ -286,35 +332,56 @@ export const patchAutoscalingV1NamespacedVerticalPodAutoscaler = (
     options
   )
 }
-export const listAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespaces =
-  (
-    args: ListAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespacesApiArg,
-    options?: Options
-  ) => {
-    return apiClient<ListAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespacesApiResponse>(
-      {
-        path: `/apis/autoscaling.k8s.io/v1/verticalpodautoscalercheckpoints`,
-        params: {
-          allowWatchBookmarks: args.allowWatchBookmarks,
-          continue: args['continue'],
-          fieldSelector: args.fieldSelector,
-          labelSelector: args.labelSelector,
-          limit: args.limit,
-          pretty: args.pretty,
-          resourceVersion: args.resourceVersion,
-          resourceVersionMatch: args.resourceVersionMatch,
-          sendInitialEvents: args.sendInitialEvents,
-          timeoutSeconds: args.timeoutSeconds,
-          watch: args.watch,
-        },
-      },
-      options
-    )
-  }
-export const listAutoscalingV1VerticalPodAutoscalerForAllNamespaces = (
-  args: ListAutoscalingV1VerticalPodAutoscalerForAllNamespacesApiArg,
+export function listAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespaces(
+  args: NoWatch<ListAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespacesApiResponse>
+export function listAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespaces(
+  args: ListAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespacesApiResponse>
+): Promise<void>
+export function listAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespaces(
+  args: any,
+  options: any
+): any {
+  return apiClient<ListAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespacesApiResponse>(
+    {
+      path: `/apis/autoscaling.k8s.io/v1/verticalpodautoscalercheckpoints`,
+      params: {
+        allowWatchBookmarks: args.allowWatchBookmarks,
+        continue: args['continue'],
+        fieldSelector: args.fieldSelector,
+        labelSelector: args.labelSelector,
+        limit: args.limit,
+        pretty: args.pretty,
+        resourceVersion: args.resourceVersion,
+        resourceVersionMatch: args.resourceVersionMatch,
+        sendInitialEvents: args.sendInitialEvents,
+        timeoutSeconds: args.timeoutSeconds,
+        watch: args.watch,
+      },
+    },
+    options
+  )
+}
+export function listAutoscalingV1VerticalPodAutoscalerForAllNamespaces(
+  args: NoWatch<ListAutoscalingV1VerticalPodAutoscalerForAllNamespacesApiArg>,
+  options?: Options
+): Promise<ListAutoscalingV1VerticalPodAutoscalerForAllNamespacesApiResponse>
+export function listAutoscalingV1VerticalPodAutoscalerForAllNamespaces(
+  args: ListAutoscalingV1VerticalPodAutoscalerForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListAutoscalingV1VerticalPodAutoscalerForAllNamespacesApiResponse>
+): Promise<void>
+export function listAutoscalingV1VerticalPodAutoscalerForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListAutoscalingV1VerticalPodAutoscalerForAllNamespacesApiResponse>(
     {
       path: `/apis/autoscaling.k8s.io/v1/verticalpodautoscalers`,
@@ -340,7 +407,7 @@ export type ListAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiRespons
 export type ListAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -392,7 +459,7 @@ export type CreateAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -416,7 +483,7 @@ export type DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerCheckpoi
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -466,7 +533,7 @@ export type ReadAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -483,7 +550,7 @@ export type ReplaceAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg 
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -511,7 +578,7 @@ export type DeleteAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -539,7 +606,7 @@ export type PatchAutoscalingV1NamespacedVerticalPodAutoscalerCheckpointApiArg =
     name: string
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
     dryRun?: string
@@ -568,7 +635,7 @@ export type ListAutoscalingV1NamespacedVerticalPodAutoscalerApiResponse =
 export type ListAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -619,7 +686,7 @@ export type CreateAutoscalingV1NamespacedVerticalPodAutoscalerApiResponse =
 export type CreateAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -643,7 +710,7 @@ export type DeleteAutoscalingV1CollectionNamespacedVerticalPodAutoscalerApiArg =
   {
     /** object name and auth scope, such as for teams and projects */
     namespace: string
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
     allowWatchBookmarks?: boolean
@@ -693,7 +760,7 @@ export type ReadAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -709,7 +776,7 @@ export type ReplaceAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -736,7 +803,7 @@ export type DeleteAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -763,7 +830,7 @@ export type PatchAutoscalingV1NamespacedVerticalPodAutoscalerApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -805,7 +872,7 @@ export type ListAutoscalingV1VerticalPodAutoscalerCheckpointForAllNamespacesApiA
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
     limit?: number
-    /** If 'true', then the output is pretty printed. */
+    /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
     pretty?: string
     /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -851,7 +918,7 @@ export type ListAutoscalingV1VerticalPodAutoscalerForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

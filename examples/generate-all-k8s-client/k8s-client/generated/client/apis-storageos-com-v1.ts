@@ -1,8 +1,22 @@
-import { apiClient, type Options } from '../../client'
-export const listStorageosComV1NamespacedStorageOsCluster = (
-  args: ListStorageosComV1NamespacedStorageOsClusterApiArg,
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
+export function listStorageosComV1NamespacedStorageOsCluster(
+  args: NoWatch<ListStorageosComV1NamespacedStorageOsClusterApiArg>,
   options?: Options
-) => {
+): Promise<ListStorageosComV1NamespacedStorageOsClusterApiResponse>
+export function listStorageosComV1NamespacedStorageOsCluster(
+  args: ListStorageosComV1NamespacedStorageOsClusterApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListStorageosComV1NamespacedStorageOsClusterApiResponse>
+): Promise<void>
+export function listStorageosComV1NamespacedStorageOsCluster(
+  args: any,
+  options: any
+): any {
   return apiClient<ListStorageosComV1NamespacedStorageOsClusterApiResponse>(
     {
       path: `/apis/storageos.com/v1/namespaces/${args['namespace']}/storageosclusters`,
@@ -43,10 +57,21 @@ export const createStorageosComV1NamespacedStorageOsCluster = (
     options
   )
 }
-export const deleteStorageosComV1CollectionNamespacedStorageOsCluster = (
-  args: DeleteStorageosComV1CollectionNamespacedStorageOsClusterApiArg,
+export function deleteStorageosComV1CollectionNamespacedStorageOsCluster(
+  args: NoWatch<DeleteStorageosComV1CollectionNamespacedStorageOsClusterApiArg>,
   options?: Options
-) => {
+): Promise<DeleteStorageosComV1CollectionNamespacedStorageOsClusterApiResponse>
+export function deleteStorageosComV1CollectionNamespacedStorageOsCluster(
+  args: DeleteStorageosComV1CollectionNamespacedStorageOsClusterApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<DeleteStorageosComV1CollectionNamespacedStorageOsClusterApiResponse>
+): Promise<void>
+export function deleteStorageosComV1CollectionNamespacedStorageOsCluster(
+  args: any,
+  options: any
+): any {
   return apiClient<DeleteStorageosComV1CollectionNamespacedStorageOsClusterApiResponse>(
     {
       path: `/apis/storageos.com/v1/namespaces/${args['namespace']}/storageosclusters`,
@@ -195,10 +220,21 @@ export const patchStorageosComV1NamespacedStorageOsClusterStatus = (
     options
   )
 }
-export const listStorageosComV1StorageOsClusterForAllNamespaces = (
-  args: ListStorageosComV1StorageOsClusterForAllNamespacesApiArg,
+export function listStorageosComV1StorageOsClusterForAllNamespaces(
+  args: NoWatch<ListStorageosComV1StorageOsClusterForAllNamespacesApiArg>,
   options?: Options
-) => {
+): Promise<ListStorageosComV1StorageOsClusterForAllNamespacesApiResponse>
+export function listStorageosComV1StorageOsClusterForAllNamespaces(
+  args: ListStorageosComV1StorageOsClusterForAllNamespacesApiArg & {
+    watch: true
+  },
+  options: Options &
+    WatchExtraOptions<ListStorageosComV1StorageOsClusterForAllNamespacesApiResponse>
+): Promise<void>
+export function listStorageosComV1StorageOsClusterForAllNamespaces(
+  args: any,
+  options: any
+): any {
   return apiClient<ListStorageosComV1StorageOsClusterForAllNamespacesApiResponse>(
     {
       path: `/apis/storageos.com/v1/storageosclusters`,
@@ -224,7 +260,7 @@ export type ListStorageosComV1NamespacedStorageOsClusterApiResponse =
 export type ListStorageosComV1NamespacedStorageOsClusterApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -275,7 +311,7 @@ export type CreateStorageosComV1NamespacedStorageOsClusterApiResponse =
 export type CreateStorageosComV1NamespacedStorageOsClusterApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -298,7 +334,7 @@ export type DeleteStorageosComV1CollectionNamespacedStorageOsClusterApiResponse 
 export type DeleteStorageosComV1CollectionNamespacedStorageOsClusterApiArg = {
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -348,7 +384,7 @@ export type ReadStorageosComV1NamespacedStorageOsClusterApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -364,7 +400,7 @@ export type ReplaceStorageosComV1NamespacedStorageOsClusterApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -391,7 +427,7 @@ export type DeleteStorageosComV1NamespacedStorageOsClusterApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -418,7 +454,7 @@ export type PatchStorageosComV1NamespacedStorageOsClusterApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -449,7 +485,7 @@ export type ReadStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -465,7 +501,7 @@ export type ReplaceStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -490,7 +526,7 @@ export type PatchStorageosComV1NamespacedStorageOsClusterStatusApiArg = {
   name: string
   /** object name and auth scope, such as for teams and projects */
   namespace: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -531,7 +567,7 @@ export type ListStorageosComV1StorageOsClusterForAllNamespacesApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     

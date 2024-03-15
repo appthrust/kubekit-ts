@@ -1,4 +1,7 @@
-import { apiClient, type Options } from '../../client'
+import { apiClient, type Options, type WatchExtraOptions } from '../../client'
+type NoWatch<T> = Omit<T, 'watch'> & {
+  watch?: false
+}
 export const getNodeV1ApiResources = (
   args: GetNodeV1ApiResourcesApiArg,
   options?: Options
@@ -8,10 +11,17 @@ export const getNodeV1ApiResources = (
     options
   )
 }
-export const listNodeV1RuntimeClass = (
-  args: ListNodeV1RuntimeClassApiArg,
+export function listNodeV1RuntimeClass(
+  args: NoWatch<ListNodeV1RuntimeClassApiArg>,
   options?: Options
-) => {
+): Promise<ListNodeV1RuntimeClassApiResponse>
+export function listNodeV1RuntimeClass(
+  args: ListNodeV1RuntimeClassApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<ListNodeV1RuntimeClassApiResponse>
+): Promise<void>
+export function listNodeV1RuntimeClass(args: any, options: any): any {
   return apiClient<ListNodeV1RuntimeClassApiResponse>(
     {
       path: `/apis/node.k8s.io/v1/runtimeclasses`,
@@ -155,10 +165,17 @@ export const patchNodeV1RuntimeClass = (
     options
   )
 }
-export const watchNodeV1RuntimeClassList = (
-  args: WatchNodeV1RuntimeClassListApiArg,
+export function watchNodeV1RuntimeClassList(
+  args: NoWatch<WatchNodeV1RuntimeClassListApiArg>,
   options?: Options
-) => {
+): Promise<WatchNodeV1RuntimeClassListApiResponse>
+export function watchNodeV1RuntimeClassList(
+  args: WatchNodeV1RuntimeClassListApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchNodeV1RuntimeClassListApiResponse>
+): Promise<void>
+export function watchNodeV1RuntimeClassList(args: any, options: any): any {
   return apiClient<WatchNodeV1RuntimeClassListApiResponse>(
     {
       path: `/apis/node.k8s.io/v1/watch/runtimeclasses`,
@@ -179,10 +196,17 @@ export const watchNodeV1RuntimeClassList = (
     options
   )
 }
-export const watchNodeV1RuntimeClass = (
-  args: WatchNodeV1RuntimeClassApiArg,
+export function watchNodeV1RuntimeClass(
+  args: NoWatch<WatchNodeV1RuntimeClassApiArg>,
   options?: Options
-) => {
+): Promise<WatchNodeV1RuntimeClassApiResponse>
+export function watchNodeV1RuntimeClass(
+  args: WatchNodeV1RuntimeClassApiArg & {
+    watch: true
+  },
+  options: Options & WatchExtraOptions<WatchNodeV1RuntimeClassApiResponse>
+): Promise<void>
+export function watchNodeV1RuntimeClass(args: any, options: any): any {
   return apiClient<WatchNodeV1RuntimeClassApiResponse>(
     {
       path: `/apis/node.k8s.io/v1/watch/runtimeclasses/${args.name}`,
@@ -209,7 +233,7 @@ export type GetNodeV1ApiResourcesApiArg = void
 export type ListNodeV1RuntimeClassApiResponse =
   /** status 200 OK */ IoK8SApiNodeV1RuntimeClassList
 export type ListNodeV1RuntimeClassApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** allowWatchBookmarks requests watch events with type "BOOKMARK". Servers that do not implement bookmarks may ignore this flag and bookmarks are sent at the server's discretion. Clients should not assume bookmarks are returned at any specific interval, nor may they assume the server will send any BOOKMARK event during a session. If this is not a watch, this field is ignored. */
   allowWatchBookmarks?: boolean
@@ -258,7 +282,7 @@ export type CreateNodeV1RuntimeClassApiResponse =
   | /** status 201 Created */ IoK8SApiNodeV1RuntimeClass
   | /** status 202 Accepted */ IoK8SApiNodeV1RuntimeClass
 export type CreateNodeV1RuntimeClassApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -273,7 +297,7 @@ export type CreateNodeV1RuntimeClassApiArg = {
 export type DeleteNodeV1CollectionRuntimeClassApiResponse =
   /** status 200 OK */ IoK8SApimachineryPkgApisMetaV1Status
 export type DeleteNodeV1CollectionRuntimeClassApiArg = {
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server, the server will respond with a 410 ResourceExpired error together with a continue token. If the client needs a consistent list, it must restart their list without the continue field. Otherwise, the client may send another list request with the token received with the 410 error, the server will respond with a list starting from the next key, but from the latest snapshot, which is inconsistent from the previous list results - objects that are created, modified, or deleted after the first list request will be included in the response, as long as their keys are after the "next key".
     
@@ -328,7 +352,7 @@ export type ReadNodeV1RuntimeClassApiResponse =
 export type ReadNodeV1RuntimeClassApiArg = {
   /** name of the RuntimeClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
 }
 export type ReplaceNodeV1RuntimeClassApiResponse =
@@ -338,7 +362,7 @@ export type ReplaceNodeV1RuntimeClassApiResponse =
 export type ReplaceNodeV1RuntimeClassApiArg = {
   /** name of the RuntimeClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -357,7 +381,7 @@ export type DeleteNodeV1RuntimeClassApiResponse =
 export type DeleteNodeV1RuntimeClassApiArg = {
   /** name of the RuntimeClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -378,7 +402,7 @@ export type PatchNodeV1RuntimeClassApiResponse =
 export type PatchNodeV1RuntimeClassApiArg = {
   /** name of the RuntimeClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed */
   dryRun?: string
@@ -423,7 +447,7 @@ export type WatchNodeV1RuntimeClassListApiArg = {
     
     The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned. */
   limit?: number
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
@@ -471,7 +495,7 @@ export type WatchNodeV1RuntimeClassApiArg = {
   limit?: number
   /** name of the RuntimeClass */
   name: string
-  /** If 'true', then the output is pretty printed. */
+  /** If 'true', then the output is pretty printed. Defaults to 'false' unless the user-agent indicates a browser or command-line HTTP tool (curl and wget). */
   pretty?: string
   /** resourceVersion sets a constraint on what resource versions a request may be served from. See https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions for details.
     
