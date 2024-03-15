@@ -34,3 +34,5 @@ typesversions
 generated
 tmp
 eks-blueprints-add-ons
+
+examples/generate-vercel-client/swagger.json

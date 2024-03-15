@@ -60,5 +60,8 @@
     "test": "yarn test:packages",
     "build:packages": "yarn workspaces foreach --include '@reduxjs/*' --include '@rtk-query/*' --topological-dev run build",
     "test:packages": "yarn workspaces foreach --include '@reduxjs/*' --include '@rtk-query/*'  --include '@rtk-incubator/*' run test"
+  },
+  "dependencies": {
+    "undici": "^5.28.3"
   }
 }
