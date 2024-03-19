@@ -1,7 +1,7 @@
 import {
   createCoreV1NamespacedPod,
   deleteCoreV1NamespacedPod,
-  listCoreV1NamespacedPod,
+  listCoreV1PodForAllNamespaces,
   patchCoreV1NamespacedPod,
   patchCoreV1NamespacedPodStatus,
   readCoreV1NamespacedPod,
@@ -23,9 +23,20 @@ import {
 //   restartPolicy: Never
 
 async function main() {
-  await listCoreV1NamespacedPod({
-    namespace: 'default',
+  await listCoreV1PodForAllNamespaces(
+    {
+      // namespace: 'cert-manager',
+      watch: true,
+    },
+    {
+      watchEventHandler: console.log,
+    }
+  )
+  await listCoreV1PodForAllNamespaces({
+    // namespace: 'cert-manager',
+    watch: false,
   })
+
   await createCoreV1NamespacedPod({
     namespace: 'default',
     body: {
@@ -43,6 +54,7 @@ async function main() {
       },
     },
   })
+
   await patchCoreV1NamespacedPod({
     namespace: 'default',
     name: 'test',
@@ -145,6 +157,8 @@ async function main() {
     namespace: 'default',
     body: {},
   })
+
+  console.info('Successfully')
 }
 main()
 

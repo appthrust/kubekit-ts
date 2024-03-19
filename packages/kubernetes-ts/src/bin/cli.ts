@@ -8,7 +8,7 @@ import { version as tsVersion } from 'typescript';
 
 if (!semver.satisfies(tsVersion, '>=5.2')) {
   console.warn(
-    'Please note that `kahirokunn/kubernetes-typescript-client-codegen-openapi` only has been tested with TS versions 5.2 - other versions might cause problems.'
+    'Please note that `appthrust/kubernetes-ts` only has been tested with TS versions 5.2 - other versions might cause problems.'
   );
 }
 

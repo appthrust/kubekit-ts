@@ -2,7 +2,7 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./test/fixtures/*"],
-      "kahirokunn/kubernetes-typescript-client-codegen-openapi": ["./src"]
+      "appthrust/kubernetes-ts": ["./src"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

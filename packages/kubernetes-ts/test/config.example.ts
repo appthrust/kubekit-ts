@@ -1,4 +1,4 @@
-import type { ConfigFile } from 'kahirokunn/kubernetes-typescript-client-codegen-openapi';
+import type { ConfigFile } from 'appthrust/kubernetes-ts';
 
 const config: ConfigFile = {
   schemaFile: './fixtures/api-openapi-spec-v3-api-v1-swagger.json',

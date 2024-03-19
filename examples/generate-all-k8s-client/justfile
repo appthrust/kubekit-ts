@@ -41,7 +41,7 @@ generate-code:
   sleep 20
 
   deno run --allow-write --allow-read --allow-env --allow-run --allow-net=deno.land  ./scripts/codegen.ts
-  npx prettier -w ./tmp/api/openapi-spec/ ./generate-all-k8s-client
+  npx prettier -w ./tmp/api/openapi-spec/
 
 delete-cluster:
   kind delete cluster --name openapi
