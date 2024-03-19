@@ -40,8 +40,8 @@ generate-code:
   echo Waiting for CRDs to be ready
   sleep 20
 
-  deno run --allow-write --allow-read --allow-env --allow-run --allow-net=deno.land  ./scripts/codegen.ts
-  npx prettier -w ./tmp/api/openapi-spec/
+  deno run --allow-write --allow-read --allow-env --allow-run --allow-net=deno.land ./scripts/codegen.ts
+  npx prettier -w ./tmp/api/openapi-spec/ k8s-client/
 
 delete-cluster:
   kind delete cluster --name openapi

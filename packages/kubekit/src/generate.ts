@@ -120,7 +120,7 @@ export async function generateApi(
         generateImportNode(apiFile, {
           [apiImport]: { isTypeOnly: false, name: 'apiClient' },
           [optionsImport]: { isTypeOnly: true, name: 'Options' },
-          [watchExtraOptions]: { isTypeOnly: true, name: 'WatchExtraOptions' }
+          [watchExtraOptions]: { isTypeOnly: true, name: 'WatchExtraOptions' },
         }),
         noWatch,
         ...operationDefinitions
@@ -485,29 +485,20 @@ function getBodyNode(bodies: { [contentType: string]: ts.TypeNode }): ts.TypeNod
 // }
 const noWatch = factory.createTypeAliasDeclaration(
   undefined,
-  factory.createIdentifier("NoWatch"),
-  [factory.createTypeParameterDeclaration(
-    undefined,
-    factory.createIdentifier("T"),
-    undefined,
-    undefined
-  )],
+  factory.createIdentifier('NoWatch'),
+  [factory.createTypeParameterDeclaration(undefined, factory.createIdentifier('T'), undefined, undefined)],
   factory.createIntersectionTypeNode([
-    factory.createTypeReferenceNode(
-      factory.createIdentifier("Omit"),
-      [
-        factory.createTypeReferenceNode(
-          factory.createIdentifier("T"),
-          undefined
-        ),
-        factory.createLiteralTypeNode(factory.createStringLiteral("watch"))
-      ]
-    ),
-    factory.createTypeLiteralNode([factory.createPropertySignature(
-      undefined,
-      factory.createIdentifier("watch"),
-      factory.createToken(ts.SyntaxKind.QuestionToken),
-      factory.createLiteralTypeNode(factory.createFalse())
-    )])
+    factory.createTypeReferenceNode(factory.createIdentifier('Omit'), [
+      factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+      factory.createLiteralTypeNode(factory.createStringLiteral('watch')),
+    ]),
+    factory.createTypeLiteralNode([
+      factory.createPropertySignature(
+        undefined,
+        factory.createIdentifier('watch'),
+        factory.createToken(ts.SyntaxKind.QuestionToken),
+        factory.createLiteralTypeNode(factory.createFalse())
+      ),
+    ]),
   ])
-)
+);

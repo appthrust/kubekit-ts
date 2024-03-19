@@ -29,7 +29,7 @@ const genK8sClientCodegenConfigSourceCode = (
   apiFile: string,
   outputFilePath: string
 ) =>
-  `import type { ConfigFile } from 'kubernetes-ts'
+  `import type { ConfigFile } from 'kubekit'
 
 const config: ConfigFile = {
   schemaFile: '${swaggerFilePath}',
@@ -91,6 +91,6 @@ await Promise.all(
         path.relative(k8sClientCodegenConfigDirectoryPath, k8sClientFilePath)
       )
     )
-    await $`npx kubernetes-ts ${k8sClientCodegenConfigFilePath}`
+    await $`npx kubekit ${k8sClientCodegenConfigFilePath}`
   })
 )

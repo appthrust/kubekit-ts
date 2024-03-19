@@ -6,6 +6,9 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
+type NoWatch<T> = Omit<T, "watch"> & {
+  watch?: false;
+};
 export const getHealthcheck = (
   args: GetHealthcheckApiArg,
   options?: Options
@@ -401,6 +404,9 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
+type NoWatch<T> = Omit<T, "watch"> & {
+  watch?: false;
+};
 export const patchApiV1ListByItemId = (
   args: PatchApiV1ListByItemIdApiArg,
   options?: Options
@@ -443,6 +449,9 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
+type NoWatch<T> = Omit<T, "watch"> & {
+  watch?: false;
+};
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   return apiClient<PlaceOrderApiResponse>(
     {
@@ -527,6 +536,9 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
+type NoWatch<T> = Omit<T, "watch"> & {
+  watch?: false;
+};
 export const patchApiV1ListByItemId = (
   args: PatchApiV1ListByItemIdApiArg,
   options?: Options
@@ -569,6 +581,9 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
+type NoWatch<T> = Omit<T, "watch"> & {
+  watch?: false;
+};
 export const getApiV1Animals = (
   args: GetApiV1AnimalsApiArg,
   options?: Options
@@ -602,6 +617,9 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
+type NoWatch<T> = Omit<T, "watch"> & {
+  watch?: false;
+};
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   return apiClient<UpdatePetApiResponse>(
     {
@@ -984,6 +1002,9 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
+type NoWatch<T> = Omit<T, "watch"> & {
+  watch?: false;
+};
 export const getStructureDefinition = (
   args: GetStructureDefinitionApiArg,
   options?: Options
@@ -1035,6 +1056,9 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
+type NoWatch<T> = Omit<T, "watch"> & {
+  watch?: false;
+};
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   return apiClient<UpdatePetApiResponse>(
     {

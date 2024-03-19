@@ -1,4 +1,4 @@
-import type { ConfigFile } from 'appthrust/kubernetes-ts';
+import type { ConfigFile } from 'appthrust/kubekit';
 
 const config: ConfigFile = {
   schemaFile: './fixtures/invalid-petstore.json',

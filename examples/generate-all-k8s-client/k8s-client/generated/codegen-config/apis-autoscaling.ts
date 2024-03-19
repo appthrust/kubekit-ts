@@ -1,4 +1,4 @@
-import type { ConfigFile } from 'kubernetes-typescript-client-codegen-openapi'
+import type { ConfigFile } from 'kubekit'
 
 const config: ConfigFile = {
   schemaFile: '../../../tmp/api/openapi-spec/v3/apis/autoscaling/swagger.json',

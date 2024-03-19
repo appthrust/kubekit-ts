@@ -2,7 +2,7 @@
   "compilerOptions": {
     "paths": {
       "@/*": ["./test/fixtures/*"],
-      "appthrust/kubernetes-ts": ["./src"]
+      "appthrust/kubekit": ["./src"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

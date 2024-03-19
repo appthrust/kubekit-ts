@@ -1,9 +1,7 @@
 .DS_Store
 *.log
 node_modules
-# Dist and query are both build output folders
 dist*/
-# But don't ignore the RTK Query source
 lib
 es
 
@@ -36,3 +34,4 @@ tmp
 eks-blueprints-add-ons
 
 examples/generate-vercel-client/swagger.json
+eks-blueprints-add-ons
