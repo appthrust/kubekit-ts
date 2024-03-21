@@ -1,6 +1,6 @@
 {
   "name": "@kubekit/codegen",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "kahirokunn",
@@ -58,6 +58,7 @@
     "@apidevtools/swagger-parser": "^10.0.2",
     "@kahirokunn/oazapfts-patched": "^0.0.1",
     "commander": "^6.2.0",
+    "deepmerge": "^4.3.1",
     "prettier": "^2.8.8",
     "semver": "^7.3.5",
     "swagger2openapi": "^7.0.4"

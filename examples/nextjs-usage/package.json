@@ -17,12 +17,13 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@kubekit/codegen": "^0.0.2",
+    "@kubekit/codegen": "0.0.3",
     "@kubekit/import": "^0.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "esbuild": "^0.20.2",
     "esbuild-runner": "^2.2.2",
     "eslint": "^8",
     "eslint-config-next": "14.1.3",
