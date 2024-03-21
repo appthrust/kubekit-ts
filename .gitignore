@@ -2,7 +2,7 @@
 *.log
 node_modules
 dist*/
-lib
+packages/kubekit-codegen/lib
 es
 
 .yalc
@@ -35,3 +35,4 @@ eks-blueprints-add-ons
 
 examples/generate-vercel-client/swagger.json
 eks-blueprints-add-ons
+openapi

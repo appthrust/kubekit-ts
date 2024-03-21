@@ -1,0 +1,40 @@
+{
+  "name": "@kubekit/client",
+  "version": "0.0.3",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "kahirokunn",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appthrust/kubekit-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/appthrust/kubekit-ts/issues"
+  },
+  "homepage": "https://github.com/appthrust/kubekit-ts",
+  "bin": "lib/bin/cli.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "cli": "esr src/bin/cli.ts"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "pretty-quick": "^4.0.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@kubernetes/client-node": "^0.20.0",
+    "undici": "^5.28.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

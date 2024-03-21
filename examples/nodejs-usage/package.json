@@ -1,0 +1,25 @@
+{
+  "name": "basic-usage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "import": "npx @kubekit/import ./",
+    "gen": "npx @kubekit/codegen gen-config/storage-config.ts && npx @kubekit/codegen gen-config/core-v1-config.ts",
+    "dev": "npx tsx src/main.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@kubekit/client": "0.0.3"
+  },
+  "devDependencies": {
+    "@kubekit/codegen": "^0.0.2",
+    "@kubekit/import": "^0.0.2",
+    "esbuild-runner": "^2.2.2"
+  }
+}
