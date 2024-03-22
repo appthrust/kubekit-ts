@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "import": "npx @kubekit/import ./",
+    "sync": "npx @kubekit/sync ./",
     "gen": "npx @kubekit/codegen gen-config/storage-config.ts && npx @kubekit/codegen gen-config/core-v1-config.ts"
   },
   "dependencies": {
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@kubekit/codegen": "0.0.3",
-    "@kubekit/import": "^0.0.2",
+    "@kubekit/sync": "^0.0.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

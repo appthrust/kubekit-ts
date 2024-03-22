@@ -196,10 +196,10 @@
     semver "^7.3.5"
     swagger2openapi "^7.0.4"
 
-"@kubekit/import@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@kubekit/import/-/import-0.0.2.tgz#9ead0f552e08d5c1ac4188f83c2d1038bd568263"
-  integrity sha512-0sEHuSkMLueA1hi85UYNYlmynlLitaRkotlgoWkwailu8kUH89KUz3U7/l7aUhOYR6ZES6NM2+WDP8E9F/3FaA==
+"@kubekit/sync@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@kubekit/sync/-/sync-0.0.3.tgz#7cad4522b022e1368870ebbb65b5d58027e8534f"
+  integrity sha512-C46dP00LuV1tv6OaxcKDrF6j4Jkk//+uFYXsFeOWXHCTr/o4/0QGRr28tVYKh1DCHrpZeBvQQZMR2GFl1NHBzQ==
 
 "@kubernetes/client-node@^0.20.0":
   version "0.20.0"
@@ -1019,9 +1019,9 @@ swagger2openapi@^7.0.4, swagger2openapi@^7.0.8:
     yargs "^17.0.1"
 
 tar@^6.1.11:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/tar/-/tar-6.2.0.tgz#b14ce49a79cb1cd23bc9b016302dea5474493f73"
-  integrity sha512-/Wo7DcT0u5HUV486xg675HtjNd3BXZ6xDbzsCUZPt5iw8bTQ63bP0Raut3mvro9u+CUyq7YQd8Cx55fsZXxqLQ==
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/tar/-/tar-6.2.1.tgz#717549c541bc3c2af15751bea94b1dd068d4b03a"
+  integrity sha512-DZ4yORTwrbTj/7MZYq2w+/ZFdI6OZ/f9SFHR+71gIVUZhOQPHzVCLpvRnPgyaMpfWxxk/4ONva3GQSyNIKRv6A==
   dependencies:
     chownr "^2.0.0"
     fs-minipass "^2.0.0"

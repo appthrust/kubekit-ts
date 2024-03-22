@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "import": "npx @kubekit/import ./",
+    "sync": "npx @kubekit/sync ./",
     "gen": "npx @kubekit/codegen gen-config/storage-config.ts && npx @kubekit/codegen gen-config/core-v1-config.ts",
     "dev": "npx tsx src/main.ts"
   },
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@kubekit/codegen": "0.0.3",
-    "@kubekit/import": "^0.0.2",
+    "@kubekit/sync": "^0.0.3",
     "esbuild": "^0.20.2",
     "esbuild-runner": "^2.2.2"
   }
