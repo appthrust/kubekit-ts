@@ -1,6 +1,6 @@
 {
   "name": "@kubekit/import",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/index.js",
   "author": "kahirokunn",
   "license": "MIT",
@@ -28,6 +28,7 @@
     }
   },
   "devDependencies": {
+    "@types/node": "^20.11.30",
     "openapi-types": "^12.1.3",
     "typescript": "^5.3"
   }
