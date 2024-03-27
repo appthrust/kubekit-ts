@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sync": "npx @kubekit/sync ./",
+    "sync": "sync ./",
     "gen": "npx @kubekit/codegen gen-config/storage-config.ts && npx @kubekit/codegen gen-config/core-v1-config.ts"
   },
   "dependencies": {
