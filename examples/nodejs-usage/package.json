@@ -15,7 +15,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@kubekit/client": "0.0.3"
+    "@kubekit/client": "0.0.4"
   },
   "devDependencies": {
     "@kubekit/codegen": "0.0.3",

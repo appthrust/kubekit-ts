@@ -30,7 +30,7 @@ async function main() {
     },
     {
       watchEventHandler: console.log,
-    }
+    },
   )
   await listCoreV1PodForAllNamespaces({
     // namespace: 'cert-manager',
@@ -169,7 +169,7 @@ type Retry = typeof retry
 
 async function wait<T>(
   executor: Executor<T>,
-  { interval = 500, timeout = 5000 } = {}
+  { interval = 500, timeout = 5000 } = {},
 ): Promise<T> {
   const startTime = Date.now()
 

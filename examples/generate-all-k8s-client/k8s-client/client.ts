@@ -8,7 +8,7 @@ type RemoveUndefined<T> = {
 }
 
 export function removeNullableProperties<
-  T extends Record<string, unknown | undefined> | undefined
+  T extends Record<string, unknown | undefined> | undefined,
 >(object: T): RemoveUndefined<T> {
   if (!object) return object as RemoveUndefined<T>
   for (const key of Object.keys(object))
@@ -34,7 +34,7 @@ async function defaultBackoff(attempt: number, maxRetries: number) {
 
   const timeout = Math.trunc((Math.random() + 0.4) * (300 << attempts))
   await new Promise((resolve) =>
-    setTimeout((response: any) => resolve(response), timeout)
+    setTimeout((response: any) => resolve(response), timeout),
   )
 }
 
@@ -64,7 +64,7 @@ type InterceptorArguments = {
 }
 type Interceptor = (
   arguments_: InterceptorArguments,
-  options: Options
+  options: Options,
 ) => MaybePromise<https.RequestOptions>
 
 const interceptors: Interceptor[] = [
@@ -115,7 +115,7 @@ export type Options = RetryOptions & HttpOptions
 
 export async function apiClient<Response>(
   arguments_: QueryArgumentsSpec,
-  extraOptions: Options | (Options & WatchExtraOptions<Response>) = {}
+  extraOptions: Options | (Options & WatchExtraOptions<Response>) = {},
 ): Promise<Response | void> {
   const maxRetries = extraOptions.maxRetries ?? 3
 
@@ -127,7 +127,7 @@ export async function apiClient<Response>(
 
     if (typeof error === 'object' && error !== null) {
       const isAbortError = Boolean(
-        'name' in error && error.name === 'AbortError'
+        'name' in error && error.name === 'AbortError',
       )
 
       if (isAbortError) {
@@ -174,7 +174,7 @@ export async function apiClient<Response>(
         args: arguments_,
         opts: httpsOptions,
       },
-      options
+      options,
     )
   }
 
@@ -237,7 +237,7 @@ export async function apiClient<Response>(
           dispatcher: httpsOptions.agent,
           body,
           signal: extraOptions.signal,
-        })
+        }),
       )
 
       const isSuccess = response.status >= 200 && response.status < 300
@@ -278,7 +278,7 @@ export async function apiClient<Response>(
       const text = await response.text()
       if (response.status === 404 && text.includes('404 page not found')) {
         console.info(
-          `Did you forget to install your Custom Resources Definitions? path: ${httpsOptions.path}`
+          `Did you forget to install your Custom Resources Definitions? path: ${httpsOptions.path}`,
         )
       }
       throw new Error(text)

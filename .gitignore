@@ -3,6 +3,7 @@
 node_modules
 dist*/
 packages/kubekit-codegen/lib
+packages/kubekit-sync/lib
 es
 
 .yalc

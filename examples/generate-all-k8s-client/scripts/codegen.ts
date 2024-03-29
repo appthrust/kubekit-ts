@@ -27,7 +27,7 @@ const source = JSON.parse(res.toString()) as SwaggerV3
 const genK8sClientCodegenConfigSourceCode = (
   swaggerFilePath: string,
   apiFile: string,
-  outputFilePath: string
+  outputFilePath: string,
 ) =>
   `import type { ConfigFile } from 'kubekit'
 
@@ -43,7 +43,7 @@ const cwd = Deno.cwd()
 
 const k8sClientCodegenConfigDirectoryPath = path.join(
   cwd,
-  '/k8s-client/generated/codegen-config'
+  '/k8s-client/generated/codegen-config',
 )
 const k8sClientDirectoryPath = path.join(cwd, 'k8s-client/generated/client')
 await $`mkdir -p ${k8sClientCodegenConfigDirectoryPath}`
@@ -55,20 +55,20 @@ await Promise.all(
       cwd,
       'tmp/api/openapi-spec/v3',
       sourcePath,
-      'swagger.json'
+      'swagger.json',
     )
     const k8sClientCodegenConfigFilePath = path.join(
       k8sClientCodegenConfigDirectoryPath,
-      getTsFileName(sourcePath)
+      getTsFileName(sourcePath),
     )
     const k8sClientFilePath = path.join(
       k8sClientDirectoryPath,
-      getTsFileName(sourcePath)
+      getTsFileName(sourcePath),
     )
     await $`mkdir -p $(dirname ${swaggerFilePath})`
 
     let doc = JSON.parse(
-      (await $`kubectl get --raw /openapi/v3/${sourcePath}`).toString()
+      (await $`kubectl get --raw /openapi/v3/${sourcePath}`).toString(),
     )
 
     for (const patchFunction of patchFunctions) {
@@ -84,13 +84,13 @@ await Promise.all(
         path.join(
           path.relative(
             k8sClientCodegenConfigDirectoryPath,
-            path.join(cwd, 'k8s-client')
+            path.join(cwd, 'k8s-client'),
           ),
-          'client.ts'
+          'client.ts',
         ),
-        path.relative(k8sClientCodegenConfigDirectoryPath, k8sClientFilePath)
-      )
+        path.relative(k8sClientCodegenConfigDirectoryPath, k8sClientFilePath),
+      ),
     )
     await $`npx kubekit ${k8sClientCodegenConfigFilePath}`
-  })
+  }),
 )

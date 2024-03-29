@@ -24,11 +24,11 @@ const defaultKubeConfigPath = Deno.env.get('HOME') + '/.kube/config'
 const kubeConfigPath = Deno.env.get('KUBECONFIG') || defaultKubeConfigPath
 if (existsSync(kubeConfigPath)) {
   const kubeConfig = parse(
-    await Deno.readTextFile(kubeConfigPath)
+    await Deno.readTextFile(kubeConfigPath),
   ) as KubeConfig
   kubeConfig.users.forEach(({ user }) => {
     const AWS_PROFILE_ENV = user.exec?.env?.find(
-      (e) => e.name === 'AWS_PROFILE'
+      (e) => e.name === 'AWS_PROFILE',
     )
     const HAS_PROFILE_ARG = user.exec?.args?.find((arg) => arg === '--profile')
     if (AWS_PROFILE_ENV && !HAS_PROFILE_ARG) {

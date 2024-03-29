@@ -5,8 +5,10 @@ export default async function Home() {
   return (
     <main>
       <ul>
-        {pods.items.map((pod, i) => <li key={i}>{pod.metadata?.name}</li>)}
+        {pods.items.map((pod, i) => (
+          <li key={i}>{pod.metadata?.name}</li>
+        ))}
       </ul>
     </main>
-  );
+  )
 }
