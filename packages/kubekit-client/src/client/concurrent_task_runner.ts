@@ -17,11 +17,13 @@ export class ConcurrentTaskRunner {
   #runNextTask(): void {
     if (this.currentRunning < this.concurrency && this.taskQueue.length) {
       const task = this.taskQueue.shift()!;
-      this.currentRunning++;
-      task().finally(() => {
-        this.currentRunning--;
-        this.#runNextTask();
-      });
+      if (task) {
+        this.currentRunning++;
+        task().finally(() => {
+          this.currentRunning--;
+          this.#runNextTask();
+        });
+      }
     }
   }
 }

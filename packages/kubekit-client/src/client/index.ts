@@ -22,13 +22,7 @@ type RemoveUndefined<T> = {
   [K in keyof T]: Exclude<T[K], undefined | null>;
 };
 
-type CacheValue = Record<
-  string,
-  {
-    k8sObj: WatchEvent<K8sObj>;
-    addedAt: number;
-  }
->;
+type CacheValue = Record<string, number>;
 function removeNullableProperties<T extends Record<string, unknown | undefined> | undefined>(
   object: T
 ): RemoveUndefined<T> {
@@ -118,7 +112,7 @@ export type WatchExtraOptions<T extends { items: unknown[] }> = {
   maxWait?: number;
   wait?: number;
   concurrency?: number;
-  watchEventHandler: (e: WatchEvent<T['items'][number]>) => MaybePromise<unknown>;
+  reconcile: (e: WatchEvent<T['items'][number]>) => MaybePromise<unknown>;
 };
 export type Options = RetryOptions & HttpOptions;
 
@@ -249,9 +243,9 @@ export async function apiClient<Response>(
       const isJsonResponse = contentType?.includes('application/json') ?? false;
 
       if (isSuccess && isJsonResponse) {
-        if ('watch' in params && params.watch && response.body && 'watchEventHandler' in extraOptions) {
+        if ('watch' in params && params.watch && response.body && 'reconcile' in extraOptions) {
           const {
-            watchEventHandler,
+            reconcile,
             wait = 200,
             maxWait = 1000,
             concurrency = 4,
@@ -264,7 +258,7 @@ export async function apiClient<Response>(
           const textDecoder = new TextDecoder();
           let buffer = '';
 
-          const cache = new Map<string, CacheValue>();
+          const cache = new Debounce(wait, maxWait);
           while (true) {
             const { value, done } = await reader.read();
             if (done) {
@@ -282,44 +276,11 @@ export async function apiClient<Response>(
 
               const cacheKey = `${objectReference.namespace}/${objectReference.name}`;
 
-              const getLatestResourceVersion = () =>
-                Object.keys(cache.get(cacheKey) || {})
-                  .map((s) => Number(s))
-                  .sort()
-                  .pop() ?? -1;
-
-              const getSortedAddedAt = () =>
-                Object.values(cache.get(cacheKey) || {})
-                  .map((v) => v.addedAt)
-                  .sort()
-                  .reverse();
-
-              if (Number(k8sObj.object.metadata.resourceVersion) > getLatestResourceVersion()) {
-                cache.set(cacheKey, {
-                  ...(cache.get(cacheKey) || {}),
-                  [k8sObj.object.metadata.resourceVersion]: {
-                    k8sObj,
-                    addedAt: Number(new Date()),
-                  },
-                });
-                taskRunner.add(async () => {
-                  const sortedAddedAt = getSortedAddedAt();
-                  const isMaxWaited =
-                    sortedAddedAt.length >= 2 && sortedAddedAt[0] - sortedAddedAt[sortedAddedAt.length - 1] >= maxWait;
-
-                  if (!isMaxWaited) {
-                    await sleep(wait);
-                  }
-                  // 3. queueが溜まっている場合、実行順番が回ってくるまで時間がかかる場合がある
-                  // なので、k8sObjが現在のより新しいのが存在する可能性がある
-                  // 新しいのがある場合はwatchEventHandlerを実行しない
-                  // 一番新しいk8sObjを掴んでいるtaskが実行できる権限を持つ
-                  if (Number(k8sObj.object.metadata.resourceVersion) === getLatestResourceVersion()) {
-                    cache.set(cacheKey, {});
-                    await watchEventHandler(k8sObj as any);
-                  }
-                });
-              }
+              const { resourceVersion } = k8sObj.object.metadata;
+              cache.push(cacheKey, resourceVersion);
+              taskRunner.add(async () => {
+                await cache.skipOrExec(cacheKey, resourceVersion, () => reconcile(k8sObj as any));
+              });
             }
           }
         }
@@ -355,3 +316,52 @@ export async function apiClient<Response>(
 const toSearchParameters = (parameters: Record<string, string>) => {
   return new URLSearchParams(removeNullableProperties(parameters));
 };
+
+class Debounce {
+  #cache = new Map<string, CacheValue>();
+  #waitMilliSec: number;
+  #maxWaitMilliSec: number;
+
+  constructor(waitMilliSec: number, maxWaitMilliSec: number) {
+    this.#waitMilliSec = waitMilliSec;
+    this.#maxWaitMilliSec = maxWaitMilliSec;
+  }
+
+  push(cacheKey: string, resourceVersion: string) {
+    this.#cache.set(cacheKey, {
+      ...(this.#cache.get(cacheKey) || {}),
+      [resourceVersion]: Number(new Date()),
+    });
+  }
+
+  async skipOrExec(cacheKey: string, resourceVersion: string, func: () => unknown | Promise<unknown>) {
+    const getLatestResourceVersion = () => {
+      // TODO: 0に戻った判定も入れたい
+      return (
+        Object.keys(this.#cache.get(cacheKey) || {})
+          // resourceVersionは符号なしint64なので、文字列の状態で比較するライブラリを利用する
+          .map((s) => Number(s))
+          .sort()
+          .pop() ?? -1
+      );
+    };
+
+    const getSortedAddedAt = () =>
+      Object.values(this.#cache.get(cacheKey) || {})
+        .sort()
+        .reverse();
+
+    const sortedAddedAt = getSortedAddedAt();
+    const isMaxWaitTimeReached =
+      sortedAddedAt.length >= 2 && sortedAddedAt[0] - sortedAddedAt[sortedAddedAt.length - 1] >= this.#maxWaitMilliSec;
+
+    if (!isMaxWaitTimeReached) {
+      await sleep(this.#waitMilliSec);
+    }
+    // 1. resourceVersionは文字列で比較できる様にする
+    if (Number(resourceVersion) === getLatestResourceVersion()) {
+      this.#cache.delete(cacheKey);
+      await func();
+    }
+  }
+}
