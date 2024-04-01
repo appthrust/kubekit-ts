@@ -319,12 +319,12 @@ const toSearchParameters = (parameters: Record<string, string>) => {
 
 class Debounce {
   #cache = new Map<string, CacheValue>();
-  #waitMilliSec: number;
-  #maxWaitMilliSec: number;
+  #waitMilliSeconds: number;
+  #maxWaitMilliSeconds: number;
 
-  constructor(waitMilliSec: number, maxWaitMilliSec: number) {
-    this.#waitMilliSec = waitMilliSec;
-    this.#maxWaitMilliSec = maxWaitMilliSec;
+  constructor(waitMilliSeconds: number, maxWaitMilliSeconds: number) {
+    this.#waitMilliSeconds = waitMilliSeconds;
+    this.#maxWaitMilliSeconds = maxWaitMilliSeconds;
   }
 
   push(cacheKey: string, resourceVersion: string) {
@@ -336,14 +336,24 @@ class Debounce {
 
   async skipOrExec(cacheKey: string, resourceVersion: string, func: () => unknown | Promise<unknown>) {
     const getLatestResourceVersion = () => {
-      // TODO: 0に戻った判定も入れたい
-      return (
-        Object.keys(this.#cache.get(cacheKey) || {})
-          // resourceVersionは符号なしint64なので、文字列の状態で比較するライブラリを利用する
-          .map((s) => Number(s))
-          .sort()
-          .pop() ?? -1
-      );
+      const resourceVersions = Object.keys(this.#cache.get(cacheKey) || {});
+
+      if (resourceVersions.length === 0) {
+        return BigInt(-1);
+      }
+
+      const sorted = resourceVersions.map(BigInt).sort();
+
+      const max = sorted[sorted.length - 1];
+      const min = sorted[0];
+
+      // resourceVersionはint64を超えたら0にwrapされる仕様です.
+      // minとmaxでNumber.MAX_VALUEよりもresourceVersionが離れていたら、離れすぎなので、wrapされたと判定する事にします
+      if (max - BigInt(Number.MAX_VALUE) > min) {
+        return min;
+      }
+
+      return max;
     };
 
     const getSortedAddedAt = () =>
@@ -353,13 +363,14 @@ class Debounce {
 
     const sortedAddedAt = getSortedAddedAt();
     const isMaxWaitTimeReached =
-      sortedAddedAt.length >= 2 && sortedAddedAt[0] - sortedAddedAt[sortedAddedAt.length - 1] >= this.#maxWaitMilliSec;
+      sortedAddedAt.length >= 2 &&
+      sortedAddedAt[0] - sortedAddedAt[sortedAddedAt.length - 1] >= this.#maxWaitMilliSeconds;
 
     if (!isMaxWaitTimeReached) {
-      await sleep(this.#waitMilliSec);
+      await sleep(this.#waitMilliSeconds);
     }
     // 1. resourceVersionは文字列で比較できる様にする
-    if (Number(resourceVersion) === getLatestResourceVersion()) {
+    if (BigInt(resourceVersion) === getLatestResourceVersion()) {
       this.#cache.delete(cacheKey);
       await func();
     }
