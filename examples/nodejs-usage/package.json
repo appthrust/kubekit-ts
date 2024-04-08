@@ -1,5 +1,5 @@
 {
-  "name": "basic-usage",
+  "name": "nodejs-usage",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@kubekit/client": "0.0.4"
+    "@kubekit/client": "0.0.9"
   },
   "devDependencies": {
     "@kubekit/codegen": "0.0.3",

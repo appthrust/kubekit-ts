@@ -175,10 +175,10 @@
     swagger2openapi "^7.0.8"
     typescript "^5.2.2"
 
-"@kubekit/client@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@kubekit/client/-/client-0.0.4.tgz#74207179efc6c085ee2f2563410118f0b65c76e7"
-  integrity sha512-VMWlrVCD/bbuQ8f1odI2ALCT4TfJmnzVEu5l8d71Y5ApIUEDTq7xKrqcSi2BDjAgLrZpy0+lF/07K6Q/VVd9cw==
+"@kubekit/client@0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@kubekit/client/-/client-0.0.9.tgz#65fe5b9d7479c33175d583582ef4715ebfdf9ff5"
+  integrity sha512-zQq3K3Z+e+tRqDAlGYnTvenV7nV/b1Uc3c+Roh6tyM71rl9go2V14Pz+GnMY0ZFu4NdiwVnS/YJ7vEw1BxbULA==
   dependencies:
     "@kubernetes/client-node" "^0.20.0"
     undici "^5.28.3"
