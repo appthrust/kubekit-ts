@@ -208,6 +208,10 @@ export async function apiClient<Response>(
   let baseUrl = `${httpsOptions.protocol}//${host}`;
   const searchParameters = toSearchParameters(params);
   if (searchParameters.size > 0) {
+    // https://github.com/kubernetes/enhancements/blob/master/keps/sig-api-machinery/3157-watch-list/README.md
+    // TODO: defaultのfeature flagがtrueになったら、watchの場合は自動で以下の2つのparamsを追加してあげたい
+    // sendInitialEvents: true,
+    // resourceVersionMatch: "NotOlderThan"
     baseUrl += (baseUrl.includes('?') ? '&' : '?') + toSearchParameters(params);
   }
   const url = new URL(baseUrl);
