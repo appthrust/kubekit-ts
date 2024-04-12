@@ -107,11 +107,11 @@ type HttpOptions = {
 };
 
 type K8sListResponse<T> = {
-  kind: string,
-  apiVersion: string,
-  metadata: { resourceVersion: string },
-  items: T[]
-}
+  kind: string;
+  apiVersion: string;
+  metadata: { resourceVersion?: string | undefined };
+  items: T[];
+};
 
 export type WatchEventType = 'ADDED' | 'Modified' | 'Deleted' | 'BOOKMARK';
 type WatchEvent<T> = { type: WatchEventType; object: T };
@@ -121,7 +121,7 @@ export type WatchExtraOptions<T extends K8sListResponse<unknown>> = {
   concurrency?: number;
   watchHandler: (e: WatchEvent<T['items'][number]>) => MaybePromise<unknown>;
   // default 10h
-  syncPeriod?: number
+  syncPeriod?: number;
 };
 export type Options = RetryOptions & HttpOptions;
 
@@ -279,19 +279,24 @@ export async function apiClient<Response>(
             params: {
               ...arguments_.params,
             },
-          }
-          delete listArgs.params.watch
+          };
+          delete listArgs.params.watch;
           const { syncPeriod: __, ...listExtraOptions } = { ...extraOptions };
           const intervalId = setInterval(async () => {
-            const result = (await apiClient<K8sListResponse<K8sObj>>(listArgs, listExtraOptions)) as K8sListResponse<K8sObj>;
+            const result = (await apiClient<K8sListResponse<K8sObj>>(
+              listArgs,
+              listExtraOptions
+            )) as K8sListResponse<K8sObj>;
 
-            result.items.forEach(k8sObj => {
+            result.items.forEach((k8sObj) => {
               taskRunner.add(async () => {
                 const objectReference = k8sObj.metadata;
 
-                await debounce.skipOrExec(Debounce.getCacheKey(objectReference), objectReference.resourceVersion, () => watchHandler(k8sObj as any));
+                await debounce.skipOrExec(Debounce.getCacheKey(objectReference), objectReference.resourceVersion, () =>
+                  watchHandler(k8sObj as any)
+                );
               });
-            })
+            });
           }, syncPeriod);
           try {
             while (true) {
@@ -309,7 +314,7 @@ export async function apiClient<Response>(
                 const k8sObj: WatchEvent<K8sObj> = JSON.parse(line);
 
                 const { resourceVersion } = k8sObj.object.metadata;
-                const cacheKey = Debounce.getCacheKey(k8sObj.object.metadata)
+                const cacheKey = Debounce.getCacheKey(k8sObj.object.metadata);
                 debounce.push(cacheKey, resourceVersion);
                 taskRunner.add(async () => {
                   await debounce.skipOrExec(cacheKey, resourceVersion, () => watchHandler(k8sObj as any));
@@ -364,7 +369,7 @@ class Debounce {
   }
 
   public static getCacheKey({ namespace, name }: IoK8SApiCoreV1ObjectReference) {
-    return `${namespace || ""}/${name}`;
+    return `${namespace || ''}/${name}`;
   }
 
   push(cacheKey: string, resourceVersion: string) {
