@@ -13,18 +13,32 @@ export function patchRequiredFields(doc: OpenAPIV3.Document) {
     if (!schema.properties) {
       continue
     }
+    if (schema.required) {
+      continue
+    }
     if ("apiVersion" in schema.properties && "kind" in schema.properties&& "metadata" in schema.properties) {
-      if (!schema.required) {
-        schema.required = []
-      }
+      schema.required = [
+        "apiVersion",
+        "kind",
+        "metadata",
+      ]
+    }
+
+    if ("creationTimestamp" in schema.properties && "name" in schema.properties) {
       schema.required = uniqueArray([
-        ...schema.required,
+        ...schema.required || [],
         ...[
-          "apiVersion",
-          "kind",
-          "metadata",
+          "name",
         ]
       ])
+      if ("namespace" in schema.properties) {
+        schema.required = uniqueArray([
+          ...schema.required,
+          ...[
+            "namespace",
+          ]
+        ])
+      }
     }
   }
 
