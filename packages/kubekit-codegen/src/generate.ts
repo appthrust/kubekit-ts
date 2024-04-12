@@ -270,7 +270,9 @@ export async function generateApi(
     };
 
     const queryArgValues = Object.values(queryArg);
-    const isWatch = verb.toUpperCase() === 'GET' &&
+    const isListWatch =
+      !path.includes('/watch/') &&
+      verb.toUpperCase() === 'GET' &&
       queryArgValues.findIndex(
         (queryArg) => queryArg.origin === 'param' && queryArg.param.name === 'watch' && queryArg.param.in === 'query'
       ) !== -1;
@@ -319,7 +321,7 @@ export async function generateApi(
       Response: ResponseTypeName,
       QueryArg,
       queryFn: generateQueryFn({ operationDefinition, queryArg }),
-      isWatch,
+      isListWatch,
     });
   }
 

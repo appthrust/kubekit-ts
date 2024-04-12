@@ -77,15 +77,15 @@ export function generateEndpointDefinition({
   Response,
   QueryArg,
   queryFn,
-  isWatch,
+  isListWatch,
 }: {
   operationName: string;
   Response: ts.TypeReferenceNode;
   QueryArg: ts.TypeReferenceNode;
   queryFn: ts.ObjectLiteralExpression;
-  isWatch: boolean;
+  isListWatch: boolean;
 }) {
-  if (!isWatch) {
+  if (!isListWatch) {
     return [
       factory.createVariableStatement(
         [factory.createToken(ts.SyntaxKind.ExportKeyword)],
