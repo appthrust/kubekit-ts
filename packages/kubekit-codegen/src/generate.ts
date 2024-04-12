@@ -270,7 +270,7 @@ export async function generateApi(
     };
 
     const queryArgValues = Object.values(queryArg);
-    const isWatch =
+    const isWatch = verb.toUpperCase() === 'GET' &&
       queryArgValues.findIndex(
         (queryArg) => queryArg.origin === 'param' && queryArg.param.name === 'watch' && queryArg.param.in === 'query'
       ) !== -1;
