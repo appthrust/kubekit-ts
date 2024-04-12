@@ -107,13 +107,13 @@ type HttpOptions = {
 };
 
 type K8sListResponse<T> = {
-  kind: `${string}List`,
+  kind: string,
   apiVersion: string,
   metadata: { resourceVersion: string },
   items: T[]
 }
 
-export type WatchEventType = 'ADDED' | 'Modified' | 'Deleted' | 'BOOKMARK' | 'Refresh';
+export type WatchEventType = 'ADDED' | 'Modified' | 'Deleted' | 'BOOKMARK';
 type WatchEvent<T> = { type: WatchEventType; object: T };
 export type WatchExtraOptions<T extends K8sListResponse<unknown>> = {
   maxWait?: number;
