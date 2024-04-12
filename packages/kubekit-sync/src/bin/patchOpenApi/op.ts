@@ -1,6 +1,6 @@
 import type { OpenAPIV3 } from 'openapi-types'
 
-function patchK8sOpenapi(doc: OpenAPIV3.Document) {
+export function patchOp(doc: OpenAPIV3.Document) {
   if (!doc.components?.schemas) {
     doc.components = { schemas: {} }
   }
@@ -193,7 +193,3 @@ function patchK8sOpenapi(doc: OpenAPIV3.Document) {
 
   return doc
 }
-
-export const patchFunctions = [patchK8sOpenapi] satisfies Array<
-  (doc: OpenAPIV3.Document) => OpenAPIV3.Document
->
