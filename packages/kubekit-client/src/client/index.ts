@@ -3,6 +3,7 @@ import type * as https from 'node:https';
 import { Agent } from 'undici';
 import { ConcurrentTaskRunner } from './concurrent_task_runner';
 import { sleep } from './sleep';
+import { ReadableStream, TransformStream } from 'node:stream/web';
 
 type IoK8SApiCoreV1ObjectReference = {
   apiVersion: string | undefined;
@@ -268,10 +269,6 @@ export async function apiClient<Response>(
           };
 
           const taskRunner = new ConcurrentTaskRunner(concurrency);
-          const reader = response.body.getReader();
-          const textDecoder = new TextDecoder();
-          let buffer = '';
-
           const debounce = new Debounce(wait, maxWait);
 
           const listArgs = {
@@ -299,27 +296,15 @@ export async function apiClient<Response>(
             });
           }, syncPeriod);
           try {
-            while (true) {
-              const { value, done } = await reader.read();
-              if (done) {
-                return void 0;
-              }
-
-              buffer += textDecoder.decode(value, { stream: true });
-              while (true) {
-                const newlineIndex = buffer.indexOf('\n');
-                if (newlineIndex === -1) break;
-                const line = buffer.slice(0, newlineIndex);
-                buffer = buffer.slice(newlineIndex + 1);
-                const k8sObj: WatchEvent<K8sObj> = JSON.parse(line);
-
-                const { resourceVersion } = k8sObj.object.metadata;
-                const cacheKey = Debounce.getCacheKey(k8sObj.object.metadata);
-                debounce.push(cacheKey, resourceVersion);
-                taskRunner.add(async () => {
-                  await debounce.skipOrExec(cacheKey, resourceVersion, () => watchHandler(k8sObj as any));
-                });
-              }
+            for await (const k8sObj of (response.body as ReadableStream<Uint8Array>).pipeThrough(
+              new JsonStream<WatchEvent<K8sObj>>()
+            )) {
+              const { resourceVersion } = k8sObj.object.metadata;
+              const cacheKey = Debounce.getCacheKey(k8sObj.object.metadata);
+              debounce.push(cacheKey, resourceVersion);
+              taskRunner.add(async () => {
+                await debounce.skipOrExec(cacheKey, resourceVersion, () => watchHandler(k8sObj as any));
+              });
             }
           } finally {
             clearInterval(intervalId);
@@ -419,5 +404,24 @@ class Debounce {
       this.#cache.delete(cacheKey);
       await func();
     }
+  }
+}
+
+class JsonStream<T> extends TransformStream<Uint8Array, T> {
+  constructor() {
+    let buffer = '';
+    const textDecoder = new TextDecoder();
+    super({
+      transform(chunk, controller) {
+        buffer += textDecoder.decode(chunk, { stream: true });
+        while (true) {
+          const newlineIndex = buffer.indexOf('\n');
+          if (newlineIndex === -1) break;
+          const line = buffer.slice(0, newlineIndex);
+          buffer = buffer.slice(newlineIndex + 1);
+          controller.enqueue(JSON.parse(line));
+        }
+      },
+    });
   }
 }
