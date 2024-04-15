@@ -399,7 +399,7 @@ class Debounce {
     const oldestElapsedTime = now - getOldestPushedAt
 
     if (this.#maxWaitMilliSeconds > oldestElapsedTime && this.#waitMilliSeconds > currentElapsedTime) {
-      await sleep(this.#waitMilliSeconds);
+      await sleep(this.#waitMilliSeconds - currentElapsedTime);
     }
     if (BigInt(resourceVersion) === getLatestResourceVersion()) {
       this.#cache.delete(cacheKey);
