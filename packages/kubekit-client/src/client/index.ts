@@ -102,11 +102,6 @@ type RetryOptions = {
   maxRetries?: number;
 };
 
-interface NextFetchRequestConfig {
-  revalidate?: number | false
-  tags?: string[]
-}
-
 type HttpOptions = Omit<RequestInit, "headers" | "body"> & {
   /** A Headers object, an object literal, or an array of two-item arrays to set request's headers. */
   headers?: Record<string, string> | undefined;
@@ -130,10 +125,17 @@ export type WatchExtraOptions<T extends K8sListResponse<unknown>> = {
 };
 export type Options = RetryOptions & HttpOptions;
 
+type ExtraOptions = Options | (Options & WatchExtraOptions<any>)
+export const globalDefaultExtraOptions: ExtraOptions = {}
+
 export async function apiClient<Response>(
   arguments_: QueryArgumentsSpec,
-  extraOptions: Options | (Options & WatchExtraOptions<any>) = {}
+  extraOptions: ExtraOptions = {}
 ): Promise<Response | void> {
+  extraOptions = {
+    ...globalDefaultExtraOptions,
+    ...extraOptions,
+  }
   const maxRetries = extraOptions.maxRetries ?? 3;
 
   const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => {
