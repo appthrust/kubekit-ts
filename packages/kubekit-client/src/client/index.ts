@@ -102,9 +102,14 @@ type RetryOptions = {
   maxRetries?: number;
 };
 
-type HttpOptions = {
+interface NextFetchRequestConfig {
+  revalidate?: number | false
+  tags?: string[]
+}
+
+type HttpOptions = Omit<RequestInit, "headers" | "body"> & {
+  /** A Headers object, an object literal, or an array of two-item arrays to set request's headers. */
   headers?: Record<string, string> | undefined;
-  signal?: AbortSignal;
 };
 
 type K8sListResponse<T> = {
@@ -121,8 +126,7 @@ export type WatchExtraOptions<T extends K8sListResponse<unknown>> = {
   wait?: number;
   concurrency?: number;
   watchHandler: (e: WatchEvent<T['items'][number]>) => MaybePromise<unknown>;
-  // default 10h
-  syncPeriod?: number;
+  syncPeriod?: number; // default 10h
 };
 export type Options = RetryOptions & HttpOptions;
 
@@ -242,13 +246,13 @@ export async function apiClient<Response>(
       const response = await fetch(
         url,
         removeNullableProperties({
+          ...options,
           headers,
           protocol: httpsOptions.protocol || undefined,
           method,
           // https://github.com/nodejs/node/issues/48977
           dispatcher: httpsOptions.agent,
           body,
-          signal: extraOptions.signal,
         })
       );
 
