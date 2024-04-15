@@ -11,14 +11,14 @@
     "gen": "npx @kubekit/codegen gen-config/storage-config.ts && npx @kubekit/codegen gen-config/core-v1-config.ts"
   },
   "dependencies": {
-    "@kubekit/client": "^0.0.3",
-    "next": "^14.2.0-canary.23",
+    "@kubekit/client": "0.0.19",
+    "next": "^14.2.1",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@kubekit/codegen": "0.0.3",
-    "@kubekit/sync": "^0.0.3",
+    "@kubekit/codegen": "^0.0.15",
+    "@kubekit/sync": "0.0.20",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

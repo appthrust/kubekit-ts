@@ -175,18 +175,18 @@
     swagger2openapi "^7.0.8"
     typescript "^5.2.2"
 
-"@kubekit/client@0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@kubekit/client/-/client-0.0.9.tgz#65fe5b9d7479c33175d583582ef4715ebfdf9ff5"
-  integrity sha512-zQq3K3Z+e+tRqDAlGYnTvenV7nV/b1Uc3c+Roh6tyM71rl9go2V14Pz+GnMY0ZFu4NdiwVnS/YJ7vEw1BxbULA==
+"@kubekit/client@0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@kubekit/client/-/client-0.0.19.tgz#c55676031fb496e5ed93c9261d17f492860083f2"
+  integrity sha512-VZ2buoaNfVol2miUK8kxaGC5iNnI7l8ZpBbtz5IKVGyjq63FVavfcS9Aq/zpVCp/UuvktiJHYm6Wly4C5pSyxg==
   dependencies:
     "@kubernetes/client-node" "^0.20.0"
     undici "^5.28.3"
 
-"@kubekit/codegen@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@kubekit/codegen/-/codegen-0.0.3.tgz#878a50fe28d87730c116654a414e5952bfeec3dc"
-  integrity sha512-MeuMMQBMVyaCFmzSA0eYdrCPQDmenFn0pVwsERjvSuJ6ZSXKWXcJWphfocbiITZ+I8KmRRvx0Pa2VfHTs2bOTg==
+"@kubekit/codegen@^0.0.15":
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@kubekit/codegen/-/codegen-0.0.15.tgz#9f84347ed44dbb867dcc4fdfe35ae0cceeab67de"
+  integrity sha512-LiyZ7WwL/MKxbgTPniWSVS4xIVB+QPb1xWzitxTa4EVq/ATCD1dZJg379iazoHRjHLwLkwuaofVE1FPtvk1Nsg==
   dependencies:
     "@apidevtools/swagger-parser" "^10.0.2"
     "@kahirokunn/oazapfts-patched" "^0.0.1"
@@ -196,10 +196,10 @@
     semver "^7.3.5"
     swagger2openapi "^7.0.4"
 
-"@kubekit/sync@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@kubekit/sync/-/sync-0.0.3.tgz#7cad4522b022e1368870ebbb65b5d58027e8534f"
-  integrity sha512-C46dP00LuV1tv6OaxcKDrF6j4Jkk//+uFYXsFeOWXHCTr/o4/0QGRr28tVYKh1DCHrpZeBvQQZMR2GFl1NHBzQ==
+"@kubekit/sync@0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@kubekit/sync/-/sync-0.0.20.tgz#8729a85c3d8b7fe7cd9b75dd4187b20e606cfdca"
+  integrity sha512-6C3UmjywF2AIcpfw4VwwgmuVnVi7m9z2sk/RkVjDvDhIb/xAb94j2p4zh6s2g6+4LvbXBJwqv/b0X2SulqRvQQ==
 
 "@kubernetes/client-node@^0.20.0":
   version "0.20.0"

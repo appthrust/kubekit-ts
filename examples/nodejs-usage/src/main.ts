@@ -92,12 +92,13 @@ async function main() {
         watch: true,
       },
       {
-        watchEventHandler: (v) => {
-          console.log(v.object.metadata?.name)
+        watchHandler: async (v) => {
+          console.log(v.object.metadata.name)
         },
         signal: controller.signal,
         wait: 2000,
         maxWait: 10000,
+        concurrency: 4,
       },
     )
   } catch (e) {

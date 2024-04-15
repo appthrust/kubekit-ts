@@ -15,11 +15,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@kubekit/client": "0.0.9"
+    "@kubekit/client": "0.0.19"
   },
   "devDependencies": {
-    "@kubekit/codegen": "0.0.3",
-    "@kubekit/sync": "^0.0.3",
+    "@kubekit/codegen": "^0.0.15",
+    "@kubekit/sync": "0.0.20",
     "esbuild": "^0.20.2",
     "esbuild-runner": "^2.2.2"
   }
