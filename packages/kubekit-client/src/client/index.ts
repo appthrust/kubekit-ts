@@ -392,20 +392,15 @@ class Debounce {
       return max;
     };
 
-    const getSortedAddedAt = () =>
-      Object.values(this.#cache.get(cacheKey) || {})
-        .sort()
-        .reverse();
+    const now = Number(new Date())
+    const getCurrentPushedAt = this.#cache.get(cacheKey)?.[resourceVersion] || now;
+    const currentElapsedTime = now - getCurrentPushedAt
+    const getOldestPushedAt = Object.values(this.#cache.get(cacheKey) || {})[0] || now;
+    const oldestElapsedTime = now - getOldestPushedAt
 
-    const sortedAddedAt = getSortedAddedAt();
-    const isMaxWaitTimeReached =
-      sortedAddedAt.length >= 2 &&
-      sortedAddedAt[0] - sortedAddedAt[sortedAddedAt.length - 1] >= this.#maxWaitMilliSeconds;
-
-    if (!isMaxWaitTimeReached) {
+    if (this.#maxWaitMilliSeconds > oldestElapsedTime && this.#waitMilliSeconds > currentElapsedTime) {
       await sleep(this.#waitMilliSeconds);
     }
-    // 1. resourceVersionは文字列で比較できる様にする
     if (BigInt(resourceVersion) === getLatestResourceVersion()) {
       this.#cache.delete(cacheKey);
       await func();
