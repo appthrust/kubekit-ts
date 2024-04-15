@@ -123,6 +123,9 @@ export async function generateApi(
           [watchExtraOptions]: { isTypeOnly: true, name: 'WatchExtraOptions' },
         }),
         noWatch,
+        partialRequired,
+        minimumRequiredGet,
+        minimumRequiredList,
         ...operationDefinitions
           .map((operationDefinition) =>
             generateRequester({
@@ -270,6 +273,8 @@ export async function generateApi(
     };
 
     const queryArgValues = Object.values(queryArg);
+    const isListOrWatch =
+      operationName.startsWith("list") || operationName.startsWith("watch")
     const isListWatch =
       !path.includes('/watch/') &&
       verb.toUpperCase() === 'GET' &&
@@ -322,6 +327,7 @@ export async function generateApi(
       QueryArg,
       queryFn: generateQueryFn({ operationDefinition, queryArg }),
       isListWatch,
+      isListOrWatch,
     });
   }
 
@@ -504,3 +510,248 @@ const noWatch = factory.createTypeAliasDeclaration(
     ]),
   ])
 );
+
+// type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>
+const partialRequired = factory.createTypeAliasDeclaration(
+  undefined,
+  factory.createIdentifier("PartialRequired"),
+  [
+    factory.createTypeParameterDeclaration(
+      undefined,
+      factory.createIdentifier("T"),
+      undefined,
+      undefined
+    ),
+    factory.createTypeParameterDeclaration(
+      undefined,
+      factory.createIdentifier("K"),
+      factory.createTypeOperatorNode(
+        ts.SyntaxKind.KeyOfKeyword,
+        factory.createTypeReferenceNode(
+          factory.createIdentifier("T"),
+          undefined
+        )
+      ),
+      undefined
+    )
+  ],
+  factory.createIntersectionTypeNode([
+    factory.createTypeReferenceNode(
+      factory.createIdentifier("Required"),
+      [factory.createTypeReferenceNode(
+        factory.createIdentifier("Pick"),
+        [
+          factory.createTypeReferenceNode(
+            factory.createIdentifier("T"),
+            undefined
+          ),
+          factory.createTypeReferenceNode(
+            factory.createIdentifier("K"),
+            undefined
+          )
+        ]
+      )]
+    ),
+    factory.createTypeReferenceNode(
+      factory.createIdentifier("Omit"),
+      [
+        factory.createTypeReferenceNode(
+          factory.createIdentifier("T"),
+          undefined
+        ),
+        factory.createTypeReferenceNode(
+          factory.createIdentifier("K"),
+          undefined
+        )
+      ]
+    )
+  ])
+)
+
+// type MinimumRequiredGet<T> = T extends {
+// 	metadata?: any;
+// 	apiVersion?: any;
+// 	kind?: any;
+// }
+// 	? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
+// 			metadata: PartialRequired<
+// 				Required<T>["metadata"],
+// 				"name" | "namespace" | "creationTimestamp" | "resourceVersion"
+// 			>;
+// 		}
+// 	: T;
+const minimumRequiredGet = factory.createTypeAliasDeclaration(
+  undefined,
+  factory.createIdentifier("MinimumRequiredGet"),
+  [factory.createTypeParameterDeclaration(
+    undefined,
+    factory.createIdentifier("T"),
+    undefined,
+    undefined
+  )],
+  factory.createConditionalTypeNode(
+    factory.createTypeReferenceNode(
+      factory.createIdentifier("T"),
+      undefined
+    ),
+    factory.createTypeLiteralNode([
+      factory.createPropertySignature(
+        undefined,
+        factory.createIdentifier("metadata"),
+        factory.createToken(ts.SyntaxKind.QuestionToken),
+        factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
+      ),
+      factory.createPropertySignature(
+        undefined,
+        factory.createIdentifier("apiVersion"),
+        factory.createToken(ts.SyntaxKind.QuestionToken),
+        factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
+      ),
+      factory.createPropertySignature(
+        undefined,
+        factory.createIdentifier("kind"),
+        factory.createToken(ts.SyntaxKind.QuestionToken),
+        factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
+      )
+    ]),
+    factory.createIntersectionTypeNode([
+      factory.createTypeReferenceNode(
+        factory.createIdentifier("Omit"),
+        [
+          factory.createTypeReferenceNode(
+            factory.createIdentifier("PartialRequired"),
+            [
+              factory.createTypeReferenceNode(
+                factory.createIdentifier("T"),
+                undefined
+              ),
+              factory.createUnionTypeNode([
+                factory.createLiteralTypeNode(factory.createStringLiteral("metadata")),
+                factory.createLiteralTypeNode(factory.createStringLiteral("apiVersion")),
+                factory.createLiteralTypeNode(factory.createStringLiteral("kind"))
+              ])
+            ]
+          ),
+          factory.createLiteralTypeNode(factory.createStringLiteral("metadata"))
+        ]
+      ),
+      factory.createTypeLiteralNode([factory.createPropertySignature(
+        undefined,
+        factory.createIdentifier("metadata"),
+        undefined,
+        factory.createTypeReferenceNode(
+          factory.createIdentifier("PartialRequired"),
+          [
+            factory.createIndexedAccessTypeNode(
+              factory.createTypeReferenceNode(
+                factory.createIdentifier("Required"),
+                [factory.createTypeReferenceNode(
+                  factory.createIdentifier("T"),
+                  undefined
+                )]
+              ),
+              factory.createLiteralTypeNode(factory.createStringLiteral("metadata"))
+            ),
+            factory.createUnionTypeNode([
+              factory.createLiteralTypeNode(factory.createStringLiteral("name")),
+              factory.createLiteralTypeNode(factory.createStringLiteral("namespace")),
+              factory.createLiteralTypeNode(factory.createStringLiteral("creationTimestamp")),
+              factory.createLiteralTypeNode(factory.createStringLiteral("resourceVersion"))
+            ])
+          ]
+        )
+      )])
+    ]),
+    factory.createTypeReferenceNode(
+      factory.createIdentifier("T"),
+      undefined
+    )
+  )
+)
+
+// type MinimumRequiredList<T> = T extends {
+// 	items: {
+// 		metadata?: any;
+// 		apiVersion?: any;
+// 		kind?: any;
+// 	}[];
+// }
+// 	? Omit<T, "items"> & {
+// 			items: MinimumRequiredGet<T["items"][number]>[];
+// 		}
+// 	: T;
+const minimumRequiredList = factory.createTypeAliasDeclaration(
+  undefined,
+  factory.createIdentifier("MinimumRequiredList"),
+  [factory.createTypeParameterDeclaration(
+    undefined,
+    factory.createIdentifier("T"),
+    undefined,
+    undefined
+  )],
+  factory.createConditionalTypeNode(
+    factory.createTypeReferenceNode(
+      factory.createIdentifier("T"),
+      undefined
+    ),
+    factory.createTypeLiteralNode([factory.createPropertySignature(
+      undefined,
+      factory.createIdentifier("items"),
+      undefined,
+      factory.createArrayTypeNode(factory.createTypeLiteralNode([
+        factory.createPropertySignature(
+          undefined,
+          factory.createIdentifier("metadata"),
+          factory.createToken(ts.SyntaxKind.QuestionToken),
+          factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
+        ),
+        factory.createPropertySignature(
+          undefined,
+          factory.createIdentifier("apiVersion"),
+          factory.createToken(ts.SyntaxKind.QuestionToken),
+          factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
+        ),
+        factory.createPropertySignature(
+          undefined,
+          factory.createIdentifier("kind"),
+          factory.createToken(ts.SyntaxKind.QuestionToken),
+          factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
+        )
+      ]))
+    )]),
+    factory.createIntersectionTypeNode([
+      factory.createTypeReferenceNode(
+        factory.createIdentifier("Omit"),
+        [
+          factory.createTypeReferenceNode(
+            factory.createIdentifier("T"),
+            undefined
+          ),
+          factory.createLiteralTypeNode(factory.createStringLiteral("items"))
+        ]
+      ),
+      factory.createTypeLiteralNode([factory.createPropertySignature(
+        undefined,
+        factory.createIdentifier("items"),
+        undefined,
+        factory.createArrayTypeNode(factory.createTypeReferenceNode(
+          factory.createIdentifier("MinimumRequiredGet"),
+          [factory.createIndexedAccessTypeNode(
+            factory.createIndexedAccessTypeNode(
+              factory.createTypeReferenceNode(
+                factory.createIdentifier("T"),
+                undefined
+              ),
+              factory.createLiteralTypeNode(factory.createStringLiteral("items"))
+            ),
+            factory.createKeywordTypeNode(ts.SyntaxKind.NumberKeyword)
+          )]
+        ))
+      )])
+    ]),
+    factory.createTypeReferenceNode(
+      factory.createIdentifier("T"),
+      undefined
+    )
+  )
+)

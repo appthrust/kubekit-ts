@@ -78,13 +78,16 @@ export function generateEndpointDefinition({
   QueryArg,
   queryFn,
   isListWatch,
+  isListOrWatch,
 }: {
   operationName: string;
   Response: ts.TypeReferenceNode;
   QueryArg: ts.TypeReferenceNode;
   queryFn: ts.ObjectLiteralExpression;
   isListWatch: boolean;
+  isListOrWatch: boolean;
 }) {
+  const CustomizedResponse = factory.createTypeReferenceNode(factory.createIdentifier(isListOrWatch ? "MinimumRequiredList" : "MinimumRequiredGet"), [Response])
   if (!isListWatch) {
     return [
       factory.createVariableStatement(
@@ -123,7 +126,7 @@ export function generateEndpointDefinition({
                     factory.createReturnStatement(
                       factory.createCallExpression(
                         factory.createIdentifier('apiClient'),
-                        [Response],
+                        [CustomizedResponse],
                         [queryFn, factory.createIdentifier('options')]
                       )
                     ),
@@ -162,7 +165,9 @@ export function generateEndpointDefinition({
           undefined
         ),
       ],
-      factory.createTypeReferenceNode(factory.createIdentifier('Promise'), [Response]),
+      factory.createTypeReferenceNode(factory.createIdentifier('Promise'), [
+        CustomizedResponse
+      ]),
       undefined
     ),
     factory.createFunctionDeclaration(
@@ -196,7 +201,7 @@ export function generateEndpointDefinition({
           undefined,
           factory.createIntersectionTypeNode([
             factory.createTypeReferenceNode(factory.createIdentifier('Options'), undefined),
-            factory.createTypeReferenceNode(factory.createIdentifier('WatchExtraOptions'), [Response]),
+            factory.createTypeReferenceNode(factory.createIdentifier('WatchExtraOptions'), [CustomizedResponse]),
           ]),
           undefined
         ),
@@ -235,7 +240,7 @@ export function generateEndpointDefinition({
           factory.createReturnStatement(
             factory.createCallExpression(
               factory.createIdentifier('apiClient'),
-              [Response],
+              [CustomizedResponse],
               [queryFn, factory.createIdentifier('options')]
             )
           ),
