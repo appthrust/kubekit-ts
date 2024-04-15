@@ -125,7 +125,7 @@ export type WatchExtraOptions<T extends K8sListResponse<unknown>> = {
 };
 export type Options = RetryOptions & HttpOptions;
 
-type ExtraOptions = Options | (Options & WatchExtraOptions<any>)
+export type ExtraOptions = Options | (Options & WatchExtraOptions<any>)
 export const globalDefaultExtraOptions: ExtraOptions = {}
 
 export async function apiClient<Response>(
