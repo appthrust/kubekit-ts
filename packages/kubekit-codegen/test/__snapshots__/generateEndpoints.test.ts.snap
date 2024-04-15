@@ -6,33 +6,45 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
 type NoWatch<T> = Omit<T, "watch"> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>;
-type MinimumRequiredGet<T> = T extends {
-  metadata?: any;
-  apiVersion?: any;
-  kind?: any;
-}
-  ? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
-      metadata: PartialRequired<
-        Required<T>["metadata"],
-        "name" | "namespace" | "creationTimestamp" | "resourceVersion"
-      >;
-    }
-  : T;
-type MinimumRequiredList<T> = T extends {
-  items: {
+type PartialRequired<T, K extends keyof T> = Id<
+  Required<Pick<T, K>> & Omit<T, K>
+>;
+type MinimumRequiredGet<T> = Id<
+  T extends {
     metadata?: any;
     apiVersion?: any;
     kind?: any;
-  }[];
-}
-  ? Omit<T, "items"> & {
-      items: MinimumRequiredGet<T["items"][number]>[];
-    }
-  : T;
+  }
+    ? Omit<
+        PartialRequired<T, "metadata" | "apiVersion" | "kind">,
+        "metadata"
+      > & {
+        metadata: PartialRequired<
+          Required<T>["metadata"],
+          "name" | "namespace" | "creationTimestamp" | "resourceVersion"
+        >;
+      }
+    : T
+>;
+type MinimumRequiredList<T> = Id<
+  T extends {
+    items: {
+      metadata?: any;
+      apiVersion?: any;
+      kind?: any;
+    }[];
+  }
+    ? Omit<T, "items"> & {
+        items: MinimumRequiredGet<T["items"][number]>[];
+      }
+    : T
+>;
 export const getHealthcheck = (
   args: GetHealthcheckApiArg,
   options?: Options
@@ -431,33 +443,45 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
 type NoWatch<T> = Omit<T, "watch"> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>;
-type MinimumRequiredGet<T> = T extends {
-  metadata?: any;
-  apiVersion?: any;
-  kind?: any;
-}
-  ? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
-      metadata: PartialRequired<
-        Required<T>["metadata"],
-        "name" | "namespace" | "creationTimestamp" | "resourceVersion"
-      >;
-    }
-  : T;
-type MinimumRequiredList<T> = T extends {
-  items: {
+type PartialRequired<T, K extends keyof T> = Id<
+  Required<Pick<T, K>> & Omit<T, K>
+>;
+type MinimumRequiredGet<T> = Id<
+  T extends {
     metadata?: any;
     apiVersion?: any;
     kind?: any;
-  }[];
-}
-  ? Omit<T, "items"> & {
-      items: MinimumRequiredGet<T["items"][number]>[];
-    }
-  : T;
+  }
+    ? Omit<
+        PartialRequired<T, "metadata" | "apiVersion" | "kind">,
+        "metadata"
+      > & {
+        metadata: PartialRequired<
+          Required<T>["metadata"],
+          "name" | "namespace" | "creationTimestamp" | "resourceVersion"
+        >;
+      }
+    : T
+>;
+type MinimumRequiredList<T> = Id<
+  T extends {
+    items: {
+      metadata?: any;
+      apiVersion?: any;
+      kind?: any;
+    }[];
+  }
+    ? Omit<T, "items"> & {
+        items: MinimumRequiredGet<T["items"][number]>[];
+      }
+    : T
+>;
 export const patchApiV1ListByItemId = (
   args: PatchApiV1ListByItemIdApiArg,
   options?: Options
@@ -500,33 +524,45 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
 type NoWatch<T> = Omit<T, "watch"> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>;
-type MinimumRequiredGet<T> = T extends {
-  metadata?: any;
-  apiVersion?: any;
-  kind?: any;
-}
-  ? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
-      metadata: PartialRequired<
-        Required<T>["metadata"],
-        "name" | "namespace" | "creationTimestamp" | "resourceVersion"
-      >;
-    }
-  : T;
-type MinimumRequiredList<T> = T extends {
-  items: {
+type PartialRequired<T, K extends keyof T> = Id<
+  Required<Pick<T, K>> & Omit<T, K>
+>;
+type MinimumRequiredGet<T> = Id<
+  T extends {
     metadata?: any;
     apiVersion?: any;
     kind?: any;
-  }[];
-}
-  ? Omit<T, "items"> & {
-      items: MinimumRequiredGet<T["items"][number]>[];
-    }
-  : T;
+  }
+    ? Omit<
+        PartialRequired<T, "metadata" | "apiVersion" | "kind">,
+        "metadata"
+      > & {
+        metadata: PartialRequired<
+          Required<T>["metadata"],
+          "name" | "namespace" | "creationTimestamp" | "resourceVersion"
+        >;
+      }
+    : T
+>;
+type MinimumRequiredList<T> = Id<
+  T extends {
+    items: {
+      metadata?: any;
+      apiVersion?: any;
+      kind?: any;
+    }[];
+  }
+    ? Omit<T, "items"> & {
+        items: MinimumRequiredGet<T["items"][number]>[];
+      }
+    : T
+>;
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   return apiClient<MinimumRequiredGet<PlaceOrderApiResponse>>(
     {
@@ -611,33 +647,45 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
 type NoWatch<T> = Omit<T, "watch"> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>;
-type MinimumRequiredGet<T> = T extends {
-  metadata?: any;
-  apiVersion?: any;
-  kind?: any;
-}
-  ? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
-      metadata: PartialRequired<
-        Required<T>["metadata"],
-        "name" | "namespace" | "creationTimestamp" | "resourceVersion"
-      >;
-    }
-  : T;
-type MinimumRequiredList<T> = T extends {
-  items: {
+type PartialRequired<T, K extends keyof T> = Id<
+  Required<Pick<T, K>> & Omit<T, K>
+>;
+type MinimumRequiredGet<T> = Id<
+  T extends {
     metadata?: any;
     apiVersion?: any;
     kind?: any;
-  }[];
-}
-  ? Omit<T, "items"> & {
-      items: MinimumRequiredGet<T["items"][number]>[];
-    }
-  : T;
+  }
+    ? Omit<
+        PartialRequired<T, "metadata" | "apiVersion" | "kind">,
+        "metadata"
+      > & {
+        metadata: PartialRequired<
+          Required<T>["metadata"],
+          "name" | "namespace" | "creationTimestamp" | "resourceVersion"
+        >;
+      }
+    : T
+>;
+type MinimumRequiredList<T> = Id<
+  T extends {
+    items: {
+      metadata?: any;
+      apiVersion?: any;
+      kind?: any;
+    }[];
+  }
+    ? Omit<T, "items"> & {
+        items: MinimumRequiredGet<T["items"][number]>[];
+      }
+    : T
+>;
 export const patchApiV1ListByItemId = (
   args: PatchApiV1ListByItemIdApiArg,
   options?: Options
@@ -680,33 +728,45 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
 type NoWatch<T> = Omit<T, "watch"> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>;
-type MinimumRequiredGet<T> = T extends {
-  metadata?: any;
-  apiVersion?: any;
-  kind?: any;
-}
-  ? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
-      metadata: PartialRequired<
-        Required<T>["metadata"],
-        "name" | "namespace" | "creationTimestamp" | "resourceVersion"
-      >;
-    }
-  : T;
-type MinimumRequiredList<T> = T extends {
-  items: {
+type PartialRequired<T, K extends keyof T> = Id<
+  Required<Pick<T, K>> & Omit<T, K>
+>;
+type MinimumRequiredGet<T> = Id<
+  T extends {
     metadata?: any;
     apiVersion?: any;
     kind?: any;
-  }[];
-}
-  ? Omit<T, "items"> & {
-      items: MinimumRequiredGet<T["items"][number]>[];
-    }
-  : T;
+  }
+    ? Omit<
+        PartialRequired<T, "metadata" | "apiVersion" | "kind">,
+        "metadata"
+      > & {
+        metadata: PartialRequired<
+          Required<T>["metadata"],
+          "name" | "namespace" | "creationTimestamp" | "resourceVersion"
+        >;
+      }
+    : T
+>;
+type MinimumRequiredList<T> = Id<
+  T extends {
+    items: {
+      metadata?: any;
+      apiVersion?: any;
+      kind?: any;
+    }[];
+  }
+    ? Omit<T, "items"> & {
+        items: MinimumRequiredGet<T["items"][number]>[];
+      }
+    : T
+>;
 export const getApiV1Animals = (
   args: GetApiV1AnimalsApiArg,
   options?: Options
@@ -740,33 +800,45 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
 type NoWatch<T> = Omit<T, "watch"> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>;
-type MinimumRequiredGet<T> = T extends {
-  metadata?: any;
-  apiVersion?: any;
-  kind?: any;
-}
-  ? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
-      metadata: PartialRequired<
-        Required<T>["metadata"],
-        "name" | "namespace" | "creationTimestamp" | "resourceVersion"
-      >;
-    }
-  : T;
-type MinimumRequiredList<T> = T extends {
-  items: {
+type PartialRequired<T, K extends keyof T> = Id<
+  Required<Pick<T, K>> & Omit<T, K>
+>;
+type MinimumRequiredGet<T> = Id<
+  T extends {
     metadata?: any;
     apiVersion?: any;
     kind?: any;
-  }[];
-}
-  ? Omit<T, "items"> & {
-      items: MinimumRequiredGet<T["items"][number]>[];
-    }
-  : T;
+  }
+    ? Omit<
+        PartialRequired<T, "metadata" | "apiVersion" | "kind">,
+        "metadata"
+      > & {
+        metadata: PartialRequired<
+          Required<T>["metadata"],
+          "name" | "namespace" | "creationTimestamp" | "resourceVersion"
+        >;
+      }
+    : T
+>;
+type MinimumRequiredList<T> = Id<
+  T extends {
+    items: {
+      metadata?: any;
+      apiVersion?: any;
+      kind?: any;
+    }[];
+  }
+    ? Omit<T, "items"> & {
+        items: MinimumRequiredGet<T["items"][number]>[];
+      }
+    : T
+>;
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   return apiClient<MinimumRequiredGet<UpdatePetApiResponse>>(
     {
@@ -1152,33 +1224,45 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
 type NoWatch<T> = Omit<T, "watch"> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>;
-type MinimumRequiredGet<T> = T extends {
-  metadata?: any;
-  apiVersion?: any;
-  kind?: any;
-}
-  ? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
-      metadata: PartialRequired<
-        Required<T>["metadata"],
-        "name" | "namespace" | "creationTimestamp" | "resourceVersion"
-      >;
-    }
-  : T;
-type MinimumRequiredList<T> = T extends {
-  items: {
+type PartialRequired<T, K extends keyof T> = Id<
+  Required<Pick<T, K>> & Omit<T, K>
+>;
+type MinimumRequiredGet<T> = Id<
+  T extends {
     metadata?: any;
     apiVersion?: any;
     kind?: any;
-  }[];
-}
-  ? Omit<T, "items"> & {
-      items: MinimumRequiredGet<T["items"][number]>[];
-    }
-  : T;
+  }
+    ? Omit<
+        PartialRequired<T, "metadata" | "apiVersion" | "kind">,
+        "metadata"
+      > & {
+        metadata: PartialRequired<
+          Required<T>["metadata"],
+          "name" | "namespace" | "creationTimestamp" | "resourceVersion"
+        >;
+      }
+    : T
+>;
+type MinimumRequiredList<T> = Id<
+  T extends {
+    items: {
+      metadata?: any;
+      apiVersion?: any;
+      kind?: any;
+    }[];
+  }
+    ? Omit<T, "items"> & {
+        items: MinimumRequiredGet<T["items"][number]>[];
+      }
+    : T
+>;
 export const getStructureDefinition = (
   args: GetStructureDefinitionApiArg,
   options?: Options
@@ -1230,33 +1314,45 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
 type NoWatch<T> = Omit<T, "watch"> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>;
-type MinimumRequiredGet<T> = T extends {
-  metadata?: any;
-  apiVersion?: any;
-  kind?: any;
-}
-  ? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
-      metadata: PartialRequired<
-        Required<T>["metadata"],
-        "name" | "namespace" | "creationTimestamp" | "resourceVersion"
-      >;
-    }
-  : T;
-type MinimumRequiredList<T> = T extends {
-  items: {
+type PartialRequired<T, K extends keyof T> = Id<
+  Required<Pick<T, K>> & Omit<T, K>
+>;
+type MinimumRequiredGet<T> = Id<
+  T extends {
     metadata?: any;
     apiVersion?: any;
     kind?: any;
-  }[];
-}
-  ? Omit<T, "items"> & {
-      items: MinimumRequiredGet<T["items"][number]>[];
-    }
-  : T;
+  }
+    ? Omit<
+        PartialRequired<T, "metadata" | "apiVersion" | "kind">,
+        "metadata"
+      > & {
+        metadata: PartialRequired<
+          Required<T>["metadata"],
+          "name" | "namespace" | "creationTimestamp" | "resourceVersion"
+        >;
+      }
+    : T
+>;
+type MinimumRequiredList<T> = Id<
+  T extends {
+    items: {
+      metadata?: any;
+      apiVersion?: any;
+      kind?: any;
+    }[];
+  }
+    ? Omit<T, "items"> & {
+        items: MinimumRequiredGet<T["items"][number]>[];
+      }
+    : T
+>;
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   return apiClient<MinimumRequiredGet<UpdatePetApiResponse>>(
     {

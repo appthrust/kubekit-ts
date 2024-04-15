@@ -2,33 +2,40 @@
 
 exports[`CLI options testing generation with \`config.example.js\` 1`] = `
 import { apiClient, type Options, type WatchExtraOptions } from '../fixtures/k8sApiClient';
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
 type NoWatch<T> = Omit<T, 'watch'> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>;
-type MinimumRequiredGet<T> = T extends {
-  metadata?: any;
-  apiVersion?: any;
-  kind?: any;
-}
-  ? Omit<PartialRequired<T, 'metadata' | 'apiVersion' | 'kind'>, 'metadata'> & {
-      metadata: PartialRequired<
-        Required<T>['metadata'],
-        'name' | 'namespace' | 'creationTimestamp' | 'resourceVersion'
-      >;
-    }
-  : T;
-type MinimumRequiredList<T> = T extends {
-  items: {
+type PartialRequired<T, K extends keyof T> = Id<Required<Pick<T, K>> & Omit<T, K>>;
+type MinimumRequiredGet<T> = Id<
+  T extends {
     metadata?: any;
     apiVersion?: any;
     kind?: any;
-  }[];
-}
-  ? Omit<T, 'items'> & {
-      items: MinimumRequiredGet<T['items'][number]>[];
-    }
-  : T;
+  }
+    ? Omit<PartialRequired<T, 'metadata' | 'apiVersion' | 'kind'>, 'metadata'> & {
+        metadata: PartialRequired<
+          Required<T>['metadata'],
+          'name' | 'namespace' | 'creationTimestamp' | 'resourceVersion'
+        >;
+      }
+    : T
+>;
+type MinimumRequiredList<T> = Id<
+  T extends {
+    items: {
+      metadata?: any;
+      apiVersion?: any;
+      kind?: any;
+    }[];
+  }
+    ? Omit<T, 'items'> & {
+        items: MinimumRequiredGet<T['items'][number]>[];
+      }
+    : T
+>;
 export const getCoreV1ApiResources = (args: GetCoreV1ApiResourcesApiArg, options?: Options) => {
   return apiClient<MinimumRequiredGet<GetCoreV1ApiResourcesApiResponse>>({ path: \`/api/v1/\` }, options);
 };
@@ -13058,33 +13065,40 @@ export type IoK8SApimachineryPkgApisMetaV1WatchEvent = {
 
 exports[`CLI options testing paths are relative to configfile, not to cwd 1`] = `
 import { apiClient, type Options, type WatchExtraOptions } from '../fixtures/k8sApiClient';
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
 type NoWatch<T> = Omit<T, 'watch'> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, K>;
-type MinimumRequiredGet<T> = T extends {
-  metadata?: any;
-  apiVersion?: any;
-  kind?: any;
-}
-  ? Omit<PartialRequired<T, 'metadata' | 'apiVersion' | 'kind'>, 'metadata'> & {
-      metadata: PartialRequired<
-        Required<T>['metadata'],
-        'name' | 'namespace' | 'creationTimestamp' | 'resourceVersion'
-      >;
-    }
-  : T;
-type MinimumRequiredList<T> = T extends {
-  items: {
+type PartialRequired<T, K extends keyof T> = Id<Required<Pick<T, K>> & Omit<T, K>>;
+type MinimumRequiredGet<T> = Id<
+  T extends {
     metadata?: any;
     apiVersion?: any;
     kind?: any;
-  }[];
-}
-  ? Omit<T, 'items'> & {
-      items: MinimumRequiredGet<T['items'][number]>[];
-    }
-  : T;
+  }
+    ? Omit<PartialRequired<T, 'metadata' | 'apiVersion' | 'kind'>, 'metadata'> & {
+        metadata: PartialRequired<
+          Required<T>['metadata'],
+          'name' | 'namespace' | 'creationTimestamp' | 'resourceVersion'
+        >;
+      }
+    : T
+>;
+type MinimumRequiredList<T> = Id<
+  T extends {
+    items: {
+      metadata?: any;
+      apiVersion?: any;
+      kind?: any;
+    }[];
+  }
+    ? Omit<T, 'items'> & {
+        items: MinimumRequiredGet<T['items'][number]>[];
+      }
+    : T
+>;
 export const getCoreV1ApiResources = (args: GetCoreV1ApiResourcesApiArg, options?: Options) => {
   return apiClient<MinimumRequiredGet<GetCoreV1ApiResourcesApiResponse>>({ path: \`/api/v1/\` }, options);
 };
