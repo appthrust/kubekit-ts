@@ -38,7 +38,7 @@ generate-code:
 
   just install-eks-blueprints-add-ons-depends-crds
   echo Waiting for CRDs to be ready
-  sleep 20
+  kubectl wait crd --for=condition=Established --all
 
   deno run --allow-write --allow-read --allow-env --allow-run --allow-net=deno.land ./scripts/codegen.ts
   npx prettier -w ./tmp/api/openapi-spec/ k8s-client/
