@@ -36,7 +36,7 @@ type MinimumRequiredList<T> = Id<
       }
     : T
 >;
-export const getCoreV1ApiResources = (args: GetCoreV1ApiResourcesApiArg, options?: Options) => {
+export const getCoreV1ApiResources = (options?: Options) => {
   return apiClient<MinimumRequiredGet<GetCoreV1ApiResourcesApiResponse>>({ path: \`/api/v1/\` }, options);
 };
 export function listCoreV1ComponentStatus(
@@ -13099,7 +13099,7 @@ type MinimumRequiredList<T> = Id<
       }
     : T
 >;
-export const getCoreV1ApiResources = (args: GetCoreV1ApiResourcesApiArg, options?: Options) => {
+export const getCoreV1ApiResources = (options?: Options) => {
   return apiClient<MinimumRequiredGet<GetCoreV1ApiResourcesApiResponse>>({ path: \`/api/v1/\` }, options);
 };
 export function listCoreV1ComponentStatus(

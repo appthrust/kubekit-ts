@@ -79,6 +79,7 @@ export function generateEndpointDefinition({
   queryFn,
   isListWatch,
   isListOrWatch,
+  isUnusedArgs,
 }: {
   operationName: string;
   Response: ts.TypeReferenceNode;
@@ -86,8 +87,12 @@ export function generateEndpointDefinition({
   queryFn: ts.ObjectLiteralExpression;
   isListWatch: boolean;
   isListOrWatch: boolean;
+  isUnusedArgs: boolean;
 }) {
-  const CustomizedResponse = factory.createTypeReferenceNode(factory.createIdentifier(isListOrWatch ? "MinimumRequiredList" : "MinimumRequiredGet"), [Response])
+  const CustomizedResponse = factory.createTypeReferenceNode(
+    factory.createIdentifier(isListOrWatch ? 'MinimumRequiredList' : 'MinimumRequiredGet'),
+    [Response]
+  );
   if (!isListWatch) {
     return [
       factory.createVariableStatement(
@@ -102,14 +107,18 @@ export function generateEndpointDefinition({
                 undefined,
                 undefined,
                 [
-                  factory.createParameterDeclaration(
-                    undefined,
-                    undefined,
-                    factory.createIdentifier('args'),
-                    undefined,
-                    QueryArg,
-                    undefined
-                  ),
+                  ...(isUnusedArgs
+                    ? []
+                    : [
+                        factory.createParameterDeclaration(
+                          undefined,
+                          undefined,
+                          factory.createIdentifier('args'),
+                          undefined,
+                          QueryArg,
+                          undefined
+                        ),
+                      ]),
                   factory.createParameterDeclaration(
                     undefined,
                     undefined,
@@ -165,9 +174,7 @@ export function generateEndpointDefinition({
           undefined
         ),
       ],
-      factory.createTypeReferenceNode(factory.createIdentifier('Promise'), [
-        CustomizedResponse
-      ]),
+      factory.createTypeReferenceNode(factory.createIdentifier('Promise'), [CustomizedResponse]),
       undefined
     ),
     factory.createFunctionDeclaration(

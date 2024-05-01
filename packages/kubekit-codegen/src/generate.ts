@@ -270,8 +270,7 @@ export async function generateApi(
     };
 
     const queryArgValues = Object.values(queryArg);
-    const isListOrWatch =
-      operationName.startsWith("list") || operationName.startsWith("watch")
+    const isListOrWatch = operationName.startsWith('list') || operationName.startsWith('watch');
     const isListWatch =
       !path.includes('/watch/') &&
       verb.toUpperCase() === 'GET' &&
@@ -318,11 +317,13 @@ export async function generateApi(
       ).name
     );
 
+    const { queryFn, isUnusedArgs } = generateQueryFn({ operationDefinition, queryArg });
     return generateEndpointDefinition({
       operationName,
       Response: ResponseTypeName,
       QueryArg,
-      queryFn: generateQueryFn({ operationDefinition, queryArg }),
+      isUnusedArgs,
+      queryFn,
       isListWatch,
       isListOrWatch,
     });
@@ -337,33 +338,94 @@ export async function generateApi(
   }) {
     const { path, verb } = operationDefinition;
 
+    let isUnusedArgs = true;
     const bodyParameter = Object.values(queryArg).find((def) => def.origin === 'body');
 
-    const rootObject = factory.createIdentifier('args');
+    if (bodyParameter) {
+      isUnusedArgs = false
+    }
+
+    const argsObject = factory.createIdentifier('args');
 
     function pickParams(paramIn: string) {
       return Object.values(queryArg).filter((def) => def.origin === 'param' && def.param.in === paramIn);
     }
 
     function createObjectLiteralProperty(parameters: QueryArgDefinition[], propertyName: string) {
-      return parameters.length === 0
-        ? undefined
-        : factory.createPropertyAssignment(
-            factory.createIdentifier(propertyName),
-            factory.createObjectLiteralExpression(
-              parameters.map(
-                (param) => createPropertyAssignment(param.originalName, accessProperty(rootObject, param.name)),
-                true
-              )
-            )
-          );
+      if (parameters.length === 0) {
+        return undefined;
+      }
+      isUnusedArgs = false;
+      return factory.createPropertyAssignment(
+        factory.createIdentifier(propertyName),
+        factory.createObjectLiteralExpression(
+          parameters.map(
+            (param) => createPropertyAssignment(param.originalName, accessProperty(argsObject, param.name)),
+            true
+          )
+        )
+      );
     }
 
-    return factory.createObjectLiteralExpression(
+    function generatePathExpression(
+      path: string,
+      pathParameters: QueryArgDefinition[],
+      rootObject: ts.Identifier,
+      strict: boolean
+    ) {
+      const expressions: Array<[string, string]> = [];
+
+      const head = path.replace(/\{(.*?)\}(.*?)(?=\{|$)/g, (_, expression, literal) => {
+        let param = pathParameters.find((p) => p.originalName === expression);
+        if (!param) {
+          if (strict) {
+            throw new Error(`path parameter ${expression} does not seem to be defined in '${path}'!`);
+          }
+          param = {
+            origin: 'param',
+            name: expression,
+            originalName: expression,
+            type: factory.createToken(ts.SyntaxKind.StringKeyword),
+            required: true,
+            param: {
+              name: expression,
+              in: 'path',
+              description: 'The name that needs to be deleted',
+              required: true,
+              schema: { type: 'string' },
+            },
+          };
+          pathParameters.push(param);
+        }
+
+        if (pathParameters.length > 0) {
+          isUnusedArgs = false;
+        }
+
+        expressions.push([param.name, literal]);
+        return '';
+      });
+
+      return expressions.length
+        ? factory.createTemplateExpression(
+            factory.createTemplateHead(head),
+            expressions.map(([prop, literal], index) =>
+              factory.createTemplateSpan(
+                accessProperty(rootObject, prop),
+                index === expressions.length - 1
+                  ? factory.createTemplateTail(literal)
+                  : factory.createTemplateMiddle(literal)
+              )
+            )
+          )
+        : factory.createNoSubstitutionTemplateLiteral(head);
+    }
+
+    const queryFn = factory.createObjectLiteralExpression(
       [
         factory.createPropertyAssignment(
           factory.createIdentifier('path'),
-          generatePathExpression(path, pickParams('path'), rootObject, strict)
+          generatePathExpression(path, pickParams('path'), argsObject, strict)
         ),
         verb.toUpperCase() === 'GET'
           ? undefined
@@ -376,11 +438,11 @@ export async function generateApi(
           : [
               factory.createPropertyAssignment(
                 factory.createIdentifier('body'),
-                factory.createPropertyAccessExpression(rootObject, factory.createIdentifier(bodyParameter.name))
+                factory.createPropertyAccessExpression(argsObject, factory.createIdentifier(bodyParameter.name))
               ),
               factory.createPropertyAssignment(
                 factory.createIdentifier('contentType'),
-                factory.createPropertyAccessExpression(rootObject, factory.createIdentifier('contentType'))
+                factory.createPropertyAccessExpression(argsObject, factory.createIdentifier('contentType'))
               ),
             ]),
         createObjectLiteralProperty(pickParams('cookie'), 'cookies'),
@@ -388,7 +450,11 @@ export async function generateApi(
         createObjectLiteralProperty(pickParams('query'), 'params'),
       ].filter(removeUndefined),
       false
-    );
+    )
+    return {
+      isUnusedArgs,
+      queryFn,
+    };
   }
 }
 
@@ -396,55 +462,6 @@ function accessProperty(rootObject: ts.Identifier, propertyName: string) {
   return isValidIdentifier(propertyName)
     ? factory.createPropertyAccessExpression(rootObject, factory.createIdentifier(propertyName))
     : factory.createElementAccessExpression(rootObject, factory.createStringLiteral(propertyName));
-}
-
-function generatePathExpression(
-  path: string,
-  pathParameters: QueryArgDefinition[],
-  rootObject: ts.Identifier,
-  strict: boolean
-) {
-  const expressions: Array<[string, string]> = [];
-
-  const head = path.replace(/\{(.*?)\}(.*?)(?=\{|$)/g, (_, expression, literal) => {
-    let param = pathParameters.find((p) => p.originalName === expression);
-    if (!param) {
-      if (strict) {
-        throw new Error(`path parameter ${expression} does not seem to be defined in '${path}'!`);
-      }
-      param = {
-        origin: 'param',
-        name: expression,
-        originalName: expression,
-        type: factory.createToken(ts.SyntaxKind.StringKeyword),
-        required: true,
-        param: {
-          name: expression,
-          in: 'path',
-          description: 'The name that needs to be deleted',
-          required: true,
-          schema: { type: 'string' },
-        },
-      };
-      pathParameters.push(param);
-    }
-    expressions.push([param.name, literal]);
-    return '';
-  });
-
-  return expressions.length
-    ? factory.createTemplateExpression(
-        factory.createTemplateHead(head),
-        expressions.map(([prop, literal], index) =>
-          factory.createTemplateSpan(
-            accessProperty(rootObject, prop),
-            index === expressions.length - 1
-              ? factory.createTemplateTail(literal)
-              : factory.createTemplateMiddle(literal)
-          )
-        )
-      )
-    : factory.createNoSubstitutionTemplateLiteral(head);
 }
 
 type QueryArgDefinition = {
@@ -516,298 +533,207 @@ function getBodyNode(bodies: { [contentType: string]: ts.TypeNode }): ts.TypeNod
 const buildInTypes = [
   factory.createTypeAliasDeclaration(
     undefined,
-    factory.createIdentifier("Id"),
-    [factory.createTypeParameterDeclaration(
-      undefined,
-      factory.createIdentifier("T"),
-      undefined,
-      undefined
-    )],
+    factory.createIdentifier('Id'),
+    [factory.createTypeParameterDeclaration(undefined, factory.createIdentifier('T'), undefined, undefined)],
     factory.createIntersectionTypeNode([
       factory.createMappedTypeNode(
         undefined,
         factory.createTypeParameterDeclaration(
           undefined,
-          factory.createIdentifier("K"),
+          factory.createIdentifier('K'),
           factory.createTypeOperatorNode(
             ts.SyntaxKind.KeyOfKeyword,
-            factory.createTypeReferenceNode(
-              factory.createIdentifier("T"),
-              undefined
-            )
+            factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined)
           ),
           undefined
         ),
         undefined,
         undefined,
         factory.createIndexedAccessTypeNode(
-          factory.createTypeReferenceNode(
-            factory.createIdentifier("T"),
-            undefined
-          ),
-          factory.createTypeReferenceNode(
-            factory.createIdentifier("K"),
-            undefined
-          )
+          factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+          factory.createTypeReferenceNode(factory.createIdentifier('K'), undefined)
         ),
-        undefined,
-      ),
-      factory.createTypeLiteralNode([])
-    ])
-  ),
-  factory.createTypeAliasDeclaration(
-    undefined,
-    factory.createIdentifier("NoWatch"),
-    [factory.createTypeParameterDeclaration(
-      undefined,
-      factory.createIdentifier("T"),
-      undefined,
-      undefined
-    )],
-    factory.createIntersectionTypeNode([
-      factory.createTypeReferenceNode(
-        factory.createIdentifier("Omit"),
-        [
-          factory.createTypeReferenceNode(
-            factory.createIdentifier("T"),
-            undefined
-          ),
-          factory.createLiteralTypeNode(factory.createStringLiteral("watch"))
-        ]
-      ),
-      factory.createTypeLiteralNode([factory.createPropertySignature(
-        undefined,
-        factory.createIdentifier("watch"),
-        factory.createToken(ts.SyntaxKind.QuestionToken),
-        factory.createLiteralTypeNode(factory.createFalse())
-      )])
-    ])
-  ),
-  factory.createTypeAliasDeclaration(
-    undefined,
-    factory.createIdentifier("PartialRequired"),
-    [
-      factory.createTypeParameterDeclaration(
-        undefined,
-        factory.createIdentifier("T"),
-        undefined,
         undefined
       ),
+      factory.createTypeLiteralNode([]),
+    ])
+  ),
+  factory.createTypeAliasDeclaration(
+    undefined,
+    factory.createIdentifier('NoWatch'),
+    [factory.createTypeParameterDeclaration(undefined, factory.createIdentifier('T'), undefined, undefined)],
+    factory.createIntersectionTypeNode([
+      factory.createTypeReferenceNode(factory.createIdentifier('Omit'), [
+        factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+        factory.createLiteralTypeNode(factory.createStringLiteral('watch')),
+      ]),
+      factory.createTypeLiteralNode([
+        factory.createPropertySignature(
+          undefined,
+          factory.createIdentifier('watch'),
+          factory.createToken(ts.SyntaxKind.QuestionToken),
+          factory.createLiteralTypeNode(factory.createFalse())
+        ),
+      ]),
+    ])
+  ),
+  factory.createTypeAliasDeclaration(
+    undefined,
+    factory.createIdentifier('PartialRequired'),
+    [
+      factory.createTypeParameterDeclaration(undefined, factory.createIdentifier('T'), undefined, undefined),
       factory.createTypeParameterDeclaration(
         undefined,
-        factory.createIdentifier("K"),
+        factory.createIdentifier('K'),
         factory.createTypeOperatorNode(
           ts.SyntaxKind.KeyOfKeyword,
-          factory.createTypeReferenceNode(
-            factory.createIdentifier("T"),
-            undefined
-          )
+          factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined)
         ),
         undefined
-      )
+      ),
     ],
-    factory.createTypeReferenceNode(
-      factory.createIdentifier("Id"),
-      [factory.createIntersectionTypeNode([
-        factory.createTypeReferenceNode(
-          factory.createIdentifier("Required"),
-          [factory.createTypeReferenceNode(
-            factory.createIdentifier("Pick"),
-            [
-              factory.createTypeReferenceNode(
-                factory.createIdentifier("T"),
-                undefined
-              ),
-              factory.createTypeReferenceNode(
-                factory.createIdentifier("K"),
-                undefined
-              )
-            ]
-          )]
-        ),
-        factory.createTypeReferenceNode(
-          factory.createIdentifier("Omit"),
-          [
-            factory.createTypeReferenceNode(
-              factory.createIdentifier("T"),
-              undefined
-            ),
-            factory.createTypeReferenceNode(
-              factory.createIdentifier("K"),
-              undefined
-            )
-          ]
-        )
-      ])]
-    )
+    factory.createTypeReferenceNode(factory.createIdentifier('Id'), [
+      factory.createIntersectionTypeNode([
+        factory.createTypeReferenceNode(factory.createIdentifier('Required'), [
+          factory.createTypeReferenceNode(factory.createIdentifier('Pick'), [
+            factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+            factory.createTypeReferenceNode(factory.createIdentifier('K'), undefined),
+          ]),
+        ]),
+        factory.createTypeReferenceNode(factory.createIdentifier('Omit'), [
+          factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+          factory.createTypeReferenceNode(factory.createIdentifier('K'), undefined),
+        ]),
+      ]),
+    ])
   ),
   factory.createTypeAliasDeclaration(
     undefined,
-    factory.createIdentifier("MinimumRequiredGet"),
-    [factory.createTypeParameterDeclaration(
-      undefined,
-      factory.createIdentifier("T"),
-      undefined,
-      undefined
-    )],
-    factory.createTypeReferenceNode(
-      factory.createIdentifier("Id"),
-      [factory.createConditionalTypeNode(
-        factory.createTypeReferenceNode(
-          factory.createIdentifier("T"),
-          undefined
-        ),
+    factory.createIdentifier('MinimumRequiredGet'),
+    [factory.createTypeParameterDeclaration(undefined, factory.createIdentifier('T'), undefined, undefined)],
+    factory.createTypeReferenceNode(factory.createIdentifier('Id'), [
+      factory.createConditionalTypeNode(
+        factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
         factory.createTypeLiteralNode([
           factory.createPropertySignature(
             undefined,
-            factory.createIdentifier("metadata"),
+            factory.createIdentifier('metadata'),
             factory.createToken(ts.SyntaxKind.QuestionToken),
             factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
           ),
           factory.createPropertySignature(
             undefined,
-            factory.createIdentifier("apiVersion"),
+            factory.createIdentifier('apiVersion'),
             factory.createToken(ts.SyntaxKind.QuestionToken),
             factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
           ),
           factory.createPropertySignature(
             undefined,
-            factory.createIdentifier("kind"),
+            factory.createIdentifier('kind'),
             factory.createToken(ts.SyntaxKind.QuestionToken),
             factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
-          )
+          ),
         ]),
         factory.createIntersectionTypeNode([
-          factory.createTypeReferenceNode(
-            factory.createIdentifier("Omit"),
-            [
-              factory.createTypeReferenceNode(
-                factory.createIdentifier("PartialRequired"),
-                [
-                  factory.createTypeReferenceNode(
-                    factory.createIdentifier("T"),
-                    undefined
-                  ),
-                  factory.createUnionTypeNode([
-                    factory.createLiteralTypeNode(factory.createStringLiteral("metadata")),
-                    factory.createLiteralTypeNode(factory.createStringLiteral("apiVersion")),
-                    factory.createLiteralTypeNode(factory.createStringLiteral("kind"))
-                  ])
-                ]
-              ),
-              factory.createLiteralTypeNode(factory.createStringLiteral("metadata"))
-            ]
-          ),
-          factory.createTypeLiteralNode([factory.createPropertySignature(
-            undefined,
-            factory.createIdentifier("metadata"),
-            undefined,
-            factory.createTypeReferenceNode(
-              factory.createIdentifier("PartialRequired"),
-              [
+          factory.createTypeReferenceNode(factory.createIdentifier('Omit'), [
+            factory.createTypeReferenceNode(factory.createIdentifier('PartialRequired'), [
+              factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+              factory.createUnionTypeNode([
+                factory.createLiteralTypeNode(factory.createStringLiteral('metadata')),
+                factory.createLiteralTypeNode(factory.createStringLiteral('apiVersion')),
+                factory.createLiteralTypeNode(factory.createStringLiteral('kind')),
+              ]),
+            ]),
+            factory.createLiteralTypeNode(factory.createStringLiteral('metadata')),
+          ]),
+          factory.createTypeLiteralNode([
+            factory.createPropertySignature(
+              undefined,
+              factory.createIdentifier('metadata'),
+              undefined,
+              factory.createTypeReferenceNode(factory.createIdentifier('PartialRequired'), [
                 factory.createIndexedAccessTypeNode(
-                  factory.createTypeReferenceNode(
-                    factory.createIdentifier("Required"),
-                    [factory.createTypeReferenceNode(
-                      factory.createIdentifier("T"),
-                      undefined
-                    )]
-                  ),
-                  factory.createLiteralTypeNode(factory.createStringLiteral("metadata"))
+                  factory.createTypeReferenceNode(factory.createIdentifier('Required'), [
+                    factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+                  ]),
+                  factory.createLiteralTypeNode(factory.createStringLiteral('metadata'))
                 ),
                 factory.createUnionTypeNode([
-                  factory.createLiteralTypeNode(factory.createStringLiteral("name")),
-                  factory.createLiteralTypeNode(factory.createStringLiteral("namespace")),
-                  factory.createLiteralTypeNode(factory.createStringLiteral("creationTimestamp")),
-                  factory.createLiteralTypeNode(factory.createStringLiteral("resourceVersion"))
-                ])
-              ]
-            )
-          )])
+                  factory.createLiteralTypeNode(factory.createStringLiteral('name')),
+                  factory.createLiteralTypeNode(factory.createStringLiteral('namespace')),
+                  factory.createLiteralTypeNode(factory.createStringLiteral('creationTimestamp')),
+                  factory.createLiteralTypeNode(factory.createStringLiteral('resourceVersion')),
+                ]),
+              ])
+            ),
+          ]),
         ]),
-        factory.createTypeReferenceNode(
-          factory.createIdentifier("T"),
-          undefined
-        )
-      )]
-    )
+        factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined)
+      ),
+    ])
   ),
   factory.createTypeAliasDeclaration(
     undefined,
-    factory.createIdentifier("MinimumRequiredList"),
-    [factory.createTypeParameterDeclaration(
-      undefined,
-      factory.createIdentifier("T"),
-      undefined,
-      undefined
-    )],
-    factory.createTypeReferenceNode(
-      factory.createIdentifier("Id"),
-      [factory.createConditionalTypeNode(
-        factory.createTypeReferenceNode(
-          factory.createIdentifier("T"),
-          undefined
-        ),
-        factory.createTypeLiteralNode([factory.createPropertySignature(
-          undefined,
-          factory.createIdentifier("items"),
-          undefined,
-          factory.createArrayTypeNode(factory.createTypeLiteralNode([
-            factory.createPropertySignature(
-              undefined,
-              factory.createIdentifier("metadata"),
-              factory.createToken(ts.SyntaxKind.QuestionToken),
-              factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
-            ),
-            factory.createPropertySignature(
-              undefined,
-              factory.createIdentifier("apiVersion"),
-              factory.createToken(ts.SyntaxKind.QuestionToken),
-              factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
-            ),
-            factory.createPropertySignature(
-              undefined,
-              factory.createIdentifier("kind"),
-              factory.createToken(ts.SyntaxKind.QuestionToken),
-              factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
-            )
-          ]))
-        )]),
-        factory.createIntersectionTypeNode([
-          factory.createTypeReferenceNode(
-            factory.createIdentifier("Omit"),
-            [
-              factory.createTypeReferenceNode(
-                factory.createIdentifier("T"),
-                undefined
-              ),
-              factory.createLiteralTypeNode(factory.createStringLiteral("items"))
-            ]
-          ),
-          factory.createTypeLiteralNode([factory.createPropertySignature(
+    factory.createIdentifier('MinimumRequiredList'),
+    [factory.createTypeParameterDeclaration(undefined, factory.createIdentifier('T'), undefined, undefined)],
+    factory.createTypeReferenceNode(factory.createIdentifier('Id'), [
+      factory.createConditionalTypeNode(
+        factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+        factory.createTypeLiteralNode([
+          factory.createPropertySignature(
             undefined,
-            factory.createIdentifier("items"),
+            factory.createIdentifier('items'),
             undefined,
-            factory.createArrayTypeNode(factory.createTypeReferenceNode(
-              factory.createIdentifier("MinimumRequiredGet"),
-              [factory.createIndexedAccessTypeNode(
-                factory.createIndexedAccessTypeNode(
-                  factory.createTypeReferenceNode(
-                    factory.createIdentifier("T"),
-                    undefined
-                  ),
-                  factory.createLiteralTypeNode(factory.createStringLiteral("items"))
+            factory.createArrayTypeNode(
+              factory.createTypeLiteralNode([
+                factory.createPropertySignature(
+                  undefined,
+                  factory.createIdentifier('metadata'),
+                  factory.createToken(ts.SyntaxKind.QuestionToken),
+                  factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
                 ),
-                factory.createKeywordTypeNode(ts.SyntaxKind.NumberKeyword)
-              )]
-            ))
-          )])
+                factory.createPropertySignature(
+                  undefined,
+                  factory.createIdentifier('apiVersion'),
+                  factory.createToken(ts.SyntaxKind.QuestionToken),
+                  factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
+                ),
+                factory.createPropertySignature(
+                  undefined,
+                  factory.createIdentifier('kind'),
+                  factory.createToken(ts.SyntaxKind.QuestionToken),
+                  factory.createKeywordTypeNode(ts.SyntaxKind.AnyKeyword)
+                ),
+              ])
+            )
+          ),
         ]),
-        factory.createTypeReferenceNode(
-          factory.createIdentifier("T"),
-          undefined
-        )
-      )]
-    )
-  )
+        factory.createIntersectionTypeNode([
+          factory.createTypeReferenceNode(factory.createIdentifier('Omit'), [
+            factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+            factory.createLiteralTypeNode(factory.createStringLiteral('items')),
+          ]),
+          factory.createTypeLiteralNode([
+            factory.createPropertySignature(
+              undefined,
+              factory.createIdentifier('items'),
+              undefined,
+              factory.createArrayTypeNode(
+                factory.createTypeReferenceNode(factory.createIdentifier('MinimumRequiredGet'), [
+                  factory.createIndexedAccessTypeNode(
+                    factory.createIndexedAccessTypeNode(
+                      factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+                      factory.createLiteralTypeNode(factory.createStringLiteral('items'))
+                    ),
+                    factory.createKeywordTypeNode(ts.SyntaxKind.NumberKeyword)
+                  ),
+                ])
+              )
+            ),
+          ]),
+        ]),
+        factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined)
+      ),
+    ])
+  ),
 ];

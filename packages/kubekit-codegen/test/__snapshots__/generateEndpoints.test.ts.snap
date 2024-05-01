@@ -45,10 +45,7 @@ type MinimumRequiredList<T> = Id<
       }
     : T
 >;
-export const getHealthcheck = (
-  args: GetHealthcheckApiArg,
-  options?: Options
-) => {
+export const getHealthcheck = (options?: Options) => {
   return apiClient<MinimumRequiredGet<GetHealthcheckApiResponse>>(
     { path: \`/healthcheck\` },
     options
@@ -135,7 +132,7 @@ export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
     options
   );
 };
-export const getInventory = (args: GetInventoryApiArg, options?: Options) => {
+export const getInventory = (options?: Options) => {
   return apiClient<MinimumRequiredGet<GetInventoryApiResponse>>(
     { path: \`/store/inventory\` },
     options
@@ -198,7 +195,7 @@ export const loginUser = (args: LoginUserApiArg, options?: Options) => {
     options
   );
 };
-export const logoutUser = (args: LogoutUserApiArg, options?: Options) => {
+export const logoutUser = (options?: Options) => {
   return apiClient<MinimumRequiredGet<LogoutUserApiResponse>>(
     { path: \`/user/logout\` },
     options
@@ -920,7 +917,7 @@ export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
     options
   );
 };
-export const getInventory = (args: GetInventoryApiArg, options?: Options) => {
+export const getInventory = (options?: Options) => {
   return apiClient<MinimumRequiredGet<GetInventoryApiResponse>>(
     { path: \`/store/inventory\` },
     options
@@ -983,7 +980,7 @@ export const loginUser = (args: LoginUserApiArg, options?: Options) => {
     options
   );
 };
-export const logoutUser = (args: LogoutUserApiArg, options?: Options) => {
+export const logoutUser = (options?: Options) => {
   return apiClient<MinimumRequiredGet<LogoutUserApiResponse>>(
     { path: \`/user/logout\` },
     options
@@ -1434,7 +1431,7 @@ export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
     options
   );
 };
-export const getInventory = (args: GetInventoryApiArg, options?: Options) => {
+export const getInventory = (options?: Options) => {
   return apiClient<MinimumRequiredGet<GetInventoryApiResponse>>(
     { path: \`/store/inventory\` },
     options
@@ -1497,7 +1494,7 @@ export const loginUser = (args: LoginUserApiArg, options?: Options) => {
     options
   );
 };
-export const logoutUser = (args: LogoutUserApiArg, options?: Options) => {
+export const logoutUser = (options?: Options) => {
   return apiClient<MinimumRequiredGet<LogoutUserApiResponse>>(
     { path: \`/user/logout\` },
     options
