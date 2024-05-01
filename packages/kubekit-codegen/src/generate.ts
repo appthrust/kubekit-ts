@@ -342,7 +342,7 @@ export async function generateApi(
     const bodyParameter = Object.values(queryArg).find((def) => def.origin === 'body');
 
     if (bodyParameter) {
-      isUnusedArgs = false
+      isUnusedArgs = false;
     }
 
     const argsObject = factory.createIdentifier('args');
@@ -450,7 +450,7 @@ export async function generateApi(
         createObjectLiteralProperty(pickParams('query'), 'params'),
       ].filter(removeUndefined),
       false
-    )
+    );
     return {
       isUnusedArgs,
       queryFn,
@@ -506,7 +506,10 @@ function getBodyNode(bodies: { [contentType: string]: ts.TypeNode }): ts.TypeNod
 // type NoWatch<T> = Omit<T, "watch"> & {
 // 	watch?: false;
 // };
-// type PartialRequired<T, K extends keyof T> = Id<Required<Pick<T, K>> & Omit<T, K>>;
+// type RequiredAndDefined<T> = {
+// 	[P in keyof T]-?: Exclude<T[P], null | undefined>
+// }
+// type PartialRequired<T, K extends keyof T> = Id<RequiredAndDefined<Pick<T, K>> & Omit<T, K>>;
 // type MinimumRequiredGet<T> = Id<T extends {
 // 	metadata?: any;
 // 	apiVersion?: any;
@@ -514,7 +517,7 @@ function getBodyNode(bodies: { [contentType: string]: ts.TypeNode }): ts.TypeNod
 // }
 // 	? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
 // 			metadata: PartialRequired<
-// 				Required<T>["metadata"],
+// 				RequiredAndDefined<T>["metadata"],
 // 				"name" | "namespace" | "creationTimestamp" | "resourceVersion"
 // 			>;
 // 	  }
@@ -579,6 +582,36 @@ const buildInTypes = [
   ),
   factory.createTypeAliasDeclaration(
     undefined,
+    factory.createIdentifier('RequiredAndDefined'),
+    [factory.createTypeParameterDeclaration(undefined, factory.createIdentifier('T'), undefined, undefined)],
+    factory.createMappedTypeNode(
+      undefined,
+      factory.createTypeParameterDeclaration(
+        undefined,
+        factory.createIdentifier('P'),
+        factory.createTypeOperatorNode(
+          ts.SyntaxKind.KeyOfKeyword,
+          factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined)
+        ),
+        undefined
+      ),
+      undefined,
+      factory.createToken(ts.SyntaxKind.MinusToken),
+      factory.createTypeReferenceNode(factory.createIdentifier('Exclude'), [
+        factory.createIndexedAccessTypeNode(
+          factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
+          factory.createTypeReferenceNode(factory.createIdentifier('P'), undefined)
+        ),
+        factory.createUnionTypeNode([
+          factory.createLiteralTypeNode(factory.createNull()),
+          factory.createKeywordTypeNode(ts.SyntaxKind.UndefinedKeyword),
+        ]),
+      ]),
+      undefined
+    )
+  ),
+  factory.createTypeAliasDeclaration(
+    undefined,
     factory.createIdentifier('PartialRequired'),
     [
       factory.createTypeParameterDeclaration(undefined, factory.createIdentifier('T'), undefined, undefined),
@@ -594,7 +627,7 @@ const buildInTypes = [
     ],
     factory.createTypeReferenceNode(factory.createIdentifier('Id'), [
       factory.createIntersectionTypeNode([
-        factory.createTypeReferenceNode(factory.createIdentifier('Required'), [
+        factory.createTypeReferenceNode(factory.createIdentifier('RequiredAndDefined'), [
           factory.createTypeReferenceNode(factory.createIdentifier('Pick'), [
             factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
             factory.createTypeReferenceNode(factory.createIdentifier('K'), undefined),
@@ -653,7 +686,7 @@ const buildInTypes = [
               undefined,
               factory.createTypeReferenceNode(factory.createIdentifier('PartialRequired'), [
                 factory.createIndexedAccessTypeNode(
-                  factory.createTypeReferenceNode(factory.createIdentifier('Required'), [
+                  factory.createTypeReferenceNode(factory.createIdentifier('RequiredAndDefined'), [
                     factory.createTypeReferenceNode(factory.createIdentifier('T'), undefined),
                   ]),
                   factory.createLiteralTypeNode(factory.createStringLiteral('metadata'))

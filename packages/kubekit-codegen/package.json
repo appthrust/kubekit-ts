@@ -1,6 +1,6 @@
 {
   "name": "@kubekit/codegen",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "kahirokunn",

@@ -8,7 +8,10 @@ type Id<T> = {
 type NoWatch<T> = Omit<T, 'watch'> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Id<Required<Pick<T, K>> & Omit<T, K>>;
+type RequiredAndDefined<T> = {
+  [P in keyof T]-?: Exclude<T[P], null | undefined>;
+};
+type PartialRequired<T, K extends keyof T> = Id<RequiredAndDefined<Pick<T, K>> & Omit<T, K>>;
 type MinimumRequiredGet<T> = Id<
   T extends {
     metadata?: any;
@@ -17,7 +20,7 @@ type MinimumRequiredGet<T> = Id<
   }
     ? Omit<PartialRequired<T, 'metadata' | 'apiVersion' | 'kind'>, 'metadata'> & {
         metadata: PartialRequired<
-          Required<T>['metadata'],
+          RequiredAndDefined<T>['metadata'],
           'name' | 'namespace' | 'creationTimestamp' | 'resourceVersion'
         >;
       }
@@ -13071,7 +13074,10 @@ type Id<T> = {
 type NoWatch<T> = Omit<T, 'watch'> & {
   watch?: false;
 };
-type PartialRequired<T, K extends keyof T> = Id<Required<Pick<T, K>> & Omit<T, K>>;
+type RequiredAndDefined<T> = {
+  [P in keyof T]-?: Exclude<T[P], null | undefined>;
+};
+type PartialRequired<T, K extends keyof T> = Id<RequiredAndDefined<Pick<T, K>> & Omit<T, K>>;
 type MinimumRequiredGet<T> = Id<
   T extends {
     metadata?: any;
@@ -13080,7 +13086,7 @@ type MinimumRequiredGet<T> = Id<
   }
     ? Omit<PartialRequired<T, 'metadata' | 'apiVersion' | 'kind'>, 'metadata'> & {
         metadata: PartialRequired<
-          Required<T>['metadata'],
+          RequiredAndDefined<T>['metadata'],
           'name' | 'namespace' | 'creationTimestamp' | 'resourceVersion'
         >;
       }
