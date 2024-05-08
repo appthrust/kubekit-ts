@@ -1,6 +1,6 @@
 {
   "name": "@kubekit/sync",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "main": "lib/index.js",
   "author": "kahirokunn",
   "license": "MIT",
@@ -31,5 +31,8 @@
     "@types/node": "^20.11.30",
     "openapi-types": "^12.1.3",
     "typescript": "^5.3"
+  },
+  "dependencies": {
+    "ts-retry-promise": "^0.8.0"
   }
 }
