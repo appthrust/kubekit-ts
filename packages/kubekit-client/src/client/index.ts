@@ -102,7 +102,7 @@ type RetryOptions = {
   maxRetries?: number;
 };
 
-type HttpOptions = Omit<RequestInit, "headers" | "body"> & {
+type HttpOptions = Omit<RequestInit, 'headers' | 'body'> & {
   /** A Headers object, an object literal, or an array of two-item arrays to set request's headers. */
   headers?: Record<string, string> | undefined;
 };
@@ -125,17 +125,17 @@ export type WatchExtraOptions<T extends K8sListResponse<unknown>> = {
 };
 export type Options = RetryOptions & HttpOptions;
 
-export type ExtraOptions = Options | (Options & WatchExtraOptions<any>)
-export const globalDefaultExtraOptions: ExtraOptions = {}
+export type ExtraOptions = Options | (Options & WatchExtraOptions<any>);
+export const globalDefaultExtraOptions: ExtraOptions = {};
 
 export async function apiClient<Response>(
   arguments_: QueryArgumentsSpec,
   extraOptions: ExtraOptions = {}
-): Promise<Response | void> {
+): Promise<Response> {
   extraOptions = {
     ...globalDefaultExtraOptions,
     ...extraOptions,
-  }
+  };
   const maxRetries = extraOptions.maxRetries ?? 3;
 
   const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => {
@@ -392,11 +392,11 @@ class Debounce {
       return max;
     };
 
-    const now = Number(new Date())
+    const now = Number(new Date());
     const getCurrentPushedAt = this.#cache.get(cacheKey)?.[resourceVersion] || now;
-    const currentElapsedTime = now - getCurrentPushedAt
+    const currentElapsedTime = now - getCurrentPushedAt;
     const getOldestPushedAt = Object.values(this.#cache.get(cacheKey) || {})[0] || now;
-    const oldestElapsedTime = now - getOldestPushedAt
+    const oldestElapsedTime = now - getOldestPushedAt;
 
     if (this.#maxWaitMilliSeconds > oldestElapsedTime && this.#waitMilliSeconds > currentElapsedTime) {
       await sleep(this.#waitMilliSeconds - currentElapsedTime);
