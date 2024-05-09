@@ -173,7 +173,7 @@ export async function apiClient<Response>(
     ...removeNullableProperties(extraOptions),
   };
 
-  let { path, method, params, body, contentType } = { ...arguments_ };
+  let { path, method, params = {}, body, contentType } = { ...arguments_ };
 
   let httpsOptions: https.RequestOptions = {
     path,
@@ -319,9 +319,13 @@ export async function apiClient<Response>(
         return (await response.json()) as Response;
       }
 
-      // helpful message for debugging
       const text = await response.text();
+      if (isSuccess) {
+        // TODO: This is to bypass a type error, but it should be properly addressed.
+        return text as Response;
+      }
       if (response.status === 404 && text.includes('404 page not found')) {
+        // helpful message for debugging
         console.info(`Did you forget to install your Custom Resources Definitions? path: ${httpsOptions.path}`);
       }
       throw new Error(text);
