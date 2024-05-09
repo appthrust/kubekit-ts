@@ -37,3 +37,4 @@ eks-blueprints-add-ons
 examples/generate-vercel-client/swagger.json
 eks-blueprints-add-ons
 openapi
+packages/kubekit-prepare/lib
