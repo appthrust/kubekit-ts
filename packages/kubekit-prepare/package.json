@@ -17,8 +17,8 @@
   "scripts": {
     "build": "tsc",
     "prepare": "tsc && chmod +x ./lib/bin/cli.js",
-    "sync": "npx @kubekit/sync ./",
-    "gen": "npx @kubekit/codegen gen-config/v1.ts && npx @kubekit/codegen gen-config/rbac-v1.ts",
+    "gen-openapi": "kubectl apply -f gen-config/sa.yaml && yarn build; chmod +x lib/bin/cli.js; yarn cli ./gen-config/openapi.ts",
+    "gen-k8s-client": "npx @kubekit/codegen gen-config/k8s-client.ts",
     "cli": "lib/bin/cli.js",
     "test1": "yarn build; chmod +x lib/bin/cli.js; yarn cli tests/test1.config.ts",
     "test2": "yarn build; chmod +x lib/bin/cli.js; yarn cli tests/test2.config.ts",
@@ -35,7 +35,6 @@
   },
   "devDependencies": {
     "@kubekit/codegen": "^0.0.19",
-    "@kubekit/sync": "^0.0.21",
     "@types/lodash.merge": "^4.6.9",
     "@types/node": "^20.11.30",
     "esbuild": "^0.21.1",

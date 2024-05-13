@@ -6,14 +6,14 @@ import {
   listRbacAuthorizationV1RoleBindingForAllNamespaces,
   readRbacAuthorizationV1ClusterRole,
   readRbacAuthorizationV1NamespacedRole,
-} from './k8s-client/rbac-v1'
+} from './k8s-client'
 
 type Url = string
 
 export async function inspectRules(
   kind: string,
   name: string,
-  namespace: string,
+  namespace: string
 ) {
   const resourceRules = {} as ResourceRules
   const nonResourceRules = {} as NonResourceRules
@@ -32,7 +32,7 @@ export async function inspectRules(
 
 async function getRoles(kind: string, name: string, namespace: string) {
   const roleBindings = await listRbacAuthorizationV1RoleBindingForAllNamespaces(
-    {},
+    {}
   )
 
   const subjectRoles = roleBindings.items
@@ -40,7 +40,7 @@ async function getRoles(kind: string, name: string, namespace: string) {
       (b) =>
         b.roleRef.apiGroup === 'rbac.authorization.k8s.io' &&
         b.roleRef.kind === 'Role' &&
-        b.subjects,
+        b.subjects
     )
     .map((b) => ({
       ...b,
@@ -59,8 +59,8 @@ async function getRoles(kind: string, name: string, namespace: string) {
           (subject) =>
             subject.kind === kind &&
             subject.name === name &&
-            subject.namespace === namespace,
-        ) !== -1,
+            subject.namespace === namespace
+        ) !== -1
     )
     .map((b) => b.roleRef)
 
@@ -72,18 +72,18 @@ async function getRoles(kind: string, name: string, namespace: string) {
           namespace,
         }).catch(() => {
           console.warn(
-            `[WARN] Role name: ${name} namespace: ${namespace} does not exists`,
+            `[WARN] Role name: ${name} namespace: ${namespace} does not exists`
           )
-        }),
+        })
       )
-      .filter((v) => v) as IoK8SApiRbacV1Role[],
+      .filter((v) => v) as IoK8SApiRbacV1Role[]
   )
 }
 
 // TODO: Support aggregationRule
 async function getClusterRoles(kind: string, name: string, namespace: string) {
   const clusterRoleBindings = await listRbacAuthorizationV1ClusterRoleBinding(
-    {},
+    {}
   )
 
   const subjectClusterRoles = clusterRoleBindings.items
@@ -91,7 +91,7 @@ async function getClusterRoles(kind: string, name: string, namespace: string) {
       (b) =>
         b.roleRef.apiGroup === 'rbac.authorization.k8s.io' &&
         b.roleRef.kind === 'ClusterRole' &&
-        b.subjects,
+        b.subjects
     )
     .map((b) => ({
       ...b,
@@ -106,8 +106,8 @@ async function getClusterRoles(kind: string, name: string, namespace: string) {
           (subject) =>
             subject.kind === kind &&
             subject.name === name &&
-            subject.namespace === namespace,
-        ) !== -1,
+            subject.namespace === namespace
+        ) !== -1
     )
     .map((b) => b.roleRef)
     .filter((v) => v)
@@ -119,9 +119,9 @@ async function getClusterRoles(kind: string, name: string, namespace: string) {
           name: subjectClusterRole!.name,
         }).catch(() => {
           console.warn(`[WARN] ClusterRole: ${name} does not exists`)
-        }),
+        })
       )
-      .filter((v) => v) as IoK8SApiRbacV1ClusterRole[],
+      .filter((v) => v) as IoK8SApiRbacV1ClusterRole[]
   )
 }
 
@@ -155,7 +155,7 @@ export type ResourceVerb =
   | 'use'
 
 export function mapResourceVerbToKubernetesAction(
-  verb: ResourceVerb,
+  verb: ResourceVerb
 ): KubernetesAction {
   switch (verb) {
     case 'create':
@@ -203,7 +203,7 @@ type NonResourceRules = Record<
 function mutateDict(
   roles: (IoK8SApiRbacV1Role | IoK8SApiRbacV1ClusterRole)[],
   resourceRules: ResourceRules,
-  nonResourceRules: NonResourceRules,
+  nonResourceRules: NonResourceRules
 ) {
   const allRules = roles
     .filter((role) => role)

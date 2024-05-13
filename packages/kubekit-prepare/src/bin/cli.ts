@@ -14,9 +14,9 @@ import {
 import { HttpMethods, assertNotNull } from '../lib'
 import { apiClient } from '@kubekit/client'
 import { ConfigFile } from '../config'
-import { readCoreV1NamespacedServiceAccount } from '../k8s-client/v1'
-import { cleanOpenAPISchema } from '../cleanOpenAPISchema'
-import { prettify } from '../prettier'
+import { readCoreV1NamespacedServiceAccount } from '../k8s-client'
+import { cleanOpenAPISchema } from '../utils/openapi/removeUnusedSchema'
+import { prettify } from '../utils/openapi/prettier'
 
 let ts = false
 try {
@@ -92,6 +92,13 @@ async function generateOpenApi(config: ConfigFile) {
     apiClient<string>({ path: '/openapi/v3' }),
   ])
 
+  if (process.env.DEBUG) {
+    console.debug(
+      '[DEBUG] resourceRules: ',
+      JSON.stringify(resourceRules, null, 2)
+    )
+  }
+
   const source: OpenAPIV3.Document<{}> = JSON.parse(rootOpenApiText)
 
   const cwd = process.cwd()
@@ -123,25 +130,25 @@ async function generateOpenApi(config: ConfigFile) {
       const namespacedPaths: string[] = [
         ...(subResourceName
           ? [
-              `^/${path}/namespaces/{namespace}/${resourceName}/{name}/${subResourceName}$`,
-              `^/${path}/namespaces/{namespace}/${resourceName}/{name}/${subResourceName}/{.+}$`,
+              `^/${path}/namespaces/{.+}/${resourceName}/{.+}/${subResourceName}$`,
+              `^/${path}/namespaces/{.+}/${resourceName}/{.+}/${subResourceName}/{.+}$`,
             ]
           : [
               // operation id: read | replace | delete | patch
               // verb: "get" | "list" | "create" | "update" | "patch" | "delete"
-              `^/${path}/namespaces/{namespace}/${resourceName}/{name}$`,
+              `^/${path}/namespaces/{.+}/${resourceName}/{.+}$`,
               // operation id: list | create | deletecollection
               // verb: "deletecollection" | "proxy" | "watch"
-              `^/${path}/namespaces/{namespace}/${resourceName}$`,
+              `^/${path}/namespaces/{.+}/${resourceName}$`,
             ]),
         // /watch/はdeprecatedなので、無視します
       ]
       const clusterPaths = subResourceName
         ? [
-            `^/${path}/${resourceName}$/{name}/${subResourceName}$`,
-            `^/${path}/${resourceName}$/{name}/${subResourceName}/{.+}$`,
+            `^/${path}/${resourceName}$/{.+}/${subResourceName}$`,
+            `^/${path}/${resourceName}$/{.+}/${subResourceName}/{.+}$`,
           ]
-        : [`^/${path}/${resourceName}$`]
+        : [`^/${path}/${resourceName}/{.+}$`, `^/${path}/${resourceName}$`]
 
       function isMatchedPath(fullPath: string): boolean {
         if (namespaces[0] === '*') {
@@ -160,6 +167,10 @@ async function generateOpenApi(config: ConfigFile) {
             new RegExp(path).test(fullPath)
           ) !== -1
         )
+      }
+
+      if (process.env.DEBUG) {
+        console.log('[DEBUG] paths:', JSON.stringify(paths, null, 2))
       }
       paths
         .filter((path) => isMatchedPath(path))

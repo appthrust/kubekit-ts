@@ -1,9 +1,9 @@
 import type { ConfigFile } from '@kubekit/codegen'
 
 const config: ConfigFile = {
-  schemaFile: '../openapi/api/v1/swagger.json',
+  schemaFile: '../generated-openapi.json',
   apiFile: '@kubekit/client',
-  outputFile: '../src/k8s-client/v1.ts',
+  outputFile: '../src/k8s-client.ts',
 }
 
 export default config
