@@ -1,0 +1,54 @@
+{
+  "name": "@kubekit/openapi-gen",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "kahirokunn",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appthrust/kubekit-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/appthrust/kubekit-ts/issues"
+  },
+  "homepage": "https://github.com/appthrust/kubekit-ts",
+  "bin": "lib/bin/cli.js",
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "prepare": "rm -rf lib && tsc && chmod +x ./lib/bin/cli.js",
+    "gen-openapi": "kubectl apply -f gen-config/sa.yaml && yarn build; chmod +x lib/bin/cli.js; yarn cli ./gen-config/openapi.ts",
+    "gen-k8s-client": "npx @kubekit/codegen gen-config/k8s-client.ts",
+    "cli": "lib/bin/cli.js",
+    "test1": "yarn build; chmod +x lib/bin/cli.js; yarn cli tests/test1.config.ts",
+    "test2": "yarn build; chmod +x lib/bin/cli.js; yarn cli tests/test2.config.ts",
+    "test3": "yarn build; chmod +x lib/bin/cli.js; yarn cli tests/test3.config.ts",
+    "test4": "yarn build; chmod +x lib/bin/cli.js; yarn cli tests/test4-1api.config.ts; yarn cli tests/test4-2api.config.ts"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "devDependencies": {
+    "@kubekit/codegen": "^0.0.19",
+    "@types/lodash.merge": "^4.6.9",
+    "@types/node": "^20.11.30",
+    "esbuild": "^0.21.1",
+    "esbuild-runner": "^2.2.2",
+    "openapi-types": "^12.1.3",
+    "typescript": "5.4.5"
+  },
+  "dependencies": {
+    "@kubekit/client": "0.0.23",
+    "commander": "^6.2.0",
+    "jsonpath-plus": "^9.0.0",
+    "lodash.merge": "^4.6.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-sort-json": "^4.0.0"
+  }
+}
