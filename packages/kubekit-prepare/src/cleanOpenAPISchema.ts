@@ -40,8 +40,8 @@ export function getUsedRefs(schema: OpenAPIV3.Document<{}>) {
           JSONPath({
             path: convertToJSONPath(ref),
             json: schema,
-          })
-        )
+          }),
+        ),
       )
     })
     if (refs.size === elms) {
@@ -53,7 +53,7 @@ export function getUsedRefs(schema: OpenAPIV3.Document<{}>) {
 }
 
 export function cleanOpenAPISchema(
-  schema: OpenAPIV3.Document<{}>
+  schema: OpenAPIV3.Document<{}>,
 ): OpenAPIV3.Document<{}> {
   if (!schema.components?.schemas) {
     return schema
@@ -62,7 +62,7 @@ export function cleanOpenAPISchema(
   const schemas: OpenAPIV3.ComponentsObject['schemas'] = {}
 
   const usedRefs = getUsedRefs(schema).map((ref) =>
-    ref.replace('#/components/schemas/', '')
+    ref.replace('#/components/schemas/', ''),
   )
 
   for (const schemaKey of usedRefs) {

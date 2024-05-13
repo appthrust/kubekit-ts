@@ -48,19 +48,21 @@ type MinimumRequiredList<T> = Id<
 export const getCoreV1ApiResources = (options?: Options) => {
   return apiClient<MinimumRequiredGet<GetCoreV1ApiResourcesApiResponse>>(
     { path: `/api/v1/` },
-    options
+    options,
   )
 }
 export function listCoreV1ComponentStatus(
   args: NoWatch<ListCoreV1ComponentStatusApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1ComponentStatusApiResponse>>
 export function listCoreV1ComponentStatus(
   args: ListCoreV1ComponentStatusApiArg & {
     watch: true
   },
   options: Options &
-    WatchExtraOptions<MinimumRequiredList<ListCoreV1ComponentStatusApiResponse>>
+    WatchExtraOptions<
+      MinimumRequiredList<ListCoreV1ComponentStatusApiResponse>
+    >,
 ): Promise<void>
 export function listCoreV1ComponentStatus(args: any, options: any): any {
   return apiClient<MinimumRequiredList<ListCoreV1ComponentStatusApiResponse>>(
@@ -80,24 +82,24 @@ export function listCoreV1ComponentStatus(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1ComponentStatus = (
   args: ReadCoreV1ComponentStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1ComponentStatusApiResponse>>(
     {
       path: `/api/v1/componentstatuses/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export function listCoreV1ConfigMapForAllNamespaces(
   args: NoWatch<ListCoreV1ConfigMapForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1ConfigMapForAllNamespacesApiResponse>>
 export function listCoreV1ConfigMapForAllNamespaces(
   args: ListCoreV1ConfigMapForAllNamespacesApiArg & {
@@ -106,11 +108,11 @@ export function listCoreV1ConfigMapForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1ConfigMapForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1ConfigMapForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1ConfigMapForAllNamespacesApiResponse>
@@ -131,12 +133,12 @@ export function listCoreV1ConfigMapForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1EndpointsForAllNamespaces(
   args: NoWatch<ListCoreV1EndpointsForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1EndpointsForAllNamespacesApiResponse>>
 export function listCoreV1EndpointsForAllNamespaces(
   args: ListCoreV1EndpointsForAllNamespacesApiArg & {
@@ -145,11 +147,11 @@ export function listCoreV1EndpointsForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1EndpointsForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1EndpointsForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1EndpointsForAllNamespacesApiResponse>
@@ -170,12 +172,12 @@ export function listCoreV1EndpointsForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1EventForAllNamespaces(
   args: NoWatch<ListCoreV1EventForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1EventForAllNamespacesApiResponse>>
 export function listCoreV1EventForAllNamespaces(
   args: ListCoreV1EventForAllNamespacesApiArg & {
@@ -184,7 +186,7 @@ export function listCoreV1EventForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1EventForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1EventForAllNamespaces(args: any, options: any): any {
   return apiClient<
@@ -206,12 +208,12 @@ export function listCoreV1EventForAllNamespaces(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1LimitRangeForAllNamespaces(
   args: NoWatch<ListCoreV1LimitRangeForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1LimitRangeForAllNamespacesApiResponse>>
 export function listCoreV1LimitRangeForAllNamespaces(
   args: ListCoreV1LimitRangeForAllNamespacesApiArg & {
@@ -220,11 +222,11 @@ export function listCoreV1LimitRangeForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1LimitRangeForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1LimitRangeForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1LimitRangeForAllNamespacesApiResponse>
@@ -245,19 +247,19 @@ export function listCoreV1LimitRangeForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1Namespace(
   args: NoWatch<ListCoreV1NamespaceApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespaceApiResponse>>
 export function listCoreV1Namespace(
   args: ListCoreV1NamespaceApiArg & {
     watch: true
   },
   options: Options &
-    WatchExtraOptions<MinimumRequiredList<ListCoreV1NamespaceApiResponse>>
+    WatchExtraOptions<MinimumRequiredList<ListCoreV1NamespaceApiResponse>>,
 ): Promise<void>
 export function listCoreV1Namespace(args: any, options: any): any {
   return apiClient<MinimumRequiredList<ListCoreV1NamespaceApiResponse>>(
@@ -277,12 +279,12 @@ export function listCoreV1Namespace(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1Namespace = (
   args: CreateCoreV1NamespaceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<CreateCoreV1NamespaceApiResponse>>(
     {
@@ -297,12 +299,12 @@ export const createCoreV1Namespace = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedBinding = (
   args: CreateCoreV1NamespacedBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedBindingApiResponse>
@@ -319,12 +321,12 @@ export const createCoreV1NamespacedBinding = (
         pretty: args.pretty,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedConfigMap(
   args: NoWatch<ListCoreV1NamespacedConfigMapApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespacedConfigMapApiResponse>>
 export function listCoreV1NamespacedConfigMap(
   args: ListCoreV1NamespacedConfigMapApiArg & {
@@ -333,7 +335,7 @@ export function listCoreV1NamespacedConfigMap(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1NamespacedConfigMapApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedConfigMap(args: any, options: any): any {
   return apiClient<
@@ -355,12 +357,12 @@ export function listCoreV1NamespacedConfigMap(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedConfigMap = (
   args: CreateCoreV1NamespacedConfigMapApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedConfigMapApiResponse>
@@ -377,12 +379,12 @@ export const createCoreV1NamespacedConfigMap = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedConfigMap = (
   args: DeleteCoreV1CollectionNamespacedConfigMapApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedConfigMapApiResponse>
@@ -408,12 +410,12 @@ export const deleteCoreV1CollectionNamespacedConfigMap = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedConfigMap = (
   args: ReadCoreV1NamespacedConfigMapApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedConfigMapApiResponse>
@@ -422,12 +424,12 @@ export const readCoreV1NamespacedConfigMap = (
       path: `/api/v1/namespaces/${args['namespace']}/configmaps/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedConfigMap = (
   args: ReplaceCoreV1NamespacedConfigMapApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedConfigMapApiResponse>
@@ -444,12 +446,12 @@ export const replaceCoreV1NamespacedConfigMap = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedConfigMap = (
   args: DeleteCoreV1NamespacedConfigMapApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1NamespacedConfigMapApiResponse>
@@ -467,12 +469,12 @@ export const deleteCoreV1NamespacedConfigMap = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedConfigMap = (
   args: PatchCoreV1NamespacedConfigMapApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedConfigMapApiResponse>
@@ -490,12 +492,12 @@ export const patchCoreV1NamespacedConfigMap = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedEndpoints(
   args: NoWatch<ListCoreV1NamespacedEndpointsApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespacedEndpointsApiResponse>>
 export function listCoreV1NamespacedEndpoints(
   args: ListCoreV1NamespacedEndpointsApiArg & {
@@ -504,7 +506,7 @@ export function listCoreV1NamespacedEndpoints(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1NamespacedEndpointsApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedEndpoints(args: any, options: any): any {
   return apiClient<
@@ -526,12 +528,12 @@ export function listCoreV1NamespacedEndpoints(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedEndpoints = (
   args: CreateCoreV1NamespacedEndpointsApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedEndpointsApiResponse>
@@ -548,12 +550,12 @@ export const createCoreV1NamespacedEndpoints = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedEndpoints = (
   args: DeleteCoreV1CollectionNamespacedEndpointsApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedEndpointsApiResponse>
@@ -579,12 +581,12 @@ export const deleteCoreV1CollectionNamespacedEndpoints = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedEndpoints = (
   args: ReadCoreV1NamespacedEndpointsApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedEndpointsApiResponse>
@@ -593,12 +595,12 @@ export const readCoreV1NamespacedEndpoints = (
       path: `/api/v1/namespaces/${args['namespace']}/endpoints/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedEndpoints = (
   args: ReplaceCoreV1NamespacedEndpointsApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedEndpointsApiResponse>
@@ -615,12 +617,12 @@ export const replaceCoreV1NamespacedEndpoints = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedEndpoints = (
   args: DeleteCoreV1NamespacedEndpointsApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1NamespacedEndpointsApiResponse>
@@ -638,12 +640,12 @@ export const deleteCoreV1NamespacedEndpoints = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedEndpoints = (
   args: PatchCoreV1NamespacedEndpointsApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedEndpointsApiResponse>
@@ -661,19 +663,21 @@ export const patchCoreV1NamespacedEndpoints = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedEvent(
   args: NoWatch<ListCoreV1NamespacedEventApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespacedEventApiResponse>>
 export function listCoreV1NamespacedEvent(
   args: ListCoreV1NamespacedEventApiArg & {
     watch: true
   },
   options: Options &
-    WatchExtraOptions<MinimumRequiredList<ListCoreV1NamespacedEventApiResponse>>
+    WatchExtraOptions<
+      MinimumRequiredList<ListCoreV1NamespacedEventApiResponse>
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedEvent(args: any, options: any): any {
   return apiClient<MinimumRequiredList<ListCoreV1NamespacedEventApiResponse>>(
@@ -693,12 +697,12 @@ export function listCoreV1NamespacedEvent(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedEvent = (
   args: CreateCoreV1NamespacedEventApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<CreateCoreV1NamespacedEventApiResponse>>(
     {
@@ -713,12 +717,12 @@ export const createCoreV1NamespacedEvent = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedEvent = (
   args: DeleteCoreV1CollectionNamespacedEventApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedEventApiResponse>
@@ -744,24 +748,24 @@ export const deleteCoreV1CollectionNamespacedEvent = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedEvent = (
   args: ReadCoreV1NamespacedEventApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1NamespacedEventApiResponse>>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/events/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedEvent = (
   args: ReplaceCoreV1NamespacedEventApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReplaceCoreV1NamespacedEventApiResponse>>(
     {
@@ -776,12 +780,12 @@ export const replaceCoreV1NamespacedEvent = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedEvent = (
   args: DeleteCoreV1NamespacedEventApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<DeleteCoreV1NamespacedEventApiResponse>>(
     {
@@ -797,12 +801,12 @@ export const deleteCoreV1NamespacedEvent = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedEvent = (
   args: PatchCoreV1NamespacedEventApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<PatchCoreV1NamespacedEventApiResponse>>(
     {
@@ -818,12 +822,12 @@ export const patchCoreV1NamespacedEvent = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedLimitRange(
   args: NoWatch<ListCoreV1NamespacedLimitRangeApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespacedLimitRangeApiResponse>>
 export function listCoreV1NamespacedLimitRange(
   args: ListCoreV1NamespacedLimitRangeApiArg & {
@@ -832,7 +836,7 @@ export function listCoreV1NamespacedLimitRange(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1NamespacedLimitRangeApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedLimitRange(args: any, options: any): any {
   return apiClient<
@@ -854,12 +858,12 @@ export function listCoreV1NamespacedLimitRange(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedLimitRange = (
   args: CreateCoreV1NamespacedLimitRangeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedLimitRangeApiResponse>
@@ -876,12 +880,12 @@ export const createCoreV1NamespacedLimitRange = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedLimitRange = (
   args: DeleteCoreV1CollectionNamespacedLimitRangeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedLimitRangeApiResponse>
@@ -907,12 +911,12 @@ export const deleteCoreV1CollectionNamespacedLimitRange = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedLimitRange = (
   args: ReadCoreV1NamespacedLimitRangeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedLimitRangeApiResponse>
@@ -921,12 +925,12 @@ export const readCoreV1NamespacedLimitRange = (
       path: `/api/v1/namespaces/${args['namespace']}/limitranges/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedLimitRange = (
   args: ReplaceCoreV1NamespacedLimitRangeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedLimitRangeApiResponse>
@@ -943,12 +947,12 @@ export const replaceCoreV1NamespacedLimitRange = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedLimitRange = (
   args: DeleteCoreV1NamespacedLimitRangeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1NamespacedLimitRangeApiResponse>
@@ -966,12 +970,12 @@ export const deleteCoreV1NamespacedLimitRange = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedLimitRange = (
   args: PatchCoreV1NamespacedLimitRangeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedLimitRangeApiResponse>
@@ -989,12 +993,12 @@ export const patchCoreV1NamespacedLimitRange = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedPersistentVolumeClaim(
   args: NoWatch<ListCoreV1NamespacedPersistentVolumeClaimApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>
 >
@@ -1005,11 +1009,11 @@ export function listCoreV1NamespacedPersistentVolumeClaim(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedPersistentVolumeClaim(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1NamespacedPersistentVolumeClaimApiResponse>
@@ -1030,12 +1034,12 @@ export function listCoreV1NamespacedPersistentVolumeClaim(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedPersistentVolumeClaim = (
   args: CreateCoreV1NamespacedPersistentVolumeClaimApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedPersistentVolumeClaimApiResponse>
@@ -1052,12 +1056,12 @@ export const createCoreV1NamespacedPersistentVolumeClaim = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedPersistentVolumeClaim = (
   args: DeleteCoreV1CollectionNamespacedPersistentVolumeClaimApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedPersistentVolumeClaimApiResponse>
@@ -1083,12 +1087,12 @@ export const deleteCoreV1CollectionNamespacedPersistentVolumeClaim = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedPersistentVolumeClaim = (
   args: ReadCoreV1NamespacedPersistentVolumeClaimApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedPersistentVolumeClaimApiResponse>
@@ -1097,12 +1101,12 @@ export const readCoreV1NamespacedPersistentVolumeClaim = (
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedPersistentVolumeClaim = (
   args: ReplaceCoreV1NamespacedPersistentVolumeClaimApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedPersistentVolumeClaimApiResponse>
@@ -1119,12 +1123,12 @@ export const replaceCoreV1NamespacedPersistentVolumeClaim = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedPersistentVolumeClaim = (
   args: DeleteCoreV1NamespacedPersistentVolumeClaimApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1NamespacedPersistentVolumeClaimApiResponse>
@@ -1142,12 +1146,12 @@ export const deleteCoreV1NamespacedPersistentVolumeClaim = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedPersistentVolumeClaim = (
   args: PatchCoreV1NamespacedPersistentVolumeClaimApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedPersistentVolumeClaimApiResponse>
@@ -1165,12 +1169,12 @@ export const patchCoreV1NamespacedPersistentVolumeClaim = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedPersistentVolumeClaimStatus = (
   args: ReadCoreV1NamespacedPersistentVolumeClaimStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedPersistentVolumeClaimStatusApiResponse>
@@ -1179,12 +1183,12 @@ export const readCoreV1NamespacedPersistentVolumeClaimStatus = (
       path: `/api/v1/namespaces/${args['namespace']}/persistentvolumeclaims/${args.name}/status`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedPersistentVolumeClaimStatus = (
   args: ReplaceCoreV1NamespacedPersistentVolumeClaimStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedPersistentVolumeClaimStatusApiResponse>
@@ -1201,12 +1205,12 @@ export const replaceCoreV1NamespacedPersistentVolumeClaimStatus = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedPersistentVolumeClaimStatus = (
   args: PatchCoreV1NamespacedPersistentVolumeClaimStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedPersistentVolumeClaimStatusApiResponse>
@@ -1224,19 +1228,19 @@ export const patchCoreV1NamespacedPersistentVolumeClaimStatus = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedPod(
   args: NoWatch<ListCoreV1NamespacedPodApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespacedPodApiResponse>>
 export function listCoreV1NamespacedPod(
   args: ListCoreV1NamespacedPodApiArg & {
     watch: true
   },
   options: Options &
-    WatchExtraOptions<MinimumRequiredList<ListCoreV1NamespacedPodApiResponse>>
+    WatchExtraOptions<MinimumRequiredList<ListCoreV1NamespacedPodApiResponse>>,
 ): Promise<void>
 export function listCoreV1NamespacedPod(args: any, options: any): any {
   return apiClient<MinimumRequiredList<ListCoreV1NamespacedPodApiResponse>>(
@@ -1256,12 +1260,12 @@ export function listCoreV1NamespacedPod(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedPod = (
   args: CreateCoreV1NamespacedPodApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<CreateCoreV1NamespacedPodApiResponse>>(
     {
@@ -1276,12 +1280,12 @@ export const createCoreV1NamespacedPod = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedPod = (
   args: DeleteCoreV1CollectionNamespacedPodApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedPodApiResponse>
@@ -1307,24 +1311,24 @@ export const deleteCoreV1CollectionNamespacedPod = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedPod = (
   args: ReadCoreV1NamespacedPodApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1NamespacedPodApiResponse>>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedPod = (
   args: ReplaceCoreV1NamespacedPodApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReplaceCoreV1NamespacedPodApiResponse>>(
     {
@@ -1339,12 +1343,12 @@ export const replaceCoreV1NamespacedPod = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedPod = (
   args: DeleteCoreV1NamespacedPodApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<DeleteCoreV1NamespacedPodApiResponse>>(
     {
@@ -1360,12 +1364,12 @@ export const deleteCoreV1NamespacedPod = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedPod = (
   args: PatchCoreV1NamespacedPodApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<PatchCoreV1NamespacedPodApiResponse>>(
     {
@@ -1381,12 +1385,12 @@ export const patchCoreV1NamespacedPod = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1GetNamespacedPodAttach = (
   args: ConnectCoreV1GetNamespacedPodAttachApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1GetNamespacedPodAttachApiResponse>
@@ -1401,12 +1405,12 @@ export const connectCoreV1GetNamespacedPodAttach = (
         tty: args.tty,
       },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PostNamespacedPodAttach = (
   args: ConnectCoreV1PostNamespacedPodAttachApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PostNamespacedPodAttachApiResponse>
@@ -1422,12 +1426,12 @@ export const connectCoreV1PostNamespacedPodAttach = (
         tty: args.tty,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedPodBinding = (
   args: CreateCoreV1NamespacedPodBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedPodBindingApiResponse>
@@ -1444,12 +1448,12 @@ export const createCoreV1NamespacedPodBinding = (
         pretty: args.pretty,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedPodEphemeralcontainers = (
   args: ReadCoreV1NamespacedPodEphemeralcontainersApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedPodEphemeralcontainersApiResponse>
@@ -1458,12 +1462,12 @@ export const readCoreV1NamespacedPodEphemeralcontainers = (
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/ephemeralcontainers`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedPodEphemeralcontainers = (
   args: ReplaceCoreV1NamespacedPodEphemeralcontainersApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedPodEphemeralcontainersApiResponse>
@@ -1480,12 +1484,12 @@ export const replaceCoreV1NamespacedPodEphemeralcontainers = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedPodEphemeralcontainers = (
   args: PatchCoreV1NamespacedPodEphemeralcontainersApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedPodEphemeralcontainersApiResponse>
@@ -1503,12 +1507,12 @@ export const patchCoreV1NamespacedPodEphemeralcontainers = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedPodEviction = (
   args: CreateCoreV1NamespacedPodEvictionApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedPodEvictionApiResponse>
@@ -1525,12 +1529,12 @@ export const createCoreV1NamespacedPodEviction = (
         pretty: args.pretty,
       },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1GetNamespacedPodExec = (
   args: ConnectCoreV1GetNamespacedPodExecApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1GetNamespacedPodExecApiResponse>
@@ -1546,12 +1550,12 @@ export const connectCoreV1GetNamespacedPodExec = (
         tty: args.tty,
       },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PostNamespacedPodExec = (
   args: ConnectCoreV1PostNamespacedPodExecApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PostNamespacedPodExecApiResponse>
@@ -1568,12 +1572,12 @@ export const connectCoreV1PostNamespacedPodExec = (
         tty: args.tty,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedPodLog = (
   args: ReadCoreV1NamespacedPodLogApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1NamespacedPodLogApiResponse>>(
     {
@@ -1590,12 +1594,12 @@ export const readCoreV1NamespacedPodLog = (
         timestamps: args.timestamps,
       },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1GetNamespacedPodPortforward = (
   args: ConnectCoreV1GetNamespacedPodPortforwardApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1GetNamespacedPodPortforwardApiResponse>
@@ -1604,12 +1608,12 @@ export const connectCoreV1GetNamespacedPodPortforward = (
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/portforward`,
       params: { ports: args.ports },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PostNamespacedPodPortforward = (
   args: ConnectCoreV1PostNamespacedPodPortforwardApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PostNamespacedPodPortforwardApiResponse>
@@ -1619,12 +1623,12 @@ export const connectCoreV1PostNamespacedPodPortforward = (
       method: 'POST',
       params: { ports: args.ports },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1GetNamespacedPodProxy = (
   args: ConnectCoreV1GetNamespacedPodProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1GetNamespacedPodProxyApiResponse>
@@ -1633,12 +1637,12 @@ export const connectCoreV1GetNamespacedPodProxy = (
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/proxy`,
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PutNamespacedPodProxy = (
   args: ConnectCoreV1PutNamespacedPodProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PutNamespacedPodProxyApiResponse>
@@ -1648,12 +1652,12 @@ export const connectCoreV1PutNamespacedPodProxy = (
       method: 'PUT',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PostNamespacedPodProxy = (
   args: ConnectCoreV1PostNamespacedPodProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PostNamespacedPodProxyApiResponse>
@@ -1663,12 +1667,12 @@ export const connectCoreV1PostNamespacedPodProxy = (
       method: 'POST',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1DeleteNamespacedPodProxy = (
   args: ConnectCoreV1DeleteNamespacedPodProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1DeleteNamespacedPodProxyApiResponse>
@@ -1678,12 +1682,12 @@ export const connectCoreV1DeleteNamespacedPodProxy = (
       method: 'DELETE',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1OptionsNamespacedPodProxy = (
   args: ConnectCoreV1OptionsNamespacedPodProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1OptionsNamespacedPodProxyApiResponse>
@@ -1693,12 +1697,12 @@ export const connectCoreV1OptionsNamespacedPodProxy = (
       method: 'OPTIONS',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1HeadNamespacedPodProxy = (
   args: ConnectCoreV1HeadNamespacedPodProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1HeadNamespacedPodProxyApiResponse>
@@ -1708,12 +1712,12 @@ export const connectCoreV1HeadNamespacedPodProxy = (
       method: 'HEAD',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PatchNamespacedPodProxy = (
   args: ConnectCoreV1PatchNamespacedPodProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PatchNamespacedPodProxyApiResponse>
@@ -1723,12 +1727,12 @@ export const connectCoreV1PatchNamespacedPodProxy = (
       method: 'PATCH',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1GetNamespacedPodProxyWithPath = (
   args: ConnectCoreV1GetNamespacedPodProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1GetNamespacedPodProxyWithPathApiResponse>
@@ -1737,12 +1741,12 @@ export const connectCoreV1GetNamespacedPodProxyWithPath = (
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/proxy/${args.pathPath}`,
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PutNamespacedPodProxyWithPath = (
   args: ConnectCoreV1PutNamespacedPodProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PutNamespacedPodProxyWithPathApiResponse>
@@ -1752,12 +1756,12 @@ export const connectCoreV1PutNamespacedPodProxyWithPath = (
       method: 'PUT',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PostNamespacedPodProxyWithPath = (
   args: ConnectCoreV1PostNamespacedPodProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PostNamespacedPodProxyWithPathApiResponse>
@@ -1767,12 +1771,12 @@ export const connectCoreV1PostNamespacedPodProxyWithPath = (
       method: 'POST',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1DeleteNamespacedPodProxyWithPath = (
   args: ConnectCoreV1DeleteNamespacedPodProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1DeleteNamespacedPodProxyWithPathApiResponse>
@@ -1782,12 +1786,12 @@ export const connectCoreV1DeleteNamespacedPodProxyWithPath = (
       method: 'DELETE',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1OptionsNamespacedPodProxyWithPath = (
   args: ConnectCoreV1OptionsNamespacedPodProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1OptionsNamespacedPodProxyWithPathApiResponse>
@@ -1797,12 +1801,12 @@ export const connectCoreV1OptionsNamespacedPodProxyWithPath = (
       method: 'OPTIONS',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1HeadNamespacedPodProxyWithPath = (
   args: ConnectCoreV1HeadNamespacedPodProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1HeadNamespacedPodProxyWithPathApiResponse>
@@ -1812,12 +1816,12 @@ export const connectCoreV1HeadNamespacedPodProxyWithPath = (
       method: 'HEAD',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PatchNamespacedPodProxyWithPath = (
   args: ConnectCoreV1PatchNamespacedPodProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PatchNamespacedPodProxyWithPathApiResponse>
@@ -1827,12 +1831,12 @@ export const connectCoreV1PatchNamespacedPodProxyWithPath = (
       method: 'PATCH',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedPodStatus = (
   args: ReadCoreV1NamespacedPodStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedPodStatusApiResponse>
@@ -1841,12 +1845,12 @@ export const readCoreV1NamespacedPodStatus = (
       path: `/api/v1/namespaces/${args['namespace']}/pods/${args.name}/status`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedPodStatus = (
   args: ReplaceCoreV1NamespacedPodStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedPodStatusApiResponse>
@@ -1863,12 +1867,12 @@ export const replaceCoreV1NamespacedPodStatus = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedPodStatus = (
   args: PatchCoreV1NamespacedPodStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedPodStatusApiResponse>
@@ -1886,12 +1890,12 @@ export const patchCoreV1NamespacedPodStatus = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedPodTemplate(
   args: NoWatch<ListCoreV1NamespacedPodTemplateApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespacedPodTemplateApiResponse>>
 export function listCoreV1NamespacedPodTemplate(
   args: ListCoreV1NamespacedPodTemplateApiArg & {
@@ -1900,7 +1904,7 @@ export function listCoreV1NamespacedPodTemplate(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1NamespacedPodTemplateApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedPodTemplate(args: any, options: any): any {
   return apiClient<
@@ -1922,12 +1926,12 @@ export function listCoreV1NamespacedPodTemplate(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedPodTemplate = (
   args: CreateCoreV1NamespacedPodTemplateApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedPodTemplateApiResponse>
@@ -1944,12 +1948,12 @@ export const createCoreV1NamespacedPodTemplate = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedPodTemplate = (
   args: DeleteCoreV1CollectionNamespacedPodTemplateApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedPodTemplateApiResponse>
@@ -1975,12 +1979,12 @@ export const deleteCoreV1CollectionNamespacedPodTemplate = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedPodTemplate = (
   args: ReadCoreV1NamespacedPodTemplateApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedPodTemplateApiResponse>
@@ -1989,12 +1993,12 @@ export const readCoreV1NamespacedPodTemplate = (
       path: `/api/v1/namespaces/${args['namespace']}/podtemplates/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedPodTemplate = (
   args: ReplaceCoreV1NamespacedPodTemplateApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedPodTemplateApiResponse>
@@ -2011,12 +2015,12 @@ export const replaceCoreV1NamespacedPodTemplate = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedPodTemplate = (
   args: DeleteCoreV1NamespacedPodTemplateApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1NamespacedPodTemplateApiResponse>
@@ -2034,12 +2038,12 @@ export const deleteCoreV1NamespacedPodTemplate = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedPodTemplate = (
   args: PatchCoreV1NamespacedPodTemplateApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedPodTemplateApiResponse>
@@ -2057,12 +2061,12 @@ export const patchCoreV1NamespacedPodTemplate = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedReplicationController(
   args: NoWatch<ListCoreV1NamespacedReplicationControllerApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListCoreV1NamespacedReplicationControllerApiResponse>
 >
@@ -2073,11 +2077,11 @@ export function listCoreV1NamespacedReplicationController(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1NamespacedReplicationControllerApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedReplicationController(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1NamespacedReplicationControllerApiResponse>
@@ -2098,12 +2102,12 @@ export function listCoreV1NamespacedReplicationController(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedReplicationController = (
   args: CreateCoreV1NamespacedReplicationControllerApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedReplicationControllerApiResponse>
@@ -2120,12 +2124,12 @@ export const createCoreV1NamespacedReplicationController = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedReplicationController = (
   args: DeleteCoreV1CollectionNamespacedReplicationControllerApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedReplicationControllerApiResponse>
@@ -2151,12 +2155,12 @@ export const deleteCoreV1CollectionNamespacedReplicationController = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedReplicationController = (
   args: ReadCoreV1NamespacedReplicationControllerApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedReplicationControllerApiResponse>
@@ -2165,12 +2169,12 @@ export const readCoreV1NamespacedReplicationController = (
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedReplicationController = (
   args: ReplaceCoreV1NamespacedReplicationControllerApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedReplicationControllerApiResponse>
@@ -2187,12 +2191,12 @@ export const replaceCoreV1NamespacedReplicationController = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedReplicationController = (
   args: DeleteCoreV1NamespacedReplicationControllerApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1NamespacedReplicationControllerApiResponse>
@@ -2210,12 +2214,12 @@ export const deleteCoreV1NamespacedReplicationController = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedReplicationController = (
   args: PatchCoreV1NamespacedReplicationControllerApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedReplicationControllerApiResponse>
@@ -2233,12 +2237,12 @@ export const patchCoreV1NamespacedReplicationController = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedReplicationControllerScale = (
   args: ReadCoreV1NamespacedReplicationControllerScaleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedReplicationControllerScaleApiResponse>
@@ -2247,12 +2251,12 @@ export const readCoreV1NamespacedReplicationControllerScale = (
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}/scale`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedReplicationControllerScale = (
   args: ReplaceCoreV1NamespacedReplicationControllerScaleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedReplicationControllerScaleApiResponse>
@@ -2269,12 +2273,12 @@ export const replaceCoreV1NamespacedReplicationControllerScale = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedReplicationControllerScale = (
   args: PatchCoreV1NamespacedReplicationControllerScaleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedReplicationControllerScaleApiResponse>
@@ -2292,12 +2296,12 @@ export const patchCoreV1NamespacedReplicationControllerScale = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedReplicationControllerStatus = (
   args: ReadCoreV1NamespacedReplicationControllerStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedReplicationControllerStatusApiResponse>
@@ -2306,12 +2310,12 @@ export const readCoreV1NamespacedReplicationControllerStatus = (
       path: `/api/v1/namespaces/${args['namespace']}/replicationcontrollers/${args.name}/status`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedReplicationControllerStatus = (
   args: ReplaceCoreV1NamespacedReplicationControllerStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedReplicationControllerStatusApiResponse>
@@ -2328,12 +2332,12 @@ export const replaceCoreV1NamespacedReplicationControllerStatus = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedReplicationControllerStatus = (
   args: PatchCoreV1NamespacedReplicationControllerStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedReplicationControllerStatusApiResponse>
@@ -2351,12 +2355,12 @@ export const patchCoreV1NamespacedReplicationControllerStatus = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedResourceQuota(
   args: NoWatch<ListCoreV1NamespacedResourceQuotaApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespacedResourceQuotaApiResponse>>
 export function listCoreV1NamespacedResourceQuota(
   args: ListCoreV1NamespacedResourceQuotaApiArg & {
@@ -2365,11 +2369,11 @@ export function listCoreV1NamespacedResourceQuota(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1NamespacedResourceQuotaApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedResourceQuota(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1NamespacedResourceQuotaApiResponse>
@@ -2390,12 +2394,12 @@ export function listCoreV1NamespacedResourceQuota(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedResourceQuota = (
   args: CreateCoreV1NamespacedResourceQuotaApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedResourceQuotaApiResponse>
@@ -2412,12 +2416,12 @@ export const createCoreV1NamespacedResourceQuota = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedResourceQuota = (
   args: DeleteCoreV1CollectionNamespacedResourceQuotaApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedResourceQuotaApiResponse>
@@ -2443,12 +2447,12 @@ export const deleteCoreV1CollectionNamespacedResourceQuota = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedResourceQuota = (
   args: ReadCoreV1NamespacedResourceQuotaApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedResourceQuotaApiResponse>
@@ -2457,12 +2461,12 @@ export const readCoreV1NamespacedResourceQuota = (
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedResourceQuota = (
   args: ReplaceCoreV1NamespacedResourceQuotaApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedResourceQuotaApiResponse>
@@ -2479,12 +2483,12 @@ export const replaceCoreV1NamespacedResourceQuota = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedResourceQuota = (
   args: DeleteCoreV1NamespacedResourceQuotaApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1NamespacedResourceQuotaApiResponse>
@@ -2502,12 +2506,12 @@ export const deleteCoreV1NamespacedResourceQuota = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedResourceQuota = (
   args: PatchCoreV1NamespacedResourceQuotaApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedResourceQuotaApiResponse>
@@ -2525,12 +2529,12 @@ export const patchCoreV1NamespacedResourceQuota = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedResourceQuotaStatus = (
   args: ReadCoreV1NamespacedResourceQuotaStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedResourceQuotaStatusApiResponse>
@@ -2539,12 +2543,12 @@ export const readCoreV1NamespacedResourceQuotaStatus = (
       path: `/api/v1/namespaces/${args['namespace']}/resourcequotas/${args.name}/status`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedResourceQuotaStatus = (
   args: ReplaceCoreV1NamespacedResourceQuotaStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedResourceQuotaStatusApiResponse>
@@ -2561,12 +2565,12 @@ export const replaceCoreV1NamespacedResourceQuotaStatus = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedResourceQuotaStatus = (
   args: PatchCoreV1NamespacedResourceQuotaStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedResourceQuotaStatusApiResponse>
@@ -2584,12 +2588,12 @@ export const patchCoreV1NamespacedResourceQuotaStatus = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedSecret(
   args: NoWatch<ListCoreV1NamespacedSecretApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespacedSecretApiResponse>>
 export function listCoreV1NamespacedSecret(
   args: ListCoreV1NamespacedSecretApiArg & {
@@ -2598,7 +2602,7 @@ export function listCoreV1NamespacedSecret(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1NamespacedSecretApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedSecret(args: any, options: any): any {
   return apiClient<MinimumRequiredList<ListCoreV1NamespacedSecretApiResponse>>(
@@ -2618,12 +2622,12 @@ export function listCoreV1NamespacedSecret(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedSecret = (
   args: CreateCoreV1NamespacedSecretApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<CreateCoreV1NamespacedSecretApiResponse>>(
     {
@@ -2638,12 +2642,12 @@ export const createCoreV1NamespacedSecret = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedSecret = (
   args: DeleteCoreV1CollectionNamespacedSecretApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedSecretApiResponse>
@@ -2669,24 +2673,24 @@ export const deleteCoreV1CollectionNamespacedSecret = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedSecret = (
   args: ReadCoreV1NamespacedSecretApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1NamespacedSecretApiResponse>>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/secrets/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedSecret = (
   args: ReplaceCoreV1NamespacedSecretApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedSecretApiResponse>
@@ -2703,12 +2707,12 @@ export const replaceCoreV1NamespacedSecret = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedSecret = (
   args: DeleteCoreV1NamespacedSecretApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<DeleteCoreV1NamespacedSecretApiResponse>>(
     {
@@ -2724,12 +2728,12 @@ export const deleteCoreV1NamespacedSecret = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedSecret = (
   args: PatchCoreV1NamespacedSecretApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<PatchCoreV1NamespacedSecretApiResponse>>(
     {
@@ -2745,12 +2749,12 @@ export const patchCoreV1NamespacedSecret = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedServiceAccount(
   args: NoWatch<ListCoreV1NamespacedServiceAccountApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespacedServiceAccountApiResponse>>
 export function listCoreV1NamespacedServiceAccount(
   args: ListCoreV1NamespacedServiceAccountApiArg & {
@@ -2759,11 +2763,11 @@ export function listCoreV1NamespacedServiceAccount(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1NamespacedServiceAccountApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedServiceAccount(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1NamespacedServiceAccountApiResponse>
@@ -2784,12 +2788,12 @@ export function listCoreV1NamespacedServiceAccount(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedServiceAccount = (
   args: CreateCoreV1NamespacedServiceAccountApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedServiceAccountApiResponse>
@@ -2806,12 +2810,12 @@ export const createCoreV1NamespacedServiceAccount = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedServiceAccount = (
   args: DeleteCoreV1CollectionNamespacedServiceAccountApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedServiceAccountApiResponse>
@@ -2837,12 +2841,12 @@ export const deleteCoreV1CollectionNamespacedServiceAccount = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedServiceAccount = (
   args: ReadCoreV1NamespacedServiceAccountApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedServiceAccountApiResponse>
@@ -2851,12 +2855,12 @@ export const readCoreV1NamespacedServiceAccount = (
       path: `/api/v1/namespaces/${args['namespace']}/serviceaccounts/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedServiceAccount = (
   args: ReplaceCoreV1NamespacedServiceAccountApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedServiceAccountApiResponse>
@@ -2873,12 +2877,12 @@ export const replaceCoreV1NamespacedServiceAccount = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedServiceAccount = (
   args: DeleteCoreV1NamespacedServiceAccountApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1NamespacedServiceAccountApiResponse>
@@ -2896,12 +2900,12 @@ export const deleteCoreV1NamespacedServiceAccount = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedServiceAccount = (
   args: PatchCoreV1NamespacedServiceAccountApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedServiceAccountApiResponse>
@@ -2919,12 +2923,12 @@ export const patchCoreV1NamespacedServiceAccount = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedServiceAccountToken = (
   args: CreateCoreV1NamespacedServiceAccountTokenApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedServiceAccountTokenApiResponse>
@@ -2941,12 +2945,12 @@ export const createCoreV1NamespacedServiceAccountToken = (
         pretty: args.pretty,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1NamespacedService(
   args: NoWatch<ListCoreV1NamespacedServiceApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NamespacedServiceApiResponse>>
 export function listCoreV1NamespacedService(
   args: ListCoreV1NamespacedServiceApiArg & {
@@ -2955,7 +2959,7 @@ export function listCoreV1NamespacedService(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1NamespacedServiceApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1NamespacedService(args: any, options: any): any {
   return apiClient<MinimumRequiredList<ListCoreV1NamespacedServiceApiResponse>>(
@@ -2975,12 +2979,12 @@ export function listCoreV1NamespacedService(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1NamespacedService = (
   args: CreateCoreV1NamespacedServiceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateCoreV1NamespacedServiceApiResponse>
@@ -2997,12 +3001,12 @@ export const createCoreV1NamespacedService = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNamespacedService = (
   args: DeleteCoreV1CollectionNamespacedServiceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionNamespacedServiceApiResponse>
@@ -3028,24 +3032,24 @@ export const deleteCoreV1CollectionNamespacedService = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedService = (
   args: ReadCoreV1NamespacedServiceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1NamespacedServiceApiResponse>>(
     {
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedService = (
   args: ReplaceCoreV1NamespacedServiceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedServiceApiResponse>
@@ -3062,12 +3066,12 @@ export const replaceCoreV1NamespacedService = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1NamespacedService = (
   args: DeleteCoreV1NamespacedServiceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1NamespacedServiceApiResponse>
@@ -3085,12 +3089,12 @@ export const deleteCoreV1NamespacedService = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedService = (
   args: PatchCoreV1NamespacedServiceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<PatchCoreV1NamespacedServiceApiResponse>>(
     {
@@ -3106,12 +3110,12 @@ export const patchCoreV1NamespacedService = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1GetNamespacedServiceProxy = (
   args: ConnectCoreV1GetNamespacedServiceProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1GetNamespacedServiceProxyApiResponse>
@@ -3120,12 +3124,12 @@ export const connectCoreV1GetNamespacedServiceProxy = (
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}/proxy`,
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PutNamespacedServiceProxy = (
   args: ConnectCoreV1PutNamespacedServiceProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PutNamespacedServiceProxyApiResponse>
@@ -3135,12 +3139,12 @@ export const connectCoreV1PutNamespacedServiceProxy = (
       method: 'PUT',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PostNamespacedServiceProxy = (
   args: ConnectCoreV1PostNamespacedServiceProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PostNamespacedServiceProxyApiResponse>
@@ -3150,12 +3154,12 @@ export const connectCoreV1PostNamespacedServiceProxy = (
       method: 'POST',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1DeleteNamespacedServiceProxy = (
   args: ConnectCoreV1DeleteNamespacedServiceProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1DeleteNamespacedServiceProxyApiResponse>
@@ -3165,12 +3169,12 @@ export const connectCoreV1DeleteNamespacedServiceProxy = (
       method: 'DELETE',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1OptionsNamespacedServiceProxy = (
   args: ConnectCoreV1OptionsNamespacedServiceProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1OptionsNamespacedServiceProxyApiResponse>
@@ -3180,12 +3184,12 @@ export const connectCoreV1OptionsNamespacedServiceProxy = (
       method: 'OPTIONS',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1HeadNamespacedServiceProxy = (
   args: ConnectCoreV1HeadNamespacedServiceProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1HeadNamespacedServiceProxyApiResponse>
@@ -3195,12 +3199,12 @@ export const connectCoreV1HeadNamespacedServiceProxy = (
       method: 'HEAD',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PatchNamespacedServiceProxy = (
   args: ConnectCoreV1PatchNamespacedServiceProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PatchNamespacedServiceProxyApiResponse>
@@ -3210,12 +3214,12 @@ export const connectCoreV1PatchNamespacedServiceProxy = (
       method: 'PATCH',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1GetNamespacedServiceProxyWithPath = (
   args: ConnectCoreV1GetNamespacedServiceProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1GetNamespacedServiceProxyWithPathApiResponse>
@@ -3224,12 +3228,12 @@ export const connectCoreV1GetNamespacedServiceProxyWithPath = (
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}/proxy/${args.pathPath}`,
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PutNamespacedServiceProxyWithPath = (
   args: ConnectCoreV1PutNamespacedServiceProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PutNamespacedServiceProxyWithPathApiResponse>
@@ -3239,12 +3243,12 @@ export const connectCoreV1PutNamespacedServiceProxyWithPath = (
       method: 'PUT',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PostNamespacedServiceProxyWithPath = (
   args: ConnectCoreV1PostNamespacedServiceProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PostNamespacedServiceProxyWithPathApiResponse>
@@ -3254,12 +3258,12 @@ export const connectCoreV1PostNamespacedServiceProxyWithPath = (
       method: 'POST',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1DeleteNamespacedServiceProxyWithPath = (
   args: ConnectCoreV1DeleteNamespacedServiceProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1DeleteNamespacedServiceProxyWithPathApiResponse>
@@ -3269,12 +3273,12 @@ export const connectCoreV1DeleteNamespacedServiceProxyWithPath = (
       method: 'DELETE',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1OptionsNamespacedServiceProxyWithPath = (
   args: ConnectCoreV1OptionsNamespacedServiceProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1OptionsNamespacedServiceProxyWithPathApiResponse>
@@ -3284,12 +3288,12 @@ export const connectCoreV1OptionsNamespacedServiceProxyWithPath = (
       method: 'OPTIONS',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1HeadNamespacedServiceProxyWithPath = (
   args: ConnectCoreV1HeadNamespacedServiceProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1HeadNamespacedServiceProxyWithPathApiResponse>
@@ -3299,12 +3303,12 @@ export const connectCoreV1HeadNamespacedServiceProxyWithPath = (
       method: 'HEAD',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PatchNamespacedServiceProxyWithPath = (
   args: ConnectCoreV1PatchNamespacedServiceProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PatchNamespacedServiceProxyWithPathApiResponse>
@@ -3314,12 +3318,12 @@ export const connectCoreV1PatchNamespacedServiceProxyWithPath = (
       method: 'PATCH',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespacedServiceStatus = (
   args: ReadCoreV1NamespacedServiceStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1NamespacedServiceStatusApiResponse>
@@ -3328,12 +3332,12 @@ export const readCoreV1NamespacedServiceStatus = (
       path: `/api/v1/namespaces/${args['namespace']}/services/${args.name}/status`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespacedServiceStatus = (
   args: ReplaceCoreV1NamespacedServiceStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespacedServiceStatusApiResponse>
@@ -3350,12 +3354,12 @@ export const replaceCoreV1NamespacedServiceStatus = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespacedServiceStatus = (
   args: PatchCoreV1NamespacedServiceStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1NamespacedServiceStatusApiResponse>
@@ -3373,24 +3377,24 @@ export const patchCoreV1NamespacedServiceStatus = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1Namespace = (
   args: ReadCoreV1NamespaceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1NamespaceApiResponse>>(
     {
       path: `/api/v1/namespaces/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1Namespace = (
   args: ReplaceCoreV1NamespaceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReplaceCoreV1NamespaceApiResponse>>(
     {
@@ -3405,12 +3409,12 @@ export const replaceCoreV1Namespace = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1Namespace = (
   args: DeleteCoreV1NamespaceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<DeleteCoreV1NamespaceApiResponse>>(
     {
@@ -3426,12 +3430,12 @@ export const deleteCoreV1Namespace = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1Namespace = (
   args: PatchCoreV1NamespaceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<PatchCoreV1NamespaceApiResponse>>(
     {
@@ -3447,12 +3451,12 @@ export const patchCoreV1Namespace = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespaceFinalize = (
   args: ReplaceCoreV1NamespaceFinalizeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1NamespaceFinalizeApiResponse>
@@ -3469,24 +3473,24 @@ export const replaceCoreV1NamespaceFinalize = (
         pretty: args.pretty,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NamespaceStatus = (
   args: ReadCoreV1NamespaceStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1NamespaceStatusApiResponse>>(
     {
       path: `/api/v1/namespaces/${args.name}/status`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NamespaceStatus = (
   args: ReplaceCoreV1NamespaceStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReplaceCoreV1NamespaceStatusApiResponse>>(
     {
@@ -3501,12 +3505,12 @@ export const replaceCoreV1NamespaceStatus = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NamespaceStatus = (
   args: PatchCoreV1NamespaceStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<PatchCoreV1NamespaceStatusApiResponse>>(
     {
@@ -3522,19 +3526,19 @@ export const patchCoreV1NamespaceStatus = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1Node(
   args: NoWatch<ListCoreV1NodeApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1NodeApiResponse>>
 export function listCoreV1Node(
   args: ListCoreV1NodeApiArg & {
     watch: true
   },
   options: Options &
-    WatchExtraOptions<MinimumRequiredList<ListCoreV1NodeApiResponse>>
+    WatchExtraOptions<MinimumRequiredList<ListCoreV1NodeApiResponse>>,
 ): Promise<void>
 export function listCoreV1Node(args: any, options: any): any {
   return apiClient<MinimumRequiredList<ListCoreV1NodeApiResponse>>(
@@ -3554,12 +3558,12 @@ export function listCoreV1Node(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1Node = (
   args: CreateCoreV1NodeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<CreateCoreV1NodeApiResponse>>(
     {
@@ -3574,12 +3578,12 @@ export const createCoreV1Node = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionNode = (
   args: DeleteCoreV1CollectionNodeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<DeleteCoreV1CollectionNodeApiResponse>>(
     {
@@ -3603,21 +3607,21 @@ export const deleteCoreV1CollectionNode = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1Node = (
   args: ReadCoreV1NodeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1NodeApiResponse>>(
     { path: `/api/v1/nodes/${args.name}`, params: { pretty: args.pretty } },
-    options
+    options,
   )
 }
 export const replaceCoreV1Node = (
   args: ReplaceCoreV1NodeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReplaceCoreV1NodeApiResponse>>(
     {
@@ -3632,12 +3636,12 @@ export const replaceCoreV1Node = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1Node = (
   args: DeleteCoreV1NodeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<DeleteCoreV1NodeApiResponse>>(
     {
@@ -3653,12 +3657,12 @@ export const deleteCoreV1Node = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1Node = (
   args: PatchCoreV1NodeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<PatchCoreV1NodeApiResponse>>(
     {
@@ -3674,21 +3678,21 @@ export const patchCoreV1Node = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1GetNodeProxy = (
   args: ConnectCoreV1GetNodeProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ConnectCoreV1GetNodeProxyApiResponse>>(
     { path: `/api/v1/nodes/${args.name}/proxy`, params: { path: args.path } },
-    options
+    options,
   )
 }
 export const connectCoreV1PutNodeProxy = (
   args: ConnectCoreV1PutNodeProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ConnectCoreV1PutNodeProxyApiResponse>>(
     {
@@ -3696,12 +3700,12 @@ export const connectCoreV1PutNodeProxy = (
       method: 'PUT',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PostNodeProxy = (
   args: ConnectCoreV1PostNodeProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ConnectCoreV1PostNodeProxyApiResponse>>(
     {
@@ -3709,12 +3713,12 @@ export const connectCoreV1PostNodeProxy = (
       method: 'POST',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1DeleteNodeProxy = (
   args: ConnectCoreV1DeleteNodeProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ConnectCoreV1DeleteNodeProxyApiResponse>>(
     {
@@ -3722,12 +3726,12 @@ export const connectCoreV1DeleteNodeProxy = (
       method: 'DELETE',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1OptionsNodeProxy = (
   args: ConnectCoreV1OptionsNodeProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1OptionsNodeProxyApiResponse>
@@ -3737,12 +3741,12 @@ export const connectCoreV1OptionsNodeProxy = (
       method: 'OPTIONS',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1HeadNodeProxy = (
   args: ConnectCoreV1HeadNodeProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ConnectCoreV1HeadNodeProxyApiResponse>>(
     {
@@ -3750,12 +3754,12 @@ export const connectCoreV1HeadNodeProxy = (
       method: 'HEAD',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PatchNodeProxy = (
   args: ConnectCoreV1PatchNodeProxyApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ConnectCoreV1PatchNodeProxyApiResponse>>(
     {
@@ -3763,12 +3767,12 @@ export const connectCoreV1PatchNodeProxy = (
       method: 'PATCH',
       params: { path: args.path },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1GetNodeProxyWithPath = (
   args: ConnectCoreV1GetNodeProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1GetNodeProxyWithPathApiResponse>
@@ -3777,12 +3781,12 @@ export const connectCoreV1GetNodeProxyWithPath = (
       path: `/api/v1/nodes/${args.name}/proxy/${args.pathPath}`,
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PutNodeProxyWithPath = (
   args: ConnectCoreV1PutNodeProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PutNodeProxyWithPathApiResponse>
@@ -3792,12 +3796,12 @@ export const connectCoreV1PutNodeProxyWithPath = (
       method: 'PUT',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PostNodeProxyWithPath = (
   args: ConnectCoreV1PostNodeProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PostNodeProxyWithPathApiResponse>
@@ -3807,12 +3811,12 @@ export const connectCoreV1PostNodeProxyWithPath = (
       method: 'POST',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1DeleteNodeProxyWithPath = (
   args: ConnectCoreV1DeleteNodeProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1DeleteNodeProxyWithPathApiResponse>
@@ -3822,12 +3826,12 @@ export const connectCoreV1DeleteNodeProxyWithPath = (
       method: 'DELETE',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1OptionsNodeProxyWithPath = (
   args: ConnectCoreV1OptionsNodeProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1OptionsNodeProxyWithPathApiResponse>
@@ -3837,12 +3841,12 @@ export const connectCoreV1OptionsNodeProxyWithPath = (
       method: 'OPTIONS',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1HeadNodeProxyWithPath = (
   args: ConnectCoreV1HeadNodeProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1HeadNodeProxyWithPathApiResponse>
@@ -3852,12 +3856,12 @@ export const connectCoreV1HeadNodeProxyWithPath = (
       method: 'HEAD',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const connectCoreV1PatchNodeProxyWithPath = (
   args: ConnectCoreV1PatchNodeProxyWithPathApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ConnectCoreV1PatchNodeProxyWithPathApiResponse>
@@ -3867,24 +3871,24 @@ export const connectCoreV1PatchNodeProxyWithPath = (
       method: 'PATCH',
       params: { path: args.queryPath },
     },
-    options
+    options,
   )
 }
 export const readCoreV1NodeStatus = (
   args: ReadCoreV1NodeStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1NodeStatusApiResponse>>(
     {
       path: `/api/v1/nodes/${args.name}/status`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1NodeStatus = (
   args: ReplaceCoreV1NodeStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReplaceCoreV1NodeStatusApiResponse>>(
     {
@@ -3899,12 +3903,12 @@ export const replaceCoreV1NodeStatus = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1NodeStatus = (
   args: PatchCoreV1NodeStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<PatchCoreV1NodeStatusApiResponse>>(
     {
@@ -3920,12 +3924,12 @@ export const patchCoreV1NodeStatus = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1PersistentVolumeClaimForAllNamespaces(
   args: NoWatch<ListCoreV1PersistentVolumeClaimForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>
 >
@@ -3936,11 +3940,11 @@ export function listCoreV1PersistentVolumeClaimForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1PersistentVolumeClaimForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1PersistentVolumeClaimForAllNamespacesApiResponse>
@@ -3961,12 +3965,12 @@ export function listCoreV1PersistentVolumeClaimForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1PersistentVolume(
   args: NoWatch<ListCoreV1PersistentVolumeApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1PersistentVolumeApiResponse>>
 export function listCoreV1PersistentVolume(
   args: ListCoreV1PersistentVolumeApiArg & {
@@ -3975,7 +3979,7 @@ export function listCoreV1PersistentVolume(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1PersistentVolumeApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1PersistentVolume(args: any, options: any): any {
   return apiClient<MinimumRequiredList<ListCoreV1PersistentVolumeApiResponse>>(
@@ -3995,12 +3999,12 @@ export function listCoreV1PersistentVolume(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createCoreV1PersistentVolume = (
   args: CreateCoreV1PersistentVolumeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<CreateCoreV1PersistentVolumeApiResponse>>(
     {
@@ -4015,12 +4019,12 @@ export const createCoreV1PersistentVolume = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1CollectionPersistentVolume = (
   args: DeleteCoreV1CollectionPersistentVolumeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteCoreV1CollectionPersistentVolumeApiResponse>
@@ -4046,24 +4050,24 @@ export const deleteCoreV1CollectionPersistentVolume = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1PersistentVolume = (
   args: ReadCoreV1PersistentVolumeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<ReadCoreV1PersistentVolumeApiResponse>>(
     {
       path: `/api/v1/persistentvolumes/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1PersistentVolume = (
   args: ReplaceCoreV1PersistentVolumeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1PersistentVolumeApiResponse>
@@ -4080,12 +4084,12 @@ export const replaceCoreV1PersistentVolume = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteCoreV1PersistentVolume = (
   args: DeleteCoreV1PersistentVolumeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<DeleteCoreV1PersistentVolumeApiResponse>>(
     {
@@ -4101,12 +4105,12 @@ export const deleteCoreV1PersistentVolume = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1PersistentVolume = (
   args: PatchCoreV1PersistentVolumeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredGet<PatchCoreV1PersistentVolumeApiResponse>>(
     {
@@ -4122,12 +4126,12 @@ export const patchCoreV1PersistentVolume = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export const readCoreV1PersistentVolumeStatus = (
   args: ReadCoreV1PersistentVolumeStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadCoreV1PersistentVolumeStatusApiResponse>
@@ -4136,12 +4140,12 @@ export const readCoreV1PersistentVolumeStatus = (
       path: `/api/v1/persistentvolumes/${args.name}/status`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceCoreV1PersistentVolumeStatus = (
   args: ReplaceCoreV1PersistentVolumeStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceCoreV1PersistentVolumeStatusApiResponse>
@@ -4158,12 +4162,12 @@ export const replaceCoreV1PersistentVolumeStatus = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const patchCoreV1PersistentVolumeStatus = (
   args: PatchCoreV1PersistentVolumeStatusApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchCoreV1PersistentVolumeStatusApiResponse>
@@ -4181,12 +4185,12 @@ export const patchCoreV1PersistentVolumeStatus = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1PodForAllNamespaces(
   args: NoWatch<ListCoreV1PodForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1PodForAllNamespacesApiResponse>>
 export function listCoreV1PodForAllNamespaces(
   args: ListCoreV1PodForAllNamespacesApiArg & {
@@ -4195,7 +4199,7 @@ export function listCoreV1PodForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1PodForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1PodForAllNamespaces(args: any, options: any): any {
   return apiClient<
@@ -4217,12 +4221,12 @@ export function listCoreV1PodForAllNamespaces(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1PodTemplateForAllNamespaces(
   args: NoWatch<ListCoreV1PodTemplateForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListCoreV1PodTemplateForAllNamespacesApiResponse>
 >
@@ -4233,11 +4237,11 @@ export function listCoreV1PodTemplateForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1PodTemplateForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1PodTemplateForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1PodTemplateForAllNamespacesApiResponse>
@@ -4258,12 +4262,12 @@ export function listCoreV1PodTemplateForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1ReplicationControllerForAllNamespaces(
   args: NoWatch<ListCoreV1ReplicationControllerForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>
 >
@@ -4274,11 +4278,11 @@ export function listCoreV1ReplicationControllerForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1ReplicationControllerForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1ReplicationControllerForAllNamespacesApiResponse>
@@ -4299,12 +4303,12 @@ export function listCoreV1ReplicationControllerForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1ResourceQuotaForAllNamespaces(
   args: NoWatch<ListCoreV1ResourceQuotaForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>
 >
@@ -4315,11 +4319,11 @@ export function listCoreV1ResourceQuotaForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1ResourceQuotaForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1ResourceQuotaForAllNamespacesApiResponse>
@@ -4340,12 +4344,12 @@ export function listCoreV1ResourceQuotaForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1SecretForAllNamespaces(
   args: NoWatch<ListCoreV1SecretForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1SecretForAllNamespacesApiResponse>>
 export function listCoreV1SecretForAllNamespaces(
   args: ListCoreV1SecretForAllNamespacesApiArg & {
@@ -4354,7 +4358,7 @@ export function listCoreV1SecretForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1SecretForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1SecretForAllNamespaces(args: any, options: any): any {
   return apiClient<
@@ -4376,12 +4380,12 @@ export function listCoreV1SecretForAllNamespaces(args: any, options: any): any {
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1ServiceAccountForAllNamespaces(
   args: NoWatch<ListCoreV1ServiceAccountForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListCoreV1ServiceAccountForAllNamespacesApiResponse>
 >
@@ -4392,11 +4396,11 @@ export function listCoreV1ServiceAccountForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1ServiceAccountForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1ServiceAccountForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1ServiceAccountForAllNamespacesApiResponse>
@@ -4417,12 +4421,12 @@ export function listCoreV1ServiceAccountForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listCoreV1ServiceForAllNamespaces(
   args: NoWatch<ListCoreV1ServiceForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListCoreV1ServiceForAllNamespacesApiResponse>>
 export function listCoreV1ServiceForAllNamespaces(
   args: ListCoreV1ServiceForAllNamespacesApiArg & {
@@ -4431,11 +4435,11 @@ export function listCoreV1ServiceForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListCoreV1ServiceForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listCoreV1ServiceForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListCoreV1ServiceForAllNamespacesApiResponse>
@@ -4456,12 +4460,12 @@ export function listCoreV1ServiceForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1ConfigMapListForAllNamespaces = (
   args: WatchCoreV1ConfigMapListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1ConfigMapListForAllNamespacesApiResponse>
@@ -4482,12 +4486,12 @@ export const watchCoreV1ConfigMapListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1EndpointsListForAllNamespaces = (
   args: WatchCoreV1EndpointsListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1EndpointsListForAllNamespacesApiResponse>
@@ -4508,12 +4512,12 @@ export const watchCoreV1EndpointsListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1EventListForAllNamespaces = (
   args: WatchCoreV1EventListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1EventListForAllNamespacesApiResponse>
@@ -4534,12 +4538,12 @@ export const watchCoreV1EventListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1LimitRangeListForAllNamespaces = (
   args: WatchCoreV1LimitRangeListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1LimitRangeListForAllNamespacesApiResponse>
@@ -4560,12 +4564,12 @@ export const watchCoreV1LimitRangeListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespaceList = (
   args: WatchCoreV1NamespaceListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredList<WatchCoreV1NamespaceListApiResponse>>(
     {
@@ -4584,12 +4588,12 @@ export const watchCoreV1NamespaceList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedConfigMapList = (
   args: WatchCoreV1NamespacedConfigMapListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedConfigMapListApiResponse>
@@ -4610,12 +4614,12 @@ export const watchCoreV1NamespacedConfigMapList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedConfigMap = (
   args: WatchCoreV1NamespacedConfigMapApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedConfigMapApiResponse>
@@ -4636,12 +4640,12 @@ export const watchCoreV1NamespacedConfigMap = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedEndpointsList = (
   args: WatchCoreV1NamespacedEndpointsListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedEndpointsListApiResponse>
@@ -4662,12 +4666,12 @@ export const watchCoreV1NamespacedEndpointsList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedEndpoints = (
   args: WatchCoreV1NamespacedEndpointsApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedEndpointsApiResponse>
@@ -4688,12 +4692,12 @@ export const watchCoreV1NamespacedEndpoints = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedEventList = (
   args: WatchCoreV1NamespacedEventListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedEventListApiResponse>
@@ -4714,12 +4718,12 @@ export const watchCoreV1NamespacedEventList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedEvent = (
   args: WatchCoreV1NamespacedEventApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredList<WatchCoreV1NamespacedEventApiResponse>>(
     {
@@ -4738,12 +4742,12 @@ export const watchCoreV1NamespacedEvent = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedLimitRangeList = (
   args: WatchCoreV1NamespacedLimitRangeListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedLimitRangeListApiResponse>
@@ -4764,12 +4768,12 @@ export const watchCoreV1NamespacedLimitRangeList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedLimitRange = (
   args: WatchCoreV1NamespacedLimitRangeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedLimitRangeApiResponse>
@@ -4790,12 +4794,12 @@ export const watchCoreV1NamespacedLimitRange = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedPersistentVolumeClaimList = (
   args: WatchCoreV1NamespacedPersistentVolumeClaimListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedPersistentVolumeClaimListApiResponse>
@@ -4816,12 +4820,12 @@ export const watchCoreV1NamespacedPersistentVolumeClaimList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedPersistentVolumeClaim = (
   args: WatchCoreV1NamespacedPersistentVolumeClaimApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedPersistentVolumeClaimApiResponse>
@@ -4842,12 +4846,12 @@ export const watchCoreV1NamespacedPersistentVolumeClaim = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedPodList = (
   args: WatchCoreV1NamespacedPodListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedPodListApiResponse>
@@ -4868,12 +4872,12 @@ export const watchCoreV1NamespacedPodList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedPod = (
   args: WatchCoreV1NamespacedPodApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredList<WatchCoreV1NamespacedPodApiResponse>>(
     {
@@ -4892,12 +4896,12 @@ export const watchCoreV1NamespacedPod = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedPodTemplateList = (
   args: WatchCoreV1NamespacedPodTemplateListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedPodTemplateListApiResponse>
@@ -4918,12 +4922,12 @@ export const watchCoreV1NamespacedPodTemplateList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedPodTemplate = (
   args: WatchCoreV1NamespacedPodTemplateApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedPodTemplateApiResponse>
@@ -4944,12 +4948,12 @@ export const watchCoreV1NamespacedPodTemplate = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedReplicationControllerList = (
   args: WatchCoreV1NamespacedReplicationControllerListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedReplicationControllerListApiResponse>
@@ -4970,12 +4974,12 @@ export const watchCoreV1NamespacedReplicationControllerList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedReplicationController = (
   args: WatchCoreV1NamespacedReplicationControllerApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedReplicationControllerApiResponse>
@@ -4996,12 +5000,12 @@ export const watchCoreV1NamespacedReplicationController = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedResourceQuotaList = (
   args: WatchCoreV1NamespacedResourceQuotaListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedResourceQuotaListApiResponse>
@@ -5022,12 +5026,12 @@ export const watchCoreV1NamespacedResourceQuotaList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedResourceQuota = (
   args: WatchCoreV1NamespacedResourceQuotaApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedResourceQuotaApiResponse>
@@ -5048,12 +5052,12 @@ export const watchCoreV1NamespacedResourceQuota = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedSecretList = (
   args: WatchCoreV1NamespacedSecretListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedSecretListApiResponse>
@@ -5074,12 +5078,12 @@ export const watchCoreV1NamespacedSecretList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedSecret = (
   args: WatchCoreV1NamespacedSecretApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredList<WatchCoreV1NamespacedSecretApiResponse>>(
     {
@@ -5098,12 +5102,12 @@ export const watchCoreV1NamespacedSecret = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedServiceAccountList = (
   args: WatchCoreV1NamespacedServiceAccountListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedServiceAccountListApiResponse>
@@ -5124,12 +5128,12 @@ export const watchCoreV1NamespacedServiceAccountList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedServiceAccount = (
   args: WatchCoreV1NamespacedServiceAccountApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedServiceAccountApiResponse>
@@ -5150,12 +5154,12 @@ export const watchCoreV1NamespacedServiceAccount = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedServiceList = (
   args: WatchCoreV1NamespacedServiceListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedServiceListApiResponse>
@@ -5176,12 +5180,12 @@ export const watchCoreV1NamespacedServiceList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NamespacedService = (
   args: WatchCoreV1NamespacedServiceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1NamespacedServiceApiResponse>
@@ -5202,12 +5206,12 @@ export const watchCoreV1NamespacedService = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1Namespace = (
   args: WatchCoreV1NamespaceApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredList<WatchCoreV1NamespaceApiResponse>>(
     {
@@ -5226,12 +5230,12 @@ export const watchCoreV1Namespace = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1NodeList = (
   args: WatchCoreV1NodeListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredList<WatchCoreV1NodeListApiResponse>>(
     {
@@ -5250,12 +5254,12 @@ export const watchCoreV1NodeList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1Node = (
   args: WatchCoreV1NodeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredList<WatchCoreV1NodeApiResponse>>(
     {
@@ -5274,12 +5278,12 @@ export const watchCoreV1Node = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1PersistentVolumeClaimListForAllNamespaces = (
   args: WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1PersistentVolumeClaimListForAllNamespacesApiResponse>
@@ -5300,12 +5304,12 @@ export const watchCoreV1PersistentVolumeClaimListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1PersistentVolumeList = (
   args: WatchCoreV1PersistentVolumeListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1PersistentVolumeListApiResponse>
@@ -5326,12 +5330,12 @@ export const watchCoreV1PersistentVolumeList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1PersistentVolume = (
   args: WatchCoreV1PersistentVolumeApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<MinimumRequiredList<WatchCoreV1PersistentVolumeApiResponse>>(
     {
@@ -5350,12 +5354,12 @@ export const watchCoreV1PersistentVolume = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1PodListForAllNamespaces = (
   args: WatchCoreV1PodListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1PodListForAllNamespacesApiResponse>
@@ -5376,12 +5380,12 @@ export const watchCoreV1PodListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1PodTemplateListForAllNamespaces = (
   args: WatchCoreV1PodTemplateListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1PodTemplateListForAllNamespacesApiResponse>
@@ -5402,12 +5406,12 @@ export const watchCoreV1PodTemplateListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1ReplicationControllerListForAllNamespaces = (
   args: WatchCoreV1ReplicationControllerListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1ReplicationControllerListForAllNamespacesApiResponse>
@@ -5428,12 +5432,12 @@ export const watchCoreV1ReplicationControllerListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1ResourceQuotaListForAllNamespaces = (
   args: WatchCoreV1ResourceQuotaListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1ResourceQuotaListForAllNamespacesApiResponse>
@@ -5454,12 +5458,12 @@ export const watchCoreV1ResourceQuotaListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1SecretListForAllNamespaces = (
   args: WatchCoreV1SecretListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1SecretListForAllNamespacesApiResponse>
@@ -5480,12 +5484,12 @@ export const watchCoreV1SecretListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1ServiceAccountListForAllNamespaces = (
   args: WatchCoreV1ServiceAccountListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1ServiceAccountListForAllNamespacesApiResponse>
@@ -5506,12 +5510,12 @@ export const watchCoreV1ServiceAccountListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchCoreV1ServiceListForAllNamespaces = (
   args: WatchCoreV1ServiceListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchCoreV1ServiceListForAllNamespacesApiResponse>
@@ -5532,7 +5536,7 @@ export const watchCoreV1ServiceListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export type GetCoreV1ApiResourcesApiResponse =

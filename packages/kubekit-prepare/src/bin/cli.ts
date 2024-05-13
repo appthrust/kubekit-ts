@@ -16,6 +16,7 @@ import { apiClient } from '@kubekit/client'
 import { ConfigFile } from '../config'
 import { readCoreV1NamespacedServiceAccount } from '../k8s-client/v1'
 import { cleanOpenAPISchema } from '../cleanOpenAPISchema'
+import { prettify } from '../prettier'
 
 let ts = false
 try {
@@ -240,10 +241,19 @@ async function generateOpenApi(config: ConfigFile) {
 
   const swaggerFilePath = path.join(config.outputFile || cwd, 'swagger.json')
 
+  const swaggerContent = cleanOpenAPISchema(mergedSwaggerFile)
+
+  swaggerContent.components = JSON.parse(
+    await prettify(null, JSON.stringify(swaggerContent.components), true)
+  )
+  swaggerContent.paths = JSON.parse(
+    await prettify(null, JSON.stringify(swaggerContent.paths), true)
+  )
+
   try {
     fs.writeFile(
       path.resolve(process.cwd(), config.outputFile),
-      JSON.stringify(cleanOpenAPISchema(mergedSwaggerFile), undefined, 2)
+      await prettify(null, JSON.stringify(swaggerContent, null, 2), false)
     )
   } catch (e) {
     console.error(`Failed to write file: ${swaggerFilePath}`, e)

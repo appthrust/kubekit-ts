@@ -52,7 +52,7 @@ export const getRbacAuthorizationV1ApiResources = (options?: Options) => {
 }
 export function listRbacAuthorizationV1ClusterRoleBinding(
   args: NoWatch<ListRbacAuthorizationV1ClusterRoleBindingApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListRbacAuthorizationV1ClusterRoleBindingApiResponse>
 >
@@ -63,11 +63,11 @@ export function listRbacAuthorizationV1ClusterRoleBinding(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListRbacAuthorizationV1ClusterRoleBindingApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listRbacAuthorizationV1ClusterRoleBinding(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListRbacAuthorizationV1ClusterRoleBindingApiResponse>
@@ -88,12 +88,12 @@ export function listRbacAuthorizationV1ClusterRoleBinding(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createRbacAuthorizationV1ClusterRoleBinding = (
   args: CreateRbacAuthorizationV1ClusterRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateRbacAuthorizationV1ClusterRoleBindingApiResponse>
@@ -110,12 +110,12 @@ export const createRbacAuthorizationV1ClusterRoleBinding = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteRbacAuthorizationV1CollectionClusterRoleBinding = (
   args: DeleteRbacAuthorizationV1CollectionClusterRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteRbacAuthorizationV1CollectionClusterRoleBindingApiResponse>
@@ -141,12 +141,12 @@ export const deleteRbacAuthorizationV1CollectionClusterRoleBinding = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readRbacAuthorizationV1ClusterRoleBinding = (
   args: ReadRbacAuthorizationV1ClusterRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadRbacAuthorizationV1ClusterRoleBindingApiResponse>
@@ -155,12 +155,12 @@ export const readRbacAuthorizationV1ClusterRoleBinding = (
       path: `/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceRbacAuthorizationV1ClusterRoleBinding = (
   args: ReplaceRbacAuthorizationV1ClusterRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceRbacAuthorizationV1ClusterRoleBindingApiResponse>
@@ -177,12 +177,12 @@ export const replaceRbacAuthorizationV1ClusterRoleBinding = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteRbacAuthorizationV1ClusterRoleBinding = (
   args: DeleteRbacAuthorizationV1ClusterRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteRbacAuthorizationV1ClusterRoleBindingApiResponse>
@@ -200,12 +200,12 @@ export const deleteRbacAuthorizationV1ClusterRoleBinding = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchRbacAuthorizationV1ClusterRoleBinding = (
   args: PatchRbacAuthorizationV1ClusterRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchRbacAuthorizationV1ClusterRoleBindingApiResponse>
@@ -223,12 +223,12 @@ export const patchRbacAuthorizationV1ClusterRoleBinding = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listRbacAuthorizationV1ClusterRole(
   args: NoWatch<ListRbacAuthorizationV1ClusterRoleApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<MinimumRequiredList<ListRbacAuthorizationV1ClusterRoleApiResponse>>
 export function listRbacAuthorizationV1ClusterRole(
   args: ListRbacAuthorizationV1ClusterRoleApiArg & {
@@ -237,11 +237,11 @@ export function listRbacAuthorizationV1ClusterRole(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListRbacAuthorizationV1ClusterRoleApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listRbacAuthorizationV1ClusterRole(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListRbacAuthorizationV1ClusterRoleApiResponse>
@@ -262,12 +262,12 @@ export function listRbacAuthorizationV1ClusterRole(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createRbacAuthorizationV1ClusterRole = (
   args: CreateRbacAuthorizationV1ClusterRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateRbacAuthorizationV1ClusterRoleApiResponse>
@@ -284,12 +284,12 @@ export const createRbacAuthorizationV1ClusterRole = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteRbacAuthorizationV1CollectionClusterRole = (
   args: DeleteRbacAuthorizationV1CollectionClusterRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteRbacAuthorizationV1CollectionClusterRoleApiResponse>
@@ -315,12 +315,12 @@ export const deleteRbacAuthorizationV1CollectionClusterRole = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readRbacAuthorizationV1ClusterRole = (
   args: ReadRbacAuthorizationV1ClusterRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadRbacAuthorizationV1ClusterRoleApiResponse>
@@ -329,12 +329,12 @@ export const readRbacAuthorizationV1ClusterRole = (
       path: `/apis/rbac.authorization.k8s.io/v1/clusterroles/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceRbacAuthorizationV1ClusterRole = (
   args: ReplaceRbacAuthorizationV1ClusterRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceRbacAuthorizationV1ClusterRoleApiResponse>
@@ -351,12 +351,12 @@ export const replaceRbacAuthorizationV1ClusterRole = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteRbacAuthorizationV1ClusterRole = (
   args: DeleteRbacAuthorizationV1ClusterRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteRbacAuthorizationV1ClusterRoleApiResponse>
@@ -374,12 +374,12 @@ export const deleteRbacAuthorizationV1ClusterRole = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchRbacAuthorizationV1ClusterRole = (
   args: PatchRbacAuthorizationV1ClusterRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchRbacAuthorizationV1ClusterRoleApiResponse>
@@ -397,12 +397,12 @@ export const patchRbacAuthorizationV1ClusterRole = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listRbacAuthorizationV1NamespacedRoleBinding(
   args: NoWatch<ListRbacAuthorizationV1NamespacedRoleBindingApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListRbacAuthorizationV1NamespacedRoleBindingApiResponse>
 >
@@ -413,11 +413,11 @@ export function listRbacAuthorizationV1NamespacedRoleBinding(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListRbacAuthorizationV1NamespacedRoleBindingApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listRbacAuthorizationV1NamespacedRoleBinding(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListRbacAuthorizationV1NamespacedRoleBindingApiResponse>
@@ -438,12 +438,12 @@ export function listRbacAuthorizationV1NamespacedRoleBinding(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createRbacAuthorizationV1NamespacedRoleBinding = (
   args: CreateRbacAuthorizationV1NamespacedRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateRbacAuthorizationV1NamespacedRoleBindingApiResponse>
@@ -460,12 +460,12 @@ export const createRbacAuthorizationV1NamespacedRoleBinding = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteRbacAuthorizationV1CollectionNamespacedRoleBinding = (
   args: DeleteRbacAuthorizationV1CollectionNamespacedRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteRbacAuthorizationV1CollectionNamespacedRoleBindingApiResponse>
@@ -491,12 +491,12 @@ export const deleteRbacAuthorizationV1CollectionNamespacedRoleBinding = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readRbacAuthorizationV1NamespacedRoleBinding = (
   args: ReadRbacAuthorizationV1NamespacedRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadRbacAuthorizationV1NamespacedRoleBindingApiResponse>
@@ -505,12 +505,12 @@ export const readRbacAuthorizationV1NamespacedRoleBinding = (
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/rolebindings/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceRbacAuthorizationV1NamespacedRoleBinding = (
   args: ReplaceRbacAuthorizationV1NamespacedRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceRbacAuthorizationV1NamespacedRoleBindingApiResponse>
@@ -527,12 +527,12 @@ export const replaceRbacAuthorizationV1NamespacedRoleBinding = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteRbacAuthorizationV1NamespacedRoleBinding = (
   args: DeleteRbacAuthorizationV1NamespacedRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteRbacAuthorizationV1NamespacedRoleBindingApiResponse>
@@ -550,12 +550,12 @@ export const deleteRbacAuthorizationV1NamespacedRoleBinding = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchRbacAuthorizationV1NamespacedRoleBinding = (
   args: PatchRbacAuthorizationV1NamespacedRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchRbacAuthorizationV1NamespacedRoleBindingApiResponse>
@@ -573,12 +573,12 @@ export const patchRbacAuthorizationV1NamespacedRoleBinding = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listRbacAuthorizationV1NamespacedRole(
   args: NoWatch<ListRbacAuthorizationV1NamespacedRoleApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListRbacAuthorizationV1NamespacedRoleApiResponse>
 >
@@ -589,11 +589,11 @@ export function listRbacAuthorizationV1NamespacedRole(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListRbacAuthorizationV1NamespacedRoleApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listRbacAuthorizationV1NamespacedRole(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListRbacAuthorizationV1NamespacedRoleApiResponse>
@@ -614,12 +614,12 @@ export function listRbacAuthorizationV1NamespacedRole(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const createRbacAuthorizationV1NamespacedRole = (
   args: CreateRbacAuthorizationV1NamespacedRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<CreateRbacAuthorizationV1NamespacedRoleApiResponse>
@@ -636,12 +636,12 @@ export const createRbacAuthorizationV1NamespacedRole = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteRbacAuthorizationV1CollectionNamespacedRole = (
   args: DeleteRbacAuthorizationV1CollectionNamespacedRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteRbacAuthorizationV1CollectionNamespacedRoleApiResponse>
@@ -667,12 +667,12 @@ export const deleteRbacAuthorizationV1CollectionNamespacedRole = (
         timeoutSeconds: args.timeoutSeconds,
       },
     },
-    options
+    options,
   )
 }
 export const readRbacAuthorizationV1NamespacedRole = (
   args: ReadRbacAuthorizationV1NamespacedRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReadRbacAuthorizationV1NamespacedRoleApiResponse>
@@ -681,12 +681,12 @@ export const readRbacAuthorizationV1NamespacedRole = (
       path: `/apis/rbac.authorization.k8s.io/v1/namespaces/${args['namespace']}/roles/${args.name}`,
       params: { pretty: args.pretty },
     },
-    options
+    options,
   )
 }
 export const replaceRbacAuthorizationV1NamespacedRole = (
   args: ReplaceRbacAuthorizationV1NamespacedRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<ReplaceRbacAuthorizationV1NamespacedRoleApiResponse>
@@ -703,12 +703,12 @@ export const replaceRbacAuthorizationV1NamespacedRole = (
         fieldValidation: args.fieldValidation,
       },
     },
-    options
+    options,
   )
 }
 export const deleteRbacAuthorizationV1NamespacedRole = (
   args: DeleteRbacAuthorizationV1NamespacedRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<DeleteRbacAuthorizationV1NamespacedRoleApiResponse>
@@ -726,12 +726,12 @@ export const deleteRbacAuthorizationV1NamespacedRole = (
         propagationPolicy: args.propagationPolicy,
       },
     },
-    options
+    options,
   )
 }
 export const patchRbacAuthorizationV1NamespacedRole = (
   args: PatchRbacAuthorizationV1NamespacedRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredGet<PatchRbacAuthorizationV1NamespacedRoleApiResponse>
@@ -749,12 +749,12 @@ export const patchRbacAuthorizationV1NamespacedRole = (
         force: args.force,
       },
     },
-    options
+    options,
   )
 }
 export function listRbacAuthorizationV1RoleBindingForAllNamespaces(
   args: NoWatch<ListRbacAuthorizationV1RoleBindingForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListRbacAuthorizationV1RoleBindingForAllNamespacesApiResponse>
 >
@@ -765,11 +765,11 @@ export function listRbacAuthorizationV1RoleBindingForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListRbacAuthorizationV1RoleBindingForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listRbacAuthorizationV1RoleBindingForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListRbacAuthorizationV1RoleBindingForAllNamespacesApiResponse>
@@ -790,12 +790,12 @@ export function listRbacAuthorizationV1RoleBindingForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export function listRbacAuthorizationV1RoleForAllNamespaces(
   args: NoWatch<ListRbacAuthorizationV1RoleForAllNamespacesApiArg>,
-  options?: Options
+  options?: Options,
 ): Promise<
   MinimumRequiredList<ListRbacAuthorizationV1RoleForAllNamespacesApiResponse>
 >
@@ -806,11 +806,11 @@ export function listRbacAuthorizationV1RoleForAllNamespaces(
   options: Options &
     WatchExtraOptions<
       MinimumRequiredList<ListRbacAuthorizationV1RoleForAllNamespacesApiResponse>
-    >
+    >,
 ): Promise<void>
 export function listRbacAuthorizationV1RoleForAllNamespaces(
   args: any,
-  options: any
+  options: any,
 ): any {
   return apiClient<
     MinimumRequiredList<ListRbacAuthorizationV1RoleForAllNamespacesApiResponse>
@@ -831,12 +831,12 @@ export function listRbacAuthorizationV1RoleForAllNamespaces(
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchRbacAuthorizationV1ClusterRoleBindingList = (
   args: WatchRbacAuthorizationV1ClusterRoleBindingListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchRbacAuthorizationV1ClusterRoleBindingListApiResponse>
@@ -857,12 +857,12 @@ export const watchRbacAuthorizationV1ClusterRoleBindingList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchRbacAuthorizationV1ClusterRoleBinding = (
   args: WatchRbacAuthorizationV1ClusterRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchRbacAuthorizationV1ClusterRoleBindingApiResponse>
@@ -883,12 +883,12 @@ export const watchRbacAuthorizationV1ClusterRoleBinding = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchRbacAuthorizationV1ClusterRoleList = (
   args: WatchRbacAuthorizationV1ClusterRoleListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchRbacAuthorizationV1ClusterRoleListApiResponse>
@@ -909,12 +909,12 @@ export const watchRbacAuthorizationV1ClusterRoleList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchRbacAuthorizationV1ClusterRole = (
   args: WatchRbacAuthorizationV1ClusterRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchRbacAuthorizationV1ClusterRoleApiResponse>
@@ -935,12 +935,12 @@ export const watchRbacAuthorizationV1ClusterRole = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchRbacAuthorizationV1NamespacedRoleBindingList = (
   args: WatchRbacAuthorizationV1NamespacedRoleBindingListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchRbacAuthorizationV1NamespacedRoleBindingListApiResponse>
@@ -961,12 +961,12 @@ export const watchRbacAuthorizationV1NamespacedRoleBindingList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchRbacAuthorizationV1NamespacedRoleBinding = (
   args: WatchRbacAuthorizationV1NamespacedRoleBindingApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchRbacAuthorizationV1NamespacedRoleBindingApiResponse>
@@ -987,12 +987,12 @@ export const watchRbacAuthorizationV1NamespacedRoleBinding = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchRbacAuthorizationV1NamespacedRoleList = (
   args: WatchRbacAuthorizationV1NamespacedRoleListApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchRbacAuthorizationV1NamespacedRoleListApiResponse>
@@ -1013,12 +1013,12 @@ export const watchRbacAuthorizationV1NamespacedRoleList = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchRbacAuthorizationV1NamespacedRole = (
   args: WatchRbacAuthorizationV1NamespacedRoleApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchRbacAuthorizationV1NamespacedRoleApiResponse>
@@ -1039,12 +1039,12 @@ export const watchRbacAuthorizationV1NamespacedRole = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchRbacAuthorizationV1RoleBindingListForAllNamespaces = (
   args: WatchRbacAuthorizationV1RoleBindingListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchRbacAuthorizationV1RoleBindingListForAllNamespacesApiResponse>
@@ -1065,12 +1065,12 @@ export const watchRbacAuthorizationV1RoleBindingListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export const watchRbacAuthorizationV1RoleListForAllNamespaces = (
   args: WatchRbacAuthorizationV1RoleListForAllNamespacesApiArg,
-  options?: Options
+  options?: Options,
 ) => {
   return apiClient<
     MinimumRequiredList<WatchRbacAuthorizationV1RoleListForAllNamespacesApiResponse>
@@ -1091,7 +1091,7 @@ export const watchRbacAuthorizationV1RoleListForAllNamespaces = (
         watch: args.watch,
       },
     },
-    options
+    options,
   )
 }
 export type GetRbacAuthorizationV1ApiResourcesApiResponse =
