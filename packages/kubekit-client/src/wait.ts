@@ -1,6 +1,6 @@
 export type Executor<T> = (params: ExecutorParams) => Promise<Retry | T>;
 export type ExecutorParams = { retry: Retry };
-const retry = Symbol();
+export const retry = Symbol();
 type Retry = typeof retry;
 
 export async function wait<T>(executor: Executor<T>, { interval = 500, timeout = 5000 } = {}): Promise<T> {
