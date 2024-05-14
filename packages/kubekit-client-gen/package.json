@@ -1,6 +1,6 @@
 {
-  "name": "@kubekit/codegen",
-  "version": "0.0.19",
+  "name": "@kubekit/client-gen",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "kahirokunn",
@@ -15,7 +15,7 @@
   "homepage": "https://github.com/appthrust/kubekit-ts",
   "bin": "lib/bin/cli.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf lib && tsc",
     "prepare": "npm run build && chmod +x ./lib/bin/cli.js",
     "format": "prettier --write \"src/**/*.ts\"",
     "esm:test:update": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --updateSnapshot",

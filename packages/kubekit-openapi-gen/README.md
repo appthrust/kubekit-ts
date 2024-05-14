@@ -1,6 +1,6 @@
 # Introduction
 
-The `@kubekit/openapi-gen` project is a tool that generates a JSON file of OpenAPI specifications that describe operations that can be executed based on the permissions of Kubernetes ServiceAccount. This tool is particularly useful for application developers who use Kubernetes API. The generated `openapi.json` file is used as a schema file to generate client code in the `@kubekit/codegen` project.
+The `@kubekit/openapi-gen` project is a tool that generates a JSON file of OpenAPI specifications that describe operations that can be executed based on the permissions of Kubernetes ServiceAccount. This tool is particularly useful for application developers who use Kubernetes API. The generated `openapi.json` file is used as a schema file to generate client code in the `@kubekit/client-gen` project.
 
 ## Key Features
 
@@ -10,7 +10,7 @@ The `@kubekit/openapi-gen` project is a tool that generates a JSON file of OpenA
 - **Customizable**: Can be customized to meet user needs.
 - **Code Splitting Support**: Generates code that supports code splitting for efficient load times and performance.
 - **Web Standards Compliant**: Utilizes native fetch API for web-standard compliant communications and ensures testability with tools like msw.
-- **Fast Generation**: `@kubekit/openapi-gen` generates the OpenAPI specifications in approximately 2 seconds, and `@kubekit/codegen` generates the client code in about 1.5 seconds, making the total generation time around 3.5 seconds.
+- **Fast Generation**: `@kubekit/openapi-gen` generates the OpenAPI specifications in approximately 2 seconds, and `@kubekit/client-gen` generates the client code in about 1.5 seconds, making the total generation time around 3.5 seconds.
 
 ## Feature Table
 
@@ -29,7 +29,7 @@ This table has been prepared to clarify the features currently supported and the
 
 ## Feature Comparison Table
 
-The table below compares the size of the generated code by different Kubernetes client generation tools, specifying the API versions they support. For `@kubekit/openapi-gen + @kubekit/codegen`, the client is generated with the following permissions:
+The table below compares the size of the generated code by different Kubernetes client generation tools, specifying the API versions they support. For `@kubekit/openapi-gen + @kubekit/client-gen`, the client is generated with the following permissions:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -55,11 +55,11 @@ rules:
     verbs: ['*']
 ```
 
-| Tool                                    | core v1 (ts) | core v1 (js) | core v1 (compressed js) |
-| --------------------------------------- | :----------: | :----------: | :---------------------: |
-| @kubernetes-client/javascript           |     1.3M     |     1.1M     |          396K           |
-| @kubekit/sync + @kubekit/codegen        |     964K     |     128K     |           88K           |
-| @kubekit/openapi-gen + @kubekit/codegen |     72K      |      8K      |           4K            |
+| Tool                                       | core v1 (ts) | core v1 (js) | core v1 (compressed js) |
+| ------------------------------------------ | :----------: | :----------: | :---------------------: |
+| @kubernetes-client/javascript              |     1.3M     |     1.1M     |          396K           |
+| @kubekit/sync + @kubekit/client-gen        |     964K     |     128K     |          88K            |
+| @kubekit/openapi-gen + @kubekit/client-gen |     72K      |     8K       |          4K             |
 
 This comparison shows that `@kubekit/openapi-gen` efficiently provides only the necessary features, significantly reducing the size of the generated code. However, unlike `@kubernetes-client/javascript`, which supports complex operations like Pod exec, these are not yet implemented in kubekit. Implementation of these features will be considered based on user demand.
 
@@ -91,7 +91,7 @@ This comparison shows that `@kubekit/openapi-gen` efficiently provides only the 
    Use the generated OpenAPI specifications to configure the client code generation in `k8s-client.ts`.
 
    ```typescript:gen-config/k8s-client.ts
-   import type { ConfigFile } from '@kubekit/codegen'
+   import type { ConfigFile } from '@kubekit/client-gen'
 
    const config: ConfigFile = {
      schemaFile: '../generated-openapi.json',
@@ -110,7 +110,7 @@ This comparison shows that `@kubekit/openapi-gen` efficiently provides only the 
 
 ## Complete Example for Initial Setup and Code Generation
 
-Here is a complete example of how to configure and use the `@kubekit/openapi-gen` to generate client code using the `@kubekit/codegen`.
+Here is a complete example of how to configure and use the `@kubekit/openapi-gen` to generate client code using the `@kubekit/client-gen`.
 
 1. **Create a Kubernetes Cluster**:
    If you don't already have a Kubernetes cluster, create one using kind or k3d:
@@ -203,7 +203,7 @@ Here is a complete example of how to configure and use the `@kubekit/openapi-gen
    Use the generated OpenAPI specifications to configure the client code generation in `k8s-client.ts`.
 
    ```typescript:gen-config/k8s-client.ts
-   import type { ConfigFile } from '@kubekit/codegen'
+   import type { ConfigFile } from '@kubekit/client-gen'
 
    const config: ConfigFile = {
      schemaFile: '../generated-openapi.json',
