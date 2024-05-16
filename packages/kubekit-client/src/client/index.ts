@@ -2,28 +2,29 @@ import * as k8s from '@kubernetes/client-node';
 import type * as https from 'node:https';
 import { Agent } from 'undici';
 import { ConcurrentTaskRunner } from './concurrent_task_runner';
-import { sleep } from './sleep';
 import { ReadableStream, TransformStream } from 'node:stream/web';
+import { Debounce } from './debounce';
+import { type ObjectReference } from './types';
+export { sleep } from './sleep'
 
-type IoK8SApiCoreV1ObjectReference = {
-  apiVersion: string | undefined;
-  fieldPath?: string | undefined;
-  kind: string | undefined;
-  name: string | undefined;
-  namespace?: string | undefined;
-  resourceVersion: string;
-  uid?: string | undefined;
+export { ConcurrentTaskRunner, Debounce };
+
+type Id<T> = {
+  [K in keyof T]: T[K];
+} & {};
+type RequiredAndDefined<T> = {
+  [P in keyof T]-?: Exclude<T[P], null | undefined>;
 };
+type PartialRequired<T, K extends keyof T> = Id<RequiredAndDefined<Pick<T, K>> & Omit<T, K>>;
 
 type K8sObj = {
-  metadata: IoK8SApiCoreV1ObjectReference;
+  metadata: ObjectReference;
 };
 
 type RemoveUndefined<T> = {
   [K in keyof T]: Exclude<T[K], undefined | null>;
 };
 
-type CacheValue = Record<string, number>;
 function removeNullableProperties<T extends Record<string, unknown | undefined> | undefined>(
   object: T
 ): RemoveUndefined<T> {
@@ -114,13 +115,29 @@ type K8sListResponse<T> = {
   items: T[];
 };
 
-export type WatchEventType = 'ADDED' | 'Modified' | 'Deleted' | 'BOOKMARK';
+export type Context = {
+  isInitialized: boolean;
+  resourceVersion: string;
+};
+export type WatchEventType = 'ADDED' | 'MODIFIED' | 'DELETED';
+export type InnerWatchEventType = WatchEventType | 'BOOKMARK';
 type WatchEvent<T> = { type: WatchEventType; object: T };
-export type WatchExtraOptions<T extends K8sListResponse<unknown>> = {
+type FinalizerEvent<T extends K8sObj> = {
+  type: 'ADDED' | 'MODIFIED';
+  object: Id<
+    Omit<T, 'metadata'> & {
+      metadata: PartialRequired<T['metadata'], 'finalizers'>;
+    }
+  >;
+};
+type InnerWatchEvent<T> = { type: InnerWatchEventType; object: T };
+export type WatchExtraOptions<T extends K8sListResponse<K8sObj>> = {
   maxWait?: number;
   wait?: number;
   concurrency?: number;
-  watchHandler: (e: WatchEvent<T['items'][number]>) => MaybePromise<unknown>;
+  watchHandler: (e: WatchEvent<T['items'][number]>, ctx: Context) => MaybePromise<unknown>;
+  finalizeHandler?: (e: FinalizerEvent<T['items'][number]>, ctx: Context) => MaybePromise<unknown>;
+  initializedHandler?: (ctx: Context) => MaybePromise<unknown>;
   syncPeriod?: number; // default 10h
 };
 export type Options = RetryOptions & HttpOptions;
@@ -174,6 +191,7 @@ export async function apiClient<Response>(
   };
 
   let { path, method, params = {}, body, contentType } = { ...arguments_ };
+  const isWatch = 'watch' in params && Boolean(params.watch);
 
   let httpsOptions: https.RequestOptions = {
     path,
@@ -219,6 +237,13 @@ export async function apiClient<Response>(
     // TODO: defaultのfeature flagがtrueになったら、watchの場合は自動で以下の2つのparamsを追加してあげたい
     // sendInitialEvents: true,
     // resourceVersionMatch: "NotOlderThan"
+
+    if (isWatch) {
+      params = {
+        ...params,
+        allowWatchBookmarks: true,
+      };
+    }
     baseUrl += (baseUrl.includes('?') ? '&' : '?') + toSearchParameters(params);
   }
   const url = new URL(baseUrl);
@@ -263,17 +288,25 @@ export async function apiClient<Response>(
       const isJsonResponse = contentType?.includes('application/json') ?? false;
 
       if (isSuccess && isJsonResponse) {
-        if ('watch' in params && params.watch && response.body && 'watchHandler' in extraOptions) {
+        if (isWatch && response.body && 'watchHandler' in extraOptions) {
           const {
             watchHandler,
             wait = 200,
             maxWait = 1000,
             concurrency = 4,
             syncPeriod = 3_6000_000,
+            finalizeHandler,
+            initializedHandler,
           } = {
+            finalizeHandler: () => {},
+            initializedHandler: () => {},
             ...extraOptions,
           };
 
+          const ctx: Context = {
+            isInitialized: false,
+            resourceVersion: '',
+          };
           const taskRunner = new ConcurrentTaskRunner(concurrency);
           const debounce = new Debounce(wait, maxWait);
 
@@ -285,32 +318,81 @@ export async function apiClient<Response>(
           };
           delete listArgs.params.watch;
           const { syncPeriod: __, ...listExtraOptions } = { ...extraOptions };
+
           const intervalId = setInterval(async () => {
             const result = (await apiClient<K8sListResponse<K8sObj>>(
               listArgs,
               listExtraOptions
             )) as K8sListResponse<K8sObj>;
 
-            result.items.forEach((k8sObj) => {
+            result.items.forEach((k8sObj, i) => {
               taskRunner.add(async () => {
                 const objectReference = k8sObj.metadata;
 
-                await debounce.skipOrExec(Debounce.getCacheKey(objectReference), objectReference.resourceVersion, () =>
-                  watchHandler(k8sObj as any)
+                await debounce.skipOrExec(
+                  Debounce.getCacheKey(objectReference),
+                  objectReference.resourceVersion,
+                  async () => {
+                    if (k8sObj.metadata.deletionTimestamp && k8sObj.metadata.finalizers?.length) {
+                      await finalizeHandler(
+                        {
+                          type: 'MODIFIED',
+                          object: k8sObj as any,
+                        },
+                        {
+                          ...ctx,
+                        }
+                      );
+                    } else {
+                      await watchHandler(
+                        {
+                          type: 'MODIFIED',
+                          object: k8sObj,
+                        },
+                        {
+                          ...ctx,
+                        }
+                      );
+                    }
+                  }
                 );
               });
             });
           }, syncPeriod);
           try {
             for await (const k8sObj of (response.body as ReadableStream<Uint8Array>).pipeThrough(
-              new JsonStream<WatchEvent<K8sObj>>()
+              new JsonStream<InnerWatchEvent<K8sObj>>()
             )) {
-              const { resourceVersion } = k8sObj.object.metadata;
-              const cacheKey = Debounce.getCacheKey(k8sObj.object.metadata);
-              debounce.push(cacheKey, resourceVersion);
-              taskRunner.add(async () => {
-                await debounce.skipOrExec(cacheKey, resourceVersion, () => watchHandler(k8sObj as any));
-              });
+              if (k8sObj.type === 'BOOKMARK') {
+                ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
+                if (k8sObj.object.metadata.annotations?.['k8s.io/initial-events-end'] === 'true') {
+                  await taskRunner.waitFinishedCurrentQueuedTasks()
+                  ctx.isInitialized = true;
+                  await taskRunner.add(async () => {
+                    await initializedHandler({
+                      ...ctx
+                    });
+                  });
+                }
+              } else {
+                const { resourceVersion } = k8sObj.object.metadata;
+                const cacheKey = Debounce.getCacheKey(k8sObj.object.metadata);
+                debounce.pushLatestItem(cacheKey, resourceVersion);
+                taskRunner.add(async () => {
+                  ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
+                  await debounce.skipOrExec(cacheKey, resourceVersion, () => {
+                    if (k8sObj.object.metadata.deletionTimestamp && k8sObj.object.metadata.finalizers?.length) {
+                      return finalizeHandler(k8sObj as any, {
+                        ...ctx,
+                      });
+                    } else {
+                      return watchHandler(k8sObj as any, {
+                        ...ctx,
+                      });
+                    }
+                  });
+                });
+              }
             }
           } finally {
             clearInterval(intervalId);
@@ -352,65 +434,6 @@ export async function apiClient<Response>(
 const toSearchParameters = (parameters: Record<string, string>) => {
   return new URLSearchParams(removeNullableProperties(parameters));
 };
-
-class Debounce {
-  #cache = new Map<string, CacheValue>();
-  #waitMilliSeconds: number;
-  #maxWaitMilliSeconds: number;
-
-  constructor(waitMilliSeconds: number, maxWaitMilliSeconds: number) {
-    this.#waitMilliSeconds = waitMilliSeconds;
-    this.#maxWaitMilliSeconds = maxWaitMilliSeconds;
-  }
-
-  public static getCacheKey({ namespace, name }: IoK8SApiCoreV1ObjectReference) {
-    return `${namespace || ''}/${name}`;
-  }
-
-  push(cacheKey: string, resourceVersion: string) {
-    this.#cache.set(cacheKey, {
-      ...(this.#cache.get(cacheKey) || {}),
-      [resourceVersion]: Number(new Date()),
-    });
-  }
-
-  async skipOrExec(cacheKey: string, resourceVersion: string, func: () => unknown | Promise<unknown>) {
-    const getLatestResourceVersion = () => {
-      const resourceVersions = Object.keys(this.#cache.get(cacheKey) || {});
-
-      if (resourceVersions.length === 0) {
-        return BigInt(-1);
-      }
-
-      const sorted = resourceVersions.map(BigInt).sort();
-
-      const max = sorted[sorted.length - 1];
-      const min = sorted[0];
-
-      // resourceVersionはint64を超えたら0にwrapされる仕様です.
-      // minとmaxでNumber.MAX_VALUEよりもresourceVersionが離れていたら、離れすぎなので、wrapされたと判定する事にします
-      if (max - BigInt(Number.MAX_VALUE) > min) {
-        return min;
-      }
-
-      return max;
-    };
-
-    const now = Number(new Date());
-    const getCurrentPushedAt = this.#cache.get(cacheKey)?.[resourceVersion] || now;
-    const currentElapsedTime = now - getCurrentPushedAt;
-    const getOldestPushedAt = Object.values(this.#cache.get(cacheKey) || {})[0] || now;
-    const oldestElapsedTime = now - getOldestPushedAt;
-
-    if (this.#maxWaitMilliSeconds > oldestElapsedTime && this.#waitMilliSeconds > currentElapsedTime) {
-      await sleep(this.#waitMilliSeconds - currentElapsedTime);
-    }
-    if (BigInt(resourceVersion) === getLatestResourceVersion()) {
-      this.#cache.delete(cacheKey);
-      await func();
-    }
-  }
-}
 
 class JsonStream<T> extends TransformStream<Uint8Array, T> {
   constructor() {
