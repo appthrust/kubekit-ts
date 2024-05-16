@@ -29,6 +29,13 @@ export function patchGvk(doc: OpenAPIV3.Document) {
           if (schemaName.startsWith('io.k8s.api.core.')) {
             return words[words.length - 2]
           }
+          // "io.k8s.api.coordination.v1.Lease"
+          if (schemaName.startsWith('io.k8s.api.')) {
+            const apiGroup = `${words.slice(3, -2).join('.')}.k8s.io`
+            const apiVersion = words[words.length - 2]
+            // "coordination.k8s.io/v1"
+            return `${apiGroup}/${apiVersion}`
+          }
 
           const [first, ...center] = words
           center.pop()
