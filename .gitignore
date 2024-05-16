@@ -2,8 +2,10 @@
 *.log
 node_modules
 dist*/
-packages/kubekit-codegen/lib
-packages/kubekit-sync/lib
+packages/*/lib
+packages/*/dist
+examples/*/lib
+examples/*/dist
 es
 
 .yalc
@@ -37,4 +39,4 @@ eks-blueprints-add-ons
 examples/generate-vercel-client/swagger.json
 eks-blueprints-add-ons
 openapi
-packages/kubekit-prepare/lib
+!packages/kubekit-openapi-gen/src/utils/openapi

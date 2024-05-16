@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-openapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "gen": "npx @kubekit/prepare gen-config/openapi.ts && npx @kubekit/codegen gen-config/k8s-client.ts",
+    "dev": "npx tsx src/main.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@kubekit/client": "^0.0.23"
+  },
+  "devDependencies": {
+    "@kubekit/codegen": "^0.0.19",
+    "@kubekit/prepare": "^0.0.11",
+    "esbuild": "^0.20.2",
+    "esbuild-runner": "^2.2.2"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "nginx-cluster-controller-with-kubekit-sync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "sync": "npx @kubekit/sync ./",
+    "gen": "npm-run-all gen:*",
+    "gen:core-v1": "npx @kubekit/client-gen config/core-v1.ts",
+    "gen:kubekit-v1": "npx @kubekit/client-gen config/kubekit-v1.ts",
+    "gen:coordination-v1": "npx @kubekit/client-gen config/coordination-v1.ts",
+    "refresh": "kubectl apply -f config/crds/nginxcluster.yaml && npm run sync && npm run gen",
+    "dev": "npx tsx src/main.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@kubekit/client": "0.1.18"
+  },
+  "devDependencies": {
+    "@kubekit/client-gen": "^0.1.0",
+    "@kubekit/sync": "0.1.3",
+    "esbuild": "^0.20.2",
+    "esbuild-runner": "^2.2.2",
+    "npm-run-all": "^4.1.5"
+  }
+}
