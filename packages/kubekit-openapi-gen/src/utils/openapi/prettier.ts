@@ -1,5 +1,6 @@
 import * as prettier from 'prettier'
 import * as path from 'path'
+import * as prettierPluginSortJson from 'prettier-plugin-sort-json'
 
 const EXTENSION_TO_PARSER: Record<string, string> = {
   ts: 'typescript',
@@ -40,7 +41,9 @@ export async function prettify(
   if (sortJson) {
     config = {
       ...config,
-      plugins: ['prettier-plugin-sort-json'],
+      plugins: [
+        prettierPluginSortJson
+      ],
       jsonRecursiveSort: true,
     }
   }
