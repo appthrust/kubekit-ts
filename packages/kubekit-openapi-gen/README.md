@@ -16,7 +16,7 @@ The `@kubekit/openapi-gen` project is a tool that generates a JSON file of OpenA
 
 The table below shows the implementation status of features in the `@kubekit/openapi-gen` project.
 
-| Feature         | :----: |
+| Feature         | Implementation Status |
 | --------------- | :----: |
 | ServiceAccount  |   ✅   |
 | Group           |   ✅   |
@@ -55,11 +55,11 @@ rules:
     verbs: ['*']
 ```
 
-| Tool                                       | core v1 (ts) | core v1 (js) | core v1 (compressed js) |
-| ------------------------------------------ | :----------: | :----------: | :---------------------: |
-| @kubernetes-client/javascript              |     1.3M     |     1.1M     |          396K           |
-| @kubekit/sync + @kubekit/client-gen        |     964K     |     128K     |          88K            |
-| @kubekit/openapi-gen + @kubekit/client-gen |     72K      |     8K       |          4K             |
+| Tool                                       | core v1 (ts) | core v1 (js) | core v1 (compressed js) |           Size Measurement Commands           |
+| ------------------------------------------ | :----------: | :----------: | :---------------------: | :--------------------------------------------------------------------: |
+| @kubernetes-client/javascript              |     1.3M     |     1.1M     |          396K           | du -sh node_modules/@kubernetes/client-node/dist/gen/api/coreV1Api.js && npx uglifyjs node_modules/@kubernetes/client-node/dist/gen/api/coreV1Api.js -o /tmp/CoreV1Api.uglify.js -c -m && du -sh /tmp/CoreV1Api.uglify.js |
+| @kubekit/sync + @kubekit/client-gen        |     964K     |     128K     |          88K            | cd ../../examples/nginx-cluster-controller-with-kubekit-sync && npx tsc && du -sh ./dist/src/core-v1.js && npx uglifyjs ./dist/src/core-v1.js -o /tmp/core-v1.js -c -m && du -sh /tmp/core-v1.js && cd - |
+| @kubekit/openapi-gen + @kubekit/client-gen |     36K      |     4K       |          4K             | npm run example && du -sh tests/example-client.js && npx uglifyjs ./tests/example-client.js -o /tmp/example-client.js -c -m && du -sh /tmp/example-client.js |
 
 This comparison shows that `@kubekit/openapi-gen` efficiently provides only the necessary features, significantly reducing the size of the generated code. However, unlike `@kubernetes-client/javascript`, which supports complex operations like Pod exec, these are not yet implemented in kubekit. Implementation of these features will be considered based on user demand.
 

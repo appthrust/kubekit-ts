@@ -40,3 +40,4 @@ examples/generate-vercel-client/swagger.json
 eks-blueprints-add-ons
 openapi
 !packages/kubekit-openapi-gen/src/utils/openapi
+*.log

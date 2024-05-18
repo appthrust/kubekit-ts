@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: test3
+  name: test2
   namespace: default
 
 ---
@@ -9,7 +9,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   namespace: default
-  name: test3
+  name: test2
 rules:
   - apiGroups: ['']
     resources: ['pods']
@@ -27,15 +27,15 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: test3-binding
+  name: test2-binding
   namespace: default
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
-  name: test3
+  name: test2
 subjects:
   - kind: ServiceAccount
-    name: test3
+    name: test2
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -63,7 +63,7 @@ roleRef:
   name: pod-ingress-creator
 subjects:
   - kind: ServiceAccount
-    name: test3
+    name: test2
     namespace: default
 
 ---
@@ -89,7 +89,7 @@ roleRef:
   name: endpoint-viewer
 subjects:
   - kind: ServiceAccount
-    name: test3
+    name: test2
     namespace: default
 
 ---
@@ -113,7 +113,7 @@ roleRef:
   name: configmap-manager
 subjects:
   - kind: ServiceAccount
-    name: test3
+    name: test2
     namespace: default
 
 ---
@@ -127,7 +127,7 @@ roleRef:
   name: configmap-manager
 subjects:
   - kind: ServiceAccount
-    name: test3
+    name: test2
     namespace: default
 
 ---
@@ -141,7 +141,7 @@ roleRef:
   name: override-pods
 subjects:
   - kind: ServiceAccount
-    name: test3
+    name: test2
     namespace: default
 
 ---
@@ -165,7 +165,7 @@ roleRef:
   name: not-exists
 subjects:
   - kind: ServiceAccount
-    name: test3
+    name: test2
     namespace: default
 
 ---

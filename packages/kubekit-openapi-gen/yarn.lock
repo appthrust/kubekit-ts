@@ -185,18 +185,10 @@
     swagger2openapi "^7.0.8"
     typescript "^5.2.2"
 
-"@kubekit/client@0.0.23":
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/@kubekit/client/-/client-0.0.23.tgz#692a2d7c27b0cdb4fff5dd062326572635510657"
-  integrity sha512-XQB7WiXOFDlRKViph6WehdjmuLduE16e8P9jHs003PZp8lvGeRZ0OtAvlBF4adFM1y9qw1PJ+IsjbRpR9vu9yw==
-  dependencies:
-    "@kubernetes/client-node" "^0.20.0"
-    undici "^5.28.3"
-
-"@kubekit/codegen@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@kubekit/codegen/-/codegen-0.0.19.tgz#113e055209d6b5aa2e183b45bedd62336801bdf1"
-  integrity sha512-Mem+py8obQIQQWNs0agLK3H6Q042hc4vcnX5CG1XSI0U1piUUpq8pq6MSpcqenrPCMf8NqT2kqEJ+qz2tjSc3Q==
+"@kubekit/client-gen@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@kubekit/client-gen/-/client-gen-0.1.0.tgz#1ca6fed356bebc89b28bdd712ddda737ec4c615a"
+  integrity sha512-ew5s+Mm4mCPDi9GraFOsizDBBs3qW3Bps7ae67o2JnVVNAABaAfUwSW1VVT3OSNatsaWECQmBxOSIepkSFK19Q==
   dependencies:
     "@apidevtools/swagger-parser" "^10.0.2"
     "@kahirokunn/oazapfts-patched" "^0.0.1"
@@ -205,6 +197,14 @@
     prettier "^2.8.8"
     semver "^7.3.5"
     swagger2openapi "^7.0.4"
+
+"@kubekit/client@0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@kubekit/client/-/client-0.0.23.tgz#692a2d7c27b0cdb4fff5dd062326572635510657"
+  integrity sha512-XQB7WiXOFDlRKViph6WehdjmuLduE16e8P9jHs003PZp8lvGeRZ0OtAvlBF4adFM1y9qw1PJ+IsjbRpR9vu9yw==
+  dependencies:
+    "@kubernetes/client-node" "^0.20.0"
+    undici "^5.28.3"
 
 "@kubernetes/client-node@^0.20.0":
   version "0.20.0"
@@ -955,9 +955,9 @@ safer-buffer@^2.0.2, safer-buffer@^2.1.0, safer-buffer@~2.1.0:
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
 semver@^7.3.5:
-  version "7.6.1"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.6.1.tgz#60bfe090bf907a25aa8119a72b9f90ef7ca281b2"
-  integrity sha512-f/vbBsu+fOiYt+lmwZV0rVwJScl46HppnOA1ZvIuBWKOTlllpyJ3bfVax76/OrhCH38dyxoDIA8K7uB963IYgA==
+  version "7.6.2"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.6.2.tgz#1e3b34759f896e8f14d6134732ce798aeb0c6e13"
+  integrity sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==
 
 should-equal@^2.0.0:
   version "2.0.0"

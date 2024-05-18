@@ -1,6 +1,6 @@
 {
   "name": "@kubekit/openapi-gen",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "kahirokunn",
@@ -18,12 +18,11 @@
     "build": "rm -rf lib && tsc",
     "prepare": "rm -rf lib && tsc && chmod +x ./lib/bin/cli.js",
     "gen-openapi": "kubectl apply -f gen-config/sa.yaml && yarn build; chmod +x lib/bin/cli.js; yarn cli ./gen-config/openapi.ts",
-    "gen-k8s-client": "npx @kubekit/codegen gen-config/k8s-client.ts",
+    "gen-k8s-client": "npx @kubekit/client-gen gen-config/k8s-client.ts",
     "cli": "lib/bin/cli.js",
     "test1": "yarn build; chmod +x lib/bin/cli.js; yarn cli tests/test1.config.ts",
     "test2": "yarn build; chmod +x lib/bin/cli.js; yarn cli tests/test2.config.ts",
-    "test3": "yarn build; chmod +x lib/bin/cli.js; yarn cli tests/test3.config.ts",
-    "test4": "yarn build; chmod +x lib/bin/cli.js; yarn cli tests/test4-1api.config.ts; yarn cli tests/test4-2api.config.ts"
+    "example": "yarn build; chmod +x lib/bin/cli.js; kubectl apply -f tests/example.yaml; yarn cli tests/example.config.ts && npx @kubekit/client-gen tests/example.client-config.ts && npx tsc --project tsconfig-override.json"
   },
   "files": [
     "lib",
@@ -35,7 +34,7 @@
     }
   },
   "devDependencies": {
-    "@kubekit/codegen": "^0.0.19",
+    "@kubekit/client-gen": "^0.1.0",
     "@types/lodash.merge": "^4.6.9",
     "@types/node": "^20.11.30",
     "esbuild": "^0.21.1",

@@ -1,10 +1,10 @@
-import { ConfigFile } from '..'
+import { ConfigFile } from '../lib'
 
 const config: ConfigFile = {
   kind: 'ServiceAccount',
-  name: 'test3',
+  name: 'example',
   namespace: 'default',
-  outputFile: './test3.openapi.json',
+  outputFile: './example.openapi.json',
 }
 
 export default config

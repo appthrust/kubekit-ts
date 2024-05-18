@@ -1,4 +1,4 @@
-import { ConfigFile } from '..'
+import { ConfigFile } from '../lib'
 
 const config: ConfigFile = {
   kind: 'ServiceAccount',
