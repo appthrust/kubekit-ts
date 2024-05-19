@@ -518,7 +518,7 @@ function getBodyNode(bodies: { [contentType: string]: ts.TypeNode }): ts.TypeNod
 // 	? Omit<PartialRequired<T, "metadata" | "apiVersion" | "kind">, "metadata"> & {
 // 			metadata: PartialRequired<
 // 				RequiredAndDefined<T>["metadata"],
-// 				"name" | "namespace" | "creationTimestamp" | "resourceVersion"
+// 				"name" | "namespace" | "creationTimestamp" | "resourceVersion" | "uid"
 // 			>;
 // 	  }
 // 	: T>;
@@ -786,7 +786,8 @@ const buildInTypes = [
                   factory.createLiteralTypeNode(factory.createStringLiteral("name")),
                   factory.createLiteralTypeNode(factory.createStringLiteral("namespace")),
                   factory.createLiteralTypeNode(factory.createStringLiteral("creationTimestamp")),
-                  factory.createLiteralTypeNode(factory.createStringLiteral("resourceVersion"))
+                  factory.createLiteralTypeNode(factory.createStringLiteral("resourceVersion")),
+                  factory.createLiteralTypeNode(factory.createStringLiteral("uid")),
                 ])
               ]
             )
