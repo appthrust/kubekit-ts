@@ -22,12 +22,7 @@ export class TaskManager {
   private wait: number;
   private maxWait: number;
 
-  constructor({
-    concurrency = Infinity,
-    isPaused = false,
-    wait = 0,
-    maxWait = 0,
-  }: TaskManagerOptions = {}) {
+  constructor({ concurrency = Infinity, isPaused = false, wait = 0, maxWait = 0 }: TaskManagerOptions = {}) {
     this.concurrency = concurrency;
     this.currentlyRunning = 0;
     this.queue = {};

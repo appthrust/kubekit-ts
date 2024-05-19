@@ -21,7 +21,7 @@ describe('TaskManager', () => {
   it('should execute tasks in parallel up to the concurrency limit and complete all tasks', async () => {
     const concurrency = 2;
     const taskManager = new TaskManager({
-      concurrency
+      concurrency,
     });
     const taskCallbacks = Array.from({ length: 100 }, () => vi.fn());
     const num = 100;
@@ -181,7 +181,7 @@ describe('TaskManager', () => {
 
   it('should debounce tasks for the same namespace/name', async () => {
     const taskManager = new TaskManager({
-      wait: 10
+      wait: 10,
     });
     const taskCallback = vi.fn();
 
