@@ -381,6 +381,9 @@ export async function apiClient<Response>(
         // helpful message for debugging
         console.info(`Did you forget to install your Custom Resources Definitions? path: ${httpsOptions.path}`);
       }
+      if (response.headers.get('content-type') === "application/json") {
+        throw JSON.parse(text);
+      }
       throw new Error(text);
     } catch (error: any) {
       retry++;
