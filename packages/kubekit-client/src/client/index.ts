@@ -95,6 +95,7 @@ type RetryConditionFunction = (extraArguments: {
   error: unknown;
   args: QueryArgumentsSpec;
   attempt: number;
+  maxRetries: number;
   options: RetryOptions;
 }) => boolean | Promise<boolean>;
 
@@ -145,6 +146,34 @@ export type Options = RetryOptions & HttpOptions;
 export type ExtraOptions = Options | (Options & WatchExtraOptions<any>);
 export const globalDefaultExtraOptions: ExtraOptions = {};
 
+export const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => {
+  const { res, attempt, error, maxRetries } = object;
+  if (attempt > maxRetries) {
+    return false;
+  }
+
+  if (typeof error === 'object' && error !== null) {
+    const isAbortError = Boolean('name' in error && error.name === 'AbortError');
+
+    if (isAbortError) {
+      return false;
+    }
+
+    if (
+      'toString' in error &&
+      typeof error.toString === 'function' &&
+      error.toString().includes('TypeError: fetch failed')
+    ) {
+      return true;
+    }
+  }
+
+  if (res && res.status >= 500) {
+    return true;
+  }
+  return false;
+};
+
 export async function apiClient<Response>(
   arguments_: QueryArgumentsSpec,
   extraOptions: ExtraOptions = {}
@@ -154,35 +183,6 @@ export async function apiClient<Response>(
     ...extraOptions,
   };
   const maxRetries = extraOptions.maxRetries ?? 3;
-
-  const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => {
-    const { res, attempt, error } = object;
-    if (attempt > maxRetries) {
-      return false;
-    }
-
-    if (typeof error === 'object' && error !== null) {
-      const isAbortError = Boolean('name' in error && error.name === 'AbortError');
-
-      if (isAbortError) {
-        return false;
-      }
-
-      if (
-        'toString' in error &&
-        typeof error.toString === 'function' &&
-        error.toString().includes('TypeError: fetch failed')
-      ) {
-        return true;
-      }
-    }
-
-    if (res && res.status >= 500) {
-      return true;
-    }
-    return false;
-  };
-
   const options = {
     maxRetries,
     backoff: defaultBackoff,
@@ -421,6 +421,7 @@ export async function apiClient<Response>(
           args: arguments_,
           attempt: retry,
           options: options,
+          maxRetries,
         }))
       ) {
         throw error;
