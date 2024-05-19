@@ -134,6 +134,6 @@ dist
 
 .yalc/
 yalc.lock
-lib
+dist
 yarn.lock
 test/tmp/example.ts

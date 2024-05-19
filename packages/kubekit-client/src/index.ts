@@ -1,2 +1,2 @@
 export * from './client';
-export * from './wait';
+export * from './lib/wait';

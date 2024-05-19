@@ -1,13 +1,10 @@
-import * as k8s from '@kubernetes/client-node';
 import type * as https from 'node:https';
 import { Agent } from 'undici';
-import { ConcurrentTaskRunner } from './concurrent_task_runner';
 import { ReadableStream, TransformStream } from 'node:stream/web';
-import { Debounce } from './debounce';
-import { type ObjectReference } from './types';
-export { sleep } from './sleep'
-
-export { ConcurrentTaskRunner, Debounce };
+import { type ObjectReference } from '../lib/types';
+import { KubeConfig } from '../lib/config';
+export { sleep } from '../lib/sleep';
+export { TaskManager as TaskQueue } from '../lib/task_manager';
 
 type Id<T> = {
   [K in keyof T]: T[K];
@@ -71,9 +68,9 @@ type InterceptorArguments = {
 };
 type Interceptor = (arguments_: InterceptorArguments, options: Options) => MaybePromise<https.RequestOptions>;
 
-const interceptors: Interceptor[] = [
+export const interceptors: Interceptor[] = [
   async function injectKubernetesParameters({ opts }) {
-    const kc = new k8s.KubeConfig();
+    const kc = new KubeConfig();
     kc.loadFromDefault();
     const nextOptions: https.RequestOptions = { ...opts };
     await kc.applyToHTTPSOptions(nextOptions);
@@ -133,12 +130,10 @@ type FinalizerEvent<T extends K8sObj> = {
 };
 type InnerWatchEvent<T> = { type: InnerWatchEventType; object: T };
 export type WatchExtraOptions<T extends K8sListResponse<K8sObj>> = {
-  maxWait?: number;
-  wait?: number;
-  concurrency?: number;
+  onError?: (err: unknown) => void | Promise<void>;
   watchHandler: (e: WatchEvent<T['items'][number]>, ctx: Context) => MaybePromise<unknown>;
   finalizeHandler?: (e: FinalizerEvent<T['items'][number]>, ctx: Context) => MaybePromise<unknown>;
-  initializedHandler?: (ctx: Context) => MaybePromise<unknown>;
+  syncedHandler?: (ctx: Context) => MaybePromise<unknown>;
   syncPeriod?: number; // default 10h
 };
 export type Options = RetryOptions & HttpOptions;
@@ -187,6 +182,7 @@ export async function apiClient<Response>(
     maxRetries,
     backoff: defaultBackoff,
     retryCondition: defaultRetryCondition,
+    onError: () => {},
     ...removeNullableProperties(extraOptions),
   };
 
@@ -288,18 +284,16 @@ export async function apiClient<Response>(
       const isJsonResponse = contentType?.includes('application/json') ?? false;
 
       if (isSuccess && isJsonResponse) {
-        if (isWatch && response.body && 'watchHandler' in extraOptions) {
+        if (isWatch && response.body) {
           const {
             watchHandler,
-            wait = 200,
-            maxWait = 1000,
-            concurrency = 4,
             syncPeriod = 3_6000_000,
             finalizeHandler,
-            initializedHandler,
+            syncedHandler,
           } = {
             finalizeHandler: () => {},
-            initializedHandler: () => {},
+            syncedHandler: () => {},
+            watchHandler: () => {},
             ...extraOptions,
           };
 
@@ -307,8 +301,6 @@ export async function apiClient<Response>(
             isInitialized: false,
             resourceVersion: '',
           };
-          const taskRunner = new ConcurrentTaskRunner(concurrency);
-          const debounce = new Debounce(wait, maxWait);
 
           const listArgs = {
             ...arguments_,
@@ -317,7 +309,7 @@ export async function apiClient<Response>(
             },
           };
           delete listArgs.params.watch;
-          const { syncPeriod: __, ...listExtraOptions } = { ...extraOptions };
+          const { syncPeriod: __ = 0, ...listExtraOptions } = { ...extraOptions };
 
           const intervalId = setInterval(async () => {
             const result = (await apiClient<K8sListResponse<K8sObj>>(
@@ -325,38 +317,28 @@ export async function apiClient<Response>(
               listExtraOptions
             )) as K8sListResponse<K8sObj>;
 
-            result.items.forEach((k8sObj, i) => {
-              taskRunner.add(async () => {
-                const objectReference = k8sObj.metadata;
-
-                await debounce.skipOrExec(
-                  Debounce.getCacheKey(objectReference),
-                  objectReference.resourceVersion,
-                  async () => {
-                    if (k8sObj.metadata.deletionTimestamp && k8sObj.metadata.finalizers?.length) {
-                      await finalizeHandler(
-                        {
-                          type: 'MODIFIED',
-                          object: k8sObj as any,
-                        },
-                        {
-                          ...ctx,
-                        }
-                      );
-                    } else {
-                      await watchHandler(
-                        {
-                          type: 'MODIFIED',
-                          object: k8sObj,
-                        },
-                        {
-                          ...ctx,
-                        }
-                      );
-                    }
+            result.items.forEach(async (k8sObj) => {
+              if (k8sObj.metadata.deletionTimestamp && k8sObj.metadata.finalizers?.length) {
+                await finalizeHandler(
+                  {
+                    type: 'MODIFIED',
+                    object: k8sObj as any,
+                  },
+                  {
+                    ...ctx,
                   }
                 );
-              });
+              } else {
+                await watchHandler(
+                  {
+                    type: 'MODIFIED',
+                    object: k8sObj,
+                  },
+                  {
+                    ...ctx,
+                  }
+                );
+              }
             });
           }, syncPeriod);
           try {
@@ -366,32 +348,21 @@ export async function apiClient<Response>(
               if (k8sObj.type === 'BOOKMARK') {
                 ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
                 if (k8sObj.object.metadata.annotations?.['k8s.io/initial-events-end'] === 'true') {
-                  await taskRunner.waitFinishedCurrentQueuedTasks()
-                  ctx.isInitialized = true;
-                  await taskRunner.add(async () => {
-                    await initializedHandler({
-                      ...ctx
-                    });
+                  await syncedHandler({
+                    ...ctx,
                   });
                 }
               } else {
-                const { resourceVersion } = k8sObj.object.metadata;
-                const cacheKey = Debounce.getCacheKey(k8sObj.object.metadata);
-                debounce.pushLatestItem(cacheKey, resourceVersion);
-                taskRunner.add(async () => {
-                  ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
-                  await debounce.skipOrExec(cacheKey, resourceVersion, () => {
-                    if (k8sObj.object.metadata.deletionTimestamp && k8sObj.object.metadata.finalizers?.length) {
-                      return finalizeHandler(k8sObj as any, {
-                        ...ctx,
-                      });
-                    } else {
-                      return watchHandler(k8sObj as any, {
-                        ...ctx,
-                      });
-                    }
+                ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
+                if (k8sObj.object.metadata.deletionTimestamp && k8sObj.object.metadata.finalizers?.length) {
+                  await finalizeHandler(k8sObj as any, {
+                    ...ctx,
                   });
-                });
+                } else {
+                  await watchHandler(k8sObj as any, {
+                    ...ctx,
+                  });
+                }
               }
             }
           } finally {
@@ -413,6 +384,8 @@ export async function apiClient<Response>(
       throw new Error(text);
     } catch (error: any) {
       retry++;
+
+      await options.onError(error)
 
       if (
         !(await options.retryCondition({
