@@ -3,7 +3,7 @@ import {
   type Options,
   type WatchExtraOptions,
 } from '@kubekit/client'
-type Id<T> = {
+export type Id<T> = {
   [K in keyof T]: T[K]
 } & {}
 type NoWatch<T> = Omit<T, 'watch'> & {
@@ -12,10 +12,10 @@ type NoWatch<T> = Omit<T, 'watch'> & {
 type RequiredAndDefined<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>
 }
-type PartialRequired<T, K extends keyof T> = Id<
+export type PartialRequired<T, K extends keyof T> = Id<
   RequiredAndDefined<Pick<T, K>> & Omit<T, K>
 >
-type MinimumRequiredGet<T> = Id<
+export type Strict<T> = Id<
   T extends {
     metadata?: any
     apiVersion?: any
@@ -27,12 +27,12 @@ type MinimumRequiredGet<T> = Id<
       > & {
         metadata: PartialRequired<
           RequiredAndDefined<T>['metadata'],
-          'name' | 'namespace' | 'creationTimestamp' | 'resourceVersion'
+          'name' | 'namespace' | 'creationTimestamp' | 'resourceVersion' | 'uid'
         >
       }
     : T
 >
-type MinimumRequiredList<T> = Id<
+type StrictList<T> = Id<
   T extends {
     items: {
       metadata?: any
@@ -41,28 +41,27 @@ type MinimumRequiredList<T> = Id<
     }[]
   }
     ? Omit<T, 'items'> & {
-        items: MinimumRequiredGet<T['items'][number]>[]
+        items: Strict<T['items'][number]>[]
       }
     : T
 >
 export const getCoordinationV1ApiResources = (options?: Options) => {
-  return apiClient<
-    MinimumRequiredGet<GetCoordinationV1ApiResourcesApiResponse>
-  >({ path: `/apis/coordination.k8s.io/v1/` }, options)
+  return apiClient<Strict<GetCoordinationV1ApiResourcesApiResponse>>(
+    { path: `/apis/coordination.k8s.io/v1/` },
+    options
+  )
 }
 export function listCoordinationV1LeaseForAllNamespaces(
   args: NoWatch<ListCoordinationV1LeaseForAllNamespacesApiArg>,
   options?: Options
-): Promise<
-  MinimumRequiredList<ListCoordinationV1LeaseForAllNamespacesApiResponse>
->
+): Promise<StrictList<ListCoordinationV1LeaseForAllNamespacesApiResponse>>
 export function listCoordinationV1LeaseForAllNamespaces(
   args: ListCoordinationV1LeaseForAllNamespacesApiArg & {
     watch: true
   },
   options: Options &
     WatchExtraOptions<
-      MinimumRequiredList<ListCoordinationV1LeaseForAllNamespacesApiResponse>
+      StrictList<ListCoordinationV1LeaseForAllNamespacesApiResponse>
     >
 ): Promise<void>
 export function listCoordinationV1LeaseForAllNamespaces(
@@ -70,7 +69,7 @@ export function listCoordinationV1LeaseForAllNamespaces(
   options: any
 ): any {
   return apiClient<
-    MinimumRequiredList<ListCoordinationV1LeaseForAllNamespacesApiResponse>
+    StrictList<ListCoordinationV1LeaseForAllNamespacesApiResponse>
   >(
     {
       path: `/apis/coordination.k8s.io/v1/leases`,
@@ -94,23 +93,19 @@ export function listCoordinationV1LeaseForAllNamespaces(
 export function listCoordinationV1NamespacedLease(
   args: NoWatch<ListCoordinationV1NamespacedLeaseApiArg>,
   options?: Options
-): Promise<MinimumRequiredList<ListCoordinationV1NamespacedLeaseApiResponse>>
+): Promise<StrictList<ListCoordinationV1NamespacedLeaseApiResponse>>
 export function listCoordinationV1NamespacedLease(
   args: ListCoordinationV1NamespacedLeaseApiArg & {
     watch: true
   },
   options: Options &
-    WatchExtraOptions<
-      MinimumRequiredList<ListCoordinationV1NamespacedLeaseApiResponse>
-    >
+    WatchExtraOptions<StrictList<ListCoordinationV1NamespacedLeaseApiResponse>>
 ): Promise<void>
 export function listCoordinationV1NamespacedLease(
   args: any,
   options: any
 ): any {
-  return apiClient<
-    MinimumRequiredList<ListCoordinationV1NamespacedLeaseApiResponse>
-  >(
+  return apiClient<StrictList<ListCoordinationV1NamespacedLeaseApiResponse>>(
     {
       path: `/apis/coordination.k8s.io/v1/namespaces/${args['namespace']}/leases`,
       params: {
@@ -134,9 +129,7 @@ export const createCoordinationV1NamespacedLease = (
   args: CreateCoordinationV1NamespacedLeaseApiArg,
   options?: Options
 ) => {
-  return apiClient<
-    MinimumRequiredGet<CreateCoordinationV1NamespacedLeaseApiResponse>
-  >(
+  return apiClient<Strict<CreateCoordinationV1NamespacedLeaseApiResponse>>(
     {
       path: `/apis/coordination.k8s.io/v1/namespaces/${args['namespace']}/leases`,
       method: 'POST',
@@ -157,7 +150,7 @@ export const deleteCoordinationV1CollectionNamespacedLease = (
   options?: Options
 ) => {
   return apiClient<
-    MinimumRequiredGet<DeleteCoordinationV1CollectionNamespacedLeaseApiResponse>
+    Strict<DeleteCoordinationV1CollectionNamespacedLeaseApiResponse>
   >(
     {
       path: `/apis/coordination.k8s.io/v1/namespaces/${args['namespace']}/leases`,
@@ -187,9 +180,7 @@ export const readCoordinationV1NamespacedLease = (
   args: ReadCoordinationV1NamespacedLeaseApiArg,
   options?: Options
 ) => {
-  return apiClient<
-    MinimumRequiredGet<ReadCoordinationV1NamespacedLeaseApiResponse>
-  >(
+  return apiClient<Strict<ReadCoordinationV1NamespacedLeaseApiResponse>>(
     {
       path: `/apis/coordination.k8s.io/v1/namespaces/${args['namespace']}/leases/${args.name}`,
       params: { pretty: args.pretty },
@@ -201,9 +192,7 @@ export const replaceCoordinationV1NamespacedLease = (
   args: ReplaceCoordinationV1NamespacedLeaseApiArg,
   options?: Options
 ) => {
-  return apiClient<
-    MinimumRequiredGet<ReplaceCoordinationV1NamespacedLeaseApiResponse>
-  >(
+  return apiClient<Strict<ReplaceCoordinationV1NamespacedLeaseApiResponse>>(
     {
       path: `/apis/coordination.k8s.io/v1/namespaces/${args['namespace']}/leases/${args.name}`,
       method: 'PUT',
@@ -223,9 +212,7 @@ export const deleteCoordinationV1NamespacedLease = (
   args: DeleteCoordinationV1NamespacedLeaseApiArg,
   options?: Options
 ) => {
-  return apiClient<
-    MinimumRequiredGet<DeleteCoordinationV1NamespacedLeaseApiResponse>
-  >(
+  return apiClient<Strict<DeleteCoordinationV1NamespacedLeaseApiResponse>>(
     {
       path: `/apis/coordination.k8s.io/v1/namespaces/${args['namespace']}/leases/${args.name}`,
       method: 'DELETE',
@@ -246,9 +233,7 @@ export const patchCoordinationV1NamespacedLease = (
   args: PatchCoordinationV1NamespacedLeaseApiArg,
   options?: Options
 ) => {
-  return apiClient<
-    MinimumRequiredGet<PatchCoordinationV1NamespacedLeaseApiResponse>
-  >(
+  return apiClient<Strict<PatchCoordinationV1NamespacedLeaseApiResponse>>(
     {
       path: `/apis/coordination.k8s.io/v1/namespaces/${args['namespace']}/leases/${args.name}`,
       method: 'PATCH',
@@ -270,7 +255,7 @@ export const watchCoordinationV1LeaseListForAllNamespaces = (
   options?: Options
 ) => {
   return apiClient<
-    MinimumRequiredList<WatchCoordinationV1LeaseListForAllNamespacesApiResponse>
+    StrictList<WatchCoordinationV1LeaseListForAllNamespacesApiResponse>
   >(
     {
       path: `/apis/coordination.k8s.io/v1/watch/leases`,
@@ -296,7 +281,7 @@ export const watchCoordinationV1NamespacedLeaseList = (
   options?: Options
 ) => {
   return apiClient<
-    MinimumRequiredList<WatchCoordinationV1NamespacedLeaseListApiResponse>
+    StrictList<WatchCoordinationV1NamespacedLeaseListApiResponse>
   >(
     {
       path: `/apis/coordination.k8s.io/v1/watch/namespaces/${args['namespace']}/leases`,
@@ -321,9 +306,7 @@ export const watchCoordinationV1NamespacedLease = (
   args: WatchCoordinationV1NamespacedLeaseApiArg,
   options?: Options
 ) => {
-  return apiClient<
-    MinimumRequiredList<WatchCoordinationV1NamespacedLeaseApiResponse>
-  >(
+  return apiClient<StrictList<WatchCoordinationV1NamespacedLeaseApiResponse>>(
     {
       path: `/apis/coordination.k8s.io/v1/watch/namespaces/${args['namespace']}/leases/${args.name}`,
       params: {

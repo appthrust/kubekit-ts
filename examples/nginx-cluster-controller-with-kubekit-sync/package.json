@@ -18,11 +18,14 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@kubekit/client": "0.1.18"
+    "@kubekit/client": "0.2.10",
+    "object-hash": "^3.0.0"
   },
   "devDependencies": {
-    "@kubekit/client-gen": "^0.1.0",
+    "@kubekit/client-gen": "0.1.4",
     "@kubekit/sync": "0.1.3",
+    "@types/node": "^20.12.12",
+    "@types/object-hash": "^3.0.6",
     "esbuild": "^0.20.2",
     "esbuild-runner": "^2.2.2",
     "npm-run-all": "^4.1.5"

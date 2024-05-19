@@ -3,7 +3,7 @@ import {
   type Options,
   type WatchExtraOptions,
 } from '@kubekit/client'
-type Id<T> = {
+export type Id<T> = {
   [K in keyof T]: T[K]
 } & {}
 type NoWatch<T> = Omit<T, 'watch'> & {
@@ -12,10 +12,10 @@ type NoWatch<T> = Omit<T, 'watch'> & {
 type RequiredAndDefined<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>
 }
-type PartialRequired<T, K extends keyof T> = Id<
+export type PartialRequired<T, K extends keyof T> = Id<
   RequiredAndDefined<Pick<T, K>> & Omit<T, K>
 >
-type MinimumRequiredGet<T> = Id<
+export type Strict<T> = Id<
   T extends {
     metadata?: any
     apiVersion?: any
@@ -27,12 +27,12 @@ type MinimumRequiredGet<T> = Id<
       > & {
         metadata: PartialRequired<
           RequiredAndDefined<T>['metadata'],
-          'name' | 'namespace' | 'creationTimestamp' | 'resourceVersion'
+          'name' | 'namespace' | 'creationTimestamp' | 'resourceVersion' | 'uid'
         >
       }
     : T
 >
-type MinimumRequiredList<T> = Id<
+type StrictList<T> = Id<
   T extends {
     items: {
       metadata?: any
@@ -41,23 +41,21 @@ type MinimumRequiredList<T> = Id<
     }[]
   }
     ? Omit<T, 'items'> & {
-        items: MinimumRequiredGet<T['items'][number]>[]
+        items: Strict<T['items'][number]>[]
       }
     : T
 >
 export function listKubekitComV1NamespacedNginxCluster(
   args: NoWatch<ListKubekitComV1NamespacedNginxClusterApiArg>,
   options?: Options
-): Promise<
-  MinimumRequiredList<ListKubekitComV1NamespacedNginxClusterApiResponse>
->
+): Promise<StrictList<ListKubekitComV1NamespacedNginxClusterApiResponse>>
 export function listKubekitComV1NamespacedNginxCluster(
   args: ListKubekitComV1NamespacedNginxClusterApiArg & {
     watch: true
   },
   options: Options &
     WatchExtraOptions<
-      MinimumRequiredList<ListKubekitComV1NamespacedNginxClusterApiResponse>
+      StrictList<ListKubekitComV1NamespacedNginxClusterApiResponse>
     >
 ): Promise<void>
 export function listKubekitComV1NamespacedNginxCluster(
@@ -65,7 +63,7 @@ export function listKubekitComV1NamespacedNginxCluster(
   options: any
 ): any {
   return apiClient<
-    MinimumRequiredList<ListKubekitComV1NamespacedNginxClusterApiResponse>
+    StrictList<ListKubekitComV1NamespacedNginxClusterApiResponse>
   >(
     {
       path: `/apis/kubekit.com/v1/namespaces/${args['namespace']}/nginxclusters`,
@@ -90,9 +88,7 @@ export const createKubekitComV1NamespacedNginxCluster = (
   args: CreateKubekitComV1NamespacedNginxClusterApiArg,
   options?: Options
 ) => {
-  return apiClient<
-    MinimumRequiredGet<CreateKubekitComV1NamespacedNginxClusterApiResponse>
-  >(
+  return apiClient<Strict<CreateKubekitComV1NamespacedNginxClusterApiResponse>>(
     {
       path: `/apis/kubekit.com/v1/namespaces/${args['namespace']}/nginxclusters`,
       method: 'POST',
@@ -113,7 +109,7 @@ export const deleteKubekitComV1CollectionNamespacedNginxCluster = (
   options?: Options
 ) => {
   return apiClient<
-    MinimumRequiredGet<DeleteKubekitComV1CollectionNamespacedNginxClusterApiResponse>
+    Strict<DeleteKubekitComV1CollectionNamespacedNginxClusterApiResponse>
   >(
     {
       path: `/apis/kubekit.com/v1/namespaces/${args['namespace']}/nginxclusters`,
@@ -139,9 +135,7 @@ export const readKubekitComV1NamespacedNginxCluster = (
   args: ReadKubekitComV1NamespacedNginxClusterApiArg,
   options?: Options
 ) => {
-  return apiClient<
-    MinimumRequiredGet<ReadKubekitComV1NamespacedNginxClusterApiResponse>
-  >(
+  return apiClient<Strict<ReadKubekitComV1NamespacedNginxClusterApiResponse>>(
     {
       path: `/apis/kubekit.com/v1/namespaces/${args['namespace']}/nginxclusters/${args.name}`,
       params: { pretty: args.pretty, resourceVersion: args.resourceVersion },
@@ -154,7 +148,7 @@ export const replaceKubekitComV1NamespacedNginxCluster = (
   options?: Options
 ) => {
   return apiClient<
-    MinimumRequiredGet<ReplaceKubekitComV1NamespacedNginxClusterApiResponse>
+    Strict<ReplaceKubekitComV1NamespacedNginxClusterApiResponse>
   >(
     {
       path: `/apis/kubekit.com/v1/namespaces/${args['namespace']}/nginxclusters/${args.name}`,
@@ -175,9 +169,7 @@ export const deleteKubekitComV1NamespacedNginxCluster = (
   args: DeleteKubekitComV1NamespacedNginxClusterApiArg,
   options?: Options
 ) => {
-  return apiClient<
-    MinimumRequiredGet<DeleteKubekitComV1NamespacedNginxClusterApiResponse>
-  >(
+  return apiClient<Strict<DeleteKubekitComV1NamespacedNginxClusterApiResponse>>(
     {
       path: `/apis/kubekit.com/v1/namespaces/${args['namespace']}/nginxclusters/${args.name}`,
       method: 'DELETE',
@@ -198,9 +190,7 @@ export const patchKubekitComV1NamespacedNginxCluster = (
   args: PatchKubekitComV1NamespacedNginxClusterApiArg,
   options?: Options
 ) => {
-  return apiClient<
-    MinimumRequiredGet<PatchKubekitComV1NamespacedNginxClusterApiResponse>
-  >(
+  return apiClient<Strict<PatchKubekitComV1NamespacedNginxClusterApiResponse>>(
     {
       path: `/apis/kubekit.com/v1/namespaces/${args['namespace']}/nginxclusters/${args.name}`,
       method: 'PATCH',
@@ -222,7 +212,7 @@ export const readKubekitComV1NamespacedNginxClusterStatus = (
   options?: Options
 ) => {
   return apiClient<
-    MinimumRequiredGet<ReadKubekitComV1NamespacedNginxClusterStatusApiResponse>
+    Strict<ReadKubekitComV1NamespacedNginxClusterStatusApiResponse>
   >(
     {
       path: `/apis/kubekit.com/v1/namespaces/${args['namespace']}/nginxclusters/${args.name}/status`,
@@ -236,7 +226,7 @@ export const replaceKubekitComV1NamespacedNginxClusterStatus = (
   options?: Options
 ) => {
   return apiClient<
-    MinimumRequiredGet<ReplaceKubekitComV1NamespacedNginxClusterStatusApiResponse>
+    Strict<ReplaceKubekitComV1NamespacedNginxClusterStatusApiResponse>
   >(
     {
       path: `/apis/kubekit.com/v1/namespaces/${args['namespace']}/nginxclusters/${args.name}/status`,
@@ -258,7 +248,7 @@ export const patchKubekitComV1NamespacedNginxClusterStatus = (
   options?: Options
 ) => {
   return apiClient<
-    MinimumRequiredGet<PatchKubekitComV1NamespacedNginxClusterStatusApiResponse>
+    Strict<PatchKubekitComV1NamespacedNginxClusterStatusApiResponse>
   >(
     {
       path: `/apis/kubekit.com/v1/namespaces/${args['namespace']}/nginxclusters/${args.name}/status`,
@@ -279,16 +269,14 @@ export const patchKubekitComV1NamespacedNginxClusterStatus = (
 export function listKubekitComV1NginxClusterForAllNamespaces(
   args: NoWatch<ListKubekitComV1NginxClusterForAllNamespacesApiArg>,
   options?: Options
-): Promise<
-  MinimumRequiredList<ListKubekitComV1NginxClusterForAllNamespacesApiResponse>
->
+): Promise<StrictList<ListKubekitComV1NginxClusterForAllNamespacesApiResponse>>
 export function listKubekitComV1NginxClusterForAllNamespaces(
   args: ListKubekitComV1NginxClusterForAllNamespacesApiArg & {
     watch: true
   },
   options: Options &
     WatchExtraOptions<
-      MinimumRequiredList<ListKubekitComV1NginxClusterForAllNamespacesApiResponse>
+      StrictList<ListKubekitComV1NginxClusterForAllNamespacesApiResponse>
     >
 ): Promise<void>
 export function listKubekitComV1NginxClusterForAllNamespaces(
@@ -296,7 +284,7 @@ export function listKubekitComV1NginxClusterForAllNamespaces(
   options: any
 ): any {
   return apiClient<
-    MinimumRequiredList<ListKubekitComV1NginxClusterForAllNamespacesApiResponse>
+    StrictList<ListKubekitComV1NginxClusterForAllNamespacesApiResponse>
   >(
     {
       path: `/apis/kubekit.com/v1/nginxclusters`,

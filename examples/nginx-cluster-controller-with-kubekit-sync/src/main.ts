@@ -1,7 +1,11 @@
 import { leaderElector } from './leaderElection'
-import { nginxClusterController } from './nginxClusterController'
+import {
+  nginxClusterController,
+  getInitialState,
+} from './nginxClusterController'
 
 async function main() {
+  let state = getInitialState()
   let stop = false
   while (!stop) {
     const controller = new AbortController()
@@ -20,6 +24,7 @@ async function main() {
     lostLeadershipPromise
       .then(() => controller.abort())
       .catch(abortErrorHandler)
+
     startElectLeaderLoop().catch(abortErrorHandler)
 
     try {
@@ -27,7 +32,7 @@ async function main() {
       await becameReaderPromise
       console.debug('[main] Became leader')
 
-      await nginxClusterController(controller.signal)
+      await nginxClusterController(state, controller.signal)
     } catch (e: any) {
       abortErrorHandler(e)
     }

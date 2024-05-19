@@ -12,6 +12,7 @@ import {
 
 const leaseDurationSeconds = 15
 const renewPeriodSeconds = 10
+const checkPeriodSeconds = 3
 
 function renewTime() {
   return getISODateWithMicroseconds(
@@ -30,7 +31,7 @@ async function renewLease(
     name,
     contentType: 'application/apply-patch+yaml',
     fieldManager: controllerName,
-    fieldValidation: "Strict",
+    fieldValidation: 'Strict',
     body: {
       apiVersion: 'coordination.k8s.io/v1',
       kind: 'Lease',
@@ -39,8 +40,8 @@ async function renewLease(
         name,
         namespace,
         labels: {
-          [controllerName]: "true"
-        }
+          [controllerName]: 'true',
+        },
       },
       spec: {
         holderIdentity,
@@ -79,45 +80,38 @@ async function leaderElection(
       )
 
       if (currentHolderIdentity === holderIdentity) {
-        if (nowMillSeconds > renewTimeMillSeconds) {
-          await renewLease(
-            namespace,
-            name,
-            holderIdentity,
-            lease.metadata.resourceVersion
-          )
-          return {
-            type: 'success',
-          }
-        }
+        await renewLease(
+          namespace,
+          name,
+          holderIdentity,
+          lease.metadata.resourceVersion
+        )
         return {
-          type: 'failed',
-          waitMillSeconds: Math.min(
-            renewTimeMillSeconds - nowMillSeconds,
-            leaseDurationSeconds * 1000
-          ),
+          type: 'success',
         }
-      } else {
-        const leaseDurationTimeMillSeconds =
-          renewTimeMillSeconds + (lease.spec?.leaseDurationSeconds || 0) * 1000
-        if (leaseDurationTimeMillSeconds <= nowMillSeconds) {
-          await renewLease(
-            namespace,
-            name,
-            holderIdentity,
-            lease.metadata.resourceVersion
-          )
-          return {
-            type: 'success',
-          }
-        }
+      }
+
+      const leaseDurationTimeMillSeconds =
+        renewTimeMillSeconds + (lease.spec?.leaseDurationSeconds || 0) * 1000
+      if (leaseDurationTimeMillSeconds <= nowMillSeconds) {
+        await renewLease(
+          namespace,
+          name,
+          holderIdentity,
+          lease.metadata.resourceVersion
+        )
         return {
-          type: 'failed',
-          waitMillSeconds: Math.min(
-            leaseDurationTimeMillSeconds - nowMillSeconds,
-            leaseDurationSeconds * 1000
-          ),
+          type: 'success',
         }
+      }
+      return {
+        type: 'failed',
+        // The lease should be checked 1 millisecond after the lease expires.
+        // However, we do not wait longer than checkPeriodSeconds because the leased resource itself may have been deleted due to external factors.
+        waitMillSeconds: Math.min(
+          leaseDurationTimeMillSeconds - nowMillSeconds + 1,
+          checkPeriodSeconds * 1000
+        ),
       }
     } else {
       try {
@@ -128,7 +122,7 @@ async function leaderElection(
       } catch (e) {
         return {
           type: 'failed',
-          waitMillSeconds: 1000,
+          waitMillSeconds: checkPeriodSeconds,
         }
       }
     }
@@ -136,7 +130,7 @@ async function leaderElection(
     console.log(`Failed to acquire lease, attempting to renew: ${e}`)
     return {
       type: 'failed',
-      waitMillSeconds: 1000,
+      waitMillSeconds: checkPeriodSeconds,
     }
   }
 }
@@ -144,8 +138,11 @@ async function leaderElection(
 export function leaderElector(signal: AbortSignal) {
   let hasBecameLeaderOnce = false
   let becameLeaderHandler: (value: void) => void
+
   const becameReaderPromise = new Promise<void>((resolver, reject) => {
-    becameLeaderHandler = resolver
+    becameLeaderHandler = () => {
+      resolver()
+    }
     signal.addEventListener('abort', () => {
       reject(new DOMException('The operation was aborted', 'AbortError'))
     })
@@ -159,12 +156,40 @@ export function leaderElector(signal: AbortSignal) {
     })
   })
 
+  const controller = new AbortController()
   let stop = false
   signal.addEventListener('abort', () => {
     stop = true
   })
 
   let waitMillSeconds = 0
+
+  listCoordinationV1NamespacedLease(
+    {
+      namespace: controllerNamespace,
+      labelSelector: `${controllerName}=true`,
+      watch: true,
+    },
+    {
+      signal: controller.signal,
+      watchHandler: ({ object: lease, type }) => {
+        if (!hasBecameLeaderOnce) {
+          return
+        }
+        if (type === 'DELETED') {
+          lostLeaderHandler()
+          controller.abort()
+          console.info('Lost leadership')
+          return
+        }
+        if (lease.spec?.holderIdentity !== holderIdentity) {
+          lostLeaderHandler()
+          controller.abort()
+          console.info('Lost leadership')
+        }
+      },
+    }
+  ).catch(() => {})
 
   async function startElectLeaderLoop(): Promise<void> {
     while (true) {
@@ -181,7 +206,11 @@ export function leaderElector(signal: AbortSignal) {
       )
       switch (result.type) {
         case 'success':
-          console.info('Successfully elected as leader')
+          if (hasBecameLeaderOnce) {
+            console.info('Successfully maintained leadership')
+          } else {
+            console.info('Successfully elected as leader')
+          }
           hasBecameLeaderOnce = true
           becameLeaderHandler()
           waitMillSeconds = renewPeriodSeconds * 1000
