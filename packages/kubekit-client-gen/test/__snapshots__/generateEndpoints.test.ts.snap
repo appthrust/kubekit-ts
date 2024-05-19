@@ -6,7 +6,7 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
-type Id<T> = {
+export type Id<T> = {
   [K in keyof T]: T[K];
 } & {};
 type NoWatch<T> = Omit<T, "watch"> & {
@@ -15,10 +15,10 @@ type NoWatch<T> = Omit<T, "watch"> & {
 type RequiredAndDefined<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>;
 };
-type PartialRequired<T, K extends keyof T> = Id<
+export type PartialRequired<T, K extends keyof T> = Id<
   RequiredAndDefined<Pick<T, K>> & Omit<T, K>
 >;
-type MinimumRequiredGet<T> = Id<
+export type Strict<T> = Id<
   T extends {
     metadata?: any;
     apiVersion?: any;
@@ -35,7 +35,7 @@ type MinimumRequiredGet<T> = Id<
       }
     : T
 >;
-type MinimumRequiredList<T> = Id<
+type StrictList<T> = Id<
   T extends {
     items: {
       metadata?: any;
@@ -44,18 +44,18 @@ type MinimumRequiredList<T> = Id<
     }[];
   }
     ? Omit<T, "items"> & {
-        items: MinimumRequiredGet<T["items"][number]>[];
+        items: Strict<T["items"][number]>[];
       }
     : T
 >;
 export const getHealthcheck = (options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetHealthcheckApiResponse>>(
+  return apiClient<Strict<GetHealthcheckApiResponse>>(
     { path: \`/healthcheck\` },
     options
   );
 };
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<UpdatePetApiResponse>>(
+  return apiClient<Strict<UpdatePetApiResponse>>(
     {
       path: \`/pet\`,
       method: "PUT",
@@ -66,7 +66,7 @@ export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   );
 };
 export const addPet = (args: AddPetApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<AddPetApiResponse>>(
+  return apiClient<Strict<AddPetApiResponse>>(
     {
       path: \`/pet\`,
       method: "POST",
@@ -80,7 +80,7 @@ export const findPetsByStatus = (
   args: FindPetsByStatusApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<FindPetsByStatusApiResponse>>(
+  return apiClient<Strict<FindPetsByStatusApiResponse>>(
     { path: \`/pet/findByStatus\`, params: { status: args.status } },
     options
   );
@@ -89,13 +89,13 @@ export const findPetsByTags = (
   args: FindPetsByTagsApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<FindPetsByTagsApiResponse>>(
+  return apiClient<Strict<FindPetsByTagsApiResponse>>(
     { path: \`/pet/findByTags\`, params: { tags: args.tags } },
     options
   );
 };
 export const getPetById = (args: GetPetByIdApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetPetByIdApiResponse>>(
+  return apiClient<Strict<GetPetByIdApiResponse>>(
     { path: \`/pet/\${args.petId}\` },
     options
   );
@@ -104,7 +104,7 @@ export const updatePetWithForm = (
   args: UpdatePetWithFormApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<UpdatePetWithFormApiResponse>>(
+  return apiClient<Strict<UpdatePetWithFormApiResponse>>(
     {
       path: \`/pet/\${args.petId}\`,
       method: "POST",
@@ -114,7 +114,7 @@ export const updatePetWithForm = (
   );
 };
 export const deletePet = (args: DeletePetApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<DeletePetApiResponse>>(
+  return apiClient<Strict<DeletePetApiResponse>>(
     {
       path: \`/pet/\${args.petId}\`,
       method: "DELETE",
@@ -124,7 +124,7 @@ export const deletePet = (args: DeletePetApiArg, options?: Options) => {
   );
 };
 export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<UploadFileApiResponse>>(
+  return apiClient<Strict<UploadFileApiResponse>>(
     {
       path: \`/pet/\${args.petId}/uploadImage\`,
       method: "POST",
@@ -136,13 +136,13 @@ export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
   );
 };
 export const getInventory = (options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetInventoryApiResponse>>(
+  return apiClient<Strict<GetInventoryApiResponse>>(
     { path: \`/store/inventory\` },
     options
   );
 };
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<PlaceOrderApiResponse>>(
+  return apiClient<Strict<PlaceOrderApiResponse>>(
     {
       path: \`/store/order\`,
       method: "POST",
@@ -153,19 +153,19 @@ export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   );
 };
 export const getOrderById = (args: GetOrderByIdApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetOrderByIdApiResponse>>(
+  return apiClient<Strict<GetOrderByIdApiResponse>>(
     { path: \`/store/order/\${args.orderId}\` },
     options
   );
 };
 export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<DeleteOrderApiResponse>>(
+  return apiClient<Strict<DeleteOrderApiResponse>>(
     { path: \`/store/order/\${args.orderId}\`, method: "DELETE" },
     options
   );
 };
 export const createUser = (args: CreateUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<CreateUserApiResponse>>(
+  return apiClient<Strict<CreateUserApiResponse>>(
     {
       path: \`/user\`,
       method: "POST",
@@ -179,7 +179,7 @@ export const createUsersWithListInput = (
   args: CreateUsersWithListInputApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<CreateUsersWithListInputApiResponse>>(
+  return apiClient<Strict<CreateUsersWithListInputApiResponse>>(
     {
       path: \`/user/createWithList\`,
       method: "POST",
@@ -190,7 +190,7 @@ export const createUsersWithListInput = (
   );
 };
 export const loginUser = (args: LoginUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<LoginUserApiResponse>>(
+  return apiClient<Strict<LoginUserApiResponse>>(
     {
       path: \`/user/login\`,
       params: { username: args.username, password: args.password },
@@ -199,19 +199,19 @@ export const loginUser = (args: LoginUserApiArg, options?: Options) => {
   );
 };
 export const logoutUser = (options?: Options) => {
-  return apiClient<MinimumRequiredGet<LogoutUserApiResponse>>(
+  return apiClient<Strict<LogoutUserApiResponse>>(
     { path: \`/user/logout\` },
     options
   );
 };
 export const getUserByName = (args: GetUserByNameApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetUserByNameApiResponse>>(
+  return apiClient<Strict<GetUserByNameApiResponse>>(
     { path: \`/user/\${args.username}\` },
     options
   );
 };
 export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<UpdateUserApiResponse>>(
+  return apiClient<Strict<UpdateUserApiResponse>>(
     {
       path: \`/user/\${args.username}\`,
       method: "PUT",
@@ -222,7 +222,7 @@ export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
   );
 };
 export const deleteUser = (args: DeleteUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<DeleteUserApiResponse>>(
+  return apiClient<Strict<DeleteUserApiResponse>>(
     { path: \`/user/\${args.username}\`, method: "DELETE" },
     options
   );
@@ -443,7 +443,7 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
-type Id<T> = {
+export type Id<T> = {
   [K in keyof T]: T[K];
 } & {};
 type NoWatch<T> = Omit<T, "watch"> & {
@@ -452,10 +452,10 @@ type NoWatch<T> = Omit<T, "watch"> & {
 type RequiredAndDefined<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>;
 };
-type PartialRequired<T, K extends keyof T> = Id<
+export type PartialRequired<T, K extends keyof T> = Id<
   RequiredAndDefined<Pick<T, K>> & Omit<T, K>
 >;
-type MinimumRequiredGet<T> = Id<
+export type Strict<T> = Id<
   T extends {
     metadata?: any;
     apiVersion?: any;
@@ -472,7 +472,7 @@ type MinimumRequiredGet<T> = Id<
       }
     : T
 >;
-type MinimumRequiredList<T> = Id<
+type StrictList<T> = Id<
   T extends {
     items: {
       metadata?: any;
@@ -481,7 +481,7 @@ type MinimumRequiredList<T> = Id<
     }[];
   }
     ? Omit<T, "items"> & {
-        items: MinimumRequiredGet<T["items"][number]>[];
+        items: Strict<T["items"][number]>[];
       }
     : T
 >;
@@ -489,7 +489,7 @@ export const patchApiV1ListByItemId = (
   args: PatchApiV1ListByItemIdApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<PatchApiV1ListByItemIdApiResponse>>(
+  return apiClient<Strict<PatchApiV1ListByItemIdApiResponse>>(
     { path: \`/api/v1/list/\${args["item.id"]}\`, method: "PATCH" },
     options
   );
@@ -498,7 +498,7 @@ export const patchApiV2BySomeName = (
   args: PatchApiV2BySomeNameApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<PatchApiV2BySomeNameApiResponse>>(
+  return apiClient<Strict<PatchApiV2BySomeNameApiResponse>>(
     {
       path: \`/api/v2/\${args.pathSomeName}\`,
       method: "PATCH",
@@ -527,7 +527,7 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
-type Id<T> = {
+export type Id<T> = {
   [K in keyof T]: T[K];
 } & {};
 type NoWatch<T> = Omit<T, "watch"> & {
@@ -536,10 +536,10 @@ type NoWatch<T> = Omit<T, "watch"> & {
 type RequiredAndDefined<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>;
 };
-type PartialRequired<T, K extends keyof T> = Id<
+export type PartialRequired<T, K extends keyof T> = Id<
   RequiredAndDefined<Pick<T, K>> & Omit<T, K>
 >;
-type MinimumRequiredGet<T> = Id<
+export type Strict<T> = Id<
   T extends {
     metadata?: any;
     apiVersion?: any;
@@ -556,7 +556,7 @@ type MinimumRequiredGet<T> = Id<
       }
     : T
 >;
-type MinimumRequiredList<T> = Id<
+type StrictList<T> = Id<
   T extends {
     items: {
       metadata?: any;
@@ -565,12 +565,12 @@ type MinimumRequiredList<T> = Id<
     }[];
   }
     ? Omit<T, "items"> & {
-        items: MinimumRequiredGet<T["items"][number]>[];
+        items: Strict<T["items"][number]>[];
       }
     : T
 >;
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<PlaceOrderApiResponse>>(
+  return apiClient<Strict<PlaceOrderApiResponse>>(
     {
       path: \`/store/order\`,
       method: "POST",
@@ -581,19 +581,19 @@ export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   );
 };
 export const getOrderById = (args: GetOrderByIdApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetOrderByIdApiResponse>>(
+  return apiClient<Strict<GetOrderByIdApiResponse>>(
     { path: \`/store/order/\${args.orderId}\` },
     options
   );
 };
 export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<DeleteOrderApiResponse>>(
+  return apiClient<Strict<DeleteOrderApiResponse>>(
     { path: \`/store/order/\${args.orderId}\`, method: "DELETE" },
     options
   );
 };
 export const loginUser = (args: LoginUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<LoginUserApiResponse>>(
+  return apiClient<Strict<LoginUserApiResponse>>(
     {
       path: \`/user/login\`,
       params: { username: args.username, password: args.password },
@@ -653,7 +653,7 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./fixtures/k8sApiClient";
-type Id<T> = {
+export type Id<T> = {
   [K in keyof T]: T[K];
 } & {};
 type NoWatch<T> = Omit<T, "watch"> & {
@@ -662,10 +662,10 @@ type NoWatch<T> = Omit<T, "watch"> & {
 type RequiredAndDefined<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>;
 };
-type PartialRequired<T, K extends keyof T> = Id<
+export type PartialRequired<T, K extends keyof T> = Id<
   RequiredAndDefined<Pick<T, K>> & Omit<T, K>
 >;
-type MinimumRequiredGet<T> = Id<
+export type Strict<T> = Id<
   T extends {
     metadata?: any;
     apiVersion?: any;
@@ -682,7 +682,7 @@ type MinimumRequiredGet<T> = Id<
       }
     : T
 >;
-type MinimumRequiredList<T> = Id<
+type StrictList<T> = Id<
   T extends {
     items: {
       metadata?: any;
@@ -691,7 +691,7 @@ type MinimumRequiredList<T> = Id<
     }[];
   }
     ? Omit<T, "items"> & {
-        items: MinimumRequiredGet<T["items"][number]>[];
+        items: Strict<T["items"][number]>[];
       }
     : T
 >;
@@ -699,7 +699,7 @@ export const patchApiV1ListByItemId = (
   args: PatchApiV1ListByItemIdApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<PatchApiV1ListByItemIdApiResponse>>(
+  return apiClient<Strict<PatchApiV1ListByItemIdApiResponse>>(
     { path: \`/api/v1/list/\${args["item.id"]}\`, method: "PATCH" },
     options
   );
@@ -708,7 +708,7 @@ export const patchApiV2BySomeName = (
   args: PatchApiV2BySomeNameApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<PatchApiV2BySomeNameApiResponse>>(
+  return apiClient<Strict<PatchApiV2BySomeNameApiResponse>>(
     {
       path: \`/api/v2/\${args.pathSomeName}\`,
       method: "PATCH",
@@ -737,7 +737,7 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
-type Id<T> = {
+export type Id<T> = {
   [K in keyof T]: T[K];
 } & {};
 type NoWatch<T> = Omit<T, "watch"> & {
@@ -746,10 +746,10 @@ type NoWatch<T> = Omit<T, "watch"> & {
 type RequiredAndDefined<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>;
 };
-type PartialRequired<T, K extends keyof T> = Id<
+export type PartialRequired<T, K extends keyof T> = Id<
   RequiredAndDefined<Pick<T, K>> & Omit<T, K>
 >;
-type MinimumRequiredGet<T> = Id<
+export type Strict<T> = Id<
   T extends {
     metadata?: any;
     apiVersion?: any;
@@ -766,7 +766,7 @@ type MinimumRequiredGet<T> = Id<
       }
     : T
 >;
-type MinimumRequiredList<T> = Id<
+type StrictList<T> = Id<
   T extends {
     items: {
       metadata?: any;
@@ -775,7 +775,7 @@ type MinimumRequiredList<T> = Id<
     }[];
   }
     ? Omit<T, "items"> & {
-        items: MinimumRequiredGet<T["items"][number]>[];
+        items: Strict<T["items"][number]>[];
       }
     : T
 >;
@@ -783,7 +783,7 @@ export const getApiV1Animals = (
   args: GetApiV1AnimalsApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<GetApiV1AnimalsApiResponse>>(
+  return apiClient<Strict<GetApiV1AnimalsApiResponse>>(
     { path: \`/api/v1/animals\`, params: { type: args["type"] } },
     options
   );
@@ -812,7 +812,7 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
-type Id<T> = {
+export type Id<T> = {
   [K in keyof T]: T[K];
 } & {};
 type NoWatch<T> = Omit<T, "watch"> & {
@@ -821,10 +821,10 @@ type NoWatch<T> = Omit<T, "watch"> & {
 type RequiredAndDefined<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>;
 };
-type PartialRequired<T, K extends keyof T> = Id<
+export type PartialRequired<T, K extends keyof T> = Id<
   RequiredAndDefined<Pick<T, K>> & Omit<T, K>
 >;
-type MinimumRequiredGet<T> = Id<
+export type Strict<T> = Id<
   T extends {
     metadata?: any;
     apiVersion?: any;
@@ -841,7 +841,7 @@ type MinimumRequiredGet<T> = Id<
       }
     : T
 >;
-type MinimumRequiredList<T> = Id<
+type StrictList<T> = Id<
   T extends {
     items: {
       metadata?: any;
@@ -850,12 +850,12 @@ type MinimumRequiredList<T> = Id<
     }[];
   }
     ? Omit<T, "items"> & {
-        items: MinimumRequiredGet<T["items"][number]>[];
+        items: Strict<T["items"][number]>[];
       }
     : T
 >;
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<UpdatePetApiResponse>>(
+  return apiClient<Strict<UpdatePetApiResponse>>(
     {
       path: \`/pet\`,
       method: "PUT",
@@ -866,7 +866,7 @@ export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   );
 };
 export const addPet = (args: AddPetApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<AddPetApiResponse>>(
+  return apiClient<Strict<AddPetApiResponse>>(
     {
       path: \`/pet\`,
       method: "POST",
@@ -880,7 +880,7 @@ export const findPetsByStatus = (
   args: FindPetsByStatusApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<FindPetsByStatusApiResponse>>(
+  return apiClient<Strict<FindPetsByStatusApiResponse>>(
     { path: \`/pet/findByStatus\`, params: { status: args.status } },
     options
   );
@@ -889,13 +889,13 @@ export const findPetsByTags = (
   args: FindPetsByTagsApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<FindPetsByTagsApiResponse>>(
+  return apiClient<Strict<FindPetsByTagsApiResponse>>(
     { path: \`/pet/findByTags\`, params: { tags: args.tags } },
     options
   );
 };
 export const getPetById = (args: GetPetByIdApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetPetByIdApiResponse>>(
+  return apiClient<Strict<GetPetByIdApiResponse>>(
     { path: \`/pet/\${args.petId}\` },
     options
   );
@@ -904,7 +904,7 @@ export const updatePetWithForm = (
   args: UpdatePetWithFormApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<UpdatePetWithFormApiResponse>>(
+  return apiClient<Strict<UpdatePetWithFormApiResponse>>(
     {
       path: \`/pet/\${args.petId}\`,
       method: "POST",
@@ -914,7 +914,7 @@ export const updatePetWithForm = (
   );
 };
 export const deletePet = (args: DeletePetApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<DeletePetApiResponse>>(
+  return apiClient<Strict<DeletePetApiResponse>>(
     {
       path: \`/pet/\${args.petId}\`,
       method: "DELETE",
@@ -924,7 +924,7 @@ export const deletePet = (args: DeletePetApiArg, options?: Options) => {
   );
 };
 export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<UploadFileApiResponse>>(
+  return apiClient<Strict<UploadFileApiResponse>>(
     {
       path: \`/pet/\${args.petId}/uploadImage\`,
       method: "POST",
@@ -936,13 +936,13 @@ export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
   );
 };
 export const getInventory = (options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetInventoryApiResponse>>(
+  return apiClient<Strict<GetInventoryApiResponse>>(
     { path: \`/store/inventory\` },
     options
   );
 };
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<PlaceOrderApiResponse>>(
+  return apiClient<Strict<PlaceOrderApiResponse>>(
     {
       path: \`/store/order\`,
       method: "POST",
@@ -953,19 +953,19 @@ export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   );
 };
 export const getOrderById = (args: GetOrderByIdApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetOrderByIdApiResponse>>(
+  return apiClient<Strict<GetOrderByIdApiResponse>>(
     { path: \`/store/order/\${args.orderId}\` },
     options
   );
 };
 export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<DeleteOrderApiResponse>>(
+  return apiClient<Strict<DeleteOrderApiResponse>>(
     { path: \`/store/order/\${args.orderId}\`, method: "DELETE" },
     options
   );
 };
 export const createUser = (args: CreateUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<CreateUserApiResponse>>(
+  return apiClient<Strict<CreateUserApiResponse>>(
     {
       path: \`/user\`,
       method: "POST",
@@ -979,7 +979,7 @@ export const createUsersWithListInput = (
   args: CreateUsersWithListInputApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<CreateUsersWithListInputApiResponse>>(
+  return apiClient<Strict<CreateUsersWithListInputApiResponse>>(
     {
       path: \`/user/createWithList\`,
       method: "POST",
@@ -990,7 +990,7 @@ export const createUsersWithListInput = (
   );
 };
 export const loginUser = (args: LoginUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<LoginUserApiResponse>>(
+  return apiClient<Strict<LoginUserApiResponse>>(
     {
       path: \`/user/login\`,
       params: { username: args.username, password: args.password },
@@ -999,19 +999,19 @@ export const loginUser = (args: LoginUserApiArg, options?: Options) => {
   );
 };
 export const logoutUser = (options?: Options) => {
-  return apiClient<MinimumRequiredGet<LogoutUserApiResponse>>(
+  return apiClient<Strict<LogoutUserApiResponse>>(
     { path: \`/user/logout\` },
     options
   );
 };
 export const getUserByName = (args: GetUserByNameApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetUserByNameApiResponse>>(
+  return apiClient<Strict<GetUserByNameApiResponse>>(
     { path: \`/user/\${args.username}\` },
     options
   );
 };
 export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<UpdateUserApiResponse>>(
+  return apiClient<Strict<UpdateUserApiResponse>>(
     {
       path: \`/user/\${args.username}\`,
       method: "PUT",
@@ -1022,7 +1022,7 @@ export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
   );
 };
 export const deleteUser = (args: DeleteUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<DeleteUserApiResponse>>(
+  return apiClient<Strict<DeleteUserApiResponse>>(
     { path: \`/user/\${args.username}\`, method: "DELETE" },
     options
   );
@@ -1239,7 +1239,7 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
-type Id<T> = {
+export type Id<T> = {
   [K in keyof T]: T[K];
 } & {};
 type NoWatch<T> = Omit<T, "watch"> & {
@@ -1248,10 +1248,10 @@ type NoWatch<T> = Omit<T, "watch"> & {
 type RequiredAndDefined<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>;
 };
-type PartialRequired<T, K extends keyof T> = Id<
+export type PartialRequired<T, K extends keyof T> = Id<
   RequiredAndDefined<Pick<T, K>> & Omit<T, K>
 >;
-type MinimumRequiredGet<T> = Id<
+export type Strict<T> = Id<
   T extends {
     metadata?: any;
     apiVersion?: any;
@@ -1268,7 +1268,7 @@ type MinimumRequiredGet<T> = Id<
       }
     : T
 >;
-type MinimumRequiredList<T> = Id<
+type StrictList<T> = Id<
   T extends {
     items: {
       metadata?: any;
@@ -1277,7 +1277,7 @@ type MinimumRequiredList<T> = Id<
     }[];
   }
     ? Omit<T, "items"> & {
-        items: MinimumRequiredGet<T["items"][number]>[];
+        items: Strict<T["items"][number]>[];
       }
     : T
 >;
@@ -1285,7 +1285,7 @@ export const getStructureDefinition = (
   args: GetStructureDefinitionApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<GetStructureDefinitionApiResponse>>(
+  return apiClient<Strict<GetStructureDefinitionApiResponse>>(
     {
       path: \`/StructureDefinition\`,
       params: {
@@ -1332,7 +1332,7 @@ import {
   type Options,
   type WatchExtraOptions,
 } from "./tmp/k8sApiClient";
-type Id<T> = {
+export type Id<T> = {
   [K in keyof T]: T[K];
 } & {};
 type NoWatch<T> = Omit<T, "watch"> & {
@@ -1341,10 +1341,10 @@ type NoWatch<T> = Omit<T, "watch"> & {
 type RequiredAndDefined<T> = {
   [P in keyof T]-?: Exclude<T[P], null | undefined>;
 };
-type PartialRequired<T, K extends keyof T> = Id<
+export type PartialRequired<T, K extends keyof T> = Id<
   RequiredAndDefined<Pick<T, K>> & Omit<T, K>
 >;
-type MinimumRequiredGet<T> = Id<
+export type Strict<T> = Id<
   T extends {
     metadata?: any;
     apiVersion?: any;
@@ -1361,7 +1361,7 @@ type MinimumRequiredGet<T> = Id<
       }
     : T
 >;
-type MinimumRequiredList<T> = Id<
+type StrictList<T> = Id<
   T extends {
     items: {
       metadata?: any;
@@ -1370,12 +1370,12 @@ type MinimumRequiredList<T> = Id<
     }[];
   }
     ? Omit<T, "items"> & {
-        items: MinimumRequiredGet<T["items"][number]>[];
+        items: Strict<T["items"][number]>[];
       }
     : T
 >;
 export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<UpdatePetApiResponse>>(
+  return apiClient<Strict<UpdatePetApiResponse>>(
     {
       path: \`/pet\`,
       method: "PUT",
@@ -1386,7 +1386,7 @@ export const updatePet = (args: UpdatePetApiArg, options?: Options) => {
   );
 };
 export const addPet = (args: AddPetApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<AddPetApiResponse>>(
+  return apiClient<Strict<AddPetApiResponse>>(
     {
       path: \`/pet\`,
       method: "POST",
@@ -1400,7 +1400,7 @@ export const findPetsByStatus = (
   args: FindPetsByStatusApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<FindPetsByStatusApiResponse>>(
+  return apiClient<Strict<FindPetsByStatusApiResponse>>(
     { path: \`/pet/findByStatus\`, params: { status: args.status } },
     options
   );
@@ -1409,13 +1409,13 @@ export const findPetsByTags = (
   args: FindPetsByTagsApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<FindPetsByTagsApiResponse>>(
+  return apiClient<Strict<FindPetsByTagsApiResponse>>(
     { path: \`/pet/findByTags\`, params: { tags: args.tags } },
     options
   );
 };
 export const getPetById = (args: GetPetByIdApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetPetByIdApiResponse>>(
+  return apiClient<Strict<GetPetByIdApiResponse>>(
     { path: \`/pet/\${args.petId}\` },
     options
   );
@@ -1424,7 +1424,7 @@ export const updatePetWithForm = (
   args: UpdatePetWithFormApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<UpdatePetWithFormApiResponse>>(
+  return apiClient<Strict<UpdatePetWithFormApiResponse>>(
     {
       path: \`/pet/\${args.petId}\`,
       method: "POST",
@@ -1434,7 +1434,7 @@ export const updatePetWithForm = (
   );
 };
 export const deletePet = (args: DeletePetApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<DeletePetApiResponse>>(
+  return apiClient<Strict<DeletePetApiResponse>>(
     {
       path: \`/pet/\${args.petId}\`,
       method: "DELETE",
@@ -1444,7 +1444,7 @@ export const deletePet = (args: DeletePetApiArg, options?: Options) => {
   );
 };
 export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<UploadFileApiResponse>>(
+  return apiClient<Strict<UploadFileApiResponse>>(
     {
       path: \`/pet/\${args.petId}/uploadImage\`,
       method: "POST",
@@ -1456,13 +1456,13 @@ export const uploadFile = (args: UploadFileApiArg, options?: Options) => {
   );
 };
 export const getInventory = (options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetInventoryApiResponse>>(
+  return apiClient<Strict<GetInventoryApiResponse>>(
     { path: \`/store/inventory\` },
     options
   );
 };
 export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<PlaceOrderApiResponse>>(
+  return apiClient<Strict<PlaceOrderApiResponse>>(
     {
       path: \`/store/order\`,
       method: "POST",
@@ -1473,19 +1473,19 @@ export const placeOrder = (args: PlaceOrderApiArg, options?: Options) => {
   );
 };
 export const getOrderById = (args: GetOrderByIdApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetOrderByIdApiResponse>>(
+  return apiClient<Strict<GetOrderByIdApiResponse>>(
     { path: \`/store/order/\${args.orderId}\` },
     options
   );
 };
 export const deleteOrder = (args: DeleteOrderApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<DeleteOrderApiResponse>>(
+  return apiClient<Strict<DeleteOrderApiResponse>>(
     { path: \`/store/order/\${args.orderId}\`, method: "DELETE" },
     options
   );
 };
 export const createUser = (args: CreateUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<CreateUserApiResponse>>(
+  return apiClient<Strict<CreateUserApiResponse>>(
     {
       path: \`/user\`,
       method: "POST",
@@ -1499,7 +1499,7 @@ export const createUsersWithListInput = (
   args: CreateUsersWithListInputApiArg,
   options?: Options
 ) => {
-  return apiClient<MinimumRequiredGet<CreateUsersWithListInputApiResponse>>(
+  return apiClient<Strict<CreateUsersWithListInputApiResponse>>(
     {
       path: \`/user/createWithList\`,
       method: "POST",
@@ -1510,7 +1510,7 @@ export const createUsersWithListInput = (
   );
 };
 export const loginUser = (args: LoginUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<LoginUserApiResponse>>(
+  return apiClient<Strict<LoginUserApiResponse>>(
     {
       path: \`/user/login\`,
       params: { username: args.username, password: args.password },
@@ -1519,19 +1519,19 @@ export const loginUser = (args: LoginUserApiArg, options?: Options) => {
   );
 };
 export const logoutUser = (options?: Options) => {
-  return apiClient<MinimumRequiredGet<LogoutUserApiResponse>>(
+  return apiClient<Strict<LogoutUserApiResponse>>(
     { path: \`/user/logout\` },
     options
   );
 };
 export const getUserByName = (args: GetUserByNameApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<GetUserByNameApiResponse>>(
+  return apiClient<Strict<GetUserByNameApiResponse>>(
     { path: \`/user/\${args.username}\` },
     options
   );
 };
 export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<UpdateUserApiResponse>>(
+  return apiClient<Strict<UpdateUserApiResponse>>(
     {
       path: \`/user/\${args.username}\`,
       method: "PUT",
@@ -1542,7 +1542,7 @@ export const updateUser = (args: UpdateUserApiArg, options?: Options) => {
   );
 };
 export const deleteUser = (args: DeleteUserApiArg, options?: Options) => {
-  return apiClient<MinimumRequiredGet<DeleteUserApiResponse>>(
+  return apiClient<Strict<DeleteUserApiResponse>>(
     { path: \`/user/\${args.username}\`, method: "DELETE" },
     options
   );

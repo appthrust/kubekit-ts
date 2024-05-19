@@ -90,7 +90,7 @@ export function generateEndpointDefinition({
   isUnusedArgs: boolean;
 }) {
   const CustomizedResponse = factory.createTypeReferenceNode(
-    factory.createIdentifier(isListOrWatch ? 'MinimumRequiredList' : 'MinimumRequiredGet'),
+    factory.createIdentifier(isListOrWatch ? 'StrictList' : 'Strict'),
     [Response]
   );
   if (!isListWatch) {
