@@ -62,30 +62,28 @@ type QueryArgumentsSpec = {
 
 type MaybePromise<T> = T | Promise<T>;
 
-type InterceptorArguments = {
+export type InterceptorParams = {
   args: QueryArgumentsSpec;
   opts: https.RequestOptions;
 };
-type Interceptor = (arguments_: InterceptorArguments, options: Options) => MaybePromise<https.RequestOptions>;
+export type Interceptor = (params: InterceptorParams) => MaybePromise<https.RequestOptions>;
 
-export const interceptors: Interceptor[] = [
-  async function injectKubernetesParameters({ opts }) {
-    const kc = new KubeConfig();
-    kc.loadFromDefault();
-    const nextOptions: https.RequestOptions = { ...opts };
-    await kc.applyToHTTPSOptions(nextOptions);
+const defaultAuthorizationInterceptor: Interceptor = async ({ opts }) => {
+  const kc = new KubeConfig();
+  kc.loadFromDefault();
+  const nextOptions: https.RequestOptions = { ...opts };
+  await kc.applyToHTTPSOptions(nextOptions);
 
-    const cluster = kc.getCurrentCluster();
+  const cluster = kc.getCurrentCluster();
 
-    if (cluster?.server) {
-      const url = new URL(cluster.server);
-      nextOptions.host = url.hostname;
-      nextOptions.protocol = url.protocol;
-      nextOptions.port = url.port;
-    }
-    return nextOptions;
-  },
-];
+  if (cluster?.server) {
+    const url = new URL(cluster.server);
+    nextOptions.host = url.hostname;
+    nextOptions.protocol = url.protocol;
+    nextOptions.port = url.port;
+  }
+  return nextOptions;
+};
 
 type RetryConditionFunction = (extraArguments: {
   res?: Response;
@@ -104,6 +102,7 @@ type RetryOptions = {
 type HttpOptions = Omit<RequestInit, 'headers' | 'body'> & {
   /** A Headers object, an object literal, or an array of two-item arrays to set request's headers. */
   headers?: Record<string, string> | undefined;
+  interceptors?: Interceptor[];
 };
 
 type K8sListResponse<T> = {
@@ -140,6 +139,7 @@ export type Options = RetryOptions & HttpOptions;
 
 export type ExtraOptions = Options | (Options & WatchExtraOptions<any>);
 export const globalDefaultExtraOptions: ExtraOptions = {};
+export const globalInterceptors: Interceptor[] = [];
 
 export const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => {
   const { res, attempt, error, maxRetries } = object;
@@ -183,8 +183,16 @@ export async function apiClient<Response>(
     backoff: defaultBackoff,
     retryCondition: defaultRetryCondition,
     onError: () => {},
+    interceptors: [] as Interceptor[],
     ...removeNullableProperties(extraOptions),
   };
+  options.interceptors = [
+    ...globalInterceptors,
+    ...options.interceptors,
+  ]
+  if (options.interceptors.length === 0) {
+    options.interceptors = [defaultAuthorizationInterceptor];
+  }
 
   let { path, method, params = {}, body, contentType } = { ...arguments_ };
   const isWatch = 'watch' in params && Boolean(params.watch);
@@ -199,14 +207,11 @@ export async function apiClient<Response>(
     httpsOptions.method = method;
   }
 
-  for (const interceptor of interceptors) {
-    httpsOptions = await interceptor(
-      {
-        args: arguments_,
-        opts: httpsOptions,
-      },
-      options
-    );
+  for (const interceptor of options.interceptors) {
+    httpsOptions = await interceptor({
+      args: arguments_,
+      opts: httpsOptions,
+    });
   }
 
   if (!httpsOptions.agent && (httpsOptions.ca || httpsOptions.cert || httpsOptions.key)) {
