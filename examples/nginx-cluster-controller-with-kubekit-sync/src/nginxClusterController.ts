@@ -1,17 +1,14 @@
-import { TaskQueue } from '@kubekit/client'
+import { TaskManager } from '@kubekit/client'
 import {
-  deleteCoreV1CollectionNamespacedPod,
   listCoreV1PodForAllNamespaces,
 } from './core-v1'
 import {
   listKubekitComV1NginxClusterForAllNamespaces,
-  patchKubekitComV1NamespacedNginxCluster,
 } from './kubekit-v1'
 import {
   type NginxCluster,
   type Pods,
   type ReconcileNginxClusterContext,
-  controllerName,
   labelKey,
 } from './type'
 import { reconcileNginxCluster } from './reconcileNginxCluster'
@@ -50,22 +47,8 @@ export async function nginxClusterController(
     delete controllerCtx[key]
   }
 
-  async function finalizeNginxCluster(nginxCluster: NginxCluster) {
-    console.debug('[DEBUG] finalize NginxCluster', nginxCluster.metadata.name)
-    const tasks: Promise<unknown>[] = []
-    await deleteCoreV1CollectionNamespacedPod({
-      namespace: nginxCluster.metadata.namespace,
-      labelSelector: `${labelKey}=${nginxCluster.metadata.name}`,
-      body: {
-        propagationPolicy: 'Foreground',
-      },
-    })
-
-    await Promise.all(tasks)
-  }
-
-  const taskQueue = new TaskQueue()
-  taskQueue.pause()
+  const taskMng = new TaskManager()
+  taskMng.pause()
 
   const syncedState = {
     nginxClusters: false,
@@ -73,7 +56,7 @@ export async function nginxClusterController(
   }
 
   signal.addEventListener('abort', () => {
-    taskQueue.pause()
+    taskMng.pause()
   })
 
   const isAllSynced = () => syncedState.nginxClusters && syncedState.pods
@@ -90,7 +73,7 @@ export async function nginxClusterController(
         syncedHandler: async () => {
           syncedState.nginxClusters = true
           if (isAllSynced()) {
-            taskQueue.resume()
+            taskMng.resume()
           }
         },
         watchHandler: async ({ object: nginxCluster, type }) => {
@@ -105,8 +88,8 @@ export async function nginxClusterController(
 
           nginxClusters.set(key, nginxCluster)
 
-          taskQueue.addTask({
-            key: TaskQueue.getKey(nginxCluster),
+          taskMng.addTask({
+            key: TaskManager.getKey(nginxCluster),
             task: () =>
               reconcileNginxCluster(
                 nginxCluster,
@@ -116,24 +99,6 @@ export async function nginxClusterController(
                 )
               ),
           })
-        },
-        finalizeHandler: async ({ object: nginxCluster }, ctx) => {
-          const i = nginxCluster.metadata.finalizers.findIndex(
-            (f) => f === controllerName
-          )
-          if (i === -1) {
-            return
-          }
-          await finalizeNginxCluster(nginxCluster)
-          await patchKubekitComV1NamespacedNginxCluster({
-            namespace: nginxCluster.metadata.namespace,
-            name: nginxCluster.metadata.name,
-            contentType: 'application/json-patch+json',
-            fieldManager: controllerName,
-            body: [{ op: 'remove', path: `/metadata/finalizers/${i}` }],
-          })
-
-          state.nginxClusterResourceVersion = ctx.resourceVersion
         },
         signal,
         maxRetries: Infinity,
@@ -154,7 +119,7 @@ export async function nginxClusterController(
         syncedHandler: async () => {
           syncedState.pods = true
           if (isAllSynced()) {
-            taskQueue.resume()
+            taskMng.resume()
           }
         },
         watchHandler: async ({ object: pod, type }, ctx) => {
@@ -199,8 +164,8 @@ export async function nginxClusterController(
             }
             return
           }
-          taskQueue.addTask({
-            key: TaskQueue.getKey(nginxCluster),
+          taskMng.addTask({
+            key: TaskManager.getKey(nginxCluster),
             task: () =>
               reconcileNginxCluster(
                 nginxCluster,
