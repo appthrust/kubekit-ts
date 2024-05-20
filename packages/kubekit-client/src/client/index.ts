@@ -4,7 +4,7 @@ import { ReadableStream, TransformStream } from 'node:stream/web';
 import { type ObjectReference } from '../lib/types';
 import { KubeConfig } from '../lib/config';
 export { sleep } from '../lib/sleep';
-export { TaskManager as TaskQueue } from '../lib/task_manager';
+export { TaskManager } from '../lib/task_manager';
 
 type Id<T> = {
   [K in keyof T]: T[K];
