@@ -38,7 +38,7 @@ export type KubernetesError = {
     }[];
   };
   code: number;
-}
+};
 
 export function isKubernetesError(obj: unknown): obj is KubernetesError {
   if (typeof obj !== 'object' || obj === null) return false;

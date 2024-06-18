@@ -187,10 +187,7 @@ export async function apiClient<Response>(
     interceptors: [] as Interceptor[],
     ...removeNullableProperties(extraOptions),
   };
-  options.interceptors = [
-    ...globalInterceptors,
-    ...options.interceptors,
-  ]
+  options.interceptors = [...globalInterceptors, ...options.interceptors];
   if (options.interceptors.length === 0) {
     options.interceptors = [defaultAuthorizationInterceptor];
   }
@@ -397,8 +394,22 @@ export async function apiClient<Response>(
       await options.onError(error);
 
       // When Invalid, it will not pass no matter how many times it is re-run, so it is terminated without retry.
-      if (isKubernetesError(error) && error.reason === "Invalid") {
-        throw error
+      if (isKubernetesError(error) && error.reason === 'Invalid') {
+        if (
+          error.details.causes.some((cause) =>
+            cause.message.includes(
+              'sendInitialEvents is forbidden for watch unless the WatchList feature gate is enabled'
+            )
+          )
+        ) {
+          console.info(`Error: sendInitialEvents is forbidden for watch unless the WatchList feature gate is enabled.
+To resolve this issue, enable the WatchList feature gate in your k8s api-server.
+
+For k3d, you can enable the feature gate with the following command:
+
+$ k3d cluster create kubekit --k3s-arg '--kube-apiserver-arg=feature-gates=WatchList=true@server:*'`);
+        }
+        throw error;
       }
 
       if (
