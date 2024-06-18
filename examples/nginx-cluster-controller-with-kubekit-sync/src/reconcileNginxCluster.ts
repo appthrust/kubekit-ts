@@ -1,28 +1,29 @@
+import { sleep } from '@kubekit/client'
 import { createCoreV1NamespacedPod, deleteCoreV1NamespacedPod } from './core-v1'
 import { patchKubekitComV1NamespacedNginxClusterStatus } from './kubekit-v1'
 import {
   type NginxCluster,
   type Pods,
-  type ReconcileNginxClusterContext,
   controllerName,
-  labelKey,
+  podLabelKey,
 } from './type'
 import hash from 'object-hash'
 
 export async function reconcileNginxCluster(
   nginxCluster: NginxCluster,
-  pods: Pods,
-  ctx: ReconcileNginxClusterContext
+  pods: Pods
 ) {
   console.debug({
     message: '[Reconcile] Start Reconcile',
+    resourceVersion: nginxCluster.metadata.resourceVersion,
     name: nginxCluster.metadata.name,
     namespace: nginxCluster.metadata.namespace,
+    replicas: nginxCluster.spec?.replicas,
   })
   const nginxClusterHash = hash(nginxCluster.spec!.resources!)
   const managedPods = [...pods.values()].filter(
     (pod) =>
-      pod.metadata.labels?.[labelKey] === nginxCluster.metadata.name &&
+      pod.metadata.labels?.[podLabelKey] === nginxCluster.metadata.name &&
       !pod.metadata.deletionTimestamp
   )
   const validPods = managedPods.filter(
@@ -34,15 +35,11 @@ export async function reconcileNginxCluster(
       pod.metadata.annotations?.['nginx-cluster-hash'] !== nginxClusterHash
   )
   let createPodNum =
-    nginxCluster.spec!.replicas! -
-    validPods.length +
-    ctx.pendingCreate -
-    invalidPods.length
+    nginxCluster.spec!.replicas! - validPods.length + invalidPods.length
   const tasks: Promise<unknown>[] = []
   const namespace = nginxCluster.metadata.namespace
   if (createPodNum > 0) {
     for (let i = 0; i < createPodNum; i++) {
-      ctx.pendingCreate++
       tasks.push(
         createCoreV1NamespacedPod({
           namespace,
@@ -68,7 +65,7 @@ export async function reconcileNginxCluster(
               },
               labels: {
                 ...nginxCluster.metadata.labels,
-                [labelKey]: nginxCluster.metadata.name,
+                [podLabelKey]: nginxCluster.metadata.name,
               },
               namespace,
             },
@@ -134,5 +131,15 @@ export async function reconcileNginxCluster(
     })
   }
 
-  console.debug('[DEBUG] Successful Reconcile')
+  if (tasks.length) {
+    await sleep(500)
+  }
+
+  console.debug({
+    message: '[DEBUG] Successful Reconcile',
+    resourceVersion: nginxCluster.metadata.resourceVersion,
+    name: nginxCluster.metadata.name,
+    namespace: nginxCluster.metadata.namespace,
+    replicas: nginxCluster.spec?.replicas,
+  })
 }

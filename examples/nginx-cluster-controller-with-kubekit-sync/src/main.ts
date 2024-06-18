@@ -9,6 +9,9 @@ async function main() {
   let stop = false
   while (!stop) {
     const controller = new AbortController()
+    controller.signal.addEventListener('abort', () => {
+      stop = true
+    })
     ;['SIGTERM', 'SIGINT'].forEach((signalName) => {
       process.once(signalName, () => {
         console.log(`${signalName} received.`)
@@ -32,9 +35,9 @@ async function main() {
       await becameReaderPromise
       console.debug('[main] Became leader')
 
-      await nginxClusterController(state, controller.signal)
+      await nginxClusterController(state, controller)
     } catch (e: any) {
-      abortErrorHandler(e)
+      stop = isAbortError(e)
     }
   }
 }
@@ -45,4 +48,13 @@ function abortErrorHandler(e: any) {
     return
   }
   throw e
+}
+
+function isAbortError(e: unknown): e is Error {
+  return (
+    e !== null &&
+    typeof e === 'object' &&
+    'name' in e &&
+    e.name === 'AbortError'
+  )
 }

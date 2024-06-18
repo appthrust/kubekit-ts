@@ -198,10 +198,10 @@
     semver "^7.3.5"
     swagger2openapi "^7.0.4"
 
-"@kubekit/client@0.2.11":
-  version "0.2.11"
-  resolved "https://registry.yarnpkg.com/@kubekit/client/-/client-0.2.11.tgz#b0993e99ba81b5168dfc703733e9b6b5e4d48078"
-  integrity sha512-RYmOpQRH30WPqNu+iqk/U4f3c4+MTs5/wrfezjv/pONjGCQg/hrBidh90BUfx8YZEAB4R5X8AR4Sqb4aSpKolA==
+"@kubekit/client@0.2.17":
+  version "0.2.17"
+  resolved "https://registry.yarnpkg.com/@kubekit/client/-/client-0.2.17.tgz#fc0ae8e76de506c3b4609bfaf547891c02093e8c"
+  integrity sha512-7oZ537MdHcCSayKeSKQay1n/wwnZhIEpab5UAtkm+pVIJm+nQKEs2oy4fNf6v3B93S25S9altXx122HrQsVJTA==
   dependencies:
     js-yaml "^4.1.0"
     jsonpath-plus "^9.0.0"

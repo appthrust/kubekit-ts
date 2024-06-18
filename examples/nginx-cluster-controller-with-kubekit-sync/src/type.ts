@@ -8,7 +8,7 @@ export const leaderName =
 export const holderIdentity = process.env['POD_NAME'] || crypto.randomUUID()
 export const controllerNamespace = process.env['POD_NAMESPACE'] || 'default'
 
-export const labelKey = 'nginx-cluster-name'
+export const podLabelKey = 'nginx-cluster-name'
 export type Pods = Map<
   string,
   {
@@ -16,4 +16,3 @@ export type Pods = Map<
   }
 >
 export type NginxCluster = Strict<ComKubekitV1NginxCluster>
-export type ReconcileNginxClusterContext = { pendingCreate: number }
