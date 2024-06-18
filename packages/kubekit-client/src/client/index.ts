@@ -3,6 +3,7 @@ import { Agent } from 'undici';
 import { ReadableStream, TransformStream } from 'node:stream/web';
 import { type ObjectReference } from '../lib/types';
 import { KubeConfig } from '../lib/config';
+import { isKubernetesError } from '../lib/error';
 export { sleep } from '../lib/sleep';
 export { TaskManager } from '../lib/task_manager';
 
@@ -394,6 +395,11 @@ export async function apiClient<Response>(
       retry++;
 
       await options.onError(error);
+
+      // When Invalid, it will not pass no matter how many times it is re-run, so it is terminated without retry.
+      if (isKubernetesError(error) && error.reason === "Invalid") {
+        throw error
+      }
 
       if (
         !(await options.retryCondition({
