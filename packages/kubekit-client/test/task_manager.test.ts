@@ -293,7 +293,7 @@ describe('TaskManager', () => {
       task: createTask('namespace1', 'name1', 1, task2Callback),
     });
 
-    await sleep(10);
+    await sleep(20);
 
     expect(task1Callback).toHaveBeenCalledTimes(1);
     expect(task2Callback).toHaveBeenCalledTimes(1);

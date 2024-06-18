@@ -87,7 +87,7 @@ export class TaskManager {
 
   // Run the next task in the queue
   private runTask() {
-    if (this.isPaused || this.currentlyRunning >= this.concurrency) {
+    if (this.isPaused) {
       return;
     }
 
@@ -95,7 +95,6 @@ export class TaskManager {
     for (let key of keys) {
       if (this.queue[key]?.length > 0 && !this.queue[key].running) {
         this.executeTask(key);
-        return; // Only run one task at a time
       } else if (this.queue[key]?.length === 0) {
         delete this.queue[key];
       }
@@ -104,10 +103,12 @@ export class TaskManager {
 
   // Execute a task
   private executeTask(key: string) {
+    if (this.queue[key].running || this.currentlyRunning >= this.concurrency) {
+      return;
+    }
     this.queue[key].running = true;
     const task = this.queue[key].shift()!;
     this.currentlyRunning++;
-    const taskResult = task();
 
     const handleTaskCompletion = () => {
       if (this.queue[key]) {
@@ -116,6 +117,14 @@ export class TaskManager {
       this.currentlyRunning--;
       this.runTask();
     };
+
+    let taskResult;
+    try {
+      taskResult = task();
+    } catch (err) {
+      console.error(`Error processing task for ${key}:`, err);
+      handleTaskCompletion();
+    }
 
     if (taskResult instanceof Promise) {
       taskResult.then(handleTaskCompletion).catch((err) => {
