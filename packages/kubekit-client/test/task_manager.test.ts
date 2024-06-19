@@ -70,28 +70,23 @@ describe('TaskManager', () => {
     const taskCallbacks = Array.from({ length: 100 }, () => vi.fn());
     const finalTaskCallback = vi.fn();
     const num = 100;
+    const key = TaskManager.getKey({
+      apiVersion: 'v1',
+      kind: 'Namespace',
+      metadata: {
+        name: 'name1',
+      },
+    });
 
     for (let i = 0; i < num; i++) {
       taskManager.addTask({
-        key: TaskManager.getKey({
-          apiVersion: 'v1',
-          kind: 'Namespace',
-          metadata: {
-            name: 'name1',
-          },
-        }),
+        key,
         task: createTask('namespace1', 'name1', 0, taskCallbacks[i]),
       });
     }
 
     taskManager.addTask({
-      key: TaskManager.getKey({
-        apiVersion: 'v1',
-        kind: 'Namespace',
-        metadata: {
-          name: 'name1',
-        },
-      }),
+      key,
       task: createTask('namespace1', 'name1', 0, finalTaskCallback),
     });
 
@@ -111,30 +106,24 @@ describe('TaskManager', () => {
     const taskCallbacks = Array.from({ length: 100 }, () => vi.fn());
     const finalTaskCallback = vi.fn();
     const num = 100;
+    const key = TaskManager.getKey({
+      apiVersion: 'v1',
+      kind: 'Pod',
+      metadata: {
+        namespace: 'namespace1',
+        name: 'name1',
+      },
+    });
 
     for (let i = 0; i < num; i++) {
       taskManager.addTask({
-        key: TaskManager.getKey({
-          apiVersion: 'v1',
-          kind: 'Pod',
-          metadata: {
-            namespace: 'namespace1',
-            name: 'name1',
-          },
-        }),
+        key,
         task: createTask('namespace1', 'name1', 0, taskCallbacks[i]),
       });
     }
 
     taskManager.addTask({
-      key: TaskManager.getKey({
-        apiVersion: 'v1',
-        kind: 'Pod',
-        metadata: {
-          namespace: 'namespace1',
-          name: 'name1',
-        },
-      }),
+      key,
       task: createTask('namespace1', 'name1', 0, finalTaskCallback),
     });
 
@@ -150,28 +139,22 @@ describe('TaskManager', () => {
     const taskManager = new TaskManager();
     const task1Callback = vi.fn();
     const task2Callback = vi.fn();
+    const key = TaskManager.getKey({
+      apiVersion: 'v1',
+      kind: 'Pod',
+      metadata: {
+        namespace: 'namespace1',
+        name: 'name1',
+      },
+    });
 
     taskManager.addTask({
-      key: TaskManager.getKey({
-        apiVersion: 'v1',
-        kind: 'Pod',
-        metadata: {
-          namespace: 'namespace1',
-          name: 'name1',
-        },
-      }),
+      key,
       task: task1Callback,
     });
 
     taskManager.addTask({
-      key: TaskManager.getKey({
-        apiVersion: 'v1',
-        kind: 'Pod',
-        metadata: {
-          namespace: 'namespace1',
-          name: 'name1',
-        },
-      }),
+      key,
       task: task2Callback,
     });
 
@@ -184,27 +167,21 @@ describe('TaskManager', () => {
       wait: 10,
     });
     const taskCallback = vi.fn();
+    const key = TaskManager.getKey({
+      apiVersion: 'v1',
+      kind: 'Pod',
+      metadata: {
+        namespace: 'namespace1',
+        name: 'name1',
+      },
+    });
 
     taskManager.addTask({
-      key: TaskManager.getKey({
-        apiVersion: 'v1',
-        kind: 'Pod',
-        metadata: {
-          namespace: 'namespace1',
-          name: 'name1',
-        },
-      }),
+      key,
       task: createTask('namespace1', 'name1', 50, taskCallback),
     });
     taskManager.addTask({
-      key: TaskManager.getKey({
-        apiVersion: 'v1',
-        kind: 'Pod',
-        metadata: {
-          namespace: 'namespace1',
-          name: 'name1',
-        },
-      }),
+      key,
       task: createTask('namespace1', 'name1', 50, taskCallback),
     });
 
@@ -266,30 +243,24 @@ describe('TaskManager', () => {
     const taskManager = new TaskManager();
     const task1Callback = vi.fn();
     const task2Callback = vi.fn();
+    const key = TaskManager.getKey({
+      apiVersion: 'v1',
+      kind: 'Pod',
+      metadata: {
+        namespace: 'namespace1',
+        name: 'name1',
+      },
+    });
 
     taskManager.addTask({
-      key: TaskManager.getKey({
-        apiVersion: 'v1',
-        kind: 'Pod',
-        metadata: {
-          namespace: 'namespace1',
-          name: 'name1',
-        },
-      }),
+      key,
       task: () => {
         task1Callback();
         return Promise.reject(new Error('Task failed'));
       },
     });
     taskManager.addTask({
-      key: TaskManager.getKey({
-        apiVersion: 'v1',
-        kind: 'Pod',
-        metadata: {
-          namespace: 'namespace1',
-          name: 'name1',
-        },
-      }),
+      key,
       task: createTask('namespace1', 'name1', 1, task2Callback),
     });
 
