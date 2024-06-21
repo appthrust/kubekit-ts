@@ -3,7 +3,7 @@ import { Agent } from 'undici';
 import { ReadableStream, TransformStream } from 'node:stream/web';
 import { type ObjectReference } from '../lib/types';
 import { KubeConfig } from '../lib/config';
-import { isKubernetesError } from '../lib/error';
+import { KubernetesError, isKubernetesError } from '../lib/error';
 export { sleep } from '../lib/sleep';
 export { TaskManager } from '../lib/task_manager';
 
@@ -130,7 +130,7 @@ type FinalizerEvent<T extends K8sObj> = {
 };
 type InnerWatchEvent<T> = { type: InnerWatchEventType; object: T };
 export type WatchExtraOptions<T extends K8sListResponse<K8sObj>> = {
-  onError?: (err: unknown) => void | Promise<void>;
+  onError?: (err: unknown | KubernetesError) => void | Promise<void>;
   watchHandler: (e: WatchEvent<T['items'][number]>, ctx: Context) => MaybePromise<unknown>;
   finalizeHandler?: (e: FinalizerEvent<T['items'][number]>, ctx: Context) => MaybePromise<unknown>;
   syncedHandler?: (ctx: Context) => MaybePromise<unknown>;
@@ -348,6 +348,10 @@ export async function apiClient<Response>(
             for await (const k8sObj of (response.body as ReadableStream<Uint8Array>).pipeThrough(
               new JsonStream<InnerWatchEvent<K8sObj>>()
             )) {
+              if (isKubernetesError(k8sObj)) {
+                throw k8sObj;
+              }
+
               if (k8sObj.type === 'BOOKMARK') {
                 ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
                 if (k8sObj.object.metadata.annotations?.['k8s.io/initial-events-end'] === 'true') {
@@ -355,17 +359,18 @@ export async function apiClient<Response>(
                     ...ctx,
                   });
                 }
+                continue;
+              }
+
+              ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
+              if (k8sObj.object.metadata.deletionTimestamp && k8sObj.object.metadata.finalizers?.length) {
+                await finalizeHandler(k8sObj as any, {
+                  ...ctx,
+                });
               } else {
-                ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
-                if (k8sObj.object.metadata.deletionTimestamp && k8sObj.object.metadata.finalizers?.length) {
-                  await finalizeHandler(k8sObj as any, {
-                    ...ctx,
-                  });
-                } else {
-                  await watchHandler(k8sObj as any, {
-                    ...ctx,
-                  });
-                }
+                await watchHandler(k8sObj as any, {
+                  ...ctx,
+                });
               }
             }
           } finally {
