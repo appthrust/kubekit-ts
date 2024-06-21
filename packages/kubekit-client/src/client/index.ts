@@ -3,7 +3,7 @@ import { Agent } from 'undici';
 import { ReadableStream, TransformStream } from 'node:stream/web';
 import { type ObjectReference } from '../lib/types';
 import { KubeConfig } from '../lib/config';
-import { KubernetesError, isKubernetesError, isTooLargeResourceVersion } from '../lib/error';
+import { KubernetesError, isAlreadyExists, isKubernetesError, isTooLargeResourceVersion } from '../lib/error';
 import { sleep } from '../lib/sleep';
 export { sleep } from '../lib/sleep';
 export { TaskManager } from '../lib/task_manager';
@@ -153,7 +153,7 @@ export const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => 
     return false;
   }
 
-  if (isKubernetesError(error) && isTooLargeResourceVersion(error)) {
+  if (isKubernetesError(error) && (isTooLargeResourceVersion(error) || isAlreadyExists(error))) {
     return false;
   }
 

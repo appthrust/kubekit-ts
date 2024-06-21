@@ -81,3 +81,7 @@ export function isKubernetesError(obj: unknown): obj is KubernetesError {
 export function isTooLargeResourceVersion(err: KubernetesError) {
   return err.message.includes('Too large resource version');
 }
+
+export function isAlreadyExists(err: KubernetesError) {
+  return err.reason === 'AlreadyExists';
+}
