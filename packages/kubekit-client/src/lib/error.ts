@@ -29,14 +29,20 @@ export type KubernetesError = {
   message: string;
   reason: string;
   details: {
-    group: string;
-    kind: string;
     causes: {
       reason: string;
       message: string;
       field: string;
     }[];
-  };
+  } & (
+    | {
+        group: string;
+        kind: string;
+      }
+    | {
+        retryAfterSeconds: number;
+      }
+  );
   code: number;
 };
 

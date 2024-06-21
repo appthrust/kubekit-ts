@@ -4,6 +4,7 @@ import { ReadableStream, TransformStream } from 'node:stream/web';
 import { type ObjectReference } from '../lib/types';
 import { KubeConfig } from '../lib/config';
 import { KubernetesError, isKubernetesError, isTooLargeResourceVersion } from '../lib/error';
+import { sleep } from '../lib/sleep';
 export { sleep } from '../lib/sleep';
 export { TaskManager } from '../lib/task_manager';
 
@@ -44,11 +45,15 @@ function removeNullableProperties<T extends Record<string, unknown | undefined> 
  * @param attempt - Current attempt
  * @param maxRetries - Maximum number of retries
  */
-async function defaultBackoff(attempt: number, maxRetries: number) {
+async function defaultBackoff(attempt: number, maxRetries: number, error: unknown | KubernetesError) {
+  if (isKubernetesError(error) && 'retryAfterSeconds' in error.details) {
+    await sleep(error.details.retryAfterSeconds * 1000);
+    return;
+  }
   const attempts = Math.min(attempt, maxRetries);
 
   const timeout = Math.trunc((Math.random() + 0.4) * (300 << attempts));
-  await new Promise((resolve) => setTimeout((response: any) => resolve(response), timeout));
+  await sleep(timeout);
 }
 
 const isPlainObject = (value: any) => value?.constructor === Object;
@@ -434,7 +439,7 @@ $ k3d cluster create kubekit --k3s-arg '--kube-apiserver-arg=feature-gates=Watch
         throw error;
       }
 
-      await options.backoff(retry, options.maxRetries);
+      await options.backoff(retry, options.maxRetries, error);
     }
   }
 }
