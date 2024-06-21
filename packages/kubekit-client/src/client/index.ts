@@ -3,7 +3,7 @@ import { Agent } from 'undici';
 import { ReadableStream, TransformStream } from 'node:stream/web';
 import { type ObjectReference } from '../lib/types';
 import { KubeConfig } from '../lib/config';
-import { KubernetesError, isKubernetesError } from '../lib/error';
+import { KubernetesError, isKubernetesError, isTooLargeResourceVersion } from '../lib/error';
 export { sleep } from '../lib/sleep';
 export { TaskManager } from '../lib/task_manager';
 
@@ -145,6 +145,10 @@ export const globalInterceptors: Interceptor[] = [];
 export const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => {
   const { res, attempt, error, maxRetries } = object;
   if (attempt > maxRetries) {
+    return false;
+  }
+
+  if (isKubernetesError(error) && isTooLargeResourceVersion(error)) {
     return false;
   }
 
