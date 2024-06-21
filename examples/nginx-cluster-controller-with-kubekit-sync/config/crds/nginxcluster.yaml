@@ -42,7 +42,6 @@ spec:
               properties:
                 ready:
                   type: boolean
-                  default: false
               default:
                 ready: false
   scope: Namespaced
