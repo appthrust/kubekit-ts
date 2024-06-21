@@ -118,7 +118,7 @@ export type Context = {
   resourceVersion: string;
 };
 export type WatchEventType = 'ADDED' | 'MODIFIED' | 'DELETED';
-export type InnerWatchEventType = WatchEventType | 'BOOKMARK';
+export type InnerWatchEventType = WatchEventType | 'BOOKMARK' | 'ERROR';
 type WatchEvent<T> = { type: WatchEventType; object: T };
 type FinalizerEvent<T extends K8sObj> = {
   type: 'ADDED' | 'MODIFIED';
@@ -352,7 +352,7 @@ export async function apiClient<Response>(
             for await (const k8sObj of (response.body as ReadableStream<Uint8Array>).pipeThrough(
               new JsonStream<InnerWatchEvent<K8sObj>>()
             )) {
-              if (isKubernetesError(k8sObj)) {
+              if (isKubernetesError(k8sObj) || k8sObj.type === 'ERROR') {
                 throw k8sObj;
               }
 
