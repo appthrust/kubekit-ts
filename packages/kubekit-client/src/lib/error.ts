@@ -1,5 +1,7 @@
+import * as v from 'valibot';
+
 /**
- * Sample KubernetesError object:
+ * Sample Status object:
  * {
  *   "kind": "Status",
  *   "apiVersion": "v1",
@@ -20,68 +22,85 @@
  *   },
  *   "code": 422
  * }
+ *
+ * {
+ *   kind: 'Status',
+ *   apiVersion: 'v1',
+ *   metadata: {},
+ *   status: 'Failure',
+ *   message: 'secrets "pj-01j0qhebjej5xrdcrqhwrvgbdt-repo" already exists',
+ *   reason: 'AlreadyExists',
+ *   details: { name: 'pj-01j0qhebjej5xrdcrqhwrvgbdt-repo', kind: 'secrets' },
+ *   code: 409
+ * }
  */
-export type KubernetesError = {
-  kind: 'Status';
-  apiVersion: string;
-  metadata: Record<string, unknown>;
-  status: string;
-  message: string;
-  reason: string;
-  details: {
-    causes: {
-      reason: string;
-      message: string;
-      field: string;
-    }[];
-  } & (
-    | {
-        group: string;
-        kind: string;
-      }
-    | {
-        retryAfterSeconds: number;
-      }
-  );
-  code: number;
-};
+export const StatusSchema = v.looseObject({
+  kind: v.literal('Status'),
+  apiVersion: v.literal('v1'),
+  metadata: v.optional(
+    v.looseObject({
+      resourceVersion: v.optional(v.string()),
+      continue: v.optional(v.string()),
+    })
+  ),
+  status: v.optional(v.union([v.literal('Success'), v.literal('Failure')])),
+  message: v.optional(v.string()),
+  reason: v.optional(
+    v.union([
+      v.literal('Unknown'),
+      v.literal('Unauthorized'),
+      v.literal('Forbidden'),
+      v.literal('NotFound'),
+      v.literal('AlreadyExists'),
+      v.literal('Conflict'),
+      v.literal('Gone'),
+      v.literal('Invalid'),
+      v.literal('ServerTimeout'),
+      v.literal('NotAcceptable'),
+    ])
+  ),
+  details: v.optional(
+    v.looseObject({
+      name: v.optional(v.string()),
+      group: v.optional(v.string()),
+      kind: v.optional(v.string()),
+      uid: v.optional(v.string()),
+      causes: v.optional(
+        v.array(
+          v.looseObject({
+            type: v.optional(v.string()),
+            message: v.optional(v.string()),
+            field: v.optional(v.string()),
+          })
+        )
+      ),
+      retryAfterSeconds: v.optional(v.number()),
+    })
+  ),
+  code: v.optional(v.number()),
+});
 
-export function isKubernetesError(obj: unknown): obj is KubernetesError {
-  if (typeof obj !== 'object' || obj === null) return false;
+export const ErrorWatchObjectSchema = v.looseObject({
+  type: v.union([v.literal('ERROR')]),
+  object: StatusSchema,
+});
 
-  const error = obj as Record<string, unknown>;
+export type KubernetesStatus = v.InferInput<typeof StatusSchema>;
 
-  if (error.kind !== 'Status') return false;
-  if (typeof error.apiVersion !== 'string') return false;
-  if (typeof error.metadata !== 'object' || error.metadata === null) return false;
-  if (typeof error.status !== 'string') return false;
-  if (typeof error.message !== 'string') return false;
-  if (typeof error.reason !== 'string') return false;
-  if (typeof error.details !== 'object' || error.details === null) return false;
-
-  const details = error.details as Record<string, unknown>;
-  if (typeof details.group !== 'string') return false;
-  if (typeof details.kind !== 'string') return false;
-  if (!Array.isArray(details.causes)) return false;
-
-  for (const cause of details.causes) {
-    if (typeof cause !== 'object' || cause === null) return false;
-
-    const causeObj = cause as Record<string, unknown>;
-    if (typeof causeObj.reason !== 'string') return false;
-    if (typeof causeObj.message !== 'string') return false;
-    if (typeof causeObj.field !== 'string') return false;
-  }
-
-  if (typeof error.code !== 'number') return false;
-
-  return true;
+export function isTooLargeResourceVersionKubernetesStatus(status: KubernetesStatus) {
+  return status.message?.includes('Too large resource version');
 }
 
-export function isTooLargeResourceVersion(err: KubernetesError) {
-  return err.message.includes('Too large resource version');
-}
-
-export function isAlreadyExists(err: KubernetesError) {
+export function isAlreadyExistsKubernetesStatus(err: KubernetesStatus) {
   return err.reason === 'AlreadyExists';
+}
+
+export function isTooLargeResourceVersion(err: unknown) {
+  const result = v.safeParse(StatusSchema, err)
+  return result.success && isTooLargeResourceVersionKubernetesStatus(result.output)
+}
+
+export function isAlreadyExists(err: unknown) {
+  const result = v.safeParse(StatusSchema, err)
+  return result.success && isAlreadyExistsKubernetesStatus(result.output)
 }

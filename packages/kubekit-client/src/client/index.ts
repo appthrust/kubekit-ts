@@ -3,10 +3,16 @@ import { Agent } from 'undici';
 import { ReadableStream, TransformStream } from 'node:stream/web';
 import { type ObjectReference } from '../lib/types';
 import { KubeConfig } from '../lib/config';
-import { KubernetesError, isAlreadyExists, isKubernetesError, isTooLargeResourceVersion } from '../lib/error';
+import {
+  type KubernetesStatus,
+  ErrorWatchObjectSchema,
+  isTooLargeResourceVersionKubernetesStatus,
+  isAlreadyExistsKubernetesStatus,
+} from '../lib/error';
 import { sleep } from '../lib/sleep';
 export { sleep } from '../lib/sleep';
 export { TaskManager } from '../lib/task_manager';
+import * as v from 'valibot';
 
 type Id<T> = {
   [K in keyof T]: T[K];
@@ -45,9 +51,10 @@ function removeNullableProperties<T extends Record<string, unknown | undefined> 
  * @param attempt - Current attempt
  * @param maxRetries - Maximum number of retries
  */
-async function defaultBackoff(attempt: number, maxRetries: number, error: unknown | KubernetesError) {
-  if (isKubernetesError(error) && 'retryAfterSeconds' in error.details) {
-    await sleep(error.details.retryAfterSeconds * 1000);
+async function defaultBackoff(attempt: number, maxRetries: number, error: unknown | KubernetesStatus) {
+  const errorWatchObject = v.safeParse(ErrorWatchObjectSchema, error);
+  if (errorWatchObject.success && errorWatchObject.output.object.details?.retryAfterSeconds) {
+    await sleep(errorWatchObject.output.object.details.retryAfterSeconds * 1000);
     return;
   }
   const attempts = Math.min(attempt, maxRetries);
@@ -135,7 +142,7 @@ type FinalizerEvent<T extends K8sObj> = {
 };
 type InnerWatchEvent<T> = { type: InnerWatchEventType; object: T };
 export type WatchExtraOptions<T extends K8sListResponse<K8sObj>> = {
-  onError?: (err: unknown | KubernetesError) => void | Promise<void>;
+  onError?: (err: unknown | KubernetesStatus) => void | Promise<void>;
   watchHandler: (e: WatchEvent<T['items'][number]>, ctx: Context) => MaybePromise<unknown>;
   finalizeHandler?: (e: FinalizerEvent<T['items'][number]>, ctx: Context) => MaybePromise<unknown>;
   syncedHandler?: (ctx: Context) => MaybePromise<unknown>;
@@ -153,7 +160,11 @@ export const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => 
     return false;
   }
 
-  if (isKubernetesError(error) && (isTooLargeResourceVersion(error) || isAlreadyExists(error))) {
+  const errorWatchObject = v.safeParse(ErrorWatchObjectSchema, error);
+  if (
+    errorWatchObject.success &&
+    (isTooLargeResourceVersionKubernetesStatus(errorWatchObject.output.object) || isAlreadyExistsKubernetesStatus(errorWatchObject.output.object))
+  ) {
     return false;
   }
 
@@ -252,7 +263,7 @@ export async function apiClient<Response>(
         allowWatchBookmarks: true,
       };
     }
-    baseUrl += (baseUrl.includes('?') ? '&' : '?') + toSearchParameters(params);
+    baseUrl += (baseUrl.includes('?') ? '&' : '?') + searchParameters;
   }
   const url = new URL(baseUrl);
   if (httpsOptions.port) {
@@ -296,6 +307,9 @@ export async function apiClient<Response>(
       const isJsonResponse = contentType?.includes('application/json') ?? false;
 
       if (isSuccess && isJsonResponse) {
+        if (!isWatch && response.body) {
+          return (await response.json()) as Response;
+        }
         if (isWatch && response.body) {
           const {
             watchHandler,
@@ -357,7 +371,7 @@ export async function apiClient<Response>(
             for await (const k8sObj of (response.body as ReadableStream<Uint8Array>).pipeThrough(
               new JsonStream<InnerWatchEvent<K8sObj>>()
             )) {
-              if (isKubernetesError(k8sObj) || k8sObj.type === 'ERROR') {
+              if (k8sObj.type === 'ERROR') {
                 throw k8sObj;
               }
 
@@ -371,7 +385,6 @@ export async function apiClient<Response>(
                 continue;
               }
 
-              ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
               if (k8sObj.object.metadata.deletionTimestamp && k8sObj.object.metadata.finalizers?.length) {
                 await finalizeHandler(k8sObj as any, {
                   ...ctx,
@@ -386,7 +399,6 @@ export async function apiClient<Response>(
             clearInterval(intervalId);
           }
         }
-        return (await response.json()) as Response;
       }
 
       const text = await response.text();
@@ -407,11 +419,12 @@ export async function apiClient<Response>(
 
       await options.onError(error);
 
+      const errorWatchObject = v.safeParse(ErrorWatchObjectSchema, error);
       // When Invalid, it will not pass no matter how many times it is re-run, so it is terminated without retry.
-      if (isKubernetesError(error) && error.reason === 'Invalid') {
+      if (errorWatchObject.success && errorWatchObject.output.object.reason === 'Invalid') {
         if (
-          error.details.causes.some((cause) =>
-            cause.message.includes(
+          errorWatchObject.output.object.details?.causes?.some((cause) =>
+            cause?.message?.includes(
               'sendInitialEvents is forbidden for watch unless the WatchList feature gate is enabled'
             )
           )
