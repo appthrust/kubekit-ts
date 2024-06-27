@@ -13,6 +13,7 @@ import { sleep } from '../lib/sleep';
 export { sleep } from '../lib/sleep';
 export { TaskManager } from '../lib/task_manager';
 import * as v from 'valibot';
+import { verboseLog } from '../lib/env';
 
 type Id<T> = {
   [K in keyof T]: T[K];
@@ -163,7 +164,8 @@ export const defaultRetryCondition: RetryConditionFunction = ({ ...object }) => 
   const errorWatchObject = v.safeParse(ErrorWatchObjectSchema, error);
   if (
     errorWatchObject.success &&
-    (isTooLargeResourceVersionKubernetesStatus(errorWatchObject.output.object) || isAlreadyExistsKubernetesStatus(errorWatchObject.output.object))
+    (isTooLargeResourceVersionKubernetesStatus(errorWatchObject.output.object) ||
+      isAlreadyExistsKubernetesStatus(errorWatchObject.output.object))
   ) {
     return false;
   }
@@ -286,6 +288,14 @@ export async function apiClient<Response>(
     headers['Content-Type'] = 'application/json';
   }
 
+  verboseLog({
+    message: 'Fetch Parameters',
+    body: { searchParameters },
+    type: 'debug',
+    level: 8,
+    path: url.pathname,
+  });
+
   let retry = 0;
   while (true) {
     try {
@@ -307,97 +317,143 @@ export async function apiClient<Response>(
       const isJsonResponse = contentType?.includes('application/json') ?? false;
 
       if (isSuccess && isJsonResponse) {
-        if (!isWatch && response.body) {
+        if (!response.body) {
+          throw new Error('Response body is missing.');
+        }
+        if (!isWatch) {
+          verboseLog({
+            message: 'Return Response Immediately',
+            body: {
+              options,
+              headers: {
+                ...headers,
+                Authorization: 'Bearer xxxxxx',
+              },
+              searchParameters,
+            },
+            path: url.pathname,
+            type: 'debug',
+            level: 8,
+          });
           return (await response.json()) as Response;
         }
-        if (isWatch && response.body) {
-          const {
-            watchHandler,
-            syncPeriod = 3_6000_000,
-            finalizeHandler,
-            syncedHandler,
-          } = {
-            finalizeHandler: () => {},
-            syncedHandler: () => {},
-            watchHandler: () => {},
-            ...extraOptions,
-          };
-
-          const ctx: Context = {
-            isInitialized: false,
-            resourceVersion: '',
-          };
-
-          const listArgs = {
-            ...arguments_,
-            params: {
-              ...arguments_.params,
+        verboseLog({
+          message: 'Start Watch',
+          body: {
+            options,
+            headers: {
+              ...headers,
+              // mask
+              ...(headers.Authorization && {
+                Authorization: 'Bearer xxxxxx',
+              }),
             },
-          };
-          delete listArgs.params.watch;
-          const { syncPeriod: __ = 0, ...listExtraOptions } = { ...extraOptions };
+            searchParameters,
+          },
+          path: url.pathname,
+          type: 'debug',
+          level: 8,
+        });
+        const {
+          watchHandler,
+          syncPeriod = 3_6000_000,
+          finalizeHandler,
+          syncedHandler,
+        } = {
+          finalizeHandler: () => {},
+          syncedHandler: () => {},
+          watchHandler: () => {},
+          ...extraOptions,
+        };
 
-          const intervalId = setInterval(async () => {
-            const result = (await apiClient<K8sListResponse<K8sObj>>(
-              listArgs,
-              listExtraOptions
-            )) as K8sListResponse<K8sObj>;
+        const ctx: Context = {
+          isInitialized: false,
+          resourceVersion: '',
+        };
+        verboseLog({
+          message: 'Print Current Context',
+          body: { ctx },
+          type: 'debug',
+          path: url.pathname,
+          level: 8,
+        });
 
-            result.items.forEach(async (k8sObj) => {
-              if (k8sObj.metadata.deletionTimestamp && k8sObj.metadata.finalizers?.length) {
-                await finalizeHandler(
-                  {
-                    type: 'MODIFIED',
-                    object: k8sObj as any,
-                  },
-                  {
-                    ...ctx,
-                  }
-                );
-              } else {
-                await watchHandler(
-                  {
-                    type: 'MODIFIED',
-                    object: k8sObj,
-                  },
-                  {
-                    ...ctx,
-                  }
-                );
-              }
-            });
-          }, syncPeriod);
-          try {
-            for await (const k8sObj of (response.body as ReadableStream<Uint8Array>).pipeThrough(
-              new JsonStream<InnerWatchEvent<K8sObj>>()
-            )) {
-              if (k8sObj.type === 'ERROR') {
-                throw k8sObj;
-              }
+        const listArgs = {
+          ...arguments_,
+          params: {
+            ...arguments_.params,
+          },
+        };
+        delete listArgs.params.watch;
+        const { syncPeriod: __ = 0, ...listExtraOptions } = { ...extraOptions };
 
-              if (k8sObj.type === 'BOOKMARK') {
-                ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
-                if (k8sObj.object.metadata.annotations?.['k8s.io/initial-events-end'] === 'true') {
-                  await syncedHandler({
-                    ...ctx,
-                  });
+        const intervalId = setInterval(async () => {
+          const result = (await apiClient<K8sListResponse<K8sObj>>(
+            listArgs,
+            listExtraOptions
+          )) as K8sListResponse<K8sObj>;
+
+          result.items.forEach(async (k8sObj) => {
+            if (k8sObj.metadata.deletionTimestamp && k8sObj.metadata.finalizers?.length) {
+              await finalizeHandler(
+                {
+                  type: 'MODIFIED',
+                  object: k8sObj as any,
+                },
+                {
+                  ...ctx,
                 }
-                continue;
-              }
-
-              if (k8sObj.object.metadata.deletionTimestamp && k8sObj.object.metadata.finalizers?.length) {
-                await finalizeHandler(k8sObj as any, {
+              );
+            } else {
+              await watchHandler(
+                {
+                  type: 'MODIFIED',
+                  object: k8sObj,
+                },
+                {
                   ...ctx,
-                });
-              } else {
-                await watchHandler(k8sObj as any, {
-                  ...ctx,
-                });
-              }
+                }
+              );
             }
-          } finally {
-            clearInterval(intervalId);
+          });
+        }, syncPeriod);
+        try {
+          for await (const k8sObj of (response.body as ReadableStream<Uint8Array>).pipeThrough(
+            new JsonStream<InnerWatchEvent<K8sObj>>()
+          )) {
+            if (k8sObj.type === 'ERROR') {
+              verboseLog({
+                message: 'throw error',
+                body: k8sObj,
+                type: 'debug',
+                path: url.pathname,
+                level: 5,
+              });
+              throw k8sObj;
+            }
+
+            if (k8sObj.type === 'BOOKMARK') {
+              ctx.resourceVersion = k8sObj.object.metadata.resourceVersion;
+              if (k8sObj.object.metadata.annotations?.['k8s.io/initial-events-end'] === 'true') {
+                await syncedHandler({
+                  ...ctx,
+                });
+              }
+              continue;
+            }
+
+            if (k8sObj.object.metadata.deletionTimestamp && k8sObj.object.metadata.finalizers?.length) {
+              await finalizeHandler(k8sObj as any, {
+                ...ctx,
+              });
+            } else {
+              await watchHandler(k8sObj as any, {
+                ...ctx,
+              });
+            }
           }
+        } finally {
+          clearInterval(intervalId);
         }
       }
 

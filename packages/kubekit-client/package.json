@@ -1,6 +1,6 @@
 {
   "name": "@kubekit/client",
-  "version": "0.2.26",
+  "version": "0.2.29",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "kahirokunn",
@@ -23,7 +23,8 @@
     "test:coverage": "vitest run --coverage"
   },
   "files": [
-    "dist"
+    "dist",
+    "package.json"
   ],
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",

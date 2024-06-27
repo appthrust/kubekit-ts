@@ -96,11 +96,11 @@ export function isAlreadyExistsKubernetesStatus(err: KubernetesStatus) {
 }
 
 export function isTooLargeResourceVersion(err: unknown) {
-  const result = v.safeParse(StatusSchema, err)
-  return result.success && isTooLargeResourceVersionKubernetesStatus(result.output)
+  const result = v.safeParse(StatusSchema, err);
+  return result.success && isTooLargeResourceVersionKubernetesStatus(result.output);
 }
 
 export function isAlreadyExists(err: unknown) {
-  const result = v.safeParse(StatusSchema, err)
-  return result.success && isAlreadyExistsKubernetesStatus(result.output)
+  const result = v.safeParse(StatusSchema, err);
+  return result.success && isAlreadyExistsKubernetesStatus(result.output);
 }
