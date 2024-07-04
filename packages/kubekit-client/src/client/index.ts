@@ -390,7 +390,7 @@ export async function apiClient<Response>(
             path: url.pathname,
             level: 8,
           });
-          const result = (await apiClient<K8sListResponse<K8sObj>>(
+          const result = await apiClient<K8sListResponse<K8sObj>>(
             {
               ...arguments_,
               params: {
@@ -399,7 +399,7 @@ export async function apiClient<Response>(
               },
             },
             listExtraOptions
-          )) as K8sListResponse<K8sObj>;
+          );
 
           result.items.forEach(async (k8sObj) => {
             if (k8sObj.metadata.deletionTimestamp && k8sObj.metadata.finalizers?.length) {
@@ -460,8 +460,12 @@ export async function apiClient<Response>(
               });
             }
           }
-        } finally {
           clearInterval(intervalId);
+          // watchの時のresponseはvoid 0を返す仕様です.
+          return void 0 as Response;
+        } catch (e) {
+          clearInterval(intervalId);
+          throw e;
         }
       }
 
