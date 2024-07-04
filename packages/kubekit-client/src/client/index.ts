@@ -209,7 +209,7 @@ export async function apiClient<Response>(
     interceptors: [] as Interceptor[],
     ...removeNullableProperties(extraOptions),
   };
-  options.interceptors = [...globalInterceptors, ...options.interceptors];
+  options.interceptors = [...globalInterceptors, ...options.interceptors].filter((interceptor) => interceptor);
   if (options.interceptors.length === 0) {
     options.interceptors = [defaultAuthorizationInterceptor];
   }
