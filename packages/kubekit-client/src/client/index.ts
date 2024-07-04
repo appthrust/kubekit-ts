@@ -383,6 +383,13 @@ export async function apiClient<Response>(
         const { syncPeriod: __ = 0, ...listExtraOptions } = { ...extraOptions };
 
         const intervalId = setInterval(async () => {
+          verboseLog({
+            message: 'Refresh',
+            body: { ctx },
+            type: 'debug',
+            path: url.pathname,
+            level: 8,
+          });
           const result = (await apiClient<K8sListResponse<K8sObj>>(
             {
               ...arguments_,
