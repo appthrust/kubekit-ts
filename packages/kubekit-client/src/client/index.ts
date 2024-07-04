@@ -378,18 +378,17 @@ export async function apiClient<Response>(
           level: 8,
         });
 
-        const listArgs = {
-          ...arguments_,
-          params: {
-            ...arguments_.params,
-          },
-        };
-        delete listArgs.params.watch;
         const { syncPeriod: __ = 0, ...listExtraOptions } = { ...extraOptions };
 
         const intervalId = setInterval(async () => {
           const result = (await apiClient<K8sListResponse<K8sObj>>(
-            listArgs,
+            {
+              ...arguments_,
+              params: {
+                ...arguments_.params,
+                watch: false,
+              },
+            },
             listExtraOptions
           )) as K8sListResponse<K8sObj>;
 
