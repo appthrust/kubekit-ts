@@ -18,13 +18,13 @@ kubekit is developed to provide a simple, fast, and customizable TypeScript Kube
 
 A TypeScript Kubernetes client and controller runtime.
 
-### [@kubekit/sync](https://github.com/appthrust/kubekit-ts/tree/main/packages/kubekit-sync)
+### [@kubekit/openapi-gen](https://github.com/appthrust/kubekit-ts/tree/main/packages/kubekit-openapi-gen)
 
-Expands the `OpenAPI` schema containing CustomResources obtained from `$ kubectl get --raw /openapi/v3` into files.
+The `@kubekit/openapi-gen` project is a tool that generates a JSON file of OpenAPI specifications that describe operations that can be executed based on the permissions of Kubernetes ServiceAccount. This tool is particularly useful for application developers who use Kubernetes API. The generated `openapi.json` file is used as a schema file to generate client code in the `@kubekit/client-gen` project.
 
-### [@kubekit/codegen](https://github.com/appthrust/kubekit-ts/tree/main/packages/kubekit-codegen)
+### [@kubekit/client-gen](https://github.com/appthrust/kubekit-ts/tree/main/packages/kubekit-client-gen)
 
-Generates TypeScript type definitions from the `OpenAPI` schema and produces minimal client code that wraps `@kubekit/client`.
+TypeScript Kubernetes client CodeGenerator.
 
 ## Origin
 
